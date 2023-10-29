@@ -1,4 +1,4 @@
-__int64 __fastcall log_combat_parameters(__int64 a1, __int64 a2, _QWORD *a3, __int64 a4)
+__int64 __fastcall log_combat(__int64 a1, __int64 a2, _QWORD *a3, __int64 a4)
 {
   int v5; // ebx
   _QWORD *ThreadLocalStoragePointer; // rcx
