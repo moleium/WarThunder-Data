@@ -63,9 +63,9 @@ void __fastcall death_report(__int64 Unit, __int64 a2, __int64 a3)
   int v64; // ecx
   CHAR *v65; // rax
   CHAR *v66; // rcx
-  double v67; // xmm0_8
-  double v68; // xmm1_8
-  double v69; // xmm2_8
+  double ZPos; // xmm0_8
+  double YPos; // xmm1_8
+  double XPos; // xmm2_8
   __int64 v70; // rdx
   __int64 v71; // rbp
   unsigned int v72; // edi
@@ -490,9 +490,9 @@ LABEL_90:
       v175 = *&v65;
       LODWORD(v174) = 1;
       dg_debug(0x20574D46u, "Death report on %s (%s)---------------------------------->", &v173, 2);
-      v67 = *(Unit + 0x9C8);
-      v68 = *(Unit + 0x9C4);
-      v69 = *(Unit + 0x9C0);
+      ZPos = *(Unit + 0x9C8);
+      YPos = *(Unit + 0x9C4);
+      XPos = *(Unit + 0x9C0);
       if ( (v193 & 0x80000000) != 0 )
       {
         if ( (v192 & 0x80000000) == 0 )
@@ -541,11 +541,11 @@ LABEL_119:
       LODWORD(v173) = 1;
       v175 = v76;
       LODWORD(v174) = 2;
-      *(&v176 + 1) = v69;
+      *(&v176 + 1) = XPos;
       LODWORD(v176) = 3;
-      v178 = v68;
+      v178 = YPos;
       LODWORD(v177) = 3;
-      *(&v179 + 1) = v67;
+      *(&v179 + 1) = ZPos;
       LODWORD(v179) = 3;
       dg_debug(0x20574D46u, "killed by: %s (uid %d), at = (%f, %f, %f)", &v173, 5);
       if ( (*(Unit + 0x1058) & 0x7000014) == 0 )
