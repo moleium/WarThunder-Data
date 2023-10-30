@@ -1,4 +1,4 @@
-char __fastcall altitude_data(__int64 data, float *min_altitude, float *max_altitude, float *step_altitude)
+char __fastcall process_altitude_data(__int64 data, float *min_altitude, float *max_altitude, float *step_altitude)
 {
   _BYTE *dataptr; // rdi
   signed __int64 data_len; // rdx
