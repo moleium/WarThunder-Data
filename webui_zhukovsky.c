@@ -1,4 +1,4 @@
-const char *__fastcall webui_zhukovsky(__int64 a1, __int64 a2, double a3)
+const char *__fastcall webui_zhukovsky(__int64 http_req, __int64 a2, double a3)
 {
   void (*v4)(void); // rax
   const char *result; // rax
@@ -98,25 +98,25 @@ const char *__fastcall webui_zhukovsky(__int64 a1, __int64 a2, double a3)
   __int64 v99; // [rsp+118h] [rbp-240h]
   __int64 v100; // [rsp+120h] [rbp-238h]
 
-  if ( strcmp(*a1, "GET") )
+  if ( strcmp(*http_req, "GET") )
     goto LABEL_2;
   if ( !*(game + 0x718)
     || !*(game + 0xDC) && (!byte_4B1C820 || dword_4B1C810 != 5 && dword_4B1C810 != 2)
     || !*(*(game + 0x430) + 0x365i64) )
   {
-    if ( *(a1 + 0x4E8) )
+    if ( *(http_req + 0x4E8) )
     {
-      v8 = *(a1 + 0x4F8);
+      v8 = *(http_req + 0x4F8);
       if ( v8 )
         v8();
     }
     result = "HTTP/1.1 403 Forbidden\r\n\r\n";
-    *(a1 + 0x4E8) = "HTTP/1.1 403 Forbidden\r\n\r\n";
-    *(a1 + 0x4F0) = 0x1A;
+    *(http_req + 0x4E8) = "HTTP/1.1 403 Forbidden\r\n\r\n";
+    *(http_req + 0x4F0) = 0x1A;
     goto LABEL_18;
   }
-  v6 = *(a1 + 0x18);
-  v7 = v6 ? strlen(*(a1 + 0x18)) : 0i64;
+  v6 = *(http_req + 0x18);
+  v7 = v6 ? strlen(*(http_req + 0x18)) : 0i64;
   if ( !parse_command_data(v6, v7, "cmd", &v95, 0x20i64) )
     goto LABEL_2;
   v12 = LocalUnit;
@@ -135,7 +135,7 @@ const char *__fastcall webui_zhukovsky(__int64 a1, __int64 a2, double a3)
   if ( _mm_testz_si128(v14, v14) )
   {
     LODWORD(v88) = 0;
-    if ( sub_B0ACA0(a1, Str1) && sub_B09250(a1, &v88) )
+    if ( sub_B0ACA0(http_req, Str1) && sub_B09250(http_req, &v88) )
     {
       ThreadLocalStoragePointer = NtCurrentTeb()->ThreadLocalStoragePointer;
       if ( !*(ThreadLocalStoragePointer[TlsIndex] + 1i64) )
@@ -155,7 +155,7 @@ const char *__fastcall webui_zhukovsky(__int64 a1, __int64 a2, double a3)
         st_mtime = Buffer.st_mtime;
       if ( v88 == st_mtime && !strcmp(Str1, v28) )
       {
-        result = sub_AF1600(a1, "{\"result\": \"OK\"}", 0x10i64);
+        result = sub_AF1600(http_req, "{\"result\": \"OK\"}", 0x10i64);
         if ( FileName[1] )
           result = (*(*off_4B678C8 + 0x40i64))(off_4B678C8);
         v35 = v84;
@@ -192,7 +192,7 @@ const char *__fastcall webui_zhukovsky(__int64 a1, __int64 a2, double a3)
     v84 = v34;
     sub_B09AE0(&Buffer, "  \"sweepControl\": %s\n", &v84);
     sub_B09440(&Buffer, "}\n");
-    sub_AF1600(a1, *&Buffer.st_nlink, Buffer.st_mtime);
+    sub_AF1600(http_req, *&Buffer.st_nlink, Buffer.st_mtime);
     *&Buffer.st_dev = &off_44CAF30;
     v35 = *&Buffer.st_nlink;
     v36 = *&Buffer.st_rdev;
@@ -214,20 +214,20 @@ const char *__fastcall webui_zhukovsky(__int64 a1, __int64 a2, double a3)
       v97 = (*(*v16 + 0x18i64))(v16, 0x40000i64);
       *v97 = 0;
       v83 = 0;
-      sub_B0A5E0(a1, "alt");
+      sub_B0A5E0(http_req, "alt");
       v89 = 0x3F800000;
-      sub_B0A5E0(a1, "throttle");
+      sub_B0A5E0(http_req, "throttle");
       v87[1] = 0;
-      sub_B0A5E0(a1, "sweep");
+      sub_B0A5E0(http_req, "sweep");
       v87[0] = 1;
-      sub_B0A980(a1, "speedType", v87);
+      sub_B0A980(http_req, "speedType", v87);
       v82 = 0;
-      sub_B0BDF0(a1, "speedRangeManual", &v82);
+      sub_B0BDF0(http_req, "speedRangeManual", &v82);
       v88 = 0xC47A0000447A0000ui64;
       if ( v82 )
       {
-        sub_B0A5E0(a1, "speedMin");
-        sub_B0A5E0(a1, "speedMax");
+        sub_B0A5E0(http_req, "speedMin");
+        sub_B0A5E0(http_req, "speedMax");
       }
       v92 = 0i64;
       v18 = 0i64;
@@ -244,9 +244,9 @@ const char *__fastcall webui_zhukovsky(__int64 a1, __int64 a2, double a3)
         v20 = *&Buffer.st_dev;
         if ( !Buffer.st_rdev )
           v20 = &szFile;
-        v21 = *(a1 + 0x18);
+        v21 = *(http_req + 0x18);
         if ( v21 )
-          v22 = strlen(*(a1 + 0x18));
+          v22 = strlen(*(http_req + 0x18));
         else
           v22 = 0i64;
         if ( parse_command_data(v21, v22, v20, &v84, 8i64) )
@@ -267,9 +267,9 @@ const char *__fastcall webui_zhukovsky(__int64 a1, __int64 a2, double a3)
       v52 = v84;
       if ( !v86 )
         v52 = &szFile;
-      v53 = *(a1 + 0x18);
+      v53 = *(http_req + 0x18);
       if ( v53 )
-        v54 = strlen(*(a1 + 0x18));
+        v54 = strlen(*(http_req + 0x18));
       else
         v54 = 0i64;
       v55 = v94;
@@ -287,9 +287,9 @@ const char *__fastcall webui_zhukovsky(__int64 a1, __int64 a2, double a3)
       v58 = v84;
       if ( !v86 )
         v58 = &szFile;
-      v59 = *(a1 + 0x18);
+      v59 = *(http_req + 0x18);
       if ( v59 )
-        v60 = strlen(*(a1 + 0x18));
+        v60 = strlen(*(http_req + 0x18));
       else
         v60 = 0i64;
       if ( parse_command_data(v59, v60, v58, &Buffer, 0x20i64) )
@@ -306,9 +306,9 @@ const char *__fastcall webui_zhukovsky(__int64 a1, __int64 a2, double a3)
       v63 = v84;
       if ( !v86 )
         v63 = &szFile;
-      v64 = *(a1 + 0x18);
+      v64 = *(http_req + 0x18);
       if ( v64 )
-        v65 = strlen(*(a1 + 0x18));
+        v65 = strlen(*(http_req + 0x18));
       else
         v65 = 0i64;
       if ( parse_command_data(v64, v65, v63, &Buffer, 0x20i64) )
@@ -326,9 +326,9 @@ const char *__fastcall webui_zhukovsky(__int64 a1, __int64 a2, double a3)
       if ( v86 )
         v68 = v84;
       v93 = v68;
-      v69 = *(a1 + 0x18);
+      v69 = *(http_req + 0x18);
       if ( v69 )
-        v70 = strlen(*(a1 + 0x18));
+        v70 = strlen(*(http_req + 0x18));
       else
         v70 = 0i64;
       if ( parse_command_data(v69, v70, v93, &Buffer, 0x20i64) )
@@ -336,7 +336,7 @@ const char *__fastcall webui_zhukovsky(__int64 a1, __int64 a2, double a3)
       if ( v67 )
         (*(*v85 + 0x40i64))(v85, v67);
       Buffer.st_dev = 0x3F800000;
-      sub_B0A5E0(a1, "loadFactor");
+      sub_B0A5E0(http_req, "loadFactor");
       sub_B09440(Str1, "{\n");
       sub_B09440(Str1, "  \"zhukovskyChart\":\n");
       sub_B14620(v55, v71, v72, v73, v87[0], &v88, &v92, FileName, Str1);
@@ -351,7 +351,7 @@ const char *__fastcall webui_zhukovsky(__int64 a1, __int64 a2, double a3)
       sub_B169A0(v55, v79, v80, v81, _mm_cvtsi128_si32(_mm_cvtsi32_si128(Buffer.st_dev)), v87[0], &v88, Str1);
       sub_B09440(Str1, &word_4A30321[1]);
       sub_B09440(Str1, "}\n");
-      sub_AF1600(a1, v97, v100);
+      sub_AF1600(http_req, v97, v100);
       dg_debug(3u, v97, 0i64, 0);
       *Str1 = &off_44CAF30;
       v35 = v97;
@@ -359,17 +359,17 @@ const char *__fastcall webui_zhukovsky(__int64 a1, __int64 a2, double a3)
       return (*(*v36 + 0x40i64))(v36, v35);
     }
 LABEL_2:
-    if ( *(a1 + 0x4E8) )
+    if ( *(http_req + 0x4E8) )
     {
-      v4 = *(a1 + 0x4F8);
+      v4 = *(http_req + 0x4F8);
       if ( v4 )
         v4();
     }
     result = "HTTP/1.1 400 Bad Request\r\n\r\n";
-    *(a1 + 0x4E8) = "HTTP/1.1 400 Bad Request\r\n\r\n";
-    *(a1 + 0x4F0) = 0x1C;
+    *(http_req + 0x4E8) = "HTTP/1.1 400 Bad Request\r\n\r\n";
+    *(http_req + 0x4F0) = 0x1C;
 LABEL_18:
-    *(a1 + 0x4F8) = 0i64;
+    *(http_req + 0x4F8) = 0i64;
     return result;
   }
   v37 = NtCurrentTeb()->ThreadLocalStoragePointer;
@@ -383,14 +383,14 @@ LABEL_18:
   v97 = (*(*v38 + 0x18i64))(v38, 0x100i64);
   *v97 = 0;
   LODWORD(v84) = 0;
-  sub_B0A5E0(a1, "alt");
+  sub_B0A5E0(http_req, "alt");
   LODWORD(FileName[0]) = 1;
-  sub_B0A980(a1, "oldSpeedType", FileName);
+  sub_B0A980(http_req, "oldSpeedType", FileName);
   LODWORD(v88) = 1;
-  sub_B0A980(a1, "speedType", &v88);
+  sub_B0A980(http_req, "speedType", &v88);
   *&Buffer.st_dev = 0xC47A0000447A0000ui64;
-  sub_B0A5E0(a1, "speedMin");
-  sub_B0A5E0(a1, "speedMax");
+  sub_B0A5E0(http_req, "speedMin");
+  sub_B0A5E0(http_req, "speedMax");
   sub_B09440(Str1, "{\n");
   v39 = v88;
   sub_154D270(v41, v40, LODWORD(FileName[0]));
@@ -404,6 +404,6 @@ LABEL_18:
   sub_B09B80(Str1, "  \"speedMax\": %f", a3);
   sub_B09440(Str1, "}");
   v50 = v97;
-  sub_AF1600(a1, v97, v100);
+  sub_AF1600(http_req, v97, v100);
   return (*(*v98 + 0x40i64))(v98, v50);
 }
