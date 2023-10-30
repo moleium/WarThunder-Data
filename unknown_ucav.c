@@ -1,19 +1,19 @@
 void __fastcall unknown_ucav(__int64 a1, __int64 a2)
 {
-  __int64 v2; // rbp
+  __int64 LocalUnit_; // rbp
   __int64 v3; // rsi
   char v5; // al
   bool v6; // dl
   __int64 v7; // r15
   __int64 v8; // r12
   unsigned int v9; // ebp
-  __int64 v10; // rbx
+  __int64 game_; // rbx
   struct _RTL_CRITICAL_SECTION *v11; // rsi
-  __int64 v12; // rbx
+  __int64 currUnit; // rbx
   __int64 v13; // rax
   __int64 v14; // rcx
   __int64 v15; // rdx
-  unsigned __int16 v16; // ax
+  unsigned __int16 UnitState; // ax
   char v17; // bp
   __int64 Unit; // rdi
   bool v19; // si
@@ -77,7 +77,7 @@ void __fastcall unknown_ucav(__int64 a1, __int64 a2)
   __int64 v77; // [rsp+28h] [rbp-80h]
   int v79; // [rsp+3Ch] [rbp-6Ch]
 
-  v2 = LocalUnit;
+  LocalUnit_ = LocalUnit;
   if ( !LocalUnit )
     return;
   v3 = *(LocalUnit + 0x10B8);
@@ -86,25 +86,25 @@ void __fastcall unknown_ucav(__int64 a1, __int64 a2)
   *(a2 + 0x18) = 0;
   v5 = *(a2 + 0x1A);
   byte_4B19B20 = v5;
-  if ( *(v2 + 0x10A8) > 1u )
+  if ( *(LocalUnit_ + 0x10A8) > 1u )            // Check Unit State
   {
     v6 = 0;
   }
   else
   {
-    v6 = (*(v2 + 0x1058) & 0x7000014) == 0;
+    v6 = (*(LocalUnit_ + 0x1058) & 0x7000014) == 0;
     v5 = byte_4B19B20;
   }
   *(a2 + 0x1A) = v6;
-  v77 = v2;
-  if ( qword_4B19AA0 && v6 && v5 != 1 && *(v2 + 0x10B0) == 5 )
+  v77 = LocalUnit_;
+  if ( qword_4B19AA0 && v6 && v5 != 1 && *(LocalUnit_ + 0x10B0) == 5 )
     sub_B3A410(qword_4B19AA0 + 0x1C78, 0xD0);
   v7 = sub_11FE900(v3);
   v8 = (*(*a1 + 0x38i64))(a1) - 0x20;
   v9 = *(v3 + 2 * v8 + 0x2C0);
   if ( v9 == 0xFFFF )
     goto LABEL_30;
-  v10 = game;
+  game_ = game;
   if ( (*(game + 0xCB) & 1) != 0 )
   {
     v11 = 0i64;
@@ -115,17 +115,17 @@ void __fastcall unknown_ucav(__int64 a1, __int64 a2)
     if ( v11 )
       EnterCriticalSection(*(game + 0x620));
   }
-  if ( *(v10 + 0x360) <= v9 )
+  if ( *(game_ + 0x360) <= v9 )
   {
-    v13 = *(v10 + 0x378);
-    if ( *(v10 + 0x378) )
+    v13 = *(game_ + 0x378);
+    if ( *(game_ + 0x378) )
     {
-      v14 = *(v10 + 0x368);
+      v14 = *(game_ + 0x368);
       v15 = 0i64;
       while ( 1 )
       {
-        v12 = *(v14 + 8 * v15);
-        if ( (*(v12 + 8) & 0x7FF) == v9 )
+        currUnit = *(v14 + 8 * v15);
+        if ( (*(currUnit + 8) & 0x7FF) == v9 )
           break;
         if ( v13 == ++v15 )
           goto LABEL_23;
@@ -134,20 +134,20 @@ void __fastcall unknown_ucav(__int64 a1, __int64 a2)
     else
     {
 LABEL_23:
-      v12 = 0i64;
+      currUnit = 0i64;
     }
   }
   else
   {
-    v12 = *(*(v10 + 0x350) + 8i64 * v9);
+    currUnit = *(*(game_ + 0x350) + 8i64 * v9);
   }
   if ( v11 )
     LeaveCriticalSection(v11);
-  if ( !v12 )
+  if ( !currUnit )
   {
 LABEL_30:
     v17 = 0;
-    v12 = 0i64;
+    currUnit = 0i64;
     v19 = 0;
     Unit = v77;
     if ( v7 != v77 )
@@ -155,10 +155,10 @@ LABEL_30:
   }
   else
   {
-    v16 = *(v12 + 0x10A8);
+    UnitState = *(currUnit + 0x10A8);
     v17 = 1;
     Unit = v77;
-    if ( v16 > 1u )
+    if ( UnitState > 1u )
     {
       v19 = 0;
       if ( v7 != v77 )
@@ -166,7 +166,7 @@ LABEL_30:
     }
     else
     {
-      v19 = *(v12 + 0x4E8) != 0 || v16 != 1;
+      v19 = *(currUnit + 0x4E8) != 0 || UnitState != 1;
       if ( v7 != v77 )
         goto LABEL_37;
     }
@@ -175,7 +175,7 @@ LABEL_30:
   {
     v20 = *(Unit + 0x740);
     *(a2 + 0x19) = _bittest(&v20, v8);
-    v21 = v17 && *(v12 + 0x10A8) <= 1u && (*(v12 + 0x1058) & 0x7000014) != 0;
+    v21 = v17 && *(currUnit + 0x10A8) <= 1u && (*(currUnit + 0x1058) & 0x7000014) != 0;
     v22 = *(Unit + 0x13A0);
     v23 = 0x60 * v8;
     v24 = 0i64;
@@ -308,8 +308,8 @@ LABEL_30:
       v54 = 0;
       v55 = *(qword_4ACEE78 + 0x427) != 0 ? 0xFFFFFFFF : v53;
       *(a2 + 0x44) = v55;
-      if ( *(v12 + 0x10A8) <= 1u )
-        v54 = (*(v12 + 0x1058) & 0x7000014) == 0;
+      if ( *(currUnit + 0x10A8) <= 1u )
+        v54 = (*(currUnit + 0x1058) & 0x7000014) == 0;
       *(a2 + 0x48) = v55 + v54;
       *(a2 + 0x40) = v19;
       *(a2 + 0x3C) = 0;
@@ -317,7 +317,7 @@ LABEL_30:
 LABEL_96:
       v56 = 0x30;
       v17 = 1;
-      if ( *(v12 + 0x10B0) == 3 )
+      if ( *(currUnit + 0x10B0) == 3 )
         goto LABEL_98;
       goto LABEL_97;
     }
@@ -345,7 +345,7 @@ LABEL_70:
     v17 = 0;
     goto LABEL_97;
   }
-  if ( ((v12 == Unit) & v17) != 0 )
+  if ( ((currUnit == Unit) & v17) != 0 )
     goto LABEL_96;
 LABEL_97:
   v56 = (*(*a1 + 0x38i64))(a1);
@@ -359,7 +359,7 @@ LABEL_98:
     *(a2 + 0x60) = &szFile;
     if ( v17 )
     {
-      v57 = (*(*v12 + 0x198i64))(v12);
+      v57 = (*(*currUnit + 0x198i64))(currUnit);
       Unit = v77;
     }
     *(a2 + 0x10) = v57;
