@@ -1,44 +1,44 @@
-__int64 __fastcall get_next_bullet_type(unsigned int a1)
+__int64 __fastcall get_next_bullet_type(unsigned int bullet_index)
 {
-  unsigned int v1; // r14d
-  __int64 v3; // rax
-  __int64 v4; // rcx
-  __int64 v5; // rsi
-  __int64 v6; // rbx
-  __int64 v7; // rbp
-  unsigned __int8 *v8; // rdi
+  unsigned int def_bullet_type; // r14d
+  __int64 UnitWeaponInfo; // rax
+  __int64 bullet_type_index; // rcx
+  __int64 bullet_list; // rsi
+  __int64 bullet_count; // rbx
+  __int64 current_bullet; // rbp
+  unsigned __int8 *current_bullet_data; // rdi
 
-  v1 = 0xFFFFFFFF;
+  def_bullet_type = 0xFFFFFFFF;
   if ( LocalUnit )
   {
     if ( (*(LocalUnit + 0x1058) & 0x7000014) == 0 )
     {
-      v3 = *(LocalUnit + 0x11D0);
-      if ( v3 )
+      UnitWeaponInfo = *(LocalUnit + 0x11D0);
+      if ( UnitWeaponInfo )
       {
-        v4 = 3i64 * a1;
-        if ( *(v3 + 8 * v4 + 0x328) )
+        bullet_type_index = 3i64 * bullet_index;
+        if ( *(UnitWeaponInfo + 8 * bullet_type_index + 0x328) )
         {
-          v5 = *(v3 + 8 * v4 + 0x318);
-          v6 = 8i64 * *(v3 + 8 * v4 + 0x328);
-          v7 = 0i64;
+          bullet_list = *(UnitWeaponInfo + 8 * bullet_type_index + 0x318);
+          bullet_count = 8i64 * *(UnitWeaponInfo + 8 * bullet_type_index + 0x328);
+          current_bullet = 0i64;
           while ( 1 )
           {
-            v8 = *(v5 + v7);
-            if ( v8 )
+            current_bullet_data = *(bullet_list + current_bullet);
+            if ( current_bullet_data )
             {
-              if ( (*(*v8 + 0x108i64))(*(v5 + v7)) )
+              if ( (*(*current_bullet_data + 0x108i64))(*(bullet_list + current_bullet)) )
                 break;
             }
-            v7 += 8i64;
-            if ( v6 == v7 )
-              return v1;
+            current_bullet += 8i64;
+            if ( bullet_count == current_bullet )
+              return def_bullet_type;
           }
-          if ( (*(*v8 + 0x108i64))(v8) )
-            return v8[0x43D];
+          if ( (*(*current_bullet_data + 0x108i64))(current_bullet_data) )
+            return current_bullet_data[0x43D];
         }
       }
     }
   }
-  return v1;
+  return def_bullet_type;
 }
