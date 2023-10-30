@@ -1,6 +1,6 @@
 char has_alt_shot_freq()
 {
-  __int64 v0; // rax
+  __int64 UnitWeaponInfo; // rax
   __int64 v1; // r14
   __int64 v2; // rdi
   __int64 v3; // rbx
@@ -9,11 +9,11 @@ char has_alt_shot_freq()
 
   if ( !LocalUnit )
     return 0;
-  v0 = *(LocalUnit + 0x11D0);
-  if ( !v0 || !*(v0 + 0x2E0) )
+  UnitWeaponInfo = *(LocalUnit + 0x11D0);
+  if ( !UnitWeaponInfo || !*(UnitWeaponInfo + 0x2E0) )
     return 0;
-  v1 = *(v0 + 0x2D0);
-  v2 = 8i64 * *(v0 + 0x2E0);
+  v1 = *(UnitWeaponInfo + 0x2D0);
+  v2 = 8i64 * *(UnitWeaponInfo + 0x2E0);
   v3 = 0i64;
   while ( 1 )
   {
