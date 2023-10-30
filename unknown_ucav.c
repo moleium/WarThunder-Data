@@ -7,15 +7,15 @@ void __fastcall unknown_ucav(__int64 a1, __int64 a2)
   __int64 v7; // r15
   __int64 v8; // r12
   unsigned int v9; // ebp
-  __int64 game_; // rbx
+  __int64 v10; // rbx
   struct _RTL_CRITICAL_SECTION *v11; // rsi
-  __int64 Unit; // rbx
+  __int64 v12; // rbx
   __int64 v13; // rax
   __int64 v14; // rcx
   __int64 v15; // rdx
-  unsigned __int16 UnitState; // ax
+  unsigned __int16 v16; // ax
   char v17; // bp
-  __int64 v18; // rdi
+  __int64 Unit; // rdi
   bool v19; // si
   int v20; // eax
   bool v21; // r9
@@ -55,7 +55,7 @@ void __fastcall unknown_ucav(__int64 a1, __int64 a2)
   unsigned int v55; // ecx
   int v56; // eax
   CHAR *v57; // rax
-  __int64 v58; // rax
+  __int64 UnitWeaponInfo; // rax
   __int64 v59; // r14
   __int64 v60; // r12
   __int64 v61; // rbp
@@ -104,7 +104,7 @@ void __fastcall unknown_ucav(__int64 a1, __int64 a2)
   v9 = *(v3 + 2 * v8 + 0x2C0);
   if ( v9 == 0xFFFF )
     goto LABEL_30;
-  game_ = game;
+  v10 = game;
   if ( (*(game + 0xCB) & 1) != 0 )
   {
     v11 = 0i64;
@@ -115,17 +115,17 @@ void __fastcall unknown_ucav(__int64 a1, __int64 a2)
     if ( v11 )
       EnterCriticalSection(*(game + 0x620));
   }
-  if ( *(game_ + 0x360) <= v9 )
+  if ( *(v10 + 0x360) <= v9 )
   {
-    v13 = *(game_ + 0x378);
-    if ( *(game_ + 0x378) )
+    v13 = *(v10 + 0x378);
+    if ( *(v10 + 0x378) )
     {
-      v14 = *(game_ + 0x368);
+      v14 = *(v10 + 0x368);
       v15 = 0i64;
       while ( 1 )
       {
-        Unit = *(v14 + 8 * v15);
-        if ( (*(Unit + 8) & 0x7FF) == v9 )
+        v12 = *(v14 + 8 * v15);
+        if ( (*(v12 + 8) & 0x7FF) == v9 )
           break;
         if ( v13 == ++v15 )
           goto LABEL_23;
@@ -134,31 +134,31 @@ void __fastcall unknown_ucav(__int64 a1, __int64 a2)
     else
     {
 LABEL_23:
-      Unit = 0i64;
+      v12 = 0i64;
     }
   }
   else
   {
-    Unit = *(*(game_ + 0x350) + 8i64 * v9);
+    v12 = *(*(v10 + 0x350) + 8i64 * v9);
   }
   if ( v11 )
     LeaveCriticalSection(v11);
-  if ( !Unit )
+  if ( !v12 )
   {
 LABEL_30:
     v17 = 0;
-    Unit = 0i64;
+    v12 = 0i64;
     v19 = 0;
-    v18 = v77;
+    Unit = v77;
     if ( v7 != v77 )
       goto LABEL_37;
   }
   else
   {
-    UnitState = *(Unit + 0x10A8);
+    v16 = *(v12 + 0x10A8);
     v17 = 1;
-    v18 = v77;
-    if ( UnitState > 1u )
+    Unit = v77;
+    if ( v16 > 1u )
     {
       v19 = 0;
       if ( v7 != v77 )
@@ -166,17 +166,17 @@ LABEL_30:
     }
     else
     {
-      v19 = *(Unit + 0x4E8) != 0 || UnitState != 1;
+      v19 = *(v12 + 0x4E8) != 0 || v16 != 1;
       if ( v7 != v77 )
         goto LABEL_37;
     }
   }
-  if ( v8 < *(v18 + 0x13B0) )
+  if ( v8 < *(Unit + 0x13B0) )
   {
-    v20 = *(v18 + 0x740);
+    v20 = *(Unit + 0x740);
     *(a2 + 0x19) = _bittest(&v20, v8);
-    v21 = v17 && *(Unit + 0x10A8) <= 1u && (*(Unit + 0x1058) & 0x7000014) != 0;
-    v22 = *(v18 + 0x13A0);
+    v21 = v17 && *(v12 + 0x10A8) <= 1u && (*(v12 + 0x1058) & 0x7000014) != 0;
+    v22 = *(Unit + 0x13A0);
     v23 = 0x60 * v8;
     v24 = 0i64;
     v25 = qword_4ACEE78;
@@ -250,17 +250,17 @@ LABEL_30:
     {
       v40 = (v22 + v23 + 0x44);
       v41 = 1;
-      if ( !*(v18 + 0x980) && !v25[0x434] )
+      if ( !*(Unit + 0x980) && !v25[0x434] )
       {
-        v42 = *(v18 + 0x970);
+        v42 = *(Unit + 0x970);
         v41 = v42
            && (v79 = *(v42 + 0x70),
-               v43 = v18 + 0x50,
-               v44 = *(v18 + 0x50),
+               v43 = Unit + 0x50,
+               v44 = *(Unit + 0x50),
                v45 = v21,
                v46 = (*(v44 + 0x30))(v43),
                v21 = v45,
-               v18 = v77,
+               Unit = v77,
                (dword_4B1C814 & 0x80000) == 0)
            && (dword_4B1C814 & 0x1000000 | v79 ^ v46) == 0;
       }
@@ -281,18 +281,18 @@ LABEL_30:
       v50 = *v48;
       if ( v29.m128_f32[0] <= 0.0 || !v47 )
       {
-        if ( *(v18 + 0x10B0) == 3 )
+        if ( *(Unit + 0x10B0) == 3 )
         {
           v51 = *(a2 + 0x24);
           if ( v51 >= 0.0 && v51 < v50 )
           {
-            sub_EE9790(0x1Ai64, 0i64);
-            v18 = v77;
+            sub_EE9790(0x1Ai64, 0i64, v25);
+            Unit = v77;
             v52 = *(v77 + 0x1890);
             if ( v52 )
             {
               sub_F1CA80(v52, v52 + 0x40, "ucavReady", 0i64);
-              v18 = v77;
+              Unit = v77;
             }
           }
         }
@@ -308,8 +308,8 @@ LABEL_30:
       v54 = 0;
       v55 = *(qword_4ACEE78 + 0x427) != 0 ? 0xFFFFFFFF : v53;
       *(a2 + 0x44) = v55;
-      if ( *(Unit + 0x10A8) <= 1u )
-        v54 = (*(Unit + 0x1058) & 0x7000014) == 0;
+      if ( *(v12 + 0x10A8) <= 1u )
+        v54 = (*(v12 + 0x1058) & 0x7000014) == 0;
       *(a2 + 0x48) = v55 + v54;
       *(a2 + 0x40) = v19;
       *(a2 + 0x3C) = 0;
@@ -317,7 +317,7 @@ LABEL_30:
 LABEL_96:
       v56 = 0x30;
       v17 = 1;
-      if ( *(Unit + 0x10B0) == 3 )
+      if ( *(v12 + 0x10B0) == 3 )
         goto LABEL_98;
       goto LABEL_97;
     }
@@ -337,7 +337,7 @@ LABEL_37:
   *(a2 + 0x40) = v19;
   *(a2 + 0x3C) = 0;
   *(a2 + 0x4C) = 0;
-  if ( v7 == v18 )
+  if ( v7 == Unit )
   {
     if ( v17 )
       goto LABEL_96;
@@ -345,29 +345,29 @@ LABEL_70:
     v17 = 0;
     goto LABEL_97;
   }
-  if ( ((Unit == v18) & v17) != 0 )
+  if ( ((v12 == Unit) & v17) != 0 )
     goto LABEL_96;
 LABEL_97:
   v56 = (*(*a1 + 0x38i64))(a1);
-  v18 = v77;
+  Unit = v77;
 LABEL_98:
   *a2 = v56;
   *(a2 + 8) = 0i64;
-  if ( *(v18 + 0x4E8) && *(v18 + 0x11D0) )
+  if ( *(Unit + 0x4E8) && *(Unit + 0x11D0) )
   {
     v57 = &szFile;
     *(a2 + 0x60) = &szFile;
     if ( v17 )
     {
-      v57 = (*(*Unit + 0x198i64))(Unit);
-      v18 = v77;
+      v57 = (*(*v12 + 0x198i64))(v12);
+      Unit = v77;
     }
     *(a2 + 0x10) = v57;
-    v58 = *(v18 + 0x11D0);
-    if ( *(v58 + 0x2E0) )
+    UnitWeaponInfo = *(Unit + 0x11D0);
+    if ( *(UnitWeaponInfo + 0x2E0) )
     {
-      v59 = *(v58 + 0x2D0);
-      v60 = 8i64 * *(v58 + 0x2E0);
+      v59 = *(UnitWeaponInfo + 0x2D0);
+      v60 = 8i64 * *(UnitWeaponInfo + 0x2E0);
       v61 = 0i64;
       while ( 1 )
       {
