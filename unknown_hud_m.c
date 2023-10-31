@@ -1,0 +1,1169 @@
+void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
+{
+  __int64 v3; // rax
+  __int64 v4; // r13
+  __int64 v5; // rbx
+  __int64 v6; // r14
+  __int64 v7; // rbp
+  __int64 v8; // rax
+  CHAR *v9; // r8
+  __int64 v10; // rax
+  CHAR *v11; // r8
+  __int64 *v12; // r13
+  __int64 v13; // rax
+  __int64 v14; // rsi
+  __int64 v15; // rbp
+  __int64 v16; // rbx
+  __int64 v17; // rax
+  CHAR *v18; // r8
+  __int64 v19; // rax
+  __int64 v20; // rsi
+  __int64 v21; // rbp
+  __int64 v22; // rbx
+  __int64 v23; // rax
+  CHAR *v24; // r8
+  __int64 v25; // rax
+  __int64 v26; // rsi
+  __int64 v27; // rbp
+  unsigned __int64 v28; // rbx
+  __int64 v29; // rax
+  CHAR *v30; // r8
+  __int64 v31; // rax
+  __int64 *v32; // rsi
+  CHAR *v33; // rbx
+  CHAR *v34; // rbx
+  _DWORD *v35; // r12
+  __int64 v36; // rbp
+  __int16 *v37; // r13
+  CHAR *v38; // rdx
+  CHAR *v39; // r8
+  CHAR *v40; // rdx
+  CHAR *v41; // r8
+  unsigned int v42; // r8d
+  __int64 v43; // rax
+  __int64 *v44; // r12
+  __int64 v45; // rcx
+  unsigned int v46; // eax
+  __int64 v47; // rcx
+  CHAR *v48; // r8
+  __int64 v49; // rcx
+  __int64 v50; // rcx
+  CHAR *v51; // r8
+  __int64 v52; // rcx
+  __int64 v53; // rcx
+  CHAR *v54; // r8
+  __int64 v55; // rcx
+  __int64 v56; // rcx
+  CHAR *v57; // r8
+  __int64 v58; // rcx
+  __int64 v59; // rcx
+  CHAR *v60; // r8
+  __int64 v61; // rcx
+  __int64 v62; // rcx
+  CHAR *v63; // r8
+  __int64 v64; // rcx
+  __int64 v65; // rcx
+  CHAR *v66; // r8
+  CHAR *v67; // rbx
+  char *v68; // rdx
+  char *v69; // rdx
+  char *v70; // rdx
+  char *v71; // rdx
+  char *v72; // rdx
+  char *v73; // rdx
+  char *v74; // rdx
+  char *v75; // rdx
+  char *v76; // rdx
+  char *v77; // rdx
+  char *v78; // rdx
+  int v79; // r8d
+  char *v80; // rdx
+  const char *v81; // rax
+  __int64 v82; // rcx
+  unsigned __int64 v83; // rdx
+  __int64 *v84; // rax
+  __int64 *v85; // rax
+  __int64 *v86; // rax
+  __int64 *v87; // rax
+  __int64 *v88; // rax
+  __int64 v89; // rax
+  __int64 *v90; // rbx
+  unsigned __int64 v91; // rbp
+  char *v92; // rdx
+  __int64 *v93; // r15
+  float v94; // xmm6_4
+  __int64 *v95; // rbp
+  __int64 *v96; // rbp
+  __int64 *v97; // rsi
+  signed __int64 v98; // rax
+  unsigned __int64 v99; // rbp
+  char *v100; // rdx
+  char v101; // cl
+  unsigned __int64 v102; // rdx
+  _QWORD *v103; // rbx
+  __int64 v104; // rsi
+  signed __int64 v105; // rax
+  unsigned __int64 v106; // rbp
+  __int64 v107; // r8
+  char v108; // cl
+  unsigned __int64 v109; // rax
+  _QWORD *v110; // rdx
+  __int64 v111; // rax
+  __int64 v112; // rsi
+  __int64 v113; // rbp
+  unsigned __int64 v114; // r14
+  __int64 *v115; // rbx
+  __int64 v116; // rsi
+  __int64 *v117; // rbx
+  int v118; // r8d
+  __int64 *v119; // rdi
+  __int64 v120; // rsi
+  __int64 v121; // rax
+  struct _RTL_CRITICAL_SECTION *v122; // rsi
+  char *v123; // r12
+  __int64 v124; // rdi
+  unsigned int v125; // esi
+  __int64 v126; // rax
+  int v127; // ebx
+  int v128; // eax
+  unsigned int v129; // eax
+  int v130; // eax
+  unsigned int v131; // ecx
+  unsigned int v132; // esi
+  __int64 v133; // r15
+  unsigned int v134; // edx
+  __int64 v135; // rbp
+  unsigned int v136; // eax
+  unsigned int v137; // esi
+  __int64 *v138; // rdx
+  __int64 v139; // rcx
+  __int64 v140; // rdx
+  unsigned int v141; // ebx
+  __int64 v142; // r15
+  __int64 v143; // rdi
+  unsigned int v144; // esi
+  __int64 v145; // rax
+  int v146; // r14d
+  int v147; // eax
+  unsigned int v148; // eax
+  int v149; // eax
+  unsigned int v150; // ecx
+  unsigned int v151; // esi
+  __int64 v152; // r13
+  unsigned int v153; // edx
+  __int64 v154; // rbp
+  unsigned int v155; // eax
+  unsigned int v156; // esi
+  __int64 *v157; // rdx
+  __int64 v158; // rcx
+  __int64 v159; // rdx
+  unsigned int v160; // ebx
+  __int64 v161; // r13
+  __int64 v162; // rsi
+  unsigned int v163; // edi
+  unsigned int v164; // r14d
+  __int64 v165; // rax
+  int v166; // r15d
+  int v167; // eax
+  unsigned int v168; // eax
+  int v169; // eax
+  unsigned int v170; // ecx
+  unsigned int v171; // edi
+  __int64 v172; // r13
+  unsigned int v173; // edx
+  __int64 v174; // rbp
+  unsigned int v175; // eax
+  unsigned int v176; // edi
+  __int64 *v177; // rdx
+  __int64 v178; // rcx
+  __int64 v179; // rdx
+  unsigned int v180; // ebx
+  __int64 v181; // r13
+  int v182; // ecx
+  bool v183; // cf
+  unsigned int v184; // ecx
+  __int64 v185; // rax
+  __int64 v186; // rbx
+  __int64 v187; // rdi
+  unsigned int v188; // edx
+  char v189; // cl
+  unsigned int v190; // eax
+  unsigned int v191; // ecx
+  _QWORD *v192; // rbp
+  __int64 v193; // r14
+  CHAR *v194; // r15
+  int v195; // eax
+  int v196; // ecx
+  unsigned int v197; // ebp
+  int v198; // eax
+  __int64 v199; // rdx
+  unsigned int v200; // edi
+  __int64 v201; // rbx
+  unsigned int v202; // ecx
+  int v203; // eax
+  __int64 *v204; // rbp
+  __int64 v205; // rdx
+  __int64 v206; // rbp
+  unsigned int v207; // edi
+  __int64 *v208; // rdx
+  CHAR *v209; // [rsp+30h] [rbp-A8h] BYREF
+  char *v210; // [rsp+38h] [rbp-A0h]
+  __int64 v211; // [rsp+40h] [rbp-98h]
+  __int64 v212; // [rsp+48h] [rbp-90h]
+  char *v213; // [rsp+50h] [rbp-88h] BYREF
+  __int16 *v214; // [rsp+58h] [rbp-80h]
+  __int64 v215; // [rsp+60h] [rbp-78h]
+  __int64 *v216; // [rsp+68h] [rbp-70h]
+  __int64 v217; // [rsp+70h] [rbp-68h]
+  char *v218; // [rsp+78h] [rbp-60h]
+
+  v217 = a2;
+  v216 = sub_145DB90(a2, "profile");
+  if ( *(hud + 0x39458) )
+  {
+    v3 = sub_145DB90(v216, "internet_radio_stations");
+    if ( *(hud + 0x39458) )
+    {
+      v4 = v3;
+      v5 = 0i64;
+      v6 = 0i64;
+      do
+      {
+        v7 = sub_145DDB0(v4, "station");
+        v8 = *(hud + 0x39448);
+        v9 = &szFile;
+        if ( *(v8 + v5 + 0x10) )
+          v9 = *(v8 + v5);
+        sub_145A110(v7, "name", v9);
+        v10 = *(hud + 0x39448);
+        v11 = &szFile;
+        if ( *(v10 + v5 + 0x28) )
+          v11 = *(v10 + v5 + 0x18);
+        sub_145A110(v7, "path", v11);
+        ++v6;
+        v5 += 0x30i64;
+      }
+      while ( v6 != *(hud + 0x39458) );
+    }
+  }
+  v12 = v216;
+  if ( *(hud + 0x39470) )
+  {
+    v13 = sub_145DB90(v216, "seen_missions");
+    if ( *(hud + 0x39470) )
+    {
+      v14 = v13;
+      v15 = 0x10i64;
+      v16 = 0i64;
+      do
+      {
+        v17 = *(hud + 0x39460);
+        v18 = &szFile;
+        if ( *(v17 + v15) )
+          v18 = *(v17 + v15 - 0x10);
+        sub_145A110(v14, "GUID", v18);
+        ++v16;
+        v15 += 0x18i64;
+      }
+      while ( v16 != *(hud + 0x39470) );
+    }
+  }
+  if ( *(hud + 0x39488) )
+  {
+    v19 = sub_145DB90(v216, "fav_missions");
+    if ( *(hud + 0x39488) )
+    {
+      v20 = v19;
+      v21 = 0x10i64;
+      v22 = 0i64;
+      do
+      {
+        v23 = *(hud + 0x39478);
+        v24 = &szFile;
+        if ( *(v23 + v21) )
+          v24 = *(v23 + v21 - 0x10);
+        sub_145A110(v20, "name", v24);
+        ++v22;
+        v21 += 0x18i64;
+      }
+      while ( v22 != *(hud + 0x39488) );
+    }
+  }
+  if ( *(hud + 0xEB98) )
+  {
+    if ( *(hud + 0x375) )
+    {
+      v25 = sub_145DB90(v216, "delayed_download_contents");
+      if ( *(hud + 0xEB98) )
+      {
+        v26 = v25;
+        v27 = 0x10i64;
+        v28 = 0i64;
+        do
+        {
+          v29 = *(*(game + 0x430) + 0xEB88i64);
+          v30 = &szFile;
+          if ( *(v29 + v27) )
+            v30 = *(v29 + v27 - 0x10);
+          sub_145A110(v26, "tex", v30);
+          ++v28;
+          v27 += 0x18i64;
+        }
+        while ( v28 < *(hud + 0xEB98) );
+      }
+    }
+  }
+  sub_145F7B0(v216, "summary_stat_2");
+  sub_145DB90(v216, "warpoints_stat");
+  v31 = sub_145DB90(v216, "last_played");
+  if ( v31 )
+  {
+    v32 = v31;
+    if ( *(hud + 0x38EC8) >= 2u && *(hud + 0x38EE0) >= 2u )
+    {
+      v33 = &szFile;
+      sub_145A110(v31, "campaignChapter", *(hud + 0x38EB8));
+      if ( *(hud + 0x38EE0) )
+        v33 = *(hud + 0x38ED0);
+      sub_145A110(v32, "campaignItem", v33);
+    }
+    if ( *(hud + 0x38EF8) >= 2u && *(hud + 0x38F10) >= 2u )
+    {
+      v34 = &szFile;
+      sub_145A110(v32, "tutorialChapter", *(hud + 0x38EE8));
+      if ( *(hud + 0x38F10) )
+        v34 = *(hud + 0x38F00);
+      sub_145A110(v32, "tutorialItem", v34);
+    }
+    if ( *(hud + 0x38F40) >= 2u )
+      sub_145A110(v32, "versusItem", *(hud + 0x38F30));
+    v209 = 0i64;
+    v210 = off_4B678C8;
+    v211 = 0i64;
+    v35 = (hud + 0x38F70);
+    v36 = 0i64;
+    v37 = 0i64;
+    do
+    {
+      if ( v35[0xFFFFFFFA] >= 2u && *v35 >= 2u )
+      {
+        v214 = v37;
+        LODWORD(v213) = 2;
+        sub_1546EF0(&v209, 0x20i64, "sm%dChapter", &v213, 1);
+        v39 = &szFile;
+        if ( v35[0xFFFFFFFA] )
+          v39 = *(v35 + 0xFFFFFFFB);
+        v40 = &szFile;
+        if ( v211 )
+          v40 = v209;
+        sub_145A110(v32, v40, v39);
+        v214 = v37;
+        LODWORD(v213) = 2;
+        sub_1546EF0(&v209, 0x20i64, "sm%dItem", &v213, 1);
+        v41 = &szFile;
+        if ( *v35 )
+          v41 = *(v35 + 0xFFFFFFFE);
+        v36 = v209;
+        v38 = v209;
+        if ( !v211 )
+          v38 = &szFile;
+        sub_145A110(v32, v38, v41);
+      }
+      v37 = (v37 + 1);
+      v35 += 0xC;
+    }
+    while ( v37 != &word_8 );
+    v42 = *(hud + 0x390C8);
+    if ( v42 < 8 )
+      sub_145A8E0(v32, "lastSinglMissionPlayed", v42);
+    v12 = v216;
+    if ( v36 )
+      (*(*v210 + 0x40i64))(v210, v36);
+  }
+  v43 = sub_145DB90(v217, "settings");
+  if ( v43 )
+  {
+    v44 = v43;
+    v45 = *(hud + 0x90);
+    v46 = xmmword_4AD8FA8;
+    if ( v45 >= 0 && v45 < xmmword_4AD8FA8 )
+    {
+      v47 = 5 * v45;
+      v48 = &szFile;
+      if ( *(qword_4AD8F98 + 8 * v47 + 0x18) )
+        v48 = *(qword_4AD8F98 + 8 * v47 + 0x18);
+      sub_145A110(v44, "speed", v48);
+      v46 = xmmword_4AD8FA8;
+    }
+    v49 = *(hud + 0x94);
+    if ( v49 >= 0 && v49 < v46 )
+    {
+      v50 = 5 * v49;
+      v51 = &szFile;
+      if ( *(qword_4AD8F98 + 8 * v50 + 0x18) )
+        v51 = *(qword_4AD8F98 + 8 * v50 + 0x18);
+      sub_145A110(v44, "alt", v51);
+      v46 = xmmword_4AD8FA8;
+    }
+    v52 = *(hud + 0x98);
+    if ( v52 >= 0 && v52 < v46 )
+    {
+      v53 = 5 * v52;
+      v54 = &szFile;
+      if ( *(qword_4AD8F98 + 8 * v53 + 0x18) )
+        v54 = *(qword_4AD8F98 + 8 * v53 + 0x18);
+      sub_145A110(v44, "dist", v54);
+      v46 = xmmword_4AD8FA8;
+    }
+    v55 = *(hud + 0x9C);
+    if ( v55 >= 0 && v55 < v46 )
+    {
+      v56 = 5 * v55;
+      v57 = &szFile;
+      if ( *(qword_4AD8F98 + 8 * v56 + 0x18) )
+        v57 = *(qword_4AD8F98 + 8 * v56 + 0x18);
+      sub_145A110(v44, "climbSpeed", v57);
+      v46 = xmmword_4AD8FA8;
+    }
+    v58 = *(hud + 0xA0);
+    if ( v58 >= 0 && v58 < v46 )
+    {
+      v59 = 5 * v58;
+      v60 = &szFile;
+      if ( *(qword_4AD8F98 + 8 * v59 + 0x18) )
+        v60 = *(qword_4AD8F98 + 8 * v59 + 0x18);
+      sub_145A110(v44, "temperature", v60);
+      v46 = xmmword_4AD8FA8;
+    }
+    v61 = *(hud + 0xA4);
+    if ( v61 >= 0 && v61 < v46 )
+    {
+      v62 = 5 * v61;
+      v63 = &szFile;
+      if ( *(qword_4AD8F98 + 8 * v62 + 0x18) )
+        v63 = *(qword_4AD8F98 + 8 * v62 + 0x18);
+      sub_145A110(v44, "wingLoading", v63);
+      v46 = xmmword_4AD8FA8;
+    }
+    v64 = *(hud + 0xA8);
+    if ( v64 >= 0 && v64 < v46 )
+    {
+      v65 = 5 * v64;
+      v66 = &szFile;
+      if ( *(qword_4AD8F98 + 8 * v65 + 0x18) )
+        v66 = *(qword_4AD8F98 + 8 * v65 + 0x18);
+      sub_145A110(v44, "powerToWeightRatio", v66);
+    }
+    sub_145BF90(v44, "grassInTankVision", *(hud + 0x18));
+    sub_145BF90(v44, "selectedOnce", *(hud + 0x3AC));
+    sub_145A8E0(v44, "indicatedSpeedType", *(hud + 0x1C));
+    sub_145BF90(v44, "horizontalSpeed", *(hud + 0x20));
+    sub_145BF90(v44, "autoShowChat", *(hud + 0x21));
+    sub_145A8E0(v44, "chatMessages", *(hud + 0x4C));
+    sub_145A8E0(v44, "tacticalMapScale", *(hud + 0x50));
+    sub_145BF90(v44, "chatFilter", *(hud + 0x22));
+    sub_145BF90(v44, "showPilot", *(hud + 0x23));
+    sub_145BF90(v44, "gunVerticalTargeting", *(hud + 0x24));
+    sub_145BF90(v44, "showDeflection", *(hud + 0x310));
+    sub_145BF90(v44, "showGyroSightDeflection", *(hud + 0x311));
+    sub_145BF90(v44, "hudScreenshotLogo", *(hud + 0x312));
+    sub_145A8E0(v44, "showIndicatorsMode", *(hud + 0x314));
+    sub_145BF90(v44, "showIndicatorsModeTitle", *(hud + 0x314) >> 7);
+    sub_145A8E0(v44, "hudShowFuel", *(hud + 0x320));
+    sub_145A8E0(v44, "hudShowAmmo", *(hud + 0x324));
+    sub_145A8E0(v44, "hudShowTemperature", *(hud + 0x328));
+    sub_145A8E0(v44, "hudTpsCrosshairType", *(hud + 0x330));
+    sub_145A8E0(v44, "hudCrosshairColorPreset", *(hud + 0x334));
+    sub_145A8E0(v44, "autoPilotOnBombAndGunnerView", *(hud + 0x33C));
+    sub_145BF90(v44, "autoRearmOnAirfield", *(hud + 0x340));
+    sub_145BF90(v44, "enableLaserDesignatorBeforeLaunch", *(hud + 0x341));
+    sub_145BF90(v44, "seekerAutoStabilization", *(hud + 0x342));
+    sub_145BF90(v44, "activateAirborneRadarOnSpawn", *(hud + 0x343));
+    sub_145BF90(v44, "useRectangularRadarIndicator", *(hud + 0x344));
+    sub_145BF90(v44, "radarTargetCycling", *(hud + 0x345));
+    sub_145BF90(v44, "useRadarAimElevationControl", *(hud + 0x346));
+    sub_145BF90(v44, "useRadarHudInCockpit", *(hud + 0x347));
+    sub_145BF90(v44, "useTwsHudInCockpit", *(hud + 0x348));
+    sub_145BF90(v44, "activateAirborneActiveCounterMeasuresOnSpawn", *(hud + 0x349));
+    sub_145BF90(v44, "activateAirborneWeaponSelectionOnSpawn", *(hud + 0x34A));
+    sub_145BF90(v44, "automaticEmptyContainersJettison", *(hud + 0x34B));
+    sub_145A8E0(v44, "hintsMask", *(hud + 0x338));
+    sub_145BF90(v44, "autosaveReplays", *(hud + 0x35));
+    sub_145BF90(v44, "showAttachables", *(hud + 0x36));
+    sub_145BF90(v44, "enableXrayDeath", *(hud + 0x35D));
+    sub_145BF90(v44, "enableXrayKill", *(hud + 0x35E));
+    sub_145A8E0(v44, "isSubtitles", *(hud + 0xB0));
+    sub_145A8E0(v44, "isSubtitlesRadio", *(hud + 0xB4));
+    sub_145BF90(v44, "vwsOnlyInCockpit", *(hud + 0xBA));
+    sub_145BF90(v44, "usePTT", *(hud + 0xB8));
+    sub_145BF90(v44, "useVoiceChat", *(hud + 0xB9));
+    sub_145A8E0(v44, "voiceMessageVoice", *(hud + 0x5DC));
+    sub_145A8E0(v44, "viewType", *(hud + 0x54));
+    sub_145BF90(v44, "enableControllerLight", *(hud + 0x369));
+    sub_145BF90(v44, "useOculusToAimHelicopter", *(hud + 0x37));
+    sub_145A8E0(v44, "autoPilotOnGunnerViewHelicopter", *(hud + 0x38));
+    sub_145BF90(v44, "hideMouseInSpectator", *(hud + 0x3C));
+    sub_145BF90(v44, "fixGunInMouseLook", *(hud + 0x3D));
+    sub_145BF90(v44, "delayedDownloadContent", *(hud + 0x36F));
+    sub_145BF90(v44, "replaySnapshotsEnabled", *(hud + 0x378));
+    sub_145A8E0(v44, "recordSnapshotPeriod", *(hud + 0x37C));
+    sub_145A8E0(v44, "preferredDifficulty", *(hud + 0x280));
+    sub_145A8E0(v44, "preferredTeam", *(hud + 0x284));
+    sub_145A8E0(v44, "voiceLanguageType", *(hud + 0x5D0));
+    sub_145A8E0(v44, "aerobaticsSmokeType", *(hud + 0x288));
+    sub_145A8E0(v44, "aerobaticsSmokeColors", *(hud + 0x28C));
+    sub_145A8E0(v44, "gunConvergenceDistance", *(hud + 0x2C0));
+    sub_145B9A0(v44, "bombDelayExplosion");
+    sub_145B9A0(v44, "depthChargeDelayExplosion");
+    sub_145A8E0(v44, "bombActivationType", *(hud + 0x2CC));
+    sub_145B9A0(v44, "rocketFuseDist");
+    sub_145B9A0(v44, "torpedoDiveDepth");
+    sub_145A8E0(v44, "countermeasuresSeries", *(hud + 0x2DC));
+    sub_145B9A0(v44, "countermeasuresPeriods");
+    sub_145B9A0(v44, "countermeasuresSeriesPeriods");
+    sub_145A8E0(v44, "bombSeries", *(hud + 0x2E4));
+    sub_145A8E0(v44, "hudColor", *(hud + 0x44));
+    sub_145A8E0(v44, "hudIndicators", *(hud + 0x48));
+    sub_145BF90(v44, "hangarSound", *(hud + 0xAC));
+    sub_145BF90(v44, "usePerfectRangefinder", *(hud + 0x2F4));
+    sub_145BF90(v44, "saveAiTargetType", *(hud + 0x318));
+    sub_145A8E0(v44, "defaultAiTargetType", *(hud + 0x31C));
+    sub_145BF90(v44, "enableSoundSpeed", *(hud + 0x3BC));
+    sub_145A8E0(v44, "aiGunnerTime", *(hud + 0x40));
+    v213 = 0i64;
+    v214 = off_4B678C8;
+    v215 = 0i64;
+    v210 = (&_ImageBase + 1);
+    LODWORD(v209) = 2;
+    sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
+    v67 = &szFile;
+    v68 = &szFile;
+    if ( v215 )
+      v68 = v213;
+    sub_145A8E0(v44, v68, *(hud + 0x290));
+    v210 = (&_ImageBase + 2);
+    LODWORD(v209) = 2;
+    sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
+    v69 = &szFile;
+    if ( v215 )
+      v69 = v213;
+    sub_145A8E0(v44, v69, *(hud + 0x294));
+    v210 = (&_ImageBase + 3);
+    LODWORD(v209) = 2;
+    sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
+    v70 = &szFile;
+    if ( v215 )
+      v70 = v213;
+    sub_145A8E0(v44, v70, *(hud + 0x298));
+    v210 = &word_4;
+    LODWORD(v209) = 2;
+    sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
+    v71 = &szFile;
+    if ( v215 )
+      v71 = v213;
+    sub_145A8E0(v44, v71, *(hud + 0x29C));
+    v210 = (&word_4 + 1);
+    LODWORD(v209) = 2;
+    sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
+    v72 = &szFile;
+    if ( v215 )
+      v72 = v213;
+    sub_145A8E0(v44, v72, *(hud + 0x2A0));
+    v210 = &word_6;
+    LODWORD(v209) = 2;
+    sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
+    v73 = &szFile;
+    if ( v215 )
+      v73 = v213;
+    sub_145A8E0(v44, v73, *(hud + 0x2A4));
+    v210 = (&word_6 + 1);
+    LODWORD(v209) = 2;
+    sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
+    v74 = &szFile;
+    if ( v215 )
+      v74 = v213;
+    sub_145A8E0(v44, v74, *(hud + 0x2A8));
+    v210 = &word_8;
+    LODWORD(v209) = 2;
+    sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
+    v75 = &szFile;
+    if ( v215 )
+      v75 = v213;
+    sub_145A8E0(v44, v75, *(hud + 0x2AC));
+    v210 = (&word_8 + 1);
+    LODWORD(v209) = 2;
+    sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
+    v76 = &szFile;
+    if ( v215 )
+      v76 = v213;
+    sub_145A8E0(v44, v76, *(hud + 0x2B0));
+    v210 = &word_A;
+    LODWORD(v209) = 2;
+    sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
+    v77 = &szFile;
+    if ( v215 )
+      v77 = v213;
+    sub_145A8E0(v44, v77, *(hud + 0x2B4));
+    v210 = (&word_A + 1);
+    LODWORD(v209) = 2;
+    sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
+    v78 = &szFile;
+    if ( v215 )
+      v78 = v213;
+    sub_145A8E0(v44, v78, *(hud + 0x2B8));
+    v210 = &word_C;
+    LODWORD(v209) = 2;
+    sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
+    v79 = *(hud + 0x2BC);
+    v80 = v213;
+    v218 = v213;
+    if ( !v215 )
+      v80 = &szFile;
+    sub_145A8E0(v44, v80, v79);
+    sub_145A8E0(v44, "timesIntroVideoPlayed", *(hud + 0x384));
+    sub_145B9A0(v44, "graphicsAutodetectGpuTimeAvg");
+    if ( *(hud + 0x3A0) )
+      v67 = *(hud + 0x390);
+    sub_145A110(v44, "graphicsAutodetectGpuInfo", v67);
+    sub_145B9A0(v44, "graphicsAutodetectTimestamp");
+    sub_145BF90(v44, "enableInstructorGroundAvoidance", *(hud + 0x358));
+    sub_145BF90(v44, "enableInstructorGearControl", *(hud + 0x359));
+    sub_145BF90(v44, "enableInstructorFlapsControl", *(hud + 0x35A));
+    sub_145BF90(v44, "enableInstructorEngineControl", *(hud + 0x35B));
+    sub_145BF90(v44, "enableInstructorSimpleJoy", *(hud + 0x35C));
+    sub_145BF90(v44, "storeZoomMapByLevel", *(hud + 0x367));
+    sub_145BF90(v44, "needShowCompassInTankHud", *(hud + 0x36C));
+    sub_145BF90(v44, "pitchBlockerWhileBraking", *(hud + 0x36D));
+    sub_145A8E0(v44, "commanderCameraInViews", *(hud + 0x370));
+    sub_145BF90(v44, "saveDirWhileSwitchTrigger", *(hud + 0x376));
+    v81 = "..\\..\\skyquake\\prog\\main\\playerProfile.cpp";
+    v82 = 0x400000000003i64;
+    while ( 1 )
+    {
+      v83 = *v81 - 0x2E;
+      if ( v83 > 0x2E || !_bittest64(&v82, v83) )
+        break;
+      ++v81;
+    }
+    v210 = v81;
+    LODWORD(v209) = 1;
+    v212 = 0x6CCi64;
+    LODWORD(v211) = 2;
+    dg_debug(3u, "cp: %s,%d", &v209, 2);
+    sub_145A110(v44, "hudArcade", off_44B5F70[*(hud + 0x34C)]);
+    sub_145A110(v44, &unk_498BCB5, off_44B5F70[*(hud + 0x350)]);
+    sub_145A110(v44, "hudHardcore", off_44B5F70[*(hud + 0x354)]);
+    v84 = sub_145DB90(v44, "customSettings");
+    sub_1458A90(v84, (hud + 0x4F8), 0i64);
+    v85 = sub_145DB90(v44, "internetRadioSettings");
+    sub_1458A90(v85, (hud + 0x518), 0i64);
+    v86 = sub_145DB90(v44, "unitsSettings");
+    sub_1458A90(v86, (hud + 0x538), 0i64);
+    v87 = sub_145DB90(v44, "userSkins");
+    sub_1458A90(v87, (hud + 0x558), 0i64);
+    sub_145BF90(v44, "showDestroyedParts", *(hud + 0x3B4));
+    sub_145BF90(v44, "activateGroundRadarOnSpawn", *(hud + 0x3B5));
+    sub_145BF90(v44, "groundRadarTargetCycling", *(hud + 0x3B6));
+    sub_145BF90(v44, "activateGroundActiveCounterMeasuresOnSpawn", *(hud + 0x3B7));
+    sub_145BF90(v44, "tankGunnerCameraFromSight", *(hud + 0x3CC));
+    v88 = sub_145DB90(v44, "tankAltCrosshair");
+    sub_1458A90(v88, (hud + 0x3D0), 0i64);
+    sub_145A8E0(v44, "saveZoomCameraSetting", *(hud + 0x3F0));
+    sub_145BF90(v44, "playInactiveWindowSound", *(hud + 0x3BB));
+    v89 = sub_145DB90(v44, "forbid_visual_tags");
+    if ( *(hud + 0x588) )
+    {
+      v90 = v89;
+      v91 = 0i64;
+      do
+      {
+        v92 = *(*(hud + 0x578) + 8 * v91);
+        if ( !v92 )
+          v92 = &szFile;
+        sub_145BF90(v90, v92, 1);
+        ++v91;
+      }
+      while ( v91 < *(hud + 0x588) );
+    }
+    v93 = sub_145DB90(v44, "hitIndicator");
+    v94 = *&dword_44890B4;
+    sub_145A8E0(v93, "radius", (*(hud + 0xDC) * *&dword_44890B4));
+    sub_145A8E0(v93, "scale", (*(hud + 0xE0) * v94));
+    sub_145A8E0(v93, "alpha", (*(hud + 0xE4) * v94));
+    sub_145A8E0(v93, "timeout", *(hud + 0xE8));
+    v95 = sub_145DB90(v44, "lwsIndicator");
+    sub_145A8E0(v95, "radius", (*(hud + 0xEC) * v94));
+    sub_145A8E0(v95, "scale", (*(hud + 0xF0) * v94));
+    sub_145A8E0(v95, "alpha", (*(hud + 0xF4) * v94));
+    sub_145A8E0(v95, "timeout", *(hud + 0xF8));
+    v96 = sub_145DB90(v44, "lwsIndicatorHelicopter");
+    sub_145A8E0(v96, "radius", (*(hud + 0xFC) * v94));
+    sub_145A8E0(v96, "scale", (*(hud + 0x100) * v94));
+    sub_145A8E0(v96, "alpha", (v94 * *(hud + 0x104)));
+    sub_145A8E0(v96, "timeout", *(hud + 0x108));
+    sub_145BF90(v44, "advancedHitIndicatorSimplified", *(hud + 0xD9));
+    sub_145A8E0(v44, "lwsAzimuthIndicatorTimeout", *(hud + 0x10C));
+    sub_145A8E0(v44, "lwsAzimuthIndicatorTimeoutHelicopter", *(hud + 0x110));
+    sub_145A8E0(v44, "freeCameraZoomSpeed", *(hud + 0x5C8));
+    sub_145A8E0(v44, "replayCameraFov", *(hud + 0x5CC));
+    if ( v218 )
+      (*(*v214 + 0x40i64))(v214);
+    v12 = v216;
+  }
+  LODWORD(v209) = *(hud + 0x39434);
+  if ( *(v12 + 5) != 0xFFFFFFFF )
+    sub_145E9A0(v12);
+  sub_145A790(v12, "scoutTargetSuccess", &v209);
+  LODWORD(v209) = *(hud + 0x39438);
+  if ( *(v12 + 5) != 0xFFFFFFFF )
+    sub_145E9A0(v12);
+  sub_145A790(v12, "scoutBinocularSuccess", &v209);
+  LODWORD(v209) = *(hud + 0x3943C);
+  if ( *(v12 + 5) != 0xFFFFFFFF )
+    sub_145E9A0(v12);
+  sub_145A790(v12, "footballTargetLockShown", &v209);
+  LOBYTE(v209) = *(hud + 0x39440);
+  if ( *(v12 + 5) != 0xFFFFFFFF )
+    sub_145E9A0(v12);
+  sub_145BE60(v12, "automaticExtinguisher", &v209);
+  LOBYTE(v209) = *(hud + 0x39442);
+  if ( *(v12 + 5) != 0xFFFFFFFF )
+    sub_145E9A0(v12);
+  sub_145BE60(v12, "automaticRepair", &v209);
+  LOBYTE(v209) = *(hud + 0x39441);
+  if ( *(v12 + 5) != 0xFFFFFFFF )
+    sub_145E9A0(v12);
+  sub_145BE60(v12, "automaticPump", &v209);
+  LODWORD(v209) = *(hud + 0x39498);
+  if ( *(v12 + 5) != 0xFFFFFFFF )
+    sub_145E9A0(v12);
+  sub_145A790(v12, "globalSaveVersion", &v209);
+  LODWORD(v209) = 2;
+  if ( *(v12 + 5) != 0xFFFFFFFF )
+    sub_145E9A0(v12);
+  sub_145A790(v12, "saveVersion", &v209);
+  v97 = sub_145DB90(v12, &unk_48A9039);
+  LODWORD(v98) = *(hud + 0x39118);
+  if ( v98 > 0 )
+  {
+    v99 = 0i64;
+    do
+    {
+      if ( v99 >= v98 )
+      {
+        v100 = 0i64;
+      }
+      else
+      {
+        v101 = *(hud + 0x39142);
+        v102 = *(*(hud + 0x39110) + 4 * v99) >> v101;
+        v103 = (hud + 0x39120);
+        if ( v102 != *(hud + 0x39138) )
+          v103 = (*(hud + 0x39130) + 0x10 * v102);
+        v100 = (*v103 + (*(*(hud + 0x39110) + 4 * v99) & ~(0xFFFFFFFF << v101)));
+      }
+      sub_145A8E0(v97, v100, *(*(hud + 0x39148) + 4 * v99++));
+      v98 = *(hud + 0x39118);
+    }
+    while ( v99 < v98 );
+  }
+  v104 = sub_145DB90(v12, "seen_video");
+  LODWORD(v105) = *(hud + 0x39180);
+  if ( v105 > 0 )
+  {
+    v106 = 0i64;
+    do
+    {
+      if ( v106 >= v105 )
+      {
+        v107 = 0i64;
+      }
+      else
+      {
+        v108 = *(hud + 0x391AA);
+        v109 = *(*(hud + 0x39178) + 4 * v106) >> v108;
+        v110 = (hud + 0x39188);
+        if ( v109 != *(hud + 0x391A0) )
+          v110 = (*(hud + 0x39198) + 0x10 * v109);
+        v107 = *v110 + (*(*(hud + 0x39178) + 4 * v106) & ~(0xFFFFFFFF << v108));
+      }
+      sub_145A110(v104, "path", v107);
+      ++v106;
+      v105 = *(hud + 0x39180);
+    }
+    while ( v106 < v105 );
+  }
+  sub_145A8E0(v12, "countryId2", *(hud + 0xD424));
+  v111 = sub_145DB90(v12, "hints_count");
+  if ( *(hud + 0xEBB0) )
+  {
+    v112 = v111;
+    v113 = 0i64;
+    v114 = 0i64;
+    do
+    {
+      v115 = sub_145DDB0(v112, "hint");
+      sub_145A8E0(v115, "id", *(*(hud + 0xEBA0) + v113));
+      sub_145A8E0(v115, "totalCount", *(*(hud + 0xEBA0) + v113 + 4));
+      sub_145A8E0(v115, "realisticCount", *(*(hud + 0xEBA0) + v113 + 8));
+      ++v114;
+      v113 += 0xCi64;
+    }
+    while ( v114 < *(hud + 0xEBB0) );
+  }
+  v116 = v217;
+  sub_145E090(v217, hud + 0x39558, "selectedAir");
+  v117 = v216;
+  sub_145BF90(v216, "firstFreeFlight", *(hud + 0x394B0));
+  sub_145A8E0(v117, "completedOneMission", *(hud + 0xEB80));
+  sub_145BF90(v117, "seenNuclearEvent", *(hud + 0xEB84));
+  sub_145BF90(v117, "seenBackgroundNuclearEvent", *(hud + 0xEB85));
+  v118 = *(hud + 0x394B4);
+  v119 = v116;
+  sub_145A8E0(v117, "battleCntWithSupportPlane", v118);
+  v120 = sub_681400(3i64);
+  v121 = sub_145DB90(v119, "customDifficultyBlk");
+  sub_676AA0(v120, v121);
+  v122 = lpCriticalSection;
+  if ( lpCriticalSection )
+  {
+    EnterCriticalSection(lpCriticalSection);
+    v123 = qword_4A79308;
+    LeaveCriticalSection(v122);
+    if ( v123 == 0xFFFFFFFFFFFFFFFFi64 )
+      return;
+  }
+  else
+  {
+    v123 = qword_4A79308;
+    if ( qword_4A79308 == 0xFFFFFFFFFFFFFFFFui64 )
+      return;
+  }
+  v124 = *v119;
+  v125 = 0xFFFFFFFF;
+  if ( v124 )
+  {
+    v126 = *(v124 + 0x50);
+    if ( v126 )
+    {
+      v127 = *(v126 + 0x20);
+      if ( !*(v124 + 0x20) )
+        goto LABEL_178;
+    }
+    else
+    {
+      v127 = 0;
+      if ( !*(v124 + 0x20) )
+        goto LABEL_178;
+    }
+    v128 = sub_128A70(v124, "settings", 8ui64, 0xC5E8B81F);
+    if ( v128 >= 0 )
+    {
+      v129 = v127 + v128;
+LABEL_180:
+      v125 = v129;
+      goto LABEL_181;
+    }
+LABEL_178:
+    if ( !v127 )
+      goto LABEL_181;
+    v129 = sub_128A70(*(v124 + 0x50), "settings", 8ui64, 0xC5E8B81F);
+    goto LABEL_180;
+  }
+LABEL_181:
+  v130 = *(v217 + 0x10);
+  if ( v130 == 0xFFFFFFFF )
+  {
+    v136 = *(v217 + 0xE);
+    if ( !*(v217 + 0xE) )
+      return;
+    v137 = v125 + 1;
+    v138 = *(v217 + 0x18);
+    v139 = *v138;
+    v140 = *(v138 + 2) - 8 * v136;
+    v141 = 0;
+    while ( (*(*(v139 + v140) + 8i64) & 0x3FFFFFFF) != v137 )
+    {
+      ++v141;
+      v140 += 8i64;
+      if ( v136 == v141 )
+        return;
+    }
+    if ( v141 >= v136 )
+      return;
+    v142 = *(v139 + v140);
+    if ( !v142 )
+      return;
+  }
+  else
+  {
+    v131 = *(v217 + 0xE);
+    if ( v130 >= (v130 + v131) )
+      return;
+    v132 = v125 + 1;
+    v133 = *v217 + *(*v217 + 0x5Ci64) + 0x90i64;
+    v134 = 0;
+    while ( 1 )
+    {
+      v135 = 0x20i64 * (v130 + v134);
+      if ( (*(v133 + v135 + 8) & 0x3FFFFFFF) == v132 )
+        break;
+      if ( v131 == ++v134 )
+        return;
+    }
+    if ( v134 >= v131 )
+      return;
+    v142 = v135 + v133;
+  }
+  v143 = *v142;
+  v144 = 0xFFFFFFFF;
+  if ( *v142 )
+  {
+    v145 = *(v143 + 0x50);
+    if ( v145 )
+    {
+      v146 = *(v145 + 0x20);
+      if ( !*(v143 + 0x20) )
+        goto LABEL_203;
+    }
+    else
+    {
+      v146 = 0;
+      if ( !*(v143 + 0x20) )
+        goto LABEL_203;
+    }
+    v147 = sub_128A70(v143, "customSettings", 0xEui64, 0x3B1BE3EDu);
+    if ( v147 >= 0 )
+    {
+      v148 = v146 + v147;
+LABEL_205:
+      v144 = v148;
+      goto LABEL_206;
+    }
+LABEL_203:
+    if ( !v146 )
+      goto LABEL_206;
+    v148 = sub_128A70(*(v143 + 0x50), "customSettings", 0xEui64, 0x3B1BE3EDu);
+    goto LABEL_205;
+  }
+LABEL_206:
+  v149 = *(v142 + 0x10);
+  if ( v149 == 0xFFFFFFFF )
+  {
+    v155 = *(v142 + 0xE);
+    if ( !*(v142 + 0xE) )
+      return;
+    v156 = v144 + 1;
+    v157 = *(v142 + 0x18);
+    v158 = *v157;
+    v159 = *(v157 + 2) - 8 * v155;
+    v160 = 0;
+    while ( (*(*(v158 + v159) + 8i64) & 0x3FFFFFFF) != v156 )
+    {
+      ++v160;
+      v159 += 8i64;
+      if ( v155 == v160 )
+        return;
+    }
+    if ( v160 >= v155 )
+      return;
+    v161 = *(v158 + v159);
+    if ( !v161 )
+      return;
+  }
+  else
+  {
+    v150 = *(v142 + 0xE);
+    if ( v149 >= (v149 + v150) )
+      return;
+    v151 = v144 + 1;
+    v152 = *v142 + *(*v142 + 0x5Ci64) + 0x90i64;
+    v153 = 0;
+    while ( 1 )
+    {
+      v154 = 0x20i64 * (v149 + v153);
+      if ( (*(v152 + v154 + 8) & 0x3FFFFFFF) == v151 )
+        break;
+      if ( v150 == ++v153 )
+        return;
+    }
+    if ( v153 >= v150 )
+      return;
+    v161 = v154 + v152;
+  }
+  v162 = *v161;
+  v163 = 0xFFFFFFFF;
+  if ( !*v161 )
+    goto LABEL_231;
+  v164 = sub_1285C0("accounts", 8ui64);
+  v165 = *(v162 + 0x50);
+  if ( v165 )
+    v166 = *(v165 + 0x20);
+  else
+    v166 = 0;
+  if ( *(v162 + 0x20) && (v167 = sub_128A70(v162, "accounts", 8ui64, v164), v167 >= 0) )
+  {
+    v168 = v166 + v167;
+  }
+  else
+  {
+    if ( !v166 )
+      goto LABEL_231;
+    v168 = sub_128A70(*(v162 + 0x50), "accounts", 8ui64, v164);
+  }
+  v163 = v168;
+LABEL_231:
+  v169 = *(v161 + 0x10);
+  if ( v169 == 0xFFFFFFFF )
+  {
+    v175 = *(v161 + 0xE);
+    if ( *(v161 + 0xE) )
+    {
+      v176 = v163 + 1;
+      v177 = *(v161 + 0x18);
+      v178 = *v177;
+      v179 = *(v177 + 2) - 8 * v175;
+      v180 = 0;
+      while ( (*(*(v178 + v179) + 8i64) & 0x3FFFFFFF) != v176 )
+      {
+        ++v180;
+        v179 += 8i64;
+        if ( v175 == v180 )
+          return;
+      }
+      if ( v180 < v175 )
+      {
+        v181 = *(v178 + v179);
+        if ( v181 )
+        {
+LABEL_246:
+          v213 = 0i64;
+          v214 = off_4B678C8;
+          v215 = 0i64;
+          v182 = *(qword_4B122F8 + 8) & 0x3FFFFFFF;
+          v183 = v182 == 0;
+          v184 = v182 - 1;
+          if ( v183 )
+          {
+LABEL_247:
+            v185 = 0i64;
+            goto LABEL_257;
+          }
+          v186 = *qword_4B122F8;
+          v185 = 0i64;
+          if ( *qword_4B122F8 )
+          {
+            v187 = *(v186 + 0x50);
+            if ( v187 && (LODWORD(v185) = *(v187 + 0x20), v185 > v184) )
+            {
+              v188 = *(*(v187 + 0x18) + 4i64 * v184);
+              v189 = *(v187 + 0x4A);
+              v190 = v188 >> v189;
+            }
+            else
+            {
+              v191 = v184 - v185;
+              if ( *(v186 + 0x20) <= v191 )
+                goto LABEL_247;
+              v188 = *(*(v186 + 0x18) + 4i64 * v191);
+              v189 = *(v186 + 0x4A);
+              v190 = v188 >> v189;
+              v187 = *qword_4B122F8;
+            }
+            v192 = (*(v187 + 0x38) + 0x10i64 * v190);
+            if ( v190 == *(v187 + 0x40) )
+              v192 = (v187 + 0x28);
+            v185 = *v192 + (v188 & ~(0xFFFFFFFF << v189));
+          }
+LABEL_257:
+          v210 = v123;
+          LODWORD(v209) = 2;
+          v212 = v185;
+          LODWORD(v211) = 1;
+          sub_1546EF0(&v213, 0x64i64, "%lld.%s", &v209, 2);
+          sub_14584E0(&v209, off_4B678B0);
+          v193 = v213;
+          v194 = &szFile;
+          if ( v215 )
+            v194 = v213;
+          v195 = sub_145DD00(v181, v194);
+          v196 = *(v181 + 0x10);
+          if ( v196 == 0xFFFFFFFF )
+          {
+            v202 = *(v181 + 0xE);
+            if ( !*(v181 + 0xE) )
+              goto LABEL_275;
+            v203 = v195 + 1;
+            v204 = *(v181 + 0x18);
+            v205 = *v204;
+            v206 = *(v204 + 2) - 8 * v202;
+            v207 = 0;
+            while ( (*(*(v205 + v206) + 8i64) & 0x3FFFFFFF) != v203 )
+            {
+              ++v207;
+              v206 += 8i64;
+              if ( v202 == v207 )
+                goto LABEL_275;
+            }
+            if ( v207 >= v202 )
+              goto LABEL_275;
+            v208 = *(v205 + v206);
+            if ( !v208 )
+              goto LABEL_275;
+          }
+          else
+          {
+            v197 = *(v181 + 0xE);
+            if ( v196 >= (v196 + v197) )
+              goto LABEL_275;
+            v198 = v195 + 1;
+            v199 = *(*v181 + 0x5Ci64) + *v181 + 0x90i64;
+            v200 = 0;
+            while ( 1 )
+            {
+              v201 = 0x20i64 * (v196 + v200);
+              if ( (*(v199 + v201 + 8) & 0x3FFFFFFF) == v198 )
+                break;
+              if ( v197 == ++v200 )
+                goto LABEL_275;
+            }
+            if ( v200 >= v197 )
+              goto LABEL_275;
+            v208 = (v201 + v199);
+          }
+          sub_1458A90(&v209, v208, 0i64);
+LABEL_275:
+          sub_145E230(v181);
+          if ( HIWORD(v210) + WORD2(v210) )
+            sub_145E090(v181, &v209, v194);
+          sub_1458FF0(&v209);
+          if ( v193 )
+            (*(*v214 + 0x40i64))(v214, v193);
+        }
+      }
+    }
+  }
+  else
+  {
+    v170 = *(v161 + 0xE);
+    if ( v169 < (v169 + v170) )
+    {
+      v171 = v163 + 1;
+      v172 = *v161 + *(*v161 + 0x5Ci64) + 0x90i64;
+      v173 = 0;
+      while ( 1 )
+      {
+        v174 = 0x20i64 * (v169 + v173);
+        if ( (*(v172 + v174 + 8) & 0x3FFFFFFF) == v171 )
+          break;
+        if ( v170 == ++v173 )
+          return;
+      }
+      if ( v173 < v170 )
+      {
+        v181 = v174 + v172;
+        goto LABEL_246;
+      }
+    }
+  }
+}
