@@ -1,4 +1,4 @@
-void __fastcall unknown_ballistics_stuff(__int64 a1, int a2, unsigned int a3, float a4, int a5)
+void __fastcall unknown_ballistics_stuff(__int64 ballistics_arg, int a2, unsigned int a3, float a4, int a5)
 {
   float v5; // xmm6_4
   unsigned int v6; // ebx
@@ -476,7 +476,7 @@ LABEL_35:
         v41 = sub_5655B0(game);
         *(*(game_ + 0x440) + 0x28i64) = v41;
       }
-      sub_1114FE0(a1, v6, v38);
+      sub_1114FE0(ballistics_arg, v6, v38);
       v35 = v219;
       LOBYTE(v38) = v201;
       v37 = v224;
@@ -504,9 +504,9 @@ LABEL_95:
               if ( v6 && byte_4A6D7A0 )
               {
                 LOBYTE(v38) = 1;
-                sub_111A070(a1, &xmmword_4B73A88, v38);
+                sub_111A070(ballistics_arg, &xmmword_4B73A88, v38);
               }
-              sub_1118980(a1, &xmmword_4B73A88, v6, 8, 1);
+              sub_1118980(ballistics_arg, &xmmword_4B73A88, v6, 8, 1);
               byte_4A6D7A0 = (v6 | byte_4A6D7A0) ^ 1;
 LABEL_291:
               v35 = v39;
@@ -540,7 +540,7 @@ LABEL_118:
               goto LABEL_120;
             v200 = 0;
             v221 = *(v10 + 0x1080);
-            v74 = a1;
+            v74 = ballistics_arg;
             v204 = v37 == 0;
             v75 = v6;
             v226 = *(v10 + 0x10B0);
@@ -567,14 +567,14 @@ LABEL_118:
                   if ( !byte_4AD2BD9 )
                   {
                     byte_4AD2BD9 = 1;
-                    need_target_for_lock(a1, &xmmword_4B73A88, 1);
+                    need_target_for_lock(ballistics_arg, &xmmword_4B73A88, 1);
                   }
                 }
                 else
                 {
                   byte_4AD2BD9 = 0;
                 }
-                sub_1118980(a1, &xmmword_4B73A88, v6, 8, 1);
+                sub_1118980(ballistics_arg, &xmmword_4B73A88, v6, 8, 1);
               }
               else
               {
@@ -587,9 +587,9 @@ LABEL_118:
                 if ( v6 && byte_4A6D7A1 )
                 {
                   LOBYTE(v38) = 1;
-                  sub_111A070(a1, &xmmword_4B73A88, v38);
+                  sub_111A070(ballistics_arg, &xmmword_4B73A88, v38);
                 }
-                sub_1118980(a1, &xmmword_4B73A88, v6, 8, 1);
+                sub_1118980(ballistics_arg, &xmmword_4B73A88, v6, 8, 1);
                 byte_4A6D7A1 = (v6 | byte_4A6D7A1) ^ 1;
               }
               goto LABEL_291;
@@ -602,7 +602,7 @@ LABEL_118:
               goto LABEL_120;
             v200 = 1;
             v221 = *(v10 + 0x1080);
-            v74 = a1;
+            v74 = ballistics_arg;
             v204 = 0;
             v75 = v6;
             v226 = *(v10 + 0x10B0);
@@ -672,7 +672,7 @@ LABEL_259:
         if ( !*(qword_4ACEE78 + 0x28C) )
           goto LABEL_120;
         v200 = 0;
-        v74 = a1;
+        v74 = ballistics_arg;
         v75 = v6;
         v76 = 2;
         v88 = v34;
@@ -776,7 +776,7 @@ LABEL_140:
           switch ( a2 )
           {
             case 1:
-              sub_1119E50(a1, &xmmword_4B73A88, v57, v6, byte_4AD2BDA);
+              sub_1119E50(ballistics_arg, &xmmword_4B73A88, v57, v6, byte_4AD2BDA);
               goto LABEL_703;
             case 2:
               if ( v203 )
@@ -787,7 +787,7 @@ LABEL_184:
                 v66 = a2 == 0x3D;
               if ( v66 )
               {
-                if ( v6 && sub_11178D0(a1) )
+                if ( v6 && sub_11178D0(ballistics_arg) )
                 {
                   if ( v216 )
                   {
@@ -822,7 +822,7 @@ LABEL_184:
                         v108 = v98 + *&dword_44801E8;
                         if ( v102 > v108 && (v102 - a4) <= v108 && *&dword_44801CC > *(*(v218 + 0x9D0) + 0x12F8i64) )
                         {
-                          sub_1116750(a1);
+                          sub_1116750(ballistics_arg);
                           v102 = *&dword_4AD2C64;
                         }
                       }
@@ -832,13 +832,13 @@ LABEL_184:
                     {
                       if ( ((v231 != 3) & ~v229) != 0 || (*(*(*(game + 0x420) + 0x908i64) + 0x67Ci64) & 0x100000) == 0 )
                       {
-                        if ( sub_11178D0(a1) && LocalUnit )
+                        if ( sub_11178D0(ballistics_arg) && LocalUnit )
                           (*(*LocalUnit + 0x238i64))(LocalUnit);
                       }
                       else if ( !qword_4B507E8 || !*(qword_4B507E8 + 0x60) )
                       {
                         if ( sub_9A5ED0() )
-                          sub_11318E0(a1);
+                          sub_11318E0(ballistics_arg);
                       }
                     }
                   }
@@ -851,7 +851,7 @@ LABEL_184:
                     && *(*(v218 + 0x33A8) + 0x85i64)
                     && *&dword_44801CC < *(*(v218 + 0x9D0) + 0x12F8i64) )
                   {
-                    sub_1116750(a1);
+                    sub_1116750(ballistics_arg);
                   }
                   dword_4AD2C64 = 0xBF800000;
                 }
@@ -1393,7 +1393,7 @@ LABEL_475:
                       if ( v6 && v138 == 3 && *(v10 + 0x4E8) )
                       {
                         if ( *(v55[0x88] + 0x161i64) )
-                          sub_11282C0(a1);
+                          sub_11282C0(ballistics_arg);
                         sub_2C6270(*(v10 + 0x11D0));
                       }
                     }
@@ -1437,14 +1437,14 @@ LABEL_489:
                           && (!qword_4B19AA0 || !*(qword_4B19AA0 + 0xBC)) )
                         {
                           if ( !v6 )
-                            sub_11282C0(a1);
+                            sub_11282C0(ballistics_arg);
                           byte_4AD2C68 = v6;
                         }
                       }
                     }
                     goto LABEL_703;
                   case 0xE5:
-                    sub_1128980(a1, v6);
+                    sub_1128980(ballistics_arg, v6);
                     goto LABEL_703;
                   case 0x127:
                     if ( ((v211 | v229) & v217) == 1 )
@@ -1457,7 +1457,7 @@ LABEL_489:
                            || (v144 = *(v143 + 0x3F0), v144 < *(v143 + 0x278))
                            && (*(*(*(v143 + 0x268) + 8 * v144) + 0x28i64) & 0xFFFFFFFE) == 2) )
                         {
-                          sub_1114620(a1, &v234);
+                          sub_1114620(ballistics_arg, &v234);
                           v55 = game;
                         }
                         else
@@ -1583,7 +1583,7 @@ LABEL_334:
                     v182 = *(game + 0x440);
                     if ( !*(v182 + 0xA31) )
                     {
-                      if ( *(*(v218 + 0x4160) + 0x3F5i64) && !sub_242E60(v182 + 0x2CE8) )
+                      if ( *(*(v218 + 0x4160) + 0x3F5i64) && !sub_242E60((v182 + 0x2CE8)) )
                       {
                         v195 = *(game + 0x440);
                         v185 = *(v195 + 0x97D) != 0;
@@ -1604,15 +1604,15 @@ LABEL_334:
                         if ( byte_4AD14B9 && v197 > (v198 + (*&dword_4AD14C4 * *&dword_44A02D4)) )
                         {
                           byte_4AD14B9 = 0;
-                          sub_1118540(a1, 4i64);
-                          sub_1118540(a1, 6i64);
+                          sub_1118540(ballistics_arg, 4i64);
+                          sub_1118540(ballistics_arg, 6i64);
                         }
                       }
                       else
                       {
                         byte_4AD14B9 = 1;
-                        sub_1118120(a1, 4i64, 0i64, 0i64);
-                        sub_1118120(a1, 6i64, 0i64, 0i64);
+                        sub_1118120(ballistics_arg, 4i64, 0i64, 0i64);
+                        sub_1118120(ballistics_arg, 6i64, 0i64, 0i64);
                       }
                       if ( ((byte_4AD14B9 | v185) & 1) != 0 )
                         HIBYTE(qword_4AD2C51) |= 0x50u;
@@ -1657,13 +1657,13 @@ LABEL_662:
                       if ( *&dword_4AD14D4 * *&qword_44809E0 > v171 )
                       {
                         byte_4AD14C8 = 0;
-                        sub_1118540(a1, 3i64);
+                        sub_1118540(ballistics_arg, 3i64);
                       }
                     }
                     else
                     {
                       byte_4AD14C8 = 1;
-                      sub_1118120(a1, 3i64, 0i64, 0i64);
+                      sub_1118120(ballistics_arg, 3i64, 0i64, 0i64);
                       dword_4AD14CC = dword_4AD14D4;
                     }
                     if ( byte_4AD14C8 == 1 )
@@ -1681,13 +1681,13 @@ LABEL_662:
                       if ( *&dword_4AD14D8 * *&qword_44809E0 > v153 )
                       {
                         byte_4AD14C9 = 0;
-                        sub_1118540(a1, 0xEi64);
+                        sub_1118540(ballistics_arg, 0xEi64);
                       }
                     }
                     else
                     {
                       byte_4AD14C9 = 1;
-                      sub_1118120(a1, 0xEi64, 0i64, 0i64);
+                      sub_1118120(ballistics_arg, 0xEi64, 0i64, 0i64);
                       dword_4AD14D0 = dword_4AD14D8;
                     }
                     if ( byte_4AD14C9 == 1 )
@@ -1739,7 +1739,7 @@ LABEL_409:
                     if ( (v187 & 4) != 0 && *(*(game + 0x430) + 0x341i64) )
                     {
                       LOBYTE(v188) = 1;
-                      sub_1112EC0(a1, v188, 0i64);
+                      sub_1112EC0(ballistics_arg, v188, 0i64);
                     }
                     v189 = v112[0xB];
                     if ( v189 < 3 )
@@ -1766,7 +1766,7 @@ LABEL_410:
                           && (!*(v117 + 0x17C) || *(v117 + 2i64 * (*(qword_4ACEE78 + 0x35) == 0) + 0x190)) )
                         {
 LABEL_593:
-                          sub_1112C80(a1, 1, *(v119 + 0x3F7) == 0, 0);
+                          sub_1112C80(ballistics_arg, 1, *(v119 + 0x3F7) == 0, 0);
                         }
                       }
                     }
@@ -1839,7 +1839,7 @@ LABEL_423:
                             if ( (v122 & 4) != 0 && *(*(game + 0x430) + 0x341i64) )
                             {
                               LOBYTE(v123) = 1;
-                              sub_1112EC0(a1, v123, 0i64);
+                              sub_1112EC0(ballistics_arg, v123, 0i64);
                             }
                             v125 = v120[0xB];
                             if ( v125 < 3 )
@@ -1951,7 +1951,7 @@ LABEL_564:
                     {
                       case 9:
                         if ( v6 )
-                          sub_1118F70(a1);
+                          sub_1118F70(ballistics_arg);
                         goto LABEL_703;
                       case 0xA:
                       case 0x12:
@@ -2047,7 +2047,7 @@ LABEL_564:
                         goto LABEL_423;
                       case 0x60:
                         if ( v6 )
-                          *(*(a1 + 0x90) + 0x844i64) = 0x3F800000;
+                          *(*(ballistics_arg + 0x90) + 0x844i64) = 0x3F800000;
                         goto LABEL_703;
                       default:
                         switch ( a2 )
@@ -2383,13 +2383,13 @@ LABEL_438:
                       if ( *&dword_4AD14D4 * *&qword_44809E0 > v161 )
                       {
                         byte_4AD14C8 = 0;
-                        sub_1118540(a1, 3i64);
+                        sub_1118540(ballistics_arg, 3i64);
                       }
                     }
                     else
                     {
                       byte_4AD14C8 = 1;
-                      sub_1118120(a1, 3i64, 0i64, 0i64);
+                      sub_1118120(ballistics_arg, 3i64, 0i64, 0i64);
                       dword_4AD14CC = dword_4AD14D4;
                     }
                     if ( byte_4AD14C8 == 1 )
@@ -2404,7 +2404,7 @@ LABEL_438:
                       if ( (v173 & 4) != 0 && *(*(game + 0x430) + 0x341i64) )
                       {
                         LOBYTE(v174) = 1;
-                        sub_1112EC0(a1, v174, 0i64);
+                        sub_1112EC0(ballistics_arg, v174, 0i64);
                       }
                       v175 = v107[0xB];
                       if ( v175 < 3 )
@@ -2472,7 +2472,7 @@ LABEL_438:
                       if ( (v133 & 4) != 0 && *(*(game + 0x430) + 0x341i64) )
                       {
                         LOBYTE(v134) = 1;
-                        sub_1112EC0(a1, v134, 0i64);
+                        sub_1112EC0(ballistics_arg, v134, 0i64);
                       }
                       v136 = v107[0xB];
                       if ( v136 < 3 )
@@ -2508,7 +2508,7 @@ LABEL_438:
                     {
                       v162 = sub_3DF3F0(v218);
                       v163 = sub_419330(v218);
-                      if ( sub_242E60(*(game + 0x440) + 0x2CE8i64) )
+                      if ( sub_242E60((*(game + 0x440) + 0x2CE8i64)) )
                       {
                         v164 = 0;
                       }
@@ -2529,15 +2529,15 @@ LABEL_438:
                         if ( byte_4AD14B9 && v179 > (v180 + (*&dword_4AD14C4 * *&dword_44A02D4)) )
                         {
                           byte_4AD14B9 = 0;
-                          sub_1118540(a1, 4i64);
-                          sub_1118540(a1, 6i64);
+                          sub_1118540(ballistics_arg, 4i64);
+                          sub_1118540(ballistics_arg, 6i64);
                         }
                       }
                       else
                       {
                         byte_4AD14B9 = 1;
-                        sub_1118120(a1, 4i64, 0i64, 0i64);
-                        sub_1118120(a1, 6i64, 0i64, 0i64);
+                        sub_1118120(ballistics_arg, 4i64, 0i64, 0i64);
+                        sub_1118120(ballistics_arg, 6i64, 0i64, 0i64);
                       }
                       if ( ((byte_4AD14B9 | v164) & 1) != 0 )
                         HIBYTE(qword_4AD2C51) |= 0x50u;
@@ -2548,7 +2548,7 @@ LABEL_438:
                       v130 = game;
                       *(*(game + 0x440) + 0xA4i64) = *(*(game + 0x440) + 0xA4i64) + a4;
                       *(*(v130 + 0x440) + 0xA8i64) = a4 + *(*(v130 + 0x440) + 0xA8i64);
-                      if ( sub_242E60(*(v130 + 0x440) + 0x2CE8i64) )
+                      if ( sub_242E60((*(v130 + 0x440) + 0x2CE8i64)) )
                         LOBYTE(dword_4AD2C5D) = 0;
                       *(*(v218 + 0x2E68) + 0x2490i64) = *(*(game + 0x440) + 0xA90i64);
                     }
