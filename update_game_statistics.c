@@ -72,7 +72,7 @@ __int64 __fastcall update_game_statistics(__int64 stats)
   }
   sub_18ECA80(stats, "cur_award_negative", negative_award);
   player_name_ = player_name;
-  strncpy(player_name, "MoleNya", 0x41ui64);
+  strncpy(player_name, "ur_username", 0x41ui64);
   player_name[0x40] = 0;
   v13 = lpCriticalSection;
   if ( lpCriticalSection )

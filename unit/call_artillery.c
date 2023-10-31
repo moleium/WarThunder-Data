@@ -17,7 +17,7 @@ void __fastcall call_artillery(float a1, float a2)
   float v17; // xmm7_4
   __int64 v18; // rcx
   double v19; // xmm0_8
-  __int64 v20; // rax
+  __int64 hud; // rax
   __int64 v21; // rsi
   char v22; // [rsp+20h] [rbp-108h]
   float v23; // [rsp+80h] [rbp-A8h] BYREF
@@ -29,7 +29,7 @@ void __fastcall call_artillery(float a1, float a2)
   int v29[3]; // [rsp+A0h] [rbp-88h] BYREF
   char v30; // [rsp+ACh] [rbp-7Ch] BYREF
 
-  if ( sub_A72800() >= 0.0 )
+  if ( get_artillery_dispersion() >= 0.0 )
   {
     v3 = LocalUnit;
     if ( LocalUnit )
@@ -72,11 +72,11 @@ void __fastcall call_artillery(float a1, float a2)
         v24 = *&v19;
         v25 = v17;
         sub_348720(v3, v4, &v23);
-        v20 = *(game + 0x430);
-        v21 = v20 + 0x4F8;
+        hud = *(game + 0x430);
+        v21 = hud + 0x4F8;
         LOBYTE(v29[0]) = 1;
-        if ( *(v20 + 0x50C) != 0xFFFFFFFF )
-          sub_145E9A0(v20 + 0x4F8);
+        if ( *(hud + 0x50C) != 0xFFFFFFFF )
+          sub_145E9A0(hud + 0x4F8);
         sub_145BE60(v21, "artilleryTargettingUseMapFirst", v29);
       }
     }
