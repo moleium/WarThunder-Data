@@ -2,7 +2,7 @@ void __fastcall log_mission_completion(__int64 a1, int a2)
 {
   __m128 v2; // xmm1
   int v5; // eax
-  __int64 v6; // r14
+  __int64 Unit; // r14
   __int64 v7; // rsi
   __int64 v8; // rbp
   __int64 v9; // r8
@@ -23,7 +23,7 @@ void __fastcall log_mission_completion(__int64 a1, int a2)
   float *v24; // rdx
   float v25; // xmm13_4
   float v26; // xmm12_4
-  unsigned int *v27; // rbp
+  unsigned int *hud; // rbp
   unsigned int v28; // edx
   unsigned int *v29; // rbp
   __int64 v30; // rdx
@@ -37,7 +37,7 @@ void __fastcall log_mission_completion(__int64 a1, int a2)
   char v38; // al
   char v39; // bl
   int v40; // eax
-  __int64 v41; // rax
+  __int64 game_; // rax
   __int64 v42; // r12
   CHAR *v43; // rbp
   CHAR *v44; // rbx
@@ -165,7 +165,7 @@ void __fastcall log_mission_completion(__int64 a1, int a2)
     if ( *(*(game + 0x498) + 0x2378i64) )
       return;
   }
-  v6 = LocalUnit;
+  Unit = LocalUnit;
   if ( !LocalUnit || (*(LocalUnit + 0x1058) & 0x7000014) != 0 || *(LocalUnit + 0x10A8) > 1u )
     return;
   v7 = *(game + 0x420);
@@ -224,30 +224,30 @@ void __fastcall log_mission_completion(__int64 a1, int a2)
   v14 = dword_44801CC;
   if ( *&dword_44801CC > *(a1 + 0x7C) )
     LOBYTE(v13) = HIBYTE(*(a1 + 0x10));
-  v15 = *(v6 + 0x99C);
-  v16 = *(v6 + 0x9A0);
-  v17 = *(v6 + 0x9A4);
-  v18 = *(v6 + 0x10B0);
+  v15 = *(Unit + 0x99C);
+  v16 = *(Unit + 0x9A0);
+  v17 = *(Unit + 0x9A4);
+  v18 = *(Unit + 0x10B0);
   v19 = 0.0;
   if ( v18 > 0xF )
     goto LABEL_66;
   v20 = 0x897E;
   if ( _bittest(&v20, v18) )
   {
-    v21 = *(v6 + 0x1EA0);
+    v21 = *(Unit + 0x1EA0);
     v22 = (v21 + 0x54);
     v23 = v21 == 0;
     v24 = &xmmword_4514A60;
     if ( !v23 )
       v24 = v22;
-    if ( *(v6 + 0x58) == 1 )
-      v24 = (v6 + 0x22AC);
+    if ( *(Unit + 0x58) == 1 )
+      v24 = (Unit + 0x22AC);
     v25 = *v24;
     v26 = v24[1];
     v19 = v24[2];
     goto LABEL_22;
   }
-  if ( *(v6 + 0x10B0) )
+  if ( *(Unit + 0x10B0) )
   {
 LABEL_66:
     v26 = 0.0;
@@ -256,32 +256,32 @@ LABEL_66:
   }
   v26 = 0.0;
   v25 = 0.0;
-  if ( (*(v6 + 0x1058) & 0x2000010) == 0 )
+  if ( (*(Unit + 0x1058) & 0x2000010) == 0 )
   {
-    v50 = *(v6 + 0x9D0);
+    v50 = *(Unit + 0x9D0);
     v19 = *(v50 + 0x990);
     v2 = *(v50 + 0x988);
     v26 = *v2.m128_u64;
     v25 = *(v50 + 0x980);
   }
 LABEL_22:
-  v27 = *(game + 0x430);
+  hud = *(game + 0x430);
   if ( !byte_4B1C820 )
   {
 LABEL_25:
-    v29 = v27 + 0xD3;
+    v29 = hud + 0xD3;
     goto LABEL_28;
   }
   v28 = (qword_4B1C514 >> 2) & 3;
   if ( v28 == 1 )
   {
-    v29 = v27 + 0xD4;
+    v29 = hud + 0xD4;
   }
   else
   {
     if ( !v28 )
       goto LABEL_25;
-    v29 = v27 + 0xD5;
+    v29 = hud + 0xD5;
   }
 LABEL_28:
   v137 = v7;
@@ -324,15 +324,15 @@ LABEL_28:
       v34 = v39 | sub_C01460(a1, a2, 1, &v125, v36);
     }
   }
-  if ( *(v6 + 0x10A8) <= 1u && *(v6 + 0x28D) && *(qword_4ACEE78 + 0x75) )
+  if ( *(Unit + 0x10A8) <= 1u && *(Unit + 0x28D) && *(qword_4ACEE78 + 0x75) )
   {
     v40 = sub_BC2D50(0x13i64);
     sub_C01740(a1, a2, v40, &v125, *(a1 + 0x10));
     v34 = 1;
   }
-  v41 = game;
+  game_ = game;
   v42 = v137;
-  if ( *(game + 0x584) > 0.0 && *(v6 + 0x10A8) <= 1u && !*(qword_4B19AA0 + 0x587) )
+  if ( *(game + 0x584) > 0.0 && *(Unit + 0x10A8) <= 1u && !*(qword_4B19AA0 + 0x587) )
   {
     v43 = *(*(game + 0x420) + 0x250i64);
     v44 = &szFile;
@@ -347,13 +347,13 @@ LABEL_28:
     v129 = 0i64;
     if ( *v43 )
       goto LABEL_74;
-    v47 = *(v6 + 0x10B0);
+    v47 = *(Unit + 0x10B0);
     if ( v47 > 0xF )
       goto LABEL_70;
     v48 = 0x897E;
     if ( !_bittest(&v48, v47) )
       goto LABEL_70;
-    v49 = *(v6 + 0x288);
+    v49 = *(Unit + 0x288);
     if ( v49 <= 0.0 )
       goto LABEL_70;
     if ( v47 == 0xF )
@@ -371,7 +371,7 @@ LABEL_68:
         v51 = sub_BC2D50(0x19Ci64);
         v52 = (v49 + *&dword_44801CC);
         v53 = v51;
-        v131 = sub_BC2D50(0x12 - (*(v6 + 0x28C) == 0));
+        v131 = sub_BC2D50(0x12 - (*(Unit + 0x28C) == 0));
         LODWORD(v130) = 1;
         v133 = v52;
         v132 = 2;
@@ -387,7 +387,7 @@ LABEL_74:
         if ( v127 )
           (*(*v128 + 0x40i64))(v128);
         v34 = 1;
-        v41 = game;
+        game_ = game;
         goto LABEL_77;
       }
       if ( v49 != *(*(game + 0x498) + 0x1F28i64) )
@@ -399,7 +399,7 @@ LABEL_70:
     goto LABEL_71;
   }
 LABEL_77:
-  v55 = *(*(v41 + 0x420) + 0x400i64);
+  v55 = *(*(game_ + 0x420) + 0x400i64);
   if ( v55 && *(v55 + 0x1C0) > 0.0 )
   {
     v56 = sub_BC2D50(0xFi64);
@@ -448,7 +448,7 @@ LABEL_77:
       0i64);
     *(&v125 + 1) = v62 + *(a1 + 0x40);
   }
-  if ( !*(qword_4ACEE78 + 0x297) || *(v6 + 0x10B0) || *(v6 + 0x10A8) > 1u )
+  if ( !*(qword_4ACEE78 + 0x297) || *(Unit + 0x10B0) || *(Unit + 0x10A8) > 1u )
   {
 LABEL_155:
     v99 = 0;
@@ -527,9 +527,9 @@ LABEL_173:
       v128 = v109;
       v129 = 0i64;
       v110 = *(v42 + 0x330);
-      v111 = (*(*(v6 + 0x50) + 0x30i64))(v6 + 0x50);
+      v111 = (*(*(Unit + 0x50) + 0x30i64))(Unit + 0x50);
       LOBYTE(v112) = 1;
-      v113 = (*(*(v42 + 0x50) + 0x18i64))(v42 + 0x50, v6 + 0x9C0, v112, v111, v110, 0);
+      v113 = (*(*(v42 + 0x50) + 0x18i64))(v42 + 0x50, Unit + 0x9C0, v112, v111, v110, 0);
       v114 = sub_BC2D50(0x19Ci64);
       v115 = (*(v42 + 0x308) - v107);
       v131 = sub_BC2D50(v113 + 0x14);
@@ -585,7 +585,7 @@ LABEL_173:
   if ( *a1 && (dword_4B19A88 & *(a1 + 4)) != 0 )
   {
     v66 = *(a1 + 0x30);
-    v67 = *(v6 + 0x9D0);
+    v67 = *(Unit + 0x9D0);
     v68 = *(v67 + 0x5524);
     *(a1 + 0x34) = v68;
     if ( *(v67 + 0x12EC) > *&qword_44CE4E8 )
@@ -638,7 +638,7 @@ LABEL_173:
     v74 = *(*(game + 0x440) + 0xAB8i64);
     if ( v72 == 1 && v69 >= v66 && v65 > *&dword_44AD570 && !v10 )
     {
-      if ( sub_325030(v6) > *(a1 + 0x34) )
+      if ( sub_325030(Unit) > *(a1 + 0x34) )
       {
         v72 = 1i64;
       }
@@ -659,8 +659,8 @@ LABEL_173:
       }
     }
     v80 = 0i64;
-    if ( !*(v6 + 0x10B0) )
-      v80 = v6;
+    if ( !*(Unit + 0x10B0) )
+      v80 = Unit;
     v81 = 0i64;
     if ( !*(v80 + 0x10B0) )
     {
@@ -732,7 +732,7 @@ LABEL_137:
           (*(*v128 + 0x40i64))(v128, v94);
       }
     }
-    v96 = *(v6 + 0x11B0);
+    v96 = *(Unit + 0x11B0);
     if ( v96 && *(v96 + 0xB24) )
     {
       v97 = (v126 << 0x18) | v124 & 0xFFFFFF;
