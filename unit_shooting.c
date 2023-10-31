@@ -34,7 +34,7 @@ void __fastcall unit_shooting(__int64 Unit, __int64 a2)
   char v35; // bp
   float v36; // xmm0_4
   int v37; // eax
-  __int64 v38; // rbx
+  __int64 ballistics_; // rbx
   _DWORD *v39; // rcx
   unsigned int v40; // edi
   __int64 v41; // rdx
@@ -283,8 +283,8 @@ void __fastcall unit_shooting(__int64 Unit, __int64 a2)
   __int64 v284; // rdx
   unsigned int v285; // eax
   int v286; // ecx
-  __int64 v287; // rax
-  __int64 v288; // rcx
+  __int64 game_; // rax
+  __int64 ballistics; // rcx
   unsigned int v289; // edi
   __int64 v290; // r12
   __int64 v291; // rbx
@@ -996,12 +996,12 @@ LABEL_61:
       }
       if ( (*(*v151 + 0x18i64))(Unit + 0x50) )
       {
-        v287 = game;
-        v288 = *(game + 0x440);
-        if ( v288 )
+        game_ = game;
+        ballistics = *(game + 0x440);
+        if ( ballistics )
         {
-          *(v288 + 0x162) = 1;
-          sub_468440(*(v287 + 0x440));
+          *(ballistics + 0x162) = 1;
+          sub_468440(*(game_ + 0x440));
         }
       }
       return;
@@ -1040,8 +1040,8 @@ LABEL_61:
       v36 = v328 * *&qword_44ACA28;
       *(Unit + 0x270) = v36;
       v37 = v327;
-      v38 = *(game + 0x440);
-      if ( *(v38 + 0x278) > v327 )
+      ballistics_ = *(game + 0x440);
+      if ( *(ballistics_ + 0x278) > v327 )
       {
         if ( *(Unit + 0x268) != v327 )
         {
@@ -1052,7 +1052,7 @@ LABEL_61:
           }
           else
           {
-            v39 = *(*(v38 + 0x268) + 8i64 * v327);
+            v39 = *(*(ballistics_ + 0x268) + 8i64 * v327);
             v40 = v39[0xA];
             v41 = (*(*v39 + 0x10i64))(v39);
           }
@@ -1061,9 +1061,9 @@ LABEL_61:
         }
         *(Unit + 0x268) = v37;
         v256 = *&qword_44ACA30;
-        if ( v37 >= 0 && *(v38 + 0x278) > v37 )
+        if ( v37 >= 0 && *(ballistics_ + 0x278) > v37 )
         {
-          v257 = *(*(v38 + 0x268) + 8i64 * v37);
+          v257 = *(*(ballistics_ + 0x268) + 8i64 * v37);
           v256 = dbl_44ACA40[(*(*v257 + 0x10i64))(v257) == 3];
         }
         v258 = v329 * v256;
