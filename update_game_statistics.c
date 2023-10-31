@@ -1,6 +1,6 @@
 __int64 __fastcall update_game_statistics(__int64 stats)
 {
-  __int64 v2; // rax
+  __int64 hud; // rax
   __int64 v3; // r8
   __int64 v4; // rax
   unsigned int v5; // eax
@@ -18,22 +18,22 @@ __int64 __fastcall update_game_statistics(__int64 stats)
   sub_18EB840();
   if ( qword_4AE5640 )
   {
-    v2 = *(game + 0x430);
-    v3 = *(v2 + 0xCFD8)
-       + *(v2 + 0xCFC0)
-       + *(v2 + 0xCF30)
-       + *(v2 + 0xCFBC)
-       + *(v2 + 0xCFB8)
-       + *(v2 + 0xCFB0)
-       + *(v2 + 0xCF48)
-       + *(v2 + 0xCEE0)
-       + *(v2 + 0xCEF8)
-       - *(v2 + 0xCF10)
-       - *(v2 + 0xCFB4)
-       - (*(v2 + 0xCFA8)
-        + *(v2 + 0xCF90))
-       - *(v2 + 0xCFF0);
-    v4 = *(v2 + 0xCFF8);
+    hud = *(game + 0x430);
+    v3 = *(hud + 0xCFD8)
+       + *(hud + 0xCFC0)
+       + *(hud + 0xCF30)
+       + *(hud + 0xCFBC)
+       + *(hud + 0xCFB8)
+       + *(hud + 0xCFB0)
+       + *(hud + 0xCF48)
+       + *(hud + 0xCEE0)
+       + *(hud + 0xCEF8)
+       - *(hud + 0xCF10)
+       - *(hud + 0xCFB4)
+       - (*(hud + 0xCFA8)
+        + *(hud + 0xCF90))
+       - *(hud + 0xCFF0);
+    v4 = *(hud + 0xCFF8);
     if ( v3 >= v4 )
       v3 = v4;
   }
@@ -72,7 +72,7 @@ __int64 __fastcall update_game_statistics(__int64 stats)
   }
   sub_18ECA80(stats, "cur_award_negative", negative_award);
   player_name_ = player_name;
-  strncpy(player_name, "ur username", 0x41ui64);
+  strncpy(player_name, "MoleNya", 0x41ui64);
   player_name[0x40] = 0;
   v13 = lpCriticalSection;
   if ( lpCriticalSection )
