@@ -1,6 +1,6 @@
 __int64 __fastcall log_server_main(__int64 a1)
 {
-  float *v2; // rdi
+  float *Unit; // rdi
   _QWORD *v3; // rdi
   _BYTE *v4; // rsi
   unsigned __int64 v5; // rbx
@@ -10,7 +10,7 @@ __int64 __fastcall log_server_main(__int64 a1)
   _QWORD *v9; // rcx
   char *v10; // rdx
   __int64 result; // rax
-  __int64 v12; // rsi
+  __int64 air_movement; // rsi
   float v13; // xmm0_4
   float v14; // xmm0_4
   float v15; // xmm6_4
@@ -43,8 +43,8 @@ __int64 __fastcall log_server_main(__int64 a1)
   float v42; // xmm2_4
   float v43; // xmm1_4
   float v44; // xmm4_4
-  float v45; // xmm0_4
-  __int64 v46; // rsi
+  float velocity; // xmm0_4
+  __int64 _air_movement_; // rsi
   __int64 v47; // rdx
   float *v48; // r14
   double v49; // r12
@@ -157,7 +157,7 @@ __int64 __fastcall log_server_main(__int64 a1)
   __int64 v156; // [rsp+48h] [rbp-170h]
   int v157; // [rsp+50h] [rbp-168h]
   const char *v158; // [rsp+58h] [rbp-160h]
-  __int64 v159; // [rsp+80h] [rbp-138h]
+  __int64 air_movement_; // [rsp+80h] [rbp-138h]
   char *server; // [rsp+88h] [rbp-130h] BYREF
   _QWORD *v161; // [rsp+90h] [rbp-128h]
   __int64 v162; // [rsp+98h] [rbp-120h]
@@ -168,11 +168,11 @@ __int64 __fastcall log_server_main(__int64 a1)
   __int64 v167; // [rsp+C0h] [rbp-F8h]
   __int64 v168; // [rsp+C8h] [rbp-F0h]
 
-  v2 = LocalUnit;
+  Unit = LocalUnit;
   if ( !LocalUnit
     || *(LocalUnit + 0x10B0)
     || (*(LocalUnit + 0x1058) & 0x2000010) != 0
-    || (v12 = *(LocalUnit + 0x9D0)) == 0 )
+    || (air_movement = *(LocalUnit + 0x9D0)) == 0 )
   {
     v3 = off_4B678B0;
     v4 = (*(*off_4B678B0 + 0x18i64))(off_4B678B0, 0x112i64);
@@ -211,40 +211,40 @@ __int64 __fastcall log_server_main(__int64 a1)
   server = (*(*off_4B678C8 + 0x18i64))(off_4B678C8, 0x10i64);
   v162 = 0x100000000Fi64;
   strcpy(server, "{\"valid\\": true");
-  v13 = *(v12 + 0x910);
+  v13 = *(air_movement + 0x910);
   v14 = fminf(v13, *&dword_4A7920C);
   v15 = fsqrt(
           ((((((((*&dword_44A41E4 * v14) + *&dword_44A41E8) * v14) + *&dword_44A41EC) * v14) + *&dword_44A41F0) * v14)
          + Y)
-        * *&dword_4A79204);
-  v16 = *(v12 + 0x988) - (*(v12 + 0xA08) + *(v12 + 0x57C0));
-  v17 = *(v12 + 0x990) - (*(v12 + 0xA10) + *(v12 + 0x57C8));
+        * *&MEMORY[0x4A79204]);
+  v16 = *(air_movement + 0x988) - (*(air_movement + 0xA08) + *(air_movement + 0x57C0));
+  v17 = *(air_movement + 0x990) - (*(air_movement + 0xA10) + *(air_movement + 0x57C8));
   v18 = v16;
-  v19 = *(v12 + 0x980) - (*(v12 + 0xA00) + *(v12 + 0x57B8));
+  v19 = *(air_movement + 0x980) - (*(air_movement + 0xA00) + *(air_movement + 0x57B8));
   v20 = *&dword_44890B4;
-  v154 = (*(v12 + 0xA64) * *&dword_44890B4);
+  v154 = (*(air_movement + 0xA64) * *&dword_44890B4);
   v152 = 3;
-  v159 = v12;
+  air_movement_ = air_movement;
   (add_server_param)(&server, 0x200i64, ",\n\"aileron, %%\": %.0f", v16);
-  v154 = (*(v12 + 0xA68) * v20);
+  v154 = (*(air_movement + 0xA68) * v20);
   v152 = 3;
   (add_server_param)(&server, 0x200i64, ",\n\"elevator, %%\": %.0f", v16);
-  v154 = (*(v12 + 0xA6C) * v20);
+  v154 = (*(air_movement + 0xA6C) * v20);
   v152 = 3;
   (add_server_param)(&server, 0x200i64, ",\n\"rudder, %%\": %.0f", v16);
-  if ( *(v12 + 0x568E) )
+  if ( *(air_movement + 0x568E) )
   {
-    v154 = (*(v12 + 0x12EC) * *&dword_44890B4);
+    v154 = (*(air_movement + 0x12EC) * *&dword_44890B4);
     v152 = 3;
     (add_server_param)(&server, 0x200i64, ",\n\"flaps, %%\": %.0f", v16);
   }
   v21 = v15 * *&dword_44AD650;
   v22 = fsqrt(((v17 * v17) + (v18 * v18)) + (v19 * v19));
-  if ( *(v12 + 0x568B) )
+  if ( *(air_movement + 0x568B) )
   {
     v23 = 0;
-    if ( (*(v12 + 0x12DC) * *&dword_44A0344) > 0 )
-      v23 = (*(v12 + 0x12DC) * *&dword_44A0344);
+    if ( (*(air_movement + 0x12DC) * *&dword_44A0344) > 0 )
+      v23 = (*(air_movement + 0x12DC) * *&dword_44A0344);
     v24 = 0xFF;
     if ( v23 < 0xFF )
       v24 = v23;
@@ -254,11 +254,11 @@ __int64 __fastcall log_server_main(__int64 a1)
   }
   v25 = v21;
   v26 = v22;
-  if ( *(v12 + 0x5695) )
+  if ( *(air_movement + 0x5695) )
   {
     v27 = 0;
-    if ( (*(v12 + 0x12E4) * *&dword_44A0344) > 0 )
-      v27 = (*(v12 + 0x12E4) * *&dword_44A0344);
+    if ( (*(air_movement + 0x12E4) * *&dword_44A0344) > 0 )
+      v27 = (*(air_movement + 0x12E4) * *&dword_44A0344);
     v28 = 0xFF;
     if ( v27 < 0xFF )
       v28 = v27;
@@ -267,19 +267,20 @@ __int64 __fastcall log_server_main(__int64 a1)
     (add_server_param)(&server, 0x200i64, ",\n\"airbrake, %%\": %.0f", v16);
   }
   v167 = a1;
-  v154 = *(v12 + 0x910);
+  v154 = *(air_movement + 0x910);
   v152 = 3;
   (add_server_param)(&server, 0x200i64, ",\n\"H, m\": %.0f", v16);
   v29 = *&qword_44B14B8 * v26;
   v154 = *&qword_44B14B8 * v26;
   v152 = 3;
   (add_server_param)(&server, 0x200i64, ",\n\"TAS, km/h\": %.0f", v16);
-  v30 = *(v12 + 0x910);
+  v30 = *(air_movement + 0x910);
   v31 = fminf(v30, *&dword_4A7920C);
   *&v32 = dword_44A0190;
   *&v32 = (((((((*&dword_44A0190 * v31) + *&dword_44A0194) * v31) + *&dword_44A0198) * v31) + *&dword_44A019C) * v31)
         + Y;
-  v154 = fsqrt(((*&dword_4A7920C * *&dword_4A79208) * *&v32) / (fmaxf(v30, *&dword_4A7920C) * *&dword_4A791F8)) * v29;
+  v154 = fsqrt(((*&dword_4A7920C * *&globalTemperature) * *&v32) / (fmaxf(v30, *&dword_4A7920C) * *&dword_4A791F8))
+       * v29;
   v152 = 3;
   (add_server_param)(&server, 0x200i64, ",\n\"IAS, km/h\": %.0f", &v152, 1);
   v154 = v26 / v25;
@@ -289,45 +290,45 @@ __int64 __fastcall log_server_main(__int64 a1)
   {
     v33 = qword_4480160;
     v34 = qword_4480160 / v26;
-    v35 = *(v12 + 0x9F0) * (qword_4480160 / v26);
+    v35 = *(air_movement + 0x9F0) * (qword_4480160 / v26);
     v36 = *&qword_4480198;
     v37 = asin(fmin(fmax(v35, *&qword_4480198), qword_4480160));
     v154 = (v37 * *&dword_44A47B8);
     v152 = 3;
     (add_server_param)(&server, 0x200i64, ",\n\"AoA, deg\": %.1f", v32);
-    v38 = asin(fmin(fmax(v34 * *(v12 + 0x9F8), v36), v33));
+    v38 = asin(fmin(fmax(v34 * *(air_movement + 0x9F8), v36), v33));
     v154 = (v38 * *&dword_44A02B0);
     v152 = 3;
     (add_server_param)(&server, 0x200i64, ",\n\"AoS, deg\": %.1f", v32);
     v39 = v17 * (Y / v22);
     v40 = v18 * (Y / v22);
     v41 = (Y / v22) * v19;
-    v42 = (v2[0x26B] * v41) - (v2[0x26A] * v40);
-    v43 = (v2[0x26A] * v39) - (v2[0x26C] * v41);
-    *&v34 = *(v12 + 0x9A8);
+    v42 = (Unit[0x26B] * v41) - (Unit[0x26A] * v40);
+    v43 = (Unit[0x26A] * v39) - (Unit[0x26C] * v41);
+    *&v34 = *(air_movement + 0x9A8);
     HIDWORD(v32) = 0;
-    *&v32 = *&dword_4A791FC + *(v12 + 0x9A0);
-    v44 = *(v12 + 0x998);
-    *&v32 = *&v32 * ((v41 * v42) - (((v2[0x26C] * v40) - (v2[0x26B] * v39)) * v39));
+    *&v32 = *&dword_4A791FC + *(air_movement + 0x9A0);
+    v44 = *(air_movement + 0x998);
+    *&v32 = *&v32 * ((v41 * v42) - (((Unit[0x26C] * v40) - (Unit[0x26B] * v39)) * v39));
     v154 = ((((v44 * ((v43 * v39) - (v42 * v40)))
-            + (*&v34 * ((((v2[0x26C] * v40) - (v2[0x26B] * v39)) * v40) - (v43 * v41))))
+            + (*&v34 * ((((Unit[0x26C] * v40) - (Unit[0x26B] * v39)) * v40) - (v43 * v41))))
            + *&v32)
           / *&dword_4A791FC);
     v152 = 3;
     LODWORD(v142) = 1;
     (add_server_param)(&server, 0x200i64, ",\n\"Ny\": %.2f", &v152, v142);
   }
-  v154 = *(v12 + 0x988);
+  v154 = *(air_movement + 0x988);
   v152 = 3;
   (add_server_param)(&server, 0x200i64, ",\n\"Vy, m/s\": %.1f", v32);
-  v45 = *(v159 + 0x9B0);
-  v154 = (v45 * *&dword_44A02B0);
+  velocity = *(air_movement_ + 0x9B0);
+  v154 = (velocity * *&dword_44A02B0);
   v152 = 3;
-  v46 = v159;
+  _air_movement_ = air_movement_;
   (add_server_param)(&server, 0x200i64, ",\n\"Wx, deg/s\": %.0f", v32);
-  if ( *(v46 + 0x38CC) > 0 )
+  if ( *(_air_movement_ + 0x38CC) > 0 )
   {
-    v48 = (v46 + 0x3654);
+    v48 = (_air_movement_ + 0x3654);
     v49 = 0.0;
     do
     {
@@ -360,17 +361,17 @@ __int64 __fastcall log_server_main(__int64 a1)
       if ( v51 )
         (*(*v164 + 0x40i64))(v164, v51);
       ++*&v49;
-      v46 = v159;
+      _air_movement_ = air_movement_;
       v48 += 0xA;
     }
-    while ( *&v49 < *(v159 + 0x38CC) );
+    while ( *&v49 < *(air_movement_ + 0x38CC) );
   }
-  v53 = *(v46 + 0x3AC8);
+  v53 = *(_air_movement_ + 0x3AC8);
   v54 = *v53;
   if ( *v53 > 0 )
   {
     v55 = Y / *&dword_4A791FC;
-    v168 = v46 + 0x13B4;
+    v168 = _air_movement_ + 0x13B4;
     v56 = 0i64;
     v57 = &server;
     v58 = *&dword_44CAB20;
@@ -392,7 +393,7 @@ __int64 __fastcall log_server_main(__int64 a1)
         v155[0] = 3;
         LODWORD(v142) = 2;
         (add_server_param)(v57, 0x200i64, ",\n\"throttle %d, %%\": %.0f", &v152, v142);
-        v67 = *(v46 + 0x3AC8);
+        v67 = *(_air_movement_ + 0x3AC8);
         v68 = *(v67 + 8 * v56 + 0xA534);
         if ( v68 >= 0 )
         {
@@ -534,7 +535,7 @@ __int64 __fastcall log_server_main(__int64 a1)
               v155[0] = 3;
               LODWORD(v145) = 2;
               (add_server_param)(v57, 0x200i64, ",\n\"RPM throttle %d, %%\": %.0f", &v152, *&v145);
-              v46 = v159;
+              _air_movement_ = air_movement_;
             }
           }
         }
@@ -582,7 +583,7 @@ __int64 __fastcall log_server_main(__int64 a1)
           LODWORD(v145) = 2;
           (add_server_param)(v57, 0x200i64, ",\n\"magneto %d\": %s", &v152, v145);
         }
-        v99 = *(v46 + 0x3AC8);
+        v99 = *(_air_movement_ + 0x3AC8);
         v100 = *(v99 + 8 * v56 + 0xA534);
         if ( v100 >= 0 )
         {
@@ -694,7 +695,7 @@ __int64 __fastcall log_server_main(__int64 a1)
         LODWORD(v148) = 2;
         v118 = v57;
         (add_server_param)(v57, 0x200i64, ",\n\"oil temp %d, C\": %.0f", &v152, v148);
-        v122 = *(v46 + 0x3AC8);
+        v122 = *(_air_movement_ + 0x3AC8);
         v123 = *(v122 + 0xA534);
         if ( v123 >= 0 && (v124 = *(v122 + 8 * v123 + 0xA4B0), v125 = *(v124 + 0x38), *(v124 + 0x38)) )
         {
@@ -752,14 +753,14 @@ __int64 __fastcall log_server_main(__int64 a1)
           LODWORD(v149) = 2;
           v127 = v118;
           (add_server_param)(v118, 0x200i64, ",\n\"pitch %d, deg\": %.1f", &v163, v149);
-          v122 = *(v46 + 0x3AC8);
+          v122 = *(_air_movement_ + 0x3AC8);
         }
         else
         {
           v127 = v118;
         }
-        v136 = *(v46 + 0x9E8);
-        sub_1563360(v46, v119, v120, v121, &xmmword_4B67A14);
+        v136 = *(_air_movement_ + 0x9E8);
+        sub_1563360(_air_movement_, v119, v120, v121, &xmmword_4B67A14);
         v137 = fsqrt(
                  (((*(v122 + 0xC * v56 + 0xA69C) + v63[0xA7]) * (*(v122 + 0xC * v56 + 0xA69C) + v63[0xA7]))
                 + ((*(v122 + 0xC * v56 + 0xA698) + v63[0xA6]) * (*(v122 + 0xC * v56 + 0xA698) + v63[0xA6])))
@@ -771,8 +772,10 @@ __int64 __fastcall log_server_main(__int64 a1)
         LODWORD(v165) = 3;
         LODWORD(v150) = 2;
         (add_server_param)(v127, 0x200i64, ",\n\"thrust %d, kgs\": %.0f", &v163, v150);
-        *&v136 = sqrt(*(v46 + 0x990) * *(v46 + 0x990) + *(v46 + 0x988) * *(v46 + 0x988)
-                                                      + *(v46 + 0x980) * *(v46 + 0x980));
+        *&v136 = sqrt(
+                   *(_air_movement_ + 0x990) * *(_air_movement_ + 0x990)
+                 + *(_air_movement_ + 0x988) * *(_air_movement_ + 0x988)
+                 + *(_air_movement_ + 0x980) * *(_air_movement_ + 0x980));
         v138 = 0.0;
         v139 = fmaxf(*&v136 * v137, 0.0) * v20;
         v57 = v127;
@@ -784,7 +787,7 @@ __int64 __fastcall log_server_main(__int64 a1)
         LODWORD(v165) = 3;
         LODWORD(v151) = 2;
         (add_server_param)(v127, 0x200i64, ",\n\"efficiency %d, %%\": %.0f", &v163, v151);
-        v53 = *(v46 + 0x3AC8);
+        v53 = *(_air_movement_ + 0x3AC8);
         v54 = *v53;
       }
       ++v56;
