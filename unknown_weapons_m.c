@@ -19,7 +19,7 @@ double __fastcall unknown_weapons_m(unsigned __int64 *a1, __int64 a2, __int64 a3
   __int64 v23; // rax
   __int64 v24; // rcx
   __int64 v25; // rax
-  __int64 v26; // rcx
+  __int64 game_optics; // rcx
   bool v27; // si
   __int64 air_movement; // r15
   float v29; // xmm15_4
@@ -1143,9 +1143,11 @@ LABEL_18:
   }
   if ( (*(mUnit_ + 0x1058) & 0x7000014) != 0
     || *(mUnit__ + 0x10A8) > 1u
-    || ((v26 = *(game + 0x498), !*(v26 + 0x27ED)) || !*(*(game + 0x430) + 0xD5i64))
+    || ((game_optics = *(game + 0x498), !*(game_optics + 0x27ED)) || !*(*(game + 0x430) + 0xD5i64))
     && (((*(mUnit__ + 0x1083) & 8) == 0) & ~v4) != 0
-    || byte_4B19A94 && (!*(v26 + 0x27EE) || !*(*(game + 0x430) + 0xD6i64)) && !(v4 | ((*(mUnit__ + 0x1083) & 8) >> 3)) )
+    || byte_4B19A94
+    && (!*(game_optics + 0x27EE) || !*(*(game + 0x430) + 0xD6i64))
+    && !(v4 | ((*(mUnit__ + 0x1083) & 8) >> 3)) )
   {
     if ( !byte_4B19A60 )
     {
