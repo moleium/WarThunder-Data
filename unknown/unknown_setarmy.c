@@ -2,7 +2,7 @@ void __fastcall unknown_setarmy(__int64 Player, char a2, __int64 a3)
 {
   unsigned __int8 v5; // bl
   __int64 SomeWhatUnit; // rsi
-  unsigned __int8 v7; // al
+  unsigned __int8 AlsoUnitInfo; // al
   __int64 v8; // rdx
   _QWORD *OwnedUnit; // rsi
   unsigned __int8 v10; // bl
@@ -32,8 +32,8 @@ void __fastcall unknown_setarmy(__int64 Player, char a2, __int64 a3)
     SomeWhatUnit = *(Player + 0x720);
     if ( SomeWhatUnit )
     {
-      v7 = *(SomeWhatUnit + 0x1110);
-      if ( v7 != v5 )
+      AlsoUnitInfo = *(SomeWhatUnit + 0x1110);
+      if ( AlsoUnitInfo != v5 )
       {
         if ( !*(SomeWhatUnit + 0x10B0) )
         {
@@ -42,15 +42,15 @@ void __fastcall unknown_setarmy(__int64 Player, char a2, __int64 a3)
           v18 = 1;
           v21 = v8;
           v20 = 2;
-          v23 = v7;
+          v23 = AlsoUnitInfo;
           v22 = 2;
           v25 = v5;
           v24 = 2;
           dg_debug(3u, "%s fm %d army %d -> %d", &v18, 4);
-          v7 = *(SomeWhatUnit + 0x1110);
+          AlsoUnitInfo = *(SomeWhatUnit + 0x1110);
         }
         LOBYTE(v18) = v5;
-        if ( v7 != v5 )
+        if ( AlsoUnitInfo != v5 )
         {
           sub_158CE00(SomeWhatUnit + 0x10F0, SomeWhatUnit, &v18);
           *(SomeWhatUnit + 0x1110) = v18;
