@@ -4,7 +4,7 @@ void __fastcall weapon_rocket(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
   __int64 v6; // rax
   __int64 Unit; // rdi
   unsigned int v8; // eax
-  __int64 currWeapon; // rbx
+  __int64 current_weapon; // rbx
   __int64 v10; // rax
   __int64 v11; // r14
   unsigned int *v12; // rax
@@ -13,11 +13,11 @@ void __fastcall weapon_rocket(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
   _QWORD *v15; // rax
   bool v16; // bp
   __int64 UnitWeaponInfo; // rbp
-  __int64 v18; // rcx
+  __int64 weapon_count; // rcx
   int v19; // edx
   unsigned int v20; // eax
-  __int64 WeaponArray; // rbp
-  __int64 v22; // rsi
+  __int64 weapon_array; // rbp
+  __int64 weapon_index; // rsi
   __int64 ballistics; // rdx
   unsigned int v24; // ecx
   int v25; // ebp
@@ -83,25 +83,25 @@ void __fastcall weapon_rocket(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
   v8 = *(a1 + 0x648);
   if ( (*(Unit + 0x1058) & 0x2000010) == 0
     && (UnitWeaponInfo = *(Unit + 0x11D0)) != 0
-    && (v18 = *(UnitWeaponInfo + 0x2E0), *(UnitWeaponInfo + 0x2E0)) )
+    && (weapon_count = *(UnitWeaponInfo + 0x2E0), *(UnitWeaponInfo + 0x2E0)) )
   {
     v19 = v8;
     v20 = HIWORD(v8);
-    WeaponArray = *(UnitWeaponInfo + 0x2D0);
-    v22 = 0i64;
+    weapon_array = *(UnitWeaponInfo + 0x2D0);
+    weapon_index = 0i64;
     while ( 1 )
     {
-      currWeapon = *(WeaponArray + 8 * v22);
-      if ( *(currWeapon + 0x18) == v19 && *(currWeapon + 0x10) == v20 )
+      current_weapon = *(weapon_array + 8 * weapon_index);
+      if ( *(current_weapon + 0x18) == v19 && *(current_weapon + 0x10) == v20 )
         break;
-      if ( v18 == ++v22 )
+      if ( weapon_count == ++weapon_index )
         goto LABEL_6;
     }
   }
   else
   {
 LABEL_6:
-    currWeapon = 0i64;
+    current_weapon = 0i64;
   }
   v10 = *(a1 + 0x670);
   if ( v10 )
@@ -132,13 +132,13 @@ LABEL_6:
          || v24 == 0x15) )
       {
         v12 = (v10 + 0x468);
-        if ( !currWeapon )
+        if ( !current_weapon )
           goto LABEL_45;
       }
       else
       {
         v12 = (v10 + 0x464);
-        if ( !currWeapon )
+        if ( !current_weapon )
           goto LABEL_45;
       }
     }
@@ -146,22 +146,22 @@ LABEL_6:
     {
       v11 = *(v10 + 0x450);
       v12 = (v10 + 0x46C);
-      if ( !currWeapon )
+      if ( !current_weapon )
         goto LABEL_45;
     }
     if ( *(a1 + 0x6D0) )
     {
       v28 = *v12;
-      v29 = (*(*currWeapon + 0x1E8i64))(currWeapon);
+      v29 = (*(*current_weapon + 0x1E8i64))(current_weapon);
       sub_EEA770(Unit, v29, v11, v28);
       goto LABEL_46;
     }
   }
 LABEL_45:
-  if ( !currWeapon )
+  if ( !current_weapon )
     goto LABEL_49;
 LABEL_46:
-  v34 = *(currWeapon + 0x340);
+  v34 = *(current_weapon + 0x340);
   if ( !v34 )
   {
 LABEL_49:
