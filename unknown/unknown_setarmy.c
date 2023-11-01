@@ -1,12 +1,12 @@
-void __fastcall unknown_setarmy(__int64 a1, char a2, __int64 a3)
+void __fastcall unknown_setarmy(__int64 Player, char a2, __int64 a3)
 {
   unsigned __int8 v5; // bl
-  __int64 v6; // rsi
+  __int64 SomeWhatUnit; // rsi
   unsigned __int8 v7; // al
   __int64 v8; // rdx
-  _QWORD *v9; // rsi
+  _QWORD *OwnedUnit; // rsi
   unsigned __int8 v10; // bl
-  unsigned __int8 v11; // al
+  unsigned __int8 UnitInfo; // al
   __int64 v12; // rdx
   _QWORD *v13; // rax
   unsigned __int8 v14; // bl
@@ -22,22 +22,22 @@ void __fastcall unknown_setarmy(__int64 a1, char a2, __int64 a3)
   int v24; // [rsp+50h] [rbp-38h]
   __int64 v25; // [rsp+58h] [rbp-30h]
 
-  if ( *(a1 + 0x208) != a2 )
+  if ( *(Player + 0x208) != a2 )
   {
-    *(a1 + 0x80) |= 4u;
+    *(Player + 0x80) |= 4u;
     LOBYTE(v18) = a2;
-    sub_158CE00(a1 + 0x1E8, a1, &v18);
+    sub_158CE00(Player + 0x1E8, Player, &v18);
     v5 = v18;
-    *(a1 + 0x208) = v18;
-    v6 = *(a1 + 0x720);
-    if ( v6 )
+    *(Player + 0x208) = v18;
+    SomeWhatUnit = *(Player + 0x720);
+    if ( SomeWhatUnit )
     {
-      v7 = *(v6 + 0x1110);
+      v7 = *(SomeWhatUnit + 0x1110);
       if ( v7 != v5 )
       {
-        if ( !*(v6 + 0x10B0) )
+        if ( !*(SomeWhatUnit + 0x10B0) )
         {
-          v8 = *(v6 + 8) & 0x7FF;
+          v8 = *(SomeWhatUnit + 8) & 0x7FF;
           v19 = "setArmy";
           v18 = 1;
           v21 = v8;
@@ -47,68 +47,68 @@ void __fastcall unknown_setarmy(__int64 a1, char a2, __int64 a3)
           v25 = v5;
           v24 = 2;
           dg_debug(3u, "%s fm %d army %d -> %d", &v18, 4);
-          v7 = *(v6 + 0x1110);
+          v7 = *(SomeWhatUnit + 0x1110);
         }
         LOBYTE(v18) = v5;
         if ( v7 != v5 )
         {
-          sub_158CE00(v6 + 0x10F0, v6, &v18);
-          *(v6 + 0x1110) = v18;
+          sub_158CE00(SomeWhatUnit + 0x10F0, SomeWhatUnit, &v18);
+          *(SomeWhatUnit + 0x1110) = v18;
         }
       }
     }
-    v9 = *(a1 + 0x6F8);
-    if ( v9 )
+    OwnedUnit = *(Player + 0x6F8);
+    if ( OwnedUnit )
     {
 LABEL_9:
-      v10 = *(a1 + 0x208);
-      v11 = *(v9 + 0x1110);
-      if ( v11 != v10 )
+      v10 = *(Player + 0x208);
+      UnitInfo = *(OwnedUnit + 0x1110);
+      if ( UnitInfo != v10 )
       {
-        if ( !*(v9 + 0x858) )
+        if ( !*(OwnedUnit + 0x858) )
         {
-          v12 = v9[1] & 0x7FF;
+          v12 = OwnedUnit[1] & 0x7FF;
           v19 = "setArmy";
           v18 = 1;
           v21 = v12;
           v20 = 2;
-          v23 = v11;
+          v23 = UnitInfo;
           v22 = 2;
           v25 = v10;
           v24 = 2;
           dg_debug(3u, "%s fm %d army %d -> %d", &v18, 4);
-          v11 = *(v9 + 0x1110);
+          UnitInfo = *(OwnedUnit + 0x1110);
         }
         LOBYTE(v18) = v10;
-        if ( v11 != v10 )
+        if ( UnitInfo != v10 )
         {
-          sub_158CE00(v9 + 0x21E, v9, &v18);
-          *(v9 + 0x1110) = v18;
+          sub_158CE00(OwnedUnit + 0x21E, OwnedUnit, &v18);
+          *(OwnedUnit + 0x1110) = v18;
         }
       }
       goto LABEL_29;
     }
-    if ( *(a1 + 0x6F0) != 0xFFFF && (*(a1 + 0x668) != 4 || *(game + 0xCA)) )
+    if ( *(Player + 0x6F0) != 0xFFFF && (*(Player + 0x668) != 4 || *(game + 0xCA)) )
     {
       if ( off_4B69C70 )
       {
         v13 = off_4B69C70();
-        *(a1 + 0x6F8) = v13;
+        *(Player + 0x6F8) = v13;
         if ( !v13 )
           goto LABEL_29;
-        v9 = v13;
-        if ( v13[0x217] != a1 )
+        OwnedUnit = v13;
+        if ( v13[0x217] != Player )
         {
-          (*(*v13 + 0x190i64))(v13, a1);
-          v9 = *(a1 + 0x6F8);
+          (*(*v13 + 0x190i64))(v13, Player);
+          OwnedUnit = *(Player + 0x6F8);
         }
-        v14 = *(a1 + 0x208);
-        v15 = *(v9 + 0x1110);
+        v14 = *(Player + 0x208);
+        v15 = *(OwnedUnit + 0x1110);
         if ( v15 != v14 )
         {
-          if ( !*(v9 + 0x858) )
+          if ( !*(OwnedUnit + 0x858) )
           {
-            v16 = v9[1] & 0x7FF;
+            v16 = OwnedUnit[1] & 0x7FF;
             v19 = "setArmy";
             v18 = 1;
             v21 = v16;
@@ -118,25 +118,25 @@ LABEL_9:
             v25 = v14;
             v24 = 2;
             dg_debug(3u, "%s fm %d army %d -> %d", &v18, 4);
-            v15 = *(v9 + 0x1110);
+            v15 = *(OwnedUnit + 0x1110);
           }
           LOBYTE(v18) = v14;
           if ( v15 != v14 )
           {
-            sub_158CE00(v9 + 0x21E, v9, &v18);
-            *(v9 + 0x1110) = v18;
+            sub_158CE00(OwnedUnit + 0x21E, OwnedUnit, &v18);
+            *(OwnedUnit + 0x1110) = v18;
           }
-          v9 = *(a1 + 0x6F8);
-          if ( !v9 )
+          OwnedUnit = *(Player + 0x6F8);
+          if ( !OwnedUnit )
             goto LABEL_29;
         }
         goto LABEL_9;
       }
-      *(a1 + 0x6F8) = 0i64;
+      *(Player + 0x6F8) = 0i64;
     }
 LABEL_29:
-    v17 = *(a1 + 0x208);
-    v19 = *(a1 + 8);
+    v17 = *(Player + 0x208);
+    v19 = *(Player + 8);
     v18 = 2;
     v21 = v17;
     v20 = 2;
