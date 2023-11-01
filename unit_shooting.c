@@ -1478,7 +1478,7 @@ LABEL_122:
       v84 = qword_4B19AA0;
       v85 = *(a2 + 0xE0);
       v86 = sub_1206DE0(v85);
-      if ( ((!qword_4B507E8 || !*(qword_4B507E8 + 0x60)) && qword_4B50098 && (*(qword_4B50098 + 0x1B8) & 0x20) != 0
+      if ( ((!qword_4B507E8 || !*(qword_4B507E8 + 0x60)) && LocalPlayer && (*(LocalPlayer + 0x1B8) & 0x20) != 0
          || (v87 = *(game + 0x450)) != 0 && *(v87 + 0x5CA))
         && v84
         && v86 )

@@ -1465,8 +1465,8 @@ LABEL_7:
       if ( !*(qword_4B507E8 + 0x60) )
       {
         v37 = 0xFF;
-        if ( qword_4B50098 )
-          v37 = *(qword_4B50098 + 8);
+        if ( LocalPlayer )
+          v37 = *(LocalPlayer + 8);
       }
     }
     BYTE10(v435) = v37;

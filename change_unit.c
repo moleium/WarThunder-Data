@@ -1128,10 +1128,10 @@ LABEL_254:
         sub_60F090();
       if ( !qword_4B507E8 || !*(qword_4B507E8 + 0x60) )
       {
-        v152 = qword_4B50098;
-        if ( qword_4B50098 )
+        v152 = LocalPlayer;
+        if ( LocalPlayer )
         {
-          v153 = *(qword_4B50098 + 0x208);
+          v153 = *(LocalPlayer + 0x208);
           v154 = (*(*(*v191 + 0x50i64) + 0x30i64))(*v191 + 0x50i64);
           if ( (dword_4B1C814 & 0x80000) == 0
             && v154 == v153

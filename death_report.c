@@ -843,8 +843,8 @@ LABEL_119:
           if ( !*(qword_4B507E8 + 0x60) )
           {
             v126 = 0xFF;
-            if ( qword_4B50098 )
-              v126 = *(qword_4B50098 + 8);
+            if ( LocalPlayer )
+              v126 = *(LocalPlayer + 8);
           }
         }
         BYTE2(v175) = v126;

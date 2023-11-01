@@ -466,8 +466,8 @@ LABEL_25:
   }
   if ( *(v33 + 0x254) )
   {
-    if ( qword_4B50098 )
-      v36 = *(qword_4B50098 + 0x674);
+    if ( LocalPlayer )
+      v36 = *(LocalPlayer + 0x674);
     else
       v36 = 0.0;
     v35 = *(v33 + 0x240);

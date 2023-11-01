@@ -268,7 +268,7 @@ void __fastcall unknown_ballistics_stuff(__int64 ballistics_arg, int a2, unsigne
   }
   if ( a2 == 0x85 && v6 )
   {
-    if ( (qword_4B507E8 && *(qword_4B507E8 + 0x60) || !qword_4B50098 || (*(qword_4B50098 + 0x1B8) & 0x20) == 0)
+    if ( (qword_4B507E8 && *(qword_4B507E8 + 0x60) || !LocalPlayer || (*(LocalPlayer + 0x1B8) & 0x20) == 0)
       && *(ballistics + 4) < 0 )
     {
       v21 = *(game + 0x450);
@@ -306,9 +306,9 @@ void __fastcall unknown_ballistics_stuff(__int64 ballistics_arg, int a2, unsigne
         {
           if ( *&mUnit )
           {
-            if ( qword_4B50098 )
+            if ( LocalPlayer )
             {
-              if ( *(*&mUnit + 0x10B8i64) != qword_4B50098 )
+              if ( *(*&mUnit + 0x10B8i64) != LocalPlayer )
               {
                 *(v30 + 0x3B3B8) = 0;
                 if ( qword_4B19AA0 )
@@ -321,7 +321,7 @@ void __fastcall unknown_ballistics_stuff(__int64 ballistics_arg, int a2, unsigne
     }
     goto LABEL_35;
   }
-  if ( (!qword_4B507E8 || !*(qword_4B507E8 + 0x60)) && qword_4B50098 && (*(qword_4B50098 + 0x1B8) & 0x20) != 0
+  if ( (!qword_4B507E8 || !*(qword_4B507E8 + 0x60)) && LocalPlayer && (*(LocalPlayer + 0x1B8) & 0x20) != 0
     || *(ballistics + 4) >= 0
     || (v29 = *(game + 0x450)) != 0 && *(v29 + 0x5CA) )
   {

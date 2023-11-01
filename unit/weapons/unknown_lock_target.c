@@ -227,8 +227,8 @@ LABEL_44:
         sub_1823740("on_delayed_target_select:hide", &v80, "native");
         sub_180E1F0(&v80);
       }
-      if ( qword_4B50098 )
-        v21 = *(qword_4B50098 + 0xBA0);
+      if ( LocalPlayer )
+        v21 = *(LocalPlayer + 0xBA0);
       else
         v21 = 0i64;
       if ( v21 )
@@ -349,8 +349,8 @@ LABEL_76:
                                 if ( !*(qword_4B507E8 + 0x60) )
                                 {
                                   v45 = 0xFF;
-                                  if ( qword_4B50098 )
-                                    v45 = *(qword_4B50098 + 8);
+                                  if ( LocalPlayer )
+                                    v45 = *(LocalPlayer + 8);
                                 }
                               }
                               v80.m256i_i8[0x1A] = v45;
