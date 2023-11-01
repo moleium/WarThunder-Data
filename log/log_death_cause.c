@@ -140,10 +140,10 @@ __int64 __fastcall log_death_cause(__int64 a1, _QWORD *a2)
   sub_18A2920(*a2, 1i64, 0i64);
   if ( *(game + 0x420) )
   {
-    v18 = *&qword_4AE58C0;
-    if ( !*&qword_4AE58C0
-      || (*(*&qword_4AE58C0 + 0x1058i64) & 0x7000014) != 0
-      || !(*(*(*&qword_4AE58C0 + 0x50i64) + 0x18i64))(*&qword_4AE58C0 + 0x50i64)
+    v18 = *&mUnit;
+    if ( !*&mUnit
+      || (*(*&mUnit + 0x1058i64) & 0x7000014) != 0
+      || !(*(*(*&mUnit + 0x50i64) + 0x18i64))(*&mUnit + 0x50i64)
       || *(a1 + 0x1C9D) )
     {
       goto LABEL_11;

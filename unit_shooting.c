@@ -893,7 +893,7 @@ LABEL_61:
       }
       LOBYTE(v160) = 1;
       set_unit_value(Unit, 0i64, &v329, v160, 1);
-      if ( *&qword_4AE58C0 == Unit || (*(*v151 + 0x18i64))(Unit + 0x50) )
+      if ( *&mUnit == Unit || (*(*v151 + 0x18i64))(Unit + 0x50) )
       {
         v210 = *(game + 0x630);
         if ( v210 )
@@ -1824,7 +1824,7 @@ LABEL_557:
         || sub_B96690()
         || (v109 = *(game + 0x450)) != 0 && *(v109 + 0x5CA) )
       {
-        if ( v107 != *&qword_4AE58C0 )
+        if ( v107 != *&mUnit )
         {
 LABEL_172:
           v110 = 0;

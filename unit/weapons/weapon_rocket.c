@@ -106,7 +106,7 @@ LABEL_6:
   v10 = *(a1 + 0x670);
   if ( v10 )
   {
-    if ( *&qword_4AE58C0 == Unit )
+    if ( *&mUnit == Unit )
     {
       ballistics = *(game + 0x440);
       v24 = *(ballistics + 0x3F4);
@@ -166,12 +166,12 @@ LABEL_46:
   {
 LABEL_49:
     v16 = 0;
-    if ( *&qword_4AE58C0 != Unit )
+    if ( *&mUnit != Unit )
       goto LABEL_51;
     goto LABEL_50;
   }
   v16 = *(v34 + 0x15C) != 0;
-  if ( *&qword_4AE58C0 != Unit )
+  if ( *&mUnit != Unit )
     goto LABEL_51;
 LABEL_50:
   byte_4A7503C = 1;

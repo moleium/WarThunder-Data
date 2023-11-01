@@ -20,14 +20,14 @@ char __fastcall unknown_killstreakwheel(__int64 a1, char a2, __int64 a3, __int64
     || *(game + 0xCD)
     || !*(game + 0xCA)
     || (*(game + 0xCB) & 1) == 0
-    || !*&qword_4AE58C0
+    || !*&mUnit
     || *(qword_4B176E8 + 0x1E)
-    || (v12 = __ROR2__(*(*&qword_4AE58C0 + 0x10B0i64) - 3, 1), v12 > 6u)
+    || (v12 = __ROR2__(*(*&mUnit + 0x10B0i64) - 3, 1), v12 > 6u)
     || (v13 = 0x53, !_bittest(&v13, v12)) )
   {
-    if ( *&qword_4AE58C0 && (v9 = *(*&qword_4AE58C0 + 0x10B8i64)) != 0i64 )
+    if ( *&mUnit && (v9 = *(*&mUnit + 0x10B8i64)) != 0i64 )
     {
-      v10 = *(*&qword_4AE58C0 + 8i64) & 0x7FF;
+      v10 = *(*&mUnit + 8i64) & 0x7FF;
       if ( v9[0x160] == v10 )
         goto LABEL_13;
       if ( v9[0x161] == v10 )

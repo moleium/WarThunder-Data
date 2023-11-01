@@ -481,7 +481,7 @@ LABEL_6:
     if ( v83 >= 0 )
     {
       v414 = 0i64;
-      LOBYTE(v82) = *&qword_4AE58C0 == *(a1 + 8);
+      LOBYTE(v82) = *&mUnit == *(a1 + 8);
       sub_93DDB0(v83, &v434, &ymmword_4514980, v82, 0, &v414, 0x3F800000);
       v84 = v414;
       if ( v414 )
@@ -1817,7 +1817,7 @@ LABEL_147:
         v131 = *(*(ballistics + 0x268) + 8 * v130);
         if ( v131 )
         {
-          if ( *&qword_4AE58C0 )
+          if ( *&mUnit )
           {
             (*(*v131 + 0xB8i64))(v131, 0x400i64);
             v127 = game;
@@ -1841,7 +1841,7 @@ LABEL_147:
         v134 = *(*(v132 + 0x268) + 8 * v133);
         if ( v134 )
         {
-          if ( *&qword_4AE58C0 )
+          if ( *&mUnit )
             (*(*v134 + 0xB8i64))(v134, 0x200000i64);
         }
       }

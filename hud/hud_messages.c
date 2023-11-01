@@ -63,8 +63,8 @@ LABEL_11:
     v10 = &szFile;
     goto LABEL_23;
   }
-  v7 = *&qword_4AE58C0;
-  if ( !*&qword_4AE58C0 )
+  v7 = *&mUnit;
+  if ( !*&mUnit )
     goto LABEL_11;
 LABEL_5:
   v8 = *(v7 + 0x10B0);

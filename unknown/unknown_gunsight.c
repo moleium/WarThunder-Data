@@ -73,9 +73,9 @@ float __fastcall unknown_gunsight(__int64 a1, __int64 a2, const char *a3, __int6
       && !*(game + 0xCD)
       && *(game + 0xCA)
       && (*(game + 0xCB) & 1) != 0
-      && *&qword_4AE58C0
+      && *&mUnit
       && !*(qword_4B176E8 + 0x1E)
-      && (v43 = __ROR2__(*(*&qword_4AE58C0 + 0x10B0i64) - 3, 1), v43 <= 6u)
+      && (v43 = __ROR2__(*(*&mUnit + 0x10B0i64) - 3, 1), v43 <= 6u)
       && (v44 = 0x53, _bittest(&v44, v43)) )
     {
       v13 = 0x4D3Ci64;
@@ -99,9 +99,9 @@ float __fastcall unknown_gunsight(__int64 a1, __int64 a2, const char *a3, __int6
         && !*(game + 0xCD)
         && *(game + 0xCA)
         && (*(game + 0xCB) & 1) != 0
-        && *&qword_4AE58C0
+        && *&mUnit
         && !*(qword_4B176E8 + 0x1E)
-        && (v52 = __ROR2__(*(*&qword_4AE58C0 + 0x10B0i64) - 3, 1), v52 <= 6u)
+        && (v52 = __ROR2__(*(*&mUnit + 0x10B0i64) - 3, 1), v52 <= 6u)
         && (v53 = 0x53, _bittest(&v53, v52)) )
       {
         v54 = *(a1 + 0x600);

@@ -304,11 +304,11 @@ void __fastcall unknown_ballistics_stuff(__int64 ballistics_arg, int a2, unsigne
       {
         if ( !*(*(v11 + 0x450) + 0x608i64) )
         {
-          if ( *&qword_4AE58C0 )
+          if ( *&mUnit )
           {
             if ( qword_4B50098 )
             {
-              if ( *(*&qword_4AE58C0 + 0x10B8i64) != qword_4B50098 )
+              if ( *(*&mUnit + 0x10B8i64) != qword_4B50098 )
               {
                 *(v30 + 0x3B3B8) = 0;
                 if ( qword_4B19AA0 )

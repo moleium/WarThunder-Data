@@ -1124,7 +1124,7 @@ LABEL_254:
         sub_1664BC0(**(v151 + 0x90));
         v150 = *(a1 + 0x18);
       }
-      if ( *&qword_4AE58C0 == v150 )
+      if ( *&mUnit == v150 )
         sub_60F090();
       if ( !qword_4B507E8 || !*(qword_4B507E8 + 0x60) )
       {
