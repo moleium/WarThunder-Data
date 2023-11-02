@@ -1,4 +1,4 @@
-const char *__fastcall webui_thermo(__int64 http_req, __int64 a2, double a3)
+const char *__fastcall webui_engine(__int64 http_req, __int64 a2, double a3)
 {
   void (*v4)(void); // rax
   const char *result; // rax
