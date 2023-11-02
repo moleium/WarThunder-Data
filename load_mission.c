@@ -5849,7 +5849,7 @@ LABEL_1489:
     v1079 = sub_72C570;
   qword_4B12198 = v1079;
   sub_1458EA0(a1 + 0x590);
-  sub_CAAF40(a1, a1 + 0x590);
+  parse_mission_desc(a1, a1 + 0x590);
   v1080 = a1 + 0x5B0;
   sub_1458EA0(v1080);
   if ( !*(game + 0xCE) )
