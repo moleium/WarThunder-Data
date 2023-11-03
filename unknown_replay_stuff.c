@@ -223,14 +223,14 @@ LABEL_20:
     if ( v9 )
       (*(*v28 + 8i64))(v28);
   }
-  sub_4FA810(&v110, "get_time_speed", sub_C5E320, sub_98E150, 1i64, 0, 0i64);
-  sub_4FA810(&v110, "is_replay_turned_on", is_replay_turned, sub_5A6F00, 1i64, 0, 0i64);
-  sub_4FA810(&v110, "is_replay_saved", sub_C5E3A0, sub_5A6F00, 1i64, 0, 0i64);
-  sub_4FA810(&v110, "is_replay_present", sub_C5E3D0, sub_5A6F00, 1i64, 0, 0i64);
-  sub_4FA810(&v110, "get_replays_dir", sub_C5E4A0, sub_9A0B00, 1i64, 0, 0i64);
-  sub_4FA810(&v110, "get_new_replay_filename", sub_C5E640, sub_9A0B00, 1i64, 0, 0i64);
-  sub_4FA810(&v110, "on_save_replay", sub_C5E890, sub_988B60, 2i64, 0, 0i64);
-  sub_4FA810(&v110, "on_view_replay", sub_C5ECE0, sub_557540, 2i64, 0, 0i64);
+  map_func(&v110, "get_time_speed", sub_C5E320, sub_98E150, 1i64, 0, 0i64);
+  map_func(&v110, "is_replay_turned_on", is_replay_turned, sub_5A6F00, 1i64, 0, 0i64);
+  map_func(&v110, "is_replay_saved", sub_C5E3A0, sub_5A6F00, 1i64, 0, 0i64);
+  map_func(&v110, "is_replay_present", sub_C5E3D0, sub_5A6F00, 1i64, 0, 0i64);
+  map_func(&v110, "get_replays_dir", sub_C5E4A0, sub_9A0B00, 1i64, 0, 0i64);
+  map_func(&v110, "get_new_replay_filename", sub_C5E640, sub_9A0B00, 1i64, 0, 0i64);
+  map_func(&v110, "on_save_replay", sub_C5E890, sub_988B60, 2i64, 0, 0i64);
+  map_func(&v110, "on_view_replay", sub_C5ECE0, sub_557540, 2i64, 0, 0i64);
   v29 = v110[1](&v110);
   v30 = *v29;
   v31 = *(v29 + 4);
@@ -312,9 +312,9 @@ LABEL_39:
     if ( v9 )
       (*(*v47 + 8i64))(v47);
   }
-  sub_4FA810(&v110, "on_del_replay", sub_C618E0, sub_557540, 2i64, 0, 0i64);
-  sub_4FA810(&v110, "on_open_replays_folder", sub_C618F0, sub_988520, 1i64, 0, 0i64);
-  sub_4FA810(&v110, "is_replay_playing", sub_C61A40, sub_5A6F00, 1i64, 0, 0i64);
+  map_func(&v110, "on_del_replay", sub_C618E0, sub_557540, 2i64, 0, 0i64);
+  map_func(&v110, "on_open_replays_folder", sub_C618F0, sub_988520, 1i64, 0, 0i64);
+  map_func(&v110, "is_replay_playing", sub_C61A40, sub_5A6F00, 1i64, 0, 0i64);
   v48 = v110[1](&v110);
   v49 = *v48;
   v50 = *(v48 + 4);
@@ -574,8 +574,8 @@ LABEL_103:
     if ( v9 )
       (*(*v108 + 8i64))(v108);
   }
-  sub_4FA810(&v110, "move_to_anchor", sub_C62570, sub_4FAA30, 2i64, 0, 0i64);
-  sub_4FA810(&v110, "cancel_loading", sub_C625A0, sub_988520, 1i64, 0, 0i64);
+  map_func(&v110, "move_to_anchor", sub_C62570, sub_4FAA30, 2i64, 0, 0i64);
+  map_func(&v110, "cancel_loading", sub_C625A0, sub_988520, 1i64, 0, 0i64);
   require(a1, "replays", &v110);
   result = &off_44A93B0;
   v110 = &off_44A93B0;
