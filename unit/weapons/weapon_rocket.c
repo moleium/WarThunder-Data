@@ -6,7 +6,7 @@ void __fastcall weapon_rocket(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
   unsigned int v8; // eax
   __int64 current_weapon; // rbx
   __int64 v10; // rax
-  __int64 v11; // r14
+  __int64 _ballistics; // r14
   unsigned int *v12; // rax
   _QWORD *v13; // rdi
   int v14; // r8d
@@ -21,7 +21,7 @@ void __fastcall weapon_rocket(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
   __int64 ballistics; // rdx
   unsigned int v24; // ecx
   int v25; // ebp
-  __int64 *v26; // rbp
+  __int64 *ballistics_; // rbp
   int v27; // ebp
   unsigned int v28; // ebp
   __int64 v29; // rax
@@ -117,13 +117,13 @@ LABEL_6:
          && *(v31 + 0x28) == 1
          || v24 == 0x15) )
       {
-        v26 = (v10 + 0x448);
+        ballistics_ = (v10 + 0x448);
       }
       else
       {
-        v26 = (v10 + 0x440);
+        ballistics_ = (v10 + 0x440);
       }
-      v11 = *v26;
+      _ballistics = *ballistics_;
       if ( v24 <= 0x18 && (v27 = 0x100F824, _bittest(&v27, v24))
         || *(Unit + 0x10B0) == 3
         && ((v32 = *(ballistics + 0x3F0), v32 < *(ballistics + 0x278))
@@ -144,7 +144,7 @@ LABEL_6:
     }
     else
     {
-      v11 = *(v10 + 0x450);
+      _ballistics = *(v10 + 0x450);
       v12 = (v10 + 0x46C);
       if ( !current_weapon )
         goto LABEL_45;
@@ -153,7 +153,7 @@ LABEL_6:
     {
       v28 = *v12;
       v29 = (*(*current_weapon + 0x1E8i64))(current_weapon);
-      sub_EEA770(Unit, v29, v11, v28);
+      sub_EEA770(Unit, v29, _ballistics, v28);
       goto LABEL_46;
     }
   }
