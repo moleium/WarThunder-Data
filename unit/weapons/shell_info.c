@@ -321,7 +321,7 @@ LABEL_45:
   if ( !v30 )
     v30 = v6;
   v191 = v30;
-  sub_174A320(shell_info + 0x18, v30);
+  shell_info_alt(shell_info + 0x18, v30);
   if ( (v189 & 0x80000000) != 0 )
   {
     v43 = (v189 & 0x7FFFFFFF) >> 0x1B;
