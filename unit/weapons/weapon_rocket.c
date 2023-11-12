@@ -73,7 +73,7 @@ void __fastcall weapon_rocket(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
     sub_1641100(&qword_4B71860, v13, 0i64, 0i64, "DelayedAction @\n\t..\\..\\skyquake\\prog\\weapon\\rocket.cpp(885):");
     return;
   }
-  v6 = sub_24BEA0(a1);
+  v6 = get_unit(a1);
   if ( !v6 )
   {
     v16 = 0;
