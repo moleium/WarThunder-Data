@@ -478,7 +478,7 @@ LABEL_12:
 LABEL_14:
   v14 = v19;
 LABEL_15:
-  sub_CD2950(&v379, v5, v14, a1, sub_DEE360, 0i64);
+  sub_CD2950(&v379, v5, v14, a1, is_alive, 0i64);
   if ( v381 )
   {
     v20 = 0;

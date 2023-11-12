@@ -1,4 +1,4 @@
-bool __fastcall isAlive(__int64 Unit)
+bool __fastcall is_alive(__int64 Unit)
 {
   return Unit
       && (*(Unit + 0x10B0) || *(Unit + 0x10A8) <= 1u)

@@ -371,7 +371,7 @@ LABEL_10:
     goto LABEL_12;
   }
 LABEL_13:
-  sub_CD2950(&UnitList, v273, v11, v4, sub_DEE360, 0i64);
+  sub_CD2950(&UnitList, v273, v11, v4, is_alive, 0i64);
   if ( v292 )
   {
     v17 = 0;
