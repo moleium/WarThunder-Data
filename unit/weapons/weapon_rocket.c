@@ -25,9 +25,9 @@ void __fastcall weapon_rocket(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
   int v27; // ebp
   unsigned int v28; // ebp
   __int64 v29; // rax
-  __int64 v30; // rbp
+  __int64 has_turret_ccip; // rbp
   __int64 v31; // rbp
-  __int64 v32; // rbp
+  __int64 has_turret_ccip_; // rbp
   __int64 v33; // rdx
   __int64 v34; // rax
   int *v35; // rdi
@@ -112,8 +112,8 @@ LABEL_6:
       v24 = *(ballistics + 0x3F4);
       if ( v24 <= 0x18 && (v25 = 0x100F824, _bittest(&v25, v24))
         || *(Unit + 0x10B0) == 3
-        && ((v30 = *(ballistics + 0x3F0), v30 < *(ballistics + 0x278))
-         && (v31 = *(*(ballistics + 0x268) + 8 * v30)) != 0
+        && ((has_turret_ccip = *(ballistics + 0x3F0), has_turret_ccip < *(ballistics + 0x278))
+         && (v31 = *(*(ballistics + 0x268) + 8 * has_turret_ccip)) != 0
          && *(v31 + 0x28) == 1
          || v24 == 0x15) )
       {
@@ -126,8 +126,8 @@ LABEL_6:
       _ballistics = *ballistics_;
       if ( v24 <= 0x18 && (v27 = 0x100F824, _bittest(&v27, v24))
         || *(Unit + 0x10B0) == 3
-        && ((v32 = *(ballistics + 0x3F0), v32 < *(ballistics + 0x278))
-         && (v33 = *(*(ballistics + 0x268) + 8 * v32)) != 0
+        && ((has_turret_ccip_ = *(ballistics + 0x3F0), has_turret_ccip_ < *(ballistics + 0x278))
+         && (v33 = *(*(ballistics + 0x268) + 8 * has_turret_ccip_)) != 0
          && *(v33 + 0x28) == 1
          || v24 == 0x15) )
       {
