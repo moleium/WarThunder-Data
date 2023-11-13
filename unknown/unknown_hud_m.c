@@ -513,14 +513,14 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     sub_145A8E0(v44, "aerobaticsSmokeType", *(hud + 0x288));
     sub_145A8E0(v44, "aerobaticsSmokeColors", *(hud + 0x28C));
     sub_145A8E0(v44, "gunConvergenceDistance", *(hud + 0x2C0));
-    sub_145B9A0(v44, "bombDelayExplosion");
-    sub_145B9A0(v44, "depthChargeDelayExplosion");
+    assign_string_float(v44, "bombDelayExplosion");
+    assign_string_float(v44, "depthChargeDelayExplosion");
     sub_145A8E0(v44, "bombActivationType", *(hud + 0x2CC));
-    sub_145B9A0(v44, "rocketFuseDist");
-    sub_145B9A0(v44, "torpedoDiveDepth");
+    assign_string_float(v44, "rocketFuseDist");
+    assign_string_float(v44, "torpedoDiveDepth");
     sub_145A8E0(v44, "countermeasuresSeries", *(hud + 0x2DC));
-    sub_145B9A0(v44, "countermeasuresPeriods");
-    sub_145B9A0(v44, "countermeasuresSeriesPeriods");
+    assign_string_float(v44, "countermeasuresPeriods");
+    assign_string_float(v44, "countermeasuresSeriesPeriods");
     sub_145A8E0(v44, "bombSeries", *(hud + 0x2E4));
     sub_145A8E0(v44, "hudColor", *(hud + 0x44));
     sub_145A8E0(v44, "hudIndicators", *(hud + 0x48));
@@ -621,11 +621,11 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
       v80 = &szFile;
     sub_145A8E0(v44, v80, v79);
     sub_145A8E0(v44, "timesIntroVideoPlayed", *(hud + 0x384));
-    sub_145B9A0(v44, "graphicsAutodetectGpuTimeAvg");
+    assign_string_float(v44, "graphicsAutodetectGpuTimeAvg");
     if ( *(hud + 0x3A0) )
       v67 = *(hud + 0x390);
     sub_145A110(v44, "graphicsAutodetectGpuInfo", v67);
-    sub_145B9A0(v44, "graphicsAutodetectTimestamp");
+    assign_string_float(v44, "graphicsAutodetectTimestamp");
     sub_145BF90(v44, "enableInstructorGroundAvoidance", *(hud + 0x358));
     sub_145BF90(v44, "enableInstructorGearControl", *(hud + 0x359));
     sub_145BF90(v44, "enableInstructorFlapsControl", *(hud + 0x35A));
