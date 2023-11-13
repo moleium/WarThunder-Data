@@ -94,7 +94,7 @@ void __fastcall unknown_lock_target(__int64 ballistics, __int64 a2, __int64 a3, 
   int v96; // [rsp+13Ch] [rbp-4Ch]
 
   Unit = a2;
-  if ( !*(qword_4ACEE78 + 0x20) )
+  if ( !*(HudInfo + 0x20) )
   {
     if ( !LocalUnit )
       return;
@@ -106,10 +106,10 @@ void __fastcall unknown_lock_target(__int64 ballistics, __int64 a2, __int64 a3, 
       return;
     if ( UnitType_ == 5 )
     {
-      if ( !*(qword_4ACEE78 + 0x400) )
+      if ( !*(HudInfo + 0x400) )
         return;
     }
-    else if ( !*(qword_4ACEE78 + 0x401) )
+    else if ( !*(HudInfo + 0x401) )
     {
       return;
     }
@@ -233,7 +233,7 @@ LABEL_44:
         v21 = 0i64;
       if ( v21 )
         Unit = v21;
-      if ( !*(qword_4ACEE78 + 0x20) )
+      if ( !*(HudInfo + 0x20) )
       {
         if ( LocalUnit )
         {
@@ -252,8 +252,8 @@ LABEL_44:
                   if ( Unit )
                   {
                     LOBYTE(v34) = v35;
-                    a2 = qword_4ACEE78 - v34;
-                    if ( (qword_4ACEE78 - v34)[0x401] )
+                    a2 = HudInfo - v34;
+                    if ( (HudInfo - v34)[0x401] )
                     {
                       Unit__ = Unit_;
                       if ( !*(Unit + 0x10B0) || !Unit_ )

@@ -2002,7 +2002,7 @@ LABEL_462:
       *(Unit + 0x264) = v205;
       return;
     case 0xF0D5:
-      if ( (*(Unit + 0x1058) & 0x2000010) == 0 && *(qword_4ACEE78 + 0x25) && !*(Unit + 0xFF8) )
+      if ( (*(Unit + 0x1058) & 0x2000010) == 0 && *(HudInfo + 0x25) && !*(Unit + 0xFF8) )
         sub_37AE90(Unit + 0xFD0, a2 + 0xC8);
       return;
     case 0xF0E3:
@@ -2170,7 +2170,7 @@ LABEL_354:
         v131 = *(a2 + 0xCC);
         if ( v131 >= *(Unit + 0x13B0) )
           goto LABEL_318;
-        *(*(Unit + 0x13A0) + 0x60 * v131 + 0x48) = _mm_cvtsi128_si32(_mm_cvtsi32_si128(*(qword_4ACEE78 + 0x10A)));
+        *(*(Unit + 0x13A0) + 0x60 * v131 + 0x48) = _mm_cvtsi128_si32(_mm_cvtsi32_si128(*(HudInfo + 0x10A)));
         v132 = *(a2 + 0xC8) == 0;
       }
       else

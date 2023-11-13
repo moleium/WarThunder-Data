@@ -29,12 +29,12 @@ void __fastcall unknown_playerinfo(__int64 a1, __int64 a2)
             {
               if ( *(*(LocalUnit_ + 0x4160) + 0x309i64) )
               {
-                *(a2 + 0x18) = *(qword_4ACEE78 + 0x2DE);
+                *(a2 + 0x18) = *(HudInfo + 0x2DE);
                 goto LABEL_15;
               }
               if ( *(LocalUnit_ + 0x2E78) == 2 )
               {
-                *(a2 + 0x18) = *(qword_4ACEE78 + 0xB6) == 2;
+                *(a2 + 0x18) = *(HudInfo + 0xB6) == 2;
                 goto LABEL_15;
               }
             }

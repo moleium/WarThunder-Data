@@ -277,7 +277,7 @@ void __fastcall gun_mechanism(
   sub_201E70(a3, a1 + 0x46C);
   Unit = *(a1 + 8);
   if ( *(Unit + 0x10B0) == 5 && *(a1 + 0x212) && *(a1 + 0x368) > Y )
-    *&v18 = *&v18 * *(qword_4ACEE78 + 0xFA);
+    *&v18 = *&v18 * *(HudInfo + 0xFA);
   Unit_ = (a1 + 8);
   if ( v16
     && *(a1 + 0x3F0) >= 0
@@ -387,7 +387,7 @@ LABEL_26:
   }
   else
   {
-    v23 = *(qword_4ACEE78 + 0x1B) != 0 && *(*Unit_ + 0x1BECi64) == 0 || *(*Unit_ + 0x1A50i64) != 0;
+    v23 = *(HudInfo + 0x1B) != 0 && *(*Unit_ + 0x1BECi64) == 0 || *(*Unit_ + 0x1A50i64) != 0;
     if ( !v16 )
       goto LABEL_46;
   }
@@ -398,7 +398,7 @@ LABEL_27:
     if ( v23 )
       v25 = v24 - a7;
     else
-      v25 = *(qword_4ACEE78 + 0xE1);
+      v25 = *(HudInfo + 0xE1);
     *(a1 + 0x1D0) = v25;
   }
   v34 = *(a1 + 0x1D4);
@@ -407,7 +407,7 @@ LABEL_27:
     if ( v23 )
       v35 = v34 - a7;
     else
-      v35 = *(qword_4ACEE78 + 0xE2);
+      v35 = *(HudInfo + 0xE2);
     *(a1 + 0x1D4) = v35;
   }
 LABEL_46:
@@ -712,9 +712,9 @@ LABEL_149:
   *(a1 + 0x248) = fmaxf(0.0, (*(*(game + 0x498) + 0x26BCi64) * a7) + *(a1 + 0x248));
   if ( *(a1 + 0x506)
     && *(*Unit_ + 0x58i64) != 1
-    && (*(a1 + 0x1D0) <= 0.0 && *(qword_4ACEE78 + 0x346) != 0 && *(a1 + 0x214) != 0 || !*(a1 + 0x212)) )
+    && (*(a1 + 0x1D0) <= 0.0 && *(HudInfo + 0x346) != 0 && *(a1 + 0x214) != 0 || !*(a1 + 0x212)) )
   {
-    if ( !*(qword_4ACEE78 + 0x347) && *(a1 + 0x1D4) <= 0.0
+    if ( !*(HudInfo + 0x347) && *(a1 + 0x1D4) <= 0.0
       || (v90 = *(a1 + 0x1DC), v90 < 0)
       || (v91 = *(*Unit_ + 0x11A0i64)) == 0
       || *(v91 + 0x2A8) <= v90
@@ -764,10 +764,10 @@ LABEL_167:
   if ( *(*Unit_ + 0x10B0i64) != 3 )
     goto LABEL_218;
 LABEL_176:
-  LOBYTE(v100) = *(qword_4ACEE78 + 0x346) != 0 && *(a1 + 0x214) != 0;
+  LOBYTE(v100) = *(HudInfo + 0x346) != 0 && *(a1 + 0x214) != 0;
   if ( ((*(a1 + 0x1D0) <= 0.0) & v100) == 0 && *(a1 + 0x212) )
     goto LABEL_218;
-  if ( *(qword_4ACEE78 + 0x347) || *(a1 + 0x1D4) > 0.0 )
+  if ( *(HudInfo + 0x347) || *(a1 + 0x1D4) > 0.0 )
   {
     v101 = *(a1 + 0x1DC);
     if ( v101 >= 0 )

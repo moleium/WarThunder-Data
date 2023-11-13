@@ -17,8 +17,8 @@ char __fastcall need_target_for_lock(__int64 a1, int a2, char a3)
   __int64 v20; // rcx
   __int64 v22; // [rsp+28h] [rbp-40h] BYREF
 
-  LOBYTE(ballistics) = qword_4ACEE78;
-  if ( !*(qword_4ACEE78 + 0x20) )
+  LOBYTE(ballistics) = HudInfo;
+  if ( !*(HudInfo + 0x20) )
   {
     if ( !LocalUnit )
       goto LABEL_45;
@@ -30,10 +30,10 @@ char __fastcall need_target_for_lock(__int64 a1, int a2, char a3)
       goto LABEL_45;
     if ( ballistics == 5 )
     {
-      if ( !*(qword_4ACEE78 + 0x400) )
+      if ( !*(HudInfo + 0x400) )
         goto LABEL_45;
     }
-    else if ( !*(qword_4ACEE78 + 0x401) )
+    else if ( !*(HudInfo + 0x401) )
     {
       goto LABEL_45;
     }
@@ -92,7 +92,7 @@ LABEL_37:
     if ( v22 )
       *(*(game + 0x440) + 0x630i64) = *(v22 + 0x40);
     ballistics = qword_4B44C68;
-    if ( (*(qword_4ACEE78 + 0x35) || *(*(game + 0x430) + 0x3C9i64)) && v19 && *(v8 + 0x10B0) == 5 )
+    if ( (*(HudInfo + 0x35) || *(*(game + 0x430) + 0x3C9i64)) && v19 && *(v8 + 0x10B0) == 5 )
     {
       v20 = *(*(game + 0x440) + 0x620i64);
       if ( v20 )

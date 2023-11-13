@@ -261,7 +261,7 @@ void __fastcall unknown_ballistics_manager(__int64 ballistics, int a2, float a3)
           sub_A72270();
         }
       }
-      else if ( *(*(game + 0x440) + 0x161i64) && *(qword_4ACEE78 + 0x2A2) )
+      else if ( *(*(game + 0x440) + 0x161i64) && *(HudInfo + 0x2A2) )
       {
         v17 = *(game + 0x420);
         v5 = byte_4B177B8;

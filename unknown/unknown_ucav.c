@@ -179,24 +179,24 @@ LABEL_30:
     v22 = *(Unit + 0x13A0);
     v23 = 0x60 * v8;
     v24 = 0i64;
-    v25 = qword_4ACEE78;
+    v25 = HudInfo;
     if ( *(v22 + v23 + 0x44) <= 0 )
     {
-      v26 = qword_4ACEE78 + 0x430;
+      v26 = HudInfo + 0x430;
     }
     else if ( v21 )
     {
-      v26 = qword_4ACEE78 + 0x42C;
+      v26 = HudInfo + 0x42C;
     }
     else
     {
-      v26 = qword_4ACEE78 + 0x428;
+      v26 = HudInfo + 0x428;
     }
     v27 = *(v22 + v23 + 0x50);
     v28 = 0.0;
     if ( v27 >= 0.0 )
     {
-      v32 = *(qword_4ACEE78 + 0x10E);
+      v32 = *(HudInfo + 0x10E);
       v29 = *(v22 + v23 + 0x50);
     }
     else
@@ -306,7 +306,7 @@ LABEL_30:
       if ( *(v22 + v23 + 0x3C) != 1 )
         v53 = *v40;
       v54 = 0;
-      v55 = *(qword_4ACEE78 + 0x427) != 0 ? 0xFFFFFFFF : v53;
+      v55 = *(HudInfo + 0x427) != 0 ? 0xFFFFFFFF : v53;
       *(a2 + 0x44) = v55;
       if ( *(currUnit + 0x10A8) <= 1u )
         v54 = (*(currUnit + 0x1058) & 0x7000014) == 0;

@@ -644,7 +644,7 @@ LABEL_54:
     sub_893BF0(Unit, p_PerformanceCount);
     sub_1458FF0(&PerformanceCount);
   }
-  *(*(Unit + 0x3030) + 0x3B20i64) = *(qword_4ACEE78 + 0x12F);
+  *(*(Unit + 0x3030) + 0x3B20i64) = *(HudInfo + 0x12F);
   if ( Str )
     (*(*v80 + 0x40i64))(v80);
   v70 = v60 + v61;

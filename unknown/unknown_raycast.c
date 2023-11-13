@@ -203,7 +203,7 @@ LABEL_68:
       if ( *(UnitWeaponsInfo_ + 0x2A8) > a3 )
         v49 = *(*(UnitWeaponsInfo_ + 0x2A0) + 4i64 * a3);
       PerformanceCount[0].LowPart = v49;
-      if ( !*(qword_4ACEE78 + 0x440)
+      if ( !*(HudInfo + 0x440)
         && (v49 & 0x8000) == 0
         && (*(*(UnitWeaponsInfo_ + 0x588) + 0x58i64) & 4) != 0
         && *(*(UnitWeaponsInfo_ + 0x308) + 0x38i64 * v49 + 0x34) )

@@ -2853,23 +2853,23 @@ LABEL_525:
   sub_145C630(v959, PerformanceCount, "tpsCameraTargetOffsetAtZoom", &Block);
   *(v963.QuadPart + 0x53BC) = PerformanceCount[1].LowPart;
   *(v963.QuadPart + 0x53B4) = PerformanceCount[0];
-  v433 = *(qword_4ACEE78 + 0x63);
-  v434 = *(qword_4ACEE78 + 0x60);
-  v435 = *(qword_4ACEE78 + 0x61);
+  v433 = *(HudInfo + 0x63);
+  v434 = *(HudInfo + 0x60);
+  v435 = *(HudInfo + 0x61);
   v436 = *(v963.QuadPart + 0x1BC);
   if ( v434 <= v435 )
   {
-    v437 = *(qword_4ACEE78 + 0x63);
-    v433 = *(qword_4ACEE78 + 0x62);
-    v438 = *(qword_4ACEE78 + 0x61);
-    v435 = *(qword_4ACEE78 + 0x60);
+    v437 = *(HudInfo + 0x63);
+    v433 = *(HudInfo + 0x62);
+    v438 = *(HudInfo + 0x61);
+    v435 = *(HudInfo + 0x60);
     if ( v434 >= v436 )
       goto LABEL_552;
   }
   else
   {
-    v437 = *(qword_4ACEE78 + 0x62);
-    v438 = *(qword_4ACEE78 + 0x60);
+    v437 = *(HudInfo + 0x62);
+    v438 = *(HudInfo + 0x60);
     if ( v435 >= v436 )
       goto LABEL_552;
   }
@@ -5087,7 +5087,7 @@ LABEL_1218:
     {
       if ( (((*(v897 + 3) & 8) == 0) & ~v962) == 0 )
       {
-        if ( *(qword_4ACEE78 + 0x412) )
+        if ( *(HudInfo + 0x412) )
         {
           v898 = off_4A78F98();
           if ( v898 )
