@@ -485,7 +485,7 @@ LABEL_155:
       v122 = (*&dword_448790C - v2.m128_f32[0]);
       if ( v122 > 0 && dword_4A70D70 != v122 )
       {
-        sub_145A8E0(&v130, "count", v122);
+        assign_string_int(&v130, "count", v122);
         sub_B27BC0(qword_4B19AA0 + 0x5A8, "hint:mission_complete:show", &v130);
         dword_4A70D70 = v122;
         byte_4B1AB40 = 1;

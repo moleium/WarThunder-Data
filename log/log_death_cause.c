@@ -484,7 +484,7 @@ LABEL_25:
       _dyn_tls_on_demand_init(v55, v17, v30, v31);
     sub_14584E0(&v83, *(*(NtCurrentTeb()->ThreadLocalStoragePointer + TlsIndex) + 0x160i64));
     if ( dword_4B1C508 <= 1 && !qword_4B507E8 )
-      sub_145A8E0(&v83, "timer", v54);
+      assign_string_int(&v83, "timer", v54);
     if ( qword_4B19AA0 && (byte_4B1993E & 1) == 0 )
     {
       sub_B27BC0(qword_4B19AA0 + 0x5A8, "hint:press_a_continue:show", &v83);

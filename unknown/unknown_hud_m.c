@@ -375,7 +375,7 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     while ( v37 != &word_8 );
     v42 = *(hud + 0x390C8);
     if ( v42 < 8 )
-      sub_145A8E0(v32, "lastSinglMissionPlayed", v42);
+      assign_string_int(v32, "lastSinglMissionPlayed", v42);
     v12 = v216;
     if ( v36 )
       (*(*v210 + 0x40i64))(v210, v36);
@@ -456,25 +456,25 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     }
     sub_145BF90(v44, "grassInTankVision", *(hud + 0x18));
     sub_145BF90(v44, "selectedOnce", *(hud + 0x3AC));
-    sub_145A8E0(v44, "indicatedSpeedType", *(hud + 0x1C));
+    assign_string_int(v44, "indicatedSpeedType", *(hud + 0x1C));
     sub_145BF90(v44, "horizontalSpeed", *(hud + 0x20));
     sub_145BF90(v44, "autoShowChat", *(hud + 0x21));
-    sub_145A8E0(v44, "chatMessages", *(hud + 0x4C));
-    sub_145A8E0(v44, "tacticalMapScale", *(hud + 0x50));
+    assign_string_int(v44, "chatMessages", *(hud + 0x4C));
+    assign_string_int(v44, "tacticalMapScale", *(hud + 0x50));
     sub_145BF90(v44, "chatFilter", *(hud + 0x22));
     sub_145BF90(v44, "showPilot", *(hud + 0x23));
     sub_145BF90(v44, "gunVerticalTargeting", *(hud + 0x24));
     sub_145BF90(v44, "showDeflection", *(hud + 0x310));
     sub_145BF90(v44, "showGyroSightDeflection", *(hud + 0x311));
     sub_145BF90(v44, "hudScreenshotLogo", *(hud + 0x312));
-    sub_145A8E0(v44, "showIndicatorsMode", *(hud + 0x314));
+    assign_string_int(v44, "showIndicatorsMode", *(hud + 0x314));
     sub_145BF90(v44, "showIndicatorsModeTitle", *(hud + 0x314) >> 7);
-    sub_145A8E0(v44, "hudShowFuel", *(hud + 0x320));
-    sub_145A8E0(v44, "hudShowAmmo", *(hud + 0x324));
-    sub_145A8E0(v44, "hudShowTemperature", *(hud + 0x328));
-    sub_145A8E0(v44, "hudTpsCrosshairType", *(hud + 0x330));
-    sub_145A8E0(v44, "hudCrosshairColorPreset", *(hud + 0x334));
-    sub_145A8E0(v44, "autoPilotOnBombAndGunnerView", *(hud + 0x33C));
+    assign_string_int(v44, "hudShowFuel", *(hud + 0x320));
+    assign_string_int(v44, "hudShowAmmo", *(hud + 0x324));
+    assign_string_int(v44, "hudShowTemperature", *(hud + 0x328));
+    assign_string_int(v44, "hudTpsCrosshairType", *(hud + 0x330));
+    assign_string_int(v44, "hudCrosshairColorPreset", *(hud + 0x334));
+    assign_string_int(v44, "autoPilotOnBombAndGunnerView", *(hud + 0x33C));
     sub_145BF90(v44, "autoRearmOnAirfield", *(hud + 0x340));
     sub_145BF90(v44, "enableLaserDesignatorBeforeLaunch", *(hud + 0x341));
     sub_145BF90(v44, "seekerAutoStabilization", *(hud + 0x342));
@@ -487,49 +487,49 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     sub_145BF90(v44, "activateAirborneActiveCounterMeasuresOnSpawn", *(hud + 0x349));
     sub_145BF90(v44, "activateAirborneWeaponSelectionOnSpawn", *(hud + 0x34A));
     sub_145BF90(v44, "automaticEmptyContainersJettison", *(hud + 0x34B));
-    sub_145A8E0(v44, "hintsMask", *(hud + 0x338));
+    assign_string_int(v44, "hintsMask", *(hud + 0x338));
     sub_145BF90(v44, "autosaveReplays", *(hud + 0x35));
     sub_145BF90(v44, "showAttachables", *(hud + 0x36));
     sub_145BF90(v44, "enableXrayDeath", *(hud + 0x35D));
     sub_145BF90(v44, "enableXrayKill", *(hud + 0x35E));
-    sub_145A8E0(v44, "isSubtitles", *(hud + 0xB0));
-    sub_145A8E0(v44, "isSubtitlesRadio", *(hud + 0xB4));
+    assign_string_int(v44, "isSubtitles", *(hud + 0xB0));
+    assign_string_int(v44, "isSubtitlesRadio", *(hud + 0xB4));
     sub_145BF90(v44, "vwsOnlyInCockpit", *(hud + 0xBA));
     sub_145BF90(v44, "usePTT", *(hud + 0xB8));
     sub_145BF90(v44, "useVoiceChat", *(hud + 0xB9));
-    sub_145A8E0(v44, "voiceMessageVoice", *(hud + 0x5DC));
-    sub_145A8E0(v44, "viewType", *(hud + 0x54));
+    assign_string_int(v44, "voiceMessageVoice", *(hud + 0x5DC));
+    assign_string_int(v44, "viewType", *(hud + 0x54));
     sub_145BF90(v44, "enableControllerLight", *(hud + 0x369));
     sub_145BF90(v44, "useOculusToAimHelicopter", *(hud + 0x37));
-    sub_145A8E0(v44, "autoPilotOnGunnerViewHelicopter", *(hud + 0x38));
+    assign_string_int(v44, "autoPilotOnGunnerViewHelicopter", *(hud + 0x38));
     sub_145BF90(v44, "hideMouseInSpectator", *(hud + 0x3C));
     sub_145BF90(v44, "fixGunInMouseLook", *(hud + 0x3D));
     sub_145BF90(v44, "delayedDownloadContent", *(hud + 0x36F));
     sub_145BF90(v44, "replaySnapshotsEnabled", *(hud + 0x378));
-    sub_145A8E0(v44, "recordSnapshotPeriod", *(hud + 0x37C));
-    sub_145A8E0(v44, "preferredDifficulty", *(hud + 0x280));
-    sub_145A8E0(v44, "preferredTeam", *(hud + 0x284));
-    sub_145A8E0(v44, "voiceLanguageType", *(hud + 0x5D0));
-    sub_145A8E0(v44, "aerobaticsSmokeType", *(hud + 0x288));
-    sub_145A8E0(v44, "aerobaticsSmokeColors", *(hud + 0x28C));
-    sub_145A8E0(v44, "gunConvergenceDistance", *(hud + 0x2C0));
+    assign_string_int(v44, "recordSnapshotPeriod", *(hud + 0x37C));
+    assign_string_int(v44, "preferredDifficulty", *(hud + 0x280));
+    assign_string_int(v44, "preferredTeam", *(hud + 0x284));
+    assign_string_int(v44, "voiceLanguageType", *(hud + 0x5D0));
+    assign_string_int(v44, "aerobaticsSmokeType", *(hud + 0x288));
+    assign_string_int(v44, "aerobaticsSmokeColors", *(hud + 0x28C));
+    assign_string_int(v44, "gunConvergenceDistance", *(hud + 0x2C0));
     assign_string_float(v44, "bombDelayExplosion");
     assign_string_float(v44, "depthChargeDelayExplosion");
-    sub_145A8E0(v44, "bombActivationType", *(hud + 0x2CC));
+    assign_string_int(v44, "bombActivationType", *(hud + 0x2CC));
     assign_string_float(v44, "rocketFuseDist");
     assign_string_float(v44, "torpedoDiveDepth");
-    sub_145A8E0(v44, "countermeasuresSeries", *(hud + 0x2DC));
+    assign_string_int(v44, "countermeasuresSeries", *(hud + 0x2DC));
     assign_string_float(v44, "countermeasuresPeriods");
     assign_string_float(v44, "countermeasuresSeriesPeriods");
-    sub_145A8E0(v44, "bombSeries", *(hud + 0x2E4));
-    sub_145A8E0(v44, "hudColor", *(hud + 0x44));
-    sub_145A8E0(v44, "hudIndicators", *(hud + 0x48));
+    assign_string_int(v44, "bombSeries", *(hud + 0x2E4));
+    assign_string_int(v44, "hudColor", *(hud + 0x44));
+    assign_string_int(v44, "hudIndicators", *(hud + 0x48));
     sub_145BF90(v44, "hangarSound", *(hud + 0xAC));
     sub_145BF90(v44, "usePerfectRangefinder", *(hud + 0x2F4));
     sub_145BF90(v44, "saveAiTargetType", *(hud + 0x318));
-    sub_145A8E0(v44, "defaultAiTargetType", *(hud + 0x31C));
+    assign_string_int(v44, "defaultAiTargetType", *(hud + 0x31C));
     sub_145BF90(v44, "enableSoundSpeed", *(hud + 0x3BC));
-    sub_145A8E0(v44, "aiGunnerTime", *(hud + 0x40));
+    assign_string_int(v44, "aiGunnerTime", *(hud + 0x40));
     v213 = 0i64;
     v214 = off_4B678C8;
     v215 = 0i64;
@@ -540,77 +540,77 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     v68 = &szFile;
     if ( v215 )
       v68 = v213;
-    sub_145A8E0(v44, v68, *(hud + 0x290));
+    assign_string_int(v44, v68, *(hud + 0x290));
     v210 = (&_ImageBase + 2);
     LODWORD(v209) = 2;
     sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v69 = &szFile;
     if ( v215 )
       v69 = v213;
-    sub_145A8E0(v44, v69, *(hud + 0x294));
+    assign_string_int(v44, v69, *(hud + 0x294));
     v210 = (&_ImageBase + 3);
     LODWORD(v209) = 2;
     sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v70 = &szFile;
     if ( v215 )
       v70 = v213;
-    sub_145A8E0(v44, v70, *(hud + 0x298));
+    assign_string_int(v44, v70, *(hud + 0x298));
     v210 = &word_4;
     LODWORD(v209) = 2;
     sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v71 = &szFile;
     if ( v215 )
       v71 = v213;
-    sub_145A8E0(v44, v71, *(hud + 0x29C));
+    assign_string_int(v44, v71, *(hud + 0x29C));
     v210 = (&word_4 + 1);
     LODWORD(v209) = 2;
     sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v72 = &szFile;
     if ( v215 )
       v72 = v213;
-    sub_145A8E0(v44, v72, *(hud + 0x2A0));
+    assign_string_int(v44, v72, *(hud + 0x2A0));
     v210 = &word_6;
     LODWORD(v209) = 2;
     sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v73 = &szFile;
     if ( v215 )
       v73 = v213;
-    sub_145A8E0(v44, v73, *(hud + 0x2A4));
+    assign_string_int(v44, v73, *(hud + 0x2A4));
     v210 = (&word_6 + 1);
     LODWORD(v209) = 2;
     sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v74 = &szFile;
     if ( v215 )
       v74 = v213;
-    sub_145A8E0(v44, v74, *(hud + 0x2A8));
+    assign_string_int(v44, v74, *(hud + 0x2A8));
     v210 = &word_8;
     LODWORD(v209) = 2;
     sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v75 = &szFile;
     if ( v215 )
       v75 = v213;
-    sub_145A8E0(v44, v75, *(hud + 0x2AC));
+    assign_string_int(v44, v75, *(hud + 0x2AC));
     v210 = (&word_8 + 1);
     LODWORD(v209) = 2;
     sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v76 = &szFile;
     if ( v215 )
       v76 = v213;
-    sub_145A8E0(v44, v76, *(hud + 0x2B0));
+    assign_string_int(v44, v76, *(hud + 0x2B0));
     v210 = &word_A;
     LODWORD(v209) = 2;
     sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v77 = &szFile;
     if ( v215 )
       v77 = v213;
-    sub_145A8E0(v44, v77, *(hud + 0x2B4));
+    assign_string_int(v44, v77, *(hud + 0x2B4));
     v210 = (&word_A + 1);
     LODWORD(v209) = 2;
     sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v78 = &szFile;
     if ( v215 )
       v78 = v213;
-    sub_145A8E0(v44, v78, *(hud + 0x2B8));
+    assign_string_int(v44, v78, *(hud + 0x2B8));
     v210 = &word_C;
     LODWORD(v209) = 2;
     sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
@@ -619,8 +619,8 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     v218 = v213;
     if ( !v215 )
       v80 = &szFile;
-    sub_145A8E0(v44, v80, v79);
-    sub_145A8E0(v44, "timesIntroVideoPlayed", *(hud + 0x384));
+    assign_string_int(v44, v80, v79);
+    assign_string_int(v44, "timesIntroVideoPlayed", *(hud + 0x384));
     assign_string_float(v44, "graphicsAutodetectGpuTimeAvg");
     if ( *(hud + 0x3A0) )
       v67 = *(hud + 0x390);
@@ -634,7 +634,7 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     sub_145BF90(v44, "storeZoomMapByLevel", *(hud + 0x367));
     sub_145BF90(v44, "needShowCompassInTankHud", *(hud + 0x36C));
     sub_145BF90(v44, "pitchBlockerWhileBraking", *(hud + 0x36D));
-    sub_145A8E0(v44, "commanderCameraInViews", *(hud + 0x370));
+    assign_string_int(v44, "commanderCameraInViews", *(hud + 0x370));
     sub_145BF90(v44, "saveDirWhileSwitchTrigger", *(hud + 0x376));
     v81 = "..\\..\\skyquake\\prog\\main\\playerProfile.cpp";
     v82 = 0x400000000003i64;
@@ -668,7 +668,7 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     sub_145BF90(v44, "tankGunnerCameraFromSight", *(hud + 0x3CC));
     v88 = sub_145DB90(v44, "tankAltCrosshair");
     sub_1458A90(v88, (hud + 0x3D0), 0i64);
-    sub_145A8E0(v44, "saveZoomCameraSetting", *(hud + 0x3F0));
+    assign_string_int(v44, "saveZoomCameraSetting", *(hud + 0x3F0));
     sub_145BF90(v44, "playInactiveWindowSound", *(hud + 0x3BB));
     v89 = sub_145DB90(v44, "forbid_visual_tags");
     if ( *(hud + 0x588) )
@@ -687,25 +687,25 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     }
     v93 = sub_145DB90(v44, "hitIndicator");
     v94 = *&dword_44890B4;
-    sub_145A8E0(v93, "radius", (*(hud + 0xDC) * *&dword_44890B4));
-    sub_145A8E0(v93, "scale", (*(hud + 0xE0) * v94));
-    sub_145A8E0(v93, "alpha", (*(hud + 0xE4) * v94));
-    sub_145A8E0(v93, "timeout", *(hud + 0xE8));
+    assign_string_int(v93, "radius", (*(hud + 0xDC) * *&dword_44890B4));
+    assign_string_int(v93, "scale", (*(hud + 0xE0) * v94));
+    assign_string_int(v93, "alpha", (*(hud + 0xE4) * v94));
+    assign_string_int(v93, "timeout", *(hud + 0xE8));
     v95 = sub_145DB90(v44, "lwsIndicator");
-    sub_145A8E0(v95, "radius", (*(hud + 0xEC) * v94));
-    sub_145A8E0(v95, "scale", (*(hud + 0xF0) * v94));
-    sub_145A8E0(v95, "alpha", (*(hud + 0xF4) * v94));
-    sub_145A8E0(v95, "timeout", *(hud + 0xF8));
+    assign_string_int(v95, "radius", (*(hud + 0xEC) * v94));
+    assign_string_int(v95, "scale", (*(hud + 0xF0) * v94));
+    assign_string_int(v95, "alpha", (*(hud + 0xF4) * v94));
+    assign_string_int(v95, "timeout", *(hud + 0xF8));
     v96 = sub_145DB90(v44, "lwsIndicatorHelicopter");
-    sub_145A8E0(v96, "radius", (*(hud + 0xFC) * v94));
-    sub_145A8E0(v96, "scale", (*(hud + 0x100) * v94));
-    sub_145A8E0(v96, "alpha", (v94 * *(hud + 0x104)));
-    sub_145A8E0(v96, "timeout", *(hud + 0x108));
+    assign_string_int(v96, "radius", (*(hud + 0xFC) * v94));
+    assign_string_int(v96, "scale", (*(hud + 0x100) * v94));
+    assign_string_int(v96, "alpha", (v94 * *(hud + 0x104)));
+    assign_string_int(v96, "timeout", *(hud + 0x108));
     sub_145BF90(v44, "advancedHitIndicatorSimplified", *(hud + 0xD9));
-    sub_145A8E0(v44, "lwsAzimuthIndicatorTimeout", *(hud + 0x10C));
-    sub_145A8E0(v44, "lwsAzimuthIndicatorTimeoutHelicopter", *(hud + 0x110));
-    sub_145A8E0(v44, "freeCameraZoomSpeed", *(hud + 0x5C8));
-    sub_145A8E0(v44, "replayCameraFov", *(hud + 0x5CC));
+    assign_string_int(v44, "lwsAzimuthIndicatorTimeout", *(hud + 0x10C));
+    assign_string_int(v44, "lwsAzimuthIndicatorTimeoutHelicopter", *(hud + 0x110));
+    assign_string_int(v44, "freeCameraZoomSpeed", *(hud + 0x5C8));
+    assign_string_int(v44, "replayCameraFov", *(hud + 0x5CC));
     if ( v218 )
       (*(*v214 + 0x40i64))(v214);
     v12 = v216;
@@ -762,7 +762,7 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
           v103 = (*(hud + 0x39130) + 0x10 * v102);
         v100 = (*v103 + (*(*(hud + 0x39110) + 4 * v99) & ~(0xFFFFFFFF << v101)));
       }
-      sub_145A8E0(v97, v100, *(*(hud + 0x39148) + 4 * v99++));
+      assign_string_int(v97, v100, *(*(hud + 0x39148) + 4 * v99++));
       v98 = *(hud + 0x39118);
     }
     while ( v99 < v98 );
@@ -793,7 +793,7 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     }
     while ( v106 < v105 );
   }
-  sub_145A8E0(v12, "countryId2", *(hud + 0xD424));
+  assign_string_int(v12, "countryId2", *(hud + 0xD424));
   v111 = sub_145DB90(v12, "hints_count");
   if ( *(hud + 0xEBB0) )
   {
@@ -803,9 +803,9 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     do
     {
       v115 = sub_145DDB0(v112, "hint");
-      sub_145A8E0(v115, "id", *(*(hud + 0xEBA0) + v113));
-      sub_145A8E0(v115, "totalCount", *(*(hud + 0xEBA0) + v113 + 4));
-      sub_145A8E0(v115, "realisticCount", *(*(hud + 0xEBA0) + v113 + 8));
+      assign_string_int(v115, "id", *(*(hud + 0xEBA0) + v113));
+      assign_string_int(v115, "totalCount", *(*(hud + 0xEBA0) + v113 + 4));
+      assign_string_int(v115, "realisticCount", *(*(hud + 0xEBA0) + v113 + 8));
       ++v114;
       v113 += 0xCi64;
     }
@@ -815,12 +815,12 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
   sub_145E090(v217, hud + 0x39558, "selectedAir");
   v117 = v216;
   sub_145BF90(v216, "firstFreeFlight", *(hud + 0x394B0));
-  sub_145A8E0(v117, "completedOneMission", *(hud + 0xEB80));
+  assign_string_int(v117, "completedOneMission", *(hud + 0xEB80));
   sub_145BF90(v117, "seenNuclearEvent", *(hud + 0xEB84));
   sub_145BF90(v117, "seenBackgroundNuclearEvent", *(hud + 0xEB85));
   v118 = *(hud + 0x394B4);
   v119 = v116;
-  sub_145A8E0(v117, "battleCntWithSupportPlane", v118);
+  assign_string_int(v117, "battleCntWithSupportPlane", v118);
   v120 = sub_681400(3i64);
   v121 = sub_145DB90(v119, "customDifficultyBlk");
   sub_676AA0(v120, v121);
