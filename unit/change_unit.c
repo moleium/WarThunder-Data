@@ -1045,7 +1045,7 @@ LABEL_254:
         if ( _bittest(&v138, v137) )
         {
           LOBYTE(v62) = (v284 & 0x100) == 0;
-          sub_145BF90(v253, "loadSound", v62);
+          assign_char_property(v253, "loadSound", v62);
           LOBYTE(v188) = 0;
           LOBYTE(Strb) = 0;
           (*(**v33 + 0x200i64))(*v33, v58, v253, &v215, Strb, v188);
@@ -1385,7 +1385,7 @@ LABEL_254:
       while ( !*(a1 + 0x48) )
         Sleep(5u);
       LOBYTE(v61) = 1;
-      sub_145BF90(v253, "loadSound", v61);
+      assign_char_property(v253, "loadSound", v61);
       LOBYTE(v189) = v284 & 1;
       LOBYTE(Stra) = (v284 & 2) >> 1;
       (*(**v33 + 0x200i64))(*v33, v58, v253, &v215, Stra, v189);
