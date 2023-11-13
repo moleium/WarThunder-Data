@@ -1,13 +1,13 @@
 __int64 __fastcall set_armor_piercing_fixed(char flag)
 {
-  __int64 result; // rax
+  __int64 ballistics; // rax
 
-  result = game;
+  ballistics = game;
   if ( game )
   {
-    result = *(game + 0x440);
-    if ( result )
-      *(result + 0xA5D) = flag;
+    ballistics = *(game + 0x440);
+    if ( ballistics )
+      *(ballistics + 0xA5D) = flag;
   }
-  return result;
+  return ballistics;
 }
