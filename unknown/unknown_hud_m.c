@@ -229,7 +229,7 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
       v6 = 0i64;
       do
       {
-        v7 = sub_145DDB0(v4, "station");
+        v7 = add_ss_section(v4, "station");
         v8 = *(hud + 0x39448);
         v9 = &szFile;
         if ( *(v8 + v5 + 0x10) )
@@ -802,7 +802,7 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     v114 = 0i64;
     do
     {
-      v115 = sub_145DDB0(v112, "hint");
+      v115 = add_ss_section(v112, "hint");
       assign_string_int(v115, "id", *(*(hud + 0xEBA0) + v113));
       assign_string_int(v115, "totalCount", *(*(hud + 0xEBA0) + v113 + 4));
       assign_string_int(v115, "realisticCount", *(*(hud + 0xEBA0) + v113 + 8));

@@ -934,7 +934,7 @@ LABEL_59:
         sub_18F4A70(&v669, Block, v605, 0i64);
         if ( (SBYTE7(Block[1]) & 0x80u) != 0 && *&Block[0] )
           sub_1464430(*&Block[0]);
-        v153 = sub_145DDB0(v601, &unk_4898FAD);
+        v153 = add_ss_section(v601, &unk_4898FAD);
         v154 = 0i64;
         v155 = sub_180EDC0(v605, "stall", 0i64);
         v156 = *(v155 + 8);
@@ -1023,7 +1023,7 @@ LABEL_296:
                               if ( v208 == v211 )
                               {
 LABEL_317:
-                                v226 = sub_145DDB0(v601, "IAS");
+                                v226 = add_ss_section(v601, "IAS");
                                 v227 = 0i64;
                                 v228 = sub_180EDC0(v605, "maxRollRate", 0i64);
                                 v229 = *(v228 + 8);
