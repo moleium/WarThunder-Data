@@ -1,58 +1,60 @@
 bool __fastcall is_aircraft_delayed(unsigned int index)
 {
   __int64 game_; // rbx
-  struct _RTL_CRITICAL_SECTION *result; // r14
-  __int64 Unit; // rbx
-  __int64 v5; // rax
-  __int64 v6; // rcx
-  __int64 v7; // rdx
-  __int64 Unit_; // rax
+  struct _RTL_CRITICAL_SECTION *critical_section; // r14
+  __int64 unit; // rbx
+  __int64 temp1; // rax
+  __int64 temp2; // rcx
+  __int64 temp3; // rdx
+  __int64 unit_; // rax
 
   game_ = game;
   if ( (*(game + 0xCB) & 1) != 0 )
   {
-    result = 0i64;
+    critical_section = 0i64;
   }
   else
   {
-    result = *(game + 0x620);
-    if ( result )
+    critical_section = *(game + 0x620);
+    if ( critical_section )
       EnterCriticalSection(*(game + 0x620));
   }
   if ( *(game_ + 0x360) > index )
   {
-    Unit = *(*(game_ + 0x350) + 8i64 * index);
-    if ( !result )
+    unit = *(*(game_ + 0x350) + 8i64 * index);
+    if ( !critical_section )
       goto LABEL_16;
     goto LABEL_15;
   }
-  v5 = *(game_ + 0x378);
+  temp1 = *(game_ + 0x378);
   if ( !*(game_ + 0x378) )
   {
-    Unit = 0i64;
-    if ( !result )
+    unit = 0i64;
+    if ( !critical_section )
       goto LABEL_16;
     goto LABEL_15;
   }
-  v6 = *(game_ + 0x368);
-  v7 = 0i64;
+  temp2 = *(game_ + 0x368);
+  temp3 = 0i64;
   while ( 1 )
   {
-    Unit = *(v6 + 8 * v7);
-    if ( (*(Unit + 8) & 0x7FF) == index )
+    unit = *(temp2 + 8 * temp3);
+    if ( (*(unit + 8) & 0x7FF) == index )
       break;
-    if ( v5 == ++v7 )
+    if ( temp1 == ++temp3 )
     {
-      Unit = 0i64;
+      unit = 0i64;
       break;
     }
   }
-  if ( result )
+  if ( critical_section )
 LABEL_15:
-    LeaveCriticalSection(result);
+    LeaveCriticalSection(critical_section);
 LABEL_16:
-  Unit_ = 0i64;
-  if ( Unit && !*(Unit + 0x10B0) )
-    Unit_ = Unit;
-  return (*(Unit_ + 0x1058) & 0x7000014) != 0;
+  unit_ = 0i64;
+  if ( unit && !*(unit + 0x10B0) )
+    unit_ = unit;
+
+  // checks unit flags
+  return (*(unit_ + 0x1058) & 0x7000014) != 0;
 }
