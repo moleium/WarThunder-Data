@@ -23,8 +23,8 @@ void __fastcall unknown_lock_target(__int64 ballistics, __int64 _Unit, __int64 a
   unsigned int v25; // eax
   int v26; // ecx
   int v27; // eax
-  __int64 v28; // rax
-  int v29; // ecx
+  __int64 _UnitType_2; // rax
+  int alive_bit; // ecx
   int v30; // eax
   __int64 _SelectedUnit_; // rax
   unsigned int v32; // eax
@@ -558,11 +558,11 @@ LABEL_183:
                           return;
                         }
                         *(ballistics + 0x630) = 0;
-                        v28 = *(Unit + 0x10B0);
-                        if ( v28 <= 0xF )
+                        _UnitType_2 = *(Unit + 0x10B0);
+                        if ( _UnitType_2 <= 0xF )// unit is a human
                         {
-                          v29 = 0x897E;
-                          if ( _bittest(&v29, v28) )
+                          alive_bit = 0x897E;   // alive check
+                          if ( _bittest(&alive_bit, _UnitType_2) )
                           {
                             v30 = (*(*Unit + 0x688i64))(Unit, _Unit, a3, a4);
 LABEL_75:
@@ -583,7 +583,7 @@ LABEL_75:
                         v80.m256i_i32[0] = 1;
                         v80.m256i_i64[3] = v70;
                         v80.m256i_i32[4] = 1;
-                        *(&v81 + 1) = v28;
+                        *(&v81 + 1) = _UnitType_2;
                         LODWORD(v81) = 2;
                         dg_debug(3u, "can't run function '%s' for unit '%s', type %u", &v80, 3);
                         v30 = 0;
