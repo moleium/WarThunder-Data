@@ -63,7 +63,7 @@ void __fastcall unknown_lock_target(__int64 ballistics, __int64 _Unit, __int64 a
   __int64 _SelectedUnit_6; // rdx
   __int64 v66; // rsi
   char v67; // al
-  __int64 v68; // rcx
+  __int64 Camera; // rcx
   __int64 v69; // rbx
   CHAR *v70; // rdx
   __int64 v71; // rax
@@ -514,14 +514,14 @@ LABEL_150:
 LABEL_166:
                             v67 = 0;
 LABEL_168:
-                            v68 = *(game + 0x630);
-                            v69 = *(v68 + 0x3B3B0);
+                            Camera = *(game + 0x630);
+                            v69 = *(Camera + 0x3B3B0);
                             if ( v69 && qword_4B19AA0 && *(qword_4B19AA0 + 0x586) && *(Unit_ + 0x10B0) == 5 )
                             {
                               if ( v67 )
                               {
                                 LOBYTE(_SelectedUnit_5) = 1;
-                                sub_10DEF40(v68, _SelectedUnit_5);
+                                sub_10DEF40(Camera, _SelectedUnit_5);
                               }
                               else
                               {
@@ -531,11 +531,11 @@ LABEL_168:
                                   *(v71 + 0x218) = 0;
                                   *(v71 + 0x210) = 0;
                                   sub_2161AC0(v71, _SelectedUnit_5);
-                                  v68 = *(game + 0x630);
+                                  Camera = *(game + 0x630);
                                   _SelectedUnit_5 = *(ballistics + 0x620);
                                 }
                                 LOBYTE(v58) = 1;
-                                sub_10DEF00(v68, _SelectedUnit_5, v58);
+                                sub_10DEF00(Camera, _SelectedUnit_5, v58);
                               }
                             }
 LABEL_183:
