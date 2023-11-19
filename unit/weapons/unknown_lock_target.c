@@ -58,8 +58,8 @@ void __fastcall unknown_lock_target(__int64 ballistics, __int64 _Unit, __int64 a
   _DWORD *v60; // rax
   float v61; // xmm0_4
   unsigned __int64 v62; // rbx
-  __int64 v63; // rax
-  __int64 v64; // rcx
+  __int64 game_; // rax
+  __int64 ballistics_; // rcx
   __int64 _SelectedUnit_6; // rdx
   __int64 v66; // rsi
   char v67; // al
@@ -483,19 +483,19 @@ LABEL_150:
                               }
                               *v60 = 0;
                               v62 = 0i64;
-                              v63 = game;
+                              game_ = game;
                               do
                               {
-                                v64 = *(v63 + 0x440);
+                                ballistics_ = *(game_ + 0x440);
                                 _SelectedUnit_6 = *(ballistics + 0x620);
-                                if ( *(v64 + 8 * v62 + 0x658) != _SelectedUnit_6 )
+                                if ( *(ballistics_ + 8 * v62 + 0x658) != _SelectedUnit_6 )
                                 {
                                   if ( (v62 & 0x80000000) != 0i64
-                                    || (v66 = *(*(v63 + 0x498) + 0x33F8i64), _bittest64(&v66, v62)) )
+                                    || (v66 = *(*(game_ + 0x498) + 0x33F8i64), _bittest64(&v66, v62)) )
                                   {
-                                    *(v64 + 8 * v62 + 0x658) = _SelectedUnit_6;
+                                    *(ballistics_ + 8 * v62 + 0x658) = _SelectedUnit_6;
                                     (*(*v47 + 0x6D8i64))(v47, v62);
-                                    v63 = game;
+                                    game_ = game;
                                   }
                                 }
                                 ++v62;
