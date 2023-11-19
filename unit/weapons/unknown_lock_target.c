@@ -1,4 +1,4 @@
-void __fastcall unknown_lock_target(__int64 ballistics, __int64 a2, __int64 a3, __int64 a4)
+void __fastcall unknown_lock_target(__int64 ballistics, __int64 _Unit, __int64 a3, __int64 a4)
 {
   __int64 Unit; // rdi
   _QWORD *ThreadLocalStoragePointer; // rcx
@@ -8,9 +8,9 @@ void __fastcall unknown_lock_target(__int64 ballistics, __int64 a2, __int64 a3, 
   _QWORD *v10; // rbx
   int v11; // r8d
   _QWORD *v12; // rax
-  __int16 v13; // ax
+  __int16 _UnitType; // ax
   __int64 v14; // rax
-  __int64 v15; // rax
+  __int64 SelectedUnit; // rax
   float v16; // xmm0_4
   __int64 v17; // rax
   double v18; // xmm0_8
@@ -18,25 +18,25 @@ void __fastcall unknown_lock_target(__int64 ballistics, __int64 a2, __int64 a3, 
   double v20; // xmm6_8
   __int64 v21; // rax
   __int64 Unit__; // rsi
-  __int64 v23; // rcx
-  __int64 v24; // r14
+  __int64 SelectedUnit_; // rcx
+  __int64 _SelectedUnit; // r14
   unsigned int v25; // eax
   int v26; // ecx
   int v27; // eax
   __int64 v28; // rax
   int v29; // ecx
   int v30; // eax
-  __int64 v31; // rax
+  __int64 _SelectedUnit_; // rax
   unsigned int v32; // eax
-  unsigned int v33; // eax
+  unsigned int _UnitType_; // eax
   __int64 v34; // rcx
-  bool v35; // al
+  bool is_ship; // al
   double *v36; // rax
   __int64 v37; // rcx
   float v38; // xmm6_4
   unsigned __int64 v39; // rbx
   __int64 v40; // rcx
-  __int64 v41; // rsi
+  __int64 _SelectedUnit_2; // rsi
   int v42; // xmm6_4
   _QWORD *v43; // rcx
   __int64 v44; // rax
@@ -45,22 +45,22 @@ void __fastcall unknown_lock_target(__int64 ballistics, __int64 a2, __int64 a3, 
   __int64 v47; // rdi
   unsigned int v48; // eax
   int v49; // ecx
-  __int64 v50; // rax
+  __int64 _SelectedUnit_3; // rax
   unsigned __int64 v51; // rax
   unsigned int v52; // eax
   int v53; // ecx
-  __int64 v54; // rcx
-  unsigned int v55; // eax
+  __int64 _SelectedUnit_4; // rcx
+  unsigned int SelectedUnit_4_Type; // eax
   int v56; // ebx
   unsigned int v57; // eax
   __int64 v58; // r8
-  __int64 v59; // rdx
+  __int64 _SelectedUnit_5; // rdx
   _DWORD *v60; // rax
   float v61; // xmm0_4
   unsigned __int64 v62; // rbx
   __int64 v63; // rax
   __int64 v64; // rcx
-  __int64 v65; // rdx
+  __int64 _SelectedUnit_6; // rdx
   __int64 v66; // rsi
   char v67; // al
   __int64 v68; // rcx
@@ -93,18 +93,18 @@ void __fastcall unknown_lock_target(__int64 ballistics, __int64 a2, __int64 a3, 
   int v95; // [rsp+138h] [rbp-50h]
   int v96; // [rsp+13Ch] [rbp-4Ch]
 
-  Unit = a2;
+  Unit = _Unit;
   if ( !*(HudInfo + 0x20) )
   {
     if ( !LocalUnit )
       return;
     UnitType_ = *(LocalUnit + 0x10B0);
-    if ( UnitType_ > 0xF )
+    if ( UnitType_ > 0xF )                      // Check if its a human unit
       return;
-    a2 = 0x897Ei64;
-    if ( !_bittest(&a2, UnitType_) || *(LocalUnit + 0x10A8) > 1u || !*(*(LocalUnit + 0x2280) + 0x461i64) )
+    _Unit = 0x897Ei64;
+    if ( !_bittest(&_Unit, UnitType_) || *(LocalUnit + 0x10A8) > 1u || !*(*(LocalUnit + 0x2280) + 0x461i64) )
       return;
-    if ( UnitType_ == 5 )
+    if ( UnitType_ == 5 )                       // if its a ship
     {
       if ( !*(HudInfo + 0x400) )
         return;
@@ -116,7 +116,7 @@ void __fastcall unknown_lock_target(__int64 ballistics, __int64 a2, __int64 a3, 
   }
   ThreadLocalStoragePointer = NtCurrentTeb()->ThreadLocalStoragePointer;
   if ( !*(ThreadLocalStoragePointer[TlsIndex] + 1i64) )
-    _dyn_tls_on_demand_init(ThreadLocalStoragePointer, a2, a3, a4);
+    _dyn_tls_on_demand_init(ThreadLocalStoragePointer, _Unit, a3, a4);
   if ( !*(*(NtCurrentTeb()->ThreadLocalStoragePointer + TlsIndex) + 0x158i64) )
   {
     v10 = j__malloc_base(0x18ui64);
@@ -164,11 +164,11 @@ void __fastcall unknown_lock_target(__int64 ballistics, __int64 a2, __int64 a3, 
     UnitType = *(Unit + 0x10B0);
     if ( *(Unit + 0x10B0) )
     {
-      if ( UnitType == 5 )
+      if ( UnitType == 5 )                      // check if its a ship
       {
         v7 = *(*(game + 0x498) + 0x28E0i64);
       }
-      else if ( UnitType == 3 )
+      else if ( UnitType == 3 )                 // if its a tank
       {
         v7 = *(*(game + 0x498) + 0x28DCi64);
       }
@@ -180,16 +180,19 @@ void __fastcall unknown_lock_target(__int64 ballistics, __int64 a2, __int64 a3, 
   }
   if ( !Unit_ || !*(Unit_ + 0x4E8) )
     goto LABEL_44;
-  v13 = *(Unit_ + 0x10B0);
-  if ( v13 != 3 || !Unit || (a2 = *(Unit_ + 0x1080) & 0x1000, (*(Unit_ + 0x1080) & 0x1000) != 0) || *(Unit + 0x10B0) )
+  _UnitType = *(Unit_ + 0x10B0);
+  if ( _UnitType != 3
+    || !Unit
+    || (_Unit = *(Unit_ + 0x1080) & 0x1000, (*(Unit_ + 0x1080) & 0x1000) != 0)
+    || *(Unit + 0x10B0) )
   {
-    if ( !Unit || v7 <= 0.0 || !v13 )
+    if ( !Unit || v7 <= 0.0 || !_UnitType )
       goto LABEL_44;
     v14 = *(ballistics + 0xA38);
     if ( (*(ballistics + 0xA40) == 0i64 || v14 != *(ballistics + 0xA40)) && !v14 )
     {
-      v15 = *(ballistics + 0x620);
-      if ( !v15 || ((*(Unit + 8) ^ *(v15 + 8)) & 0x7FF) != 0 )
+      SelectedUnit = *(ballistics + 0x620);
+      if ( !SelectedUnit || ((*(Unit + 8) ^ *(SelectedUnit + 8)) & 0x7FF) != 0 )
       {
         v16 = sub_5655B0(game) + v7;
         *(ballistics + 0xA48) = v16;
@@ -200,14 +203,14 @@ void __fastcall unknown_lock_target(__int64 ballistics, __int64 a2, __int64 a3, 
         LOBYTE(v78) = 3;
         v79 = 0i64;
         v77 = v7;
-        v17 = sub_180EDC0(&v80, "lockTime", 0i64);
+        v17 = sub_180EDC0(&v80, "lockTime", 0);
         sub_180E6D0(v17, &v77);
         sub_180E1F0(&v77);
         v18 = *(ballistics + 0xA48);
         LOBYTE(v78) = 3;
         v79 = 0i64;
         v77 = v18;
-        v19 = sub_180EDC0(&v80, "endTime", 0i64);
+        v19 = sub_180EDC0(&v80, "endTime", 0);
         sub_180E6D0(v19, &v77);
         sub_180E1F0(&v77);
         sub_1823740("on_delayed_target_select:show", &v80, "native");
@@ -237,22 +240,22 @@ LABEL_44:
       {
         if ( LocalUnit )
         {
-          v33 = *(LocalUnit + 0x10B0);
-          if ( v33 <= 0xF )
+          _UnitType_ = *(LocalUnit + 0x10B0);
+          if ( _UnitType_ <= 0xF )              // if its a human
           {
-            a2 = 0x897Ei64;
-            if ( _bittest(&a2, v33) )
+            _Unit = 0x897Ei64;
+            if ( _bittest(&_Unit, _UnitType_) )
             {
-              if ( *(LocalUnit + 0x10A8) <= 1u )
+              if ( *(LocalUnit + 0x10A8) <= 1u )// check if its alive
               {
                 if ( *(*(LocalUnit + 0x2280) + 0x461i64) )
                 {
                   v34 = 0i64;
-                  v35 = v33 == 5;
+                  is_ship = _UnitType_ == 5;
                   if ( Unit )
                   {
-                    LOBYTE(v34) = v35;
-                    a2 = HudInfo - v34;
+                    LOBYTE(v34) = is_ship;
+                    _Unit = HudInfo - v34;
                     if ( (HudInfo - v34)[0x401] )
                     {
                       Unit__ = Unit_;
@@ -261,21 +264,23 @@ LABEL_44:
 LABEL_53:
                         if ( Unit__ && Unit && *(Unit__ + 0x4E8) )
                         {
-                          v23 = Unit;
+                          SelectedUnit_ = Unit;
                           if ( !*(ballistics + 0xA38) )
-                            v23 = *(ballistics + 0x620);
+                            SelectedUnit_ = *(ballistics + 0x620);
                           if ( byte_4AD5E44 )
-                            v23 = Unit;
+                            SelectedUnit_ = Unit;
                           if ( *(ballistics + 0x620) )
-                            Unit = v23;
+                            Unit = SelectedUnit_;
                         }
-                        v24 = *(ballistics + 0x620);
+                        _SelectedUnit = *(ballistics + 0x620);
                         *(ballistics + 0x8C7) = 0;
-                        if ( v24 && (v25 = *(ballistics + 0x3F4), v25 <= 0xF) && (v26 = 0xC824, _bittest(&v26, v25))
+                        if ( _SelectedUnit
+                          && (v25 = *(ballistics + 0x3F4), v25 <= 0xF)
+                          && (v26 = 0xC824, _bittest(&v26, v25))
                           || Unit__ && ((v27 = *(Unit__ + 0x10B0), v27 == 5) || v27 == 3 && *(Unit__ + 0x4E8)) )
                         {
-                          if ( v24 != Unit )
-                            *(ballistics + 0x648) = v24;
+                          if ( _SelectedUnit != Unit )
+                            *(ballistics + 0x648) = _SelectedUnit;
                         }
                         *(ballistics + 0xA40) = *(ballistics + 0xA38);
                         *(ballistics + 0xA38) = 0i64;
@@ -288,8 +293,10 @@ LABEL_76:
                           {
                             *(&v80.m256i_u64[1] + 4) = *(&xmmword_44B2610 + 0xC);
                             *v80.m256i_i8 = xmmword_44B2610;
-                            v31 = *(ballistics + 0x620);
-                            v32 = v31 ? *(*(v31 + 0x14B0) + 8i64) & 0x7FF | 0xFFFF0000 : 0xFFFFFFFF;
+                            _SelectedUnit_ = *(ballistics + 0x620);
+                            v32 = _SelectedUnit_
+                                ? *(*(_SelectedUnit_ + 0x14B0) + 8i64) & 0x7FF | 0xFFFF0000
+                                : 0xFFFFFFFF;
                             v80.m256i_i32[1] = v32;
                             if ( !qword_4B507E8 || *(game + 0xCD) || *(game + 0xCE) )
                             {
@@ -316,15 +323,15 @@ LABEL_76:
                               while ( v39 < *(Unit__ + 0x1238) );
                             }
                           }
-                          v41 = *(ballistics + 0x620);
-                          if ( v24 != v41 )
+                          _SelectedUnit_2 = *(ballistics + 0x620);
+                          if ( _SelectedUnit != _SelectedUnit_2 )
                           {
                             if ( Unit_ )
                             {
                               v42 = *(ballistics + 0x480);
                               v43 = NtCurrentTeb()->ThreadLocalStoragePointer;
                               if ( !*(v43[TlsIndex] + 1i64) )
-                                _dyn_tls_on_demand_init(v43, a2, a3, a4);
+                                _dyn_tls_on_demand_init(v43, _Unit, a3, a4);
                               v44 = *(*(NtCurrentTeb()->ThreadLocalStoragePointer + TlsIndex) + 0x160i64);
                               v80.m256i_i64[1] = Unit_;
                               v80.m256i_i64[2] = v44;
@@ -355,7 +362,7 @@ LABEL_76:
                               }
                               v80.m256i_i8[0x1A] = v45;
                               v80.m256i_i64[0] = &off_44ACA50;
-                              v93 = v41;
+                              v93 = _SelectedUnit_2;
                               v94 = *(Unit_ + 0x238);
                               v95 = *(Unit_ + 0x240);
                               v96 = v42;
@@ -399,7 +406,7 @@ LABEL_76:
                               if ( v75 )
                               {
 LABEL_123:
-                                sub_1112C80(ballistics + 0x910, 0i64, 0i64, 0i64);
+                                sub_1112C80(ballistics + 0x910, 0, 0, 0);
                                 sub_1112EC0(ballistics + 0x910, 0i64, 0i64);
                               }
                               v47 = Unit_;
@@ -414,8 +421,8 @@ LABEL_123:
                               goto LABEL_183;
                             if ( *(v47 + 0x4E8) )
                             {
-                              v50 = *(ballistics + 0x620);
-                              v51 = v50 ? *(v50 + 8) & 0x7FF : 0xFFFFFFFFFFFFFFFFui64;
+                              _SelectedUnit_3 = *(ballistics + 0x620);
+                              v51 = _SelectedUnit_3 ? *(_SelectedUnit_3 + 8) & 0x7FF : 0xFFFFFFFFFFFFFFFFui64;
                               v80.m256i_i64[1] = v51;
                               v80.m256i_i32[0] = 2;
                               dg_debug(3u, "setNewTarget targetId %d", &v80, 1);
@@ -441,19 +448,23 @@ LABEL_140:
                               || *(ballistics + 0x9E2)
                               || sub_471FA0(ballistics + 0x68) )
                             {
-                              v54 = *(ballistics + 0x620);
-                              if ( dword_4A74FD8 != (*(v54 + 8) & 0x7FF) )
+                              _SelectedUnit_4 = *(ballistics + 0x620);
+                              if ( dword_4A74FD8 != (*(_SelectedUnit_4 + 8) & 0x7FF) )
                               {
-                                dword_4A74FD8 = *(v54 + 8) & 0x7FF;
-                                v55 = *(v54 + 0x10B0);
-                                if ( v55 > 0xF || (v56 = 0x897E, !_bittest(&v56, v55)) || !*(v54 + 0x2F98) )
-                                  sub_F10860(v54, Unit_);
+                                dword_4A74FD8 = *(_SelectedUnit_4 + 8) & 0x7FF;
+                                SelectedUnit_4_Type = *(_SelectedUnit_4 + 0x10B0);
+                                if ( SelectedUnit_4_Type > 0xF
+                                  || (v56 = 0x897E, !_bittest(&v56, SelectedUnit_4_Type))
+                                  || !*(_SelectedUnit_4 + 0x2F98) )
+                                {
+                                  sub_F10860(_SelectedUnit_4, Unit_);
+                                }
                               }
                             }
 LABEL_150:
                             v57 = (*(*v47 + 0x6D0i64))(v47);
-                            v59 = *(ballistics + 0x620);
-                            if ( *(v47 + 0x4E8) && v59 )
+                            _SelectedUnit_5 = *(ballistics + 0x620);
+                            if ( *(v47 + 0x4E8) && _SelectedUnit_5 )
                             {
                               if ( (v57 > 3 || v57 == 2) && v57 - 9 > 3 )
                                 goto LABEL_166;
@@ -464,7 +475,8 @@ LABEL_150:
                               }
                               else
                               {
-                                v61 = (*(v59 + 0x200) - *(v59 + 0x1F4)) * flt_44B25C0[*(v59 + 0x10B0) == 5];
+                                v61 = (*(_SelectedUnit_5 + 0x200) - *(_SelectedUnit_5 + 0x1F4))
+                                    * flt_44B25C0[*(_SelectedUnit_5 + 0x10B0) == 5];
                                 *(v47 + 0x3004) = 0;
                                 *(v47 + 0x3008) = v61;
                                 v60 = (v47 + 0x300C);
@@ -475,13 +487,13 @@ LABEL_150:
                               do
                               {
                                 v64 = *(v63 + 0x440);
-                                v65 = *(ballistics + 0x620);
-                                if ( *(v64 + 8 * v62 + 0x658) != v65 )
+                                _SelectedUnit_6 = *(ballistics + 0x620);
+                                if ( *(v64 + 8 * v62 + 0x658) != _SelectedUnit_6 )
                                 {
                                   if ( (v62 & 0x80000000) != 0i64
                                     || (v66 = *(*(v63 + 0x498) + 0x33F8i64), _bittest64(&v66, v62)) )
                                   {
-                                    *(v64 + 8 * v62 + 0x658) = v65;
+                                    *(v64 + 8 * v62 + 0x658) = _SelectedUnit_6;
                                     (*(*v47 + 0x6D8i64))(v47, v62);
                                     v63 = game;
                                   }
@@ -489,14 +501,14 @@ LABEL_150:
                                 ++v62;
                               }
                               while ( v62 != 0x16 );
-                              v59 = *(ballistics + 0x620);
+                              _SelectedUnit_5 = *(ballistics + 0x620);
                             }
-                            if ( !v59 )
+                            if ( !_SelectedUnit_5 )
                             {
                               qword_4AD1048 = 0i64;
                               qword_4AD1050 = 0i64;
                               v67 = 1;
-                              v59 = 0i64;
+                              _SelectedUnit_5 = 0i64;
                               goto LABEL_168;
                             }
 LABEL_166:
@@ -508,8 +520,8 @@ LABEL_168:
                             {
                               if ( v67 )
                               {
-                                LOBYTE(v59) = 1;
-                                sub_10DEF40(v68, v59);
+                                LOBYTE(_SelectedUnit_5) = 1;
+                                sub_10DEF40(v68, _SelectedUnit_5);
                               }
                               else
                               {
@@ -518,12 +530,12 @@ LABEL_168:
                                 {
                                   *(v71 + 0x218) = 0;
                                   *(v71 + 0x210) = 0;
-                                  sub_2161AC0(v71, v59);
+                                  sub_2161AC0(v71, _SelectedUnit_5);
                                   v68 = *(game + 0x630);
-                                  v59 = *(ballistics + 0x620);
+                                  _SelectedUnit_5 = *(ballistics + 0x620);
                                 }
                                 LOBYTE(v58) = 1;
-                                sub_10DEF00(v68, v59, v58);
+                                sub_10DEF00(v68, _SelectedUnit_5, v58);
                               }
                             }
 LABEL_183:
@@ -552,7 +564,7 @@ LABEL_183:
                           v29 = 0x897E;
                           if ( _bittest(&v29, v28) )
                           {
-                            v30 = (*(*Unit + 0x688i64))(Unit, a2, a3, a4);
+                            v30 = (*(*Unit + 0x688i64))(Unit, _Unit, a3, a4);
 LABEL_75:
                             *(ballistics + 0x8C8) = v30;
                             Unit__ = Unit_;
