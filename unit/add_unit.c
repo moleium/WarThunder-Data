@@ -36,7 +36,7 @@ void __fastcall add_unit(__int64 game, __int64 Unit, __int64 a3, __int64 a4)
     _dyn_tls_on_demand_init(ThreadLocalStoragePointer, Unit, a3, a4);
   if ( !*(*(NtCurrentTeb()->ThreadLocalStoragePointer + TlsIndex) + 0x158i64) )
   {
-    sub_1641100(
+    add_delayed_callback(
       &qword_4B71860,
       0i64,
       sub_56CCE0,

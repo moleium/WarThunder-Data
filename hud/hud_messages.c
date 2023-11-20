@@ -255,7 +255,7 @@ LABEL_23:
       *(v21 + 0x18) = v41;
       memmove(v42, v10, v41);
     }
-    sub_1641100(&qword_4B71860, v21, 0, 0, "DelayedAction @\n\t..\\..\\skyquake\\prog\\gui\\hud\\hud.cpp(1644):");
+    add_delayed_callback(&qword_4B71860, v21, 0, 0, "DelayedAction @\n\t..\\..\\skyquake\\prog\\gui\\hud\\hud.cpp(1644):");
     v7 = v47;
   }
   *(a1 + 0x1C94) = 0;

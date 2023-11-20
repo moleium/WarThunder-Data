@@ -361,7 +361,7 @@ __int64 __fastcall change_unit(__int64 a1)
 LABEL_24:
   v191 = (a1 + 0x18);
   *(a1 + 0x40) = 0;
-  sub_1641100(
+  add_delayed_callback(
     &qword_4B71860,
     0,
     sub_490B70,
@@ -594,7 +594,7 @@ LABEL_24:
         v226 = v218;
         v227 = (a1 + 0x4C);
         *(a1 + 0x4C) = 0;
-        sub_1641100(
+        add_delayed_callback(
           &qword_4B71860,
           0,
           sub_490D50,
@@ -636,7 +636,7 @@ LABEL_24:
           v256[1] = v70;
           v256[2] = a1 + 0x50;
           *(a1 + 0x50) = 0;
-          sub_1641100(
+          add_delayed_callback(
             &qword_4B71860,
             0,
             sub_491140,
@@ -676,7 +676,7 @@ LABEL_24:
             while ( v77 < *(v218[0] + 0x2560) );
           }
           *v72 = 0;
-          sub_1641100(
+          add_delayed_callback(
             &qword_4B71860,
             0,
             sub_4914B0,
@@ -900,7 +900,7 @@ LABEL_24:
         v222 = &v192;
         v223 = a1 + 0x4C;
         *(a1 + 0x4C) = 0;
-        sub_1641100(
+        add_delayed_callback(
           &qword_4B71860,
           0,
           sub_491B70,
@@ -929,7 +929,7 @@ LABEL_24:
         Block[1] = v115;
         *&v194 = a1 + 0x50;
         *(a1 + 0x50) = 0;
-        sub_1641100(
+        add_delayed_callback(
           &qword_4B71860,
           0,
           sub_491140,
@@ -942,7 +942,7 @@ LABEL_24:
           while ( !*v123 );
         }
         *v123 = 0;
-        sub_1641100(
+        add_delayed_callback(
           &qword_4B71860,
           0,
           sub_4914B0,
@@ -967,7 +967,7 @@ LABEL_24:
       }
       v125 = (*(*(v124 + 0xA) + 0x60i64))(v124 + 0x50);
       *v109 = 0;
-      sub_1641100(
+      add_delayed_callback(
         &qword_4B71860,
         0,
         sub_491E70,
@@ -1160,7 +1160,7 @@ LABEL_254:
       {
         LOBYTE(v156) = 1;
         v158 = sub_57B0C0(*(*v191 + 8i64) & 0x7FF, v58, v156);
-        sub_1641100(
+        add_delayed_callback(
           &qword_4B71860,
           v158,
           0,
@@ -1319,7 +1319,7 @@ LABEL_254:
             a1 + 0x78,
             a1 + 0x7C,
             &v224);
-          sub_1641100(
+          add_delayed_callback(
             &qword_4B71860,
             v176,
             0,
@@ -1376,7 +1376,7 @@ LABEL_254:
       v264 = a1 + 0x48;
       LOWORD(v265) = *(a1 + 0x186);
       *(a1 + 0x48) = 0;
-      sub_1641100(
+      add_delayed_callback(
         &qword_4B71860,
         0,
         sub_492870,

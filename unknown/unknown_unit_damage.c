@@ -626,7 +626,7 @@ LABEL_126:
                 *v103 = &off_44CFAE0;
                 v103[1] = v106;
                 *(v103 + 2) = v111;
-                sub_1641100(
+                add_delayed_callback(
                   &qword_4B71860,
                   v103,
                   0i64,

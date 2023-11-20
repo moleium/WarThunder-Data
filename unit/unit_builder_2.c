@@ -595,7 +595,7 @@ LABEL_54:
   v59 = game;
   if ( *(*(game + 0x498) + 0x23B1i64) )
   {
-    sub_1641100(
+    add_delayed_callback(
       &qword_4B71860,
       0i64,
       sub_8B18E0,

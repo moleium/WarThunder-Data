@@ -70,7 +70,7 @@ void __fastcall weapon_rocket(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
     _InterlockedIncrement(&dword_4B67890);
     *v13 = &off_44A8D40;
     v13[1] = a1;
-    sub_1641100(&qword_4B71860, v13, 0i64, 0i64, "DelayedAction @\n\t..\\..\\skyquake\\prog\\weapon\\rocket.cpp(885):");
+    add_delayed_callback(&qword_4B71860, v13, 0i64, 0i64, "DelayedAction @\n\t..\\..\\skyquake\\prog\\weapon\\rocket.cpp(885):");
     return;
   }
   v6 = get_unit(a1);

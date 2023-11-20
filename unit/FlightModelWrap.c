@@ -1886,7 +1886,7 @@ LABEL_269:
   _InterlockedIncrement(&dword_4B67890);
   *v212 = &off_44AE4A0;
   v212[1] = v134.QuadPart;
-  sub_1641100(
+  add_delayed_callback(
     &qword_4B71860,
     v212,
     0i64,

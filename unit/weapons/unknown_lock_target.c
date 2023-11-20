@@ -147,7 +147,7 @@ void __fastcall unknown_lock_target(__int64 ballistics, __int64 _Unit, __int64 a
     *v10 = &off_44B2660;
     v10[1] = ballistics;
     v10[2] = Unit;
-    sub_1641100(
+    add_delayed_callback(
       &qword_4B71860,
       v10,
       0i64,

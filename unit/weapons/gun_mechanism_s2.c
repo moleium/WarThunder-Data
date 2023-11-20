@@ -51,7 +51,7 @@ __int64 __fastcall gun_mechanism_s2(__int64 a1, __int64 a2)
       _InterlockedIncrement(&dword_4B67890);
       *v7 = &off_44A9350;
       v7[1] = v6;
-      sub_1641100(&qword_4B71860, v7, 0i64, 0i64, "DelayedAction @\n\t..\\..\\skyquake\\prog\\weapon\\gun.cpp(457):");
+      add_delayed_callback(&qword_4B71860, v7, 0i64, 0i64, "DelayedAction @\n\t..\\..\\skyquake\\prog\\weapon\\gun.cpp(457):");
     }
     Unit = *(a1 + 8);
     if ( Unit && (v11 = *(Unit + 0x10B0), v11 <= 0xF) && (v12 = 0x897E, _bittest(&v12, v11)) )

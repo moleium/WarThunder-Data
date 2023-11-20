@@ -72,5 +72,5 @@ LABEL_21:
   v13 = (*(*off_4B678B0 + 0x18i64))(off_4B678B0, 0x10i64);
   *v13 = &off_44B2A00;
   v13[1] = a1;
-  sub_1641100(&qword_4B71860, v13, 0i64, 0i64, "DelayedAction @\n\t..\\..\\skyquake\\prog\\main\\waypoint.cpp(64):");
+  add_delayed_callback(&qword_4B71860, v13, 0i64, 0i64, "DelayedAction @\n\t..\\..\\skyquake\\prog\\main\\waypoint.cpp(64):");
 }
