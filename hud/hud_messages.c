@@ -1,270 +1,276 @@
-__int64 __fastcall hud_messages(__int64 a1, char a2)
+__int64 __fastcall hud_messages(__int64 a1, char a2, __int64 a3, __int64 a4)
 {
-  __int64 v4; // rdx
-  __int64 v5; // r8
   __int64 v6; // r9
-  __int64 v7; // rsi
-  int v8; // eax
-  const char *v9; // r13
-  const char *v10; // r12
+  __int64 v7; // rdx
+  __int64 v8; // r8
+  __int64 v9; // r9
+  __int64 Unit; // rsi
+  int UnitType; // eax
+  const char *type_name; // r13
+  const char *v13; // r12
   _QWORD *ThreadLocalStoragePointer; // rcx
-  char *v12; // rcx
-  __int64 v13; // r8
-  __int64 v14; // r9
-  __int64 v15; // rax
-  int v16; // r15d
-  __int64 v17; // rbp
+  char *v15; // rcx
+  __int64 v16; // r8
+  __int64 v17; // r9
   __int64 v18; // rax
-  int v19; // esi
-  __int64 v20; // rdi
-  _QWORD *v21; // rbx
-  int v22; // r8d
-  _QWORD *v23; // rax
-  const char *v24; // rdi
-  const char *v25; // rbp
-  void *v26; // rdi
-  const char *v27; // r15
-  int v28; // eax
-  unsigned int v29; // r12d
-  void *v30; // rcx
-  __int64 v31; // rsi
-  int v32; // eax
-  unsigned int v33; // ebp
-  void *v34; // rcx
-  __int64 v35; // rsi
-  int v36; // eax
-  unsigned int v37; // ebp
-  void *v38; // rcx
-  __int64 v39; // rsi
-  int v40; // eax
-  unsigned int v41; // ebp
-  void *v42; // rcx
-  __int64 v43; // rsi
+  int v19; // r15d
+  __int64 v20; // rbp
+  __int64 v21; // rax
+  int v22; // esi
+  __int64 v23; // rdi
+  _QWORD *v24; // rbx
+  int v25; // r8d
+  _QWORD *v26; // rax
+  const char *v27; // rdi
+  const char *v28; // rbp
+  void *v29; // rdi
+  const char *v30; // r15
+  int v31; // eax
+  unsigned int v32; // r12d
+  void *v33; // rcx
+  __int64 v34; // rsi
+  int v35; // eax
+  unsigned int v36; // ebp
+  void *v37; // rcx
+  __int64 v38; // rsi
+  int v39; // eax
+  unsigned int v40; // ebp
+  void *v41; // rcx
+  __int64 v42; // rsi
+  int v43; // eax
+  unsigned int v44; // ebp
+  void *v45; // rcx
+  __int64 v46; // rsi
   __int64 result; // rax
-  int v45; // [rsp+3Ch] [rbp-6Ch]
+  int v48; // [rsp+3Ch] [rbp-6Ch]
   const char *Src; // [rsp+40h] [rbp-68h]
-  __int64 v47; // [rsp+48h] [rbp-60h]
-  int v48; // [rsp+50h] [rbp-58h] BYREF
-  __int64 v49; // [rsp+58h] [rbp-50h]
+  __int64 Unit_; // [rsp+48h] [rbp-60h]
+  int v51; // [rsp+50h] [rbp-58h] BYREF
+  __int64 v52; // [rsp+58h] [rbp-50h]
 
   if ( qword_4B44C68 )
-    sub_FE4450();
-  sub_B27BC0(a1 + 0x5A8, "HudMessageHide", &qword_4B67850);
-  sub_B27BC0(a1 + 0x5A8, "WatchedHeroChanged", &qword_4B67850);
+    sub_FE4450(qword_4B44C68);
+  sub_B27BC0(a1 + 0x5A8, "HudMessageHide", &qword_4B67850, a4);
+  sub_B27BC0(a1 + 0x5A8, "WatchedHeroChanged", &qword_4B67850, v6);
   sub_C414B0(0i64, 0i64, 0i64);
   *(a1 + 0xEC0) = *(a1 + 0xEB8);
   if ( !a2 )
   {
-    v7 = LocalUnit;
+    Unit = LocalUnit;
     if ( LocalUnit )
       goto LABEL_5;
 LABEL_11:
-    v9 = &szFile;
-    v10 = &szFile;
+    type_name = &szFile;
+    v13 = &szFile;
     goto LABEL_23;
   }
-  v7 = *&mUnit;
+  Unit = *&mUnit;
   if ( !*&mUnit )
     goto LABEL_11;
 LABEL_5:
-  v8 = *(v7 + 0x10B0);
-  if ( v8 == 3 )
+  UnitType = *(Unit + 0x10B0);
+  if ( UnitType == 3 )
   {
-    v9 = "tank";
+    type_name = "tank";
   }
-  else if ( v8 == 5 )
+  else if ( UnitType == 5 )
   {
-    v9 = "ship";
-    if ( (*(*v7 + 0x118i64))(v7) )
-      v9 = "shipEx";
+    type_name = "ship";
+    if ( (*(*Unit + 0x118i64))(Unit) )
+      type_name = "shipEx";
   }
-  else if ( (*(v7 + 0x1083) & 8) != 0 )
+  else if ( (*(Unit + 0x1083) & 8) != 0 )
   {
-    v9 = "helicopter";
+    type_name = "helicopter";
   }
-  else if ( *(v7 + 0x10B0) )
+  else if ( *(Unit + 0x10B0) )
   {
-    if ( v8 == 0xB )
+    if ( UnitType == 0xB )
     {
-      v9 = "walker";
+      type_name = "walker";
     }
     else
     {
-      v9 = &szFile;
-      if ( v8 == 0xF )
-        v9 = "human";
+      type_name = &szFile;
+      if ( UnitType == 0xF )
+        type_name = "human";
     }
   }
   else
   {
-    v9 = "aircraft";
+    type_name = "aircraft";
   }
-  v10 = &szFile;
-  if ( *(*(v7 + 0x1120) + 0x10i64) )
-    v10 = *(*(v7 + 0x1120) + 0x10i64);
+  v13 = &szFile;
+  if ( *(*(Unit + 0x1120) + 0x10i64) )
+    v13 = *(*(Unit + 0x1120) + 0x10i64);
 LABEL_23:
   ThreadLocalStoragePointer = NtCurrentTeb()->ThreadLocalStoragePointer;
   if ( !*(ThreadLocalStoragePointer[TlsIndex] + 1i64) )
-    _dyn_tls_on_demand_init(ThreadLocalStoragePointer, v4, v5, v6);
-  v12 = qword_4B173B8 + 0x230;
+    _dyn_tls_on_demand_init(ThreadLocalStoragePointer, v7, v8, v9);
+  v15 = qword_4B173B8 + 0x230;
   if ( *(*(NtCurrentTeb()->ThreadLocalStoragePointer + TlsIndex) + 0x158i64) )
   {
-    sub_B36480(v12, v9, v5, v6);
-    sub_B36480(qword_4B173B8 + 0x5A90, v10, v13, v14);
+    sub_B36480(v15, type_name, v8, v9);
+    sub_B36480(qword_4B173B8 + 0x5A90, v13, v16, v17);
   }
   else
   {
-    v47 = v7;
-    v15 = (*(*v12 + 8i64))(v12);
-    v16 = *v15;
-    v17 = *(v15 + 8);
-    v18 = (*(*(qword_4B173B8 + 0xB52) + 8i64))(qword_4B173B8 + 0x5A90);
+    Unit_ = Unit;
+    v18 = (*(*v15 + 8i64))(v15);
     v19 = *v18;
     v20 = *(v18 + 8);
-    v21 = j__malloc_base(0x68ui64);
-    if ( !v21 )
+    v21 = (*(*(qword_4B173B8 + 0xB52) + 8i64))(qword_4B173B8 + 0x5A90);
+    v22 = *v21;
+    v23 = *(v21 + 8);
+    v24 = j__malloc_base(0x68ui64);
+    if ( !v24 )
     {
       do
       {
         if ( !off_4B678A0 || !off_4B678A0(0x68i64) )
         {
-          v49 = 0x68i64;
-          v48 = 2;
-          LOBYTE(v22) = 1;
+          v52 = 0x68i64;
+          v51 = 2;
+          LOBYTE(v25) = 1;
           log_err(
             "..\\..\\prog\\engine2\\memory\\dagmem.cpp",
             0x345,
-            v22,
+            v25,
             "Not enough memory to alloc %llu bytes",
-            &v48,
+            &v51,
             1);
         }
-        v23 = j__malloc_base(0x68ui64);
+        v26 = j__malloc_base(0x68ui64);
       }
-      while ( !v23 );
-      v21 = v23;
+      while ( !v26 );
+      v24 = v26;
     }
-    _InterlockedAdd(&dword_4B6788C, (j__msize(v21) + 0xF) >> 4);
+    _InterlockedAdd(&dword_4B6788C, (j__msize(v24) + 0xF) >> 4);
     _InterlockedIncrement(&dword_4B67890);
-    v24 = (v20 + 0x38);
+    v27 = (v23 + 0x38);
+    if ( v22 != 0x18000010 )
+      v27 = 0i64;
+    Src = v27;
+    v28 = (v20 + 0x38);
+    *v24 = &off_44CC120;
+    v29 = off_4B678C8;
+    v24[1] = 0i64;
+    v24[2] = v29;
+    v24[3] = 0i64;
     if ( v19 != 0x18000010 )
-      v24 = 0i64;
-    Src = v24;
-    v25 = (v17 + 0x38);
-    *v21 = &off_44CC120;
-    v26 = off_4B678C8;
-    v21[1] = 0i64;
-    v21[2] = v26;
-    v21[3] = 0i64;
-    if ( v16 != 0x18000010 )
-      v25 = 0i64;
-    v45 = v19;
-    if ( v16 == 0x18000010 && *v25 )
+      v28 = 0i64;
+    v48 = v22;
+    if ( v19 == 0x18000010 && *v28 )
     {
-      v27 = v10;
-      v28 = strlen(v25);
-      v29 = v28 + 1;
-      if ( v28 == 0xFFFFFFFF )
+      v30 = v13;
+      v31 = strlen(v28);
+      v32 = v31 + 1;
+      if ( v31 == 0xFFFFFFFF )
       {
-        v30 = 0i64;
+        v33 = 0i64;
       }
       else
       {
-        v31 = 0x10i64;
-        if ( v29 >= 0x11 )
-          v31 = v29;
-        v30 = (*(*v26 + 0x18i64))(v26, v31);
-        v21[1] = v30;
-        *(v21 + 7) = v31;
+        v34 = 0x10i64;
+        if ( v32 >= 0x11 )
+          v34 = v32;
+        v33 = (*(*v29 + 0x18i64))(v29, v34);
+        v24[1] = v33;
+        *(v24 + 7) = v34;
       }
-      *(v21 + 6) = v29;
-      memmove(v30, v25, v29);
-      v26 = off_4B678C8;
-      v10 = v27;
-      v19 = v45;
+      *(v24 + 6) = v32;
+      memmove(v33, v28, v32);
+      v29 = off_4B678C8;
+      v13 = v30;
+      v22 = v48;
     }
-    v21[4] = 0i64;
-    v21[5] = v26;
-    v21[6] = 0i64;
-    if ( *v9 )
+    v24[4] = 0i64;
+    v24[5] = v29;
+    v24[6] = 0i64;
+    if ( *type_name )
     {
-      v32 = strlen(v9);
-      v33 = v32 + 1;
-      if ( v32 == 0xFFFFFFFF )
+      v35 = strlen(type_name);
+      v36 = v35 + 1;
+      if ( v35 == 0xFFFFFFFF )
       {
-        v34 = 0i64;
+        v37 = 0i64;
       }
       else
       {
-        v35 = 0x10i64;
-        if ( v33 >= 0x11 )
-          v35 = v33;
-        v34 = (*(*v26 + 0x18i64))(v26, v35);
-        v21[4] = v34;
-        *(v21 + 0xD) = v35;
+        v38 = 0x10i64;
+        if ( v36 >= 0x11 )
+          v38 = v36;
+        v37 = (*(*v29 + 0x18i64))(v29, v38);
+        v24[4] = v37;
+        *(v24 + 0xD) = v38;
       }
-      *(v21 + 0xC) = v33;
-      memmove(v34, v9, v33);
-      v26 = off_4B678C8;
-      v19 = v45;
+      *(v24 + 0xC) = v36;
+      memmove(v37, type_name, v36);
+      v29 = off_4B678C8;
+      v22 = v48;
     }
-    v21[7] = 0i64;
-    v21[8] = v26;
-    v21[9] = 0i64;
-    if ( v19 == 0x18000010 && *Src )
+    v24[7] = 0i64;
+    v24[8] = v29;
+    v24[9] = 0i64;
+    if ( v22 == 0x18000010 && *Src )
     {
-      v36 = strlen(Src);
-      v37 = v36 + 1;
-      if ( v36 == 0xFFFFFFFF )
+      v39 = strlen(Src);
+      v40 = v39 + 1;
+      if ( v39 == 0xFFFFFFFF )
       {
-        v38 = 0i64;
+        v41 = 0i64;
       }
       else
       {
-        v39 = 0x10i64;
-        if ( v37 >= 0x11 )
-          v39 = v37;
-        v38 = (*(*v26 + 0x18i64))(v26, v39);
-        v21[7] = v38;
-        *(v21 + 0x13) = v39;
+        v42 = 0x10i64;
+        if ( v40 >= 0x11 )
+          v42 = v40;
+        v41 = (*(*v29 + 0x18i64))(v29, v42);
+        v24[7] = v41;
+        *(v24 + 0x13) = v42;
       }
-      *(v21 + 0x12) = v37;
-      memmove(v38, Src, v37);
-      v26 = off_4B678C8;
+      *(v24 + 0x12) = v40;
+      memmove(v41, Src, v40);
+      v29 = off_4B678C8;
     }
-    v21[0xA] = 0i64;
-    v21[0xB] = v26;
-    v21[0xC] = 0i64;
-    if ( *v10 )
+    v24[0xA] = 0i64;
+    v24[0xB] = v29;
+    v24[0xC] = 0i64;
+    if ( *v13 )
     {
-      v40 = strlen(v10);
-      v41 = v40 + 1;
-      if ( v40 == 0xFFFFFFFF )
+      v43 = strlen(v13);
+      v44 = v43 + 1;
+      if ( v43 == 0xFFFFFFFF )
       {
-        v42 = 0i64;
+        v45 = 0i64;
       }
       else
       {
-        v43 = 0x10i64;
-        if ( v41 >= 0x11 )
-          v43 = v41;
-        v42 = (*(*v26 + 0x18i64))(v26, v43);
-        v21[0xA] = v42;
-        *(v21 + 0x19) = v43;
+        v46 = 0x10i64;
+        if ( v44 >= 0x11 )
+          v46 = v44;
+        v45 = (*(*v29 + 0x18i64))(v29, v46);
+        v24[0xA] = v45;
+        *(v24 + 0x19) = v46;
       }
-      *(v21 + 0x18) = v41;
-      memmove(v42, v10, v41);
+      *(v24 + 0x18) = v44;
+      memmove(v45, v13, v44);
     }
-    add_delayed_callback(&qword_4B71860, v21, 0, 0, "DelayedAction @\n\t..\\..\\skyquake\\prog\\gui\\hud\\hud.cpp(1644):");
-    v7 = v47;
+    add_delayed_callback(
+      &qword_4B71860,
+      v24,
+      0i64,
+      0i64,
+      "DelayedAction @\n\t..\\..\\skyquake\\prog\\gui\\hud\\hud.cpp(1644):");
+    Unit = Unit_;
   }
   *(a1 + 0x1C94) = 0;
   result = *(a1 + 0x1C78);
   *(a1 + 0x1C80) = result;
   *(a1 + 0x1C90) = 0xBF800000;
-  if ( v7 )
+  if ( Unit )
   {
-    if ( *(v7 + 0x4E8) )
+    if ( *(Unit + 0x4E8) )
       return sub_B36A90();
   }
   return result;
