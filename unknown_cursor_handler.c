@@ -514,7 +514,7 @@ LABEL_166:
     v94 = v10 != 0i64;
     if ( v10 && byte_4AD1064 )
     {
-      dword_4AD102C = *(v10 + 0xBA);
+      Unit_PositionZ = *(v10 + 0xBA);
       LODWORD(v30) = v10;
       Unit_Position = *(v10 + 0x5C);
       v1337 = 0x3F80000000000000i64;
@@ -648,10 +648,10 @@ LABEL_166:
       v959 = &dword_4AD1014;
       if ( v1293.m128_i8[0] )
         v959 = &dword_4AD1020;
-      v960 = (((*&dword_4AD102C - *v959) * v955)
+      v960 = (((*&Unit_PositionZ - *v959) * v955)
             + (((*(&Unit_Position + 1) - v958) * v953) + fmaxf(*(cursor_visuals + 0x654), *(cursor_visuals + 0x638))))
            + ((*&Unit_Position - v956) * v952);
-      v961 = (*v959 - *&dword_4AD102C) + (v955 * v960);
+      v961 = (*v959 - *&Unit_PositionZ) + (v955 * v960);
       v962 = (v956 - *&Unit_Position) + (v960 * v952);
       *&qword_4AD1030 = v962;
       *(&qword_4AD1030 + 1) = (v958 - *(&Unit_Position + 1)) + (v953 * v960);
@@ -675,7 +675,7 @@ LABEL_166:
         if ( (*(*v8 + 0x270i64))(v8) )
         {
           (*(*v8 + 0x268i64))(v8, &v1336);
-          dword_4AD102C = v1337;
+          Unit_PositionZ = v1337;
           Unit_Position = v1336;
           v965 = v925.m128_f32[0] + *(cursor_visuals + 0x4A84);
           *&v1320.m256i_i32[1] = v965;
@@ -756,7 +756,7 @@ LABEL_166:
         }
         else
         {
-          dword_4AD102C = *(v8 + 0x9C8);
+          Unit_PositionZ = *(v8 + 0x9C8);
           Unit_Position = *(v8 + 0x9C0);
           v995 = fsqrt(
                    (*&dword_4AD1038 * *&dword_4AD1038)
@@ -785,7 +785,7 @@ LABEL_166:
         LODWORD(v1337) = *(v8 + 0x9C8);
         v1336 = *(v8 + 0x9C0);
       }
-      dword_4AD102C = v1337;
+      Unit_PositionZ = v1337;
       Unit_Position = v1336;
       LOWORD(v963) = *(v8 + 0x10B0);
     }
@@ -827,9 +827,9 @@ LABEL_166:
       v1021 = ((v1019 - *(cursor_visuals + 0x4A80)) * (*(&qword_4AD1030 + 1) * v1006)) + *(&Unit_Position + 1);
       *&qword_4AD0FF4 = (v1019 * v1020) + *&Unit_Position;
       *(&qword_4AD0FF4 + 1) = v1021;
-      *&dword_4AD0FFC = (v1018 * v1019) + *&dword_4AD102C;
+      *&dword_4AD0FFC = (v1018 * v1019) + *&Unit_PositionZ;
       v1022 = *(cursor_visuals + 0x644);
-      v1023 = (v1018 * v1022) + *&dword_4AD102C;
+      v1023 = (v1018 * v1022) + *&Unit_PositionZ;
       v1024 = ((*(&qword_4AD1030 + 1) * v1006) * v1022) + *(&Unit_Position + 1);
       *(cursor_visuals + 0x648) = (v1020 * v1022) + *&Unit_Position;
       *(cursor_visuals + 0x64C) = v1024;
@@ -839,7 +839,7 @@ LABEL_166:
     else
     {
       v1012 = *(cursor_visuals + 0x640);
-      v1013 = (*&dword_4AD1038 * v1012) + *&dword_4AD102C;
+      v1013 = (*&dword_4AD1038 * v1012) + *&Unit_PositionZ;
       v1014 = (*(&qword_4AD1030 + 1) * v1012) + *(&Unit_Position + 1);
       *(cursor_visuals + 0x648) = (v1012 * *&qword_4AD1030) + *&Unit_Position;
       *(cursor_visuals + 0x64C) = v1014;
@@ -1527,7 +1527,7 @@ LABEL_795:
       v131 = v1292;
     }
   }
-  v766 = (((*&dword_4AD102C - v761) * v749.m128_f32[0]) + ((*(&Unit_Position + 1) - v760) * v753))
+  v766 = (((*&Unit_PositionZ - v761) * v749.m128_f32[0]) + ((*(&Unit_Position + 1) - v760) * v753))
        + ((*&Unit_Position - v759) * v750.m128_f32[0]);
   v767 = (v766 * v749.m128_f32[0]) + v761;
   v768 = (v766 * v753) + v760;
@@ -4572,8 +4572,8 @@ LABEL_1184:
             goto LABEL_1149;
           }
           v1182 = fsqrt(
-                    ((((v1263[0x92] - *&dword_4AD102C) + (dword_4AD1070 * *&v1329))
-                    * ((v1263[0x92] - *&dword_4AD102C) + (dword_4AD1070 * *&v1329)))
+                    ((((v1263[0x92] - *&Unit_PositionZ) + (dword_4AD1070 * *&v1329))
+                    * ((v1263[0x92] - *&Unit_PositionZ) + (dword_4AD1070 * *&v1329)))
                    + (((v1263[0x91] - *(&Unit_Position + 1)) + (*(&qword_4AD1068 + 1) * *&v1329))
                     * ((v1263[0x91] - *(&Unit_Position + 1)) + (*(&qword_4AD1068 + 1) * *&v1329))))
                   + (((v1263[0x90] - *&Unit_Position) + (*&v1329 * qword_4AD1068))
