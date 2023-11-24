@@ -236,6 +236,10 @@ LABEL_36:
       do
       {
         v33 = _mm_cmpeq_epi32(
+
+                // 0x17C ricochetTimeToLive
+                // 0x13C ricochetProbability
+
                 _mm_insert_epi32(
                   _mm_insert_epi32(
                     _mm_insert_epi32(
