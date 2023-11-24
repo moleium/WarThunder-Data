@@ -294,9 +294,9 @@ void __fastcall unknown_ballistics_stuff(__int64 ballistics_arg, int a2, unsigne
         v20 = 0;
       }
       *(*(game + 0x630) + 0x3B3B8i64) = v20;
-      if ( qword_4B19AA0 )
+      if ( ballistics_A68_qword )
       {
-        sub_B27BC0(qword_4B19AA0 + 0x5A8, "hint:ship_offer_show_hero_modules::hide", &qword_4B67850, v9);
+        sub_B27BC0(ballistics_A68_qword + 0x5A8, "hint:ship_offer_show_hero_modules::hide", &qword_4B67850, v9);
         v11 = game;
       }
       v30 = *(v11 + 0x630);
@@ -311,8 +311,8 @@ void __fastcall unknown_ballistics_stuff(__int64 ballistics_arg, int a2, unsigne
               if ( *(*&mUnit + 0x10B8i64) != LocalPlayer )
               {
                 *(v30 + 0x3B3B8) = 0;
-                if ( qword_4B19AA0 )
-                  sub_B27BC0(qword_4B19AA0 + 0x5A8, "hint:xrayCamera:showBlockHint", &qword_4B67850, v9);
+                if ( ballistics_A68_qword )
+                  sub_B27BC0(ballistics_A68_qword + 0x5A8, "hint:xrayCamera:showBlockHint", &qword_4B67850, v9);
               }
             }
           }
@@ -1434,7 +1434,7 @@ LABEL_489:
                         if ( !sub_59B3E0(v55, v73)
                           && !byte_4B177B8
                           && *(*(game + 0x440) + 0x3F4i64) == 0x14
-                          && (!qword_4B19AA0 || !*(qword_4B19AA0 + 0xBC)) )
+                          && (!ballistics_A68_qword || !*(ballistics_A68_qword + 0xBC)) )
                         {
                           if ( !v6 )
                             sub_11282C0(ballistics_arg);
@@ -2329,7 +2329,7 @@ LABEL_746:
             {
 LABEL_314:
               v94 = sub_BC2D50(0x151i64);
-              if ( qword_4B19AA0 )
+              if ( ballistics_A68_qword )
                 sub_B9ADD0(9i64, v94, 0x148i64);
               goto LABEL_703;
             }

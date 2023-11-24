@@ -1807,8 +1807,8 @@ LABEL_147:
     v126 = 0x41C64E6D * dword_4A79158 + 0x3039;
     v127 = game;
     dword_4A79158 = v126;
-    v128 = qword_4B19AA0;
-    if ( qword_4B19AA0 )
+    v128 = ballistics_A68_qword;
+    if ( ballistics_A68_qword )
     {
       ballistics = *(game + 0x440);
       v130 = *(ballistics + 0x3F0);
@@ -1822,7 +1822,7 @@ LABEL_147:
             (*(*v131 + 0xB8i64))(v131, 0x400i64);
             v127 = game;
             v126 = dword_4A79158;
-            v128 = qword_4B19AA0;
+            v128 = ballistics_A68_qword;
           }
         }
       }

@@ -516,7 +516,7 @@ LABEL_166:
 LABEL_168:
                             Camera = *(game + 0x630);
                             v69 = *(Camera + 0x3B3B0);
-                            if ( v69 && qword_4B19AA0 && *(qword_4B19AA0 + 0x586) && *(Unit_ + 0x10B0) == 5 )
+                            if ( v69 && ballistics_A68_qword && *(ballistics_A68_qword + 0x586) && *(Unit_ + 0x10B0) == 5 )
                             {
                               if ( v67 )
                               {

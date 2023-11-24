@@ -97,8 +97,8 @@ void __fastcall unknown_ucav(__int64 a1, __int64 a2)
   }
   *(a2 + 0x1A) = v6;
   v77 = LocalUnit_;
-  if ( qword_4B19AA0 && v6 && v5 != 1 && *(LocalUnit_ + 0x10B0) == 5 )
-    sub_B3A410(qword_4B19AA0 + 0x1C78, 0xD0);
+  if ( ballistics_A68_qword && v6 && v5 != 1 && *(LocalUnit_ + 0x10B0) == 5 )
+    sub_B3A410(ballistics_A68_qword + 0x1C78, 0xD0);
   v7 = sub_11FE900(v3);
   v8 = (*(*a1 + 0x38i64))(a1) - 0x20;
   v9 = *(v3 + 2 * v8 + 0x2C0);

@@ -271,10 +271,10 @@ LABEL_34:
         sub_29A320(*(Unit + 0x11D0));
         if ( (*(Unit + 0x1058) & 0x100) != 0 )
         {
-          v22 = qword_4B19AA0;
-          if ( qword_4B19AA0 )
+          v22 = ballistics_A68_qword;
+          if ( ballistics_A68_qword )
           {
-            *(qword_4B19AA0 + 0xA2C) = 0xBF80000000000000ui64;
+            *(ballistics_A68_qword + 0xA2C) = 0xBF80000000000000ui64;
             *(v22 + 0xA34) = 0;
             *(v22 + 0xA18) = 0;
             *(v22 + 0xA38) = 0xBF800000;

@@ -1475,7 +1475,7 @@ LABEL_122:
       v83 = 0x897E;
       if ( !_bittest(&v83, v82) )
         return;
-      v84 = qword_4B19AA0;
+      v84 = ballistics_A68_qword;
       v85 = *(a2 + 0xE0);
       v86 = sub_1206DE0(v85);
       if ( ((!qword_4B507E8 || !*(qword_4B507E8 + 0x60)) && LocalPlayer && (*(LocalPlayer + 0x1B8) & 0x20) != 0
@@ -1633,7 +1633,7 @@ LABEL_415:
             sub_F035F0(*(Unit + 8) & 0x7FF, a2 + 0xC8);
             if ( v249 )
             {
-              if ( qword_4B19AA0 )
+              if ( ballistics_A68_qword )
               {
                 v254 = (*(*(Unit + 0x50) + 0x30i64))(Unit + 0x50);
                 v255 = (*(*(v245 + 0x50) + 0x30i64))(v245 + 0x50);
@@ -1881,16 +1881,16 @@ LABEL_358:
         }
       }
 LABEL_458:
-      v280 = qword_4B19AA0;
-      if ( qword_4B19AA0 )
+      v280 = ballistics_A68_qword;
+      if ( ballistics_A68_qword )
       {
         if ( !v337.m256i_i8[0x10] )
         {
-          sub_B27BC0(qword_4B19AA0 + 0x5A8, "hint:change_shell_type:show", &qword_4B67850, v106);
-          v280 = qword_4B19AA0;
+          sub_B27BC0(ballistics_A68_qword + 0x5A8, "hint:change_shell_type:show", &qword_4B67850, v106);
+          v280 = ballistics_A68_qword;
         }
         sub_B7F880(v280, Unit, &v337);
-        sub_B7FC10(qword_4B19AA0, Unit, &v337);
+        sub_B7FC10(ballistics_A68_qword, Unit, &v337);
       }
 LABEL_462:
       sub_366AE0(&v337.m256i_u64[2]);
@@ -2043,9 +2043,9 @@ LABEL_462:
             sub_F10F10(v215, Unit);
           *(v214 + 0x628) = 0i64;
         }
-        else if ( qword_4B19AA0 )
+        else if ( ballistics_A68_qword )
         {
-          v119 = qword_4B19AA0 + 0x5A8;
+          v119 = ballistics_A68_qword + 0x5A8;
           v120 = "hint:must_see_scouting_target";
           goto LABEL_354;
         }
@@ -2116,9 +2116,9 @@ LABEL_462:
       }
       return;
     case 0xF120:
-      if ( qword_4B19AA0 && (*(*(Unit + 0x50) + 0x18i64))(Unit + 0x50) )
+      if ( ballistics_A68_qword && (*(*(Unit + 0x50) + 0x18i64))(Unit + 0x50) )
       {
-        v119 = qword_4B19AA0 + 0x5A8;
+        v119 = ballistics_A68_qword + 0x5A8;
         v120 = "hint:friendly_fire_warning";
 LABEL_354:
         sub_B27BC0(v119, v120, &qword_4B67850, v114);

@@ -2384,7 +2384,7 @@ LABEL_345:
     {
       goto LABEL_361;
     }
-    if ( byte_4AD108C && !byte_4AD108D && byte_4AD108A && sub_B36CA0(qword_4B19AA0).m128_f32[0] > 0.0 )
+    if ( byte_4AD108C && !byte_4AD108D && byte_4AD108A && sub_B36CA0(ballistics_A68_qword).m128_f32[0] > 0.0 )
     {
       v345 = *&dword_4AD1098;
       v347 = ((*&dword_448A1D8 - v345) * (v339.m128_f32[0] - expf(*&dword_44BF7D8 * v310))) + v345;
@@ -2421,7 +2421,7 @@ LABEL_363:
         v109 = v1210;
       }
       if ( !((*(cursor_visuals + 0xAD6) != 0) | v333 ^ 1) )
-        sub_B27BC0(qword_4B19AA0 + 0x5A8, "hint:gun_overheat_warning", &qword_4B67850, v346);
+        sub_B27BC0(ballistics_A68_qword + 0x5A8, "hint:gun_overheat_warning", &qword_4B67850, v346);
       *(cursor_visuals + 0xAD5) = v366;
       *(cursor_visuals + 0xAD6) = v333;
       v368 = HudInfo;
@@ -2516,7 +2516,7 @@ LABEL_363:
              && (v918 = 0x53, _bittest(&v918, v917)))
             && *(*(game + 0x430) + 0x310i64) )
           {
-            LODWORD(v666) = sub_B36CA0(qword_4B19AA0).m128_u32[0];
+            LODWORD(v666) = sub_B36CA0(ballistics_A68_qword).m128_u32[0];
             v667 = *(*(game + 0x440) + 0x3F4i64);
             if ( (v667 > 0x16 || (v668 = 0x410189, !_bittest(&v668, v667)))
               && !*(game + 0xCD)
@@ -2632,7 +2632,7 @@ LABEL_725:
             {
               if ( !LocalUnit
                 || (*(LocalUnit + 0x1058) & 0x7000014) != 0
-                || !qword_4B19AA0
+                || !ballistics_A68_qword
                 || (*(LocalUnit + 0x1083) & 8) == 0 )
               {
                 v684 = *(*(game + 0x430) + 0x334i64);
@@ -2642,7 +2642,7 @@ LABEL_725:
                   goto LABEL_1043;
                 goto LABEL_1041;
               }
-              v371 = *(*(qword_4B19AA0 + 0x1E70) + 8i64);
+              v371 = *(*(ballistics_A68_qword + 0x1E70) + 8i64);
               v310 = a3;
 LABEL_1043:
               v372 = HIBYTE(v371);
@@ -3374,10 +3374,10 @@ LABEL_1016:
                     {
                       if ( LocalUnit
                         && (*(LocalUnit + 0x1058) & 0x7000014) == 0
-                        && qword_4B19AA0
+                        && ballistics_A68_qword
                         && (*(LocalUnit + 0x1083) & 8) != 0 )
                       {
-                        v1059 = *(*(qword_4B19AA0 + 0x1E70) + 8i64);
+                        v1059 = *(*(ballistics_A68_qword + 0x1E70) + 8i64);
                       }
                       else
                       {
@@ -3401,10 +3401,10 @@ LABEL_1016:
 LABEL_1038:
                     if ( LocalUnit
                       && (*(LocalUnit + 0x1058) & 0x7000014) == 0
-                      && qword_4B19AA0
+                      && ballistics_A68_qword
                       && (*(LocalUnit + 0x1083) & 8) != 0 )
                     {
-                      v371 = *(*(qword_4B19AA0 + 0x1E70) + 8i64);
+                      v371 = *(*(ballistics_A68_qword + 0x1E70) + 8i64);
                       goto LABEL_1043;
                     }
                     v684 = *(*(game + 0x430) + 0x334i64);
@@ -3467,9 +3467,9 @@ LABEL_385:
         }
       }
 LABEL_446:
-      if ( LocalUnit && (*(LocalUnit + 0x1058) & 0x7000014) == 0 && qword_4B19AA0 && (*(LocalUnit + 0x1083) & 8) != 0 )
+      if ( LocalUnit && (*(LocalUnit + 0x1058) & 0x7000014) == 0 && ballistics_A68_qword && (*(LocalUnit + 0x1083) & 8) != 0 )
       {
-        v371 = *(*(qword_4B19AA0 + 0x1E70) + 8i64);
+        v371 = *(*(ballistics_A68_qword + 0x1E70) + 8i64);
       }
       else
       {
@@ -3507,9 +3507,9 @@ LABEL_452:
       }
       if ( (*(cursor_visuals + 0x4A70) - 1) <= 1 )
       {
-        if ( LocalUnit && (*(LocalUnit + 0x1058) & 0x7000014) == 0 && qword_4B19AA0 && (*(LocalUnit + 0x1083) & 8) != 0 )
+        if ( LocalUnit && (*(LocalUnit + 0x1058) & 0x7000014) == 0 && ballistics_A68_qword && (*(LocalUnit + 0x1083) & 8) != 0 )
         {
-          v371 = *(*(qword_4B19AA0 + 0x1E70) + 8i64);
+          v371 = *(*(ballistics_A68_qword + 0x1E70) + 8i64);
         }
         else
         {

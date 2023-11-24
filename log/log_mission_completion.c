@@ -332,7 +332,7 @@ LABEL_28:
   }
   game_ = game;
   v42 = v137;
-  if ( *(game + 0x584) > 0.0 && *(Unit + 0x10A8) <= 1u && !*(qword_4B19AA0 + 0x587) )
+  if ( *(game + 0x584) > 0.0 && *(Unit + 0x10A8) <= 1u && !*(ballistics_A68_qword + 0x587) )
   {
     v43 = *(*(game + 0x420) + 0x250i64);
     v44 = &szFile;
@@ -486,7 +486,7 @@ LABEL_155:
       if ( v122 > 0 && dword_4A70D70 != v122 )
       {
         assign_string_int(&v130, "count", v122);
-        sub_B27BC0(qword_4B19AA0 + 0x5A8, "hint:mission_complete:show", &v130);
+        sub_B27BC0(ballistics_A68_qword + 0x5A8, "hint:mission_complete:show", &v130);
         dword_4A70D70 = v122;
         byte_4B1AB40 = 1;
       }
@@ -497,9 +497,9 @@ LABEL_155:
     else
     {
 LABEL_166:
-      if ( qword_4B19AA0 && (byte_4B1AB40 & 1) != 0 )
+      if ( ballistics_A68_qword && (byte_4B1AB40 & 1) != 0 )
       {
-        sub_B27BC0(qword_4B19AA0 + 0x5A8, "hint:mission_complete:hide", &qword_4B67850);
+        sub_B27BC0(ballistics_A68_qword + 0x5A8, "hint:mission_complete:hide", &qword_4B67850);
         byte_4B1AB40 = 0;
       }
       if ( !v34 )
@@ -513,8 +513,8 @@ LABEL_166:
         sub_EECDD0();
     }
 LABEL_173:
-    v102 = qword_4B19AA0;
-    if ( *(qword_4B19AA0 + 0x431) )
+    v102 = ballistics_A68_qword;
+    if ( *(ballistics_A68_qword + 0x431) )
     {
       v103 = game;
       v107 = sub_5655B0(game);
@@ -739,7 +739,7 @@ LABEL_137:
       v98 = sub_BC2D50(0x1C2i64);
       sub_C01740(a1, a2, v98, &v125, v97);
       if ( !*(a1 + 0x164) )
-        sub_B27BC0(qword_4B19AA0 + 0x5A8, "hint:pilot_lose_control:show", &qword_4B67850);
+        sub_B27BC0(ballistics_A68_qword + 0x5A8, "hint:pilot_lose_control:show", &qword_4B67850);
       *(a1 + 0x164) = 1;
       v34 = 1;
     }

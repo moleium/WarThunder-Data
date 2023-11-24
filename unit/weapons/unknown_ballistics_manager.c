@@ -330,13 +330,13 @@ LABEL_111:
         || (LOBYTE(v31) = v28 & v31, v31)
         || (LOBYTE(v6) = v27 & v6, v6) )
       {
-        if ( qword_4B19AA0 )
-          unknown_killstreakwheel(qword_4B19AA0, 0, v6, v31);
+        if ( ballistics_A68_qword )
+          unknown_killstreakwheel(ballistics_A68_qword, 0, v6, v31);
       }
       if ( !((a2 != 0x13E) | v25 ^ 1) )
       {
-        if ( qword_4B19AA0 )
-          hud_weaponwheel(qword_4B19AA0, 0i64, v6, v31);
+        if ( ballistics_A68_qword )
+          hud_weaponwheel(ballistics_A68_qword, 0i64, v6, v31);
         v32 = *(game + 0x450);
         v25 = 1;
         if ( v32 && *(v32 + 0x5CA) )
@@ -389,7 +389,7 @@ LABEL_142:
       if ( a2 != 0xE && a2 != 0x170 )
         return;
 LABEL_149:
-      v34 = *(qword_4B19AA0 + 0x103C);
+      v34 = *(ballistics_A68_qword + 0x103C);
       v35 = (v34 + 0x141);
       v36 = 0xFFFFFFFF;
       if ( v34 >= 0 )
@@ -432,7 +432,7 @@ LABEL_149:
         }
         if ( v25 )
         {
-          v42 = *(qword_4B19AA0 + 0x1050);
+          v42 = *(ballistics_A68_qword + 0x1050);
           v43 = v42 + 0x141;
           v44 = v42 < 0;
           v35 = 0xFFFFFFFFi64;
@@ -443,7 +443,7 @@ LABEL_149:
         }
         if ( !v67 )
           goto LABEL_196;
-        v45 = *(qword_4B19AA0 + 0x1050);
+        v45 = *(ballistics_A68_qword + 0x1050);
         v35 = (v45 + 0x191);
         v44 = v45 < 0;
         v46 = 0xFFFFFFFF;

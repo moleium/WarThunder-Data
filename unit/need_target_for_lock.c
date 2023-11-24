@@ -76,10 +76,10 @@ LABEL_45:
   {
 LABEL_31:
     v19 = v7 != 0;
-    if ( !v7 && !ballistics && qword_4B19AA0 )
+    if ( !v7 && !ballistics && ballistics_A68_qword )
     {
       if ( !*(v8 + 0x10B0) )
-        sub_B27BC0(qword_4B19AA0 + 0x5A8, "hint:need_target_for_lock", &qword_4B67850, v14);
+        sub_B27BC0(ballistics_A68_qword + 0x5A8, "hint:need_target_for_lock", &qword_4B67850, v14);
       v19 = 0;
     }
     goto LABEL_37;
