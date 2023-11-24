@@ -1,4 +1,9 @@
-float __fastcall calculate_gun_sight_position(__int64 a1, __int64 a2, const char *a3, __int64 a4, __int64 a5)
+float __fastcall calculate_gun_sight_position(
+        __int64 ballistics_A68,
+        __int64 a2,
+        const char *a3,
+        __int64 a4,
+        __int64 a5)
 {
   float result; // xmm0_4
   __int64 game_1; // rcx
@@ -9,7 +14,7 @@ float __fastcall calculate_gun_sight_position(__int64 a1, __int64 a2, const char
   __int64 v14; // rax
   int v15; // ecx
   int v16; // edx
-  __int64 v17; // r9
+  __int64 UnitWeaponsInfo; // r9
   __int64 v18; // r11
   __int64 v19; // r10
   float v20; // xmm3_4
@@ -32,12 +37,12 @@ float __fastcall calculate_gun_sight_position(__int64 a1, __int64 a2, const char
   __int64 v37; // rax
   _DWORD *v38; // rcx
   __int64 v39; // rax
-  unsigned int v40; // edx
+  unsigned int ballistics_; // edx
   int v41; // ebp
   unsigned __int16 v43; // ax
   int v44; // ecx
-  __int64 v45; // rax
-  __int64 v46; // rax
+  __int64 ballistics; // rax
+  __int64 cursor_visuals_; // rax
   float v47; // xmm6_4
   __int64 game_; // rax
   char *v49; // rcx
@@ -45,9 +50,9 @@ float __fastcall calculate_gun_sight_position(__int64 a1, __int64 a2, const char
   float v51; // xmm3_4
   unsigned __int16 v52; // ax
   int v53; // ecx
-  __int64 v54; // rax
-  unsigned __int64 v55; // [rsp+30h] [rbp-108h] BYREF
-  float v56; // [rsp+38h] [rbp-100h]
+  __int64 cursor_visuals; // rax
+  unsigned __int64 aim_crosshairX; // [rsp+30h] [rbp-108h] BYREF
+  float cursor_posY; // [rsp+38h] [rbp-100h]
   float v57; // [rsp+40h] [rbp-F8h] BYREF
   float v58; // [rsp+44h] [rbp-F4h]
   float v59; // [rsp+48h] [rbp-F0h]
@@ -59,7 +64,7 @@ float __fastcall calculate_gun_sight_position(__int64 a1, __int64 a2, const char
 
   if ( a4 > 0x30 )
     return result;
-  sub_B37800(a1, &v57, a2, a4, 0, a5);
+  sub_B37800(ballistics_A68, &v57, a2, a4, 0, a5);
   result = v57;
   if ( v57 > v59 || (result = v58, v58 > v60) )
   {
@@ -84,18 +89,18 @@ float __fastcall calculate_gun_sight_position(__int64 a1, __int64 a2, const char
     {
       v13 = 0x5FCi64;
     }
-    v14 = *(a1 + 0x600) + v13;
+    v14 = *(ballistics_A68 + 0x600) + v13;
     v15 = *(v14 + 8);
-    v55 = *v14;
-    v56 = *&v15;
+    aim_crosshairX = *v14;
+    cursor_posY = *&v15;
     goto LABEL_18;
   }
   if ( strcmp(a3, "shipGunSight") )
   {
     if ( !strcmp(a3, "mouseAim") )
     {
-      v40 = *(*(game + 0x440) + 0x3F4i64);
-      if ( (v40 > 0x16 || (v41 = 0x410189, !_bittest(&v41, v40)))
+      ballistics_ = *(*(game + 0x440) + 0x3F4i64);
+      if ( (ballistics_ > 0x16 || (v41 = 0x410189, !_bittest(&v41, ballistics_)))
         && !*(game + 0xCD)
         && *(game + 0xCA)
         && (*(game + 0xCB) & 1) != 0
@@ -104,9 +109,9 @@ float __fastcall calculate_gun_sight_position(__int64 a1, __int64 a2, const char
         && (v52 = __ROR2__(*(*&mUnit + 0x10B0i64) - 3, 1), v52 <= 6u)
         && (v53 = 0x53, _bittest(&v53, v52)) )
       {
-        v54 = *(a1 + 0x600);
-        v56 = *(v54 + 0x604);
-        v55 = *(v54 + 0x5FC);
+        cursor_visuals = *(ballistics_A68 + 0x600);
+        cursor_posY = *(cursor_visuals + 0x604);
+        aim_crosshairX = *(cursor_visuals + 0x5FC);
       }
       else
       {
@@ -118,16 +123,16 @@ float __fastcall calculate_gun_sight_position(__int64 a1, __int64 a2, const char
           return result;
         if ( game )
         {
-          v45 = *(game + 0x440);
-          if ( v45 )
+          ballistics = *(game + 0x440);
+          if ( ballistics )
           {
-            if ( *(v45 + 4) >= 0 )
+            if ( *(ballistics + 4) >= 0 )
               return result;
           }
         }
-        v46 = *(a1 + 0x600);
-        v56 = *(v46 + 0x690);
-        v55 = *(v46 + 0x688);
+        cursor_visuals_ = *(ballistics_A68 + 0x600);
+        cursor_posY = *(cursor_visuals_ + 0x690);
+        aim_crosshairX = *(cursor_visuals_ + 0x688);
       }
     }
     else if ( !strcmp(a3, "mouseJoy") )
@@ -168,7 +173,7 @@ float __fastcall calculate_gun_sight_position(__int64 a1, __int64 a2, const char
     }
     goto LABEL_18;
   }
-  if ( !LocalUnit || *(LocalUnit + 0x10B0) != 5 || (v17 = *(LocalUnit + 0x11D0)) == 0 )
+  if ( !LocalUnit || *(LocalUnit + 0x10B0) != 5 || (UnitWeaponsInfo = *(LocalUnit + 0x11D0)) == 0 )
   {
 LABEL_18:
     v64 = 0i64;
@@ -176,7 +181,7 @@ LABEL_18:
     v16 = (*(a2 + 0x1EC) << 6) + a2 + 0x128;
     *v63 = *(a2 + 0x10);
     *&v63[1] = result;
-    if ( sub_B96960(v63, v16, &v55, &v64, &v61, 0i64) )
+    if ( sub_B96960(v63, v16, &aim_crosshairX, &v64, &v61, 0i64) )
     {
       result = v61;
       if ( v61 >= v57 && v61 <= v59 )
@@ -184,16 +189,16 @@ LABEL_18:
     }
     return result;
   }
-  v18 = *(v17 + 0x2E0);
-  v19 = *(v17 + 0x2D0);
-  v55 = 0i64;
-  v56 = 0.0;
+  v18 = *(UnitWeaponsInfo + 0x2E0);
+  v19 = *(UnitWeaponsInfo + 0x2D0);
+  aim_crosshairX = 0i64;
+  cursor_posY = 0.0;
   v20 = 0.0;
   v21 = 0.0;
   v22 = 0.0;
   if ( !v18 )
     goto LABEL_69;
-  v23 = *(a1 + 0x600) + 0x3E24i64;
+  v23 = *(ballistics_A68 + 0x600) + 0x3E24i64;
   v20 = 0.0;
   v24 = 0i64;
   si128 = _mm_load_si128(&xmmword_44CB670);
@@ -234,9 +239,9 @@ LABEL_36:
                 _mm_insert_epi32(
                   _mm_insert_epi32(
                     _mm_insert_epi32(_mm_cvtsi32_si128(*(v26 + curr_shell + 0xBC)), *(v26 + curr_shell + 0xFC), 1),
-                    *(v26 + curr_shell + 0x13C), // ricochet probability
+                    *(v26 + curr_shell + 0x13C),
                     2),
-                  *(v26 + curr_shell + 0x17C), // ricochet time live
+                  *(v26 + curr_shell + 0x17C),
                   3),
                 0i64);
         v34 = _mm_packs_epi32(v33, v33);
@@ -264,7 +269,7 @@ LABEL_36:
       v29 = 0;
     }
 LABEL_40:
-    v39 = *(v17 + 0x190);
+    v39 = *(UnitWeaponsInfo + 0x190);
     if ( !*(v39 + 0x290 * v24 + 0x205) && v29 && !*(v39 + 0x290 * v24 + 0xC2) )
     {
       v20 = *(v23 + 0xC * v24 + 8) + *&dword_4AD102C;
@@ -275,8 +280,8 @@ LABEL_27:
     ++v24;
   }
   while ( v24 != v18 );
-  v55 = __PAIR64__(LODWORD(v21), LODWORD(v22));
-  v56 = v20;
+  aim_crosshairX = __PAIR64__(LODWORD(v21), LODWORD(v22));
+  cursor_posY = v20;
 LABEL_69:
   result = fsqrt(((v20 * v20) + (v21 * v21)) + (v22 * v22));
   if ( result != 0.0 )
