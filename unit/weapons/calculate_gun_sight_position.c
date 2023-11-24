@@ -21,7 +21,7 @@ float __fastcall calculate_gun_sight_position(
   float v21; // xmm13_4
   float v22; // xmm14_4
   __int64 v23; // r8
-  __int64 v24; // rdi
+  __int64 idx; // rdi
   __m128i si128; // xmm5
   __int64 v26; // rdx
   __int64 v27; // rax
@@ -200,13 +200,13 @@ LABEL_18:
     goto LABEL_69;
   v23 = *(ballistics_A68 + 0x600) + 0x3E24i64;
   v20 = 0.0;
-  v24 = 0i64;
+  idx = 0i64;
   si128 = _mm_load_si128(&xmmword_44CB670);
   v21 = 0.0;
   v22 = 0.0;
   do
   {
-    v26 = *(*(v19 + 8 * v24) + 0x2B0i64);
+    v26 = *(*(v19 + 8 * idx) + 0x2B0i64);
     if ( !v26 )
       goto LABEL_27;
     v27 = *(v26 + 0x90);
@@ -270,16 +270,16 @@ LABEL_36:
     }
 LABEL_40:
     v39 = *(UnitWeaponsInfo + 0x190);
-    if ( !*(v39 + 0x290 * v24 + 0x205) && v29 && !*(v39 + 0x290 * v24 + 0xC2) )
+    if ( !*(v39 + 0x290 * idx + 0x205) && v29 && !*(v39 + 0x290 * idx + 0xC2) )
     {
-      v20 = *(v23 + 0xC * v24 + 8) + *&Unit_PositionZ;
-      v21 = *(v23 + 0xC * v24 + 4) + *(&Unit_Position + 1);
-      v22 = *(v23 + 0xC * v24) + *&Unit_Position;
+      v20 = *(v23 + 0xC * idx + 8) + *&Unit_PositionZ;//  Position Z
+      v21 = *(v23 + 0xC * idx + 4) + *(&Unit_Position + 1);//  Position Y
+      v22 = *(v23 + 0xC * idx) + *&Unit_Position;//  Position X
     }
 LABEL_27:
-    ++v24;
+    ++idx;
   }
-  while ( v24 != v18 );
+  while ( idx != v18 );
   aim_crosshairX = __PAIR64__(LODWORD(v21), LODWORD(v22));
   cursor_posY = v20;
 LABEL_69:
