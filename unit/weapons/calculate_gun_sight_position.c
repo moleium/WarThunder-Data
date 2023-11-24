@@ -16,14 +16,14 @@ float __fastcall calculate_gun_sight_position(
   int v16; // edx
   __int64 UnitWeaponsInfo; // r9
   __int64 v18; // r11
-  __int64 v19; // r10
+  __int64 weapon_array; // r10
   float v20; // xmm3_4
   float v21; // xmm13_4
   float v22; // xmm14_4
   __int64 ballistics_A68_600_3E24; // r8
   __int64 idx; // rdi
   __m128i si128; // xmm5
-  __int64 v26; // rdx
+  __int64 curr_weapon_info; // rdx
   __int64 v27; // rax
   __int64 v28; // rcx
   bool v29; // si
@@ -190,7 +190,7 @@ LABEL_18:
     return result;
   }
   v18 = *(UnitWeaponsInfo + 0x2E0);
-  v19 = *(UnitWeaponsInfo + 0x2D0);
+  weapon_array = *(UnitWeaponsInfo + 0x2D0);
   aim_crosshairX = 0i64;
   cursor_posY = 0.0;
   v20 = 0.0;
@@ -206,11 +206,11 @@ LABEL_18:
   v22 = 0.0;
   do
   {
-    v26 = *(*(v19 + 8 * idx) + 0x2B0i64);
-    if ( !v26 )
+    curr_weapon_info = *(*(weapon_array + 8 * idx) + 0x2B0i64);
+    if ( !curr_weapon_info )
       goto LABEL_27;
-    v27 = *(v26 + 0x90);
-    if ( *(v26 + 0x90) )
+    v27 = *(curr_weapon_info + 0x90);
+    if ( *(curr_weapon_info + 0x90) )
     {
       if ( v27 < 8 )
       {
@@ -218,7 +218,7 @@ LABEL_18:
         v29 = 0;
 LABEL_36:
         v37 = v27 - v28;
-        v38 = (v26 + (v28 << 6) + 0xBC);
+        v38 = (curr_weapon_info + (v28 << 6) + 0xBC);
         do
         {
           if ( *v38 )
@@ -238,20 +238,26 @@ LABEL_36:
         v33 = _mm_cmpeq_epi32(
                 _mm_insert_epi32(
                   _mm_insert_epi32(
-                    _mm_insert_epi32(_mm_cvtsi32_si128(*(v26 + curr_shell + 0xBC)), *(v26 + curr_shell + 0xFC), 1),
-                    *(v26 + curr_shell + 0x13C),
+                    _mm_insert_epi32(
+                      _mm_cvtsi32_si128(*(curr_weapon_info + curr_shell + 0xBC)),
+                      *(curr_weapon_info + curr_shell + 0xFC),
+                      1),
+                    *(curr_weapon_info + curr_shell + 0x13C),
                     2),
-                  *(v26 + curr_shell + 0x17C),
+                  *(curr_weapon_info + curr_shell + 0x17C),
                   3),
                 0i64);
         v34 = _mm_packs_epi32(v33, v33);
         v35 = _mm_cmpeq_epi32(
                 _mm_insert_epi32(
                   _mm_insert_epi32(
-                    _mm_insert_epi32(_mm_cvtsi32_si128(*(v26 + curr_shell + 0x1BC)), *(v26 + curr_shell + 0x1FC), 1),
-                    *(v26 + curr_shell + 0x23C),
+                    _mm_insert_epi32(
+                      _mm_cvtsi32_si128(*(curr_weapon_info + curr_shell + 0x1BC)),
+                      *(curr_weapon_info + curr_shell + 0x1FC),
+                      1),
+                    *(curr_weapon_info + curr_shell + 0x23C),
                     2),
-                  *(v26 + curr_shell + 0x27C),
+                  *(curr_weapon_info + curr_shell + 0x27C),
                   3),
                 0i64);
         v36 = _mm_packs_epi32(v35, v35);
