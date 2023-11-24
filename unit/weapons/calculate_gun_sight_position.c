@@ -273,8 +273,8 @@ LABEL_40:
     if ( !*(v39 + 0x290 * v24 + 0x205) && v29 && !*(v39 + 0x290 * v24 + 0xC2) )
     {
       v20 = *(v23 + 0xC * v24 + 8) + *&dword_4AD102C;
-      v21 = *(v23 + 0xC * v24 + 4) + *(&qword_4AD1024 + 1);
-      v22 = *(v23 + 0xC * v24) + *&qword_4AD1024;
+      v21 = *(v23 + 0xC * v24 + 4) + *(&Unit_Position + 1);
+      v22 = *(v23 + 0xC * v24) + *&Unit_Position;
     }
 LABEL_27:
     ++v24;

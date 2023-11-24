@@ -82,7 +82,7 @@ __int64 __fastcall calculate_unit_position_rotation(unsigned int *a1, __int64 pP
     }
 LABEL_4:
     *(pPosition + 8) = dword_4AD102C;
-    Position = qword_4AD1024;
+    Position = Unit_Position;
 LABEL_42:
     *pPosition = Position;
     return pPosition;
