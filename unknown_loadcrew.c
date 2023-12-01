@@ -15,7 +15,7 @@ char __fastcall unknown_loadcrew(__int64 Unit, unsigned int unitArmyNo)
   const char *v16; // rdx
   __int64 v17; // rax
   __int64 v18; // r15
-  _QWORD *v19; // rdi
+  _QWORD *stealthArmyMask; // rdi
   void *v20; // rbp
   void *v21; // rbp
   int v22; // r8d
@@ -87,21 +87,21 @@ LABEL_30:
     *(hud + 0x8A0) = v12;
   v18 = hud + 0x5E0;
 LABEL_31:
-  v19 = *(Unit + 0x11B0);
-  if ( v19 )
+  stealthArmyMask = *(Unit + 0x11B0);
+  if ( stealthArmyMask )
   {
-    *v19 = &off_44AB090;
-    v20 = v19[0x161];
+    *stealthArmyMask = &off_44AB090;
+    v20 = stealthArmyMask[0x161];
     if ( v20 )
     {
-      sub_1AB250(v19[0x161]);
+      sub_1AB250(stealthArmyMask[0x161]);
       _InterlockedAdd(&dword_4B6788C, -((j__msize(v20) + 0xF) >> 4));
       _InterlockedDecrement(&dword_4B67890);
       free(v20);
-      v19[0x161] = 0i64;
+      stealthArmyMask[0x161] = 0i64;
     }
-    v19[0x160] = 0i64;
-    v19[0x162] = 0xFFFFFFFFFFFFFFFFui64;
+    stealthArmyMask[0x160] = 0i64;
+    stealthArmyMask[0x162] = 0xFFFFFFFFFFFFFFFFui64;
     sub_301550(*(Unit + 0x11B0), *(Unit + 0x10B0), 0i64, (*(Unit + 0x1080) >> 0x1B) & 1);
     if ( !v18 )
       return sub_307F60(*(Unit + 0x11B0), *(HudInfo + 0x56));
