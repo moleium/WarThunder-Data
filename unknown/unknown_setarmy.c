@@ -8,7 +8,7 @@ void __fastcall unknown_setarmy(__int64 Player, char a2, __int64 a3)
   unsigned __int8 v10; // bl
   unsigned __int8 UnitInfo; // al
   __int64 v12; // rdx
-  _QWORD *unit_vtable; // rax
+  _QWORD *Unit; // rax
   unsigned __int8 v14; // bl
   unsigned __int8 v15; // al
   __int64 v16; // rdx
@@ -92,15 +92,15 @@ LABEL_9:
     {
       if ( off_4B69C70 )
       {
-        unit_vtable = off_4B69C70();
-        *(Player + 0x6F8) = unit_vtable;
-        if ( !unit_vtable )
+        Unit = off_4B69C70();
+        *(Player + 0x6F8) = Unit;
+        if ( !Unit )
           goto LABEL_29;
-        OwnedUnit = unit_vtable;
-        if ( unit_vtable[0x217] != Player )
+        OwnedUnit = Unit;
+        if ( Unit[0x217] != Player )
         {
           // unit_assign_parent_entity(DagorUnit* unit, DagorEntity* entity
-          (*(*unit_vtable + 0x190i64))(unit_vtable, Player);
+          (*(*Unit + 0x190i64))(Unit, Player);
           OwnedUnit = *(Player + 0x6F8);
         }
         v14 = *(Player + 0x208);
