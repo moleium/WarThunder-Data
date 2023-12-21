@@ -2425,8 +2425,8 @@ LABEL_386:
     sub_1665C80(v332, 1);
     *(v134.QuadPart + 0x32A0) = v332;
     EnterCriticalSection(&stru_4B776C8);
-    *(v134.QuadPart + 0x32A8) = sub_1667980(*(v134.QuadPart + 0x32A0), "engine", 0i64);
-    *(v134.QuadPart + 0x32AC) = sub_1667980(*(v134.QuadPart + 0x32A0), "distance", 0i64);
+    *(v134.QuadPart + 0x32A8) = get_param_idx(*(v134.QuadPart + 0x32A0), "engine", 0i64);
+    *(v134.QuadPart + 0x32AC) = get_param_idx(*(v134.QuadPart + 0x32A0), "distance", 0i64);
     sub_1666E50(*(v134.QuadPart + 0x32A0));
     LeaveCriticalSection(&stru_4B776C8);
   }
@@ -3590,8 +3590,8 @@ LABEL_718:
     sub_1665C80(v573, 1);
     *(v963.QuadPart + 0x3310) = v573;
     sub_1666E50(v573);
-    *(v963.QuadPart + 0x3364) = sub_1667980(*(v963.QuadPart + 0x3310), "velH", 0i64);
-    *(v963.QuadPart + 0x3368) = sub_1667980(*(v963.QuadPart + 0x3310), "velV", 0i64);
+    *(v963.QuadPart + 0x3364) = get_param_idx(*(v963.QuadPart + 0x3310), "velH", 0i64);
+    *(v963.QuadPart + 0x3368) = get_param_idx(*(v963.QuadPart + 0x3310), "velV", 0i64);
   }
   PerformanceCount[0].QuadPart = 0i64;
   v574 = data::get_str(v486, "eventAOAAlarm", PerformanceCount);
@@ -3618,9 +3618,9 @@ LABEL_718:
     get_misc_str("pathGui");
     sub_1665C80(v577, 1);
     *(v963.QuadPart + 0x3320) = v577;
-    *(v963.QuadPart + 0x3340) = sub_1667980(v577, "intense", 0i64);
-    *(v963.QuadPart + 0x3344) = sub_1667980(*(v963.QuadPart + 0x3320), "speed", 0i64);
-    *(v963.QuadPart + 0x3348) = sub_1667980(*(v963.QuadPart + 0x3320), "overload", 0i64);
+    *(v963.QuadPart + 0x3340) = get_param_idx(v577, "intense", 0i64);
+    *(v963.QuadPart + 0x3344) = get_param_idx(*(v963.QuadPart + 0x3320), "speed", 0i64);
+    *(v963.QuadPart + 0x3348) = get_param_idx(*(v963.QuadPart + 0x3320), "overload", 0i64);
   }
   PerformanceCount[0].QuadPart = 0i64;
   v578 = data::get_str(v486, "eventStallAlarm", PerformanceCount);
@@ -3647,7 +3647,7 @@ LABEL_718:
     get_misc_str("pathGui");
     sub_1665C80(v581, 1);
     *(v963.QuadPart + 0x3350) = v581;
-    *(v963.QuadPart + 0x3358) = sub_1667980(v581, "intense", 0i64);
+    *(v963.QuadPart + 0x3358) = get_param_idx(v581, "intense", 0i64);
   }
   v582 = *(v963.QuadPart + 0x3328);
   if ( v582 )
@@ -3696,7 +3696,7 @@ LABEL_718:
     LeaveCriticalSection(&stru_4B776C8);
     sub_1665C80(v587, 1);
     *(v963.QuadPart + 0x3330) = v587;
-    *(v963.QuadPart + 0x335C) = sub_1667980(v587, "intensity", 0i64);
+    *(v963.QuadPart + 0x335C) = get_param_idx(v587, "intensity", 0i64);
     PerformanceCount[0].LowPart = 0x3F000000;
     *(v963.QuadPart + 0x3360) = data::set_real(v486, "nozzleAngleThreshold", PerformanceCount);
   }
