@@ -485,7 +485,7 @@ LABEL_155:
       v122 = (*&dword_448790C - v2.m128_f32[0]);
       if ( v122 > 0 && dword_4A70D70 != v122 )
       {
-        assign_string_int(&v130, "count", v122);
+        data::add_int(&v130, "count", v122);
         fire_event(ballistics_A68_qword + 0x5A8, "hint:mission_complete:show", &v130);
         dword_4A70D70 = v122;
         byte_4B1AB40 = 1;

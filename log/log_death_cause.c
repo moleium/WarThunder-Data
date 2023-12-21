@@ -484,7 +484,7 @@ LABEL_25:
       _dyn_tls_on_demand_init(v54, v17, v30, v18);
     sub_14584E0(&v83);
     if ( dword_4B1C508 <= 1 && !qword_4B507E8 )
-      assign_string_int(&v83, "timer", v53);
+      data::add_int(&v83, "timer", v53);
     if ( ballistics_A68_qword && (byte_4B1993E & 1) == 0 )
     {
       fire_event(ballistics_A68_qword + 0x5A8, "hint:press_a_continue:show", &v83, v55);

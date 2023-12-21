@@ -375,7 +375,7 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     while ( v37 != &word_8 );
     v42 = *(hud + 0x390C8);
     if ( v42 < 8 )
-      assign_string_int(v32, "lastSinglMissionPlayed", v42);
+      data::add_int(v32, "lastSinglMissionPlayed", v42);
     v12 = v216;
     if ( v36 )
       (*(*v210 + 0x40i64))(v210, v36);
@@ -456,25 +456,25 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     }
     assign_char_property(v44, "grassInTankVision", *(hud + 0x18));
     assign_char_property(v44, "selectedOnce", *(hud + 0x3AC));
-    assign_string_int(v44, "indicatedSpeedType", *(hud + 0x1C));
+    data::add_int(v44, "indicatedSpeedType", *(hud + 0x1C));
     assign_char_property(v44, "horizontalSpeed", *(hud + 0x20));
     assign_char_property(v44, "autoShowChat", *(hud + 0x21));
-    assign_string_int(v44, "chatMessages", *(hud + 0x4C));
-    assign_string_int(v44, "tacticalMapScale", *(hud + 0x50));
+    data::add_int(v44, "chatMessages", *(hud + 0x4C));
+    data::add_int(v44, "tacticalMapScale", *(hud + 0x50));
     assign_char_property(v44, "chatFilter", *(hud + 0x22));
     assign_char_property(v44, "showPilot", *(hud + 0x23));
     assign_char_property(v44, "gunVerticalTargeting", *(hud + 0x24));
     assign_char_property(v44, "showDeflection", *(hud + 0x310));
     assign_char_property(v44, "showGyroSightDeflection", *(hud + 0x311));
     assign_char_property(v44, "hudScreenshotLogo", *(hud + 0x312));
-    assign_string_int(v44, "showIndicatorsMode", *(hud + 0x314));
+    data::add_int(v44, "showIndicatorsMode", *(hud + 0x314));
     assign_char_property(v44, "showIndicatorsModeTitle", *(hud + 0x314) >> 7);
-    assign_string_int(v44, "hudShowFuel", *(hud + 0x320));
-    assign_string_int(v44, "hudShowAmmo", *(hud + 0x324));
-    assign_string_int(v44, "hudShowTemperature", *(hud + 0x328));
-    assign_string_int(v44, "hudTpsCrosshairType", *(hud + 0x330));
-    assign_string_int(v44, "hudCrosshairColorPreset", *(hud + 0x334));
-    assign_string_int(v44, "autoPilotOnBombAndGunnerView", *(hud + 0x33C));
+    data::add_int(v44, "hudShowFuel", *(hud + 0x320));
+    data::add_int(v44, "hudShowAmmo", *(hud + 0x324));
+    data::add_int(v44, "hudShowTemperature", *(hud + 0x328));
+    data::add_int(v44, "hudTpsCrosshairType", *(hud + 0x330));
+    data::add_int(v44, "hudCrosshairColorPreset", *(hud + 0x334));
+    data::add_int(v44, "autoPilotOnBombAndGunnerView", *(hud + 0x33C));
     assign_char_property(v44, "autoRearmOnAirfield", *(hud + 0x340));
     assign_char_property(v44, "enableLaserDesignatorBeforeLaunch", *(hud + 0x341));
     assign_char_property(v44, "seekerAutoStabilization", *(hud + 0x342));
@@ -487,49 +487,49 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     assign_char_property(v44, "activateAirborneActiveCounterMeasuresOnSpawn", *(hud + 0x349));
     assign_char_property(v44, "activateAirborneWeaponSelectionOnSpawn", *(hud + 0x34A));
     assign_char_property(v44, "automaticEmptyContainersJettison", *(hud + 0x34B));
-    assign_string_int(v44, "hintsMask", *(hud + 0x338));
+    data::add_int(v44, "hintsMask", *(hud + 0x338));
     assign_char_property(v44, "autosaveReplays", *(hud + 0x35));
     assign_char_property(v44, "showAttachables", *(hud + 0x36));
     assign_char_property(v44, "enableXrayDeath", *(hud + 0x35D));
     assign_char_property(v44, "enableXrayKill", *(hud + 0x35E));
-    assign_string_int(v44, "isSubtitles", *(hud + 0xB0));
-    assign_string_int(v44, "isSubtitlesRadio", *(hud + 0xB4));
+    data::add_int(v44, "isSubtitles", *(hud + 0xB0));
+    data::add_int(v44, "isSubtitlesRadio", *(hud + 0xB4));
     assign_char_property(v44, "vwsOnlyInCockpit", *(hud + 0xBA));
     assign_char_property(v44, "usePTT", *(hud + 0xB8));
     assign_char_property(v44, "useVoiceChat", *(hud + 0xB9));
-    assign_string_int(v44, "voiceMessageVoice", *(hud + 0x5DC));
-    assign_string_int(v44, "viewType", *(hud + 0x54));
+    data::add_int(v44, "voiceMessageVoice", *(hud + 0x5DC));
+    data::add_int(v44, "viewType", *(hud + 0x54));
     assign_char_property(v44, "enableControllerLight", *(hud + 0x369));
     assign_char_property(v44, "useOculusToAimHelicopter", *(hud + 0x37));
-    assign_string_int(v44, "autoPilotOnGunnerViewHelicopter", *(hud + 0x38));
+    data::add_int(v44, "autoPilotOnGunnerViewHelicopter", *(hud + 0x38));
     assign_char_property(v44, "hideMouseInSpectator", *(hud + 0x3C));
     assign_char_property(v44, "fixGunInMouseLook", *(hud + 0x3D));
     assign_char_property(v44, "delayedDownloadContent", *(hud + 0x36F));
     assign_char_property(v44, "replaySnapshotsEnabled", *(hud + 0x378));
-    assign_string_int(v44, "recordSnapshotPeriod", *(hud + 0x37C));
-    assign_string_int(v44, "preferredDifficulty", *(hud + 0x280));
-    assign_string_int(v44, "preferredTeam", *(hud + 0x284));
-    assign_string_int(v44, "voiceLanguageType", *(hud + 0x5D0));
-    assign_string_int(v44, "aerobaticsSmokeType", *(hud + 0x288));
-    assign_string_int(v44, "aerobaticsSmokeColors", *(hud + 0x28C));
-    assign_string_int(v44, "gunConvergenceDistance", *(hud + 0x2C0));
+    data::add_int(v44, "recordSnapshotPeriod", *(hud + 0x37C));
+    data::add_int(v44, "preferredDifficulty", *(hud + 0x280));
+    data::add_int(v44, "preferredTeam", *(hud + 0x284));
+    data::add_int(v44, "voiceLanguageType", *(hud + 0x5D0));
+    data::add_int(v44, "aerobaticsSmokeType", *(hud + 0x288));
+    data::add_int(v44, "aerobaticsSmokeColors", *(hud + 0x28C));
+    data::add_int(v44, "gunConvergenceDistance", *(hud + 0x2C0));
     assign_string_float(v44, "bombDelayExplosion");
     assign_string_float(v44, "depthChargeDelayExplosion");
-    assign_string_int(v44, "bombActivationType", *(hud + 0x2CC));
+    data::add_int(v44, "bombActivationType", *(hud + 0x2CC));
     assign_string_float(v44, "rocketFuseDist");
     assign_string_float(v44, "torpedoDiveDepth");
-    assign_string_int(v44, "countermeasuresSeries", *(hud + 0x2DC));
+    data::add_int(v44, "countermeasuresSeries", *(hud + 0x2DC));
     assign_string_float(v44, "countermeasuresPeriods");
     assign_string_float(v44, "countermeasuresSeriesPeriods");
-    assign_string_int(v44, "bombSeries", *(hud + 0x2E4));
-    assign_string_int(v44, "hudColor", *(hud + 0x44));
-    assign_string_int(v44, "hudIndicators", *(hud + 0x48));
+    data::add_int(v44, "bombSeries", *(hud + 0x2E4));
+    data::add_int(v44, "hudColor", *(hud + 0x44));
+    data::add_int(v44, "hudIndicators", *(hud + 0x48));
     assign_char_property(v44, "hangarSound", *(hud + 0xAC));
     assign_char_property(v44, "usePerfectRangefinder", *(hud + 0x2F4));
     assign_char_property(v44, "saveAiTargetType", *(hud + 0x318));
-    assign_string_int(v44, "defaultAiTargetType", *(hud + 0x31C));
+    data::add_int(v44, "defaultAiTargetType", *(hud + 0x31C));
     assign_char_property(v44, "enableSoundSpeed", *(hud + 0x3BC));
-    assign_string_int(v44, "aiGunnerTime", *(hud + 0x40));
+    data::add_int(v44, "aiGunnerTime", *(hud + 0x40));
     v213 = 0i64;
     v214 = off_4B678C8;
     v215 = 0i64;
@@ -540,77 +540,77 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     v68 = &szFile;
     if ( v215 )
       v68 = v213;
-    assign_string_int(v44, v68, *(hud + 0x290));
+    data::add_int(v44, v68, *(hud + 0x290));
     v210 = (&_ImageBase + 2);
     LODWORD(v209) = 2;
     ctor_vprintf(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v69 = &szFile;
     if ( v215 )
       v69 = v213;
-    assign_string_int(v44, v69, *(hud + 0x294));
+    data::add_int(v44, v69, *(hud + 0x294));
     v210 = (&_ImageBase + 3);
     LODWORD(v209) = 2;
     ctor_vprintf(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v70 = &szFile;
     if ( v215 )
       v70 = v213;
-    assign_string_int(v44, v70, *(hud + 0x298));
+    data::add_int(v44, v70, *(hud + 0x298));
     v210 = &word_4;
     LODWORD(v209) = 2;
     ctor_vprintf(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v71 = &szFile;
     if ( v215 )
       v71 = v213;
-    assign_string_int(v44, v71, *(hud + 0x29C));
+    data::add_int(v44, v71, *(hud + 0x29C));
     v210 = (&word_4 + 1);
     LODWORD(v209) = 2;
     ctor_vprintf(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v72 = &szFile;
     if ( v215 )
       v72 = v213;
-    assign_string_int(v44, v72, *(hud + 0x2A0));
+    data::add_int(v44, v72, *(hud + 0x2A0));
     v210 = &word_6;
     LODWORD(v209) = 2;
     ctor_vprintf(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v73 = &szFile;
     if ( v215 )
       v73 = v213;
-    assign_string_int(v44, v73, *(hud + 0x2A4));
+    data::add_int(v44, v73, *(hud + 0x2A4));
     v210 = (&word_6 + 1);
     LODWORD(v209) = 2;
     ctor_vprintf(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v74 = &szFile;
     if ( v215 )
       v74 = v213;
-    assign_string_int(v44, v74, *(hud + 0x2A8));
+    data::add_int(v44, v74, *(hud + 0x2A8));
     v210 = &word_8;
     LODWORD(v209) = 2;
     ctor_vprintf(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v75 = &szFile;
     if ( v215 )
       v75 = v213;
-    assign_string_int(v44, v75, *(hud + 0x2AC));
+    data::add_int(v44, v75, *(hud + 0x2AC));
     v210 = (&word_8 + 1);
     LODWORD(v209) = 2;
     ctor_vprintf(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v76 = &szFile;
     if ( v215 )
       v76 = v213;
-    assign_string_int(v44, v76, *(hud + 0x2B0));
+    data::add_int(v44, v76, *(hud + 0x2B0));
     v210 = &word_A;
     LODWORD(v209) = 2;
     ctor_vprintf(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v77 = &szFile;
     if ( v215 )
       v77 = v213;
-    assign_string_int(v44, v77, *(hud + 0x2B4));
+    data::add_int(v44, v77, *(hud + 0x2B4));
     v210 = (&word_A + 1);
     LODWORD(v209) = 2;
     ctor_vprintf(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v78 = &szFile;
     if ( v215 )
       v78 = v213;
-    assign_string_int(v44, v78, *(hud + 0x2B8));
+    data::add_int(v44, v78, *(hud + 0x2B8));
     v210 = &word_C;
     LODWORD(v209) = 2;
     ctor_vprintf(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
@@ -619,8 +619,8 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     v218 = v213;
     if ( !v215 )
       v80 = &szFile;
-    assign_string_int(v44, v80, v79);
-    assign_string_int(v44, "timesIntroVideoPlayed", *(hud + 0x384));
+    data::add_int(v44, v80, v79);
+    data::add_int(v44, "timesIntroVideoPlayed", *(hud + 0x384));
     assign_string_float(v44, "graphicsAutodetectGpuTimeAvg");
     if ( *(hud + 0x3A0) )
       v67 = *(hud + 0x390);
@@ -634,7 +634,7 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     assign_char_property(v44, "storeZoomMapByLevel", *(hud + 0x367));
     assign_char_property(v44, "needShowCompassInTankHud", *(hud + 0x36C));
     assign_char_property(v44, "pitchBlockerWhileBraking", *(hud + 0x36D));
-    assign_string_int(v44, "commanderCameraInViews", *(hud + 0x370));
+    data::add_int(v44, "commanderCameraInViews", *(hud + 0x370));
     assign_char_property(v44, "saveDirWhileSwitchTrigger", *(hud + 0x376));
     v81 = "..\\..\\skyquake\\prog\\main\\playerProfile.cpp";
     v82 = 0x400000000003i64;
@@ -668,7 +668,7 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     assign_char_property(v44, "tankGunnerCameraFromSight", *(hud + 0x3CC));
     v88 = sub_145DB90(v44, "tankAltCrosshair");
     sub_1458A90(v88, (hud + 0x3D0), 0i64);
-    assign_string_int(v44, "saveZoomCameraSetting", *(hud + 0x3F0));
+    data::add_int(v44, "saveZoomCameraSetting", *(hud + 0x3F0));
     assign_char_property(v44, "playInactiveWindowSound", *(hud + 0x3BB));
     v89 = sub_145DB90(v44, "forbid_visual_tags");
     if ( *(hud + 0x588) )
@@ -687,25 +687,25 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     }
     v93 = sub_145DB90(v44, "hitIndicator");
     v94 = *&dword_44890B4;
-    assign_string_int(v93, "radius", (*(hud + 0xDC) * *&dword_44890B4));
-    assign_string_int(v93, "scale", (*(hud + 0xE0) * v94));
-    assign_string_int(v93, "alpha", (*(hud + 0xE4) * v94));
-    assign_string_int(v93, "timeout", *(hud + 0xE8));
+    data::add_int(v93, "radius", (*(hud + 0xDC) * *&dword_44890B4));
+    data::add_int(v93, "scale", (*(hud + 0xE0) * v94));
+    data::add_int(v93, "alpha", (*(hud + 0xE4) * v94));
+    data::add_int(v93, "timeout", *(hud + 0xE8));
     v95 = sub_145DB90(v44, "lwsIndicator");
-    assign_string_int(v95, "radius", (*(hud + 0xEC) * v94));
-    assign_string_int(v95, "scale", (*(hud + 0xF0) * v94));
-    assign_string_int(v95, "alpha", (*(hud + 0xF4) * v94));
-    assign_string_int(v95, "timeout", *(hud + 0xF8));
+    data::add_int(v95, "radius", (*(hud + 0xEC) * v94));
+    data::add_int(v95, "scale", (*(hud + 0xF0) * v94));
+    data::add_int(v95, "alpha", (*(hud + 0xF4) * v94));
+    data::add_int(v95, "timeout", *(hud + 0xF8));
     v96 = sub_145DB90(v44, "lwsIndicatorHelicopter");
-    assign_string_int(v96, "radius", (*(hud + 0xFC) * v94));
-    assign_string_int(v96, "scale", (*(hud + 0x100) * v94));
-    assign_string_int(v96, "alpha", (v94 * *(hud + 0x104)));
-    assign_string_int(v96, "timeout", *(hud + 0x108));
+    data::add_int(v96, "radius", (*(hud + 0xFC) * v94));
+    data::add_int(v96, "scale", (*(hud + 0x100) * v94));
+    data::add_int(v96, "alpha", (v94 * *(hud + 0x104)));
+    data::add_int(v96, "timeout", *(hud + 0x108));
     assign_char_property(v44, "advancedHitIndicatorSimplified", *(hud + 0xD9));
-    assign_string_int(v44, "lwsAzimuthIndicatorTimeout", *(hud + 0x10C));
-    assign_string_int(v44, "lwsAzimuthIndicatorTimeoutHelicopter", *(hud + 0x110));
-    assign_string_int(v44, "freeCameraZoomSpeed", *(hud + 0x5C8));
-    assign_string_int(v44, "replayCameraFov", *(hud + 0x5CC));
+    data::add_int(v44, "lwsAzimuthIndicatorTimeout", *(hud + 0x10C));
+    data::add_int(v44, "lwsAzimuthIndicatorTimeoutHelicopter", *(hud + 0x110));
+    data::add_int(v44, "freeCameraZoomSpeed", *(hud + 0x5C8));
+    data::add_int(v44, "replayCameraFov", *(hud + 0x5CC));
     if ( v218 )
       (*(*v214 + 0x40i64))(v214);
     v12 = v216;
@@ -762,7 +762,7 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
           v103 = (*(hud + 0x39130) + 0x10 * v102);
         v100 = (*v103 + (*(*(hud + 0x39110) + 4 * v99) & ~(0xFFFFFFFF << v101)));
       }
-      assign_string_int(v97, v100, *(*(hud + 0x39148) + 4 * v99++));
+      data::add_int(v97, v100, *(*(hud + 0x39148) + 4 * v99++));
       v98 = *(hud + 0x39118);
     }
     while ( v99 < v98 );
@@ -793,7 +793,7 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     }
     while ( v106 < v105 );
   }
-  assign_string_int(v12, "countryId2", *(hud + 0xD424));
+  data::add_int(v12, "countryId2", *(hud + 0xD424));
   v111 = sub_145DB90(v12, "hints_count");
   if ( *(hud + 0xEBB0) )
   {
@@ -803,9 +803,9 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     do
     {
       v115 = add_ss_section(v112, "hint");
-      assign_string_int(v115, "id", *(*(hud + 0xEBA0) + v113));
-      assign_string_int(v115, "totalCount", *(*(hud + 0xEBA0) + v113 + 4));
-      assign_string_int(v115, "realisticCount", *(*(hud + 0xEBA0) + v113 + 8));
+      data::add_int(v115, "id", *(*(hud + 0xEBA0) + v113));
+      data::add_int(v115, "totalCount", *(*(hud + 0xEBA0) + v113 + 4));
+      data::add_int(v115, "realisticCount", *(*(hud + 0xEBA0) + v113 + 8));
       ++v114;
       v113 += 0xCi64;
     }
@@ -815,12 +815,12 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
   sub_145E090(v217, hud + 0x39558, "selectedAir");
   v117 = v216;
   assign_char_property(v216, "firstFreeFlight", *(hud + 0x394B0));
-  assign_string_int(v117, "completedOneMission", *(hud + 0xEB80));
+  data::add_int(v117, "completedOneMission", *(hud + 0xEB80));
   assign_char_property(v117, "seenNuclearEvent", *(hud + 0xEB84));
   assign_char_property(v117, "seenBackgroundNuclearEvent", *(hud + 0xEB85));
   v118 = *(hud + 0x394B4);
   v119 = v116;
-  assign_string_int(v117, "battleCntWithSupportPlane", v118);
+  data::add_int(v117, "battleCntWithSupportPlane", v118);
   v120 = sub_681400(3i64);
   v121 = sub_145DB90(v119, "customDifficultyBlk");
   sub_676AA0(v120, v121);

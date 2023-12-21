@@ -294,7 +294,7 @@ LABEL_35:
 LABEL_38:
     (*(*v40 + 8i64))(v40);
 LABEL_39:
-  sub_176B540(v111, play_replay, 0i64);
+  sub_176B540(v111, get_replays_list, 0i64);
   sub_176BA60(v111, 1i64, ".");
   sub_176B870(v111, 0xFFFFFFFFFFFFFFFFui64, "get_replays_list");
   sub_176D900(v111, 0xFFFFFFFFFFFFFFFDui64, 0i64);

@@ -1,4 +1,4 @@
-__int64 __fastcall play_replay(_QWORD *a1)
+__int64 __fastcall get_replays_list(_QWORD *a1)
 {
   // [COLLAPSED LOCAL DECLARATIONS. PRESS KEYPAD CTRL-"+" TO EXPAND]
 
@@ -339,15 +339,15 @@ LABEL_106:
         v55 = localtime64(&Time);
         v56 = add_ss_section(&qword_4B1BF08, "file");
         sub_145A110(v56, "fileName", Str2);
-        assign_string_int(v56, "fileSize", v400);
-        assign_string_int(v56, "ver", SystemInfo.dwPageSize);
-        assign_string_int(v56, "startTime", v403);
-        assign_string_int(v56, &unk_48E4CBC, (v55->tm_year + 0x76C));
-        assign_string_int(v56, &unk_491E3F3, (v55->tm_mon + 1));
-        assign_string_int(v56, "dt_day", v55->tm_mday);
-        assign_string_int(v56, "dt_hour", v55->tm_hour);
-        assign_string_int(v56, "dt_min", v55->tm_min);
-        assign_string_int(v56, "dt_sec", v55->tm_sec);
+        data::add_int(v56, "fileSize", v400);
+        data::add_int(v56, "ver", SystemInfo.dwPageSize);
+        data::add_int(v56, "startTime", v403);
+        data::add_int(v56, &unk_48E4CBC, (v55->tm_year + 0x76C));
+        data::add_int(v56, &unk_491E3F3, (v55->tm_mon + 1));
+        data::add_int(v56, "dt_day", v55->tm_mday);
+        data::add_int(v56, "dt_hour", v55->tm_hour);
+        data::add_int(v56, "dt_min", v55->tm_min);
+        data::add_int(v56, "dt_sec", v55->tm_sec);
         v374 = v54;
       }
       if ( v376 )
