@@ -725,15 +725,15 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
   LOBYTE(v209) = *(hud + 0x39440);
   if ( *(v12 + 5) != 0xFFFFFFFF )
     sub_145E9A0(v12);
-  sub_145BE60(v12, "automaticExtinguisher", &v209);
+  data::set_bool(v12, "automaticExtinguisher", &v209);
   LOBYTE(v209) = *(hud + 0x39442);
   if ( *(v12 + 5) != 0xFFFFFFFF )
     sub_145E9A0(v12);
-  sub_145BE60(v12, "automaticRepair", &v209);
+  data::set_bool(v12, "automaticRepair", &v209);
   LOBYTE(v209) = *(hud + 0x39441);
   if ( *(v12 + 5) != 0xFFFFFFFF )
     sub_145E9A0(v12);
-  sub_145BE60(v12, "automaticPump", &v209);
+  data::set_bool(v12, "automaticPump", &v209);
   LODWORD(v209) = *(hud + 0x39498);
   if ( *(v12 + 5) != 0xFFFFFFFF )
     sub_145E9A0(v12);

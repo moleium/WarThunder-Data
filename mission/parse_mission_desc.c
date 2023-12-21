@@ -89,7 +89,7 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   LOBYTE(v83) = *(mission + 0x682);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "forceBenchmark", &v83);
+  data::set_bool(a2, "forceBenchmark", &v83);
   v4 = *(mission + 8);
   v5 = &szFile;
   if ( !v4 )
@@ -167,23 +167,23 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   LOBYTE(v83) = *(mission + 0x17A);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "takeOffOnStart", &v83);
+  data::set_bool(a2, "takeOffOnStart", &v83);
   LOBYTE(v83) = *(mission + 0x17C);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "isLimitedFuel", &v83);
+  data::set_bool(a2, "isLimitedFuel", &v83);
   LOBYTE(v83) = *(mission + 0x17B);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "isLimitedAmmo", &v83);
+  data::set_bool(a2, "isLimitedAmmo", &v83);
   LOBYTE(v83) = *(mission + 0x3A9);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "hideDamageFromPlayer", &v83);
+  data::set_bool(a2, "hideDamageFromPlayer", &v83);
   LOBYTE(v83) = *(mission + 0x197);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "ignoreInvulnerableTimer", &v83);
+  data::set_bool(a2, "ignoreInvulnerableTimer", &v83);
   v83 = *(mission + 0x1F0);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -203,23 +203,23 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   LOBYTE(v83) = *(mission + 0x17D);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "allowJIP", &v83);
+  data::set_bool(a2, "allowJIP", &v83);
   LOBYTE(v83) = *(mission + 0x17E);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "isBotsAllowed", &v83);
+  data::set_bool(a2, "isBotsAllowed", &v83);
   LOBYTE(v83) = *(mission + 0x18A);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "autoBalance", &v83);
+  data::set_bool(a2, "autoBalance", &v83);
   LOBYTE(v83) = *(mission + 0x18B);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "multiRespawn", &v83);
+  data::set_bool(a2, "multiRespawn", &v83);
   LOBYTE(v83) = *(mission + 0x196);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "multiRespawnNoRepair", &v83);
+  data::set_bool(a2, "multiRespawnNoRepair", &v83);
   v83 = *(mission + 0x1CC);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -227,51 +227,51 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   LOBYTE(v83) = *(mission + 0x18C);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "slotMultiSpawn", &v83);
+  data::set_bool(a2, "slotMultiSpawn", &v83);
   LOBYTE(v83) = *(mission + 0x18E);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "crewLockEnabled", &v83);
+  data::set_bool(a2, "crewLockEnabled", &v83);
   LOBYTE(v83) = *(mission + 0x18F);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "keepProfileOnReconnect", &v83);
+  data::set_bool(a2, "keepProfileOnReconnect", &v83);
   LOBYTE(v83) = *(mission + 0x18D);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "isAwardByObjective", &v83);
+  data::set_bool(a2, "isAwardByObjective", &v83);
   LOBYTE(v83) = *(mission + 0x199);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "useSpawnScore", &v83);
+  data::set_bool(a2, "useSpawnScore", &v83);
   LOBYTE(v83) = *(mission + 0x198);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "needShowLockedSlots", &v83);
+  data::set_bool(a2, "needShowLockedSlots", &v83);
   LOBYTE(v83) = *(mission + 0x19A);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "useTeamSpawnScore", &v83);
+  data::set_bool(a2, "useTeamSpawnScore", &v83);
   LOBYTE(v83) = *(mission + 0x19D);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "useKillStreaks", &v83);
+  data::set_bool(a2, "useKillStreaks", &v83);
   LOBYTE(v83) = *(mission + 0x19E);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "useAssaultBombFuseInKillStreak", &v83);
+  data::set_bool(a2, "useAssaultBombFuseInKillStreak", &v83);
   LOBYTE(v83) = *(mission + 0x19F);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "wwarEconomics", &v83);
+  data::set_bool(a2, "wwarEconomics", &v83);
   LOBYTE(v83) = *(mission + 0x1A0);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "isWorldWar", &v83);
+  data::set_bool(a2, "isWorldWar", &v83);
   LOBYTE(v83) = *(mission + 0x1A1);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "checkPlayerUnits", &v83);
+  data::set_bool(a2, "checkPlayerUnits", &v83);
   v23 = *(mission + 0x130);
   if ( !v23 )
     v23 = &szFile;
@@ -279,51 +279,51 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   LOBYTE(v83) = *(mission + 0x1A2);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "useFinalResults", &v83);
+  data::set_bool(a2, "useFinalResults", &v83);
   LOBYTE(v83) = *(mission + 0x1A3);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "useCustomOnlineUnlocksOnly", &v83);
+  data::set_bool(a2, "useCustomOnlineUnlocksOnly", &v83);
   LOBYTE(v83) = *(mission + 0x19B);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "singleSpawnByTypeTechnics", &v83);
+  data::set_bool(a2, "singleSpawnByTypeTechnics", &v83);
   LOBYTE(v83) = *(mission + 0x19C);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "updateSpawnDelayOnlyForCurrentUnit", &v83);
+  data::set_bool(a2, "updateSpawnDelayOnlyForCurrentUnit", &v83);
   LOBYTE(v83) = *(mission + 0x1A4);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "useSpawnDelay", &v83);
+  data::set_bool(a2, "useSpawnDelay", &v83);
   LOBYTE(v83) = *(mission + 0x1A5);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "afterDeathDelayOnly", &v83);
+  data::set_bool(a2, "afterDeathDelayOnly", &v83);
   LOBYTE(v83) = *(mission + 0x1A7);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "allowSpare", &v83);
+  data::set_bool(a2, "allowSpare", &v83);
   LOBYTE(v83) = *(mission + 0x1A6);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "useFreeRepairs", &v83);
+  data::set_bool(a2, "useFreeRepairs", &v83);
   LOBYTE(v83) = *(mission + 0x1A9);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "allowUseArtillerySupport", &v83);
+  data::set_bool(a2, "allowUseArtillerySupport", &v83);
   LOBYTE(v83) = *(mission + 0x1AA);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "allowWinch", &v83);
+  data::set_bool(a2, "allowWinch", &v83);
   LOBYTE(v83) = *(mission + 0x1AC);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "forceFreeBeltsAndWeapons", &v83);
+  data::set_bool(a2, "forceFreeBeltsAndWeapons", &v83);
   LOBYTE(v83) = *(mission + 0x1A8);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "enableProcessTeamInjury", &v83);
+  data::set_bool(a2, "enableProcessTeamInjury", &v83);
   v83 = *(mission + 0x388);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -367,7 +367,7 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
     LOBYTE(v83) = *(mission + 0x274) != 0;
     if ( *(a2 + 0x14) != 0xFFFFFFFF )
       sub_145E9A0(a2);
-    sub_145BE60(a2, "hudTankDetectedByAircraft", &v83);
+    data::set_bool(a2, "hudTankDetectedByAircraft", &v83);
   }
   v83 = *(mission + 0x24C);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
@@ -388,7 +388,7 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   LOBYTE(v83) = *(mission + 0x25C);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "ctaInstantDecreaseTicketsWhenNoRespawn", &v83);
+  data::set_bool(a2, "ctaInstantDecreaseTicketsWhenNoRespawn", &v83);
   v83 = *(mission + 0x264);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -400,15 +400,15 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   LOBYTE(v83) = *(mission + 0x180);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "arcadeCountry", &v83);
+  data::set_bool(a2, "arcadeCountry", &v83);
   LOBYTE(v83) = *(mission + 0x188);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "noRespawns", &v83);
+  data::set_bool(a2, "noRespawns", &v83);
   LOBYTE(v83) = *(mission + 0x189);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "forceNoRespawnsByMission", &v83);
+  data::set_bool(a2, "forceNoRespawnsByMission", &v83);
   v83 = *(mission + 0x184);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -416,27 +416,27 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   LOBYTE(v83) = *(mission + 0x195);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "useAlternativeMapCoord", &v83);
+  data::set_bool(a2, "useAlternativeMapCoord", &v83);
   LOBYTE(v83) = *(mission + 0x308);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "useAlternativeAerobaticSmokes", &v83);
+  data::set_bool(a2, "useAlternativeAerobaticSmokes", &v83);
   LOBYTE(v83) = *(mission + 0x1AD);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "disableUnitsOutOfSessionRank", &v83);
+  data::set_bool(a2, "disableUnitsOutOfSessionRank", &v83);
   LOBYTE(v83) = *(mission + 0x1AE);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "sendAwardsToUserLog", &v83);
+  data::set_bool(a2, "sendAwardsToUserLog", &v83);
   LOBYTE(v83) = *(mission + 0x30B);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "hideUnitsBehindSmoke", &v83);
+  data::set_bool(a2, "hideUnitsBehindSmoke", &v83);
   LOBYTE(v83) = *(mission + 0x1AF);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "useTimeAwardingEconomics", &v83);
+  data::set_bool(a2, "useTimeAwardingEconomics", &v83);
   v83 = *(mission + 0x1B0);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -535,7 +535,7 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   LOBYTE(v83) = *(mission + 0x314);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "raceForceCannotShoot", &v83);
+  data::set_bool(a2, "raceForceCannotShoot", &v83);
   v83 = *(mission + 0x318);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -559,7 +559,7 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   LOBYTE(v83) = *(mission + 0x32C);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "isScoreTournament", &v83);
+  data::set_bool(a2, "isScoreTournament", &v83);
   v26 = *(mission + 0x330);
   if ( !v26 )
     v26 = &szFile;
@@ -567,7 +567,7 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   LOBYTE(v83) = *(mission + 0x338);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "isPersistentSmoke", &v83);
+  data::set_bool(a2, "isPersistentSmoke", &v83);
   v83 = *(mission + 0x33C);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -575,11 +575,11 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   LOBYTE(v83) = *(mission + 0x190);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "userMission", &v83);
+  data::set_bool(a2, "userMission", &v83);
   LOBYTE(v83) = *(mission + 0x191);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "dedicatedReplay", &v83);
+  data::set_bool(a2, "dedicatedReplay", &v83);
   v83 = *(mission + 0x1E8);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -587,112 +587,112 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   LOBYTE(v83) = *(mission + 0x398);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "groundUnitsAllowed", &v83);
+  data::set_bool(a2, "groundUnitsAllowed", &v83);
   v27 = (mission + 0x67C);
   LOBYTE(v83) = *(mission + 0x67C) & 1;
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, &unk_49287D8, &v83);
+  data::set_bool(a2, &unk_49287D8, &v83);
   LOBYTE(v83) = (*v27 & 2) != 0;
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "gt_cooperative", &v83);
+  data::set_bool(a2, "gt_cooperative", &v83);
   LOBYTE(v83) = (*v27 & 4) != 0;
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "gt_versus", &v83);
+  data::set_bool(a2, "gt_versus", &v83);
   LOBYTE(v83) = (*v27 & 8) != 0;
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "gt_use_lb", &v83);
+  data::set_bool(a2, "gt_use_lb", &v83);
   LOBYTE(v83) = (*v27 & 0x10) != 0;
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, &unk_4870DDA, &v83);
+  data::set_bool(a2, &unk_4870DDA, &v83);
   LOBYTE(v83) = (*v27 & 0x20) != 0;
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "gt_use_stats", &v83);
+  data::set_bool(a2, "gt_use_stats", &v83);
   LOBYTE(v83) = (*v27 & 0x80000) != 0;
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "gt_ffa_deathmatch", &v83);
+  data::set_bool(a2, "gt_ffa_deathmatch", &v83);
   LOBYTE(v83) = *(mission + 0x67F) & 1;
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "gt_ffa", &v83);
+  data::set_bool(a2, "gt_ffa", &v83);
   LOBYTE(v83) = (*v27 & 0x100000) != 0;
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "gt_race", &v83);
+  data::set_bool(a2, "gt_race", &v83);
   LOBYTE(v83) = (*v27 & 0x8000000) != 0;
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "gt_football", &v83);
+  data::set_bool(a2, "gt_football", &v83);
   LOBYTE(v83) = (*v27 & 0x40) != 0;
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "gt_mp_score", &v83);
+  data::set_bool(a2, "gt_mp_score", &v83);
   LOBYTE(v83) = *v27 >> 7;
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "gt_mp_tickets", &v83);
+  data::set_bool(a2, "gt_mp_tickets", &v83);
   LOBYTE(v83) = *(mission + 0x67D) & 1;
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "gt_mp_capture", &v83);
+  data::set_bool(a2, "gt_mp_capture", &v83);
   LOBYTE(v83) = (*v27 & 0x200) != 0;
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "gt_mp_solo", &v83);
+  data::set_bool(a2, "gt_mp_solo", &v83);
   LOBYTE(v83) = (*v27 & 0x400) != 0;
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "gt_sp_restart", &v83);
+  data::set_bool(a2, "gt_sp_restart", &v83);
   LOBYTE(v83) = (*v27 & 0x800) != 0;
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "gt_sp_use_skin", &v83);
+  data::set_bool(a2, "gt_sp_use_skin", &v83);
   LOBYTE(v83) = (*v27 & 0x1000) != 0;
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "gt_dynamic", &v83);
+  data::set_bool(a2, "gt_dynamic", &v83);
   LOBYTE(v83) = (*v27 & 0x8000) != 0;
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "gt_use_xp", &v83);
+  data::set_bool(a2, "gt_use_xp", &v83);
   LOBYTE(v83) = (*v27 & 0x2000) != 0;
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "gt_use_wp", &v83);
+  data::set_bool(a2, "gt_use_wp", &v83);
   LOBYTE(v83) = (*v27 & 0x200000) != 0;
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "gt_use_unlocks", &v83);
+  data::set_bool(a2, "gt_use_unlocks", &v83);
   LOBYTE(v83) = (*v27 & 0x400000) != 0;
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "gt_use_orders", &v83);
+  data::set_bool(a2, "gt_use_orders", &v83);
   LOBYTE(v83) = (*v27 & 0x800000) != 0;
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "gt_auto_spawn", &v83);
+  data::set_bool(a2, "gt_auto_spawn", &v83);
   LOBYTE(v83) = (*v27 & 0x2000000) != 0;
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "gt_last_man_standing", &v83);
+  data::set_bool(a2, "gt_last_man_standing", &v83);
   LOBYTE(v83) = *(mission + 0x67E) & 1;
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "gt_reload_explosives", &v83);
+  data::set_bool(a2, "gt_reload_explosives", &v83);
   LOBYTE(v83) = *(mission + 0x3A0);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "disableDrag", &v83);
+  data::set_bool(a2, "disableDrag", &v83);
   LOBYTE(v83) = *(mission + 0x3A1);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "disableGravity", &v83);
+  data::set_bool(a2, "disableGravity", &v83);
   v83 = *(mission + 0x3A4);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -794,7 +794,7 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
     LOBYTE(v83) = 1;
     if ( *(v78 + 0x14) != 0xFFFFFFFF )
       sub_145E9A0(v78);
-    sub_145BE60(v79, "isNotEmpty", &v83);
+    data::set_bool(v79, "isNotEmpty", &v83);
     if ( !*(mission + 0x190) )
     {
 LABEL_415:
@@ -850,11 +850,11 @@ LABEL_415:
   LOBYTE(v83) = *(mission + 0xD0);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "isBoosterEnabled", &v83);
+  data::set_bool(a2, "isBoosterEnabled", &v83);
   LOBYTE(v83) = *(mission + 0xD1);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "disableTrophyAward", &v83);
+  data::set_bool(a2, "disableTrophyAward", &v83);
   v83 = *(mission + 0x680);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -862,7 +862,7 @@ LABEL_415:
   LOBYTE(v83) = *(mission + 0x2B4);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "useCustomSuperArtillery", &v83);
+  data::set_bool(a2, "useCustomSuperArtillery", &v83);
   v58 = *(mission + 0x2E8);
   if ( !v58 )
     v58 = &szFile;
@@ -870,15 +870,15 @@ LABEL_415:
   LOBYTE(v83) = *(mission + 0x2D8);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "useDeathmatchHUD", &v83);
+  data::set_bool(a2, "useDeathmatchHUD", &v83);
   LOBYTE(v83) = *(mission + 0x2D9);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "showTacticalMapCellSize", &v83);
+  data::set_bool(a2, "showTacticalMapCellSize", &v83);
   LOBYTE(v83) = *(mission + 0x2DA);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "hudUseModernMarkers", &v83);
+  data::set_bool(a2, "hudUseModernMarkers", &v83);
   v83 = *(mission + 0x2DC);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -910,7 +910,7 @@ LABEL_415:
   LOBYTE(v83) = *(mission + 0xF0);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145BE60(a2, "isCustomVisualFilterAllowed", &v83);
+  data::set_bool(a2, "isCustomVisualFilterAllowed", &v83);
   v65 = *(mission + 0x128);
   if ( !v65 )
     v65 = &szFile;
@@ -932,7 +932,7 @@ LABEL_415:
       LOBYTE(v83) = 1;
       if ( *(v66 + 0x14) != 0xFFFFFFFF )
         sub_145E9A0(v66);
-      sub_145BE60(v66, v71, &v83);
+      data::set_bool(v66, v71, &v83);
       v70 += 8i64;
     }
     while ( v69 != v70 );
@@ -953,7 +953,7 @@ LABEL_415:
       LOBYTE(v83) = 1;
       if ( *(v72 + 0x14) != 0xFFFFFFFF )
         sub_145E9A0(v72);
-      result = sub_145BE60(v72, v77, &v83);
+      result = data::set_bool(v72, v77, &v83);
       v76 += 8i64;
     }
     while ( v75 != v76 );

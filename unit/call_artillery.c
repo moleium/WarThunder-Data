@@ -77,7 +77,7 @@ void __fastcall call_artillery(float a1, float a2)
         LOBYTE(v29[0]) = 1;
         if ( *(hud + 0x50C) != 0xFFFFFFFF )
           sub_145E9A0(hud + 0x4F8);
-        sub_145BE60(v21, "artilleryTargettingUseMapFirst", v29);
+        data::set_bool(v21, "artilleryTargettingUseMapFirst", v29);
       }
     }
   }
