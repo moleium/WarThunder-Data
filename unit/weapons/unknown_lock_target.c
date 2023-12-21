@@ -213,7 +213,7 @@ void __fastcall unknown_lock_target(__int64 ballistics, __int64 _Unit, __int64 a
         v19 = sub_180EDC0(&v80, "endTime", 0);
         sub_180E6D0(v19, &v77);
         sub_180E1F0(&v77);
-        sub_1823740("on_delayed_target_select:show", &v80, "native");
+        send_event("on_delayed_target_select:show", &v80, "native");
         sub_180E1F0(&v80);
         return;
       }
@@ -227,7 +227,7 @@ LABEL_44:
         v80.m256i_i8[8] = 0;
         v80.m256i_i8[0xC] = 0;
         v80.m256i_i64[2] = 0i64;
-        sub_1823740("on_delayed_target_select:hide", &v80, "native");
+        send_event("on_delayed_target_select:hide", &v80, "native");
         sub_180E1F0(&v80);
       }
       if ( LocalPlayer )

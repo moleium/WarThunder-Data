@@ -231,7 +231,7 @@ LABEL_45:
       BYTE4(v1337) = v46;
       sub_180E1F0(&v1336);
       sub_180E1F0(&v1329);
-      sub_1823740("showMissileSalvoTimer", &v1320, "native");
+      send_event("showMissileSalvoTimer", &v1320, "native");
       sub_180E1F0(&v1320);
       v40 = *(cursor_visuals + 0x4F8C);
       v42 = *(cursor_visuals + 0x4F90);
@@ -258,7 +258,7 @@ LABEL_45:
       BYTE4(v1337) = v49;
       sub_180E1F0(&v1336);
       sub_180E1F0(&v1329);
-      sub_1823740("showMissileSalvoTimer", &v1320, "native");
+      send_event("showMissileSalvoTimer", &v1320, "native");
       sub_180E1F0(&v1320);
       v40 = *(cursor_visuals + 0x4F8C);
     }
