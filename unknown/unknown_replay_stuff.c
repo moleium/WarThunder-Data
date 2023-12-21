@@ -394,7 +394,7 @@ LABEL_58:
 LABEL_64:
     *v67 = charNode::raw_length;
   }
-  sub_176B540(v64, parse_replay, 1i64);
+  sub_176B540(v64, register_replay_sq_module, 1i64);
   sub_176BA60(v111, 2i64, 0i64);
   sub_176B870(v111, 0xFFFFFFFFFFFFFFFFui64, "get_replay_info");
   sub_176D900(v111, 0xFFFFFFFFFFFFFFFDui64, 0i64);

@@ -1,4 +1,4 @@
-__int64 __fastcall parse_replay(__int64 a1)
+__int64 __fastcall register_replay_sq_module(__int64 a1)
 {
   _QWORD *v1; // rdi
   char v3; // cl
