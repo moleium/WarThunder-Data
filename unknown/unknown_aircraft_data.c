@@ -844,11 +844,11 @@ LABEL_59:
       {
         sub_145F7B0(FileName, "Passport");
         v56 = sub_145DB90(FileName, "Passport");
-        sub_145A060(v56, "unitSystem", v647);
+        data::set_str(v56, "unitSystem", v647);
         sub_145B830(v56, "mass");
         v599[0] = 1;
         sub_B0A980(http_req, "maxSpeedSpeedType", v599);
-        sub_145A060(v56, "maxSpeedSpeedType", (&off_4A791A0)[v599[0]]);
+        data::set_str(v56, "maxSpeedSpeedType", (&off_4A791A0)[v599[0]]);
         v595 = 0.0;
         sub_B0A980(http_req, "climbSpeedCount", &v595);
         v601 = v56;
@@ -893,7 +893,7 @@ LABEL_59:
                     v62 = &szFile;
                     if ( *&v605[0x10] )
                       v62 = *v605;
-                    sub_145A060(v601, v62, (&off_4A791A0)[SLODWORD(v596)]);
+                    data::set_str(v601, v62, (&off_4A791A0)[SLODWORD(v596)]);
                     v63 = &szFile;
                     if ( LODWORD(Block[1]) )
                       v63 = *&Block[0];

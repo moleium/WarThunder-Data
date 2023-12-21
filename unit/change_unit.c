@@ -557,7 +557,7 @@ LABEL_24:
         v50 = &szFile;
         if ( !v49 )
           v49 = &szFile;
-        sub_145A060(Block, "unitClass", v49);
+        data::set_str(Block, "unitClass", v49);
         sub_145A750(Block, "id", v293);
         sub_145A750(Block, "playerNo", 0xFFFFFFFFi64);
         sub_145A750(Block, "flags", *(*v33 + 0x416));
@@ -565,13 +565,13 @@ LABEL_24:
         v51 = *(*v33 + 0x97);
         if ( !v51 )
           v51 = &szFile;
-        sub_145A060(Block, "weapons", v51);
+        data::set_str(Block, "weapons", v51);
         v52 = sub_145DB90(v253, "props");
         *&v224 = sub_5655B0(game);
         sub_490CD0(&v260, *v33 + 0x1138, &v224);
         if ( v262 )
           v50 = v260;
-        sub_145A060(v52, "name", v50);
+        data::set_str(v52, "name", v50);
         if ( v260 )
           (*(*v261 + 0x40i64))(v261);
         v53 = (*(*(*v33 + 0xA) + 0x30i64))(*v33 + 0x50);
@@ -770,13 +770,13 @@ LABEL_24:
         sub_145D840(v253, "unitTm", &v215);
         if ( v201 )
           v81 = v199;
-        sub_145A060(v253, "unitClass", v81);
+        data::set_str(v253, "unitClass", v81);
         sub_145A750(v253, "id", v93);
         sub_145A750(v253, "playerNo", v202);
         sub_145A750(v253, "flags", v94);
         sub_145BE20(v253, "isPhysPredictionEnabled", *(*(game + 0x548) + 0x11Bi64));
         if ( v279 && *v279 )
-          sub_145A060(v253, "weapons", v279);
+          data::set_str(v253, "weapons", v279);
         v95 = v253;
         v96 = sub_145DB90(v253, "props");
         v97 = v96;
@@ -785,11 +785,11 @@ LABEL_24:
           v98 = v205;
         else
           v98 = &szFile;
-        sub_145A060(v96, "name", v98);
+        data::set_str(v96, "name", v98);
         sub_145A750(v97, "army", v203);
         v103 = v280;
         if ( v280 && *v280 )
-          sub_145A060(v97, "skin", v280);
+          data::set_str(v97, "skin", v280);
         LOBYTE(v103) = 1;
         sub_145BE20(v97, "targetAir", v103);
         LOBYTE(v104) = 1;
@@ -798,7 +798,7 @@ LABEL_24:
         sub_145B830(v97, "effShootingRate");
         sub_145B830(v97, "stealthRadius");
         v105 = sub_48AC20(*v33);
-        sub_145A060(v97, "attack_type", v105);
+        data::set_str(v97, "attack_type", v105);
         v106 = *v33;
         if ( *v33 && (v107 = *(v106 + 0x858), v107 <= 0xF) && (v108 = 0x897E, _bittest(&v108, v107)) )
         {
@@ -879,7 +879,7 @@ LABEL_24:
         }
         sub_1458770(v218, v253);
         sub_145A750(v218, "playerNo", 0xFFFFFFFFi64);
-        sub_145A060(v218, "unitClass", v208);
+        data::set_str(v218, "unitClass", v208);
         LODWORD(v260) = sub_5655B0(game);
         sub_491AE0(&v257, &v205, &v260);
         v118 = sub_18A6B0(v218, "props");
@@ -887,7 +887,7 @@ LABEL_24:
           v119 = v257;
         else
           v119 = &szFile;
-        sub_145A060(v118, "name", v119);
+        data::set_str(v118, "name", v119);
         sub_488BA0(&v260);
         sub_48B790(v115, v218, &qword_4AD9050, &v260);
         sub_277B70(v267, v208);

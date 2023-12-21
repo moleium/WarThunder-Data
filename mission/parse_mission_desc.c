@@ -94,76 +94,76 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   v5 = &szFile;
   if ( !v4 )
     v4 = &szFile;
-  sub_145A060(a2, "chapter", v4);
+  data::set_str(a2, "chapter", v4);
   v6 = *mission;
   if ( !*mission )
     v6 = &szFile;
-  sub_145A060(a2, "campaign", v6);
+  data::set_str(a2, "campaign", v6);
   v7 = *(mission + 0x10);
   if ( !v7 )
     v7 = &szFile;
-  sub_145A060(a2, "name", v7);
+  data::set_str(a2, "name", v7);
   v8 = *(mission + 0x50);
   if ( !v8 )
     v8 = &szFile;
-  sub_145A060(a2, "locName", v8);
+  data::set_str(a2, "locName", v8);
   v9 = *(mission + 0x58);
   if ( !v9 )
     v9 = &szFile;
-  sub_145A060(a2, "locNameTeamA", v9);
+  data::set_str(a2, "locNameTeamA", v9);
   v10 = *(mission + 0x60);
   if ( !v10 )
     v10 = &szFile;
-  sub_145A060(a2, "locNameTeamB", v10);
+  data::set_str(a2, "locNameTeamB", v10);
   v11 = *(mission + 0x68);
   if ( !v11 )
     v11 = &szFile;
-  sub_145A060(a2, "locDesc", v11);
+  data::set_str(a2, "locDesc", v11);
   v12 = *(mission + 0x70);
   if ( !v12 )
     v12 = &szFile;
-  sub_145A060(a2, "locDescTeamA", v12);
+  data::set_str(a2, "locDescTeamA", v12);
   v13 = *(mission + 0x78);
   if ( !v13 )
     v13 = &szFile;
-  sub_145A060(a2, "locDescTeamB", v13);
+  data::set_str(a2, "locDescTeamB", v13);
   v14 = *(mission + 0x18);
   if ( v14 && *v14 )
-    sub_145A060(a2, "loc_name", v14);
+    data::set_str(a2, "loc_name", v14);
   v15 = *(mission + 0x20);
   if ( !v15 )
     v15 = &szFile;
-  sub_145A060(a2, "postfix", v15);
+  data::set_str(a2, "postfix", v15);
   v16 = *(mission + 0x30);
   if ( !v16 )
     v16 = &szFile;
-  sub_145A060(a2, "level", v16);
+  data::set_str(a2, "level", v16);
   v17 = *(mission + 0x40);
   if ( !v17 )
     v17 = &szFile;
-  sub_145A060(a2, "environment", v17);
+  data::set_str(a2, "environment", v17);
   v18 = *(mission + 0x38);
   if ( !v18 )
     v18 = &szFile;
-  sub_145A060(a2, "mis_file", v18);
+  data::set_str(a2, "mis_file", v18);
   v19 = *(mission + 0x48);
   if ( !v19 )
     v19 = &szFile;
-  sub_145A060(a2, "weather", v19);
+  data::set_str(a2, "weather", v19);
   v20 = sub_145DB90(a2, "netDifficultyBlk");
   sub_676AA0(mission + 0x37C, v20);
   v21 = &szFile;
   if ( *(mission + 0x148) )
     v21 = *(mission + 0x138);
-  sub_145A060(a2, "player_class", v21);
+  data::set_str(a2, "player_class", v21);
   v22 = &szFile;
   if ( *(mission + 0x160) )
     v22 = *(mission + 0x150);
-  sub_145A060(a2, "player_weapons", v22);
+  data::set_str(a2, "player_weapons", v22);
   if ( *(mission + 0x340) )
     v5 = *(mission + 0x340);
-  sub_145A060(a2, "battleAreaColorPreset", v5);
-  sub_145A060(a2, "restoreType", (&off_4A70F20)[*(mission + 0x370)]);
+  data::set_str(a2, "battleAreaColorPreset", v5);
+  data::set_str(a2, "restoreType", (&off_4A70F20)[*(mission + 0x370)]);
   LOBYTE(v83) = *(mission + 0x17A);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -275,7 +275,7 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   v23 = *(mission + 0x130);
   if ( !v23 )
     v23 = &szFile;
-  sub_145A060(a2, "nameKillStreaks", v23);
+  data::set_str(a2, "nameKillStreaks", v23);
   LOBYTE(v83) = *(mission + 0x1A2);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -444,7 +444,7 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   v24 = *(mission + 0x1B8);
   if ( !v24 )
     v24 = &szFile;
-  sub_145A060(a2, "timeAwardingEconomicsActivityPreset", v24);
+  data::set_str(a2, "timeAwardingEconomicsActivityPreset", v24);
   if ( *(mission + 0x2F8) )
   {
     v83 = *(mission + 0x300);
@@ -515,7 +515,7 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   v25 = *(mission + 0x2A8);
   if ( !v25 )
     v25 = &szFile;
-  sub_145A060(a2, "activityPreset", v25);
+  data::set_str(a2, "activityPreset", v25);
   v83 = *(mission + 0x2B0);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -563,7 +563,7 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   v26 = *(mission + 0x330);
   if ( !v26 )
     v26 = &szFile;
-  sub_145A060(a2, "userstatModes", v26);
+  data::set_str(a2, "userstatModes", v26);
   LOBYTE(v83) = *(mission + 0x338);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -753,11 +753,11 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   v37 = *(mission + 0x90);
   if ( !v37 )
     v37 = &szFile;
-  sub_145A060(a2, "country_axis", v37);
+  data::set_str(a2, "country_axis", v37);
   v38 = *(mission + 0x98);
   if ( !v38 )
     v38 = &szFile;
-  sub_145A060(a2, "country_allies", v38);
+  data::set_str(a2, "country_allies", v38);
   if ( *(mission + 0x61E) + *(mission + 0x61C)
     && *(mission + 0x63E) + *(mission + 0x63C)
     && *(mission + 0x5FE) + *(mission + 0x5FC) )
@@ -818,35 +818,35 @@ LABEL_415:
   v50 = *(mission + 0xD8);
   if ( !v50 )
     v50 = &szFile;
-  sub_145A060(a2, "overrideUnit", v50);
+  data::set_str(a2, "overrideUnit", v50);
   v51 = *(mission + 0xE0);
   if ( !v51 )
     v51 = &szFile;
-  sub_145A060(a2, "missionProgressType", v51);
+  data::set_str(a2, "missionProgressType", v51);
   v52 = *(mission + 0xA0);
   if ( !v52 )
     v52 = &szFile;
-  sub_145A060(a2, "tournament_mode", v52);
+  data::set_str(a2, "tournament_mode", v52);
   v53 = *(mission + 0xA8);
   if ( !v53 )
     v53 = &szFile;
-  sub_145A060(a2, "constantWPAwardName", v53);
+  data::set_str(a2, "constantWPAwardName", v53);
   v54 = *(mission + 0xB0);
   if ( !v54 )
     v54 = &szFile;
-  sub_145A060(a2, "pveXPAwardName", v54);
+  data::set_str(a2, "pveXPAwardName", v54);
   v55 = *(mission + 0xB8);
   if ( !v55 )
     v55 = &szFile;
-  sub_145A060(a2, "pveWPAwardName", v55);
+  data::set_str(a2, "pveWPAwardName", v55);
   v56 = *(mission + 0xC0);
   if ( !v56 )
     v56 = &szFile;
-  sub_145A060(a2, "pveCustomUnlockForVictory", v56);
+  data::set_str(a2, "pveCustomUnlockForVictory", v56);
   v57 = *(mission + 0xC8);
   if ( !v57 )
     v57 = &szFile;
-  sub_145A060(a2, "pveTrophyName", v57);
+  data::set_str(a2, "pveTrophyName", v57);
   LOBYTE(v83) = *(mission + 0xD0);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -866,7 +866,7 @@ LABEL_415:
   v58 = *(mission + 0x2E8);
   if ( !v58 )
     v58 = &szFile;
-  sub_145A060(a2, "killOutOfBattleAreaUnit", v58);
+  data::set_str(a2, "killOutOfBattleAreaUnit", v58);
   LOBYTE(v83) = *(mission + 0x2D8);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -886,27 +886,27 @@ LABEL_415:
   v59 = *(mission + 0x348);
   if ( !v59 )
     v59 = &szFile;
-  sub_145A060(a2, "countryFlagTeamA", v59);
+  data::set_str(a2, "countryFlagTeamA", v59);
   v60 = *(mission + 0x350);
   if ( !v60 )
     v60 = &szFile;
-  sub_145A060(a2, "countryFlagTeamB", v60);
+  data::set_str(a2, "countryFlagTeamB", v60);
   v61 = *(mission + 0x358);
   if ( !v61 )
     v61 = &szFile;
-  sub_145A060(a2, "customArtillerySfxPath", v61);
+  data::set_str(a2, "customArtillerySfxPath", v61);
   v62 = *(mission + 0x360);
   if ( !v62 )
     v62 = &szFile;
-  sub_145A060(a2, "customArtillerySfx", v62);
+  data::set_str(a2, "customArtillerySfx", v62);
   v63 = *(mission + 0x2C8);
   if ( !v63 )
     v63 = &szFile;
-  sub_145A060(a2, "customArtilleryImage", v63);
+  data::set_str(a2, "customArtilleryImage", v63);
   v64 = *(mission + 0x2F0);
   if ( !v64 )
     v64 = &szFile;
-  sub_145A060(a2, "customHUD", v64);
+  data::set_str(a2, "customHUD", v64);
   LOBYTE(v83) = *(mission + 0xF0);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -914,7 +914,7 @@ LABEL_415:
   v65 = *(mission + 0x128);
   if ( !v65 )
     v65 = &szFile;
-  sub_145A060(a2, "allowedTagsPreset", v65);
+  data::set_str(a2, "allowedTagsPreset", v65);
   v66 = sub_145DB90(a2, "forbidVisualTags");
   sub_145E230(v66);
   v84 = mission;
