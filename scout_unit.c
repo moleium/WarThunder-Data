@@ -1,165 +1,6 @@
 __int64 __fastcall scout_unit(__int64 a1, __int64 DetectorUnit, __int64 _Unit_)
 {
-  __m128 v3; // xmm2
-  unsigned int UnitType; // eax
-  int v7; // ecx
-  __int64 Unit; // rsi
-  double *v9; // rax
-  char *response; // rdx
-  __int64 v11; // rcx
-  float v12; // xmm1_4
-  float v13; // xmm5_4
-  float v14; // xmm0_4
-  float v15; // xmm4_4
-  float v16; // xmm3_4
-  float v17; // xmm3_4
-  __m128 v18; // xmm5
-  __m128 v19; // xmm4
-  __m128 v20; // xmm1
-  __int64 PlayerInfo; // r13
-  _BYTE *v22; // r14
-  unsigned __int8 v23; // al
-  int hud_marker_unk; // r12d
-  unsigned int UnitType_; // ecx
-  int v26; // edx
-  int v27; // ebp
-  int v28; // eax
-  float _UnitPositionZ; // xmm8_4
-  float _UnitPositionY; // xmm9_4
-  float _DetectorUnitX; // xmm15_4
-  float _DetectorUnitY; // xmm14_4
-  float _UnitPositionX; // xmm13_4
-  float UnitBBoxMinX; // xmm12_4
-  float UnitBBoxMinY; // xmm5_4
-  float UnitBBoxMaxX; // xmm10_4
-  float UnitBBoxMaxY; // xmm1_4
-  float v38; // xmm4_4
-  float v39; // xmm0_4
-  float v40; // xmm7_4
-  float v41; // xmm11_4
-  float v42; // xmm6_4
-  float v43; // xmm9_4
-  float v44; // xmm14_4
-  float v45; // xmm9_4
-  float v46; // xmm7_4
-  float v47; // xmm4_4
-  float v48; // xmm15_4
-  float v49; // xmm2_4
-  float v50; // xmm3_4
-  float v51; // xmm10_4
-  float v52; // xmm12_4
-  float v53; // xmm13_4
-  int v54; // xmm8_4
-  float v55; // xmm8_4
-  float v56; // xmm9_4
-  float v57; // xmm14_4
-  float v58; // xmm9_4
-  float v59; // xmm0_4
-  float v60; // xmm4_4
-  __int64 v62; // rcx
-  float *v63; // rax
-  double *v64; // rcx
-  unsigned __int8 v65; // al
-  int UnitPositionZ; // xmm1_4
-  float UnitPositionY; // xmm3_4
-  float DetectorPositionY; // xmm2_4
-  int DetectorPositionZ; // xmm1_4
-  __int64 v70; // rdx
-  __int64 DetectorUnit_; // rcx
-  __int64 v72; // r8
-  __int64 v73; // rdx
-  float v74; // xmm6_4
-  float v75; // xmm0_4
-  __int64 v76; // r15
-  unsigned __int64 v77; // r13
-  __int64 v78; // rcx
-  float *v79; // rax
-  double *v80; // rcx
-  __int64 v81; // rdx
-  float v82; // xmm6_4
-  float v83; // xmm0_4
-  int v84; // edi
-  int v85; // eax
-  unsigned __int64 v86; // rax
-  unsigned __int64 v87; // rbp
-  unsigned __int8 v88; // cl
-  bool v89; // zf
-  bool v90; // cl
-  unsigned __int64 v91; // rdx
-  unsigned __int64 v92; // rcx
-  unsigned __int8 v93; // di
-  __int64 v94; // r8
-  unsigned int v95; // ecx
-  int v96; // edx
-  unsigned __int8 v97; // cf
-  __int64 v98; // rdx
-  float v99; // xmm0_4
-  float v100; // xmm5_4
-  __int64 v101; // rcx
-  int v102; // xmm15_4
-  float v103; // xmm8_4
-  float v104; // xmm14_4
-  float v105; // xmm13_4
-  float v106; // xmm12_4
-  float v107; // xmm7_4
-  float v108; // xmm6_4
-  float v109; // xmm11_4
-  float v110; // xmm0_4
-  float v111; // xmm7_4
-  __int64 _Unit; // rbx
-  __int64 v113; // rax
-  float *v114; // rcx
-  float v115; // xmm6_4
-  float v116; // xmm1_4
-  __int64 v117; // rdx
-  __int64 v118; // rbp
-  float v119; // xmm0_4
-  unsigned int v120; // eax
-  __int64 v121; // rbx
-  __int64 v122; // rbx
-  __int64 v123; // rax
-  float *v124; // rcx
-  float v125; // xmm6_4
-  float v126; // xmm1_4
-  __int64 v127; // r15
-  __int64 v128; // rcx
-  __int64 v129; // rax
-  __int64 v130; // rbp
-  int v131; // r14d
-  int v132; // eax
-  __int64 v133; // rax
-  unsigned __int64 v134; // [rsp+20h] [rbp-1F8h]
-  float _DetectorUnitZ; // [rsp+28h] [rbp-1F0h]
-  __int64 v136; // [rsp+28h] [rbp-1F0h]
-  float DetectorPositionX; // [rsp+30h] [rbp-1E8h] BYREF
-  float DetectorPositionY_; // [rsp+34h] [rbp-1E4h]
-  float DetectorPositionZ_; // [rsp+38h] [rbp-1E0h]
-  float v140; // [rsp+40h] [rbp-1D8h]
-  int v141; // [rsp+44h] [rbp-1D4h]
-  __int64 v142; // [rsp+48h] [rbp-1D0h]
-  __int64 Unit_; // [rsp+50h] [rbp-1C8h] BYREF
-  __int64 v144; // [rsp+58h] [rbp-1C0h]
-  float v145; // [rsp+60h] [rbp-1B8h]
-  float v146; // [rsp+64h] [rbp-1B4h]
-  float v147; // [rsp+68h] [rbp-1B0h]
-  float v148; // [rsp+6Ch] [rbp-1ACh]
-  float v149; // [rsp+70h] [rbp-1A8h]
-  float v150; // [rsp+74h] [rbp-1A4h]
-  __int64 v151; // [rsp+78h] [rbp-1A0h] BYREF
-  __int64 UnitPosition; // [rsp+80h] [rbp-198h] BYREF
-  _BOOL8 v153; // [rsp+88h] [rbp-190h]
-  int v154; // [rsp+90h] [rbp-188h]
-  unsigned __int64 v155; // [rsp+98h] [rbp-180h]
-  int v156; // [rsp+A0h] [rbp-178h]
-  unsigned __int64 v157; // [rsp+A8h] [rbp-170h]
-  int v158; // [rsp+B0h] [rbp-168h]
-  unsigned __int64 v159; // [rsp+B8h] [rbp-160h]
-  int v160; // [rsp+C0h] [rbp-158h]
-  unsigned __int64 v161; // [rsp+C8h] [rbp-150h]
-  int v162; // [rsp+D0h] [rbp-148h]
-  unsigned __int64 v163; // [rsp+D8h] [rbp-140h]
-  int v164; // [rsp+E0h] [rbp-138h]
-  __int64 v165; // [rsp+E8h] [rbp-130h]
+  // [COLLAPSED LOCAL DECLARATIONS. PRESS KEYPAD CTRL-"+" TO EXPAND]
 
   Unit_ = DetectorUnit;
   if ( !*(a1 + 0x18) )
@@ -195,40 +36,40 @@ LABEL_50:
     v9 = (qword_4B507E8 + 0x70);
   }
   v3.m128_f32[0] = *v9;
-  v12 = *(DetectorUnit + 0x12D8);
-  v13 = *(DetectorUnit + 0x1300) + v12;
-  if ( v13 >= v12 )
+  scout_start_time = *(DetectorUnit + 0x12D8);
+  scout_cooldown = *(DetectorUnit + 0x1300) + scout_start_time;
+  if ( scout_cooldown >= scout_start_time )
   {
     v14 = Y;
     v15 = 0.0;
-    v16 = *(DetectorUnit + 0x1300) + v12;
-    if ( v12 >= v3.m128_f32[0] )
+    scout_cooldown_ = *(DetectorUnit + 0x1300) + scout_start_time;
+    if ( scout_start_time >= v3.m128_f32[0] )
       goto LABEL_27;
   }
   else
   {
     v14 = 0.0;
     v15 = Y;
-    v16 = *(DetectorUnit + 0x12D8);
-    v12 = *(DetectorUnit + 0x1300) + v12;
-    if ( v13 >= v3.m128_f32[0] )
+    scout_cooldown_ = *(DetectorUnit + 0x12D8);
+    scout_start_time = *(DetectorUnit + 0x1300) + scout_start_time;
+    if ( scout_cooldown >= v3.m128_f32[0] )
       goto LABEL_27;
   }
-  if ( v16 <= v3.m128_f32[0] )
+  if ( scout_cooldown_ <= v3.m128_f32[0] )
   {
     v14 = v15;
   }
   else
   {
-    v17 = v16 - v12;
+    v17 = scout_cooldown_ - scout_start_time;
     v18 = v3;
-    v18.m128_f32[0] = (v3.m128_f32[0] - v12) * (v15 - v14);
+    v18.m128_f32[0] = (v3.m128_f32[0] - scout_start_time) * (v15 - v14);
     if ( v17 > *&dword_449F1A8 || (v19 = 0i64, v17 < *&dword_449F1AC) )
     {
       v18.m128_f32[0] = v18.m128_f32[0] / v17;
       v19 = v18;
     }
-    v20.m128_f32[0] = v12 - v3.m128_f32[0];
+    v20.m128_f32[0] = scout_start_time - v3.m128_f32[0];
     v14 = v14 + _mm_andnot_ps(_mm_cmple_ss(0i64, v20), v19).m128_f32[0];
   }
 LABEL_27:
@@ -241,7 +82,7 @@ LABEL_27:
   v22 = 0i64;
   if ( _Unit_ && PlayerInfo )
     v22 = sub_4BCEE0(*(_Unit_ + 0x11C8), *(PlayerInfo + 8));
-  v23 = 0;
+  is_intersects = 0;
   hud_marker_unk = *(HudInfo + 0x73);
   if ( Unit && !v22 )
   {
@@ -257,11 +98,11 @@ LABEL_27:
       DetectorPositionX = *(DetectorUnit + 0x9C0);
       DetectorPositionY_ = DetectorPositionY;
       DetectorPositionZ_ = *&DetectorPositionZ;
-      v23 = sub_8465F0(&DetectorPositionX, &UnitPosition) ^ 1;
+      is_intersects = raycast_world(&DetectorPositionX, &UnitPosition) ^ 1;
       if ( *(a1 + 0x1A) )
         goto LABEL_36;
 LABEL_65:
-      if ( ((v23 ^ 1) & (v22 == 0i64)) != 0 || v22 && hud_marker_unk == 2 && !(v22[0x14] | v22[0x12]) )
+      if ( ((is_intersects ^ 1) & (v22 == 0i64)) != 0 || v22 && hud_marker_unk == 2 && !(v22[0x14] | v22[0x12]) )
       {
         LODWORD(Unit) = 0;
         dg_debug(3u, "scouting: failed - marker not visible", 0i64, 0);
@@ -273,7 +114,7 @@ LABEL_70:
       }
       goto LABEL_36;
     }
-    v23 = 0;
+    is_intersects = 0;
   }
   if ( !*(a1 + 0x1A) )
     goto LABEL_65;
@@ -381,7 +222,7 @@ LABEL_111:
   v26 = 0x897E;
   if ( !_bittest(&v26, UnitType_) )
     goto LABEL_85;
-  if ( v23 )
+  if ( is_intersects )
     goto LABEL_40;
   if ( !v22 )
   {
@@ -521,16 +362,16 @@ LABEL_40:
     v100 = Y / v99;
   if ( *(a1 + 0x1B) )
   {
-    v101 = game + 0x28;
+    _game = game + 0x28;
     if ( !game )
-      v101 = game;
+      _game = game;
     v134 = __PAIR64__(LODWORD(v53), LODWORD(v48));
     v102 = v54;
     v103 = v44;
     v104 = v60;
     v105 = v52;
     v106 = v100;
-    sub_4B2300(v101, &DetectorPositionX);
+    sub_4B2300(_game, &DetectorPositionX);
     v100 = v106;
     v52 = v105;
     v60 = v104;
