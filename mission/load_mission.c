@@ -1199,7 +1199,7 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
   DWORD2(v1165) = 1;
   v1168 = v8;
   v1167 = 1;
-  dg_debug(3u, "Load mission '%s' ('%s') from file '%s' / url '%s'", &v1162, 4);
+  logmessage_fmt(3u, "Load mission '%s' ('%s') from file '%s' / url '%s'", &v1162, 4);
   v1172 = a4;
   if ( a4 )
     sub_1458A90(a1 + 0x510, a2, 0i64);

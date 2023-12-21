@@ -101,7 +101,7 @@ LABEL_26:
       LODWORD(v396) = 2;
       *(&v398[0] + 1) = lpMaximumApplicationAddress_high;
       LODWORD(v398[0]) = 2;
-      dg_debug(1i64, "Error read replay database to temp datablock. file size %d, readed %d", &v396, 2i64);
+      logmessage_fmt(1i64, "Error read replay database to temp datablock. file size %d, readed %d", &v396, 2i64);
 LABEL_27:
       EnterCriticalSection(&stru_4B730B0);
       v22 = 1;
@@ -145,7 +145,7 @@ LABEL_38:
     SystemInfo.dwOemId = 5;
     SystemInfo.dwActiveProcessorMask = v27;
     LODWORD(SystemInfo.lpMaximumApplicationAddress) = 2;
-    dg_debug(
+    logmessage_fmt(
       1i64,
       "fclose(%p) returns error %d. Probably invalid pointer, IO error (disk full?) or file is already closed",
       &SystemInfo,

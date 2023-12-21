@@ -157,7 +157,7 @@ LABEL_16:
                 sub_56BE50(game, *(*(game + 0x368) + 8 * v20), v16);
                 v33 = *(*(*(game + 0x368) + 8 * v20) + 8i64);
                 v32 = 2;
-                dg_debug(0x20505041u, "adding unit with uid 0x%x to unitsList from outOfOrderUnitsList", &v32, 1);
+                logmessage_fmt(0x20505041u, "adding unit with uid 0x%x to unitsList from outOfOrderUnitsList", &v32, 1);
                 v23 = *(game + 0x368);
                 v24 = (*(game + 0x378) - 1);
                 *(game + 0x378) = v24;
@@ -195,7 +195,7 @@ LABEL_46:
             }
             else
             {
-              dg_debug(1u, "ERROR - no app or unit detector", 0i64, 0);
+              logmessage_fmt(1u, "ERROR - no app or unit detector", 0i64, 0);
             }
           }
         }
@@ -224,7 +224,7 @@ LABEL_46:
           *(v15 + 8i64 * v13) = Unit;
           v33 = *(Unit + 8);
           v32 = 2;
-          dg_debug(0x20505041u, "cannot add unit with uid 0x%x, pushing it to outOfOrderUnitsList", &v32, 1);
+          logmessage_fmt(0x20505041u, "cannot add unit with uid 0x%x, pushing it to outOfOrderUnitsList", &v32, 1);
         }
       }
     }

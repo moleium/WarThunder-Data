@@ -8,7 +8,7 @@ __int64 __fastcall scout_unit(__int64 a1, __int64 DetectorUnit, __int64 _Unit_)
     response = "scouting: failed, preset enabled = false";
 LABEL_50:
     LODWORD(Unit) = 0;
-    dg_debug(3u, response, 0i64, 0, v134);
+    logmessage_fmt(3u, response, 0i64, 0, v134);
     return Unit;
   }
   if ( !DetectorUnit )
@@ -105,7 +105,7 @@ LABEL_65:
       if ( ((is_intersects ^ 1) & (v22 == 0i64)) != 0 || v22 && hud_marker_unk == 2 && !(v22[0x14] | v22[0x12]) )
       {
         LODWORD(Unit) = 0;
-        dg_debug(3u, "scouting: failed - marker not visible", 0i64, 0);
+        logmessage_fmt(3u, "scouting: failed - marker not visible", 0i64, 0);
         v70 = *(a1 + 0x1A);
         DetectorUnit_ = DetectorUnit;
 LABEL_70:
@@ -189,7 +189,7 @@ LABEL_112:
       v162 = 2;
       v165 = v76;
       v164 = 2;
-      dg_debug(
+      logmessage_fmt(
         3u,
         "scouting: failed - !target|!GM|cansee|isVis|far_or_not_visible|live|enemy %d.%d.%d.%d.%d.%d.%d",
         &UnitPosition,
@@ -473,7 +473,7 @@ LABEL_71:
     return Unit;
   }
   LODWORD(Unit) = 0;
-  dg_debug(3u, "scouting: failed, sphere not intersected", 0i64, 0, v134);
+  logmessage_fmt(3u, "scouting: failed, sphere not intersected", 0i64, 0, v134);
   v122 = Unit_;
   v123 = *(HudInfo + 0xE5);
   v124 = (qword_4AD11A0 + 0x38 * v123);

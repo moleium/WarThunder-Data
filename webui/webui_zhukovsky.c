@@ -352,7 +352,7 @@ const char *__fastcall webui_zhukovsky(__int64 http_req, __int64 a2, double a3)
       sub_B09440(Str1, &word_4A30321[1]);
       sub_B09440(Str1, "}\n");
       sub_AF1600(http_req, v97, v100);
-      dg_debug(3u, v97, 0i64, 0);
+      logmessage_fmt(3u, v97, 0i64, 0);
       *Str1 = &off_44CAF30;
       v35 = v97;
       v36 = v98;

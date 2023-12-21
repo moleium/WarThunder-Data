@@ -27,7 +27,7 @@ int __fastcall udp_bind(__int128 *client_socket_id, _QWORD *ip_address, u_short 
     v7 = "[UDP] failed to bind socket: bad host address %s";
     v8 = Buffer;
 LABEL_21:
-    dg_debug(2u, v7, v8, 1);
+    logmessage_fmt(2u, v7, v8, 1);
     return 0;
   }
   if ( name.sa_family == 1 || name.sa_family == 0x17 )

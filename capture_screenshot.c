@@ -105,12 +105,12 @@ void __fastcall capture_screenshot(CHAR **ss_data, __int64 ss_size, int image_fo
     *&SystemTime.wYear = 1;
     v21 = v16;
     v20 = 1;
-    dg_debug(3u, "%s screenshot saved to %s", &SystemTime, 2);
+    logmessage_fmt(3u, "%s screenshot saved to %s", &SystemTime, 2);
   }
   else
   {
     *&SystemTime.wHour = v16;
     *&SystemTime.wYear = 1;
-    dg_debug(3u, "screenshot saved to %s", &SystemTime, 1);
+    logmessage_fmt(3u, "screenshot saved to %s", &SystemTime, 1);
   }
 }

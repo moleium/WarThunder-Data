@@ -65,7 +65,7 @@ void __fastcall log_radio(int a1, unsigned int a2, unsigned int a3, int a4)
             v12 = qword_4B3FBF8;
           v21 = v12;
           v20 = 1;
-          dg_debug(3i64, "RADIO: %s", &v20);
+          logmessage_fmt(3i64, "RADIO: %s", &v20);
           if ( v17 )
           {
             LOBYTE(v18) = 1;
@@ -79,7 +79,7 @@ void __fastcall log_radio(int a1, unsigned int a2, unsigned int a3, int a4)
               v19 = &szFile;
             v21 = v19;
             v20 = 1;
-            dg_debug(3i64, "[ERROR] FMOD cannot get radio event '%s'", &v20);
+            logmessage_fmt(3i64, "[ERROR] FMOD cannot get radio event '%s'", &v20);
           }
         }
       }

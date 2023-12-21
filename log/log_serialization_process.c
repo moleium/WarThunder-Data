@@ -186,7 +186,7 @@ LABEL_41:
       v33 = 2;
       v36 = v20;
       v35 = 1;
-      result = dg_debug(1313817413i64, v23, &v29, 4i64);
+      result = logmessage_fmt(1313817413i64, v23, &v29, 4i64);
       if ( v26 )
         return (*(*v27 + 64i64))(v27);
       return result;

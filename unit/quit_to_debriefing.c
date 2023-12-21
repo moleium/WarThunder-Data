@@ -6,7 +6,7 @@ __int64 quit_to_debriefing()
 
   v2 = "quit_to_debriefing";
   v1 = 1;
-  dg_debug(3u, "%s", &v1, 1);
+  logmessage_fmt(3u, "%s", &v1, 1);
   result = game;
   if ( !*(game + 0x2C5) )
   {

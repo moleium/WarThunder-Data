@@ -35,7 +35,7 @@ __int64 __fastcall shell_info_alt(__int64 shell_info_18, __int64 a2)
     v29[0] = "?";
     v29[1] = data::get_str(a2, "bulletName", v29);
     LODWORD(v29[0]) = 1;
-    dg_debug(1u, "Bullet %s: 'mass' must be greater than 0!", v29, 1);
+    logmessage_fmt(1u, "Bullet %s: 'mass' must be greater than 0!", v29, 1);
     *(shell_info_18 + 4) = 0x3F800000;
   }
   LODWORD(v29[0]) = 0;

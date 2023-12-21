@@ -326,7 +326,7 @@ __int64 __fastcall change_unit(__int64 a1)
   {
     v273 = v6 / 0x3E8ui64;
     v272 = 2;
-    dg_debug(3u, "AsyncChangeUnitJob::doJob(): waiting for other job took %i", &v272, 1);
+    logmessage_fmt(3u, "AsyncChangeUnitJob::doJob(): waiting for other job took %i", &v272, 1);
   }
   v7 = *v3;
   v8 = *(*v3 + 8) & 0x7FF;
@@ -336,7 +336,7 @@ __int64 __fastcall change_unit(__int64 a1)
   v274 = 5;
   v277 = v8;
   v276 = 2;
-  dg_debug(3u, "%s(%p:%d) start", &v272, 3);
+  logmessage_fmt(3u, "%s(%p:%d) start", &v272, 3);
   if ( *(game + 0xCD) && *(game + 0x4C8) )
     sub_12627A0();
   sub_489140(&v272, *(*(a1 + 0x18) + 0x6F0i64));
@@ -520,18 +520,18 @@ LABEL_24:
     if ( !v39 || (*v39 = 0xBF800000, v39[0x16] = 2, (v284 & 1) != 0) )
     {
       off_4B75240();
-      dg_debug(3u, "discarded all managed textures! long frame may follow", 0i64, 0);
+      logmessage_fmt(3u, "discarded all managed textures! long frame may follow", 0i64, 0);
     }
   }
   v40 = *(game + 0x5E8);
   if ( *(v40 + 0x20) )
   {
-    dg_debug(0x20505041u, "preload_all_required_res start", 0i64, 0);
+    logmessage_fmt(0x20505041u, "preload_all_required_res start", 0i64, 0);
     off_4B75170(0xDi64, 0i64, 0i64, 0i64);
     byte_4A70251 = 0;
     sub_16D7CC0(v40, 0i64);
     sub_16D89F0();
-    dg_debug(0x20505041u, "preload_all_required_res ok", 0i64, 0);
+    logmessage_fmt(0x20505041u, "preload_all_required_res ok", 0i64, 0);
     off_4B75170(0xEi64, 0i64, 0i64, 0i64);
   }
   sub_14584E0(v253, off_4B678B0);
@@ -1140,7 +1140,7 @@ LABEL_254:
           {
             v261 = *(*v191 + 0x1138i64);
             LODWORD(v260) = 1;
-            dg_debug(3u, "setActiveDynModelInst for ally unit <%s>", &v260, 1);
+            logmessage_fmt(3u, "setActiveDynModelInst for ally unit <%s>", &v260, 1);
             LOBYTE(v155) = 1;
             sub_321D50(*v191, v155);
           }
@@ -1339,7 +1339,7 @@ LABEL_254:
       v262 = 5;
       v266 = v184;
       v265 = 2;
-      dg_debug(3u, "%s(%p:%d) end", &v260, 3);
+      logmessage_fmt(3u, "%s(%p:%d) end", &v260, 3);
       *(a1 + 0x18A) = 1;
       goto LABEL_358;
     }
@@ -1401,7 +1401,7 @@ LABEL_254:
   LODWORD(v260) = 5;
   v264 = v85;
   v262 = 2;
-  dg_debug(3u, "change unit (%p:%d) skip by DEAD_COPY_ONLY flag", &v260, 2);
+  logmessage_fmt(3u, "change unit (%p:%d) skip by DEAD_COPY_ONLY flag", &v260, 2);
 LABEL_358:
   sub_1458FF0(v253);
   if ( v199 )

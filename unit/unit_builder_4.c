@@ -996,7 +996,7 @@ LABEL_82:
             LODWORD(v68) = 2;
             *&v70[4] = v38;
             v69 = 2;
-            dg_debug(3u, "%s fm %d army %d -> %d", &Src, 4);
+            logmessage_fmt(3u, "%s fm %d army %d -> %d", &Src, 4);
             v39 = *(Unit + 0x1110);
           }
           LOBYTE(Src) = v38;

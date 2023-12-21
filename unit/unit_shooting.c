@@ -804,7 +804,7 @@ LABEL_485:
       {
         v28 = "ERROR! UNIT_RESPAWN missed: isLoading = true";
 LABEL_61:
-        dg_debug(3u, v28, 0i64, 0);
+        logmessage_fmt(3u, v28, 0i64, 0);
         return;
       }
       if ( *(Unit + 0x10B0) != 0xD )
@@ -1305,7 +1305,7 @@ LABEL_282:
             v337.m256i_i32[0] = 2;
             v337.m256i_i64[3] = v53;
             v337.m256i_i32[4] = 2;
-            dg_debug(3u, "GUNS: unit %d reload request prcessed, %d guns are marked for rearming", &v337, 2);
+            logmessage_fmt(3u, "GUNS: unit %d reload request prcessed, %d guns are marked for rearming", &v337, 2);
             return;
           }
           v337.m256i_i64[1] = *(Unit + 8) & 0x7FF;
@@ -1313,7 +1313,7 @@ LABEL_282:
           v300 = "GUNS: unit %d reload request ignored, all guns are full and not jammed";
         }
 LABEL_543:
-        dg_debug(3u, v300, &v337, 1);
+        logmessage_fmt(3u, v300, &v337, 1);
       }
       return;
     case 0xF07F:

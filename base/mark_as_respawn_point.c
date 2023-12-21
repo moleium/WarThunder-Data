@@ -1573,7 +1573,7 @@ LABEL_353:
         *Str2 = 1;
         *(&v593 + 1) = v572;
         LODWORD(v593) = 1;
-        dg_debug(0x47495254u, "%s can't find any units for unit zone %s (isUnit == true)", Str2, 2);
+        logmessage_fmt(0x47495254u, "%s can't find any units for unit zone %s (isUnit == true)", Str2, 2);
         if ( !qword_4B12198 )
           goto LABEL_659;
         *&Str2[8] = &missionMarkAsReSpawnPoint;
@@ -1593,7 +1593,7 @@ LABEL_353:
       *Str2 = 1;
       *(&v593 + 1) = v572;
       LODWORD(v593) = 1;
-      dg_debug(0x47495254u, "%s hide unit zone %s (isUnit == true)", Str2, 2);
+      logmessage_fmt(0x47495254u, "%s hide unit zone %s (isUnit == true)", Str2, 2);
 LABEL_231:
       v139 = *v2;
       v140 = 0xFFFFFFFF;
@@ -1621,7 +1621,7 @@ LABEL_301:
               goto LABEL_302;
             *&Str2[8] = &missionMarkAsReSpawnPoint;
             *Str2 = 1;
-            dg_debug(0x47495254u, "%s can't find backup zone for unit zone (isUnit = true)", Str2, 1);
+            logmessage_fmt(0x47495254u, "%s can't find backup zone for unit zone (isUnit = true)", Str2, 1);
             if ( !qword_4B12198 )
               goto LABEL_659;
             *&Str2[8] = &missionMarkAsReSpawnPoint;
@@ -1898,7 +1898,7 @@ LABEL_173:
 LABEL_241:
         *&Str2[8] = &missionMarkAsReSpawnPoint;
         *Str2 = 1;
-        dg_debug(0x47495254u, "%s can't find any areas for respawn with areas", Str2, 1);
+        logmessage_fmt(0x47495254u, "%s can't find any areas for respawn with areas", Str2, 1);
         if ( !qword_4B12198 )
           goto LABEL_659;
         *&Str2[8] = &missionMarkAsReSpawnPoint;
@@ -3688,7 +3688,7 @@ LABEL_955:
 LABEL_890:
         v578 = "initSpawnDirection";
         LODWORD(v577) = 1;
-        dg_debug(0x47495254u, "%s can't find spawnArrangeTo direction for unit zone (isUnit = true)", &v577, 1);
+        logmessage_fmt(0x47495254u, "%s can't find spawnArrangeTo direction for unit zone (isUnit = true)", &v577, 1);
         if ( qword_4B12198 )
         {
           v578 = "initSpawnDirection";

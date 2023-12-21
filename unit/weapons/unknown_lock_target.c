@@ -425,7 +425,7 @@ LABEL_123:
                               v51 = _SelectedUnit_3 ? *(_SelectedUnit_3 + 8) & 0x7FF : 0xFFFFFFFFFFFFFFFFui64;
                               v80.m256i_i64[1] = v51;
                               v80.m256i_i32[0] = 2;
-                              dg_debug(3u, "setNewTarget targetId %d", &v80, 1);
+                              logmessage_fmt(3u, "setNewTarget targetId %d", &v80, 1);
                               v47 = Unit_;
                               if ( !Unit_ )
                                 goto LABEL_140;
@@ -585,7 +585,7 @@ LABEL_75:
                         v80.m256i_i32[4] = 1;
                         *(&v81 + 1) = _UnitType_2;
                         LODWORD(v81) = 2;
-                        dg_debug(3u, "can't run function '%s' for unit '%s', type %u", &v80, 3);
+                        logmessage_fmt(3u, "can't run function '%s' for unit '%s', type %u", &v80, 3);
                         v30 = 0;
                         goto LABEL_75;
                       }

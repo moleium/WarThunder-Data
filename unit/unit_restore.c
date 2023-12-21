@@ -676,7 +676,7 @@ LABEL_141:
           LODWORD(v128) = 1;
           *(&v130 + 1) = UnitType;
           LODWORD(v130) = 2;
-          dg_debug(3u, "can't run function '%s' for unit '%s', type %u", &v126, 3);
+          logmessage_fmt(3u, "can't run function '%s' for unit '%s', type %u", &v126, 3);
           goto LABEL_154;
         }
         LODWORD(v94) = *(qword_4B12868 + 8);
@@ -843,7 +843,7 @@ LABEL_166:
     LODWORD(v128) = 1;
     *(&v130 + 1) = _UnitType_;
     LODWORD(v130) = 2;
-    dg_debug(3u, "can't run function '%s' for unit '%s', type %u", &v126, 3);
+    logmessage_fmt(3u, "can't run function '%s' for unit '%s', type %u", &v126, 3);
     goto LABEL_178;
   }
 LABEL_218:

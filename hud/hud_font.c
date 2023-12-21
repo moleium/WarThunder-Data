@@ -68,7 +68,7 @@ LABEL_6:
 LABEL_7:
       v50 = v4;
       LODWORD(v49) = 1;
-      dg_debug(1u, "<vectorHudFont> Font '%s' not found", &v49, 1);
+      logmessage_fmt(1u, "<vectorHudFont> Font '%s' not found", &v49, 1);
       goto LABEL_8;
     }
   }
@@ -227,7 +227,7 @@ LABEL_56:
 LABEL_57:
       v50 = v36;
       LODWORD(v49) = 1;
-      dg_debug(1u, "HudMultiplaerScore: font '%s' is not found.", &v49, 1);
+      logmessage_fmt(1u, "HudMultiplaerScore: font '%s' is not found.", &v49, 1);
       goto LABEL_58;
     }
   }

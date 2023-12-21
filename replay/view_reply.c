@@ -291,7 +291,7 @@ LABEL_28:
               v110 = 5;
               v113 = v46;
               v112 = 2;
-              dg_debug(
+              logmessage_fmt(
                 1u,
                 "fclose(%p) returns error %d. Probably invalid pointer, IO error (disk full?) or file is already closed",
                 &v110,
@@ -572,7 +572,7 @@ LABEL_125:
         LODWORD(v103[0]) = 1;
         v84 = "%s can't parse json:\n%.*s";
 LABEL_126:
-        dg_debug(0x4C504552u, v84, v101, 3);
+        logmessage_fmt(0x4C504552u, v84, v101, 3);
         v92 = *(a1 + 0x670);
         if ( v92 )
         {

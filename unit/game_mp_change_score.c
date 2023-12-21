@@ -270,7 +270,7 @@ LABEL_40:
     v32 = v98 * dword_4B1C390 / 0x64;
   v101 = dword_4B1C814;
   LODWORD(Unit_) = 2;
-  dg_debug(0x47495254u, "[DEBUG] gameMPChangeScore gt:%d", &Unit_, 1);
+  logmessage_fmt(0x47495254u, "[DEBUG] gameMPChangeScore gt:%d", &Unit_, 1);
   if ( (v31 & 0xC0) != 0x80 )
   {
     if ( (v31 & 0xC0) == 0x40 )

@@ -15,7 +15,7 @@ __int64 get_respawns_left()
     respawns_left_ = *(LocalPlayer + 0xA60);
 LABEL_8:
     score = 2;
-    dg_debug(3u, "[USS] get_respawns_left : score = %d", &score, 1);
+    logmessage_fmt(3u, "[USS] get_respawns_left : score = %d", &score, 1);
     return respawns_left;
   }
   if ( byte_4B1C332 )

@@ -71,7 +71,7 @@ LABEL_15:
     v9 = "ON";
   v33 = v9;
   v32 = 1;
-  dg_debug(0x20505041u, "Autopilot  %s", &v32, 1);
+  logmessage_fmt(0x20505041u, "Autopilot  %s", &v32, 1);
   if ( *(HudInfo + 0x35) )
   {
     if ( !v6 )

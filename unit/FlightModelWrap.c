@@ -1665,7 +1665,7 @@ LABEL_176:
       PerformanceCount[0].LowPart = 1;
       *(&v965 + 1) = v137;
       LODWORD(v965) = 2;
-      dg_debug(0x2047414Cu, "WARNING: %s lag timeout %dms", PerformanceCount, 2);
+      logmessage_fmt(0x2047414Cu, "WARNING: %s lag timeout %dms", PerformanceCount, 2);
     }
   }
   v165 = NtCurrentTeb()->ThreadLocalStoragePointer;
@@ -3214,7 +3214,7 @@ LABEL_649:
     {
       PerformanceCount[1].QuadPart = v508;
       PerformanceCount[0].LowPart = 1;
-      dg_debug(1u, "Paratrooper '%s' not found", PerformanceCount, 1);
+      logmessage_fmt(1u, "Paratrooper '%s' not found", PerformanceCount, 1);
     }
     v510 = *(v963.QuadPart + 0x33A8);
     v511 = *v959;

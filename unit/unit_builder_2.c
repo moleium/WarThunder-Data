@@ -669,7 +669,7 @@ LABEL_54:
     PerformanceCount.LowPart = 1;
     v78 = v72;
     v77 = 2;
-    dg_debug(0x2047414Cu, "WARNING: %s lag timeout %dms", &PerformanceCount, 2);
+    logmessage_fmt(0x2047414Cu, "WARNING: %s lag timeout %dms", &PerformanceCount, 2);
   }
   return Unit;
 }

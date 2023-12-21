@@ -324,7 +324,7 @@ LABEL_97:
       v69.m128_i32[0] = 1;
       v70.m128_u64[1] = v42;
       v70.m128_i32[0] = 1;
-      dg_debug(3u, "Cast '%s' on '%s' of '%s'", PerformanceCount, 3);
+      logmessage_fmt(3u, "Cast '%s' on '%s' of '%s'", PerformanceCount, 3);
       sub_365AE0(Unit, a3);
       sub_17A810(PerformanceCount, 0x80, "%s_dm");
       v71 = 0;
@@ -349,7 +349,7 @@ LABEL_97:
       {
         *(&v63 + 1) = PerformanceCount;
         LODWORD(v63) = 1;
-        dg_debug(3u, "No collision node '%s'", &v63, 1);
+        logmessage_fmt(3u, "No collision node '%s'", &v63, 1);
       }
     }
     goto LABEL_68;

@@ -835,7 +835,7 @@ LABEL_210:
             goto LABEL_229;
           if ( v154 != 1 )
           {
-            dg_debug(1u, "number of damage parts in projectile cannot be more than 1", 0i64, 0);
+            logmessage_fmt(1u, "number of damage parts in projectile cannot be more than 1", 0i64, 0);
             LOWORD(v154) = *(v153 + 0xE);
           }
           v155 = *(v153 + 0x10);

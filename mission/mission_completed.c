@@ -18,7 +18,7 @@ char __fastcall mission_completed(__int64 a1, __int64 *a2)
     {
       if ( sub_C7D180(v2) )
       {
-        dg_debug(0x47495254u, "missionCompleted: we're about to fail mission, ignoring trigger", 0i64, 0, v8, v9);
+        logmessage_fmt(0x47495254u, "missionCompleted: we're about to fail mission, ignoring trigger", 0i64, 0, v8, v9);
       }
       else
       {
@@ -45,7 +45,7 @@ char __fastcall mission_completed(__int64 a1, __int64 *a2)
     {
       v9 = *(v2 + 0xD8);
       LODWORD(v8) = 2;
-      dg_debug(0x47495254u, "missionCompleted: app->mission->status is already %d", &v8, 1, v8, v9);
+      logmessage_fmt(0x47495254u, "missionCompleted: app->mission->status is already %d", &v8, 1, v8, v9);
     }
   }
   return 1;

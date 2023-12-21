@@ -46,7 +46,7 @@ void __fastcall unknown_setarmy(__int64 Player, char a2, __int64 a3)
           v22 = 2;
           v25 = v5;
           v24 = 2;
-          dg_debug(3u, "%s fm %d army %d -> %d", &v18, 4);
+          logmessage_fmt(3u, "%s fm %d army %d -> %d", &v18, 4);
           AlsoUnitInfo = *(SomeWhatUnit + 0x1110);
         }
         LOBYTE(v18) = v5;
@@ -76,7 +76,7 @@ LABEL_9:
           v22 = 2;
           v25 = v10;
           v24 = 2;
-          dg_debug(3u, "%s fm %d army %d -> %d", &v18, 4);
+          logmessage_fmt(3u, "%s fm %d army %d -> %d", &v18, 4);
           UnitInfo = *(OwnedUnit + 0x1110);
         }
         LOBYTE(v18) = v10;
@@ -118,7 +118,7 @@ LABEL_9:
             v22 = 2;
             v25 = v14;
             v24 = 2;
-            dg_debug(3u, "%s fm %d army %d -> %d", &v18, 4);
+            logmessage_fmt(3u, "%s fm %d army %d -> %d", &v18, 4);
             v15 = *(OwnedUnit + 0x1110);
           }
           LOBYTE(v18) = v14;
@@ -143,6 +143,6 @@ LABEL_29:
     v20 = 2;
     v23 = a3;
     v22 = 1;
-    dg_debug(0x504C554Du, "[%d].setTeam(%d) from %s", &v18, 3);
+    logmessage_fmt(0x504C554Du, "[%d].setTeam(%d) from %s", &v18, 3);
   }
 }

@@ -761,7 +761,7 @@ LABEL_552:
         LODWORD(v358) = 1;
         v361 = "unitMoveTo";
         v360 = 1;
-        dg_debug(0x47495254u, "unknown area '%s' in action %s", &v358, 2);
+        logmessage_fmt(0x47495254u, "unknown area '%s' in action %s", &v358, 2);
         goto LABEL_553;
       }
       v61 = *(a1 + 0x40);
@@ -1456,7 +1456,7 @@ LABEL_376:
               v360 = 1;
               v363 = v217;
               v362 = 2;
-              dg_debug(
+              logmessage_fmt(
                 0x47495254u,
                 "ERROR(%d): Script access to a unit (%s) uid=%#x being loaded. Some script actions will be ignored. Eithe"
                 "r ask programmers to remove this check or ask game designers to fix misison.",
@@ -1804,7 +1804,7 @@ LABEL_251:
             v360 = 1;
             v363 = v203;
             v362 = 2;
-            dg_debug(
+            logmessage_fmt(
               0x47495254u,
               "ERROR(%d): Script access to a unit (%s) uid=%#x being loaded. Some script actions will be ignored. Either "
               "ask programmers to remove this check or ask game designers to fix misison.",
@@ -1936,7 +1936,7 @@ LABEL_251:
                               v363 = v282;
                               v362 = 2;
                               v407 = v280;
-                              dg_debug(
+                              logmessage_fmt(
                                 0x47495254u,
                                 "ERROR(%d): Script access to a unit (%s) uid=%#x being loaded. Some script actions will b"
                                 "e ignored. Either ask programmers to remove this check or ask game designers to fix misison.",

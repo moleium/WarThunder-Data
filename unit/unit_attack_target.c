@@ -1469,7 +1469,7 @@ LABEL_335:
       *&v282[8] = 1;
       v286 = v186;
       v285 = 2;
-      dg_debug(
+      logmessage_fmt(
         0x47495254u,
         "ERROR(%d): Script access to a unit (%s) uid=%#x being loaded. Some script actions will be ignored. Either ask pr"
         "ogrammers to remove this check or ask game designers to fix misison.",

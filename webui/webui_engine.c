@@ -1233,7 +1233,7 @@ LABEL_307:
           sub_B09440(&v224, "}");
           v233 = v225;
           v232 = 1;
-          dg_debug(3u, "%s", &v232, 1);
+          logmessage_fmt(3u, "%s", &v232, 1);
           sub_AF1600(http_req, *&v225, v228);
           v224 = &off_44CAF30;
           v68 = v225;

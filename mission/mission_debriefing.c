@@ -39,7 +39,7 @@ char __fastcall mission_debriefing(__int64 a1, __int64 a2)
       v8 = 1;
       v11 = 0xD8i64;
       v10 = 2;
-      dg_debug(3u, "blackness init %s, %d", &v8, 2);
+      logmessage_fmt(3u, "blackness init %s, %d", &v8, 2);
       game__ = game;
       *(game + 0x2C0) = 0x3F800000;
       *(game__ + 0x2C4) = 1;
@@ -52,7 +52,7 @@ char __fastcall mission_debriefing(__int64 a1, __int64 a2)
     v8 = 1;
     v11 = *(v7 + 0xD8);
     v10 = 2;
-    dg_debug(
+    logmessage_fmt(
       0x47495254u,
       "%s ignored due to mission status %d, it can be called only on MISSION_STATUS_SUCCESS",
       &v8,

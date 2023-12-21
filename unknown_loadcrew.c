@@ -145,6 +145,6 @@ LABEL_31:
   v26 = 2;
   v29 = v6;
   v28 = 1;
-  dg_debug(1u, "loadCrew - can't init crew playerId %d, name = %s", &v26, 2);
+  logmessage_fmt(1u, "loadCrew - can't init crew playerId %d, name = %s", &v26, 2);
   return sub_307F60(*(Unit + 0x11B0), *(HudInfo + 0x56));
 }

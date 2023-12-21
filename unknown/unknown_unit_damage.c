@@ -365,7 +365,7 @@ LABEL_37:
             v50 = &szFile;
           *&v127[8] = v50;
           *v127 = 1;
-          dg_debug(0x47495254u, "unitDamage action for unit %s", v127, 1);
+          logmessage_fmt(0x47495254u, "unitDamage action for unit %s", v127, 1);
           v4 = 0x41C64E6D * dword_4A79158 + 0x3039;
           dword_4A79158 = v4;
           v54 = v39;
@@ -504,7 +504,7 @@ LABEL_148:
               LODWORD(v129) = 1;
               *&v131[4] = v73;
               v130 = 2;
-              dg_debug(0x47495254u, "invalid part index %d in %s for InfantryTroop '%s', units = %d", v127, 4);
+              logmessage_fmt(0x47495254u, "invalid part index %d in %s for InfantryTroop '%s', units = %d", v127, 4);
             }
             else
             {

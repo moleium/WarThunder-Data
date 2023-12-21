@@ -1432,7 +1432,7 @@ LABEL_94:
     {
       v307 = "body";
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v105 = qword_4B12868;
       v106 = *(qword_4B12868 + 0x1E);
     }
@@ -1451,7 +1451,7 @@ LABEL_94:
     {
       v307 = "engine";
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v150 = qword_4B12868;
       v151 = *(qword_4B12868 + 0x1E);
     }
@@ -1468,7 +1468,7 @@ LABEL_94:
     {
       v307 = "fuel";
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v154 = qword_4B12868;
       v155 = *(qword_4B12868 + 0x1E);
     }
@@ -1487,7 +1487,7 @@ LABEL_94:
     {
       v307 = "transmission";
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v159 = qword_4B12868;
       v160 = *(qword_4B12868 + 0x1E);
     }
@@ -1504,7 +1504,7 @@ LABEL_94:
     {
       v307 = "shaft";
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v163 = qword_4B12868;
       v164 = *(qword_4B12868 + 0x1E);
     }
@@ -1523,7 +1523,7 @@ LABEL_94:
     {
       v307 = "radiator";
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v169 = qword_4B12868;
       v170 = *(qword_4B12868 + 0x1E);
     }
@@ -1541,7 +1541,7 @@ LABEL_94:
     {
       v307 = "gun";
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v174 = qword_4B12868;
       v175 = *(qword_4B12868 + 0x1E);
     }
@@ -1559,7 +1559,7 @@ LABEL_94:
     {
       v307 = "gun_barrel";
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v179 = qword_4B12868;
       v180 = *(qword_4B12868 + 0x1E);
     }
@@ -1577,7 +1577,7 @@ LABEL_94:
     {
       v307 = "torpedo_tube";
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v184 = qword_4B12868;
       v185 = *(qword_4B12868 + 0x1E);
     }
@@ -1595,7 +1595,7 @@ LABEL_94:
     {
       v307 = "suspension";
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v189 = qword_4B12868;
       v190 = *(qword_4B12868 + 0x1E);
     }
@@ -1613,7 +1613,7 @@ LABEL_94:
     {
       v307 = "wheel";
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v194 = qword_4B12868;
       v195 = *(qword_4B12868 + 0x1E);
     }
@@ -1631,7 +1631,7 @@ LABEL_94:
     {
       v307 = "track";
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v199 = qword_4B12868;
       v200 = *(qword_4B12868 + 0x1E);
     }
@@ -1649,7 +1649,7 @@ LABEL_94:
     {
       v307 = "track_left";
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v204 = qword_4B12868;
       v205 = *(qword_4B12868 + 0x1E);
     }
@@ -1667,7 +1667,7 @@ LABEL_94:
     {
       v307 = "track_right";
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v209 = qword_4B12868;
       v210 = *(qword_4B12868 + 0x1E);
     }
@@ -1685,7 +1685,7 @@ LABEL_94:
     {
       v307 = "drive_turret_h";
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v214 = qword_4B12868;
       v215 = *(qword_4B12868 + 0x1E);
     }
@@ -1703,7 +1703,7 @@ LABEL_94:
     {
       v307 = "drive_turret_v";
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v219 = qword_4B12868;
       v220 = *(qword_4B12868 + 0x1E);
     }
@@ -1720,7 +1720,7 @@ LABEL_94:
     {
       v307 = "steering";
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v223 = qword_4B12868;
       v224 = *(qword_4B12868 + 0x1E);
     }
@@ -1738,7 +1738,7 @@ LABEL_94:
     {
       v307 = "bridge";
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v228 = qword_4B12868;
       v229 = *(qword_4B12868 + 0x1E);
     }
@@ -1755,7 +1755,7 @@ LABEL_94:
     {
       v307 = "crew";
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v232 = qword_4B12868;
       v233 = *(qword_4B12868 + 0x1E);
     }
@@ -1773,7 +1773,7 @@ LABEL_94:
     {
       v307 = "commander";
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v237 = qword_4B12868;
       v238 = *(qword_4B12868 + 0x1E);
     }
@@ -1791,7 +1791,7 @@ LABEL_94:
     {
       v307 = "driver";
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v242 = qword_4B12868;
       v243 = *(qword_4B12868 + 0x1E);
     }
@@ -1809,7 +1809,7 @@ LABEL_94:
     {
       v307 = "gunner";
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v247 = qword_4B12868;
       v248 = *(qword_4B12868 + 0x1E);
     }
@@ -1827,7 +1827,7 @@ LABEL_94:
     {
       v307 = "loader";
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v252 = qword_4B12868;
       v253 = *(qword_4B12868 + 0x1E);
     }
@@ -1845,7 +1845,7 @@ LABEL_94:
     {
       v307 = "machinegunner";
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v257 = qword_4B12868;
       v258 = *(qword_4B12868 + 0x1E);
     }
@@ -1863,7 +1863,7 @@ LABEL_94:
     {
       v307 = &qword_495B4C2;
       LODWORD(v306) = 1;
-      dg_debug(1u, "global damage part list: unknown kind of part %s", &v306, 1);
+      logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
       v144 = *(qword_4B12868 + 0x1E);
     }
     else

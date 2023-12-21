@@ -64,7 +64,7 @@ __int64 __fastcall udp_send(__int128 *client_socket_id, _QWORD *ip_address, u_sh
   {
     *(&v56 + 1) = *ip_address;
     LODWORD(v56) = 1;
-    dg_debug(2u, "[UDP] bad host address %s", &v56, 1);
+    logmessage_fmt(2u, "[UDP] bad host address %s", &v56, 1);
 LABEL_3:
     LODWORD(v8) = 0;
     goto LABEL_4;

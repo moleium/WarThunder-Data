@@ -447,7 +447,7 @@ LABEL_70:
       LODWORD(v177) = 2;
       *(&v179 + 1) = v59;
       LODWORD(v179) = 2;
-      dg_debug(0x20574D46u, "Aircraft %s (%s) died. Last damaged part: %s, reason = %d, reasonInner = %d", &v173, 5);
+      logmessage_fmt(0x20574D46u, "Aircraft %s (%s) died. Last damaged part: %s, reason = %d, reasonInner = %d", &v173, 5);
       sub_422770(Unit, Src, 0i64);
       if ( (*(Unit + 0x58) & 4) != 0 )
       {
@@ -489,7 +489,7 @@ LABEL_90:
       LODWORD(v173) = 1;
       v175 = *&v65;
       LODWORD(v174) = 1;
-      dg_debug(0x20574D46u, "Death report on %s (%s)---------------------------------->", &v173, 2);
+      logmessage_fmt(0x20574D46u, "Death report on %s (%s)---------------------------------->", &v173, 2);
       ZPos = *(Unit + 0x9C8);
       YPos = *(Unit + 0x9C4);
       XPos = *(Unit + 0x9C0);
@@ -547,7 +547,7 @@ LABEL_119:
       LODWORD(v177) = 3;
       *(&v179 + 1) = ZPos;
       LODWORD(v179) = 3;
-      dg_debug(0x20574D46u, "killed by: %s (uid %d), at = (%f, %f, %f)", &v173, 5);
+      logmessage_fmt(0x20574D46u, "killed by: %s (uid %d), at = (%f, %f, %f)", &v173, 5);
       if ( (*(Unit + 0x1058) & 0x7000014) == 0 )
       {
         if ( **(*(Unit + 0x11A0) + 0x90i64) )
@@ -637,7 +637,7 @@ LABEL_119:
                         LODWORD(v174) = 3;
                         *(&v176 + 1) = v130;
                         LODWORD(v176) = 1;
-                        dg_debug(0x20574D46u, "%g / %g   %s", &v173, 3);
+                        logmessage_fmt(0x20574D46u, "%g / %g   %s", &v173, 3);
                         v87 = qword_4B12868;
                       }
                     }
@@ -650,7 +650,7 @@ LABEL_119:
           }
         }
       }
-      dg_debug(0x20574D46u, "<---------------------------------------------------------", 0i64, 0);
+      logmessage_fmt(0x20574D46u, "<---------------------------------------------------------", 0i64, 0);
       if ( !*(Unit + 0x1E0C) && *(Unit + 0x10A8) != 1 )
       {
         if ( (*(Unit + 0x58) & 4) != 0 )

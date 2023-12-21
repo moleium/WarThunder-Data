@@ -649,7 +649,7 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     LODWORD(v209) = 1;
     v212 = 0x6CCi64;
     LODWORD(v211) = 2;
-    dg_debug(3u, "cp: %s,%d", &v209, 2);
+    logmessage_fmt(3u, "cp: %s,%d", &v209, 2);
     sub_145A110(v44, "hudArcade", off_44B5F70[*(hud + 0x34C)]);
     sub_145A110(v44, &unk_498BCB5, off_44B5F70[*(hud + 0x350)]);
     sub_145A110(v44, "hudHardcore", off_44B5F70[*(hud + 0x354)]);
