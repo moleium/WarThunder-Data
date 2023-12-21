@@ -174,7 +174,7 @@ LABEL_11:
         }
         if ( ballistics_A68_qword && (byte_4B1993D & 1) != 0 )
         {
-          sub_B27BC0(ballistics_A68_qword + 0x5A8, "hint:died_from_ammo_explosion:hide", &qword_4B67850, v18);
+          fire_event(ballistics_A68_qword + 0x5A8, "hint:died_from_ammo_explosion:hide", &qword_4B67850, v18);
           byte_4B1993D = 0;
         }
 LABEL_21:
@@ -205,7 +205,7 @@ LABEL_21:
       }
       if ( v38 <= v39 && ballistics_A68_qword && (byte_4B1993D & 1) == 0 )
       {
-        sub_B27BC0(ballistics_A68_qword + 0x5A8, "hint:died_from_ammo_explosion:show", &qword_4B67850, v18);
+        fire_event(ballistics_A68_qword + 0x5A8, "hint:died_from_ammo_explosion:show", &qword_4B67850, v18);
         byte_4B1993D = 1;
       }
     }
@@ -487,7 +487,7 @@ LABEL_25:
       assign_string_int(&v83, "timer", v53);
     if ( ballistics_A68_qword && (byte_4B1993E & 1) == 0 )
     {
-      sub_B27BC0(ballistics_A68_qword + 0x5A8, "hint:press_a_continue:show", &v83, v55);
+      fire_event(ballistics_A68_qword + 0x5A8, "hint:press_a_continue:show", &v83, v55);
       byte_4B1993E = 1;
     }
     sub_1458FF0(&v83);
@@ -497,7 +497,7 @@ LABEL_25:
 LABEL_39:
     if ( ballistics_A68_qword && (byte_4B1993E & 1) != 0 )
     {
-      sub_B27BC0(ballistics_A68_qword + 0x5A8, "hint:press_a_continue:hide", &qword_4B67850, v18);
+      fire_event(ballistics_A68_qword + 0x5A8, "hint:press_a_continue:hide", &qword_4B67850, v18);
       byte_4B1993E = 0;
     }
   }

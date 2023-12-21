@@ -21,7 +21,7 @@ char __fastcall hud_weaponwheel(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
     if ( v11 != 0xFFFFFFFF )
       sub_145E9A0(v10);
     sub_145BE60(v10, "open", &v9);
-    sub_B27BC0(a1 + 0x5A8, "ToggleSelectWeaponWheel", v10, v8);
+    fire_event(a1 + 0x5A8, "ToggleSelectWeaponWheel", v10, v8);
     return sub_1458FF0(v10);
   }
   return result;

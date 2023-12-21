@@ -296,7 +296,7 @@ void __fastcall unknown_ballistics_stuff(__int64 ballistics_arg, int a2, unsigne
       *(*(game + 0x630) + 0x3B3B8i64) = v20;
       if ( ballistics_A68_qword )
       {
-        sub_B27BC0(ballistics_A68_qword + 0x5A8, "hint:ship_offer_show_hero_modules::hide", &qword_4B67850, v9);
+        fire_event(ballistics_A68_qword + 0x5A8, "hint:ship_offer_show_hero_modules::hide", &qword_4B67850, v9);
         v11 = game;
       }
       v30 = *(v11 + 0x630);
@@ -312,7 +312,7 @@ void __fastcall unknown_ballistics_stuff(__int64 ballistics_arg, int a2, unsigne
               {
                 *(v30 + 0x3B3B8) = 0;
                 if ( ballistics_A68_qword )
-                  sub_B27BC0(ballistics_A68_qword + 0x5A8, "hint:xrayCamera:showBlockHint", &qword_4B67850, v9);
+                  fire_event(ballistics_A68_qword + 0x5A8, "hint:xrayCamera:showBlockHint", &qword_4B67850, v9);
               }
             }
           }

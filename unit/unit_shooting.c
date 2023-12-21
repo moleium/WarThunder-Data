@@ -1886,7 +1886,7 @@ LABEL_458:
       {
         if ( !v337.m256i_i8[0x10] )
         {
-          sub_B27BC0(ballistics_A68_qword + 0x5A8, "hint:change_shell_type:show", &qword_4B67850, v106);
+          fire_event(ballistics_A68_qword + 0x5A8, "hint:change_shell_type:show", &qword_4B67850, v106);
           v280 = ballistics_A68_qword;
         }
         sub_B7F880(v280, Unit, &v337);
@@ -2121,7 +2121,7 @@ LABEL_462:
         v119 = ballistics_A68_qword + 0x5A8;
         v120 = "hint:friendly_fire_warning";
 LABEL_354:
-        sub_B27BC0(v119, v120, &qword_4B67850, v114);
+        fire_event(v119, v120, &qword_4B67850, v114);
       }
       return;
     case 0xF127:

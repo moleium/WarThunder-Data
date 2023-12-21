@@ -18,6 +18,6 @@ __int64 __fastcall hud_indicator_visibility(__int64 a1, char a2)
   if ( v12 != 0xFFFFFFFF )
     sub_145E9A0(v11);
   sub_145BE60(v11, "hasAnyDmg", &v10);
-  sub_B27BC0(a1 + 0x5A8, "DamageIndicatorToggleVisbility", v11, v8);
+  fire_event(a1 + 0x5A8, "DamageIndicatorToggleVisbility", v11, v8);
   return sub_1458FF0(v11);
 }

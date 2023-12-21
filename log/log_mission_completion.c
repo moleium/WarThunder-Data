@@ -486,7 +486,7 @@ LABEL_155:
       if ( v122 > 0 && dword_4A70D70 != v122 )
       {
         assign_string_int(&v130, "count", v122);
-        sub_B27BC0(ballistics_A68_qword + 0x5A8, "hint:mission_complete:show", &v130);
+        fire_event(ballistics_A68_qword + 0x5A8, "hint:mission_complete:show", &v130);
         dword_4A70D70 = v122;
         byte_4B1AB40 = 1;
       }
@@ -499,7 +499,7 @@ LABEL_155:
 LABEL_166:
       if ( ballistics_A68_qword && (byte_4B1AB40 & 1) != 0 )
       {
-        sub_B27BC0(ballistics_A68_qword + 0x5A8, "hint:mission_complete:hide", &qword_4B67850);
+        fire_event(ballistics_A68_qword + 0x5A8, "hint:mission_complete:hide", &qword_4B67850);
         byte_4B1AB40 = 0;
       }
       if ( !v34 )
@@ -739,7 +739,7 @@ LABEL_137:
       v98 = sub_BC2D50(0x1C2i64);
       sub_C01740(a1, a2, v98, &v125, v97);
       if ( !*(a1 + 0x164) )
-        sub_B27BC0(ballistics_A68_qword + 0x5A8, "hint:pilot_lose_control:show", &qword_4B67850);
+        fire_event(ballistics_A68_qword + 0x5A8, "hint:pilot_lose_control:show", &qword_4B67850);
       *(a1 + 0x164) = 1;
       v34 = 1;
     }

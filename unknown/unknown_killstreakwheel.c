@@ -55,6 +55,6 @@ LABEL_13:
   if ( v16 != 0xFFFFFFFF )
     sub_145E9A0(v15);
   sub_145BE60(v15, "open", &v14);
-  sub_B27BC0(a1 + 0x5A8, "ToggleKillStreakWheel", v15);
+  fire_event(a1 + 0x5A8, "ToggleKillStreakWheel", v15);
   return sub_1458FF0(v15);
 }
