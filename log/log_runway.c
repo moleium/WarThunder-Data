@@ -117,13 +117,13 @@ LABEL_33:
   v29 = 1;
   runway_status_ = runway_status;
   v31 = 1;
-  sub_1546EF0(a2, 128i64, "%s(runway: %s, ", &v29, 2);
+  ctor_vprintf(a2, 128i64, "%s(runway: %s, ", &v29, 2);
   v28 = "TRUE";
   if ( !*(*(v10 + 13264) + 1603i64) )
     v28 = "FALSE";
   v30 = v28;
   v29 = 1;
-  add_server_param(a2, 16i64, "takeoffPermission: %s", &v29, 1);
-  add_server_param(a2, 1i64, ")", 0i64, 0);
+  avprintf(a2, 16i64, "takeoffPermission: %s", &v29, 1);
+  avprintf(a2, 1i64, ")", 0i64, 0);
   return a2;
 }

@@ -724,7 +724,7 @@ const char *__fastcall unknown_aircraft_data(__int64 http_req, __int64 a2, doubl
       v27 = &szFile;
     FileName[1] = v27;
     LODWORD(FileName[0]) = 1;
-    sub_1546EF0(v647, 0x80i64, "newFM/specs_%s.blk", FileName, 1);
+    ctor_vprintf(v647, 0x80i64, "newFM/specs_%s.blk", FileName, 1);
     v29 = *v647;
     if ( *&v647[0x10] )
       v28 = *v647;
@@ -747,7 +747,7 @@ LABEL_59:
       v11 = &szFile;
     Str1[1] = v11;
     LODWORD(Str1[0]) = 1;
-    sub_1546EF0(v647, 0x80i64, "currentFM/%s.blk", Str1, 1);
+    ctor_vprintf(v647, 0x80i64, "currentFM/%s.blk", Str1, 1);
     sub_14584E0(Str1, off_4B678B0);
     sub_14584E0(&v669, off_4B678B0);
     v13 = *v647;

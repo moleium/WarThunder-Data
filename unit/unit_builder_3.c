@@ -486,7 +486,7 @@ LABEL_36:
   memset(*(Unit + 0x3130), v20, (4 * *(Unit + 0x3138)));
   *(Unit + 0x288) = *(*(game + 0x498) + 0x1F1Ci64);
   LOBYTE(v58) = 0;
-  *(Unit + 0x3A1E) = sub_145BBF0(a4, "isPhysPredictionEnabled", &v58);
+  *(Unit + 0x3A1E) = data::get_bool(a4, "isPhysPredictionEnabled", &v58);
   if ( !*(game + 0x67F) )
   {
     v60 = 0i64;
@@ -494,7 +494,7 @@ LABEL_36:
     v59 = a2;
     LODWORD(v58) = 1;
     v61 = off_4B678C8;
-    sub_1546EF0(&v60, v33, "gameData/units/%s.blk", &v58, 1);
+    ctor_vprintf(&v60, v33, "gameData/units/%s.blk", &v58, 1);
     ThreadLocalStoragePointer = NtCurrentTeb()->ThreadLocalStoragePointer;
     if ( !*(ThreadLocalStoragePointer[TlsIndex] + 1i64) )
       _dyn_tls_on_demand_init(ThreadLocalStoragePointer, v34, v35, v36);

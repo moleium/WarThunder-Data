@@ -38,7 +38,7 @@ void __fastcall hud_colors(_DWORD *a1, __int64 *a2)
   v6 = 0xFFFFFFFF;
   if ( *a2 )
   {
-    v7 = sub_1285C0("colorPresets", 0xCui64);
+    v7 = data::get_name_id("colorPresets", 0xCui64);
     v8 = *(v5 + 0x50);
     if ( v8 )
     {
@@ -52,7 +52,7 @@ void __fastcall hud_colors(_DWORD *a1, __int64 *a2)
       if ( !*(v5 + 0x20) )
         goto LABEL_8;
     }
-    v10 = sub_128A70(v5, "colorPresets", 0xCi64, v7);
+    v10 = data::get_name_id(v5, "colorPresets", 0xCi64, v7);
     if ( v10 >= 0 )
     {
       v11 = v9 + v10;
@@ -63,7 +63,7 @@ LABEL_10:
 LABEL_8:
     if ( !v9 )
       goto LABEL_11;
-    v11 = sub_128A70(*(v5 + 0x50), "colorPresets", 0xCi64, v7);
+    v11 = data::get_name_id(*(v5 + 0x50), "colorPresets", 0xCi64, v7);
     goto LABEL_10;
   }
 LABEL_11:
@@ -130,42 +130,42 @@ LABEL_28:
   }
 LABEL_33:
   v32 = 0xFFFFFFFF;
-  sub_145AAA0(v2, v33, "gunnerCrossRedColor", &v32);
+  getE3dcolor(v2, v33, "gunnerCrossRedColor", &v32);
   a1[0xF] = v33[0];
   v32 = 0xFFFFFFFF;
-  sub_145AAA0(v2, v33, "vectorHudColor", &v32);
+  getE3dcolor(v2, v33, "vectorHudColor", &v32);
   a1[0x72F] = v33[0];
   v32 = 0xFFFFDCC8;
-  sub_145AAA0(v2, v33, "vectorAlertHudColor", &v32);
+  getE3dcolor(v2, v33, "vectorAlertHudColor", &v32);
   a1[0x10] = v33[0];
   v32 = 0xFFFF0A00;
-  sub_145AAA0(v2, v33, "missileWarningColor", &v32);
+  getE3dcolor(v2, v33, "missileWarningColor", &v32);
   a1[0x11] = v33[0];
   v32 = 0x80;
-  a1[0x1E] = sub_145A390(v2, "vectorHudShadowAlpha", &v32);
+  a1[0x1E] = data::set_int(v2, "vectorHudShadowAlpha", &v32);
   v32 = 0x80;
-  a1[0x1F] = sub_145A390(v2, "vectorFontShadowAlpha", &v32);
+  a1[0x1F] = data::set_int(v2, "vectorFontShadowAlpha", &v32);
   v32 = 0x40400000;
-  v29 = sub_145B6B0(v2, "vectorHudShadowSize", &v32);
+  v29 = data::set_real(v2, "vectorHudShadowSize", &v32);
   a1[0x20] = LODWORD(v29);
   v32 = 0x40400000;
-  v30 = sub_145B6B0(v2, "vectorFontShadowSize", &v32);
+  v30 = data::set_real(v2, "vectorFontShadowSize", &v32);
   a1[0x21] = LODWORD(v30);
   v32 = 0xFFFFFFFF;
-  sub_145AAA0(v2, v33, "vectorHudRadarColorBgd", &v32);
+  getE3dcolor(v2, v33, "vectorHudRadarColorBgd", &v32);
   a1[0x14] = v33[0];
   v32 = 0xFFFFFFFF;
-  sub_145AAA0(v2, v33, "vectorHudRadarColorCamera", &v32);
+  getE3dcolor(v2, v33, "vectorHudRadarColorCamera", &v32);
   a1[0x15] = v33[0];
   v32 = 0xFFFFFFFF;
-  sub_145AAA0(v2, v33, "vectorHudRadarColorCompass", &v32);
+  getE3dcolor(v2, v33, "vectorHudRadarColorCompass", &v32);
   a1[0x16] = v33[0];
   v32 = 0xFFFFFFFF;
-  sub_145AAA0(v2, v33, "indicatorFontColor", &v32);
+  getE3dcolor(v2, v33, "indicatorFontColor", &v32);
   a1[0x13] = v33[0];
   v32 = 0xC8;
-  a1[0x17] = sub_145A390(v2, "indicatorShadowAlpha", &v32);
+  a1[0x17] = data::set_int(v2, "indicatorShadowAlpha", &v32);
   v32 = 0x3FC00000;
-  v31 = sub_145B6B0(v2, "indicatorShadowSize", &v32);
+  v31 = data::set_real(v2, "indicatorShadowSize", &v32);
   a1[0x18] = LODWORD(v31);
 }

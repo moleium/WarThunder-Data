@@ -349,7 +349,7 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
       {
         v214 = v37;
         LODWORD(v213) = 2;
-        sub_1546EF0(&v209, 0x20i64, "sm%dChapter", &v213, 1);
+        ctor_vprintf(&v209, 0x20i64, "sm%dChapter", &v213, 1);
         v39 = &szFile;
         if ( v35[0xFFFFFFFA] )
           v39 = *(v35 + 0xFFFFFFFB);
@@ -359,7 +359,7 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
         sub_145A110(v32, v40, v39);
         v214 = v37;
         LODWORD(v213) = 2;
-        sub_1546EF0(&v209, 0x20i64, "sm%dItem", &v213, 1);
+        ctor_vprintf(&v209, 0x20i64, "sm%dItem", &v213, 1);
         v41 = &szFile;
         if ( *v35 )
           v41 = *(v35 + 0xFFFFFFFE);
@@ -535,7 +535,7 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     v215 = 0i64;
     v210 = (&_ImageBase + 1);
     LODWORD(v209) = 2;
-    sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
+    ctor_vprintf(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v67 = &szFile;
     v68 = &szFile;
     if ( v215 )
@@ -543,77 +543,77 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
     assign_string_int(v44, v68, *(hud + 0x290));
     v210 = (&_ImageBase + 2);
     LODWORD(v209) = 2;
-    sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
+    ctor_vprintf(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v69 = &szFile;
     if ( v215 )
       v69 = v213;
     assign_string_int(v44, v69, *(hud + 0x294));
     v210 = (&_ImageBase + 3);
     LODWORD(v209) = 2;
-    sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
+    ctor_vprintf(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v70 = &szFile;
     if ( v215 )
       v70 = v213;
     assign_string_int(v44, v70, *(hud + 0x298));
     v210 = &word_4;
     LODWORD(v209) = 2;
-    sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
+    ctor_vprintf(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v71 = &szFile;
     if ( v215 )
       v71 = v213;
     assign_string_int(v44, v71, *(hud + 0x29C));
     v210 = (&word_4 + 1);
     LODWORD(v209) = 2;
-    sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
+    ctor_vprintf(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v72 = &szFile;
     if ( v215 )
       v72 = v213;
     assign_string_int(v44, v72, *(hud + 0x2A0));
     v210 = &word_6;
     LODWORD(v209) = 2;
-    sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
+    ctor_vprintf(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v73 = &szFile;
     if ( v215 )
       v73 = v213;
     assign_string_int(v44, v73, *(hud + 0x2A4));
     v210 = (&word_6 + 1);
     LODWORD(v209) = 2;
-    sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
+    ctor_vprintf(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v74 = &szFile;
     if ( v215 )
       v74 = v213;
     assign_string_int(v44, v74, *(hud + 0x2A8));
     v210 = &word_8;
     LODWORD(v209) = 2;
-    sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
+    ctor_vprintf(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v75 = &szFile;
     if ( v215 )
       v75 = v213;
     assign_string_int(v44, v75, *(hud + 0x2AC));
     v210 = (&word_8 + 1);
     LODWORD(v209) = 2;
-    sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
+    ctor_vprintf(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v76 = &szFile;
     if ( v215 )
       v76 = v213;
     assign_string_int(v44, v76, *(hud + 0x2B0));
     v210 = &word_A;
     LODWORD(v209) = 2;
-    sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
+    ctor_vprintf(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v77 = &szFile;
     if ( v215 )
       v77 = v213;
     assign_string_int(v44, v77, *(hud + 0x2B4));
     v210 = (&word_A + 1);
     LODWORD(v209) = 2;
-    sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
+    ctor_vprintf(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v78 = &szFile;
     if ( v215 )
       v78 = v213;
     assign_string_int(v44, v78, *(hud + 0x2B8));
     v210 = &word_C;
     LODWORD(v209) = 2;
-    sub_1546EF0(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
+    ctor_vprintf(&v213, 0x20i64, "favoriteVoiceMessage%i", &v209, 1);
     v79 = *(hud + 0x2BC);
     v80 = v213;
     v218 = v213;
@@ -856,7 +856,7 @@ void __fastcall unknown_hud_m(__int64 hud, __int64 a2)
       if ( !*(v124 + 0x20) )
         goto LABEL_178;
     }
-    v128 = sub_128A70(v124, "settings", 8ui64, 0xC5E8B81F);
+    v128 = data::get_name_id(v124, "settings", 8ui64, 0xC5E8B81F);
     if ( v128 >= 0 )
     {
       v129 = v127 + v128;
@@ -867,7 +867,7 @@ LABEL_180:
 LABEL_178:
     if ( !v127 )
       goto LABEL_181;
-    v129 = sub_128A70(*(v124 + 0x50), "settings", 8ui64, 0xC5E8B81F);
+    v129 = data::get_name_id(*(v124 + 0x50), "settings", 8ui64, 0xC5E8B81F);
     goto LABEL_180;
   }
 LABEL_181:
@@ -932,7 +932,7 @@ LABEL_181:
       if ( !*(v143 + 0x20) )
         goto LABEL_203;
     }
-    v147 = sub_128A70(v143, "customSettings", 0xEui64, 0x3B1BE3EDu);
+    v147 = data::get_name_id(v143, "customSettings", 0xEui64, 0x3B1BE3EDu);
     if ( v147 >= 0 )
     {
       v148 = v146 + v147;
@@ -943,7 +943,7 @@ LABEL_205:
 LABEL_203:
     if ( !v146 )
       goto LABEL_206;
-    v148 = sub_128A70(*(v143 + 0x50), "customSettings", 0xEui64, 0x3B1BE3EDu);
+    v148 = data::get_name_id(*(v143 + 0x50), "customSettings", 0xEui64, 0x3B1BE3EDu);
     goto LABEL_205;
   }
 LABEL_206:
@@ -995,13 +995,13 @@ LABEL_206:
   v163 = 0xFFFFFFFF;
   if ( !*v161 )
     goto LABEL_231;
-  v164 = sub_1285C0("accounts", 8ui64);
+  v164 = data::get_name_id("accounts", 8ui64);
   v165 = *(v162 + 0x50);
   if ( v165 )
     v166 = *(v165 + 0x20);
   else
     v166 = 0;
-  if ( *(v162 + 0x20) && (v167 = sub_128A70(v162, "accounts", 8ui64, v164), v167 >= 0) )
+  if ( *(v162 + 0x20) && (v167 = data::get_name_id(v162, "accounts", 8ui64, v164), v167 >= 0) )
   {
     v168 = v166 + v167;
   }
@@ -1009,7 +1009,7 @@ LABEL_206:
   {
     if ( !v166 )
       goto LABEL_231;
-    v168 = sub_128A70(*(v162 + 0x50), "accounts", 8ui64, v164);
+    v168 = data::get_name_id(*(v162 + 0x50), "accounts", 8ui64, v164);
   }
   v163 = v168;
 LABEL_231:
@@ -1080,7 +1080,7 @@ LABEL_257:
           LODWORD(v209) = 2;
           v212 = v185;
           LODWORD(v211) = 1;
-          sub_1546EF0(&v213, 0x64i64, "%lld.%s", &v209, 2);
+          ctor_vprintf(&v213, 0x64i64, "%lld.%s", &v209, 2);
           sub_14584E0(&v209, off_4B678B0);
           v193 = v213;
           v194 = &szFile;

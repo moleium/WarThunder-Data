@@ -49,7 +49,7 @@ __int64 __fastcall hud_font(_DWORD *a1, __int64 *a2)
   const char *v50; // [rsp+38h] [rbp-50h]
 
   v49 = &szFile;
-  v4 = sub_1459B30(a2, "vectorHudFont", &v49);
+  v4 = data::get_str(a2, "vectorHudFont", &v49);
   v49 = v4;
   LODWORD(v50) = 0xFFFFFFFF;
   if ( byte_4B83688 )
@@ -81,7 +81,7 @@ LABEL_7:
     goto LABEL_7;
 LABEL_8:
   v49 = &szFile;
-  v49 = sub_1459B30(a2, "measureFont", &v49);
+  v49 = data::get_str(a2, "measureFont", &v49);
   LODWORD(v50) = 0xFFFFFFFF;
   if ( byte_4B83688 )
   {
@@ -103,7 +103,7 @@ LABEL_10:
 LABEL_14:
   a1[0x23] = v9;
   v49 = "medium_text_hud";
-  v49 = sub_1459B30(a2, "mediumFontId", &v49);
+  v49 = data::get_str(a2, "mediumFontId", &v49);
   LODWORD(v50) = 0xFFFFFFFF;
   if ( byte_4B83688 )
   {
@@ -128,7 +128,7 @@ LABEL_20:
   v14 = 0xFFFFFFFF;
   if ( !*a2 )
     goto LABEL_32;
-  v15 = sub_1285C0("patc", 4ui64);
+  v15 = data::get_name_id("patc", 4ui64);
   v16 = *(v13 + 0x50);
   if ( v16 )
   {
@@ -142,7 +142,7 @@ LABEL_20:
     if ( !*(v13 + 0x20) )
       goto LABEL_29;
   }
-  v19 = sub_128A70(v13, "patc", 4i64, v15);
+  v19 = data::get_name_id(v13, "patc", 4i64, v15);
   if ( v19 >= 0 )
   {
     v20 = v17 + v19;
@@ -151,7 +151,7 @@ LABEL_20:
 LABEL_29:
   if ( !v17 )
     goto LABEL_32;
-  v20 = sub_128A70(*(v13 + 0x50), "patc", 4i64, v15);
+  v20 = data::get_name_id(*(v13 + 0x50), "patc", 4i64, v15);
 LABEL_31:
   v14 = v20;
 LABEL_32:
@@ -208,7 +208,7 @@ LABEL_49:
   if ( v23 )
     v35 = v23;
   v49 = "Hooge48_big";
-  v36 = sub_1459B30(v35, "font", &v49);
+  v36 = data::get_str(v35, "font", &v49);
   v49 = v36;
   LODWORD(v50) = 0xFFFFFFFF;
   if ( byte_4B83688 )
@@ -240,7 +240,7 @@ LABEL_57:
     goto LABEL_57;
 LABEL_58:
   v49 = &szFile;
-  v49 = sub_1459B30(a2, "debugFontName", &v49);
+  v49 = data::get_str(a2, "debugFontName", &v49);
   LODWORD(v50) = 0xFFFFFFFF;
   if ( byte_4B83688 )
   {
@@ -265,14 +265,14 @@ LABEL_64:
     v42 = v41;
   dword_4B19A8C = v42;
   v49 = &szFile;
-  v49 = sub_1459B30(a2, "consoleFontName", &v49);
+  v49 = data::get_str(a2, "consoleFontName", &v49);
   LODWORD(v50) = 0xFFFFFFFF;
   if ( byte_4B83688 )
     sub_196D90(&v49, qword_4B83670, qword_4B83680, v48);
   else
     sub_197140(&v49, qword_4B83670, qword_4B83680, v48);
   v49 = &szFile;
-  v49 = sub_1459B30(a2, "smallTextHudFontName", &v49);
+  v49 = data::get_str(a2, "smallTextHudFontName", &v49);
   LODWORD(v50) = 0xFFFFFFFF;
   if ( byte_4B83688 )
   {

@@ -57,7 +57,7 @@ char __fastcall unit_vulnerable_from(__int64 a1, __int64 *a2, __int64 a3, __int6
   v49 = v7;
   v50 = 0i64;
   v45 = "isAlive";
-  v8 = sub_1459B30(v4, "target_type", &v45);
+  v8 = data::get_str(v4, "target_type", &v45);
   if ( v8 )
   {
     v9 = v8;
@@ -81,7 +81,7 @@ LABEL_7:
   v14 = 0xFFFFFFFF;
   if ( *v4 )
   {
-    v15 = sub_1285C0("target", 6ui64);
+    v15 = data::get_name_id("target", 6ui64);
     v16 = *(v13 + 0x50);
     v52 = v4;
     if ( v16 )
@@ -92,7 +92,7 @@ LABEL_7:
 LABEL_15:
         v4 = v52;
         if ( v17 )
-          v14 = sub_128A70(*(v13 + 0x50), "target", 6ui64, v15);
+          v14 = data::get_name_id(*(v13 + 0x50), "target", 6ui64, v15);
         goto LABEL_17;
       }
     }
@@ -102,7 +102,7 @@ LABEL_15:
       if ( !*(v13 + 0x20) )
         goto LABEL_15;
     }
-    v18 = sub_128A70(v13, "target", 6ui64, v15);
+    v18 = data::get_name_id(v13, "target", 6ui64, v15);
     if ( v18 >= 0 )
     {
       v14 = v17 + v18;
@@ -148,7 +148,7 @@ LABEL_17:
     v46 = v25;
     v47 = 0i64;
     v51 = "isAlive";
-    v26 = sub_1459B30(v4, "player_type", &v51);
+    v26 = data::get_str(v4, "player_type", &v51);
     if ( v26 )
     {
       v27 = v26;
@@ -172,7 +172,7 @@ LABEL_32:
     v32 = 0xFFFFFFFF;
     if ( !*v4 )
       goto LABEL_43;
-    v33 = sub_1285C0("player", 6ui64);
+    v33 = data::get_name_id("player", 6ui64);
     v34 = *(v31 + 0x50);
     if ( v34 )
     {
@@ -186,7 +186,7 @@ LABEL_32:
       if ( !*(v31 + 0x20) )
         goto LABEL_40;
     }
-    v36 = sub_128A70(v31, "player", 6ui64, v33);
+    v36 = data::get_name_id(v31, "player", 6ui64, v33);
     if ( v36 >= 0 )
     {
       v37 = v35 + v36;
@@ -248,7 +248,7 @@ LABEL_43:
         (*(*v46 + 0x40i64))(v46);
       goto LABEL_61;
     }
-    v37 = sub_128A70(*(v31 + 0x50), "player", 6ui64, v33);
+    v37 = data::get_name_id(*(v31 + 0x50), "player", 6ui64, v33);
 LABEL_42:
     v32 = v37;
     goto LABEL_43;

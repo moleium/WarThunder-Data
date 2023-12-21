@@ -164,7 +164,7 @@ __int64 __fastcall unknown_unit_damage(__int64 a1, __int64 *a2, __int64 a3, __in
   v119 = v9;
   v120 = 0i64;
   *v127 = "isAlive";
-  v10 = sub_1459B30(a2, "target_type", v127);
+  v10 = data::get_str(a2, "target_type", v127);
   if ( v10 )
   {
     v11 = v10;
@@ -188,7 +188,7 @@ LABEL_7:
   v16 = 0xFFFFFFFF;
   if ( *a2 )
   {
-    v4 = sub_1285C0("target", 6ui64);
+    v4 = data::get_name_id("target", 6ui64);
     v17 = *(v15 + 0x50);
     if ( v17 )
     {
@@ -202,7 +202,7 @@ LABEL_7:
       if ( !*(v15 + 0x20) )
         goto LABEL_15;
     }
-    v19 = sub_128A70(v15, "target", 6ui64, v4);
+    v19 = data::get_name_id(v15, "target", 6ui64, v4);
     if ( v19 >= 0 )
     {
       v20 = v18 + v19;
@@ -213,7 +213,7 @@ LABEL_17:
 LABEL_15:
     if ( !v18 )
       goto LABEL_18;
-    v20 = sub_128A70(*(v15 + 0x50), "target", 6ui64, v4);
+    v20 = data::get_name_id(*(v15 + 0x50), "target", 6ui64, v4);
     goto LABEL_17;
   }
 LABEL_18:
@@ -244,7 +244,7 @@ LABEL_18:
   }
   sub_CD4300(&v118, a1, a2, "object");
   v127[0] = 0;
-  if ( sub_145BBF0(a2, "useForTriggerFiltered", v127) )
+  if ( data::get_bool(a2, "useForTriggerFiltered", v127) )
   {
     v23 = v120;
     if ( v120 )
@@ -285,7 +285,7 @@ LABEL_37:
   if ( !sub_D2B9A0(a1, a2, &v118, "target", unknown_unit_damage) )
   {
     *v127 = 0xFFFFFFFF;
-    v29 = sub_145A390(a2, "randomTargetsCount", v127);
+    v29 = data::set_int(a2, "randomTargetsCount", v127);
     if ( v29 >= 0 )
     {
       v30 = 0x41C64E6D * dword_4A79158 + 0x3039;
@@ -324,11 +324,11 @@ LABEL_37:
       }
     }
     *v127 = 0i64;
-    v38 = sub_1459B30(a2, "partName", v127);
+    v38 = data::get_str(a2, "partName", v127);
     *v127 = 0;
-    v39 = sub_145A390(a2, "part", v127);
+    v39 = data::set_int(a2, "part", v127);
     *v127 = 0;
-    v5.m128_f32[0] = sub_145B6B0(a2, "power", v127);
+    v5.m128_f32[0] = data::set_real(a2, "power", v127);
     if ( v5.m128_f32[0] >= *&dword_44A4648 )
     {
       if ( v120 )
@@ -374,8 +374,8 @@ LABEL_37:
             if ( !*v38
               || (v55 = qword_4B12868 + 0x50,
                   v56 = strlen(v38),
-                  v57 = sub_1285C0(v38, v56),
-                  v54 = sub_128A70(v55, v38, v56, v57),
+                  v57 = data::get_name_id(v38, v56),
+                  v54 = data::get_name_id(v55, v38, v56, v57),
                   (v54 & 0x80000000) != 0) )
             {
               v54 = v39;
@@ -467,7 +467,7 @@ LABEL_148:
             v160 = v4;
             sub_7BA4A0(v49, v127, &v146, 0xFFFFFFFFi64);
             LOBYTE(v146) = 0;
-            if ( sub_145BBF0(v87, "doExplosion", &v146) )
+            if ( data::get_bool(v87, "doExplosion", &v146) )
             {
               v146 = 0i64;
               LODWORD(v147) = 0;
@@ -520,7 +520,7 @@ LABEL_57:
         }
         v127[0] = 0;
         v60 = v121;
-        if ( sub_145BBF0(v121, "useEffect", v127) )
+        if ( data::get_bool(v121, "useEffect", v127) )
         {
           *v161 = v49;
           v4 = v54;
@@ -528,10 +528,10 @@ LABEL_57:
           sub_145C630(v60, v127, "offset", &xmmword_4514A60);
           sub_145C170(v60, v122, "delay", &xmmword_4514A60);
           v116 = 1;
-          v64 = sub_145A390(v60, "countEffects", &v116);
+          v64 = data::set_int(v60, "countEffects", &v116);
           LOBYTE(v116) = 0;
           v49 = *v161;
-          LOBYTE(v65) = sub_145BBF0(v60, "doExplosion", &v116);
+          LOBYTE(v65) = data::get_bool(v60, "doExplosion", &v116);
           sub_85A340(v49, v54, v125, v65, v64, v122, v127, &v146);
 LABEL_126:
           if ( *(v49 + 0x10B0) == 5 )
@@ -546,7 +546,7 @@ LABEL_126:
             if ( v100 )
             {
               *v127 = 0;
-              if ( sub_145B6B0(v121, "setFlood", v127) != 0.0 )
+              if ( data::set_real(v121, "setFlood", v127) != 0.0 )
               {
                 v127[0] = 0xA;
                 memset(&v127[4], 0xFF, 0x14);
@@ -565,7 +565,7 @@ LABEL_126:
               }
             }
             v127[0] = 0;
-            if ( sub_145BBF0(v101, "setOnFire", v127) )
+            if ( data::get_bool(v101, "setOnFire", v127) )
             {
               v127[0] = 0xA;
               memset(&v127[4], 0xFF, 0x14);
@@ -582,7 +582,7 @@ LABEL_126:
               LOWORD(v114) = 0xFFFF;
               sub_8DAD60(v49, &v116, 0xFFFFFFFFi64, v127, v114, Src, 2, v122, &v126, 0xFFFFFFFF);
               LOBYTE(v146) = 0;
-              if ( sub_145BBF0(v101, "hideFireFx", &v146) )
+              if ( data::get_bool(v101, "hideFireFx", &v146) )
               {
                 v103 = j__malloc_base(0x18ui64);
                 if ( !v103 )
@@ -641,7 +641,7 @@ LABEL_126:
         {
           v127[0] = 0;
           v66 = v121;
-          if ( sub_145BBF0(v121, "fireAmmo", v127) )
+          if ( data::get_bool(v121, "fireAmmo", v127) )
           {
             LOWORD(v67) = 2;
             sub_33BF50(v49, v67);
@@ -673,7 +673,7 @@ LABEL_126:
             goto LABEL_126;
           }
           v127[0] = 0;
-          if ( sub_145BBF0(v66, "explodeAmmo", v127) )
+          if ( data::get_bool(v66, "explodeAmmo", v127) )
           {
             LOWORD(v61) = 2;
             sub_33BF50(v49, v61);
@@ -754,7 +754,7 @@ LABEL_113:
         {
 LABEL_124:
           LOBYTE(v146) = 0;
-          if ( sub_145BBF0(v121, "doExplosion", &v146) )
+          if ( data::get_bool(v121, "doExplosion", &v146) )
             sub_842800(v49, v54, v127);
           goto LABEL_126;
         }

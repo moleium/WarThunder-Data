@@ -50,7 +50,7 @@ char __fastcall spawn_on_airfield(__int64 a1, __int64 *a2)
   __int64 v52; // [rsp+BCh] [rbp-6Ch]
 
   *&v46[0] = &szFile;
-  v4 = sub_1459B30(a2, "runwayName", v46);
+  v4 = data::get_str(a2, "runwayName", v46);
   v45 = a1;
   if ( v4 )
   {
@@ -124,7 +124,7 @@ LABEL_17:
   v23 = 0xFFFFFFFF;
   if ( !*a2 )
     goto LABEL_34;
-  v24 = sub_1285C0("objects", 7ui64);
+  v24 = data::get_name_id("objects", 7ui64);
   v25 = *(v22 + 0x50);
   if ( !v25 )
   {
@@ -132,7 +132,7 @@ LABEL_17:
     if ( !*(v22 + 0x20) )
       goto LABEL_31;
 LABEL_29:
-    v27 = sub_128A70(v22, "objects", 7ui64, v24);
+    v27 = data::get_name_id(v22, "objects", 7ui64, v24);
     if ( v27 >= 0 )
     {
       v28 = v26 + v27;
@@ -148,7 +148,7 @@ LABEL_33:
 LABEL_31:
   if ( v26 )
   {
-    v28 = sub_128A70(*(v22 + 0x50), "objects", 7ui64, v24);
+    v28 = data::get_name_id(*(v22 + 0x50), "objects", 7ui64, v24);
     goto LABEL_33;
   }
 LABEL_34:
@@ -199,7 +199,7 @@ LABEL_34:
         v52 = 0xFFFFFFFFFFFFFFFFui64;
         v37 = *(UnitList + 8 * v36);
         v44 = 0xBF800000;
-        v38 = sub_145B6B0(a2, "takeoffInterval", &v44);
+        v38 = data::set_real(a2, "takeoffInterval", &v44);
         sub_3421C0(v37, v13, v38, 0, 1, 0, v46, 0);
         if ( BYTE14(v50) )
         {

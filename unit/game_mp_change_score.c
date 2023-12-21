@@ -101,7 +101,7 @@ char __fastcall game_mp_change_score(__int64 a1, __int64 a2)
   __int64 v103; // [rsp+70h] [rbp-48h]
 
   Unit_ = "Both";
-  v4 = sub_1459B30(a2, "team", &Unit_);
+  v4 = data::get_str(a2, "team", &Unit_);
   v6 = &off_4A71AA0;
   if ( v4 )
   {
@@ -154,7 +154,7 @@ LABEL_16:
   v16 = 0xFFFFFFFF;
   if ( *a2 )
   {
-    v17 = sub_1285C0("var", 3ui64);
+    v17 = data::get_name_id("var", 3ui64);
     v18 = *(v15 + 0x50);
     if ( v18 )
     {
@@ -168,7 +168,7 @@ LABEL_16:
       if ( !*(v15 + 0x20) )
         goto LABEL_26;
     }
-    v20 = sub_128A70(v15, "var", 3ui64, v17);
+    v20 = data::get_name_id(v15, "var", 3ui64, v17);
     if ( v20 >= 0 )
     {
       v21 = v19 + v20;
@@ -179,7 +179,7 @@ LABEL_28:
 LABEL_26:
     if ( !v19 )
       goto LABEL_29;
-    v21 = sub_128A70(*(v15 + 0x50), "var", 3ui64, v17);
+    v21 = data::get_name_id(*(v15 + 0x50), "var", 3ui64, v17);
     goto LABEL_28;
   }
 LABEL_29:
@@ -204,7 +204,7 @@ LABEL_29:
     }
 LABEL_39:
     LOBYTE(Unit_) = 1;
-    v30 = sub_145BBF0(a2, "ignoreSingleMissions", &Unit_);
+    v30 = data::get_bool(a2, "ignoreSingleMissions", &Unit_);
     goto LABEL_40;
   }
   if ( v24 )
@@ -222,7 +222,7 @@ LABEL_39:
 LABEL_84:
   v55 = (v28 - v26) >> 3;
   LOBYTE(Unit_) = 1;
-  v30 = sub_145BBF0(a2, "ignoreSingleMissions", &Unit_);
+  v30 = data::get_bool(a2, "ignoreSingleMissions", &Unit_);
   if ( (v55 & 0x80000000) == 0i64 )
   {
     if ( *(a2 + 0xC) > v55 && (v56 = sub_1459970(a2, v55)) != 0i64 )

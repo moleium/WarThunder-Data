@@ -746,12 +746,12 @@ void __fastcall sub_F76B0(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a
                   sub_1546A60(&Src, word_4A23704, 2u);
                 v287 = (v34 + 1);
                 LODWORD(v286) = 2;
-                add_server_param(&Src, 64i64, "variant %d (", &v286, 1);
+                avprintf(&Src, 64i64, "variant %d (", &v286, 1);
                 if ( *v38 )
                 {
                   v287 = **(v289 + 24 * v34);
                   LODWORD(v286) = 1;
-                  add_server_param(&Src, 64i64, "\"%s\"", &v286, 1);
+                  avprintf(&Src, 64i64, "\"%s\"", &v286, 1);
                   if ( *v38 >= 2u )
                   {
                     v39 = (v289 + 24 * v34);
@@ -761,7 +761,7 @@ void __fastcall sub_F76B0(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a
                       sub_1546A60(&Src, word_4A23704, 2u);
                       v287 = *(*v39 + 8 * v40);
                       LODWORD(v286) = 1;
-                      add_server_param(&Src, 64i64, "\"%s\"", &v286, 1);
+                      avprintf(&Src, 64i64, "\"%s\"", &v286, 1);
                       ++v40;
                     }
                     while ( v40 < *v38 );
@@ -774,12 +774,12 @@ void __fastcall sub_F76B0(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a
               {
                 v287 = (v34 + 1);
                 LODWORD(v286) = 2;
-                add_server_param(&Src, 64i64, "Parts from variant %d (", &v286, 1);
+                avprintf(&Src, 64i64, "Parts from variant %d (", &v286, 1);
                 if ( *v38 )
                 {
                   v287 = **(v289 + 24 * v34);
                   LODWORD(v286) = 1;
-                  add_server_param(&Src, 64i64, "\"%s\"", &v286, 1);
+                  avprintf(&Src, 64i64, "\"%s\"", &v286, 1);
                   if ( *v38 >= 2u )
                   {
                     v41 = (v289 + 24 * v34);
@@ -789,7 +789,7 @@ void __fastcall sub_F76B0(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a
                       sub_1546A60(&Src, word_4A23704, 2u);
                       v287 = *(*v41 + 8 * v42);
                       LODWORD(v286) = 1;
-                      add_server_param(&Src, 64i64, "\"%s\"", &v286, 1);
+                      avprintf(&Src, 64i64, "\"%s\"", &v286, 1);
                       ++v42;
                     }
                     while ( v42 < *v38 );
@@ -900,7 +900,7 @@ LABEL_58:
       Src = 0i64;
       v291 = v44;
       Size = 0i64;
-      add_server_param(&Src, 64i64, "No parts found from all variants (", 0i64, 0);
+      avprintf(&Src, 64i64, "No parts found from all variants (", 0i64, 0);
       if ( *(v14 + 2) )
       {
         v45 = 0i64;
@@ -911,7 +911,7 @@ LABEL_58:
           v46 = v45 + 1;
           v287 = (v45 + 1);
           LODWORD(v286) = 2;
-          add_server_param(&Src, 8i64, "%d: (", &v286, 1);
+          avprintf(&Src, 8i64, "%d: (", &v286, 1);
           v47 = *(*v14 + 40 * v45);
           if ( v47 <= *(*v14 + 40 * v45 + 4) )
           {
@@ -926,18 +926,18 @@ LABEL_58:
                 sub_1546A60(&Src, word_4A23704, 2u);
               v287 = v51;
               LODWORD(v286) = 1;
-              add_server_param(&Src, 64i64, "\"%s\"", &v286, 1);
+              avprintf(&Src, 64i64, "\"%s\"", &v286, 1);
               ++v49;
             }
             while ( v47++ < v48[1] );
           }
-          add_server_param(&Src, 8i64, ")", 0i64, 0);
+          avprintf(&Src, 8i64, ")", 0i64, 0);
           v45 = v46;
         }
         while ( v46 < *(v14 + 2) );
       }
       v52 = 0;
-      add_server_param(&Src, 8i64, ")", 0i64, 0);
+      avprintf(&Src, 8i64, ")", 0i64, 0);
       v53 = off_4B678C0;
       v54 = Size;
       if ( Size )
@@ -1079,7 +1079,7 @@ LABEL_83:
     LODWORD(Size) = 2;
     v287 = off_4B678C8;
     LODWORD(v282) = 2;
-    sub_1546EF0(&v286, a2, "Number of propellers = %d is GREATER than number of engines = %d", &Src, v282);
+    ctor_vprintf(&v286, a2, "Number of propellers = %d is GREATER than number of engines = %d", &Src, v282);
     v85 = off_4B678C0;
     v86 = v288;
     if ( v288 )

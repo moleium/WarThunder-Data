@@ -377,7 +377,7 @@ LABEL_68:
         v132 = 2;
         v135 = v53;
         v134 = 1;
-        sub_1546EF0(&v127, 0x80i64, "%s %d%s", &v130, 3);
+        ctor_vprintf(&v127, 0x80i64, "%s %d%s", &v130, 3);
 LABEL_71:
         if ( v129 )
           LODWORD(v44) = v127;
@@ -538,7 +538,7 @@ LABEL_173:
       v132 = 2;
       v135 = v114;
       v134 = 1;
-      add_server_param(&v127, 0x200i64, "%s %i%s", &v130, 3);
+      avprintf(&v127, 0x200i64, "%s %i%s", &v130, 3);
       v117 = 0xFFFFFFFF;
       if ( v113 )
         v117 = 0xFFFF0000;
@@ -721,7 +721,7 @@ LABEL_137:
         v132 = 2;
         v135 = v92;
         v134 = 1;
-        add_server_param(&v127, 0x200i64, "%s %i%s", &v130, 3);
+        avprintf(&v127, 0x200i64, "%s %i%s", &v130, 3);
         v94 = v127;
         v95 = &szFile;
         if ( v129 )

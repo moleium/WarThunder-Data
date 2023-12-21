@@ -82,16 +82,16 @@ void __fastcall capture_screenshot(CHAR **ss_data, __int64 ss_size, int image_fo
   v26 = 2;
   v29 = second;
   v28 = 2;
-  add_server_param(ss_data, 0x100i64, "/shot %04d.%02d.%02d %02d.%02d.%02d", &SystemTime, 6);
+  avprintf(ss_data, 0x100i64, "/shot %04d.%02d.%02d %02d.%02d.%02d", &SystemTime, 6);
   if ( a5 && *a5 )
   {
     *&SystemTime.wHour = a5;
     *&SystemTime.wYear = 1;
-    add_server_param(ss_data, 0x100i64, " %s", &SystemTime, 1);
+    avprintf(ss_data, 0x100i64, " %s", &SystemTime, 1);
   }
   *&SystemTime.wHour = file_ext;
   *&SystemTime.wYear = 1;
-  add_server_param(ss_data, 0x100i64, ".%s", &SystemTime, 1);
+  avprintf(ss_data, 0x100i64, ".%s", &SystemTime, 1);
   v16 = &szFile;
   v17 = &szFile;
   if ( *(ss_data + 4) )

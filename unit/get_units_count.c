@@ -41,7 +41,7 @@ char __fastcall get_units_count(__int64 a1, __int64 a2)
   __int64 v43; // [rsp+40h] [rbp-48h]
 
   team_name = "isAlive";
-  target_type = sub_1459B30(a2, "target_type", &team_name);
+  target_type = data::get_str(a2, "target_type", &team_name);
   team_id_ = 0;
   if ( target_type )
   {
@@ -61,7 +61,7 @@ LABEL_5:
     LODWORD(target_type_index) = 0;
   }
   team_name = "Both";
-  team = sub_1459B30(a2, "team", &team_name);
+  team = data::get_str(a2, "team", &team_name);
   if ( team )
   {
     team_ = team;
@@ -85,7 +85,7 @@ LABEL_13:
   }
   v10 = funcs_7FF717B84E97[target_type_index];
   team_name = "all";
-  unit_type = sub_1459B30(a2, "unit_type", &team_name);
+  unit_type = data::get_str(a2, "unit_type", &team_name);
   v43 = a1;
   v42 = a2;
   if ( !unit_type || (unit_type_ = unit_type, !strcmp("all", unit_type)) )
@@ -202,7 +202,7 @@ LABEL_45:
   }
 LABEL_46:
   team_name = &szFile;
-  v32 = sub_1459B30(v42, "var", &team_name);
+  v32 = data::get_str(v42, "var", &team_name);
   v33 = sub_D43DD0(v43, v32, 2i64, "getTotalUnitsCount");
   if ( v33 )
     *(v33 + 8) = total_count;

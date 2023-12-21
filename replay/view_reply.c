@@ -129,7 +129,7 @@ __int64 __fastcall view_reply(__int64 a1, char *a2, unsigned int a3)
   v8 = 0xFFFFFFFF;
   if ( *v6 )
   {
-    v9 = sub_1285C0("debug", 5ui64);
+    v9 = data::get_name_id("debug", 5ui64);
     v10 = *(v7 + 0x50);
     if ( v10 )
     {
@@ -143,7 +143,7 @@ __int64 __fastcall view_reply(__int64 a1, char *a2, unsigned int a3)
       if ( !*(v7 + 0x20) )
         goto LABEL_8;
     }
-    v12 = sub_128A70(v7, "debug", 5ui64, v9);
+    v12 = data::get_name_id(v7, "debug", 5ui64, v9);
     if ( v12 >= 0 )
     {
       v13 = v11 + v12;
@@ -154,7 +154,7 @@ LABEL_10:
 LABEL_8:
     if ( !v11 )
       goto LABEL_11;
-    v13 = sub_128A70(*(v7 + 0x50), "debug", 5ui64, v9);
+    v13 = data::get_name_id(*(v7 + 0x50), "debug", 5ui64, v9);
     goto LABEL_10;
   }
 LABEL_11:
@@ -211,7 +211,7 @@ LABEL_28:
   if ( v16 )
     v28 = v16;
   LOBYTE(v110) = 0;
-  if ( sub_145BBF0(v28, "replayExportUnitPos", &v110) )
+  if ( data::get_bool(v28, "replayExportUnitPos", &v110) )
   {
     v29 = *(a1 + 0x5E8);
     if ( !v29 || !*v29 )
@@ -267,7 +267,7 @@ LABEL_28:
       tm_sec = v31->tm_sec;
       v124 = 2;
       v97 = off_4B678C8;
-      sub_1546EF0(&Src, v32, "%s/%s_conv_%04d.%02d.%02d_%02d.%02d.%02d", &v110, 8);
+      ctor_vprintf(&Src, v32, "%s/%s_conv_%04d.%02d.%02d_%02d.%02d.%02d", &v110, 8);
       v42 = Src;
       if ( v98 )
         v40 = Src;

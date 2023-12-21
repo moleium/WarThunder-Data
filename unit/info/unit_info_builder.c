@@ -5,15 +5,15 @@ __int64 __fastcall unitinfo_builder(__int64 _UnitInfo_, char *a2, __int64 a3)
   UnitInfo_4 = _UnitInfo_;
   sub_34ED10(_UnitInfo_, a2, a3);
   LOBYTE(v363) = 0;
-  *(UnitInfo_4 + 0x308) = sub_145BBF0(a3, "isFau", &v363);
+  *(UnitInfo_4 + 0x308) = data::get_bool(a3, "isFau", &v363);
   LOBYTE(v363) = 1;
-  *(UnitInfo_4 + 0x309) = sub_145BBF0(a3, "orbitAvaible", &v363);
+  *(UnitInfo_4 + 0x309) = data::get_bool(a3, "orbitAvaible", &v363);
   LOBYTE(v363) = 0;
-  *(UnitInfo_4 + 0x310) = sub_145BBF0(a3, "gunnersCanTargetGroundUnits", &v363);
+  *(UnitInfo_4 + 0x310) = data::get_bool(a3, "gunnersCanTargetGroundUnits", &v363);
   LOBYTE(v363) = 1;
-  *(UnitInfo_4 + 0x311) = sub_145BBF0(a3, "aiGunnersEnabled", &v363);
+  *(UnitInfo_4 + 0x311) = data::get_bool(a3, "aiGunnersEnabled", &v363);
   v363 = "fighter";
-  v6 = sub_1459B30(a3, "fightAiBehaviour", &v363);
+  v6 = data::get_str(a3, "fightAiBehaviour", &v363);
   if ( v6 )
   {
     v7 = v6;
@@ -44,19 +44,19 @@ __int64 __fastcall unitinfo_builder(__int64 _UnitInfo_, char *a2, __int64 a3)
   }
   *(UnitInfo_4 + 0x30C) = v8;
   LOBYTE(v363) = 1;
-  *(UnitInfo_4 + 0x312) = sub_145BBF0(a3, "isCapableToAttackTurn", &v363);
+  *(UnitInfo_4 + 0x312) = data::get_bool(a3, "isCapableToAttackTurn", &v363);
   LOBYTE(v363) = 0;
-  *(UnitInfo_4 + 0x4D4) = sub_145BBF0(a3, "changeToExplodedOnExplode", &v363);
+  *(UnitInfo_4 + 0x4D4) = data::get_bool(a3, "changeToExplodedOnExplode", &v363);
   v374 = a2;
   v9 = sub_34EA90(a2, a3);
   LOBYTE(v363) = 0;
-  *(UnitInfo_4 + 0x374) = sub_145BBF0(v9, "mirror", &v363);
+  *(UnitInfo_4 + 0x374) = data::get_bool(v9, "mirror", &v363);
   v10 = *v9;
   LODWORD(v367) = 0xFFFFFFFF;
   UnitInfo_ = UnitInfo_4;
   if ( !v10 )
     goto LABEL_21;
-  v11 = sub_1285C0("mirrorNode", 0xAui64);
+  v11 = data::get_name_id("mirrorNode", 0xAui64);
   v12 = *(v10 + 0x50);
   if ( !v12 )
   {
@@ -64,7 +64,7 @@ __int64 __fastcall unitinfo_builder(__int64 _UnitInfo_, char *a2, __int64 a3)
     if ( !*(v10 + 0x20) )
       goto LABEL_19;
 LABEL_17:
-    v14 = sub_128A70(v10, "mirrorNode", 0xAui64, v11);
+    v14 = data::get_name_id(v10, "mirrorNode", 0xAui64, v11);
     if ( v14 >= 0 )
     {
       LODWORD(v367) = v13 + v14;
@@ -80,7 +80,7 @@ LABEL_19:
   v15 = v13 == 0;
   UnitInfo_4 = UnitInfo_;
   if ( !v15 )
-    LODWORD(v367) = sub_128A70(*(v10 + 0x50), "mirrorNode", 0xAui64, v11);
+    LODWORD(v367) = data::get_name_id(*(v10 + 0x50), "mirrorNode", 0xAui64, v11);
 LABEL_21:
   v16 = *(UnitInfo_4 + 0x378);
   v17 = v367;
@@ -156,9 +156,9 @@ LABEL_35:
     while ( v20 < v19 && v21 < 3 );
   }
   LOBYTE(v363) = 0;
-  *(UnitInfo_4 + 0x390) = sub_145BBF0(v9, "telescope", &v363);
+  *(UnitInfo_4 + 0x390) = data::get_bool(v9, "telescope", &v363);
   LODWORD(v363) = 0x3F800000;
-  *(UnitInfo_4 + 0x394) = sub_145B6B0(v9, "teleFov", &v363);
+  *(UnitInfo_4 + 0x394) = data::set_real(v9, "teleFov", &v363);
   v371 = 0x3F8000003F800000i64;
   sub_145C170(v9, &v363, "teleSize", &v371);
   *(UnitInfo_4 + 0x398) = v363;
@@ -168,9 +168,9 @@ LABEL_35:
   *(UnitInfo_4 + 0x3A8) = v364;
   *(UnitInfo_4 + 0x3A0) = v363;
   LODWORD(v363) = 0x3CF5C28F;
-  *(UnitInfo_4 + 0x3AC) = sub_145B6B0(v9, "teleScreenCapture", &v363);
+  *(UnitInfo_4 + 0x3AC) = data::set_real(v9, "teleScreenCapture", &v363);
   v363 = 0i64;
-  v31 = sub_1459B30(v9, "teleReticleTex", &v363);
+  v31 = data::get_str(v9, "teleReticleTex", &v363);
   v32 = *(UnitInfo_4 + 0x3B0);
   if ( v32 != v31 )
   {
@@ -199,20 +199,20 @@ LABEL_35:
     *(UnitInfo_4 + 0x3B0) = v36;
   }
   LODWORD(v363) = 0x3F800000;
-  *(UnitInfo_4 + 0x3BC) = sub_145B6B0(v9, "teleReticleTexScale", &v363);
+  *(UnitInfo_4 + 0x3BC) = data::set_real(v9, "teleReticleTexScale", &v363);
   LODWORD(v363) = 0x3F800000;
-  *(UnitInfo_4 + 0x3C0) = sub_145B6B0(v9, "teleBorderTexScale", &v363);
+  *(UnitInfo_4 + 0x3C0) = data::set_real(v9, "teleBorderTexScale", &v363);
   LODWORD(v363) = 0x42B40000;
-  v37 = sub_145B6B0(v9, "teleSightFov", &v363);
+  v37 = data::set_real(v9, "teleSightFov", &v363);
   v38 = tanf(v37 * *&dword_44A9F8C);
   v39 = Y;
   *(UnitInfo_4 + 0x3B8) = Y / v38;
   LODWORD(v363) = 0x3F800000;
-  *(UnitInfo_4 + 0x3C4) = v39 / fmaxf(sub_145B6B0(v9, "reticleTexScale", &v363), *&dword_4487E14);
+  *(UnitInfo_4 + 0x3C4) = v39 / fmaxf(data::set_real(v9, "reticleTexScale", &v363), *&dword_4487E14);
   LODWORD(v363) = 0;
-  *(UnitInfo_4 + 0x3D0) = sub_145B6B0(v9, "noEffectsDist", &v363);
+  *(UnitInfo_4 + 0x3D0) = data::set_real(v9, "noEffectsDist", &v363);
   v363 = 0i64;
-  v40 = sub_1459B30(v9, "textToShowInCockpit", &v363);
+  v40 = data::get_str(v9, "textToShowInCockpit", &v363);
   if ( v40 )
   {
     v41 = v40;
@@ -259,16 +259,16 @@ LABEL_35:
     }
   }
   LOBYTE(v363) = 0;
-  *(UnitInfo_4 + 0x501) = sub_145BBF0(a3, "isNuclearBomber", &v363);
+  *(UnitInfo_4 + 0x501) = data::get_bool(a3, "isNuclearBomber", &v363);
   LODWORD(v363) = 0;
-  *(UnitInfo_4 + 0x504) = sub_145B6B0(v9, "staticAimPitch", &v363) * *&dword_449CFE0;
+  *(UnitInfo_4 + 0x504) = data::set_real(v9, "staticAimPitch", &v363) * *&dword_449CFE0;
   LOBYTE(v363) = 0;
-  *(UnitInfo_4 + 0x508) = sub_145BBF0(a3, "disableAerobaticsSmoke", &v363) ^ 1;
+  *(UnitInfo_4 + 0x508) = data::get_bool(a3, "disableAerobaticsSmoke", &v363) ^ 1;
   v48 = *a3;
   v49 = 0xFFFFFFFF;
   if ( *a3 )
   {
-    v50 = sub_1285C0("effects", 7ui64);
+    v50 = data::get_name_id("effects", 7ui64);
     v51 = *(v48 + 0x50);
     if ( v51 )
     {
@@ -279,7 +279,7 @@ LABEL_87:
         v15 = v52 == 0;
         UnitInfo_4 = UnitInfo_;
         if ( !v15 )
-          v49 = sub_128A70(*(v48 + 0x50), "effects", 7ui64, v50);
+          v49 = data::get_name_id(*(v48 + 0x50), "effects", 7ui64, v50);
         goto LABEL_89;
       }
     }
@@ -289,7 +289,7 @@ LABEL_87:
       if ( !*(v48 + 0x20) )
         goto LABEL_87;
     }
-    v53 = sub_128A70(v48, "effects", 7ui64, v50);
+    v53 = data::get_name_id(v48, "effects", 7ui64, v50);
     if ( v53 >= 0 )
     {
       v49 = v52 + v53;
@@ -353,7 +353,7 @@ LABEL_102:
   if ( !v56 )
     v56 = &qword_4B67850;
   v363 = "water_explosion_medium";
-  v68 = sub_1459B30(v56, "waterExplosionEffect", &v363);
+  v68 = data::get_str(v56, "waterExplosionEffect", &v363);
   v69 = 0xFFFFFFFF;
   v70 = 0xFFFFFFFF;
   if ( v68 )
@@ -364,12 +364,12 @@ LABEL_102:
   }
   *(UnitInfo_4 + 0x4D8) = v70;
   v363 = "land_explosion_plane";
-  v71 = sub_1459B30(v56, "landExplosionEffect", &v363);
+  v71 = data::get_str(v56, "landExplosionEffect", &v363);
   if ( v71 && *v71 )
     v69 = sub_93E610(v71);
   *(UnitInfo_4 + 0x4DC) = v69;
   v363 = "land_crash_fire";
-  v72 = sub_1459B30(v56, "landCrashFireEffect", &v363);
+  v72 = data::get_str(v56, "landCrashFireEffect", &v363);
   v73 = 0xFFFFFFFF;
   v74 = 0xFFFFFFFF;
   if ( v72 )
@@ -380,12 +380,12 @@ LABEL_102:
   }
   *(UnitInfo_4 + 0x4E0) = v74;
   v363 = "land_crash_fire_time_limit";
-  v75 = sub_1459B30(v56, "landCrashShortFireEffect", &v363);
+  v75 = data::get_str(v56, "landCrashShortFireEffect", &v363);
   if ( v75 && *v75 )
     v73 = sub_93E610(v75);
   *(UnitInfo_4 + 0x4E4) = v73;
   v363 = "explosion_plane";
-  v76 = sub_1459B30(v56, "explosionEffect", &v363);
+  v76 = data::get_str(v56, "explosionEffect", &v363);
   v77 = 0xFFFFFFFF;
   v78 = 0xFFFFFFFF;
   if ( v76 )
@@ -396,14 +396,14 @@ LABEL_102:
   }
   *(UnitInfo_4 + 0x4E8) = v78;
   v363 = "collision_dust_plane";
-  v79 = sub_1459B30(v56, "collisionDustEffect", &v363);
+  v79 = data::get_str(v56, "collisionDustEffect", &v363);
   if ( v79 && *v79 )
     v77 = sub_93E610(v79);
   *(UnitInfo_4 + 0x4EC) = v77;
   LOBYTE(v363) = 1;
-  *(UnitInfo_4 + 0x4F0) = sub_145BBF0(v56, "createExplosionCrater", &v363);
+  *(UnitInfo_4 + 0x4F0) = data::get_bool(v56, "createExplosionCrater", &v363);
   v363 = "explosion_plane_pieces";
-  v80 = sub_1459B30(v56, "explosionPiecesEffect", &v363);
+  v80 = data::get_str(v56, "explosionPiecesEffect", &v363);
   v81 = 0xFFFFFFFF;
   v82 = 0xFFFFFFFF;
   if ( v80 )
@@ -414,12 +414,12 @@ LABEL_102:
   }
   *(UnitInfo_4 + 0x4F4) = v82;
   v363 = 0i64;
-  v83 = sub_1459B30(v56, "thrustEffect", &v363);
+  v83 = data::get_str(v56, "thrustEffect", &v363);
   if ( v83 && *v83 )
     v81 = sub_93E610(v83);
   *(UnitInfo_4 + 0x4F8) = v81;
   v363 = "part_cut";
-  v84 = sub_1459B30(v56, "cutPartEffect", &v363);
+  v84 = data::get_str(v56, "cutPartEffect", &v363);
   v85 = 0xFFFFFFFF;
   v86 = 0xFFFFFFFF;
   if ( v84 )
@@ -430,11 +430,11 @@ LABEL_102:
   }
   *(UnitInfo_4 + 0x4FC) = v86;
   LOBYTE(v363) = 1;
-  *(UnitInfo_4 + 0x500) = sub_145BBF0(v56, "shouldHaveFlightModelEffectsIfDead", &v363);
+  *(UnitInfo_4 + 0x500) = data::get_bool(v56, "shouldHaveFlightModelEffectsIfDead", &v363);
   v87 = *a3;
   if ( *a3 )
   {
-    v88 = sub_1285C0("helicopter", 0xAui64);
+    v88 = data::get_name_id("helicopter", 0xAui64);
     v89 = *(v87 + 0x50);
     if ( v89 )
     {
@@ -448,7 +448,7 @@ LABEL_102:
       if ( !*(v87 + 0x20) )
         goto LABEL_139;
     }
-    v91 = sub_128A70(v87, "helicopter", 0xAui64, v88);
+    v91 = data::get_name_id(v87, "helicopter", 0xAui64, v88);
     if ( v91 >= 0 )
     {
       v92 = v90 + v91;
@@ -459,7 +459,7 @@ LABEL_141:
 LABEL_139:
     if ( !v90 )
       goto LABEL_142;
-    v92 = sub_128A70(*(v87 + 0x50), "helicopter", 0xAui64, v88);
+    v92 = data::get_name_id(*(v87 + 0x50), "helicopter", 0xAui64, v88);
     goto LABEL_141;
   }
 LABEL_142:
@@ -522,14 +522,14 @@ LABEL_156:
   *(v107 + 0x354) = v364;
   *(v107 + 0x34C) = v363;
   LODWORD(v363) = 0x3C23D70A;
-  *(v107 + 0x358) = sub_145B6B0(v95, "propellerStrainCoeff", &v363);
+  *(v107 + 0x358) = data::set_real(v95, "propellerStrainCoeff", &v363);
   LOBYTE(v363) = 0;
-  *(v107 + 0x35C) = sub_145BBF0(v95, "inclinedRotor", &v363);
+  *(v107 + 0x35C) = data::get_bool(v95, "inclinedRotor", &v363);
   v108 = *a3;
   v109 = 0xFFFFFFFF;
   if ( *a3 )
   {
-    v110 = sub_1285C0("flexWing", 8ui64);
+    v110 = data::get_name_id("flexWing", 8ui64);
     v111 = *(v108 + 0x50);
     if ( v111 )
     {
@@ -540,7 +540,7 @@ LABEL_165:
         v15 = v112 == 0;
         v107 = UnitInfo_;
         if ( !v15 )
-          v109 = sub_128A70(*(v108 + 0x50), "flexWing", 8ui64, v110);
+          v109 = data::get_name_id(*(v108 + 0x50), "flexWing", 8ui64, v110);
         goto LABEL_167;
       }
     }
@@ -550,7 +550,7 @@ LABEL_165:
       if ( !*(v108 + 0x20) )
         goto LABEL_165;
     }
-    v113 = sub_128A70(v108, "flexWing", 8ui64, v110);
+    v113 = data::get_name_id(v108, "flexWing", 8ui64, v110);
     if ( v113 >= 0 )
     {
       v109 = v112 + v113;
@@ -614,20 +614,20 @@ LABEL_180:
   if ( !v116 )
     v116 = &qword_4B67850;
   LODWORD(v363) = 0x3F800000;
-  *(v107 + 0x360) = sub_145B6B0(v116, "wingStrainCoeff", &v363);
+  *(v107 + 0x360) = data::set_real(v116, "wingStrainCoeff", &v363);
   LODWORD(v363) = 0x3F800000;
-  *(v107 + 0x364) = sub_145B6B0(v116, "wingOverloadCoeff", &v363);
+  *(v107 + 0x364) = data::set_real(v116, "wingOverloadCoeff", &v363);
   LODWORD(v363) = 0x3F800000;
-  *(v107 + 0x368) = sub_145B6B0(v116, "wingStaticRadius", &v363);
+  *(v107 + 0x368) = data::set_real(v116, "wingStaticRadius", &v363);
   LODWORD(v363) = 0x3F800000;
-  *(v107 + 0x36C) = COERCE_UNSIGNED_INT(sub_145B6B0(v116, "wingStrainLimitDown", &v363)) ^ xmmword_44801F0;
+  *(v107 + 0x36C) = COERCE_UNSIGNED_INT(data::set_real(v116, "wingStrainLimitDown", &v363)) ^ xmmword_44801F0;
   *(v107 + 0x370) = 0x3F800000;
   v129 = off_4A78F98(v128);
   v130 = *v129;
   v131 = 0xFFFFFFFF;
   if ( *v129 )
   {
-    v132 = sub_1285C0("splatter", 8ui64);
+    v132 = data::get_name_id("splatter", 8ui64);
     v133 = *(v130 + 0x50);
     if ( v133 )
     {
@@ -641,7 +641,7 @@ LABEL_180:
       if ( !*(v130 + 0x20) )
         goto LABEL_190;
     }
-    v135 = sub_128A70(v130, "splatter", 8ui64, v132);
+    v135 = data::get_name_id(v130, "splatter", 8ui64, v132);
     if ( v135 >= 0 )
     {
       v136 = v134 + v135;
@@ -652,7 +652,7 @@ LABEL_192:
 LABEL_190:
     if ( !v134 )
       goto LABEL_193;
-    v136 = sub_128A70(*(v130 + 0x50), "splatter", 8ui64, v132);
+    v136 = data::get_name_id(*(v130 + 0x50), "splatter", 8ui64, v132);
     goto LABEL_192;
   }
 LABEL_193:
@@ -711,26 +711,26 @@ LABEL_207:
   if ( !v139 )
     v139 = &qword_4B67850;
   LODWORD(v363) = 0x3DCCCCCD;
-  v151[0xC5] = sub_145B6B0(v139, "levelIncreaseSpeed", &v363);
+  v151[0xC5] = data::set_real(v139, "levelIncreaseSpeed", &v363);
   LODWORD(v363) = 0x3F000000;
-  v151[0xC6] = sub_145B6B0(v139, "opacityIncreaseSpeed", &v363);
+  v151[0xC6] = data::set_real(v139, "opacityIncreaseSpeed", &v363);
   LODWORD(v363) = 0x3CA3D70A;
-  v151[0xC7] = sub_145B6B0(v139, "levelDecreaseSpeed", &v363);
+  v151[0xC7] = data::set_real(v139, "levelDecreaseSpeed", &v363);
   LODWORD(v363) = 0x3D23D70A;
-  v151[0xC8] = sub_145B6B0(v139, "opacityDecreaseSpeed", &v363);
+  v151[0xC8] = data::set_real(v139, "opacityDecreaseSpeed", &v363);
   LODWORD(v363) = 0x3F4CCCCD;
-  v151[0xC9] = sub_145B6B0(v139, "opacityDecreaseAfterLevel", &v363);
+  v151[0xC9] = data::set_real(v139, "opacityDecreaseAfterLevel", &v363);
   LODWORD(v363) = 0x447A0000;
-  v151[0xCA] = sub_145B6B0(v139, "distance", &v363);
+  v151[0xCA] = data::set_real(v139, "distance", &v363);
   LODWORD(v363) = 0x41F00000;
-  v151[0xCB] = sub_145B6B0(v139, "angleDeg", &v363) * *&dword_449CFE0;
+  v151[0xCB] = data::set_real(v139, "angleDeg", &v363) * *&dword_449CFE0;
   LODWORD(v363) = 0x41200000;
-  v151[0xCC] = sub_145B6B0(v139, "sourceMinSpeed", &v363);
+  v151[0xCC] = data::set_real(v139, "sourceMinSpeed", &v363);
   v152 = *a3;
   v153 = 0xFFFFFFFF;
   if ( *a3 )
   {
-    v154 = sub_1285C0("diveBomb", 8ui64);
+    v154 = data::get_name_id("diveBomb", 8ui64);
     v155 = *(v152 + 0x50);
     if ( v155 )
     {
@@ -744,7 +744,7 @@ LABEL_207:
       if ( !*(v152 + 0x20) )
         goto LABEL_216;
     }
-    v157 = sub_128A70(v152, "diveBomb", 8ui64, v154);
+    v157 = data::get_name_id(v152, "diveBomb", 8ui64, v154);
     if ( v157 >= 0 )
     {
       v158 = v156 + v157;
@@ -755,7 +755,7 @@ LABEL_218:
 LABEL_216:
     if ( !v156 )
       goto LABEL_219;
-    v158 = sub_128A70(*(v152 + 0x50), "diveBomb", 8ui64, v154);
+    v158 = data::get_name_id(*(v152 + 0x50), "diveBomb", 8ui64, v154);
     goto LABEL_218;
   }
 LABEL_219:
@@ -813,47 +813,47 @@ LABEL_233:
   if ( !v161 )
     v161 = &qword_4B67850;
   LODWORD(v363) = 0x453B8000;
-  *(UnitInfo + 0x3D4) = sub_145B6B0(v161, "approachHeight", &v363);
+  *(UnitInfo + 0x3D4) = data::set_real(v161, "approachHeight", &v363);
   LODWORD(v363) = 0x44BB8000;
-  *(UnitInfo + 0x3D8) = sub_145B6B0(v161, "aimHeight", &v363);
+  *(UnitInfo + 0x3D8) = data::set_real(v161, "aimHeight", &v363);
   LODWORD(v363) = 0x43C80000;
-  *(UnitInfo + 0x3DC) = sub_145B6B0(v161, "dropHeight", &v363);
+  *(UnitInfo + 0x3DC) = data::set_real(v161, "dropHeight", &v363);
   LODWORD(v363) = 0x42700000;
-  v174 = sub_145B6B0(v161, "diveAngle", &v363);
+  v174 = data::set_real(v161, "diveAngle", &v363);
   v175 = *&dword_449CFE0;
   *(UnitInfo + 0x3E8) = v174 * *&dword_449CFE0;
   LODWORD(v363) = 0x41C80000;
-  v176 = sub_145B6B0(v161, "aimAngle", &v363) * v175;
+  v176 = data::set_real(v161, "aimAngle", &v363) * v175;
   v177 = *&dword_4480128;
   v178 = tanf(*&dword_4480128 - *(UnitInfo + 0x3E8));
   v179 = *(UnitInfo + 0x3D8);
   *(UnitInfo + 0x3E0) = v178 * v179;
   *(UnitInfo + 0x3E4) = ((*(UnitInfo + 0x3D4) - v179) * tanf(v177 - v176)) + (v178 * v179);
   LOBYTE(v363) = 0;
-  *(UnitInfo + 0x3EC) = sub_145BBF0(a3, "bomberView", &v363);
+  *(UnitInfo + 0x3EC) = data::get_bool(a3, "bomberView", &v363);
   LOBYTE(v363) = 1;
-  *(UnitInfo + 0x3ED) = sub_145BBF0(a3, "gyroSight", &v363);
+  *(UnitInfo + 0x3ED) = data::get_bool(a3, "gyroSight", &v363);
   LOBYTE(v363) = 0;
-  *(UnitInfo + 0x3EE) = sub_145BBF0(a3, "haveCCIPForRocket", &v363);
+  *(UnitInfo + 0x3EE) = data::get_bool(a3, "haveCCIPForRocket", &v363);
   LOBYTE(v363) = 0;
-  *(UnitInfo + 0x3EF) = sub_145BBF0(a3, "haveCCIPForGun", &v363);
+  *(UnitInfo + 0x3EF) = data::get_bool(a3, "haveCCIPForGun", &v363);
   LOBYTE(v363) = 0;
-  *(UnitInfo + 0x3F1) = sub_145BBF0(a3, "haveCCIPForBombs", &v363);
+  *(UnitInfo + 0x3F1) = data::get_bool(a3, "haveCCIPForBombs", &v363);
   LOBYTE(v363) = 0;
-  *(UnitInfo + 0x3F2) = sub_145BBF0(a3, "haveCCRPForRocket", &v363);
+  *(UnitInfo + 0x3F2) = data::get_bool(a3, "haveCCRPForRocket", &v363);
   LOBYTE(v363) = 0;
-  *(UnitInfo + 0x3F3) = sub_145BBF0(a3, "haveCCRPForGun", &v363);
+  *(UnitInfo + 0x3F3) = data::get_bool(a3, "haveCCRPForGun", &v363);
   LOBYTE(v363) = 0;
-  v180 = sub_145BBF0(a3, "haveCCRPForTurret", &v363);
+  v180 = data::get_bool(a3, "haveCCRPForTurret", &v363);
   *(UnitInfo + 0x3F4) = v180;
   LOBYTE(v363) = v180;
-  *(UnitInfo + 0x3F0) = sub_145BBF0(a3, "haveCCIPForTurret", &v363);
+  *(UnitInfo + 0x3F0) = data::get_bool(a3, "haveCCIPForTurret", &v363);
   LOBYTE(v363) = 0;
-  *(UnitInfo + 0x3F5) = sub_145BBF0(a3, "haveCCRPForBombs", &v363);
+  *(UnitInfo + 0x3F5) = data::get_bool(a3, "haveCCRPForBombs", &v363);
   LOBYTE(v363) = 0;
-  *(UnitInfo + 0x3F6) = sub_145BBF0(a3, "radarCScope", &v363);
+  *(UnitInfo + 0x3F6) = data::get_bool(a3, "radarCScope", &v363);
   LOBYTE(v363) = 0;
-  *(UnitInfo + 0x499) = sub_145BBF0(a3, "isBwOpticSight", &v363);
+  *(UnitInfo + 0x499) = data::get_bool(a3, "isBwOpticSight", &v363);
   v181 = *(UnitInfo + 0x38);
   if ( !v181 )
     v181 = &szFile;
@@ -935,21 +935,21 @@ LABEL_282:
     v182 = (&off_44AC6C0)[2 * v183 + 1];
   }
   LOBYTE(v363) = v182 == 0x8000000;
-  v185 = sub_145BBF0(a3, "haveOpticTurret", &v363);
+  v185 = data::get_bool(a3, "haveOpticTurret", &v363);
   LOBYTE(v186) = 0;
   if ( v185 )
     v186 = *(UnitInfo + 0x2D0);
   *(UnitInfo + 0x3F7) = v186;
   LOBYTE(v363) = v182 == 0x8000000;
-  *(UnitInfo + 0x3F8) = sub_145BBF0(a3, "havePointOfInterestDesignator", &v363);
+  *(UnitInfo + 0x3F8) = data::get_bool(a3, "havePointOfInterestDesignator", &v363);
   LOBYTE(v363) = *(*(game + 0x498) + 0x1CF4i64);
-  *(UnitInfo + 0x3F9) = sub_145BBF0(a3, "hasPointOfInterestMemory", &v363);
+  *(UnitInfo + 0x3F9) = data::get_bool(a3, "hasPointOfInterestMemory", &v363);
   LOBYTE(v363) = 1;
-  *(UnitInfo + 0x3FA) = sub_145BBF0(a3, "hasMissileCommandLine", &v363);
+  *(UnitInfo + 0x3FA) = data::get_bool(a3, "hasMissileCommandLine", &v363);
   LOBYTE(v363) = 0;
-  *(UnitInfo + 0x3FB) = sub_145BBF0(a3, "laserDesignator", &v363);
+  *(UnitInfo + 0x3FB) = data::get_bool(a3, "laserDesignator", &v363);
   LOBYTE(v363) = 0;
-  *(UnitInfo + 0x3FC) = sub_145BBF0(a3, "hasHelmetDesignator", &v363);
+  *(UnitInfo + 0x3FC) = data::get_bool(a3, "hasHelmetDesignator", &v363);
   v188 = *(UnitInfo + 0x400);
   *(UnitInfo + 0x408) = v188;
   v189 = *&dword_449F1A8;
@@ -961,7 +961,7 @@ LABEL_282:
     v372 = (v190 - v188) >> 4;
     LODWORD(v371) = 2;
     v364 = off_4B678C8;
-    sub_1546EF0(&v363, v187, "helmetDesignatorZone%d", &v371, 1);
+    ctor_vprintf(&v363, v187, "helmetDesignatorZone%d", &v371, 1);
     v191 = v363;
     v192 = v363;
     if ( !v365 )
@@ -1063,28 +1063,28 @@ LABEL_286:
     }
   }
   LODWORD(v363) = 0xFFFFFF0A;
-  sub_145AAA0(a3, &v371, "laserOpticSightColor", &v363);
+  getE3dcolor(a3, &v371, "laserOpticSightColor", &v363);
   *(UnitInfo_ + 0x49C) = v371;
   LOBYTE(v363) = 1;
-  *(UnitInfo_ + 0x498) = sub_145BBF0(a3, "laserBeamInAimLock", &v363);
+  *(UnitInfo_ + 0x498) = data::get_bool(a3, "laserBeamInAimLock", &v363);
   LODWORD(v363) = dword_4B74168;
-  *(UnitInfo_ + 0x4A0) = sub_145B6B0(a3, "airframeInfraRedBrightnessMult", &v363);
+  *(UnitInfo_ + 0x4A0) = data::set_real(a3, "airframeInfraRedBrightnessMult", &v363);
   LODWORD(v363) = DWORD2(xmmword_4B74150);
-  *(UnitInfo_ + 0x4AC) = sub_145B6B0(a3, "engineInfraRedBrightnessAspectMultFront", &v363);
+  *(UnitInfo_ + 0x4AC) = data::set_real(a3, "engineInfraRedBrightnessAspectMultFront", &v363);
   LODWORD(v363) = DWORD1(xmmword_4B74150);
-  *(UnitInfo_ + 0x4A8) = sub_145B6B0(a3, "engineInfraRedBrightnessAspectMultSide", &v363);
+  *(UnitInfo_ + 0x4A8) = data::set_real(a3, "engineInfraRedBrightnessAspectMultSide", &v363);
   LODWORD(v363) = xmmword_4B74150;
-  *(UnitInfo_ + 0x4A4) = sub_145B6B0(a3, "engineInfraRedBrightnessAspectMultRear", &v363);
+  *(UnitInfo_ + 0x4A4) = data::set_real(a3, "engineInfraRedBrightnessAspectMultRear", &v363);
   *(UnitInfo_ + 0x4B0) = *(&xmmword_4B74150 + 0xC);
   *(UnitInfo_ + 0x4B8) = HIDWORD(qword_4B74160);
   LODWORD(v363) = DWORD1(xmmword_4B741C8);
-  *(UnitInfo_ + 0x4BC) = sub_145B6B0(a3, "radarCrossSectionAspectMultFront", &v363);
+  *(UnitInfo_ + 0x4BC) = data::set_real(a3, "radarCrossSectionAspectMultFront", &v363);
   LODWORD(v363) = DWORD2(xmmword_4B741C8);
-  *(UnitInfo_ + 0x4C0) = sub_145B6B0(a3, "radarCrossSectionAspectMultSide", &v363);
+  *(UnitInfo_ + 0x4C0) = data::set_real(a3, "radarCrossSectionAspectMultSide", &v363);
   LODWORD(v363) = HIDWORD(xmmword_4B741C8);
-  *(UnitInfo_ + 0x4C4) = sub_145B6B0(a3, "radarCrossSectionAspectMultRear", &v363);
+  *(UnitInfo_ + 0x4C4) = data::set_real(a3, "radarCrossSectionAspectMultRear", &v363);
   LODWORD(v363) = *(*(game + 0x498) + 0x1CF8i64);
-  *(UnitInfo_ + 0x4C8) = sub_145B6B0(a3, "activeSonarReflectionMult", &v363);
+  *(UnitInfo_ + 0x4C8) = data::set_real(a3, "activeSonarReflectionMult", &v363);
   v216 = *a3;
   v217 = 0xFFFFFFFF;
   if ( !*a3 )
@@ -1093,7 +1093,7 @@ LABEL_286:
     v221 = &qword_4B67850;
     goto LABEL_326;
   }
-  v218 = sub_1285C0("hook", 4ui64);
+  v218 = data::get_name_id("hook", 4ui64);
   v219 = *(v216 + 0x50);
   v220 = v374;
   v221 = &qword_4B67850;
@@ -1105,7 +1105,7 @@ LABEL_286:
 LABEL_323:
       if ( v222 )
       {
-        v224 = sub_128A70(*(v216 + 0x50), "hook", 4ui64, v218);
+        v224 = data::get_name_id(*(v216 + 0x50), "hook", 4ui64, v218);
         goto LABEL_325;
       }
       goto LABEL_326;
@@ -1117,7 +1117,7 @@ LABEL_323:
     if ( !*(v216 + 0x20) )
       goto LABEL_323;
   }
-  v223 = sub_128A70(v216, "hook", 4ui64, v218);
+  v223 = data::get_name_id(v216, "hook", 4ui64, v218);
   if ( v223 < 0 )
     goto LABEL_323;
   v224 = v222 + v223;
@@ -1177,7 +1177,7 @@ LABEL_339:
   if ( !v227 )
     v227 = &qword_4B67850;
   LODWORD(v363) = 0x3CF5C28F;
-  *(_UnitInfo + 0x334) = sub_145B6B0(v227, "coeffHookJ", &v363);
+  *(_UnitInfo + 0x334) = data::set_real(v227, "coeffHookJ", &v363);
   v371 = 0x428C0000C2200000i64;
   sub_145C170(v227, &v363, "hookDeflectionAngles", &v371);
   v240 = *(&v363 + 1) * v175;
@@ -1187,7 +1187,7 @@ LABEL_339:
   sub_145C170(v227, &v363, "hookCxDiap", &v371);
   *(_UnitInfo + 0x340) = v363;
   LODWORD(v363) = 0x40800000;
-  *(_UnitInfo + 0x348) = sub_145B6B0(v227, "hookMass", &v363);
+  *(_UnitInfo + 0x348) = data::set_real(v227, "hookMass", &v363);
   v241 = qword_4AD09E8;
   v242 = qword_4AD09E8 + 0x330;
   v243 = sub_145DD00((qword_4AD09E8 + 0x330), v220);
@@ -1248,7 +1248,7 @@ LABEL_362:
   v259 = 0xFFFFFFFF;
   if ( *v246 )
   {
-    v260 = sub_1285C0("Shop", 4ui64);
+    v260 = data::get_name_id("Shop", 4ui64);
     v261 = *(v258 + 0x50);
     if ( v261 )
     {
@@ -1256,7 +1256,7 @@ LABEL_362:
       if ( !*(v258 + 0x20) )
         goto LABEL_372;
 LABEL_370:
-      v263 = sub_128A70(v258, "Shop", 4ui64, v260);
+      v263 = data::get_name_id(v258, "Shop", 4ui64, v260);
       if ( v263 >= 0 )
       {
         v259 = v262 + v263;
@@ -1274,7 +1274,7 @@ LABEL_372:
     v15 = v262 == 0;
     _UnitInfo = UnitInfo_;
     if ( !v15 )
-      v259 = sub_128A70(*(v258 + 0x50), "Shop", 4ui64, v260);
+      v259 = data::get_name_id(*(v258 + 0x50), "Shop", 4ui64, v260);
   }
 LABEL_374:
   v264 = *(v246 + 4);
@@ -1331,11 +1331,11 @@ LABEL_387:
   if ( v266 )
     v221 = v266;
   LODWORD(v363) = 0x42C80000;
-  *(_UnitInfo + 0x4CC) = sub_145B6B0(v221, "airfieldLen", &v363);
+  *(_UnitInfo + 0x4CC) = data::set_real(v221, "airfieldLen", &v363);
   LODWORD(v363) = 0x42C80000;
-  *(_UnitInfo + 0x4D0) = sub_145B6B0(v221, "maxSpeed", &v363);
+  *(_UnitInfo + 0x4D0) = data::set_real(v221, "maxSpeed", &v363);
   LODWORD(v363) = 0x45BB8000;
-  v278 = sub_145B6B0(v221, "maxAltitude", &v363);
+  v278 = data::set_real(v221, "maxAltitude", &v363);
   v279 = 3;
   if ( ((*&dword_44A01A0 * v278) + 1) >= 4 )
     v279 = (*&dword_44A01A0 * v278) + 1;
@@ -1344,9 +1344,9 @@ LABEL_387:
     v280 = v279;
   *(_UnitInfo + 0x59C) = v280;
   LODWORD(v363) = 0x43160000;
-  *(_UnitInfo + 0x50C) = sub_145B6B0(v221, "maxSpeed", &v363);
+  *(_UnitInfo + 0x50C) = data::set_real(v221, "maxSpeed", &v363);
   LODWORD(v363) = 0x41600000;
-  v281 = sub_145B6B0(v221, "climbSpeed", &v363);
+  v281 = data::set_real(v221, "climbSpeed", &v363);
   *(_UnitInfo + 0x514) = v281;
   v282 = *(_UnitInfo + 0x50C);
   v283 = *&dword_44AD398 * v282;
@@ -1433,9 +1433,9 @@ LABEL_387:
     while ( v286 < *(_UnitInfo + 0x59C) );
   }
   LODWORD(v363) = 0x42480000;
-  *(_UnitInfo + 0x5A8) = sub_145B6B0(v221, "turnTime", &v363);
+  *(_UnitInfo + 0x5A8) = data::set_real(v221, "turnTime", &v363);
   LODWORD(v363) = 0x42C80000;
-  v306 = sub_145B6B0(v221, "airfieldLen", &v363);
+  v306 = data::set_real(v221, "airfieldLen", &v363);
   *(_UnitInfo + 0x5A0) = v306;
   *(_UnitInfo + 0x5A4) = v306;
   v371 = 0i64;
@@ -1445,7 +1445,7 @@ LABEL_387:
   v366 = v220;
   LODWORD(v365) = 1;
   v372 = off_4B678C8;
-  sub_1546EF0(&v371, v307, "%s/performance/%s.blk", &v363, 2);
+  ctor_vprintf(&v371, v307, "%s/performance/%s.blk", &v363, 2);
   v308 = v371;
   v309 = v371;
   if ( !v373 )
@@ -1461,7 +1461,7 @@ LABEL_387:
     v312 = 0xFFFFFFFF;
     if ( !v363 )
       goto LABEL_432;
-    v313 = sub_1285C0("altSpecs", 8ui64);
+    v313 = data::get_name_id("altSpecs", 8ui64);
     v314 = *(v311 + 0x50);
     if ( v314 )
     {
@@ -1471,7 +1471,7 @@ LABEL_387:
 LABEL_429:
         if ( v315 )
         {
-          v317 = sub_128A70(*(v311 + 0x50), "altSpecs", 8ui64, v313);
+          v317 = data::get_name_id(*(v311 + 0x50), "altSpecs", 8ui64, v313);
           goto LABEL_431;
         }
         goto LABEL_432;
@@ -1483,7 +1483,7 @@ LABEL_429:
       if ( !*(v311 + 0x20) )
         goto LABEL_429;
     }
-    v316 = sub_128A70(v311, "altSpecs", 8ui64, v313);
+    v316 = data::get_name_id(v311, "altSpecs", 8ui64, v313);
     if ( v316 < 0 )
       goto LABEL_429;
     v317 = v315 + v316;
@@ -1535,7 +1535,7 @@ LABEL_447:
         v376 = 0i64;
         v375 = 2;
         v369 = off_4B678C8;
-        sub_1546EF0(&v368, v320, "altSpecs%d", &v375, 1);
+        ctor_vprintf(&v368, v320, "altSpecs%d", &v375, 1);
         v326 = v368;
         v327 = v368;
         if ( !v370 )
@@ -1599,11 +1599,11 @@ LABEL_462:
         if ( v331 )
         {
           *&v368 = UnitInfo_2[0x143];
-          UnitInfo_2[0x143] = sub_145B6B0(v331, "maxSpeed", &v368);
+          UnitInfo_2[0x143] = data::set_real(v331, "maxSpeed", &v368);
           *&v368 = UnitInfo_2[0x144];
-          UnitInfo_2[0x144] = sub_145B6B0(v331, "optSpeed", &v368);
+          UnitInfo_2[0x144] = data::set_real(v331, "optSpeed", &v368);
           *&v368 = UnitInfo_2[0x145];
-          UnitInfo_2[0x145] = sub_145B6B0(v331, "maxClimb", &v368);
+          UnitInfo_2[0x145] = data::set_real(v331, "maxClimb", &v368);
           *(UnitInfo_2 + 0x167) = 1;
         }
         v343 = UnitInfo_2 + 0x143;
@@ -1616,7 +1616,7 @@ LABEL_462:
           v376 = 0x3E8 * v344;
           v375 = 2;
           v369 = off_4B678C8;
-          sub_1546EF0(&v368, v329, "altSpecs%d", &v375, 1);
+          ctor_vprintf(&v368, v329, "altSpecs%d", &v375, 1);
           v347 = v368;
           v348 = v368;
           if ( !v370 )
@@ -1675,11 +1675,11 @@ LABEL_492:
                 if ( v360 )
                 {
                   LODWORD(v368) = *v361;
-                  *v361 = sub_145B6B0(v360, "maxSpeed", &v368);
+                  *v361 = data::set_real(v360, "maxSpeed", &v368);
                   LODWORD(v368) = v343[3 * v344 + 1];
-                  *&v343[3 * v344 + 1] = sub_145B6B0(v360, "optSpeed", &v368);
+                  *&v343[3 * v344 + 1] = data::set_real(v360, "optSpeed", &v368);
                   LODWORD(v368) = v343[3 * v344 + 2];
-                  *&v343[3 * v344 + 2] = sub_145B6B0(v360, "maxClimb", &v368);
+                  *&v343[3 * v344 + 2] = data::set_real(v360, "maxClimb", &v368);
                   UnitInfo_3 = UnitInfo_;
                   *(UnitInfo_ + 0x59C) = v344 + 1;
                 }
@@ -1693,9 +1693,9 @@ LABEL_492:
                 if ( ++v344 == 0xC )
                 {
                   LODWORD(v368) = *(UnitInfo_3 + 0x5A0);
-                  *(UnitInfo_3 + 0x5A0) = sub_145B6B0(&v363, "takeoffDistance", &v368);
+                  *(UnitInfo_3 + 0x5A0) = data::set_real(&v363, "takeoffDistance", &v368);
                   LODWORD(v368) = *(UnitInfo_3 + 0x5A4);
-                  *(UnitInfo_3 + 0x5A4) = sub_145B6B0(&v363, "landingDistance", &v368);
+                  *(UnitInfo_3 + 0x5A4) = data::set_real(&v363, "landingDistance", &v368);
                   v308 = v374;
                   goto LABEL_495;
                 }

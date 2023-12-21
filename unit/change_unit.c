@@ -342,7 +342,7 @@ __int64 __fastcall change_unit(__int64 a1)
   sub_489140(&v272, *(*(a1 + 0x18) + 0x6F0i64));
   sub_1606B70(a1 + 0x20, a1 + 0x80, 0i64);
   v260 = 0i64;
-  v9 = sub_1459B30(a1 + 0x20, "subclass", &v260);
+  v9 = data::get_str(a1 + 0x20, "subclass", &v260);
   if ( v9 )
   {
     v10 = v9;
@@ -429,7 +429,7 @@ LABEL_24:
   v264 = v18;
   v262 = 1;
   v200 = off_4B678C8;
-  sub_1546EF0(&v199, v20, "%s/%s", &v260, 2);
+  ctor_vprintf(&v199, v20, "%s/%s", &v260, 2);
   *v204 = a1 + 0x20;
   if ( v21 )
   {
@@ -850,7 +850,7 @@ LABEL_24:
       v109 = (a1 + 0x44);
       v212 = v95;
       v260 = 0i64;
-      v110 = sub_1459B30(v58, "trailerModelName", &v260);
+      v110 = data::get_str(v58, "trailerModelName", &v260);
       v208 = v110;
       v192 = 0i64;
       if ( v110 && *v110 && *(*(*v33 + 0xDE) + 0x1A8i64) >= 0 )
@@ -1175,7 +1175,7 @@ LABEL_254:
           if ( sub_18A790(v58, "simpleUnitSubsystems", 0xFFFFFFFFi64) )
           {
             LOBYTE(v260) = 0;
-            sub_145BBF0(v58, "simpleUnitSubsystems", &v260);
+            data::get_bool(v58, "simpleUnitSubsystems", &v260);
           }
           else if ( !sub_48D0C0(v58, "tank_crew") )
           {
@@ -1183,10 +1183,10 @@ LABEL_254:
           }
         }
         v260 = 0i64;
-        v160 = sub_1459B30(v58, "additionalEcsTemplate", &v260);
+        v160 = data::get_str(v58, "additionalEcsTemplate", &v260);
         v161 = sub_360F50(v58, *(a1 + 0x186));
         v260 = &szFile;
-        v162 = sub_1459B30(v58, "ecsTemplate", &v260);
+        v162 = data::get_str(v58, "ecsTemplate", &v260);
         sub_361330(&v260, *(a1 + 0x186), v162, v161, v160);
         v163 = v263;
         if ( (v263 & 0x80u) == 0 )

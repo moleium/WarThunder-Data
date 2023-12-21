@@ -84,7 +84,7 @@ char __fastcall unitSetZeroAmmo(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
   v75 = v7;
   v76 = 0i64;
   v77 = "isAlive";
-  v8 = sub_1459B30(v4, "target_type", &v77);
+  v8 = data::get_str(v4, "target_type", &v77);
   if ( v8 )
   {
     v9 = v8;
@@ -110,7 +110,7 @@ LABEL_7:
   v78 = v4;
   if ( !v15 )
   {
-    v16 = sub_1285C0("target", 6ui64);
+    v16 = data::get_name_id("target", 6ui64);
     v17 = *(v13 + 0x50);
     if ( v17 )
     {
@@ -121,7 +121,7 @@ LABEL_15:
         v15 = v18 == 0;
         v4 = v78;
         if ( !v15 )
-          v14 = sub_128A70(*(v13 + 0x50), "target", 6ui64, v16);
+          v14 = data::get_name_id(*(v13 + 0x50), "target", 6ui64, v16);
         goto LABEL_17;
       }
     }
@@ -131,7 +131,7 @@ LABEL_15:
       if ( !*(v13 + 0x20) )
         goto LABEL_15;
     }
-    v19 = sub_128A70(v13, "target", 6ui64, v16);
+    v19 = data::get_name_id(v13, "target", 6ui64, v16);
     if ( v19 >= 0 )
     {
       v14 = v18 + v19;
@@ -168,7 +168,7 @@ LABEL_17:
   }
   sub_CD4300(&UnitList, a1, v4, "object");
   LOBYTE(v77) = 0;
-  if ( sub_145BBF0(v4, "useForTriggerFiltered", &v77) )
+  if ( data::get_bool(v4, "useForTriggerFiltered", &v77) )
   {
     v22 = v76;
     if ( v76 )
@@ -206,14 +206,14 @@ LABEL_36:
     }
   }
   v77 = 0i64;
-  v28 = sub_1459B30(v4, "modificationReset", &v77);
+  v28 = data::get_str(v4, "modificationReset", &v77);
   if ( !v28 )
   {
     v35 = *v4;
     v36 = 0xFFFFFFFF;
     if ( !*v4 )
       goto LABEL_62;
-    v37 = sub_1285C0("triggerGroup", 0xCui64);
+    v37 = data::get_name_id("triggerGroup", 0xCui64);
     v38 = *(v35 + 0x50);
     if ( v38 )
     {
@@ -227,7 +227,7 @@ LABEL_36:
       if ( !*(v35 + 0x20) )
         goto LABEL_59;
     }
-    v40 = sub_128A70(v35, "triggerGroup", 0xCui64, v37);
+    v40 = data::get_name_id(v35, "triggerGroup", 0xCui64, v37);
     if ( v40 >= 0 )
     {
       v41 = v39 + v40;
@@ -236,7 +236,7 @@ LABEL_36:
 LABEL_59:
     if ( !v39 )
       goto LABEL_62;
-    v41 = sub_128A70(*(v35 + 0x50), "triggerGroup", 0xCui64, v37);
+    v41 = data::get_name_id(*(v35 + 0x50), "triggerGroup", 0xCui64, v37);
 LABEL_61:
     v36 = v41;
 LABEL_62:

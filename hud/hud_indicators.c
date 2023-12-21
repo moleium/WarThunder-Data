@@ -69,7 +69,7 @@ __int64 __fastcall hud_indicators(_QWORD *a1, __int64 *a2)
   v6 = 0xFFFFFFFF;
   if ( *a2 )
   {
-    v7 = sub_1285C0("indicatorsPresets", 0x11ui64);
+    v7 = data::get_name_id("indicatorsPresets", 0x11ui64);
     v8 = *(v5 + 0x50);
     if ( v8 )
     {
@@ -83,7 +83,7 @@ __int64 __fastcall hud_indicators(_QWORD *a1, __int64 *a2)
       if ( !*(v5 + 0x20) )
         goto LABEL_8;
     }
-    v10 = sub_128A70(v5, "indicatorsPresets", 0x11i64, v7);
+    v10 = data::get_name_id(v5, "indicatorsPresets", 0x11i64, v7);
     if ( v10 >= 0 )
     {
       v11 = v9 + v10;
@@ -94,7 +94,7 @@ LABEL_10:
 LABEL_8:
     if ( !v9 )
       goto LABEL_11;
-    v11 = sub_128A70(*(v5 + 0x50), "indicatorsPresets", 0x11i64, v7);
+    v11 = data::get_name_id(*(v5 + 0x50), "indicatorsPresets", 0x11i64, v7);
     goto LABEL_10;
   }
 LABEL_11:
@@ -169,59 +169,59 @@ LABEL_11:
   }
 LABEL_33:
   LODWORD(v62) = 0xFFFAFAFF;
-  sub_145AAA0(v2, &v60, "fontColorFriend", &v62);
+  getE3dcolor(v2, &v60, "fontColorFriend", &v62);
   *(a1[0xC7] + 0x1558i64) = v60;
   LODWORD(v62) = 0xFFFFFAFA;
-  sub_145AAA0(v2, &v60, "fontColorEnemy", &v62);
+  getE3dcolor(v2, &v60, "fontColorEnemy", &v62);
   *(a1[0xC7] + 0x1554i64) = v60;
   LODWORD(v62) = 0xDCB4B4B4;
-  sub_145AAA0(v2, &v60, "fontColorUseless", &v62);
+  getE3dcolor(v2, &v60, "fontColorUseless", &v62);
   *(a1[0xC7] + 0x155Ci64) = v60;
   LODWORD(v62) = 0xFFF0F5F0;
-  sub_145AAA0(v2, &v60, "fontColorTeam", &v62);
+  getE3dcolor(v2, &v60, "fontColorTeam", &v62);
   *(a1[0xC7] + 0x1560i64) = v60;
   LODWORD(v62) = 0xFFFAFAF0;
-  sub_145AAA0(v2, &v60, "fontColorOwnPlayer", &v62);
+  getE3dcolor(v2, &v60, "fontColorOwnPlayer", &v62);
   *(a1[0xC7] + 0x1564i64) = v60;
   LODWORD(v62) = 0x82001482;
-  sub_145AAA0(v2, &v60, "fontFxColorFriend", &v62);
+  getE3dcolor(v2, &v60, "fontFxColorFriend", &v62);
   *(a1[0xC7] + 0x1570i64) = v60;
   LODWORD(v62) = 0x876E0D00;
-  sub_145AAA0(v2, &v60, "fontFxColorEnemy", &v62);
+  getE3dcolor(v2, &v60, "fontFxColorEnemy", &v62);
   *(a1[0xC7] + 0x156Ci64) = v60;
   LODWORD(v62) = 0xC8000000;
-  sub_145AAA0(v2, &v60, "fontFxColorUseless", &v62);
+  getE3dcolor(v2, &v60, "fontFxColorUseless", &v62);
   *(a1[0xC7] + 0x1574i64) = v60;
   LODWORD(v62) = 0x82006400;
-  sub_145AAA0(v2, &v60, "fontFxColorTeam", &v62);
+  getE3dcolor(v2, &v60, "fontFxColorTeam", &v62);
   *(a1[0xC7] + 0x1578i64) = v60;
   LODWORD(v62) = 0xC8828200;
-  sub_145AAA0(v2, &v60, "fontFxColorOwnPlayer", &v62);
+  getE3dcolor(v2, &v60, "fontFxColorOwnPlayer", &v62);
   *(a1[0xC7] + 0x157Ci64) = v60;
   LODWORD(v62) = 0x40FF0000;
-  sub_145AAA0(v2, &v60, "objectivesEnemyBlinkColor", &v62);
+  getE3dcolor(v2, &v60, "objectivesEnemyBlinkColor", &v62);
   *(a1[0xC7] + 0x154Ci64) = v60;
   LODWORD(v62) = 0x80808080;
-  sub_145AAA0(v2, &v60, "objectivesBlinkColor", &v62);
+  getE3dcolor(v2, &v60, "objectivesBlinkColor", &v62);
   *(a1[0xC7] + 0x1544i64) = v60;
   LODWORD(v62) = 0x32323200;
-  sub_145AAA0(v2, &v60, "objectivesEnemyBlinkFxColor", &v62);
+  getE3dcolor(v2, &v60, "objectivesEnemyBlinkFxColor", &v62);
   *(a1[0xC7] + 0x1550i64) = v60;
   LODWORD(v62) = 0x80808080;
-  sub_145AAA0(v2, &v60, "objectivesBlinkFxColor", &v62);
+  getE3dcolor(v2, &v60, "objectivesBlinkFxColor", &v62);
   *(a1[0xC7] + 0x1548i64) = v60;
   LODWORD(v62) = 0x2D;
-  *(a1[0xC7] + 0x1444i64) = sub_145A390(v2, "fontFxScale", &v62);
+  *(a1[0xC7] + 0x1444i64) = data::set_int(v2, "fontFxScale", &v62);
   LODWORD(v62) = 0x3F333333;
-  v32 = sub_145B6B0(v2, "uselessFontFxOpacity", &v62);
+  v32 = data::set_real(v2, "uselessFontFxOpacity", &v62);
   *(a1[0xC7] + 0x1448i64) = LODWORD(v32);
   LODWORD(v62) = 0x3C;
-  *(a1[0xC7] + 0x144Ci64) = sub_145A390(v2, "notVisibleColorAlpha", &v62);
+  *(a1[0xC7] + 0x144Ci64) = data::set_int(v2, "notVisibleColorAlpha", &v62);
   LODWORD(v62) = 0x3E4CCCCD;
-  v33 = sub_145B6B0(v2, "notVisibleK", &v62);
+  v33 = data::set_real(v2, "notVisibleK", &v62);
   *(a1[0xC7] + 0x1450i64) = LODWORD(v33);
   LODWORD(v62) = 0x3F000000;
-  v34 = sub_145B6B0(v2, "notVisibleTextMultiplier", &v62);
+  v34 = data::set_real(v2, "notVisibleTextMultiplier", &v62);
   *(a1[0xC7] + 0x1454i64) = LODWORD(v34);
   sub_A4F500(a1[0xC3], a1[0xC7] + 0x1558i64, 0i64);
   sub_A4F500(a1[0xC3], a1[0xC7] + 0x1570i64, 0i64);
@@ -233,49 +233,49 @@ LABEL_33:
     return result;
   v35 = a1 + 0x3CE;
   LODWORD(v62) = 0xFF00FF00;
-  sub_145AAA0(v2, &v60, "helicopterCrosshairColor", &v62);
+  getE3dcolor(v2, &v60, "helicopterCrosshairColor", &v62);
   *(*v35 + 8i64) = v60;
   LODWORD(v62) = 0xFF00FF00;
-  sub_145AAA0(v2, &v60, "helicopterHudColor", &v62);
+  getE3dcolor(v2, &v60, "helicopterHudColor", &v62);
   *(*v35 + 0xCi64) = v60;
   LODWORD(v62) = 0xFF00FF00;
-  sub_145AAA0(v2, &v60, "helicopterHudParamColor", &v62);
+  getE3dcolor(v2, &v60, "helicopterHudParamColor", &v62);
   *(*v35 + 0x10i64) = v60;
   LODWORD(v62) = 0xFF00FF00;
-  sub_145AAA0(v2, &v60, "aircraftHudColor", &v62);
+  getE3dcolor(v2, &v60, "aircraftHudColor", &v62);
   *(*v35 + 0x14i64) = v60;
   LODWORD(v62) = 0xFFFFFFFF;
-  sub_145AAA0(v2, &v60, "aircraftHudParamColor", &v62);
+  getE3dcolor(v2, &v60, "aircraftHudParamColor", &v62);
   *(*v35 + 0x18i64) = v60;
   LODWORD(v62) = 0xFF0AFF0A;
-  sub_145AAA0(v2, &v60, "targetingPodHudColor", &v62);
+  getE3dcolor(v2, &v60, "targetingPodHudColor", &v62);
   *(*v35 + 0x20i64) = v60;
   LODWORD(v62) = 0xFF00FF00;
-  sub_145AAA0(v2, &v60, "arbiterHudColor", &v62);
+  getE3dcolor(v2, &v60, "arbiterHudColor", &v62);
   *(*v35 + 0x1Ci64) = v60;
   LODWORD(v62) = 0xFFFFFF00;
-  sub_145AAA0(v2, &v60, "helicopterHudAlertColorLow", &v62);
+  getE3dcolor(v2, &v60, "helicopterHudAlertColorLow", &v62);
   *(*v35 + 0x24i64) = v60;
   LODWORD(v62) = 0xFFFF8000;
-  sub_145AAA0(v2, &v60, "helicopterHudAlertColorMedium", &v62);
+  getE3dcolor(v2, &v60, "helicopterHudAlertColorMedium", &v62);
   *(*v35 + 0x28i64) = v60;
   LODWORD(v62) = 0xFFFF0000;
-  sub_145AAA0(v2, &v60, "helicopterHudAlertColorHigh", &v62);
+  getE3dcolor(v2, &v60, "helicopterHudAlertColorHigh", &v62);
   *(*v35 + 0x2Ci64) = v60;
   LODWORD(v62) = 0xFFFFFF00;
-  sub_145AAA0(v2, &v60, "helicopterHudAlertColorLow", &v62);
+  getE3dcolor(v2, &v60, "helicopterHudAlertColorLow", &v62);
   *(*v35 + 0x30i64) = v60;
   LODWORD(v62) = 0xFFFF8000;
-  sub_145AAA0(v2, &v60, "helicopterHudAlertColorMedium", &v62);
+  getE3dcolor(v2, &v60, "helicopterHudAlertColorMedium", &v62);
   *(*v35 + 0x34i64) = v60;
   LODWORD(v62) = 0xFFFF0000;
-  sub_145AAA0(v2, &v60, "helicopterHudAlertColorHigh", &v62);
+  getE3dcolor(v2, &v60, "helicopterHudAlertColorHigh", &v62);
   *(*v35 + 0x38i64) = v60;
   LODWORD(v62) = 0xF047E827;
-  sub_145AAA0(v2, &v60, "helicopterMfdColor", &v62);
+  getE3dcolor(v2, &v60, "helicopterMfdColor", &v62);
   *(*v35 + 0x3Ci64) = v60;
   LODWORD(v62) = 0x42F00000;
-  v37 = sub_145B6B0(v2, "helicopterWarningOverheatTimeToDie", &v62);
+  v37 = data::set_real(v2, "helicopterWarningOverheatTimeToDie", &v62);
   *(*v35 + 0x40i64) = LODWORD(v37);
   *(*v35 + 0x48i64) = 0;
   while ( 1 )
@@ -286,7 +286,7 @@ LABEL_33:
     v61 = v39;
     v60 = 2;
     v63 = off_4B678C8;
-    sub_1546EF0(&v62, v36, "helicopterWarningOverheatFrequency%d", &v60, 1);
+    ctor_vprintf(&v62, v36, "helicopterWarningOverheatFrequency%d", &v60, 1);
     v40 = v62;
     v41 = v62;
     if ( !v64 )

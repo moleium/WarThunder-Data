@@ -199,13 +199,13 @@ void __fastcall shell_info(__int64 shell_info, unsigned int a2, __int64 a3)
     *(shell_info + 0x150) = sub_16CF170(v4);
     v8 = *(game + 0x498);
     v185 = &szFile;
-    v9 = sub_1459B30(v6, "bulletType", &v185);
+    v9 = data::get_str(v6, "bulletType", &v185);
     if ( v9 )
     {
       v10 = v9;
       v11 = strlen(v9);
-      v12 = sub_1285C0(v10, v11);
-      v13 = sub_128A70(v8 + 0x3568, v10, v11, v12);
+      v12 = data::get_name_id(v10, v11);
+      v13 = data::get_name_id(v8 + 0x3568, v10, v11, v12);
     }
     else
     {
@@ -217,7 +217,7 @@ void __fastcall shell_info(__int64 shell_info, unsigned int a2, __int64 a3)
   LODWORD(v188) = v7;
   v14 = *(a3 + 8);
   v185 = *(a3 + 0x10);
-  v15 = sub_1459B30(v6, "bulletName", &v185);
+  v15 = data::get_str(v6, "bulletName", &v185);
   v16 = *(shell_info + 0x10);
   if ( v16 != v15 )
   {
@@ -239,7 +239,7 @@ void __fastcall shell_info(__int64 shell_info, unsigned int a2, __int64 a3)
   v22 = 0xFFFFFFFF;
   if ( *v6 )
   {
-    v23 = sub_1285C0("rocket", 6ui64);
+    v23 = data::get_name_id("rocket", 6ui64);
     v24 = *(v21 + 0x50);
     if ( v24 )
     {
@@ -253,7 +253,7 @@ void __fastcall shell_info(__int64 shell_info, unsigned int a2, __int64 a3)
       if ( !*(v21 + 0x20) )
         goto LABEL_25;
     }
-    v26 = sub_128A70(v21, "rocket", 6ui64, v23);
+    v26 = data::get_name_id(v21, "rocket", 6ui64, v23);
     if ( v26 >= 0 )
     {
       v27 = v25 + v26;
@@ -264,7 +264,7 @@ LABEL_27:
 LABEL_25:
     if ( !v25 )
       goto LABEL_28;
-    v27 = sub_128A70(*(v21 + 0x50), "rocket", 6ui64, v23);
+    v27 = data::get_name_id(*(v21 + 0x50), "rocket", 6ui64, v23);
     goto LABEL_27;
   }
 LABEL_28:
@@ -356,15 +356,15 @@ LABEL_54:
     }
   }
   LOBYTE(v185) = 0;
-  *(shell_info + 0x14C) = sub_145BBF0(v6, "isAam", &v185);
+  *(shell_info + 0x14C) = data::get_bool(v6, "isAam", &v185);
   if ( !v44 )
   {
     LODWORD(v185) = 0;
-    *(shell_info + 0x58) = sub_145B6B0(v6, "caliber", &v185);
+    *(shell_info + 0x58) = data::set_real(v6, "caliber", &v185);
     goto LABEL_61;
   }
   LODWORD(v185) = *(v44 + 0x10);
-  *(shell_info + 0x58) = sub_145B6B0(v6, "caliber", &v185);
+  *(shell_info + 0x58) = data::set_real(v6, "caliber", &v185);
   if ( !*(v44 + 0x3C0) )
   {
 LABEL_61:
@@ -374,17 +374,17 @@ LABEL_61:
   v48 = *(v44 + 0x3C4);
 LABEL_62:
   LODWORD(v185) = v48;
-  *(shell_info + 0x5C) = sub_145B6B0(v6, "speed", &v185);
+  *(shell_info + 0x5C) = data::set_real(v6, "speed", &v185);
   LODWORD(v185) = 0x3F800000;
-  *(shell_info + 0x148) = sub_145B6B0(v6, "recoilMultiplier", &v185);
+  *(shell_info + 0x148) = data::set_real(v6, "recoilMultiplier", &v185);
   LODWORD(v185) = *(*(game + 0x498) + 4i64 * v14 + 0x212C);
-  *(shell_info + 0x60) = sub_145B6B0(v6, "speedDispersion", &v185);
+  *(shell_info + 0x60) = data::set_real(v6, "speedDispersion", &v185);
   LOBYTE(v185) = 0;
-  *(shell_info + 0x6C) = sub_145BBF0(v6, "explosionInAir", &v185);
+  *(shell_info + 0x6C) = data::get_bool(v6, "explosionInAir", &v185);
   LOBYTE(v185) = 0;
-  *(shell_info + 0x6D) = sub_145BBF0(v6, "selfDestructionInAir", &v185);
+  *(shell_info + 0x6D) = data::get_bool(v6, "selfDestructionInAir", &v185);
   v185 = 0i64;
-  v49 = sub_1459B30(v6, "shotFxType", &v185);
+  v49 = data::get_str(v6, "shotFxType", &v185);
   v50 = 0xFFFFFFFF;
   v51 = 0xFFFFFFFF;
   if ( v49 )
@@ -395,26 +395,26 @@ LABEL_62:
   }
   *(shell_info + 0x74) = v51;
   v185 = 0i64;
-  v52 = sub_1459B30(v6, "attachFxType", &v185);
+  v52 = data::get_str(v6, "attachFxType", &v185);
   if ( v52 && *v52 )
     v50 = sub_93E610(v52);
   *(shell_info + 0x78) = v50;
   v185 = 0i64;
-  v53 = sub_1459B30(v6, "selfDestructionFx", &v185);
+  v53 = data::get_str(v6, "selfDestructionFx", &v185);
   if ( !v53 || !*v53 || (v54 = sub_93E610(v53), *(shell_info + 0x70) = v54, v54 < 0) )
     *(shell_info + 0x70) = 8 - (*(shell_info + 0x6C) == 0);
   LODWORD(v185) = *(*(game + 0x498) + 0x38C8i64);
-  *(shell_info + 0x13C) = sub_145B6B0(v6, "ricochetProbability", &v185);
+  *(shell_info + 0x13C) = data::set_real(v6, "ricochetProbability", &v185);
   LODWORD(v185) = 0x461C4000;
-  *(shell_info + 0x7C) = sub_145B6B0(v6, "effectiveDistance", &v185);
+  *(shell_info + 0x7C) = data::set_real(v6, "effectiveDistance", &v185);
   LODWORD(v185) = *(*(game + 0x498) + 0x38D4i64);
-  *(shell_info + 0x17C) = sub_145B6B0(v6, "ricochetTimeToLive", &v185);
+  *(shell_info + 0x17C) = data::set_real(v6, "ricochetTimeToLive", &v185);
   LODWORD(v185) = 0;
-  *(shell_info + 0x134) = sub_145A390(v6, "bulletCount", &v185);
+  *(shell_info + 0x134) = data::set_int(v6, "bulletCount", &v185);
   LODWORD(v185) = 0xBF800000;
-  *(shell_info + 0x140) = sub_145B6B0(v6, "maxDeltaAngle", &v185);
+  *(shell_info + 0x140) = data::set_real(v6, "maxDeltaAngle", &v185);
   LODWORD(v185) = 0xBF800000;
-  *(shell_info + 0x144) = sub_145B6B0(v6, "maxDeltaAngleVertical", &v185);
+  *(shell_info + 0x144) = data::set_real(v6, "maxDeltaAngleVertical", &v185);
   v55 = sub_16A0C40(v42);
   if ( v44 )
     sub_223310(shell_info + 0x80, v44 + 0xE8);
@@ -424,7 +424,7 @@ LABEL_62:
   v57 = 0xFFFFFFFF;
   if ( *v6 )
   {
-    v58 = sub_1285C0("visual", 6ui64);
+    v58 = data::get_name_id("visual", 6ui64);
     v59 = *(v56 + 0x50);
     if ( v59 )
     {
@@ -438,7 +438,7 @@ LABEL_62:
       if ( !*(v56 + 0x20) )
         goto LABEL_82;
     }
-    v61 = sub_128A70(v56, "visual", 6ui64, v58);
+    v61 = data::get_name_id(v56, "visual", 6ui64, v58);
     if ( v61 >= 0 )
     {
       v62 = v60 + v61;
@@ -449,7 +449,7 @@ LABEL_84:
 LABEL_82:
     if ( !v60 )
       goto LABEL_85;
-    v62 = sub_128A70(*(v56 + 0x50), "visual", 6ui64, v58);
+    v62 = data::get_name_id(*(v56 + 0x50), "visual", 6ui64, v58);
     goto LABEL_84;
   }
 LABEL_85:
@@ -508,16 +508,16 @@ LABEL_102:
   sub_145C170(v65, &v185, "range_percent_of_ammo", v190);
   *(shell_info + 0x110) = v185;
   LODWORD(v185) = 4;
-  v77 = sub_145A390(v65, "traceFreq", &v185);
+  v77 = data::set_int(v65, "traceFreq", &v185);
   v78 = 1;
   if ( v77 >= 2 )
     v78 = v77;
   *(shell_info + 0x11C) = v78;
   *(shell_info + 0x118) = v78;
   LODWORD(v185) = 0;
-  *(shell_info + 0x130) = sub_145A390(v65, "traceOffset", &v185);
+  *(shell_info + 0x130) = data::set_int(v65, "traceOffset", &v185);
   v185 = 0i64;
-  v79 = sub_1459B30(v65, "tracer", &v185);
+  v79 = data::get_str(v65, "tracer", &v185);
   v80 = *(*(game + 0x630) + 0x3C8B0i64);
   if ( v80 )
   {
@@ -552,7 +552,7 @@ LABEL_102:
     *(shell_info + 0x120) = v82;
     v86 = *(*(game + 0x630) + 0x3C8B0i64);
     v185 = 0i64;
-    v87 = sub_1459B30(v65, "trail", &v185);
+    v87 = data::get_str(v65, "trail", &v185);
     if ( v87 && *(v86 + 0x181158) )
     {
       v88 = v87;
@@ -582,7 +582,7 @@ LABEL_102:
 LABEL_126:
     *(shell_info + 0x124) = v81;
     LOBYTE(v185) = 0;
-    *(shell_info + 0x12C) = sub_145BBF0(v65, "projOff", &v185);
+    *(shell_info + 0x12C) = data::get_bool(v65, "projOff", &v185);
   }
   else
   {
@@ -631,7 +631,7 @@ LABEL_136:
     v102 = _mm_andnot_ps(v101, v99).m128_u32[0] | LODWORD(Y) & v101.m128_i32[0];
   }
   LODWORD(v185) = v102;
-  *(shell_info + 0x138) = sub_145B6B0(v6, "shellExplScale", &v185);
+  *(shell_info + 0x138) = data::set_real(v6, "shellExplScale", &v185);
   if ( (v189 & 0x80000000) != 0 )
   {
     v103 = (v189 & 0x7FFFFFFF) >> 0x1B;
@@ -658,21 +658,21 @@ LABEL_136:
   v104 = v107 && (v108 = *(v107 + 8i64 * v105)) != 0 && *(v108 + 4) >= *(*(game + 0x498) + 0x22F8i64);
 LABEL_152:
   LOBYTE(v185) = v104;
-  *(shell_info + 0x158) = sub_145BBF0(v6, "playHitEffectFromServerOnly", &v185);
+  *(shell_info + 0x158) = data::get_bool(v6, "playHitEffectFromServerOnly", &v185);
   LOBYTE(v185) = 0;
-  v109 = sub_145BBF0(v6, "hasProximityFuse", &v185);
+  v109 = data::get_bool(v6, "hasProximityFuse", &v185);
   v110 = 1;
   if ( !v109 )
   {
     LODWORD(v185) = 0;
-    v110 = COERCE_FLOAT(COERCE_UNSIGNED_INT(sub_145B6B0(v6, "proximityFuseRange", &v185)) & xmmword_449AF40) >= *&dword_44A0308;
+    v110 = COERCE_FLOAT(COERCE_UNSIGNED_INT(data::set_real(v6, "proximityFuseRange", &v185)) & xmmword_449AF40) >= *&dword_44A0308;
   }
   *(shell_info + 0x159) = v110;
   v111 = *v6;
   v112 = 0xFFFFFFFF;
   if ( *v6 )
   {
-    v113 = sub_1285C0("proximityFuse", 0xDui64);
+    v113 = data::get_name_id("proximityFuse", 0xDui64);
     v114 = *(v111 + 0x50);
     if ( v114 )
     {
@@ -686,7 +686,7 @@ LABEL_152:
       if ( !*(v111 + 0x20) )
         goto LABEL_161;
     }
-    v116 = sub_128A70(v111, "proximityFuse", 0xDui64, v113);
+    v116 = data::get_name_id(v111, "proximityFuse", 0xDui64, v113);
     if ( v116 >= 0 )
     {
       v117 = v115 + v116;
@@ -697,7 +697,7 @@ LABEL_163:
 LABEL_161:
     if ( !v115 )
       goto LABEL_164;
-    v117 = sub_128A70(*(v111 + 0x50), "proximityFuse", 0xDui64, v113);
+    v117 = data::get_name_id(*(v111 + 0x50), "proximityFuse", 0xDui64, v113);
     goto LABEL_163;
   }
 LABEL_164:
@@ -755,29 +755,29 @@ LABEL_181:
     v132 = v120;
   sub_244590(shell_info + 0x15C, v132, v6);
   LODWORD(v185) = 0xBF800000;
-  *(shell_info + 0x180) = sub_145B6B0(v6, "timeFuseDistanceError", &v185);
+  *(shell_info + 0x180) = data::set_real(v6, "timeFuseDistanceError", &v185);
   LODWORD(v185) = 0;
-  *(shell_info + 0x184) = sub_145B6B0(v6, "timeFuseDistanceOffset", &v185);
+  *(shell_info + 0x184) = data::set_real(v6, "timeFuseDistanceOffset", &v185);
   LODWORD(v185) = 0xBF800000;
-  v133 = sub_145B6B0(v191, "shotFreq", &v185);
+  v133 = data::set_real(v191, "shotFreq", &v185);
   *(shell_info + 0x64) = v133;
   if ( v133 > 0.0 )
     *(shell_info + 0x68) = Y / fmaxf(v133, *&dword_44A01A0);
   LODWORD(v185) = 0xBF800000;
-  *(shell_info + 0x188) = sub_145B6B0(v6, "beamPatchRadius", &v185);
+  *(shell_info + 0x188) = data::set_real(v6, "beamPatchRadius", &v185);
   LOBYTE(v185) = 0;
-  *(shell_info + 0x18C) = sub_145BBF0(v6, "doubleBullet", &v185);
+  *(shell_info + 0x18C) = data::get_bool(v6, "doubleBullet", &v185);
   LODWORD(v185) = 0;
-  *(shell_info + 0x190) = sub_145B6B0(v6, "secondBulletOffset", &v185);
+  *(shell_info + 0x190) = data::set_real(v6, "secondBulletOffset", &v185);
   LODWORD(v185) = 0x3F800000;
-  *(shell_info + 0x194) = sub_145B6B0(v6, "secondBulletSpeedScale", &v185);
+  *(shell_info + 0x194) = data::set_real(v6, "secondBulletSpeedScale", &v185);
   LODWORD(v185) = 0x40000000;
-  *(shell_info + 0x198) = sub_145B6B0(v6, "rotationSpeed", &v185);
+  *(shell_info + 0x198) = data::set_real(v6, "rotationSpeed", &v185);
   v134 = *v6;
   v135 = 0xFFFFFFFF;
   if ( *v6 )
   {
-    v136 = sub_1285C0("DamageParts", 0xBui64);
+    v136 = data::get_name_id("DamageParts", 0xBui64);
     v137 = *(v134 + 0x50);
     if ( v137 )
     {
@@ -791,7 +791,7 @@ LABEL_181:
       if ( !*(v134 + 0x20) )
         goto LABEL_192;
     }
-    v139 = sub_128A70(v134, "DamageParts", 0xBui64, v136);
+    v139 = data::get_name_id(v134, "DamageParts", 0xBui64, v136);
     if ( v139 >= 0 )
     {
       v140 = v138 + v139;
@@ -802,7 +802,7 @@ LABEL_194:
 LABEL_192:
     if ( !v138 )
       goto LABEL_195;
-    v140 = sub_128A70(*(v134 + 0x50), "DamageParts", 0xBui64, v136);
+    v140 = data::get_name_id(*(v134 + 0x50), "DamageParts", 0xBui64, v136);
     goto LABEL_194;
   }
 LABEL_195:
@@ -864,7 +864,7 @@ LABEL_219:
             v190[1] = v159;
             LODWORD(v190[0]) = 1;
             v186 = off_4B678C8;
-            sub_1546EF0(&v185, v156, "bullet@%s", v190, 1);
+            ctor_vprintf(&v185, v156, "bullet@%s", v190, 1);
             LODWORD(v190[0]) = GetCurrentThreadId();
             if ( dword_4B73E58 != LODWORD(v190[0]) )
             {
@@ -919,7 +919,7 @@ LABEL_229:
   v163 = 0xFFFFFFFF;
   if ( !*v6 )
     goto LABEL_239;
-  v164 = sub_1285C0("DamageEffects", 0xDui64);
+  v164 = data::get_name_id("DamageEffects", 0xDui64);
   v165 = *(v162 + 0x50);
   if ( v165 )
   {
@@ -933,7 +933,7 @@ LABEL_229:
     if ( !*(v162 + 0x20) )
       goto LABEL_236;
   }
-  v167 = sub_128A70(v162, "DamageEffects", 0xDui64, v164);
+  v167 = data::get_name_id(v162, "DamageEffects", 0xDui64, v164);
   if ( v167 >= 0 )
   {
     v168 = v166 + v167;
@@ -942,7 +942,7 @@ LABEL_229:
 LABEL_236:
   if ( !v166 )
     goto LABEL_239;
-  v168 = sub_128A70(*(v162 + 0x50), "DamageEffects", 0xDui64, v164);
+  v168 = data::get_name_id(*(v162 + 0x50), "DamageEffects", 0xDui64, v164);
 LABEL_238:
   v163 = v168;
 LABEL_239:

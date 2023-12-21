@@ -347,7 +347,7 @@ const char *__fastcall webui_engine(__int64 http_req, __int64 a2, double a3)
         *&Str1[8] = i;
         *Str1 = 2;
         *&v240.st_nlink = off_4B678C8;
-        sub_1546EF0(&v240, v9, "modes.%d", Str1, 1);
+        ctor_vprintf(&v240, v9, "modes.%d", Str1, 1);
         v224 = 0i64;
         v225 = *&off_4B678C8;
         v226 = 0i64;
@@ -357,7 +357,7 @@ const char *__fastcall webui_engine(__int64 http_req, __int64 a2, double a3)
           v15 = &szFile;
         *&Str1[8] = v15;
         *Str1 = 1;
-        sub_1546EF0(&v224, 0x20i64, "%s.enabled", Str1, 1);
+        ctor_vprintf(&v224, 0x20i64, "%s.enabled", Str1, 1);
         v16 = &szFile;
         if ( v226 )
           v16 = v224;
@@ -371,7 +371,7 @@ const char *__fastcall webui_engine(__int64 http_req, __int64 a2, double a3)
         v232 = 0;
         *&Str1[8] = v15;
         *Str1 = 1;
-        sub_1546EF0(&v224, 0x20i64, "%s.modeConfig", Str1, 1);
+        ctor_vprintf(&v224, 0x20i64, "%s.modeConfig", Str1, 1);
         v19 = &szFile;
         if ( v226 )
           v19 = v224;
@@ -385,7 +385,7 @@ const char *__fastcall webui_engine(__int64 http_req, __int64 a2, double a3)
         *(v14 + 0xC) = 3 * (v232 == 0);
         *&Str1[8] = v15;
         *Str1 = 1;
-        sub_1546EF0(&v224, 0x20i64, "%s.throttle", Str1, 1);
+        ctor_vprintf(&v224, 0x20i64, "%s.throttle", Str1, 1);
         v22 = &szFile;
         if ( v226 )
           v22 = v224;
@@ -398,7 +398,7 @@ const char *__fastcall webui_engine(__int64 http_req, __int64 a2, double a3)
           sub_1EC440(Str1, "%f");
         *&Str1[8] = v15;
         *Str1 = 1;
-        sub_1546EF0(&v224, 0x20i64, "%s.manifoldPressure", Str1, 1);
+        ctor_vprintf(&v224, 0x20i64, "%s.manifoldPressure", Str1, 1);
         v25 = &szFile;
         if ( v226 )
           v25 = v224;
@@ -412,7 +412,7 @@ const char *__fastcall webui_engine(__int64 http_req, __int64 a2, double a3)
         *(v14 + 0x14) = *(v14 + 0x14) / *&qword_4A791F0;
         *&Str1[8] = v15;
         *Str1 = 1;
-        sub_1546EF0(&v224, 0x20i64, "%s.omega", Str1, 1);
+        ctor_vprintf(&v224, 0x20i64, "%s.omega", Str1, 1);
         v28 = &szFile;
         if ( v226 )
           v28 = v224;
@@ -425,7 +425,7 @@ const char *__fastcall webui_engine(__int64 http_req, __int64 a2, double a3)
           sub_1EC440(Str1, "%f");
         *&Str1[8] = v15;
         *Str1 = 1;
-        sub_1546EF0(&v224, 0x20i64, "%s.mixtureAutoMode", Str1, 1);
+        ctor_vprintf(&v224, 0x20i64, "%s.mixtureAutoMode", Str1, 1);
         v31 = &szFile;
         if ( v226 )
           v31 = v224;
@@ -438,7 +438,7 @@ const char *__fastcall webui_engine(__int64 http_req, __int64 a2, double a3)
         {
           *&Str1[8] = v15;
           *Str1 = 1;
-          sub_1546EF0(&v224, 0x20i64, "%s.mixture", Str1, 1);
+          ctor_vprintf(&v224, 0x20i64, "%s.mixture", Str1, 1);
           v34 = &szFile;
           if ( v226 )
             v34 = v224;
@@ -451,7 +451,7 @@ const char *__fastcall webui_engine(__int64 http_req, __int64 a2, double a3)
         }
         *&Str1[8] = v15;
         *Str1 = 1;
-        sub_1546EF0(&v224, 0x20i64, "%s.superchargerAutoMode", Str1, 1);
+        ctor_vprintf(&v224, 0x20i64, "%s.superchargerAutoMode", Str1, 1);
         v35 = &szFile;
         if ( v226 )
           v35 = v224;
@@ -465,7 +465,7 @@ const char *__fastcall webui_engine(__int64 http_req, __int64 a2, double a3)
           v236 = 0;
           *&Str1[8] = v15;
           *Str1 = 1;
-          sub_1546EF0(&v224, 0x20i64, "%s.superchargerGear", Str1, 1);
+          ctor_vprintf(&v224, 0x20i64, "%s.superchargerGear", Str1, 1);
           v38 = &szFile;
           if ( v226 )
             v38 = v224;
@@ -479,7 +479,7 @@ const char *__fastcall webui_engine(__int64 http_req, __int64 a2, double a3)
         }
         *&Str1[8] = v15;
         *Str1 = 1;
-        sub_1546EF0(&v224, 0x20i64, "%s.propeller", Str1, 1);
+        ctor_vprintf(&v224, 0x20i64, "%s.propeller", Str1, 1);
         v39 = v224;
         v40 = v224;
         if ( !v226 )

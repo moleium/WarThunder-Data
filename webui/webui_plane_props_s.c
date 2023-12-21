@@ -327,7 +327,7 @@ const char *__fastcall webui_plane_props_s(__int64 http_req, __int64 a2, double 
         *&Str1[8] = i;
         *Str1 = 2;
         *&v220.st_nlink = off_4B678C8;
-        sub_1546EF0(&v220, v9, "modes.%d", Str1, 1);
+        ctor_vprintf(&v220, v9, "modes.%d", Str1, 1);
         v204 = 0i64;
         v205 = *&off_4B678C8;
         v206 = 0i64;
@@ -337,7 +337,7 @@ const char *__fastcall webui_plane_props_s(__int64 http_req, __int64 a2, double 
           v15 = &szFile;
         *&Str1[8] = v15;
         *Str1 = 1;
-        sub_1546EF0(&v204, 0x20i64, "%s.enabled", Str1, 1);
+        ctor_vprintf(&v204, 0x20i64, "%s.enabled", Str1, 1);
         v16 = &szFile;
         if ( v206 )
           v16 = v204;
@@ -351,7 +351,7 @@ const char *__fastcall webui_plane_props_s(__int64 http_req, __int64 a2, double 
         v212 = 0;
         *&Str1[8] = v15;
         *Str1 = 1;
-        sub_1546EF0(&v204, 0x20i64, "%s.modeConfig", Str1, 1);
+        ctor_vprintf(&v204, 0x20i64, "%s.modeConfig", Str1, 1);
         v19 = &szFile;
         if ( v206 )
           v19 = v204;
@@ -365,7 +365,7 @@ const char *__fastcall webui_plane_props_s(__int64 http_req, __int64 a2, double 
         *(v14 + 0xC) = 3 * (v212 == 0);
         *&Str1[8] = v15;
         *Str1 = 1;
-        sub_1546EF0(&v204, 0x20i64, "%s.throttle", Str1, 1);
+        ctor_vprintf(&v204, 0x20i64, "%s.throttle", Str1, 1);
         v22 = &szFile;
         if ( v206 )
           v22 = v204;
@@ -378,7 +378,7 @@ const char *__fastcall webui_plane_props_s(__int64 http_req, __int64 a2, double 
           sub_1EC440(Str1, "%f");
         *&Str1[8] = v15;
         *Str1 = 1;
-        sub_1546EF0(&v204, 0x20i64, "%s.manifoldPressure", Str1, 1);
+        ctor_vprintf(&v204, 0x20i64, "%s.manifoldPressure", Str1, 1);
         v25 = &szFile;
         if ( v206 )
           v25 = v204;
@@ -392,7 +392,7 @@ const char *__fastcall webui_plane_props_s(__int64 http_req, __int64 a2, double 
         *(v14 + 0x14) = *(v14 + 0x14) / *&qword_4A791F0;
         *&Str1[8] = v15;
         *Str1 = 1;
-        sub_1546EF0(&v204, 0x20i64, "%s.omega", Str1, 1);
+        ctor_vprintf(&v204, 0x20i64, "%s.omega", Str1, 1);
         v28 = &szFile;
         if ( v206 )
           v28 = v204;
@@ -405,7 +405,7 @@ const char *__fastcall webui_plane_props_s(__int64 http_req, __int64 a2, double 
           sub_1EC440(Str1, "%f");
         *&Str1[8] = v15;
         *Str1 = 1;
-        sub_1546EF0(&v204, 0x20i64, "%s.mixtureAutoMode", Str1, 1);
+        ctor_vprintf(&v204, 0x20i64, "%s.mixtureAutoMode", Str1, 1);
         v31 = &szFile;
         if ( v206 )
           v31 = v204;
@@ -418,7 +418,7 @@ const char *__fastcall webui_plane_props_s(__int64 http_req, __int64 a2, double 
         {
           *&Str1[8] = v15;
           *Str1 = 1;
-          sub_1546EF0(&v204, 0x20i64, "%s.mixture", Str1, 1);
+          ctor_vprintf(&v204, 0x20i64, "%s.mixture", Str1, 1);
           v34 = &szFile;
           if ( v206 )
             v34 = v204;
@@ -431,7 +431,7 @@ const char *__fastcall webui_plane_props_s(__int64 http_req, __int64 a2, double 
         }
         *&Str1[8] = v15;
         *Str1 = 1;
-        sub_1546EF0(&v204, 0x20i64, "%s.superchargerAutoMode", Str1, 1);
+        ctor_vprintf(&v204, 0x20i64, "%s.superchargerAutoMode", Str1, 1);
         v35 = &szFile;
         if ( v206 )
           v35 = v204;
@@ -445,7 +445,7 @@ const char *__fastcall webui_plane_props_s(__int64 http_req, __int64 a2, double 
           v216 = 0;
           *&Str1[8] = v15;
           *Str1 = 1;
-          sub_1546EF0(&v204, 0x20i64, "%s.superchargerGear", Str1, 1);
+          ctor_vprintf(&v204, 0x20i64, "%s.superchargerGear", Str1, 1);
           v38 = &szFile;
           if ( v206 )
             v38 = v204;
@@ -459,7 +459,7 @@ const char *__fastcall webui_plane_props_s(__int64 http_req, __int64 a2, double 
         }
         *&Str1[8] = v15;
         *Str1 = 1;
-        sub_1546EF0(&v204, 0x20i64, "%s.propeller", Str1, 1);
+        ctor_vprintf(&v204, 0x20i64, "%s.propeller", Str1, 1);
         v39 = v204;
         v40 = v204;
         if ( !v206 )

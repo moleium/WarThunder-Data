@@ -191,7 +191,7 @@ char __fastcall player_options(__int64 a1, __int64 a2)
   int v193; // [rsp+100h] [rbp-48h]
 
   v176 = "Both";
-  v4 = sub_1459B30(a2, "team", &v176);
+  v4 = data::get_str(a2, "team", &v176);
   v5 = &off_4A71AA0;
   if ( v4 )
   {
@@ -216,7 +216,7 @@ char __fastcall player_options(__int64 a1, __int64 a2)
   if ( LocalUnit && (v8 & (*(*(LocalUnit + 0x50) + 0x30i64))(LocalUnit + 0x50)) == 0 )
     return 1;
   v176 = 0i64;
-  view_type = sub_1459B30(a2, "currentView", &v176);
+  view_type = data::get_str(a2, "currentView", &v176);
   v10 = *(game + 0x440);
   if ( view_type )
   {
@@ -253,7 +253,7 @@ char __fastcall player_options(__int64 a1, __int64 a2)
     }
   }
   v176 = 0i64;
-  v16 = sub_1459B30(a2, "currentMode", &v176);
+  v16 = data::get_str(a2, "currentMode", &v176);
   if ( v16 )
   {
     v19 = off_4A74710;
@@ -296,7 +296,7 @@ LABEL_30:
     if ( !*(LocalUnit + 0x10B0) )
     {
       LOBYTE(v176) = 0;
-      if ( sub_145BBF0(a2, "respawnBullets", &v176) )
+      if ( data::get_bool(a2, "respawnBullets", &v176) )
       {
         UnitWeaponsInfo = *(LocalUnit + 0x11D0);
         v24 = *(UnitWeaponsInfo + 0x300);
@@ -363,7 +363,7 @@ LABEL_30:
   v34 = 0xFFFFFFFF;
   if ( *a2 )
   {
-    v35 = sub_1285C0("aiGunnerEnabled", 0xFui64);
+    v35 = data::get_name_id("aiGunnerEnabled", 0xFui64);
     v36 = *(v33 + 0x50);
     if ( v36 )
     {
@@ -377,7 +377,7 @@ LABEL_30:
       if ( !*(v33 + 0x20) )
         goto LABEL_61;
     }
-    v38 = sub_128A70(v33, "aiGunnerEnabled", 0xFui64, v35);
+    v38 = data::get_name_id(v33, "aiGunnerEnabled", 0xFui64, v35);
     if ( v38 >= 0 )
     {
       v39 = v37 + v38;
@@ -388,7 +388,7 @@ LABEL_63:
 LABEL_61:
     if ( !v37 )
       goto LABEL_64;
-    v39 = sub_128A70(*(v33 + 0x50), "aiGunnerEnabled", 0xFui64, v35);
+    v39 = data::get_name_id(*(v33 + 0x50), "aiGunnerEnabled", 0xFui64, v35);
     goto LABEL_63;
   }
 LABEL_64:
@@ -426,7 +426,7 @@ LABEL_64:
   if ( ((v46 - v44) & 0x400000000i64) == 0 )
   {
     LOBYTE(v176) = 1;
-    v47 = sub_145BBF0(a2, "aiGunnerEnabled", &v176);
+    v47 = data::get_bool(a2, "aiGunnerEnabled", &v176);
     if ( LocalUnit )
     {
       if ( *(LocalUnit + 0x11D0) )
@@ -438,7 +438,7 @@ LABEL_79:
   v49 = 0xFFFFFFFF;
   if ( !*a2 )
     goto LABEL_89;
-  v50 = sub_1285C0("stateAIGun", 0xAui64);
+  v50 = data::get_name_id("stateAIGun", 0xAui64);
   v51 = *(v48 + 0x50);
   if ( v51 )
   {
@@ -452,7 +452,7 @@ LABEL_79:
     if ( !*(v48 + 0x20) )
       goto LABEL_86;
   }
-  v53 = sub_128A70(v48, "stateAIGun", 0xAui64, v50);
+  v53 = data::get_name_id(v48, "stateAIGun", 0xAui64, v50);
   if ( v53 >= 0 )
   {
     v54 = v52 + v53;
@@ -461,7 +461,7 @@ LABEL_79:
 LABEL_86:
   if ( !v52 )
     goto LABEL_89;
-  v54 = sub_128A70(*(v48 + 0x50), "stateAIGun", 0xAui64, v50);
+  v54 = data::get_name_id(*(v48 + 0x50), "stateAIGun", 0xAui64, v50);
 LABEL_88:
   v49 = v54;
 LABEL_89:
@@ -499,7 +499,7 @@ LABEL_89:
   if ( ((v61 - v59) & 0x400000000i64) == 0 )
   {
     LODWORD(v176) = 1;
-    v63 = sub_145A390(a2, "stateAIGun", &v176);
+    v63 = data::set_int(a2, "stateAIGun", &v176);
     if ( LocalUnit )
     {
       v64 = LocalUnit;
@@ -550,7 +550,7 @@ LABEL_110:
   v70 = 0xFFFFFFFF;
   if ( !*a2 )
     goto LABEL_120;
-  v71 = sub_1285C0("allowAutoTargeting", 0x12ui64);
+  v71 = data::get_name_id("allowAutoTargeting", 0x12ui64);
   v72 = *(v69 + 0x50);
   if ( v72 )
   {
@@ -564,7 +564,7 @@ LABEL_110:
     if ( !*(v69 + 0x20) )
       goto LABEL_117;
   }
-  v74 = sub_128A70(v69, "allowAutoTargeting", 0x12ui64, v71);
+  v74 = data::get_name_id(v69, "allowAutoTargeting", 0x12ui64, v71);
   if ( v74 >= 0 )
   {
     v75 = v73 + v74;
@@ -573,7 +573,7 @@ LABEL_110:
 LABEL_117:
   if ( !v73 )
     goto LABEL_120;
-  v75 = sub_128A70(*(v69 + 0x50), "allowAutoTargeting", 0x12ui64, v71);
+  v75 = data::get_name_id(*(v69 + 0x50), "allowAutoTargeting", 0x12ui64, v71);
 LABEL_119:
   v70 = v75;
 LABEL_120:
@@ -611,14 +611,14 @@ LABEL_120:
   if ( ((v82 - v80) & 0x400000000i64) == 0 && qword_4B44C68 )
   {
     LOBYTE(v176) = 0;
-    *(qword_4B44C68 + 0x4A38) = sub_145BBF0(a2, "allowAutoTargeting", &v176);
+    *(qword_4B44C68 + 0x4A38) = data::get_bool(a2, "allowAutoTargeting", &v176);
   }
 LABEL_134:
   v83 = *a2;
   v84 = 0xFFFFFFFF;
   if ( !*a2 )
     goto LABEL_144;
-  v85 = sub_1285C0("tankVRCamera", 0xCui64);
+  v85 = data::get_name_id("tankVRCamera", 0xCui64);
   v86 = *(v83 + 0x50);
   if ( v86 )
   {
@@ -632,7 +632,7 @@ LABEL_134:
     if ( !*(v83 + 0x20) )
       goto LABEL_141;
   }
-  v88 = sub_128A70(v83, "tankVRCamera", 0xCui64, v85);
+  v88 = data::get_name_id(v83, "tankVRCamera", 0xCui64, v85);
   if ( v88 >= 0 )
   {
     v89 = v87 + v88;
@@ -641,7 +641,7 @@ LABEL_134:
 LABEL_141:
   if ( !v87 )
     goto LABEL_144;
-  v89 = sub_128A70(*(v83 + 0x50), "tankVRCamera", 0xCui64, v85);
+  v89 = data::get_name_id(*(v83 + 0x50), "tankVRCamera", 0xCui64, v85);
 LABEL_143:
   v84 = v89;
 LABEL_144:
@@ -679,10 +679,10 @@ LABEL_144:
   if ( ((v96 - v94) & 0x400000000i64) == 0 )
   {
     LOBYTE(v176) = 0;
-    if ( sub_145BBF0(a2, "tankVRCamera", &v176) )
+    if ( data::get_bool(a2, "tankVRCamera", &v176) )
     {
       LODWORD(v176) = 4;
-      *(*(game + 0x440) + 0x168i64) = sub_145A390(a2, "tankVRCameraGunnerId", &v176);
+      *(*(game + 0x440) + 0x168i64) = data::set_int(a2, "tankVRCameraGunnerId", &v176);
       sub_145C630(a2, &v176, "tankVRCameraOffset", &xmmword_4514A60);
       v97 = *(game + 0x440);
       *(v97 + 0x174) = v177;
@@ -698,7 +698,7 @@ LABEL_159:
   v99 = 0xFFFFFFFF;
   if ( !*a2 )
     goto LABEL_169;
-  v100 = sub_1285C0("setDefaultCameraBinding", 0x17ui64);
+  v100 = data::get_name_id("setDefaultCameraBinding", 0x17ui64);
   v101 = *(v98 + 0x50);
   if ( v101 )
   {
@@ -712,7 +712,7 @@ LABEL_159:
     if ( !*(v98 + 0x20) )
       goto LABEL_166;
   }
-  v103 = sub_128A70(v98, "setDefaultCameraBinding", 0x17ui64, v100);
+  v103 = data::get_name_id(v98, "setDefaultCameraBinding", 0x17ui64, v100);
   if ( v103 >= 0 )
   {
     v104 = v102 + v103;
@@ -721,7 +721,7 @@ LABEL_159:
 LABEL_166:
   if ( !v102 )
     goto LABEL_169;
-  v104 = sub_128A70(*(v98 + 0x50), "setDefaultCameraBinding", 0x17ui64, v100);
+  v104 = data::get_name_id(*(v98 + 0x50), "setDefaultCameraBinding", 0x17ui64, v100);
 LABEL_168:
   v99 = v104;
 LABEL_169:
@@ -759,14 +759,14 @@ LABEL_169:
   if ( ((v111 - v109) & 0x400000000i64) == 0 )
   {
     LOBYTE(v176) = 0;
-    *(*(game + 0x440) + 0x168i64) = (sub_145BBF0(a2, "setDefaultCameraBinding", &v176) << 0x10) - 1;
+    *(*(game + 0x440) + 0x168i64) = (data::get_bool(a2, "setDefaultCameraBinding", &v176) << 0x10) - 1;
   }
 LABEL_182:
   v112 = *a2;
   v113 = 0xFFFFFFFF;
   if ( !*a2 )
     goto LABEL_192;
-  v114 = sub_1285C0("object", 6ui64);
+  v114 = data::get_name_id("object", 6ui64);
   v115 = *(v112 + 0x50);
   if ( v115 )
   {
@@ -780,7 +780,7 @@ LABEL_182:
     if ( !*(v112 + 0x20) )
       goto LABEL_189;
   }
-  v117 = sub_128A70(v112, "object", 6ui64, v114);
+  v117 = data::get_name_id(v112, "object", 6ui64, v114);
   if ( v117 >= 0 )
   {
     v118 = v116 + v117;
@@ -789,7 +789,7 @@ LABEL_182:
 LABEL_189:
   if ( !v116 )
     goto LABEL_192;
-  v118 = sub_128A70(*(v112 + 0x50), "object", 6ui64, v114);
+  v118 = data::get_name_id(*(v112 + 0x50), "object", 6ui64, v114);
 LABEL_191:
   v113 = v118;
 LABEL_192:
@@ -841,7 +841,7 @@ LABEL_192:
 LABEL_242:
       sub_CD2950(&v176, a2, v129, a1, 0i64, 0i64);
       v175 = 0;
-      v150 = sub_145BBF0(a2, "useForTriggerFiltered", &v175);
+      v150 = data::get_bool(a2, "useForTriggerFiltered", &v175);
       v151 = v178;
       if ( v150 )
       {
@@ -892,7 +892,7 @@ LABEL_253:
           v159 = 0xFFFFFFFF;
           if ( !*a2 )
             goto LABEL_268;
-          v160 = sub_1285C0("allowBailout", 0xCui64);
+          v160 = data::get_name_id("allowBailout", 0xCui64);
           v161 = *(v158 + 0x50);
           if ( v161 )
           {
@@ -906,7 +906,7 @@ LABEL_253:
             if ( !*(v158 + 0x20) )
               goto LABEL_265;
           }
-          v163 = sub_128A70(v158, "allowBailout", 0xCui64, v160);
+          v163 = data::get_name_id(v158, "allowBailout", 0xCui64, v160);
           if ( v163 >= 0 )
           {
             v164 = v162 + v163;
@@ -915,7 +915,7 @@ LABEL_253:
 LABEL_265:
           if ( !v162 )
             goto LABEL_268;
-          v164 = sub_128A70(*(v158 + 0x50), "allowBailout", 0xCui64, v160);
+          v164 = data::get_name_id(*(v158 + 0x50), "allowBailout", 0xCui64, v160);
 LABEL_267:
           v159 = v164;
 LABEL_268:
@@ -969,7 +969,7 @@ LABEL_257:
       }
       goto LABEL_285;
     }
-    v130 = sub_1285C0("object", 6ui64);
+    v130 = data::get_name_id("object", 6ui64);
     v131 = *(v128 + 0x50);
     if ( v131 )
     {
@@ -983,7 +983,7 @@ LABEL_257:
       if ( !*(v128 + 0x20) )
         goto LABEL_239;
     }
-    v148 = sub_128A70(v128, "object", 6ui64, v130);
+    v148 = data::get_name_id(v128, "object", 6ui64, v130);
     if ( v148 >= 0 )
     {
       v149 = v132 + v148;
@@ -994,7 +994,7 @@ LABEL_241:
 LABEL_239:
     if ( !v132 )
       goto LABEL_242;
-    v149 = sub_128A70(*(v128 + 0x50), "object", 6ui64, v130);
+    v149 = data::get_name_id(*(v128 + 0x50), "object", 6ui64, v130);
     goto LABEL_241;
   }
 LABEL_210:
@@ -1002,7 +1002,7 @@ LABEL_210:
   v134 = 0xFFFFFFFF;
   if ( !*a2 )
     goto LABEL_220;
-  v135 = sub_1285C0("allowBailout", 0xCui64);
+  v135 = data::get_name_id("allowBailout", 0xCui64);
   v136 = *(v133 + 0x50);
   if ( !v136 )
   {
@@ -1010,7 +1010,7 @@ LABEL_210:
     if ( !*(v133 + 0x20) )
       goto LABEL_217;
 LABEL_215:
-    v138 = sub_128A70(v133, "allowBailout", 0xCui64, v135);
+    v138 = data::get_name_id(v133, "allowBailout", 0xCui64, v135);
     if ( v138 >= 0 )
     {
       v139 = v137 + v138;
@@ -1026,7 +1026,7 @@ LABEL_219:
 LABEL_217:
   if ( v137 )
   {
-    v139 = sub_128A70(*(v133 + 0x50), "allowBailout", 0xCui64, v135);
+    v139 = data::get_name_id(*(v133 + 0x50), "allowBailout", 0xCui64, v135);
     goto LABEL_219;
   }
 LABEL_220:

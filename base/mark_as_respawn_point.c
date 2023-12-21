@@ -613,33 +613,33 @@ char __fastcall mission_mark_as_respawn_point(__int64 a1, __int64 *a2)
   v2 = a2;
   Str2[0] = 0;
   v3 = 1;
-  if ( !sub_145BBF0(a2, "isGroundZone", Str2) )
+  if ( !data::get_bool(a2, "isGroundZone", Str2) )
   {
     Str2[0] = 0;
-    v3 = sub_145BBF0(v2, "isAirfield", Str2);
+    v3 = data::get_bool(v2, "isAirfield", Str2);
   }
   Str2[0] = 0;
-  v4 = sub_145BBF0(v2, "isUnit", Str2);
+  v4 = data::get_bool(v2, "isUnit", Str2);
   Str2[0] = 0;
-  v563 = sub_145BBF0(v2, "isIndividual", Str2);
+  v563 = data::get_bool(v2, "isIndividual", Str2);
   Str2[0] = 0;
-  v569 = sub_145BBF0(v2, "isStrictSpawn", Str2);
+  v569 = data::get_bool(v2, "isStrictSpawn", Str2);
   Str2[0] = 0;
-  v567 = sub_145BBF0(v2, "forceRandomAreaSpawn", Str2);
+  v567 = data::get_bool(v2, "forceRandomAreaSpawn", Str2);
   Str2[0] = 1;
-  v566 = sub_145BBF0(v2, "isBotAllowed", Str2);
+  v566 = data::get_bool(v2, "isBotAllowed", Str2);
   Str2[0] = 0;
-  v571 = sub_145BBF0(v2, "separate_fuel_time", Str2);
+  v571 = data::get_bool(v2, "separate_fuel_time", Str2);
   *Str2 = 0xFFFFFFFF;
-  v609 = sub_145A390(v2, "disableAfter", Str2);
+  v609 = data::set_int(v2, "disableAfter", Str2);
   Str2[0] = 0;
-  v570 = sub_145BBF0(v2, "modular_airfield", Str2);
+  v570 = data::get_bool(v2, "modular_airfield", Str2);
   Str2[0] = 0;
-  v5 = sub_145BBF0(v2, "onlyOnePlayerPerSpawnPoint", Str2);
+  v5 = data::get_bool(v2, "onlyOnePlayerPerSpawnPoint", Str2);
   Str2[0] = 0;
-  v568 = sub_145BBF0(v2, "resetStrictSpawnIndex", Str2);
+  v568 = data::get_bool(v2, "resetStrictSpawnIndex", Str2);
   *Str2 = 0i64;
-  v6 = sub_1459B30(v2, "respawnAirBackup", Str2);
+  v6 = data::get_str(v2, "respawnAirBackup", Str2);
   if ( v3 && v4 )
   {
     if ( qword_4B12198 )
@@ -662,7 +662,7 @@ char __fastcall mission_mark_as_respawn_point(__int64 a1, __int64 *a2)
   v559 = v4;
   v557 = v3;
   *Str2 = "Both";
-  v7 = sub_1459B30(v2, "team", Str2);
+  v7 = data::get_str(v2, "team", Str2);
   if ( !v7 || (v8 = v7, !strcmp("Both", v7)) )
   {
     v573 = 0;
@@ -678,9 +678,9 @@ char __fastcall mission_mark_as_respawn_point(__int64 a1, __int64 *a2)
       v573 = 2;
   }
   Str2[0] = 0;
-  v565 = sub_145BBF0(v2, "canSpawnOnNeutral", Str2);
+  v565 = data::get_bool(v2, "canSpawnOnNeutral", Str2);
   *Str2 = 0i64;
-  v9 = sub_1459B30(v2, "loc_name", Str2);
+  v9 = data::get_str(v2, "loc_name", Str2);
   v558 = v5;
   if ( v9 )
   {
@@ -712,7 +712,7 @@ char __fastcall mission_mark_as_respawn_point(__int64 a1, __int64 *a2)
   }
 LABEL_22:
   Str2[0] = 0;
-  LOBYTE(v16) = sub_145BBF0(v2, "useExisting", Str2);
+  LOBYTE(v16) = data::get_bool(v2, "useExisting", Str2);
   v584 = 0;
   if ( v10 && v16 )
   {
@@ -720,9 +720,9 @@ LABEL_22:
     v584 = v16;
   }
   Str2[0] = 0;
-  v564 = sub_145BBF0(v2, "forceCreate", Str2);
+  v564 = data::get_bool(v2, "forceCreate", Str2);
   Str2[0] = 1;
-  v562 = sub_145BBF0(v2, "showOnMap", Str2);
+  v562 = data::get_bool(v2, "showOnMap", Str2);
   ThreadLocalStoragePointer = NtCurrentTeb()->ThreadLocalStoragePointer;
   v572 = v10;
   if ( *(ThreadLocalStoragePointer[TlsIndex] + 1i64) )
@@ -764,7 +764,7 @@ LABEL_29:
   v24 = 0xFFFFFFFF;
   if ( !*v2 )
     goto LABEL_39;
-  v25 = sub_1285C0("target", 6ui64);
+  v25 = data::get_name_id("target", 6ui64);
   v26 = *(v23 + 0x50);
   if ( v26 )
   {
@@ -778,7 +778,7 @@ LABEL_29:
     if ( !*(v23 + 0x20) )
       goto LABEL_36;
   }
-  v28 = sub_128A70(v23, "target", 6ui64, v25);
+  v28 = data::get_name_id(v23, "target", 6ui64, v25);
   if ( v28 >= 0 )
   {
     v29 = v27 + v28;
@@ -787,7 +787,7 @@ LABEL_29:
 LABEL_36:
   if ( !v27 )
     goto LABEL_39;
-  v29 = sub_128A70(*(v23 + 0x50), "target", 6ui64, v25);
+  v29 = data::get_name_id(*(v23 + 0x50), "target", 6ui64, v25);
 LABEL_38:
   v24 = v29;
 LABEL_39:
@@ -830,7 +830,7 @@ LABEL_39:
   v36 = 0xFFFFFFFF;
   if ( !*v2 )
     goto LABEL_66;
-  v37 = sub_1285C0("spawnOffset", 0xBui64);
+  v37 = data::get_name_id("spawnOffset", 0xBui64);
   v38 = *(v35 + 0x50);
   if ( !v38 )
   {
@@ -838,7 +838,7 @@ LABEL_39:
     if ( !*(v35 + 0x20) )
       goto LABEL_63;
 LABEL_61:
-    v41 = sub_128A70(v35, "spawnOffset", 0xBui64, v37);
+    v41 = data::get_name_id(v35, "spawnOffset", 0xBui64, v37);
     if ( v41 >= 0 )
     {
       v42 = v39 + v41;
@@ -854,7 +854,7 @@ LABEL_65:
 LABEL_63:
   if ( v39 )
   {
-    v42 = sub_128A70(*(v35 + 0x50), "spawnOffset", 0xBui64, v37);
+    v42 = data::get_name_id(*(v35 + 0x50), "spawnOffset", 0xBui64, v37);
     goto LABEL_65;
   }
 LABEL_66:
@@ -939,13 +939,13 @@ LABEL_606:
     v355 = 0xFFFFFFFF;
     if ( *v560 )
     {
-      v356 = sub_1285C0("spawnOffset", 0xBui64);
+      v356 = data::get_name_id("spawnOffset", 0xBui64);
       v357 = *(v354 + 0x50);
       if ( v357 )
         v358 = *(v357 + 0x20);
       else
         v358 = 0;
-      if ( *(v354 + 0x20) && (v362 = sub_128A70(v354, "spawnOffset", 0xBui64, v356), v362 >= 0) )
+      if ( *(v354 + 0x20) && (v362 = data::get_name_id(v354, "spawnOffset", 0xBui64, v356), v362 >= 0) )
       {
         v363 = v358 + v362;
       }
@@ -953,7 +953,7 @@ LABEL_606:
       {
         if ( !v358 )
           goto LABEL_626;
-        v363 = sub_128A70(*(v354 + 0x50), "spawnOffset", 0xBui64, v356);
+        v363 = data::get_name_id(*(v354 + 0x50), "spawnOffset", 0xBui64, v356);
       }
       v355 = v363;
     }
@@ -1099,7 +1099,7 @@ LABEL_839:
     v488 = 0.0;
 LABEL_843:
     *Str2 = "world";
-    v489 = sub_1459B30(v560, "spawnOffsetSpace", Str2);
+    v489 = data::get_str(v560, "spawnOffsetSpace", Str2);
     v490 = 1;
     if ( strcmp(v489, "world") )
     {
@@ -1407,7 +1407,7 @@ LABEL_84:
   v50 = 0xFFFFFFFF;
   if ( !*v2 )
     goto LABEL_94;
-  v51 = sub_1285C0("target", 6ui64);
+  v51 = data::get_name_id("target", 6ui64);
   v52 = *(v49 + 0x50);
   if ( v52 )
   {
@@ -1421,7 +1421,7 @@ LABEL_84:
     if ( !*(v49 + 0x20) )
       goto LABEL_91;
   }
-  v54 = sub_128A70(v49, "target", 6ui64, v51);
+  v54 = data::get_name_id(v49, "target", 6ui64, v51);
   if ( v54 >= 0 )
   {
     v55 = v53 + v54;
@@ -1430,7 +1430,7 @@ LABEL_84:
 LABEL_91:
   if ( !v53 )
     goto LABEL_94;
-  v55 = sub_128A70(*(v49 + 0x50), "target", 6ui64, v51);
+  v55 = data::get_name_id(*(v49 + 0x50), "target", 6ui64, v51);
 LABEL_93:
   v50 = v55;
 LABEL_94:
@@ -1440,7 +1440,7 @@ LABEL_94:
     if ( v559 )
     {
       *Str2 = "isAlive";
-      v103 = sub_1459B30(v2, "object_type", Str2);
+      v103 = data::get_str(v2, "object_type", Str2);
       if ( v103 )
       {
         v104 = v103;
@@ -1487,7 +1487,7 @@ LABEL_157:
       }
       sub_CD4300(&v586, a1, v2, "object");
       Str2[0] = 0;
-      v131 = sub_145BBF0(v2, "useForTriggerFiltered", Str2);
+      v131 = data::get_bool(v2, "useForTriggerFiltered", Str2);
       v133 = v588;
       if ( v131 )
       {
@@ -1532,7 +1532,7 @@ LABEL_243:
       v146 = 0xFFFFFFFF;
       if ( !*v2 )
         goto LABEL_348;
-      v147 = sub_1285C0("tags", 4ui64);
+      v147 = data::get_name_id("tags", 4ui64);
       v148 = *(v145 + 0x50);
       if ( v148 )
       {
@@ -1546,7 +1546,7 @@ LABEL_243:
         if ( !*(v145 + 0x20) )
           goto LABEL_345;
       }
-      v208 = sub_128A70(v145, "tags", 4ui64, v147);
+      v208 = data::get_name_id(v145, "tags", 4ui64, v147);
       if ( v208 >= 0 )
       {
         v209 = v149 + v208;
@@ -1555,7 +1555,7 @@ LABEL_243:
 LABEL_345:
       if ( !v149 )
         goto LABEL_348;
-      v209 = sub_128A70(*(v145 + 0x50), "tags", 4ui64, v147);
+      v209 = data::get_name_id(*(v145 + 0x50), "tags", 4ui64, v147);
 LABEL_347:
       v146 = v209;
 LABEL_348:
@@ -1599,7 +1599,7 @@ LABEL_231:
       v140 = 0xFFFFFFFF;
       if ( !*v2 )
         goto LABEL_253;
-      v141 = sub_1285C0("backupZone", 0xAui64);
+      v141 = data::get_name_id("backupZone", 0xAui64);
       v142 = *(v139 + 0x50);
       if ( v142 )
       {
@@ -1609,7 +1609,7 @@ LABEL_231:
 LABEL_250:
           if ( v143 )
           {
-            v151 = sub_128A70(*(v139 + 0x50), "backupZone", 0xAui64, v141);
+            v151 = data::get_name_id(*(v139 + 0x50), "backupZone", 0xAui64, v141);
             goto LABEL_252;
           }
 LABEL_253:
@@ -1766,7 +1766,7 @@ LABEL_255:
         if ( !*(v139 + 0x20) )
           goto LABEL_250;
       }
-      v150 = sub_128A70(v139, "backupZone", 0xAui64, v141);
+      v150 = data::get_name_id(v139, "backupZone", 0xAui64, v141);
       if ( v150 >= 0 )
       {
         v151 = v143 + v150;
@@ -2196,7 +2196,7 @@ LABEL_303:
   if ( v584 )
   {
     Str2[0] = 0;
-    v174 = sub_145BBF0(v560, "ignoreTeamsOnReuse", Str2);
+    v174 = data::get_bool(v560, "ignoreTeamsOnReuse", Str2);
     v175 = 0xFFFFFFFF;
     v176 = v573;
     if ( v174 )
@@ -2208,7 +2208,7 @@ LABEL_303:
       v179 = *v560;
       if ( !*v560 )
         goto LABEL_331;
-      v180 = sub_1285C0("tags", 4ui64);
+      v180 = data::get_name_id("tags", 4ui64);
       v181 = *(v179 + 0x50);
       if ( v181 )
       {
@@ -2218,7 +2218,7 @@ LABEL_303:
 LABEL_328:
           if ( v182 )
           {
-            v194 = sub_128A70(*(v179 + 0x50), "tags", 4ui64, v180);
+            v194 = data::get_name_id(*(v179 + 0x50), "tags", 4ui64, v180);
             goto LABEL_330;
           }
           goto LABEL_331;
@@ -2230,7 +2230,7 @@ LABEL_328:
         if ( !*(v179 + 0x20) )
           goto LABEL_328;
       }
-      v193 = sub_128A70(v179, "tags", 4ui64, v180);
+      v193 = data::get_name_id(v179, "tags", 4ui64, v180);
       if ( v193 < 0 )
         goto LABEL_328;
       v194 = v182 + v193;
@@ -2418,12 +2418,12 @@ LABEL_394:
               v214 = v558;
 LABEL_398:
               Str2[0] = 0;
-              if ( sub_145BBF0(v215, v239, Str2) )
+              if ( data::get_bool(v215, v239, Str2) )
               {
                 if ( !v239 )
                   goto LABEL_382;
                 v240 = strlen(v239);
-                v241 = sub_1285C0(v239, v240);
+                v241 = data::get_name_id(v239, v240);
                 v242 = v178 + 0x90;
               }
               else
@@ -2431,7 +2431,7 @@ LABEL_398:
                 if ( !v239 )
                   goto LABEL_382;
                 v240 = strlen(v239);
-                v241 = sub_1285C0(v239, v240);
+                v241 = data::get_name_id(v239, v240);
                 v242 = v580;
               }
               sub_127A00(v242, v239, v240, v241);
@@ -2497,7 +2497,7 @@ LABEL_651:
         goto LABEL_658;
       }
       Str2[0] = 0;
-      if ( sub_145BBF0(v560, "removeAreas", Str2) )
+      if ( data::get_bool(v560, "removeAreas", Str2) )
       {
         v335 = *(v334 + 4);
         if ( v335 )
@@ -2542,7 +2542,7 @@ LABEL_573:
         goto LABEL_649;
       }
       Str2[0] = 0;
-      if ( sub_145BBF0(v560, "replaceAreas", Str2) )
+      if ( data::get_bool(v560, "replaceAreas", Str2) )
       {
         v342 = *(v178 + 0x60);
         v343 = *(v178 + 0x68);
@@ -2642,7 +2642,7 @@ LABEL_321:
     goto LABEL_431;
   }
   *Str2 = 0i64;
-  v186 = sub_1459B30(v560, "areaNameForSortingByProximity", Str2);
+  v186 = data::get_str(v560, "areaNameForSortingByProximity", Str2);
   if ( !v186 )
     goto LABEL_429;
   v187 = v186;
@@ -3072,7 +3072,7 @@ LABEL_431:
   v280 = 0xFFFFFFFF;
   if ( *v184 )
   {
-    v281 = sub_1285C0("tags", 4ui64);
+    v281 = data::get_name_id("tags", 4ui64);
     v282 = *(v279 + 0x50);
     if ( v282 )
     {
@@ -3086,7 +3086,7 @@ LABEL_431:
       if ( !*(v279 + 0x20) )
         goto LABEL_483;
     }
-    v284 = sub_128A70(v279, "tags", 4ui64, v281);
+    v284 = data::get_name_id(v279, "tags", 4ui64, v281);
     if ( v284 >= 0 )
     {
       v285 = v283 + v284;
@@ -3097,7 +3097,7 @@ LABEL_485:
 LABEL_483:
     if ( !v283 )
       goto LABEL_486;
-    v285 = sub_128A70(*(v279 + 0x50), "tags", 4ui64, v281);
+    v285 = data::get_name_id(*(v279 + 0x50), "tags", 4ui64, v281);
     goto LABEL_485;
   }
 LABEL_486:
@@ -3214,19 +3214,19 @@ LABEL_522:
       v298 = v580;
 LABEL_526:
       Str2[0] = 0;
-      if ( sub_145BBF0(v299, v316, Str2) )
+      if ( data::get_bool(v299, v316, Str2) )
       {
         if ( !v316 )
           goto LABEL_510;
         v302 = strlen(v316);
-        v303 = sub_1285C0(v316, v302);
+        v303 = data::get_name_id(v316, v302);
         v304 = v298;
         goto LABEL_509;
       }
       if ( v316 )
       {
         v302 = strlen(v316);
-        v303 = sub_1285C0(v316, v302);
+        v303 = data::get_name_id(v316, v302);
         v304 = v258 + 0xE0;
 LABEL_509:
         sub_127A00(v304, v316, v302, v303);
@@ -3275,7 +3275,7 @@ LABEL_749:
           *(v258 + 0x1E8) = *&Str2[8];
           *(v258 + 0x1E0) = *Str2;
           *Str2 = 0x42480000;
-          *(v258 + 0x1EC) = sub_145B6B0(v321, "radius", Str2);
+          *(v258 + 0x1EC) = data::set_real(v321, "radius", Str2);
           goto LABEL_754;
         }
         v435 = v586;
@@ -3417,7 +3417,7 @@ LABEL_672:
   v381 = 0xFFFFFFFF;
   if ( *v321 )
   {
-    v382 = sub_1285C0("object", 6ui64);
+    v382 = data::get_name_id("object", 6ui64);
     v383 = *(v380 + 0x50);
     if ( v383 )
       v384 = *(v383 + 0x20);
@@ -3425,7 +3425,7 @@ LABEL_672:
       v384 = 0;
     if ( *(v380 + 0x20) )
     {
-      v385 = sub_128A70(v380, "object", 6ui64, v382);
+      v385 = data::get_name_id(v380, "object", 6ui64, v382);
       if ( v385 >= 0 )
       {
         v386 = v384 + v385;
@@ -3436,7 +3436,7 @@ LABEL_681:
     }
     if ( v384 )
     {
-      v386 = sub_128A70(*(v380 + 0x50), "object", 6ui64, v382);
+      v386 = data::get_name_id(*(v380 + 0x50), "object", 6ui64, v382);
       goto LABEL_681;
     }
   }
@@ -3486,7 +3486,7 @@ LABEL_693:
   *(v258 + 0x18C) = 0;
 LABEL_754:
   *Str2 = 0x41F00000;
-  *(v258 + 0x1D0) = sub_145B6B0(v321, "PosRecalcDelay", Str2);
+  *(v258 + 0x1D0) = data::set_real(v321, "PosRecalcDelay", Str2);
   v445 = *v321;
   v446 = 0xFFFFFFFF;
   if ( !*v321 )
@@ -3498,7 +3498,7 @@ LABEL_754:
     if ( !*(v445 + 0x20) )
       goto LABEL_761;
 LABEL_759:
-    v449 = sub_128A70(*v321, "spawnArrangeTo", 0xEui64, 0xA6E23C2F);
+    v449 = data::get_name_id(*v321, "spawnArrangeTo", 0xEui64, 0xA6E23C2F);
     if ( v449 >= 0 )
     {
       v450 = v448 + v449;
@@ -3514,7 +3514,7 @@ LABEL_763:
 LABEL_761:
   if ( v448 )
   {
-    v450 = sub_128A70(*(v445 + 0x50), "spawnArrangeTo", 0xEui64, 0xA6E23C2F);
+    v450 = data::get_name_id(*(v445 + 0x50), "spawnArrangeTo", 0xEui64, 0xA6E23C2F);
     goto LABEL_763;
   }
 LABEL_764:
@@ -3787,7 +3787,7 @@ LABEL_801:
   if ( *(v258 + 0x88) )
   {
     Str2[0] = 0;
-    v470 = sub_145BBF0(v321, "awardByBodyHp", Str2);
+    v470 = data::get_bool(v321, "awardByBodyHp", Str2);
     *(v258 + 0x194) = v470;
     if ( v470 )
     {
@@ -3818,9 +3818,9 @@ LABEL_801:
     {
       v472 = v580;
       v473 = 2;
-      if ( sub_128A70(v580, "ship", 4ui64, 0xB6956EB1) >= 0
-        || sub_128A70(v472, "destroyer", 9ui64, 0xDF6E8395) >= 0
-        || (v473 = 1, sub_128A70(v580, "tank", 4ui64, 0xDB8E249C) >= 0) )
+      if ( data::get_name_id(v580, "ship", 4ui64, 0xB6956EB1) >= 0
+        || data::get_name_id(v472, "destroyer", 9ui64, 0xDF6E8395) >= 0
+        || (v473 = 1, data::get_name_id(v580, "tank", 4ui64, 0xDB8E249C) >= 0) )
       {
         *(v471 + 0x94) = v473;
       }

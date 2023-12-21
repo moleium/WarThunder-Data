@@ -1185,13 +1185,13 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
   char v1190[32]; // [rsp+130h] [rbp-88h] BYREF
 
   v1162 = &szFile;
-  v8 = sub_1459B30(a2, "url", &v1162);
+  v8 = data::get_str(a2, "url", &v1162);
   v1162 = &szFile;
-  v9 = sub_1459B30(a2, "mis_file", &v1162);
+  v9 = data::get_str(a2, "mis_file", &v1162);
   v1162 = &szFile;
-  v10 = sub_1459B30(a2, "locName", &v1162);
+  v10 = data::get_str(a2, "locName", &v1162);
   v1162 = &szFile;
-  v1163 = sub_1459B30(a2, "name", &v1162);
+  v1163 = data::get_str(a2, "name", &v1162);
   LODWORD(v1162) = 1;
   *&v1165 = v10;
   LODWORD(v1164) = 1;
@@ -1204,16 +1204,16 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
   if ( a4 )
     sub_1458A90(a1 + 0x510, a2, 0i64);
   LODWORD(v1162) = 0;
-  v11 = sub_145A390(a2, "_gameMode", &v1162);
+  v11 = data::set_int(a2, "_gameMode", &v1162);
   *(a1 + 0x678) = v11;
   *(a1 + 0x17F) = (v11 - 0xE) < 0xFFFFFFFD;
   if ( v11 == 7 || *(a1 + 0x682) )
     *(a1 + 0x1ED) = 0;
   LOBYTE(v1162) = 0;
-  *(a1 + 0x682) = sub_145BBF0(a2, "forceBenchmark", &v1162);
+  *(a1 + 0x682) = data::get_bool(a2, "forceBenchmark", &v1162);
   *(a1 + 0x67C) = sub_CA37F0(a2, *(a1 + 0x678));
   v1162 = "default";
-  v12 = sub_1459B30(a2, "selectedSkin", &v1162);
+  v12 = data::get_str(a2, "selectedSkin", &v1162);
   v13 = *(a1 + 0xE8);
   if ( v13 != v12 )
   {
@@ -1232,7 +1232,7 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
     *(a1 + 0xE8) = v17;
   }
   v1162 = "TM_NONE";
-  v18 = sub_1459B30(a2, "tournament_mode", &v1162);
+  v18 = data::get_str(a2, "tournament_mode", &v1162);
   v19 = *(a1 + 0xA0);
   if ( v19 != v18 )
   {
@@ -1251,7 +1251,7 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
     *(a1 + 0xA0) = v23;
   }
   v1162 = &szFile;
-  v24 = sub_1459B30(a2, "constantWPAwardName", &v1162);
+  v24 = data::get_str(a2, "constantWPAwardName", &v1162);
   v25 = *(a1 + 0xA8);
   if ( v25 != v24 )
   {
@@ -1270,7 +1270,7 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
     *(a1 + 0xA8) = v29;
   }
   v1162 = &szFile;
-  v30 = sub_1459B30(a2, "pveXPAwardName", &v1162);
+  v30 = data::get_str(a2, "pveXPAwardName", &v1162);
   v31 = *(a1 + 0xB0);
   if ( v31 != v30 )
   {
@@ -1289,7 +1289,7 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
     *(a1 + 0xB0) = v35;
   }
   v1162 = &szFile;
-  v36 = sub_1459B30(a2, "pveWPAwardName", &v1162);
+  v36 = data::get_str(a2, "pveWPAwardName", &v1162);
   v37 = *(a1 + 0xB8);
   if ( v37 != v36 )
   {
@@ -1308,7 +1308,7 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
     *(a1 + 0xB8) = v41;
   }
   v1162 = &szFile;
-  v42 = sub_1459B30(a2, "pveCustomUnlockForVictory", &v1162);
+  v42 = data::get_str(a2, "pveCustomUnlockForVictory", &v1162);
   v43 = *(a1 + 0xC0);
   if ( v43 != v42 )
   {
@@ -1327,7 +1327,7 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
     *(a1 + 0xC0) = v47;
   }
   v1162 = &szFile;
-  v48 = sub_1459B30(a2, "pveTrophyName", &v1162);
+  v48 = data::get_str(a2, "pveTrophyName", &v1162);
   v49 = *(a1 + 0xC8);
   if ( v49 != v48 )
   {
@@ -1346,11 +1346,11 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
     *(a1 + 0xC8) = v53;
   }
   LOBYTE(v1162) = 1;
-  *(a1 + 0xD0) = sub_145BBF0(a2, "isBoosterEnabled", &v1162);
+  *(a1 + 0xD0) = data::get_bool(a2, "isBoosterEnabled", &v1162);
   LOBYTE(v1162) = 0;
-  *(a1 + 0xD1) = sub_145BBF0(a2, "disableTrophyAward", &v1162);
+  *(a1 + 0xD1) = data::get_bool(a2, "disableTrophyAward", &v1162);
   v1162 = (&off_4A70F40)[*(a1 + 0x678)];
-  v54 = sub_1459B30(a2, "chapter", &v1162);
+  v54 = data::get_str(a2, "chapter", &v1162);
   v55 = *(a1 + 8);
   if ( v55 != v54 )
   {
@@ -1369,7 +1369,7 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
     *(a1 + 8) = v59;
   }
   v1162 = (&off_4A70F40)[*(a1 + 0x678)];
-  v60 = sub_1459B30(a2, "campaign", &v1162);
+  v60 = data::get_str(a2, "campaign", &v1162);
   if ( *a1 != v60 )
   {
     v61 = v60;
@@ -1387,12 +1387,12 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
     *a1 = v64;
   }
   v1162 = 0i64;
-  v65 = sub_1459B30(a2, "loc_name", &v1162);
+  v65 = data::get_str(a2, "loc_name", &v1162);
   v1162 = &szFile;
-  v66 = sub_1459B30(a2, "name", &v1162);
+  v66 = data::get_str(a2, "name", &v1162);
   sub_CAAE20(a1, v66, v65);
   v1162 = &szFile;
-  v67 = sub_1459B30(a2, "postfix", &v1162);
+  v67 = data::get_str(a2, "postfix", &v1162);
   v68 = *(a1 + 0x20);
   if ( v68 != v67 )
   {
@@ -1411,7 +1411,7 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
     *(a1 + 0x20) = v72;
   }
   v1162 = &szFile;
-  v73 = sub_1459B30(a2, "level", &v1162);
+  v73 = data::get_str(a2, "level", &v1162);
   v74 = *(a1 + 0x30);
   if ( v74 != v73 )
   {
@@ -1430,7 +1430,7 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
     *(a1 + 0x30) = v78;
   }
   v1162 = &szFile;
-  v79 = sub_1459B30(a2, "mis_file", &v1162);
+  v79 = data::get_str(a2, "mis_file", &v1162);
   v80 = *(a1 + 0x38);
   if ( v80 != v79 )
   {
@@ -1449,7 +1449,7 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
     *(a1 + 0x38) = v84;
   }
   v1162 = &szFile;
-  v85 = sub_1459B30(a2, "environment", &v1162);
+  v85 = data::get_str(a2, "environment", &v1162);
   v86 = *(a1 + 0x40);
   if ( v86 != v85 )
   {
@@ -1468,7 +1468,7 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
     *(a1 + 0x40) = v90;
   }
   v1162 = &szFile;
-  v91 = sub_1459B30(a2, "weather", &v1162);
+  v91 = data::get_str(a2, "weather", &v1162);
   v92 = *(a1 + 0x48);
   if ( v92 != v91 )
   {
@@ -1487,7 +1487,7 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
     *(a1 + 0x48) = v96;
   }
   v1162 = &szFile;
-  v97 = sub_1459B30(a2, "locName", &v1162);
+  v97 = data::get_str(a2, "locName", &v1162);
   v98 = *(a1 + 0x50);
   if ( v98 != v97 )
   {
@@ -1506,7 +1506,7 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
     *(a1 + 0x50) = v102;
   }
   v1162 = &szFile;
-  v103 = sub_1459B30(a2, "locNameTeamA", &v1162);
+  v103 = data::get_str(a2, "locNameTeamA", &v1162);
   v104 = *(a1 + 0x58);
   if ( v104 != v103 )
   {
@@ -1525,7 +1525,7 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
     *(a1 + 0x58) = v108;
   }
   v1162 = &szFile;
-  v109 = sub_1459B30(a2, "locNameTeamB", &v1162);
+  v109 = data::get_str(a2, "locNameTeamB", &v1162);
   v110 = *(a1 + 0x60);
   if ( v110 != v109 )
   {
@@ -1544,7 +1544,7 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
     *(a1 + 0x60) = v114;
   }
   v1162 = &szFile;
-  v115 = sub_1459B30(a2, "locDesc", &v1162);
+  v115 = data::get_str(a2, "locDesc", &v1162);
   v116 = *(a1 + 0x68);
   if ( v116 != v115 )
   {
@@ -1563,7 +1563,7 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
     *(a1 + 0x68) = v120;
   }
   v1162 = &szFile;
-  v121 = sub_1459B30(a2, "locDescTeamA", &v1162);
+  v121 = data::get_str(a2, "locDescTeamA", &v1162);
   v122 = *(a1 + 0x70);
   if ( v122 != v121 )
   {
@@ -1582,7 +1582,7 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
     *(a1 + 0x70) = v126;
   }
   v1162 = &szFile;
-  v127 = sub_1459B30(a2, "locDescTeamB", &v1162);
+  v127 = data::get_str(a2, "locDescTeamB", &v1162);
   v128 = *(a1 + 0x78);
   if ( v128 != v127 )
   {
@@ -1601,13 +1601,13 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
     *(a1 + 0x78) = v132;
   }
   v1162 = &szFile;
-  v133 = sub_1459B30(a2, "player_class", &v1162);
+  v133 = data::get_str(a2, "player_class", &v1162);
   sub_185590(a1 + 0x138, v133);
   v1162 = &szFile;
-  v134 = sub_1459B30(a2, "player_weapons", &v1162);
+  v134 = data::get_str(a2, "player_weapons", &v1162);
   sub_185590(a1 + 0x150, v134);
   v1162 = "attempts";
-  v135 = sub_1459B30(a2, "restoreType", &v1162);
+  v135 = data::get_str(a2, "restoreType", &v1162);
   if ( !v135 || (v136 = v135, !strcmp(off_4A70F20, v135)) )
   {
     v138 = 0;
@@ -1625,75 +1625,75 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
   }
   *(a1 + 0x370) = v138;
   LOBYTE(v1162) = 0;
-  v139 = sub_145BBF0(a2, "optionalTakeOff", &v1162);
+  v139 = data::get_bool(a2, "optionalTakeOff", &v1162);
   *(a1 + 0x179) = v139;
   LOBYTE(v1162) = v139;
-  *(a1 + 0x17A) = sub_145BBF0(a2, "takeOffOnStart", &v1162);
+  *(a1 + 0x17A) = data::get_bool(a2, "takeOffOnStart", &v1162);
   v140 = *a1;
   if ( !*a1 )
     v140 = &szFile;
   LOBYTE(v1162) = strcmp(v140, "tutorials") == 0;
-  *(a1 + 0x178) = sub_145BBF0(a2, "tutorialMission", &v1162);
+  *(a1 + 0x178) = data::get_bool(a2, "tutorialMission", &v1162);
   LODWORD(v1162) = 0x3F800000;
-  v141 = sub_145B6B0(a2, "fuelAmount", &v1162);
+  v141 = data::set_real(a2, "fuelAmount", &v1162);
   *(a1 + 0x378) = LODWORD(v141);
   LOBYTE(v1162) = 0;
-  v142 = sub_145BBF0(a2, "isLimitedFuel", &v1162);
+  v142 = data::get_bool(a2, "isLimitedFuel", &v1162);
   *(a1 + 0x17C) = v142;
   BYTE2(dword_4A79030) = v142;
   LOBYTE(v1162) = 0;
-  *(a1 + 0x17B) = sub_145BBF0(a2, "isLimitedAmmo", &v1162);
+  *(a1 + 0x17B) = data::get_bool(a2, "isLimitedAmmo", &v1162);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x3A9) = sub_145BBF0(a2, "hideDamageFromPlayer", &v1162);
+  *(a1 + 0x3A9) = data::get_bool(a2, "hideDamageFromPlayer", &v1162);
   v143 = 0x3C;
   if ( *(a1 + 0x678) == 2 )
     v143 = 0xB4;
   LODWORD(v1162) = v143;
-  v144 = sub_145A390(a2, "timeLimit", &v1162);
+  v144 = data::set_int(a2, "timeLimit", &v1162);
   if ( v144 >= 0 )
     v143 = v144;
   *(a1 + 0x1F0) = v143;
   LODWORD(v1162) = v143 + 3;
-  *(a1 + 0x1F4) = sub_145A390(a2, "lockCrewsTimeLimit", &v1162);
+  *(a1 + 0x1F4) = data::set_int(a2, "lockCrewsTimeLimit", &v1162);
   LODWORD(v1162) = 0;
-  *(a1 + 0x1FC) = sub_145A390(a2, "killLimit", &v1162);
+  *(a1 + 0x1FC) = data::set_int(a2, "killLimit", &v1162);
   LODWORD(v1162) = 0x1F4;
-  *(a1 + 0x1F8) = sub_145A390(a2, "scoreLimit", &v1162);
+  *(a1 + 0x1F8) = data::set_int(a2, "scoreLimit", &v1162);
   LODWORD(v1162) = 0x708;
-  *(a1 + 0x278) = sub_145A390(a2, "esTTL", &v1162);
+  *(a1 + 0x278) = data::set_int(a2, "esTTL", &v1162);
   LOBYTE(v1162) = 1;
-  *(a1 + 0x17D) = sub_145BBF0(a2, "allowJIP", &v1162);
+  *(a1 + 0x17D) = data::get_bool(a2, "allowJIP", &v1162);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x17E) = sub_145BBF0(a2, "isBotsAllowed", &v1162);
+  *(a1 + 0x17E) = data::get_bool(a2, "isBotsAllowed", &v1162);
   *(a1 + 0x17F) = (*(a1 + 0x678) - 0xE) < 0xFFFFFFFD;
   LOBYTE(v1162) = 1;
-  *(a1 + 0x18A) = sub_145BBF0(a2, "autoBalance", &v1162);
+  *(a1 + 0x18A) = data::get_bool(a2, "autoBalance", &v1162);
   LODWORD(v1162) = 0;
-  *(a1 + 0x388) = sub_145A390(a2, "minPlayers", &v1162);
+  *(a1 + 0x388) = data::set_int(a2, "minPlayers", &v1162);
   LODWORD(v1162) = 0x20;
-  v145 = sub_145A390(a2, "maxPlayers", &v1162);
+  v145 = data::set_int(a2, "maxPlayers", &v1162);
   *(a1 + 0x38C) = v145;
   LODWORD(v1162) = v145;
-  *(a1 + 0x390) = sub_145A390(a2, "maxBots", &v1162);
+  *(a1 + 0x390) = data::set_int(a2, "maxBots", &v1162);
   LODWORD(v1162) = 0;
-  *(a1 + 0x394) = sub_145A390(a2, "wpAward", &v1162);
+  *(a1 + 0x394) = data::set_int(a2, "wpAward", &v1162);
   LODWORD(v1162) = 0x3F800000;
-  v146 = sub_145B6B0(a2, "respawnTimeMultiplier", &v1162);
+  v146 = data::set_real(a2, "respawnTimeMultiplier", &v1162);
   *(a1 + 0x248) = LODWORD(v146);
   LODWORD(v1162) = 0x3F800000;
-  v147 = sub_145B6B0(a2, "missionCostMul", &v1162);
+  v147 = data::set_real(a2, "missionCostMul", &v1162);
   *(a1 + 0x260) = LODWORD(v147);
   LODWORD(v1162) = 0xBF800000;
-  v148 = sub_145B6B0(a2, "tankInvisibleForAirplaneDistance", &v1162);
+  v148 = data::set_real(a2, "tankInvisibleForAirplaneDistance", &v1162);
   *(a1 + 0x26C) = LODWORD(v148);
   LODWORD(v1162) = 0xBF800000;
-  v149 = sub_145B6B0(a2, "shipInvisibleForAirplaneDistance", &v1162);
+  v149 = data::set_real(a2, "shipInvisibleForAirplaneDistance", &v1162);
   *(a1 + 0x270) = LODWORD(v149);
   v150 = *a2;
   v151 = 0xFFFFFFFF;
   if ( *a2 )
   {
-    v152 = sub_1285C0("hudTankDetectedByAircraft", 0x19ui64);
+    v152 = data::get_name_id("hudTankDetectedByAircraft", 0x19ui64);
     v153 = *(v150 + 0x50);
     if ( v153 )
     {
@@ -1707,7 +1707,7 @@ __int64 __fastcall load_mission(__int64 a1, __int64 a2, int a3, char a4)
       if ( !*(v150 + 0x20) )
         goto LABEL_205;
     }
-    v155 = sub_128A70(v150, "hudTankDetectedByAircraft", 0x19ui64, v152);
+    v155 = data::get_name_id(v150, "hudTankDetectedByAircraft", 0x19ui64, v152);
     if ( v155 >= 0 )
     {
       v156 = v154 + v155;
@@ -1718,7 +1718,7 @@ LABEL_207:
 LABEL_205:
     if ( !v154 )
       goto LABEL_208;
-    v156 = sub_128A70(*(v150 + 0x50), "hudTankDetectedByAircraft", 0x19ui64, v152);
+    v156 = data::get_name_id(*(v150 + 0x50), "hudTankDetectedByAircraft", 0x19ui64, v152);
     goto LABEL_207;
   }
 LABEL_208:
@@ -1759,41 +1759,41 @@ LABEL_208:
   if ( ((v164 - v162) & 0x400000000i64) == 0 )
   {
     LOBYTE(v1162) = 0;
-    v160 = sub_145BBF0(a2, "hudTankDetectedByAircraft", &v1162);
+    v160 = data::get_bool(a2, "hudTankDetectedByAircraft", &v1162);
   }
 LABEL_221:
   *(a1 + 0x274) = v160;
   LODWORD(v1162) = 0x3F000000;
-  v166 = sub_145B6B0(a2, "deathPenaltyMul", &v1162);
+  v166 = data::set_real(a2, "deathPenaltyMul", &v1162);
   *(a1 + 0x24C) = LODWORD(v166);
   LODWORD(v1162) = *(*(game + 0x498) + 0x234i64);
-  v167 = sub_145B6B0(a2, "ctaCaptureZoneEqualPenaltyMul", &v1162);
+  v167 = data::set_real(a2, "ctaCaptureZoneEqualPenaltyMul", &v1162);
   *(a1 + 0x250) = LODWORD(v167);
   LODWORD(v1162) = 0;
-  v168 = sub_145B6B0(a2, "ctaCaptureZoneDiffPenaltyExp", &v1162);
+  v168 = data::set_real(a2, "ctaCaptureZoneDiffPenaltyExp", &v1162);
   *(a1 + 0x254) = LODWORD(v168);
   LODWORD(v1162) = *(*(game + 0x498) + 0x228i64);
-  *(a1 + 0x258) = sub_145A390(a2, "ctaNoAliveAirctaftTimer", &v1162);
+  *(a1 + 0x258) = data::set_int(a2, "ctaNoAliveAirctaftTimer", &v1162);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x25C) = sub_145BBF0(a2, "ctaInstantDecreaseTicketsWhenNoRespawn", &v1162);
+  *(a1 + 0x25C) = data::get_bool(a2, "ctaInstantDecreaseTicketsWhenNoRespawn", &v1162);
   LODWORD(v1162) = 0x3F800000;
-  v169 = sub_145B6B0(a2, "spawnScoreMul", &v1162);
+  v169 = data::set_real(a2, "spawnScoreMul", &v1162);
   *(a1 + 0x264) = LODWORD(v169);
   LODWORD(v1162) = 0;
-  v170 = sub_145B6B0(a2, "spawnScoreForTeamMul", &v1162);
+  v170 = data::set_real(a2, "spawnScoreForTeamMul", &v1162);
   *(a1 + 0x268) = LODWORD(v170);
   LODWORD(v1162) = 1;
-  *(a1 + 0x30C) = sub_145A390(a2, "raceLaps", &v1162);
+  *(a1 + 0x30C) = data::set_int(a2, "raceLaps", &v1162);
   LODWORD(v1162) = 1;
-  LODWORD(v1162) = sub_145A390(a2, "raceWinners", &v1162);
-  *(a1 + 0x310) = sub_145A390(a2, "ffaWinners", &v1162);
+  LODWORD(v1162) = data::set_int(a2, "raceWinners", &v1162);
+  *(a1 + 0x310) = data::set_int(a2, "ffaWinners", &v1162);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x314) = sub_145BBF0(a2, "raceForceCannotShoot", &v1162);
+  *(a1 + 0x314) = data::get_bool(a2, "raceForceCannotShoot", &v1162);
   v171 = *a2;
   v172 = 0xFFFFFFFF;
   if ( !*a2 )
     goto LABEL_231;
-  v173 = sub_1285C0("colorTeamA", 0xAui64);
+  v173 = data::get_name_id("colorTeamA", 0xAui64);
   v174 = *(v171 + 0x50);
   if ( v174 )
   {
@@ -1807,7 +1807,7 @@ LABEL_221:
     if ( !*(v171 + 0x20) )
       goto LABEL_228;
   }
-  v176 = sub_128A70(v171, "colorTeamA", 0xAui64, v173);
+  v176 = data::get_name_id(v171, "colorTeamA", 0xAui64, v173);
   if ( v176 >= 0 )
   {
     v177 = v175 + v176;
@@ -1816,7 +1816,7 @@ LABEL_221:
 LABEL_228:
   if ( !v175 )
     goto LABEL_231;
-  v177 = sub_128A70(*(v171 + 0x50), "colorTeamA", 0xAui64, v173);
+  v177 = data::get_name_id(*(v171 + 0x50), "colorTeamA", 0xAui64, v173);
 LABEL_230:
   v172 = v177;
 LABEL_231:
@@ -1857,7 +1857,7 @@ LABEL_231:
   v186 = 0xFFFFFFFF;
   if ( !*a2 )
     goto LABEL_254;
-  v187 = sub_1285C0("colorTeamB", 0xAui64);
+  v187 = data::get_name_id("colorTeamB", 0xAui64);
   v188 = *(v185 + 0x50);
   if ( v188 )
   {
@@ -1871,7 +1871,7 @@ LABEL_231:
     if ( !*(v185 + 0x20) )
       goto LABEL_251;
   }
-  v190 = sub_128A70(v185, "colorTeamB", 0xAui64, v187);
+  v190 = data::get_name_id(v185, "colorTeamB", 0xAui64, v187);
   if ( v190 >= 0 )
   {
     v191 = v189 + v190;
@@ -1880,7 +1880,7 @@ LABEL_231:
 LABEL_251:
   if ( !v189 )
     goto LABEL_254;
-  v191 = sub_128A70(*(v185 + 0x50), "colorTeamB", 0xAui64, v187);
+  v191 = data::get_name_id(*(v185 + 0x50), "colorTeamB", 0xAui64, v187);
 LABEL_253:
   v186 = v191;
 LABEL_254:
@@ -1935,24 +1935,24 @@ LABEL_424:
   }
 LABEL_265:
   LODWORD(v1162) = 0;
-  v199 = sub_145B6B0(a2, "footballScoreGoal", &v1162);
+  v199 = data::set_real(a2, "footballScoreGoal", &v1162);
   *(a1 + 0x318) = LODWORD(v199);
   LODWORD(v1162) = 0;
-  v200 = sub_145B6B0(a2, "footballScoreAssist", &v1162);
+  v200 = data::set_real(a2, "footballScoreAssist", &v1162);
   *(a1 + 0x31C) = LODWORD(v200);
   LODWORD(v1162) = 0;
-  v201 = sub_145B6B0(a2, "footballScoreSave", &v1162);
+  v201 = data::set_real(a2, "footballScoreSave", &v1162);
   *(a1 + 0x320) = LODWORD(v201);
   LODWORD(v1162) = 0;
-  v202 = sub_145B6B0(a2, "footballSaveTraceTime", &v1162);
+  v202 = data::set_real(a2, "footballSaveTraceTime", &v1162);
   *(a1 + 0x324) = LODWORD(v202);
   LODWORD(v1162) = 0;
-  v203 = sub_145B6B0(a2, "footballSaveTraceCooldown", &v1162);
+  v203 = data::set_real(a2, "footballSaveTraceCooldown", &v1162);
   *(a1 + 0x328) = LODWORD(v203);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x32C) = sub_145BBF0(a2, "isScoreTournament", &v1162);
+  *(a1 + 0x32C) = data::get_bool(a2, "isScoreTournament", &v1162);
   v1162 = &szFile;
-  v204 = sub_1459B30(a2, "userstatModes", &v1162);
+  v204 = data::get_str(a2, "userstatModes", &v1162);
   v205 = *(a1 + 0x330);
   if ( v205 != v204 )
   {
@@ -1971,11 +1971,11 @@ LABEL_265:
     *(a1 + 0x330) = v209;
   }
   LOBYTE(v1162) = 0;
-  *(a1 + 0x338) = sub_145BBF0(a2, "isPersistentSmoke", &v1162);
+  *(a1 + 0x338) = data::get_bool(a2, "isPersistentSmoke", &v1162);
   LODWORD(v1162) = 0;
-  *(a1 + 0x33C) = sub_145A390(a2, "persistentSmokeId", &v1162);
+  *(a1 + 0x33C) = data::set_int(a2, "persistentSmokeId", &v1162);
   v1162 = &szFile;
-  v210 = sub_1459B30(a2, "country_axis", &v1162);
+  v210 = data::get_str(a2, "country_axis", &v1162);
   v211 = *(a1 + 0x90);
   if ( v211 != v210 )
   {
@@ -1994,7 +1994,7 @@ LABEL_265:
     *(a1 + 0x90) = v215;
   }
   v1162 = &szFile;
-  v216 = sub_1459B30(a2, "country_allies", &v1162);
+  v216 = data::get_str(a2, "country_allies", &v1162);
   v217 = *(a1 + 0x98);
   if ( v217 != v216 )
   {
@@ -2013,21 +2013,21 @@ LABEL_265:
     *(a1 + 0x98) = v221;
   }
   LOBYTE(v1162) = 0;
-  *(a1 + 0x195) = sub_145BBF0(a2, "useAlternativeMapCoord", &v1162);
+  *(a1 + 0x195) = data::get_bool(a2, "useAlternativeMapCoord", &v1162);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x308) = sub_145BBF0(a2, "useAlternativeAerobaticSmokes", &v1162);
+  *(a1 + 0x308) = data::get_bool(a2, "useAlternativeAerobaticSmokes", &v1162);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x188) = sub_145BBF0(a2, "noRespawns", &v1162);
+  *(a1 + 0x188) = data::get_bool(a2, "noRespawns", &v1162);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x189) = sub_145BBF0(a2, "forceNoRespawnsByMission", &v1162);
+  *(a1 + 0x189) = data::get_bool(a2, "forceNoRespawnsByMission", &v1162);
   LODWORD(v1162) = *(a1 + 0x188) == 0 ? 0xFFFFFFFF : 1;
-  *(a1 + 0x184) = sub_145A390(a2, "maxRespawns", &v1162);
+  *(a1 + 0x184) = data::set_int(a2, "maxRespawns", &v1162);
   LOBYTE(v1162) = 0;
-  v222 = sub_145BBF0(a2, "userMission", &v1162);
+  v222 = data::get_bool(a2, "userMission", &v1162);
   *(a1 + 0x190) = v222;
   byte_4A702C8 = v222 ^ 1;
   LOBYTE(v1162) = 0;
-  *(a1 + 0x191) = sub_145BBF0(a2, "dedicatedReplay", &v1162);
+  *(a1 + 0x191) = data::get_bool(a2, "dedicatedReplay", &v1162);
   *(a1 + 0x1E8) = a3;
   *(a1 + 0x1EC) = 0;
   ThreadLocalStoragePointer = NtCurrentTeb()->ThreadLocalStoragePointer;
@@ -2041,7 +2041,7 @@ LABEL_265:
   v229 = 0xFFFFFFFF;
   if ( *a2 )
   {
-    v230 = sub_1285C0("skiesInitialRandomSeed", 0x16ui64);
+    v230 = data::get_name_id("skiesInitialRandomSeed", 0x16ui64);
     v231 = *(v228 + 0x50);
     if ( v231 )
     {
@@ -2055,7 +2055,7 @@ LABEL_265:
       if ( !*(v228 + 0x20) )
         goto LABEL_301;
     }
-    v233 = sub_128A70(v228, "skiesInitialRandomSeed", 0x16ui64, v230);
+    v233 = data::get_name_id(v228, "skiesInitialRandomSeed", 0x16ui64, v230);
     if ( v233 >= 0 )
     {
       v234 = v232 + v233;
@@ -2066,7 +2066,7 @@ LABEL_303:
 LABEL_301:
     if ( !v232 )
       goto LABEL_304;
-    v234 = sub_128A70(*(v228 + 0x50), "skiesInitialRandomSeed", 0x16ui64, v230);
+    v234 = data::get_name_id(*(v228 + 0x50), "skiesInitialRandomSeed", 0x16ui64, v230);
     goto LABEL_303;
   }
 LABEL_304:
@@ -2153,18 +2153,18 @@ LABEL_322:
   }
   LOBYTE(v1162) = 1;
   v245 = v1169;
-  if ( sub_145BBF0(v1169, "moveCloudsHole", &v1162) )
+  if ( data::get_bool(v1169, "moveCloudsHole", &v1162) )
     v246 = *(a1 + 0x678) != 7 && *(a1 + 0x682) == 0;
   else
     v246 = 0;
   *(a1 + 0x1ED) = v246;
   LOBYTE(v1162) = 1;
-  *(a1 + 0x398) = sub_145BBF0(v245, "groundUnitsAllowed", &v1162);
+  *(a1 + 0x398) = data::get_bool(v245, "groundUnitsAllowed", &v1162);
   v247 = *v245;
   v248 = 0xFFFFFFFF;
   if ( *v245 )
   {
-    v249 = sub_1285C0("netDifficultyBlk", 0x10ui64);
+    v249 = data::get_name_id("netDifficultyBlk", 0x10ui64);
     v250 = *(v247 + 0x50);
     if ( v250 )
     {
@@ -2178,7 +2178,7 @@ LABEL_322:
       if ( !*(v247 + 0x20) )
         goto LABEL_342;
     }
-    v252 = sub_128A70(v247, "netDifficultyBlk", 0x10ui64, v249);
+    v252 = data::get_name_id(v247, "netDifficultyBlk", 0x10ui64, v249);
     if ( v252 >= 0 )
     {
       v253 = v251 + v252;
@@ -2189,7 +2189,7 @@ LABEL_344:
 LABEL_342:
     if ( !v251 )
       goto LABEL_345;
-    v253 = sub_128A70(*(v247 + 0x50), "netDifficultyBlk", 0x10ui64, v249);
+    v253 = data::get_name_id(*(v247 + 0x50), "netDifficultyBlk", 0x10ui64, v249);
     goto LABEL_344;
   }
 LABEL_345:
@@ -2223,7 +2223,7 @@ LABEL_364:
     v272 = 0xFFFFFFFF;
     if ( !*v269 )
       goto LABEL_375;
-    v273 = sub_1285C0("custom_difficulty", 0x11ui64);
+    v273 = data::get_name_id("custom_difficulty", 0x11ui64);
     v274 = *(v271 + 0x50);
     if ( v274 )
     {
@@ -2233,7 +2233,7 @@ LABEL_364:
 LABEL_372:
         if ( v275 )
         {
-          v277 = sub_128A70(*(v271 + 0x50), "custom_difficulty", 0x11ui64, v273);
+          v277 = data::get_name_id(*(v271 + 0x50), "custom_difficulty", 0x11ui64, v273);
           goto LABEL_374;
         }
 LABEL_375:
@@ -2301,12 +2301,12 @@ LABEL_375:
           v1178 = off_4B678C8;
           *&v1179 = 0i64;
           v1162 = "arcade";
-          v296 = sub_1459B30(v1169, "difficulty", &v1162);
+          v296 = data::get_str(v1169, "difficulty", &v1162);
           v1163 = v293;
           LODWORD(v1162) = 1;
           *&v1165 = v296;
           LODWORD(v1164) = 1;
-          sub_1546EF0(&v1177, 0x40i64, "%s_%s", &v1162, 2);
+          ctor_vprintf(&v1177, 0x40i64, "%s_%s", &v1162, 2);
           v1170 = v1177;
           v297 = v1177;
           if ( !v1179 )
@@ -2420,7 +2420,7 @@ LABEL_455:
 LABEL_460:
         v1162 = "arcade";
         v308 = v1169;
-        v337 = sub_1459B30(v1169, "difficulty", &v1162);
+        v337 = data::get_str(v1169, "difficulty", &v1162);
         v338 = 0xFFFFFFFF;
         if ( v337 )
         {
@@ -2454,7 +2454,7 @@ LABEL_460:
       if ( !*(v271 + 0x20) )
         goto LABEL_372;
     }
-    v276 = sub_128A70(v271, "custom_difficulty", 0x11ui64, v273);
+    v276 = data::get_name_id(v271, "custom_difficulty", 0x11ui64, v273);
     if ( v276 >= 0 )
     {
       v277 = v275 + v276;
@@ -2486,7 +2486,7 @@ LABEL_374:
   if ( !*v1169 )
     goto LABEL_412;
 LABEL_361:
-  v266 = sub_1285C0("netDifficultyBlk", 0x10ui64);
+  v266 = data::get_name_id("netDifficultyBlk", 0x10ui64);
   v267 = *(v257 + 0x50);
   if ( v267 )
   {
@@ -2496,7 +2496,7 @@ LABEL_361:
 LABEL_410:
       if ( v268 )
       {
-        v306 = sub_128A70(*(v257 + 0x50), "netDifficultyBlk", 0x10ui64, v266);
+        v306 = data::get_name_id(*(v257 + 0x50), "netDifficultyBlk", 0x10ui64, v266);
         goto LABEL_413;
       }
 LABEL_412:
@@ -2510,7 +2510,7 @@ LABEL_412:
     if ( !*(v257 + 0x20) )
       goto LABEL_410;
   }
-  v305 = sub_128A70(v257, "netDifficultyBlk", 0x10ui64, v266);
+  v305 = data::get_name_id(v257, "netDifficultyBlk", 0x10ui64, v266);
   if ( v305 < 0 )
     goto LABEL_410;
   v306 = v268 + v305;
@@ -2568,33 +2568,33 @@ LABEL_438:
   sub_661620(v265, v310);
 LABEL_470:
   LOBYTE(v1162) = (*(a1 + 0x67C) >> 2) & ((*(a1 + 0x37C) & 3) == 0);
-  *(a1 + 0x180) = sub_145BBF0(v308, "arcadeCountry", &v1162) & ((*(a1 + 0x67C) & 4u) >> 2);
+  *(a1 + 0x180) = data::get_bool(v308, "arcadeCountry", &v1162) & ((*(a1 + 0x67C) & 4u) >> 2);
   LOBYTE(v1162) = *(a1 + 0x184) < 0xFFFFFFFF;
-  *(a1 + 0x18B) = sub_145BBF0(v308, "multiRespawn", &v1162) & ((*(a1 + 0x67C) & 4u) >> 2);
+  *(a1 + 0x18B) = data::get_bool(v308, "multiRespawn", &v1162) & ((*(a1 + 0x67C) & 4u) >> 2);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x196) = sub_145BBF0(v308, "multiRespawnNoRepair", &v1162);
+  *(a1 + 0x196) = data::get_bool(v308, "multiRespawnNoRepair", &v1162);
   LODWORD(v1162) = 0x3F800000;
-  v341 = sub_145B6B0(v308, "multiRespawnNoRepairDmg", &v1162);
+  v341 = data::set_real(v308, "multiRespawnNoRepairDmg", &v1162);
   *(a1 + 0x1CC) = LODWORD(v341);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x197) = sub_145BBF0(v308, "ignoreInvulnerableTimer", &v1162);
+  *(a1 + 0x197) = data::get_bool(v308, "ignoreInvulnerableTimer", &v1162);
   LOBYTE(v1162) = 1;
-  *(a1 + 0x18C) = sub_145BBF0(v308, "slotMultiSpawn", &v1162);
+  *(a1 + 0x18C) = data::get_bool(v308, "slotMultiSpawn", &v1162);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x18D) = sub_145BBF0(v308, "isAwardByObjective", &v1162) & ((*(a1 + 0x67C) & 4u) >> 2);
+  *(a1 + 0x18D) = data::get_bool(v308, "isAwardByObjective", &v1162) & ((*(a1 + 0x67C) & 4u) >> 2);
   LOBYTE(v1162) = 0;
-  v342 = sub_145BBF0(v308, "crewLockEnabled", &v1162);
+  v342 = data::get_bool(v308, "crewLockEnabled", &v1162);
   *(a1 + 0x18E) = v342;
   *(a1 + 0x1D0) = v342;
   *(a1 + 0x1D1) = v342;
   *(a1 + 0x1D2) = v342;
   LOBYTE(v1162) = 0;
-  *(a1 + 0x18F) = sub_145BBF0(v308, "keepProfileOnReconnect", &v1162);
+  *(a1 + 0x18F) = data::get_bool(v308, "keepProfileOnReconnect", &v1162);
   v343 = *v308;
   v344 = 0xFFFFFFFF;
   if ( !*v308 )
     goto LABEL_480;
-  v345 = sub_1285C0("ranks", 5ui64);
+  v345 = data::get_name_id("ranks", 5ui64);
   v346 = *(v343 + 0x50);
   if ( v346 )
   {
@@ -2608,7 +2608,7 @@ LABEL_470:
     if ( !*(v343 + 0x20) )
       goto LABEL_477;
   }
-  v348 = sub_128A70(v343, "ranks", 5ui64, v345);
+  v348 = data::get_name_id(v343, "ranks", 5ui64, v345);
   if ( v348 >= 0 )
   {
     v349 = v347 + v348;
@@ -2617,7 +2617,7 @@ LABEL_470:
 LABEL_477:
   if ( !v347 )
     goto LABEL_480;
-  v349 = sub_128A70(*(v343 + 0x50), "ranks", 5ui64, v345);
+  v349 = data::get_name_id(*(v343 + 0x50), "ranks", 5ui64, v345);
 LABEL_479:
   v344 = v349;
 LABEL_480:
@@ -2673,11 +2673,11 @@ LABEL_497:
   if ( !v352 )
     v352 = &qword_4B67850;
   LODWORD(v1162) = 1;
-  *(a1 + 0x170) = sub_145A390(v352, "min", &v1162);
+  *(a1 + 0x170) = data::set_int(v352, "min", &v1162);
   LODWORD(v1162) = 1;
-  *(a1 + 0x174) = sub_145A390(v352, "max", &v1162);
+  *(a1 + 0x174) = data::set_int(v352, "max", &v1162);
   LOBYTE(v1162) = 0;
-  if ( sub_145BBF0(v308, "randomSpawnTeams", &v1162) && !*(a1 + 0x194) )
+  if ( data::get_bool(v308, "randomSpawnTeams", &v1162) && !*(a1 + 0x194) )
   {
     v364 = 0x41C64E6D * dword_4A79158 + 0x3039;
     dword_4A79158 = v364;
@@ -2687,26 +2687,26 @@ LABEL_497:
     if ( (v364 & 0x10000) == 0 )
     {
       LOBYTE(v1162) = 0;
-      v365 = sub_145BBF0(v308, "remapAiTankModels", &v1162);
+      v365 = data::get_bool(v308, "remapAiTankModels", &v1162);
     }
     *(a1 + 0x192) = v365;
   }
   LOBYTE(v1162) = 1;
-  *(a1 + 0x198) = sub_145BBF0(v308, "needShowLockedSlots", &v1162) & ((*(a1 + 0x67C) & 4u) >> 2);
+  *(a1 + 0x198) = data::get_bool(v308, "needShowLockedSlots", &v1162) & ((*(a1 + 0x67C) & 4u) >> 2);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x199) = sub_145BBF0(v308, "useSpawnScore", &v1162) & ((*(a1 + 0x67C) & 4u) >> 2);
+  *(a1 + 0x199) = data::get_bool(v308, "useSpawnScore", &v1162) & ((*(a1 + 0x67C) & 4u) >> 2);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x19A) = sub_145BBF0(v308, "useTeamSpawnScore", &v1162) & ((*(a1 + 0x67C) & 4u) >> 2);
+  *(a1 + 0x19A) = data::get_bool(v308, "useTeamSpawnScore", &v1162) & ((*(a1 + 0x67C) & 4u) >> 2);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x19D) = sub_145BBF0(v308, "useKillStreaks", &v1162) & ((*(a1 + 0x67C) & 4u) >> 2);
+  *(a1 + 0x19D) = data::get_bool(v308, "useKillStreaks", &v1162) & ((*(a1 + 0x67C) & 4u) >> 2);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x19F) = sub_145BBF0(v308, "wwarEconomics", &v1162) & ((*(a1 + 0x67C) & 4u) >> 2);
+  *(a1 + 0x19F) = data::get_bool(v308, "wwarEconomics", &v1162) & ((*(a1 + 0x67C) & 4u) >> 2);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x1A0) = sub_145BBF0(v308, "isWorldWar", &v1162) & ((*(a1 + 0x67C) & 4u) >> 2);
+  *(a1 + 0x1A0) = data::get_bool(v308, "isWorldWar", &v1162) & ((*(a1 + 0x67C) & 4u) >> 2);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x1A1) = sub_145BBF0(v308, "checkPlayerUnits", &v1162);
+  *(a1 + 0x1A1) = data::get_bool(v308, "checkPlayerUnits", &v1162);
   LOBYTE(v1162) = 1;
-  *(a1 + 0x19E) = sub_145BBF0(v308, "useAssaultBombFuseInKillStreak", &v1162);
+  *(a1 + 0x19E) = data::get_bool(v308, "useAssaultBombFuseInKillStreak", &v1162);
   v369 = NtCurrentTeb()->ThreadLocalStoragePointer;
   if ( !*(v369[TlsIndex] + 1i64) )
     _dyn_tls_on_demand_init(v369, v366, v367, v368);
@@ -2717,7 +2717,7 @@ LABEL_497:
   if ( sub_A60A60(qword_4B176E8) )
     v370 = sub_564630(game, "config/gameplay.blk", 0i64);
   v1162 = &szFile;
-  v371 = sub_1459B30(v308, "nameKillStreaks", &v1162);
+  v371 = data::get_str(v308, "nameKillStreaks", &v1162);
   v1170 = v370;
   if ( !v371 )
   {
@@ -2733,7 +2733,7 @@ LABEL_637:
   if ( v373 )
   {
     v375 = strlen(v371);
-    v376 = sub_1285C0(v372, v375);
+    v376 = data::get_name_id(v372, v375);
     v377 = *(v373 + 0x50);
     if ( v377 )
     {
@@ -2747,7 +2747,7 @@ LABEL_637:
       if ( !*(v373 + 0x20) )
         goto LABEL_519;
     }
-    v379 = sub_128A70(v373, v372, v375, v376);
+    v379 = data::get_name_id(v373, v372, v375, v376);
     if ( v379 >= 0 )
     {
       v380 = v378 + v379;
@@ -2758,7 +2758,7 @@ LABEL_521:
 LABEL_519:
     if ( !v378 )
       goto LABEL_522;
-    v380 = sub_128A70(*(v373 + 0x50), v372, v375, v376);
+    v380 = data::get_name_id(*(v373 + 0x50), v372, v375, v376);
     goto LABEL_521;
   }
 LABEL_522:
@@ -2859,7 +2859,7 @@ LABEL_621:
       }
 LABEL_538:
       v392 = strlen(v372);
-      v393 = sub_1285C0(v372, v392);
+      v393 = data::get_name_id(v372, v392);
       v394 = *(v384 + 0x50);
       if ( v394 )
       {
@@ -2873,7 +2873,7 @@ LABEL_538:
         if ( !*(v384 + 0x20) )
           goto LABEL_611;
       }
-      v440 = sub_128A70(v384, v372, v392, v393);
+      v440 = data::get_name_id(v384, v372, v392, v393);
       if ( v440 >= 0 )
       {
         v441 = v395 + v440;
@@ -2883,7 +2883,7 @@ LABEL_620:
       }
 LABEL_611:
       if ( v395 )
-        v441 = sub_128A70(*(v384 + 0x50), v372, v392, v393);
+        v441 = data::get_name_id(*(v384 + 0x50), v372, v392, v393);
       else
         v441 = 0xFFFFFFFF;
       goto LABEL_620;
@@ -2997,7 +2997,7 @@ LABEL_568:
       if ( v1162 <= v414 && SHIDWORD(v1162) >= v414 )
       {
         LODWORD(v1162) = 0x3F800000;
-        v415 = sub_145B6B0(v401, "weight", &v1162);
+        v415 = data::set_real(v401, "weight", &v1162);
         v416 = v1173;
         if ( v1176 == v1173 )
         {
@@ -3094,7 +3094,7 @@ LABEL_595:
     }
 LABEL_596:
     LODWORD(v1162) = 0x3F800000;
-    v431 = sub_145B6B0(v429, "weight", &v1162);
+    v431 = data::set_real(v429, "weight", &v1162);
     v423 = v423 - *&v431;
     if ( v423 > 0.0 )
     {
@@ -3174,19 +3174,19 @@ LABEL_638:
   }
   sub_6C9E80(*(game + 0x498), v370, a1 + 0x130);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x1A4) = sub_145BBF0(v308, "useSpawnDelay", &v1162);
+  *(a1 + 0x1A4) = data::get_bool(v308, "useSpawnDelay", &v1162);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x1A5) = sub_145BBF0(v308, "afterDeathDelayOnly", &v1162);
+  *(a1 + 0x1A5) = data::get_bool(v308, "afterDeathDelayOnly", &v1162);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x1AD) = sub_145BBF0(v308, "disableUnitsOutOfSessionRank", &v1162);
+  *(a1 + 0x1AD) = data::get_bool(v308, "disableUnitsOutOfSessionRank", &v1162);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x1AE) = sub_145BBF0(v308, "sendAwardsToUserLog", &v1162);
+  *(a1 + 0x1AE) = data::get_bool(v308, "sendAwardsToUserLog", &v1162);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x1AF) = sub_145BBF0(v308, "useTimeAwardingEconomics", &v1162) & ((*(a1 + 0x67C) & 4u) >> 2);
+  *(a1 + 0x1AF) = data::get_bool(v308, "useTimeAwardingEconomics", &v1162) & ((*(a1 + 0x67C) & 4u) >> 2);
   LODWORD(v1162) = 0x384;
-  *(a1 + 0x1B0) = sub_145A390(v308, "timeAwardingEconomicsRewardPeriodSec", &v1162);
+  *(a1 + 0x1B0) = data::set_int(v308, "timeAwardingEconomicsRewardPeriodSec", &v1162);
   v1162 = &szFile;
-  v467 = sub_1459B30(v308, "timeAwardingEconomicsActivityPreset", &v1162);
+  v467 = data::get_str(v308, "timeAwardingEconomicsActivityPreset", &v1162);
   v468 = *(a1 + 0x1B8);
   if ( v468 != v467 )
   {
@@ -3205,39 +3205,39 @@ LABEL_638:
     *(a1 + 0x1B8) = v472;
   }
   LOBYTE(v1162) = 1;
-  *(a1 + 0x1A9) = sub_145BBF0(v308, "allowUseArtillerySupport", &v1162);
+  *(a1 + 0x1A9) = data::get_bool(v308, "allowUseArtillerySupport", &v1162);
   LOBYTE(v1162) = 1;
-  *(a1 + 0x1AA) = sub_145BBF0(v308, "allowWinch", &v1162);
+  *(a1 + 0x1AA) = data::get_bool(v308, "allowWinch", &v1162);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x1AC) = sub_145BBF0(v308, "forceFreeBeltsAndWeapons", &v1162);
+  *(a1 + 0x1AC) = data::get_bool(v308, "forceFreeBeltsAndWeapons", &v1162);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x1C0) = sub_145BBF0(v308, "useTankBots", &v1162);
+  *(a1 + 0x1C0) = data::get_bool(v308, "useTankBots", &v1162);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x1C1) = sub_145BBF0(v308, "useShipBots", &v1162);
+  *(a1 + 0x1C1) = data::get_bool(v308, "useShipBots", &v1162);
   LOBYTE(v1162) = 1;
-  *(a1 + 0x1C2) = sub_145BBF0(v308, "keepDead", &v1162);
+  *(a1 + 0x1C2) = data::get_bool(v308, "keepDead", &v1162);
   LODWORD(v1162) = 0;
-  v473 = sub_145B6B0(v308, "tankBotsTargetingPosError", &v1162);
+  v473 = data::set_real(v308, "tankBotsTargetingPosError", &v1162);
   *(a1 + 0x1C4) = LODWORD(v473);
   LODWORD(v1162) = LODWORD(v473);
-  v474 = sub_145B6B0(v308, "tankBotsTargetingPosErrorOnHuman", &v1162);
+  v474 = data::set_real(v308, "tankBotsTargetingPosErrorOnHuman", &v1162);
   *(a1 + 0x1C8) = LODWORD(v474);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x1E4) = sub_145BBF0(v308, "allowEmptyTeams", &v1162);
+  *(a1 + 0x1E4) = data::get_bool(v308, "allowEmptyTeams", &v1162);
   LOBYTE(v1162) = 1;
-  *(a1 + 0x1E5) = sub_145BBF0(v308, "ctaPenaltyInactive", &v1162);
+  *(a1 + 0x1E5) = data::get_bool(v308, "ctaPenaltyInactive", &v1162);
   LOBYTE(v1162) = 1;
-  *(a1 + 0x1E6) = sub_145BBF0(v308, "ctaPenaltyNoBase", &v1162);
+  *(a1 + 0x1E6) = data::get_bool(v308, "ctaPenaltyNoBase", &v1162);
   LOBYTE(v1162) = 1;
-  *(a1 + 0x1E7) = sub_145BBF0(v308, "ctaPenaltyEmpty", &v1162);
+  *(a1 + 0x1E7) = data::get_bool(v308, "ctaPenaltyEmpty", &v1162);
   LOBYTE(v1162) = (*(a1 + 0x67C) & 4) == 0 || *(a1 + 0x678) == 0xB;
-  *(a1 + 0x1A2) = sub_145BBF0(v308, "useFinalResults", &v1162);
+  *(a1 + 0x1A2) = data::get_bool(v308, "useFinalResults", &v1162);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x1A3) = sub_145BBF0(v308, "useCustomOnlineUnlocksOnly", &v1162) & ((*(a1 + 0x67C) & 4u) >> 2);
+  *(a1 + 0x1A3) = data::get_bool(v308, "useCustomOnlineUnlocksOnly", &v1162) & ((*(a1 + 0x67C) & 4u) >> 2);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x19B) = sub_145BBF0(v308, "singleSpawnByTypeTechnics", &v1162) & ((*(a1 + 0x67C) & 4u) >> 2);
+  *(a1 + 0x19B) = data::get_bool(v308, "singleSpawnByTypeTechnics", &v1162) & ((*(a1 + 0x67C) & 4u) >> 2);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x19C) = sub_145BBF0(v308, "updateSpawnDelayOnlyForCurrentUnit", &v1162);
+  *(a1 + 0x19C) = data::get_bool(v308, "updateSpawnDelayOnlyForCurrentUnit", &v1162);
   if ( *(a1 + 0x18B) )
   {
     *(a1 + 0x1DC) = 0xFFFFFFFF;
@@ -3250,11 +3250,11 @@ LABEL_638:
     if ( v475 <= 0 )
     {
       LODWORD(v1162) = 1;
-      *(a1 + 0x1D4) = sub_145A390(qword_4AD09E8 + 0x130, "numBotRespawnsInMultiSlot", &v1162);
+      *(a1 + 0x1D4) = data::set_int(qword_4AD09E8 + 0x130, "numBotRespawnsInMultiSlot", &v1162);
       LODWORD(v1162) = 3;
-      *(a1 + 0x1D8) = sub_145A390(qword_4AD09E8 + 0x130, "numTankBotRespawnsInMultiSlot", &v1162);
+      *(a1 + 0x1D8) = data::set_int(qword_4AD09E8 + 0x130, "numTankBotRespawnsInMultiSlot", &v1162);
       LODWORD(v1162) = 3;
-      *(a1 + 0x1DC) = sub_145A390(qword_4AD09E8 + 0x130, "numShipBotRespawnsInMultiSlot", &v1162);
+      *(a1 + 0x1DC) = data::set_int(qword_4AD09E8 + 0x130, "numShipBotRespawnsInMultiSlot", &v1162);
       v475 = *(a1 + 0x1D4);
     }
     else
@@ -3265,42 +3265,42 @@ LABEL_638:
     }
   }
   LODWORD(v1162) = v475;
-  *(a1 + 0x1D4) = sub_145A390(v308, "numBotRespawns", &v1162);
+  *(a1 + 0x1D4) = data::set_int(v308, "numBotRespawns", &v1162);
   LODWORD(v1162) = *(a1 + 0x1D8);
-  *(a1 + 0x1D8) = sub_145A390(v308, "numTankBotRespawns", &v1162);
+  *(a1 + 0x1D8) = data::set_int(v308, "numTankBotRespawns", &v1162);
   LODWORD(v1162) = *(a1 + 0x1DC);
-  *(a1 + 0x1DC) = sub_145A390(v308, "numShipBotRespawns", &v1162);
+  *(a1 + 0x1DC) = data::set_int(v308, "numShipBotRespawns", &v1162);
   LODWORD(v1162) = 0;
-  LODWORD(v1162) = sub_145A390(qword_4AD09E8 + 0x130, "addWaitBetweenBotRespawns", &v1162);
-  *(a1 + 0x1E0) = sub_145A390(v308, "addWaitBetweenBotRespawns", &v1162);
+  LODWORD(v1162) = data::set_int(qword_4AD09E8 + 0x130, "addWaitBetweenBotRespawns", &v1162);
+  *(a1 + 0x1E0) = data::set_int(v308, "addWaitBetweenBotRespawns", &v1162);
   LODWORD(v1162) = (*(a1 + 0x67C) & 4) == 0 ? 0xFFFFFFFF : 0x3C;
-  *(a1 + 0x27C) = sub_145A390(v308, "timeToKickAfk", &v1162);
+  *(a1 + 0x27C) = data::set_int(v308, "timeToKickAfk", &v1162);
   LODWORD(v1162) = 0xFFFFFFFF;
-  *(a1 + 0x280) = sub_145A390(v308, "timeToKickAfkInSession", &v1162);
+  *(a1 + 0x280) = data::set_int(v308, "timeToKickAfkInSession", &v1162);
   LODWORD(v1162) = *(a1 + 0x284);
-  v476 = sub_145B6B0(v308, "delaySpawnMRankPow", &v1162);
+  v476 = data::set_real(v308, "delaySpawnMRankPow", &v1162);
   *(a1 + 0x284) = LODWORD(v476);
   LODWORD(v1162) = *(a1 + 0x288);
-  *(a1 + 0x288) = sub_145A390(v308, "delayForMaxRankMinutes", &v1162);
+  *(a1 + 0x288) = data::set_int(v308, "delayForMaxRankMinutes", &v1162);
   LODWORD(v1162) = *(a1 + 0x28C);
-  *(a1 + 0x28C) = sub_145A390(v308, "delayTimeRoundConstant", &v1162);
+  *(a1 + 0x28C) = data::set_int(v308, "delayTimeRoundConstant", &v1162);
   LODWORD(v1162) = *(a1 + 0x290);
-  v477 = sub_145B6B0(v308, "gameModeCustomDmg", &v1162);
+  v477 = data::set_real(v308, "gameModeCustomDmg", &v1162);
   *(a1 + 0x290) = LODWORD(v477);
   LODWORD(v1162) = *(a1 + 0x294);
-  v478 = sub_145B6B0(v308, "roguelikeLandingAwardPart_exp", &v1162);
+  v478 = data::set_real(v308, "roguelikeLandingAwardPart_exp", &v1162);
   *(a1 + 0x294) = LODWORD(v478);
   LODWORD(v1162) = *(a1 + 0x298);
-  v479 = sub_145B6B0(v308, "roguelikeLandingAwardPart_wp", &v1162);
+  v479 = data::set_real(v308, "roguelikeLandingAwardPart_wp", &v1162);
   *(a1 + 0x298) = LODWORD(v479);
   LODWORD(v1162) = *(a1 + 0x29C);
-  v480 = sub_145B6B0(v308, "botSurviveAmmoLostPercent", &v1162);
+  v480 = data::set_real(v308, "botSurviveAmmoLostPercent", &v1162);
   *(a1 + 0x29C) = LODWORD(v480);
   LODWORD(v1162) = *(a1 + 0x2A0);
-  v481 = sub_145B6B0(v308, "botSurviveWeaponLostPercent", &v1162);
+  v481 = data::set_real(v308, "botSurviveWeaponLostPercent", &v1162);
   *(a1 + 0x2A0) = LODWORD(v481);
   v1162 = &szFile;
-  v482 = sub_1459B30(v308, "activityPreset", &v1162);
+  v482 = data::get_str(v308, "activityPreset", &v1162);
   v483 = *(a1 + 0x2A8);
   if ( v483 != v482 )
   {
@@ -3319,10 +3319,10 @@ LABEL_638:
     *(a1 + 0x2A8) = v487;
   }
   LODWORD(v1162) = *(a1 + 0x2B0);
-  v488 = sub_145B6B0(v308, "maxTimeLagCompensation", &v1162);
+  v488 = data::set_real(v308, "maxTimeLagCompensation", &v1162);
   *(a1 + 0x2B0) = LODWORD(v488);
   v1162 = &szFile;
-  v489 = sub_1459B30(v308, "battleAreaColorPreset", &v1162);
+  v489 = data::get_str(v308, "battleAreaColorPreset", &v1162);
   v490 = *(a1 + 0x340);
   if ( v490 != v489 )
   {
@@ -3341,15 +3341,15 @@ LABEL_638:
     *(a1 + 0x340) = v494;
   }
   LODWORD(v1162) = 0xBF800000;
-  v495 = sub_145B6B0(v308, "killZoneVisibilityDistance", &v1162);
+  v495 = data::set_real(v308, "killZoneVisibilityDistance", &v1162);
   *(a1 + 0x368) = LODWORD(v495);
   LODWORD(v1162) = 0xBF800000;
-  v496 = sub_145B6B0(v308, "detectionZoneVisibilityDistance", &v1162);
+  v496 = data::set_real(v308, "detectionZoneVisibilityDistance", &v1162);
   *(a1 + 0x36C) = LODWORD(v496);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x2B4) = sub_145BBF0(v308, "useCustomSuperArtillery", &v1162);
+  *(a1 + 0x2B4) = data::get_bool(v308, "useCustomSuperArtillery", &v1162);
   v1162 = &szFile;
-  v497 = sub_1459B30(v308, "customSuperArtillery", &v1162);
+  v497 = data::get_str(v308, "customSuperArtillery", &v1162);
   v498 = *(a1 + 0x2B8);
   if ( v498 != v497 )
   {
@@ -3368,7 +3368,7 @@ LABEL_638:
     *(a1 + 0x2B8) = v502;
   }
   v1162 = &szFile;
-  v503 = sub_1459B30(v308, "customArtillery", &v1162);
+  v503 = data::get_str(v308, "customArtillery", &v1162);
   v504 = *(a1 + 0x2C0);
   if ( v504 != v503 )
   {
@@ -3387,7 +3387,7 @@ LABEL_638:
     *(a1 + 0x2C0) = v508;
   }
   v1162 = &szFile;
-  v509 = sub_1459B30(v308, "customArtilleryImage", &v1162);
+  v509 = data::get_str(v308, "customArtilleryImage", &v1162);
   v510 = *(a1 + 0x2C8);
   if ( v510 != v509 )
   {
@@ -3406,7 +3406,7 @@ LABEL_638:
     *(a1 + 0x2C8) = v514;
   }
   v1162 = &szFile;
-  v515 = sub_1459B30(v308, "killOutOfBattleAreaUnit", &v1162);
+  v515 = data::get_str(v308, "killOutOfBattleAreaUnit", &v1162);
   v516 = *(a1 + 0x2E8);
   if ( v516 != v515 )
   {
@@ -3425,17 +3425,17 @@ LABEL_638:
     *(a1 + 0x2E8) = v520;
   }
   LOBYTE(v1162) = 0;
-  *(a1 + 0x2D8) = sub_145BBF0(v308, "useDeathmatchHUD", &v1162);
+  *(a1 + 0x2D8) = data::get_bool(v308, "useDeathmatchHUD", &v1162);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x2D9) = sub_145BBF0(v308, "showTacticalMapCellSize", &v1162);
+  *(a1 + 0x2D9) = data::get_bool(v308, "showTacticalMapCellSize", &v1162);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x2DA) = sub_145BBF0(v308, "hudUseModernMarkers", &v1162);
+  *(a1 + 0x2DA) = data::get_bool(v308, "hudUseModernMarkers", &v1162);
   LODWORD(v1162) = 0xFFFFFFFF;
-  *(a1 + 0x2DC) = sub_145A390(v308, "timeLimitWarn", &v1162);
+  *(a1 + 0x2DC) = data::set_int(v308, "timeLimitWarn", &v1162);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x2E0) = sub_145BBF0(v308, "isRestartOptionHidden", &v1162);
+  *(a1 + 0x2E0) = data::get_bool(v308, "isRestartOptionHidden", &v1162);
   v1162 = &szFile;
-  v521 = sub_1459B30(v308, "countryFlagTeamA", &v1162);
+  v521 = data::get_str(v308, "countryFlagTeamA", &v1162);
   v522 = *(a1 + 0x348);
   if ( v522 != v521 )
   {
@@ -3454,7 +3454,7 @@ LABEL_638:
     *(a1 + 0x348) = v526;
   }
   v1162 = &szFile;
-  v527 = sub_1459B30(v308, "countryFlagTeamB", &v1162);
+  v527 = data::get_str(v308, "countryFlagTeamB", &v1162);
   v528 = *(a1 + 0x350);
   if ( v528 != v527 )
   {
@@ -3473,11 +3473,11 @@ LABEL_638:
     *(a1 + 0x350) = v532;
   }
   LOBYTE(v1162) = 0;
-  *(a1 + 0x309) = sub_145BBF0(v308, "checkFriendlyFireAlsoFromAircrafts", &v1162);
+  *(a1 + 0x309) = data::get_bool(v308, "checkFriendlyFireAlsoFromAircrafts", &v1162);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x30A) = sub_145BBF0(v308, "disableFriendlyFire", &v1162);
+  *(a1 + 0x30A) = data::get_bool(v308, "disableFriendlyFire", &v1162);
   v1162 = &szFile;
-  v533 = sub_1459B30(v308, "customArtillerySfxPath", &v1162);
+  v533 = data::get_str(v308, "customArtillerySfxPath", &v1162);
   v534 = *(a1 + 0x358);
   if ( v534 != v533 )
   {
@@ -3496,7 +3496,7 @@ LABEL_638:
     *(a1 + 0x358) = v538;
   }
   v1162 = &szFile;
-  v539 = sub_1459B30(v308, "customArtillerySfx", &v1162);
+  v539 = data::get_str(v308, "customArtillerySfx", &v1162);
   v540 = *(a1 + 0x360);
   if ( v540 != v539 )
   {
@@ -3515,7 +3515,7 @@ LABEL_638:
     *(a1 + 0x360) = v544;
   }
   v1162 = &szFile;
-  v545 = sub_1459B30(v308, "customHUD", &v1162);
+  v545 = data::get_str(v308, "customHUD", &v1162);
   v546 = *(a1 + 0x2F0);
   if ( v546 != v545 )
   {
@@ -3534,7 +3534,7 @@ LABEL_638:
     *(a1 + 0x2F0) = v550;
   }
   LOBYTE(v1162) = 0;
-  *(a1 + 0x30B) = sub_145BBF0(v308, "hideUnitsBehindSmoke", &v1162);
+  *(a1 + 0x30B) = data::get_bool(v308, "hideUnitsBehindSmoke", &v1162);
   v551 = *(a1 + 0x358);
   if ( v551 )
   {
@@ -3575,19 +3575,19 @@ LABEL_638:
   else
     v555 = *(a1 + 0x184) != 1;
   LOBYTE(v1162) = v555;
-  *(a1 + 0x1A7) = sub_145BBF0(v308, "allowSpare", &v1162);
+  *(a1 + 0x1A7) = data::get_bool(v308, "allowSpare", &v1162);
   LOBYTE(v1162) = 1;
-  *(a1 + 0x1A6) = sub_145BBF0(v308, "useFreeRepairs", &v1162);
+  *(a1 + 0x1A6) = data::get_bool(v308, "useFreeRepairs", &v1162);
   LOBYTE(v1162) = 1;
-  *(a1 + 0x1A8) = sub_145BBF0(v308, "enableProcessTeamInjury", &v1162);
+  *(a1 + 0x1A8) = data::get_bool(v308, "enableProcessTeamInjury", &v1162);
   LODWORD(v1162) = 0x10;
-  *(a1 + 0x680) = sub_145A390(v308, "mainPlayerType", &v1162);
+  *(a1 + 0x680) = data::set_int(v308, "mainPlayerType", &v1162);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x3A0) = sub_145BBF0(v308, "disableDrag", &v1162);
+  *(a1 + 0x3A0) = data::get_bool(v308, "disableDrag", &v1162);
   LOBYTE(v1162) = 0;
-  *(a1 + 0x3A1) = sub_145BBF0(v308, "disableGravity", &v1162);
+  *(a1 + 0x3A1) = data::get_bool(v308, "disableGravity", &v1162);
   LODWORD(v1162) = 0x447A0000;
-  v556 = sub_145B6B0(v308, "tformPhysicsError", &v1162);
+  v556 = data::set_real(v308, "tformPhysicsError", &v1162);
   *(a1 + 0x3A4) = LODWORD(v556);
   v557 = *(a1 + 0x200);
   v558 = *(a1 + 0x208);
@@ -3614,7 +3614,7 @@ LABEL_638:
   v563 = 0xFFFFFFFF;
   if ( !*v308 )
     goto LABEL_789;
-  v564 = sub_1285C0("tags", 4ui64);
+  v564 = data::get_name_id("tags", 4ui64);
   v565 = *(v562 + 0x50);
   if ( v565 )
   {
@@ -3624,7 +3624,7 @@ LABEL_638:
 LABEL_786:
       if ( v566 )
       {
-        v568 = sub_128A70(*(v562 + 0x50), "tags", 4ui64, v564);
+        v568 = data::get_name_id(*(v562 + 0x50), "tags", 4ui64, v564);
         goto LABEL_788;
       }
       goto LABEL_789;
@@ -3636,7 +3636,7 @@ LABEL_786:
     if ( !*(v562 + 0x20) )
       goto LABEL_786;
   }
-  v567 = sub_128A70(v562, "tags", 4ui64, v564);
+  v567 = data::get_name_id(v562, "tags", 4ui64, v564);
   if ( v567 < 0 )
     goto LABEL_786;
   v568 = v566 + v567;
@@ -3763,7 +3763,7 @@ LABEL_806:
   v600 = 0xFFFFFFFF;
   if ( !*v308 )
     goto LABEL_842;
-  v601 = sub_1285C0("aircrafts", 9ui64);
+  v601 = data::get_name_id("aircrafts", 9ui64);
   v602 = *(v599 + 0x50);
   if ( v602 )
   {
@@ -3773,7 +3773,7 @@ LABEL_806:
 LABEL_839:
       if ( v603 )
       {
-        v605 = sub_128A70(*(v599 + 0x50), "aircrafts", 9ui64, v601);
+        v605 = data::get_name_id(*(v599 + 0x50), "aircrafts", 9ui64, v601);
         goto LABEL_841;
       }
       goto LABEL_842;
@@ -3785,7 +3785,7 @@ LABEL_839:
     if ( !*(v599 + 0x20) )
       goto LABEL_839;
   }
-  v604 = sub_128A70(v599, "aircrafts", 9ui64, v601);
+  v604 = data::get_name_id(v599, "aircrafts", 9ui64, v601);
   if ( v604 < 0 )
     goto LABEL_839;
   v605 = v603 + v604;
@@ -3912,7 +3912,7 @@ LABEL_859:
   v637 = 0xFFFFFFFF;
   if ( !*v308 )
     goto LABEL_895;
-  v638 = sub_1285C0("pilotName", 9ui64);
+  v638 = data::get_name_id("pilotName", 9ui64);
   v639 = *(v636 + 0x50);
   if ( v639 )
   {
@@ -3922,7 +3922,7 @@ LABEL_859:
 LABEL_892:
       if ( v640 )
       {
-        v642 = sub_128A70(*(v636 + 0x50), "pilotName", 9ui64, v638);
+        v642 = data::get_name_id(*(v636 + 0x50), "pilotName", 9ui64, v638);
         goto LABEL_894;
       }
       goto LABEL_895;
@@ -3934,7 +3934,7 @@ LABEL_892:
     if ( !*(v636 + 0x20) )
       goto LABEL_892;
   }
-  v641 = sub_128A70(v636, "pilotName", 9ui64, v638);
+  v641 = data::get_name_id(v636, "pilotName", 9ui64, v638);
   if ( v641 < 0 )
     goto LABEL_892;
   v642 = v640 + v641;
@@ -4007,7 +4007,7 @@ LABEL_908:
   v659 = 0xFFFFFFFF;
   if ( !*v1169 )
     goto LABEL_928;
-  v660 = sub_1285C0("weatherPresetBlk", 0x10ui64);
+  v660 = data::get_name_id("weatherPresetBlk", 0x10ui64);
   v661 = *(v658 + 0x50);
   if ( v661 )
   {
@@ -4017,7 +4017,7 @@ LABEL_908:
 LABEL_925:
       if ( v662 )
       {
-        v664 = sub_128A70(*(v658 + 0x50), "weatherPresetBlk", 0x10ui64, v660);
+        v664 = data::get_name_id(*(v658 + 0x50), "weatherPresetBlk", 0x10ui64, v660);
         goto LABEL_927;
       }
       goto LABEL_928;
@@ -4029,7 +4029,7 @@ LABEL_925:
     if ( !*(v658 + 0x20) )
       goto LABEL_925;
   }
-  v663 = sub_128A70(v658, "weatherPresetBlk", 0x10ui64, v660);
+  v663 = data::get_name_id(v658, "weatherPresetBlk", 0x10ui64, v660);
   if ( v663 < 0 )
     goto LABEL_925;
   v664 = v662 + v663;
@@ -4053,20 +4053,20 @@ LABEL_928:
     if ( v669 >= v666 )
       goto LABEL_999;
 LABEL_944:
-    v676 = sub_1285C0("weatherTypeBlk", 0xEui64);
+    v676 = data::get_name_id("weatherTypeBlk", 0xEui64);
     v677 = *(v668 + 0x50);
     if ( v677 )
       v678 = *(v677 + 0x20);
     else
       v678 = 0;
     v679 = v1169;
-    if ( *(v668 + 0x20) && (v680 = sub_128A70(v668, "weatherTypeBlk", 0xEui64, v676), v680 >= 0) )
+    if ( *(v668 + 0x20) && (v680 = data::get_name_id(v668, "weatherTypeBlk", 0xEui64, v676), v680 >= 0) )
     {
       v681 = v678 + v680;
     }
     else if ( v678 )
     {
-      v681 = sub_128A70(*(v668 + 0x50), "weatherTypeBlk", 0xEui64, v676);
+      v681 = data::get_name_id(*(v668 + 0x50), "weatherTypeBlk", 0xEui64, v676);
     }
     else
     {
@@ -4136,20 +4136,20 @@ LABEL_954:
     if ( *v1169 )
     {
 LABEL_970:
-      v693 = sub_1285C0("environmentGlobalBlk", 0x14ui64);
+      v693 = data::get_name_id("environmentGlobalBlk", 0x14ui64);
       v694 = *(v685 + 0x50);
       if ( v694 )
         v695 = *(v694 + 0x20);
       else
         v695 = 0;
       v696 = v1169;
-      if ( *(v685 + 0x20) && (v697 = sub_128A70(v685, "environmentGlobalBlk", 0x14ui64, v693), v697 >= 0) )
+      if ( *(v685 + 0x20) && (v697 = data::get_name_id(v685, "environmentGlobalBlk", 0x14ui64, v693), v697 >= 0) )
       {
         v698 = v695 + v697;
       }
       else if ( v695 )
       {
-        v698 = sub_128A70(*(v685 + 0x50), "environmentGlobalBlk", 0x14ui64, v693);
+        v698 = data::get_name_id(*(v685 + 0x50), "environmentGlobalBlk", 0x14ui64, v693);
       }
       else
       {
@@ -4202,7 +4202,7 @@ LABEL_970:
     if ( *v1169 )
     {
 LABEL_997:
-      v711 = sub_1285C0("weatherPreset", 0xDui64);
+      v711 = data::get_name_id("weatherPreset", 0xDui64);
       v712 = *(v702 + 0x50);
       if ( v712 )
         v713 = *(v712 + 0x20);
@@ -4210,7 +4210,7 @@ LABEL_997:
         v713 = 0;
       if ( *(v702 + 0x20) )
       {
-        v1103 = sub_128A70(v702, "weatherPreset", 0xDui64, v711);
+        v1103 = data::get_name_id(v702, "weatherPreset", 0xDui64, v711);
         if ( v1103 >= 0 )
         {
           v1104 = v713 + v1103;
@@ -4219,7 +4219,7 @@ LABEL_997:
       }
       if ( v713 )
       {
-        v1104 = sub_128A70(*(v702 + 0x50), "weatherPreset", 0xDui64, v711);
+        v1104 = data::get_name_id(*(v702 + 0x50), "weatherPreset", 0xDui64, v711);
         goto LABEL_1538;
       }
     }
@@ -4283,13 +4283,13 @@ LABEL_1558:
     v1121 = 0xFFFFFFFF;
     if ( *v714 )
     {
-      v1122 = sub_1285C0("weatherType", 0xBui64);
+      v1122 = data::get_name_id("weatherType", 0xBui64);
       v1123 = *(v1120 + 0x50);
       if ( v1123 )
         v1119 = *(v1123 + 0x20);
       if ( *(v1120 + 0x20) )
       {
-        v1124 = sub_128A70(v1120, "weatherType", 0xBui64, v1122);
+        v1124 = data::get_name_id(v1120, "weatherType", 0xBui64, v1122);
         if ( v1124 >= 0 )
         {
           v1125 = v1119 + v1124;
@@ -4298,7 +4298,7 @@ LABEL_1558:
       }
       if ( v1119 )
       {
-        v1125 = sub_128A70(*(v1120 + 0x50), "weatherType", 0xBui64, v1122);
+        v1125 = data::get_name_id(*(v1120 + 0x50), "weatherType", 0xBui64, v1122);
 LABEL_1568:
         v1121 = v1125;
       }
@@ -4360,13 +4360,13 @@ LABEL_1586:
     v1142 = 0xFFFFFFFF;
     if ( *v714 )
     {
-      v1143 = sub_1285C0("environmentGlobal", 0x11ui64);
+      v1143 = data::get_name_id("environmentGlobal", 0x11ui64);
       v1144 = *(v1141 + 0x50);
       if ( v1144 )
         v1140 = *(v1144 + 0x20);
       if ( *(v1141 + 0x20) )
       {
-        v1145 = sub_128A70(v1141, "environmentGlobal", 0x11ui64, v1143);
+        v1145 = data::get_name_id(v1141, "environmentGlobal", 0x11ui64, v1143);
         if ( v1145 >= 0 )
         {
           v1146 = v1140 + v1145;
@@ -4375,7 +4375,7 @@ LABEL_1586:
       }
       if ( v1140 )
       {
-        v1146 = sub_128A70(*(v1141 + 0x50), "environmentGlobal", 0x11ui64, v1143);
+        v1146 = data::get_name_id(*(v1141 + 0x50), "environmentGlobal", 0x11ui64, v1143);
 LABEL_1596:
         v1142 = v1146;
       }
@@ -4455,7 +4455,7 @@ LABEL_999:
   v718 = 0xFFFFFFFF;
   if ( !*v714 )
     goto LABEL_1016;
-  v719 = sub_1285C0("customWeather", 0xDui64);
+  v719 = data::get_name_id("customWeather", 0xDui64);
   v720 = *(v717 + 0x50);
   if ( v720 )
   {
@@ -4465,7 +4465,7 @@ LABEL_999:
 LABEL_1013:
       if ( v721 )
       {
-        v723 = sub_128A70(*(v717 + 0x50), "customWeather", 0xDui64, v719);
+        v723 = data::get_name_id(*(v717 + 0x50), "customWeather", 0xDui64, v719);
         goto LABEL_1015;
       }
       goto LABEL_1016;
@@ -4477,7 +4477,7 @@ LABEL_1013:
     if ( !*(v717 + 0x20) )
       goto LABEL_1013;
   }
-  v722 = sub_128A70(v717, "customWeather", 0xDui64, v719);
+  v722 = data::get_name_id(v717, "customWeather", 0xDui64, v719);
   if ( v722 < 0 )
     goto LABEL_1013;
   v723 = v721 + v722;
@@ -4541,13 +4541,13 @@ LABEL_1033:
   v740 = 0xFFFFFFFF;
   if ( *v714 )
   {
-    v741 = sub_1285C0("limits", 6ui64);
+    v741 = data::get_name_id("limits", 6ui64);
     v742 = *(v739 + 0x50);
     if ( v742 )
       v738 = *(v742 + 0x20);
     if ( *(v739 + 0x20) )
     {
-      v743 = sub_128A70(v739, "limits", 6ui64, v741);
+      v743 = data::get_name_id(v739, "limits", 6ui64, v741);
       if ( v743 >= 0 )
       {
         v744 = v738 + v743;
@@ -4556,7 +4556,7 @@ LABEL_1033:
     }
     if ( v738 )
     {
-      v744 = sub_128A70(*(v739 + 0x50), "limits", 6ui64, v741);
+      v744 = data::get_name_id(*(v739 + 0x50), "limits", 6ui64, v741);
 LABEL_1043:
       v740 = v744;
     }
@@ -4618,13 +4618,13 @@ LABEL_1061:
   v761 = 0xFFFFFFFF;
   if ( *v714 )
   {
-    v762 = sub_1285C0("spawnTypes", 0xAui64);
+    v762 = data::get_name_id("spawnTypes", 0xAui64);
     v763 = *(v760 + 0x50);
     if ( v763 )
       v759 = *(v763 + 0x20);
     if ( *(v760 + 0x20) )
     {
-      v764 = sub_128A70(v760, "spawnTypes", 0xAui64, v762);
+      v764 = data::get_name_id(v760, "spawnTypes", 0xAui64, v762);
       if ( v764 >= 0 )
       {
         v765 = v759 + v764;
@@ -4633,7 +4633,7 @@ LABEL_1061:
     }
     if ( v759 )
     {
-      v765 = sub_128A70(*(v760 + 0x50), "spawnTypes", 0xAui64, v762);
+      v765 = data::get_name_id(*(v760 + 0x50), "spawnTypes", 0xAui64, v762);
 LABEL_1071:
       v761 = v765;
     }
@@ -4695,13 +4695,13 @@ LABEL_1089:
   v782 = 0xFFFFFFFF;
   if ( *v714 )
   {
-    v783 = sub_1285C0("customSpawnScore", 0x10ui64);
+    v783 = data::get_name_id("customSpawnScore", 0x10ui64);
     v784 = *(v781 + 0x50);
     if ( v784 )
       v780 = *(v784 + 0x20);
     if ( *(v781 + 0x20) )
     {
-      v785 = sub_128A70(v781, "customSpawnScore", 0x10ui64, v783);
+      v785 = data::get_name_id(v781, "customSpawnScore", 0x10ui64, v783);
       if ( v785 >= 0 )
       {
         v786 = v780 + v785;
@@ -4710,7 +4710,7 @@ LABEL_1089:
     }
     if ( v780 )
     {
-      v786 = sub_128A70(*(v781 + 0x50), "customSpawnScore", 0x10ui64, v783);
+      v786 = data::get_name_id(*(v781 + 0x50), "customSpawnScore", 0x10ui64, v783);
 LABEL_1099:
       v782 = v786;
     }
@@ -4772,13 +4772,13 @@ LABEL_1117:
   v803 = 0xFFFFFFFF;
   if ( *v714 )
   {
-    v804 = sub_1285C0("roguelikeModeAircrafts", 0x16ui64);
+    v804 = data::get_name_id("roguelikeModeAircrafts", 0x16ui64);
     v805 = *(v802 + 0x50);
     if ( v805 )
       v801 = *(v805 + 0x20);
     if ( *(v802 + 0x20) )
     {
-      v806 = sub_128A70(v802, "roguelikeModeAircrafts", 0x16ui64, v804);
+      v806 = data::get_name_id(v802, "roguelikeModeAircrafts", 0x16ui64, v804);
       if ( v806 >= 0 )
       {
         v807 = v801 + v806;
@@ -4787,7 +4787,7 @@ LABEL_1117:
     }
     if ( v801 )
     {
-      v807 = sub_128A70(*(v802 + 0x50), "roguelikeModeAircrafts", 0x16ui64, v804);
+      v807 = data::get_name_id(*(v802 + 0x50), "roguelikeModeAircrafts", 0x16ui64, v804);
 LABEL_1127:
       v803 = v807;
     }
@@ -4849,13 +4849,13 @@ LABEL_1145:
   v824 = 0xFFFFFFFF;
   if ( *v714 )
   {
-    v825 = sub_1285C0("roguelikeModeActions", 0x14ui64);
+    v825 = data::get_name_id("roguelikeModeActions", 0x14ui64);
     v826 = *(v823 + 0x50);
     if ( v826 )
       v822 = *(v826 + 0x20);
     if ( *(v823 + 0x20) )
     {
-      v827 = sub_128A70(v823, "roguelikeModeActions", 0x14ui64, v825);
+      v827 = data::get_name_id(v823, "roguelikeModeActions", 0x14ui64, v825);
       if ( v827 >= 0 )
       {
         v828 = v822 + v827;
@@ -4864,7 +4864,7 @@ LABEL_1145:
     }
     if ( v822 )
     {
-      v828 = sub_128A70(*(v823 + 0x50), "roguelikeModeActions", 0x14ui64, v825);
+      v828 = data::get_name_id(*(v823 + 0x50), "roguelikeModeActions", 0x14ui64, v825);
 LABEL_1155:
       v824 = v828;
     }
@@ -4926,13 +4926,13 @@ LABEL_1173:
   v845 = 0xFFFFFFFF;
   if ( *v714 )
   {
-    v846 = sub_1285C0("customRules", 0xBui64);
+    v846 = data::get_name_id("customRules", 0xBui64);
     v847 = *(v844 + 0x50);
     if ( v847 )
       v843 = *(v847 + 0x20);
     if ( *(v844 + 0x20) )
     {
-      v848 = sub_128A70(v844, "customRules", 0xBui64, v846);
+      v848 = data::get_name_id(v844, "customRules", 0xBui64, v846);
       if ( v848 >= 0 )
       {
         v849 = v843 + v848;
@@ -4941,7 +4941,7 @@ LABEL_1173:
     }
     if ( v843 )
     {
-      v849 = sub_128A70(*(v844 + 0x50), "customRules", 0xBui64, v846);
+      v849 = data::get_name_id(*(v844 + 0x50), "customRules", 0xBui64, v846);
 LABEL_1183:
       v845 = v849;
     }
@@ -5004,13 +5004,13 @@ LABEL_1201:
   v866 = 0xFFFFFFFF;
   if ( *v714 )
   {
-    v867 = sub_1285C0("unitsParamsList", 0xFui64);
+    v867 = data::get_name_id("unitsParamsList", 0xFui64);
     v868 = *(v865 + 0x50);
     if ( v868 )
       v864 = *(v868 + 0x20);
     if ( *(v865 + 0x20) )
     {
-      v869 = sub_128A70(v865, "unitsParamsList", 0xFui64, v867);
+      v869 = data::get_name_id(v865, "unitsParamsList", 0xFui64, v867);
       if ( v869 >= 0 )
       {
         v870 = v864 + v869;
@@ -5019,7 +5019,7 @@ LABEL_1201:
     }
     if ( v864 )
     {
-      v870 = sub_128A70(*(v865 + 0x50), "unitsParamsList", 0xFui64, v867);
+      v870 = data::get_name_id(*(v865 + 0x50), "unitsParamsList", 0xFui64, v867);
 LABEL_1211:
       v866 = v870;
     }
@@ -5089,7 +5089,7 @@ LABEL_1229:
   v887 = 0xFFFFFFFF;
   if ( !*v1169 )
     goto LABEL_1243;
-  v888 = sub_1285C0("overrideSlotbar", 0xFui64);
+  v888 = data::get_name_id("overrideSlotbar", 0xFui64);
   v889 = *(v886 + 0x50);
   if ( v889 )
   {
@@ -5099,7 +5099,7 @@ LABEL_1229:
 LABEL_1240:
       if ( v890 )
       {
-        v892 = sub_128A70(*(v886 + 0x50), "overrideSlotbar", 0xFui64, v888);
+        v892 = data::get_name_id(*(v886 + 0x50), "overrideSlotbar", 0xFui64, v888);
         goto LABEL_1242;
       }
       goto LABEL_1243;
@@ -5111,7 +5111,7 @@ LABEL_1240:
     if ( !*(v886 + 0x20) )
       goto LABEL_1240;
   }
-  v891 = sub_128A70(v886, "overrideSlotbar", 0xFui64, v888);
+  v891 = data::get_name_id(v886, "overrideSlotbar", 0xFui64, v888);
   if ( v891 < 0 )
     goto LABEL_1240;
   v892 = v890 + v891;
@@ -5176,13 +5176,13 @@ LABEL_1256:
   v909 = 0xFFFFFFFF;
   if ( *v1169 )
   {
-    v910 = sub_1285C0("editSlotbar", 0xBui64);
+    v910 = data::get_name_id("editSlotbar", 0xBui64);
     v911 = *(v908 + 0x50);
     if ( v911 )
       v907 = *(v911 + 0x20);
     if ( *(v908 + 0x20) )
     {
-      v912 = sub_128A70(v908, "editSlotbar", 0xBui64, v910);
+      v912 = data::get_name_id(v908, "editSlotbar", 0xBui64, v910);
       if ( v912 >= 0 )
       {
         v913 = v907 + v912;
@@ -5191,7 +5191,7 @@ LABEL_1256:
     }
     if ( v907 )
     {
-      v913 = sub_128A70(*(v908 + 0x50), "editSlotbar", 0xBui64, v910);
+      v913 = data::get_name_id(*(v908 + 0x50), "editSlotbar", 0xBui64, v910);
 LABEL_1266:
       v909 = v913;
     }
@@ -5253,13 +5253,13 @@ LABEL_1287:
   v930 = 0xFFFFFFFF;
   if ( *v885 )
   {
-    v931 = sub_1285C0("aiCasualtiesMapping", 0x13ui64);
+    v931 = data::get_name_id("aiCasualtiesMapping", 0x13ui64);
     v932 = *(v929 + 0x50);
     if ( v932 )
       v928 = *(v932 + 0x20);
     if ( *(v929 + 0x20) )
     {
-      v933 = sub_128A70(v929, "aiCasualtiesMapping", 0x13ui64, v931);
+      v933 = data::get_name_id(v929, "aiCasualtiesMapping", 0x13ui64, v931);
       if ( v933 >= 0 )
       {
         v934 = v928 + v933;
@@ -5268,7 +5268,7 @@ LABEL_1287:
     }
     if ( v928 )
     {
-      v934 = sub_128A70(*(v929 + 0x50), "aiCasualtiesMapping", 0x13ui64, v931);
+      v934 = data::get_name_id(*(v929 + 0x50), "aiCasualtiesMapping", 0x13ui64, v931);
 LABEL_1297:
       v930 = v934;
     }
@@ -5330,13 +5330,13 @@ LABEL_1315:
   v951 = 0xFFFFFFFF;
   if ( *v885 )
   {
-    v952 = sub_1285C0("unitGroups", 0xAui64);
+    v952 = data::get_name_id("unitGroups", 0xAui64);
     v953 = *(v950 + 0x50);
     if ( v953 )
       v949 = *(v953 + 0x20);
     if ( *(v950 + 0x20) )
     {
-      v954 = sub_128A70(v950, "unitGroups", 0xAui64, v952);
+      v954 = data::get_name_id(v950, "unitGroups", 0xAui64, v952);
       if ( v954 >= 0 )
       {
         v955 = v949 + v954;
@@ -5345,7 +5345,7 @@ LABEL_1315:
     }
     if ( v949 )
     {
-      v955 = sub_128A70(*(v950 + 0x50), "unitGroups", 0xAui64, v952);
+      v955 = data::get_name_id(*(v950 + 0x50), "unitGroups", 0xAui64, v952);
 LABEL_1325:
       v951 = v955;
     }
@@ -5405,7 +5405,7 @@ LABEL_1343:
   sub_1458A90(a1 + 0x570, v970, 0i64);
 LABEL_1346:
   v1162 = &szFile;
-  v971 = sub_1459B30(v885, "overrideUnit", &v1162);
+  v971 = data::get_str(v885, "overrideUnit", &v1162);
   v972 = *(a1 + 0xD8);
   if ( v972 != v971 )
   {
@@ -5424,9 +5424,9 @@ LABEL_1346:
     *(a1 + 0xD8) = v976;
   }
   LOBYTE(v1162) = 1;
-  *(a1 + 0xF0) = sub_145BBF0(v885, "isCustomVisualFilterAllowed", &v1162);
+  *(a1 + 0xF0) = data::get_bool(v885, "isCustomVisualFilterAllowed", &v1162);
   v1162 = &szFile;
-  v977 = sub_1459B30(v885, "allowedTagsPreset", &v1162);
+  v977 = data::get_str(v885, "allowedTagsPreset", &v1162);
   v978 = *(a1 + 0x128);
   if ( v978 != v977 )
   {
@@ -5445,7 +5445,7 @@ LABEL_1346:
     *(a1 + 0x128) = v982;
   }
   v1162 = &szFile;
-  v983 = sub_1459B30(v885, "missionProgressType", &v1162);
+  v983 = data::get_str(v885, "missionProgressType", &v1162);
   v984 = *(a1 + 0xE0);
   if ( v984 != v983 )
   {
@@ -5464,12 +5464,12 @@ LABEL_1346:
     *(a1 + 0xE0) = v988;
   }
   LOBYTE(v1162) = 0;
-  *(a1 + 0x3A8) = sub_145BBF0(v885, "disableProjectileDamage", &v1162);
+  *(a1 + 0x3A8) = data::get_bool(v885, "disableProjectileDamage", &v1162);
   v989 = *v885;
   v990 = 0xFFFFFFFF;
   if ( !*v885 )
     goto LABEL_1383;
-  v991 = sub_1285C0("forbidVisualTags", 0x10ui64);
+  v991 = data::get_name_id("forbidVisualTags", 0x10ui64);
   v992 = *(v989 + 0x50);
   if ( v992 )
   {
@@ -5479,7 +5479,7 @@ LABEL_1346:
 LABEL_1380:
       if ( v993 )
       {
-        v995 = sub_128A70(*(v989 + 0x50), "forbidVisualTags", 0x10ui64, v991);
+        v995 = data::get_name_id(*(v989 + 0x50), "forbidVisualTags", 0x10ui64, v991);
         goto LABEL_1382;
       }
       goto LABEL_1383;
@@ -5491,7 +5491,7 @@ LABEL_1380:
     if ( !*(v989 + 0x20) )
       goto LABEL_1380;
   }
-  v994 = sub_128A70(v989, "forbidVisualTags", 0x10ui64, v991);
+  v994 = data::get_name_id(v989, "forbidVisualTags", 0x10ui64, v991);
   if ( v994 < 0 )
     goto LABEL_1380;
   v995 = v993 + v994;
@@ -5659,7 +5659,7 @@ LABEL_1431:
   v1036 = 0xFFFFFFFF;
   if ( !*v1169 )
     goto LABEL_1441;
-  v1037 = sub_1285C0("allowedVisualTags", 0x11ui64);
+  v1037 = data::get_name_id("allowedVisualTags", 0x11ui64);
   v1038 = *(v1035 + 0x50);
   if ( v1038 )
   {
@@ -5669,7 +5669,7 @@ LABEL_1431:
 LABEL_1438:
       if ( v1039 )
       {
-        v1041 = sub_128A70(*(v1035 + 0x50), "allowedVisualTags", 0x11ui64, v1037);
+        v1041 = data::get_name_id(*(v1035 + 0x50), "allowedVisualTags", 0x11ui64, v1037);
         goto LABEL_1440;
       }
       goto LABEL_1441;
@@ -5681,7 +5681,7 @@ LABEL_1438:
     if ( !*(v1035 + 0x20) )
       goto LABEL_1438;
   }
-  v1040 = sub_128A70(v1035, "allowedVisualTags", 0x11ui64, v1037);
+  v1040 = data::get_name_id(v1035, "allowedVisualTags", 0x11ui64, v1037);
   if ( v1040 < 0 )
     goto LABEL_1438;
   v1041 = v1039 + v1040;
@@ -5855,7 +5855,7 @@ LABEL_1489:
   if ( !*(game + 0xCE) )
   {
     v1162 = 0i64;
-    v1082 = sub_1459B30(v1170, "customBotListFunction", &v1162);
+    v1082 = data::get_str(v1170, "customBotListFunction", &v1162);
     if ( v1082 )
     {
       v1083 = v1082;

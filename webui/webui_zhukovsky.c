@@ -239,7 +239,7 @@ const char *__fastcall webui_zhukovsky(__int64 http_req, __int64 a2, double a3)
         v85 = v18;
         LODWORD(v84) = 2;
         *&Buffer.st_nlink = off_4B678C8;
-        sub_1546EF0(&Buffer, v17, "zhukovskyChartSeries%d", &v84, 1);
+        ctor_vprintf(&Buffer, v17, "zhukovskyChartSeries%d", &v84, 1);
         v19 = *&Buffer.st_dev;
         v20 = *&Buffer.st_dev;
         if ( !Buffer.st_rdev )
@@ -262,7 +262,7 @@ const char *__fastcall webui_zhukovsky(__int64 http_req, __int64 a2, double a3)
       *&Buffer.st_nlink = 0i64;
       Buffer.st_dev = 2;
       v85 = off_4B678C8;
-      sub_1546EF0(&v84, v17, "climbRate%d", &Buffer, 1);
+      ctor_vprintf(&v84, v17, "climbRate%d", &Buffer, 1);
       v51 = v84;
       v52 = v84;
       if ( !v86 )
@@ -282,7 +282,7 @@ const char *__fastcall webui_zhukovsky(__int64 http_req, __int64 a2, double a3)
       *&Buffer.st_nlink = 1i64;
       Buffer.st_dev = 2;
       v85 = off_4B678C8;
-      sub_1546EF0(&v84, v56, "climbRate%d", &Buffer, 1);
+      ctor_vprintf(&v84, v56, "climbRate%d", &Buffer, 1);
       v57 = v84;
       v58 = v84;
       if ( !v86 )
@@ -301,7 +301,7 @@ const char *__fastcall webui_zhukovsky(__int64 http_req, __int64 a2, double a3)
       *&Buffer.st_nlink = 2i64;
       Buffer.st_dev = 2;
       v85 = off_4B678C8;
-      sub_1546EF0(&v84, v61, "climbRate%d", &Buffer, 1);
+      ctor_vprintf(&v84, v61, "climbRate%d", &Buffer, 1);
       v62 = v84;
       v63 = v84;
       if ( !v86 )
@@ -320,7 +320,7 @@ const char *__fastcall webui_zhukovsky(__int64 http_req, __int64 a2, double a3)
       *&Buffer.st_nlink = 3i64;
       Buffer.st_dev = 2;
       v85 = off_4B678C8;
-      sub_1546EF0(&v84, v66, "climbRate%d", &Buffer, 1);
+      ctor_vprintf(&v84, v66, "climbRate%d", &Buffer, 1);
       v67 = v84;
       v68 = v93;
       if ( v86 )

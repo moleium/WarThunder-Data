@@ -335,13 +335,13 @@ __int64 __fastcall unit_builder(
 
   v311 = a3;
   LOBYTE(v308) = 1;
-  v12 = sub_145BBF0(a6, "activeDynModelInst", &v308);
+  v12 = data::get_bool(a6, "activeDynModelInst", &v308);
   v13 = a4 | 0x800;
   v14 = *a6;
   v15 = 0xFFFFFFFF;
   if ( *a6 )
   {
-    v16 = sub_1285C0("props", 5ui64);
+    v16 = data::get_name_id("props", 5ui64);
     v17 = *(v14 + 0x50);
     if ( v17 )
     {
@@ -355,7 +355,7 @@ __int64 __fastcall unit_builder(
       if ( !*(v14 + 0x20) )
         goto LABEL_8;
     }
-    v19 = sub_128A70(v14, "props", 5i64, v16);
+    v19 = data::get_name_id(v14, "props", 5i64, v16);
     if ( v19 >= 0 )
     {
       v20 = v18 + v19;
@@ -366,7 +366,7 @@ LABEL_10:
 LABEL_8:
     if ( !v18 )
       goto LABEL_11;
-    v20 = sub_128A70(*(v14 + 0x50), "props", 5i64, v16);
+    v20 = data::get_name_id(*(v14 + 0x50), "props", 5i64, v16);
     goto LABEL_10;
   }
 LABEL_11:
@@ -429,7 +429,7 @@ LABEL_26:
   if ( !v25 )
     v25 = &qword_4B67850;
   LODWORD(v308) = 1;
-  v38 = sub_145A390(v25, "army", &v308);
+  v38 = data::set_int(v25, "army", &v308);
   sub_317E20(Unit, v37, a8, 0, v38, v22, v13, v12);
   *Unit = &off_44C3A90;
   *(Unit + 0x50) = off_44C4360;
@@ -1275,7 +1275,7 @@ LABEL_280:
   v75 = 0xFFFFFFFF;
   if ( !*a6 )
     goto LABEL_81;
-  v76 = sub_1285C0("props", 5ui64);
+  v76 = data::get_name_id("props", 5ui64);
   v77 = *(v74 + 0x50);
   if ( v77 )
   {
@@ -1285,7 +1285,7 @@ LABEL_280:
 LABEL_78:
       if ( v78 )
       {
-        v80 = sub_128A70(*(v74 + 0x50), "props", 5i64, v76);
+        v80 = data::get_name_id(*(v74 + 0x50), "props", 5i64, v76);
         goto LABEL_80;
       }
       goto LABEL_81;
@@ -1297,7 +1297,7 @@ LABEL_78:
     if ( !*(v74 + 0x20) )
       goto LABEL_78;
   }
-  v79 = sub_128A70(v74, "props", 5i64, v76);
+  v79 = data::get_name_id(v74, "props", 5i64, v76);
   if ( v79 < 0 )
     goto LABEL_78;
   v80 = v78 + v79;
@@ -1364,7 +1364,7 @@ LABEL_94:
   v307 = v94;
   LODWORD(v306) = 1;
   v309 = off_4B678C8;
-  sub_1546EF0(&v308, v73, "gameData/units/%s.blk", &v306, 1);
+  ctor_vprintf(&v308, v73, "gameData/units/%s.blk", &v306, 1);
   if ( v310 )
     v95 = v308;
   else
@@ -1426,8 +1426,8 @@ LABEL_94:
     v334 = Unit + 0x1E48;
     v315 = Unit + 0x1E60;
     v102 = qword_4B12868 + 0xA0;
-    v103 = sub_1285C0("body", 4ui64);
-    v104 = sub_128A70(v102, "body", 4i64, v103);
+    v103 = data::get_name_id("body", 4ui64);
+    v104 = data::get_name_id(v102, "body", 4i64, v103);
     if ( v104 < 0 )
     {
       v307 = "body";
@@ -1443,8 +1443,8 @@ LABEL_94:
     }
     *(Unit + 0x1D48) = *(v106 + 8);
     *v99 = *v106;
-    v146 = sub_1285C0("engine", 6ui64);
-    v147 = sub_128A70(v105 + 0xA0, "engine", 6i64, v146);
+    v146 = data::get_name_id("engine", 6ui64);
+    v147 = data::get_name_id(v105 + 0xA0, "engine", 6i64, v146);
     v148 = v322;
     v149 = v326;
     if ( v147 < 0 )
@@ -1462,8 +1462,8 @@ LABEL_94:
     }
     *(v149 + 8) = *(v151 + 8);
     *v149 = *v151;
-    v152 = sub_1285C0("fuel", 4ui64);
-    v153 = sub_128A70(v150 + 0xA0, "fuel", 4i64, v152);
+    v152 = data::get_name_id("fuel", 4ui64);
+    v153 = data::get_name_id(v150 + 0xA0, "fuel", 4i64, v152);
     if ( v153 < 0 )
     {
       v307 = "fuel";
@@ -1481,8 +1481,8 @@ LABEL_94:
     v156 = v327;
     *(v327 + 8) = *(v155 + 8);
     *v156 = *v155;
-    v157 = sub_1285C0("transmission", 0xCui64);
-    v158 = sub_128A70(v154 + 0xA0, "transmission", 0xCi64, v157);
+    v157 = data::get_name_id("transmission", 0xCui64);
+    v158 = data::get_name_id(v154 + 0xA0, "transmission", 0xCi64, v157);
     if ( v158 < 0 )
     {
       v307 = "transmission";
@@ -1498,8 +1498,8 @@ LABEL_94:
     }
     *(Unit + 0x1D6C) = *(v160 + 8);
     *v100 = *v160;
-    v161 = sub_1285C0("shaft", 5ui64);
-    v162 = sub_128A70(v159 + 0xA0, "shaft", 5i64, v161);
+    v161 = data::get_name_id("shaft", 5ui64);
+    v162 = data::get_name_id(v159 + 0xA0, "shaft", 5i64, v161);
     if ( v162 < 0 )
     {
       v307 = "shaft";
@@ -1517,8 +1517,8 @@ LABEL_94:
     v166 = v328;
     *(v328 + 8) = *(v164 + 8);
     *v166 = *v164;
-    v167 = sub_1285C0("radiator", 8ui64);
-    v168 = sub_128A70(v163 + 0xA0, "radiator", 8i64, v167);
+    v167 = data::get_name_id("radiator", 8ui64);
+    v168 = data::get_name_id(v163 + 0xA0, "radiator", 8i64, v167);
     if ( v168 < 0 )
     {
       v307 = "radiator";
@@ -1535,8 +1535,8 @@ LABEL_94:
     v171 = v329;
     *(v329 + 8) = *(v170 + 8);
     *v171 = *v170;
-    v172 = sub_1285C0("gun", 3ui64);
-    v173 = sub_128A70(v169 + 0xA0, "gun", 3i64, v172);
+    v172 = data::get_name_id("gun", 3ui64);
+    v173 = data::get_name_id(v169 + 0xA0, "gun", 3i64, v172);
     if ( v173 < 0 )
     {
       v307 = "gun";
@@ -1553,8 +1553,8 @@ LABEL_94:
     v176 = v330;
     *(v330 + 8) = *(v175 + 8);
     *v176 = *v175;
-    v177 = sub_1285C0("gun_barrel", 0xAui64);
-    v178 = sub_128A70(v174 + 0xA0, "gun_barrel", 0xAi64, v177);
+    v177 = data::get_name_id("gun_barrel", 0xAui64);
+    v178 = data::get_name_id(v174 + 0xA0, "gun_barrel", 0xAi64, v177);
     if ( v178 < 0 )
     {
       v307 = "gun_barrel";
@@ -1571,8 +1571,8 @@ LABEL_94:
     v181 = v331;
     *(v331 + 8) = *(v180 + 8);
     *v181 = *v180;
-    v182 = sub_1285C0("torpedo_tube", 0xCui64);
-    v183 = sub_128A70(v179 + 0xA0, "torpedo_tube", 0xCi64, v182);
+    v182 = data::get_name_id("torpedo_tube", 0xCui64);
+    v183 = data::get_name_id(v179 + 0xA0, "torpedo_tube", 0xCi64, v182);
     if ( v183 < 0 )
     {
       v307 = "torpedo_tube";
@@ -1589,8 +1589,8 @@ LABEL_94:
     v186 = v332;
     *(v332 + 8) = *(v185 + 8);
     *v186 = *v185;
-    v187 = sub_1285C0("suspension", 0xAui64);
-    v188 = sub_128A70(v184 + 0xA0, "suspension", 0xAi64, v187);
+    v187 = data::get_name_id("suspension", 0xAui64);
+    v188 = data::get_name_id(v184 + 0xA0, "suspension", 0xAi64, v187);
     if ( v188 < 0 )
     {
       v307 = "suspension";
@@ -1607,8 +1607,8 @@ LABEL_94:
     v191 = v333;
     *(v333 + 8) = *(v190 + 8);
     *v191 = *v190;
-    v192 = sub_1285C0("wheel", 5ui64);
-    v193 = sub_128A70(v189 + 0xA0, "wheel", 5i64, v192);
+    v192 = data::get_name_id("wheel", 5ui64);
+    v193 = data::get_name_id(v189 + 0xA0, "wheel", 5i64, v192);
     if ( v193 < 0 )
     {
       v307 = "wheel";
@@ -1625,8 +1625,8 @@ LABEL_94:
     v196 = v317;
     *(v317 + 8) = *(v195 + 8);
     *v196 = *v195;
-    v197 = sub_1285C0("track", 5ui64);
-    v198 = sub_128A70(v194 + 0xA0, "track", 5i64, v197);
+    v197 = data::get_name_id("track", 5ui64);
+    v198 = data::get_name_id(v194 + 0xA0, "track", 5i64, v197);
     if ( v198 < 0 )
     {
       v307 = "track";
@@ -1643,8 +1643,8 @@ LABEL_94:
     v201 = v318;
     *(v318 + 8) = *(v200 + 8);
     *v201 = *v200;
-    v202 = sub_1285C0("track_left", 0xAui64);
-    v203 = sub_128A70(v199 + 0xA0, "track_left", 0xAi64, v202);
+    v202 = data::get_name_id("track_left", 0xAui64);
+    v203 = data::get_name_id(v199 + 0xA0, "track_left", 0xAi64, v202);
     if ( v203 < 0 )
     {
       v307 = "track_left";
@@ -1661,8 +1661,8 @@ LABEL_94:
     v206 = v319;
     *(v319 + 8) = *(v205 + 8);
     *v206 = *v205;
-    v207 = sub_1285C0("track_right", 0xBui64);
-    v208 = sub_128A70(v204 + 0xA0, "track_right", 0xBi64, v207);
+    v207 = data::get_name_id("track_right", 0xBui64);
+    v208 = data::get_name_id(v204 + 0xA0, "track_right", 0xBi64, v207);
     if ( v208 < 0 )
     {
       v307 = "track_right";
@@ -1679,8 +1679,8 @@ LABEL_94:
     v211 = v320;
     *(v320 + 8) = *(v210 + 8);
     *v211 = *v210;
-    v212 = sub_1285C0("drive_turret_h", 0xEui64);
-    v213 = sub_128A70(v209 + 0xA0, "drive_turret_h", 0xEi64, v212);
+    v212 = data::get_name_id("drive_turret_h", 0xEui64);
+    v213 = data::get_name_id(v209 + 0xA0, "drive_turret_h", 0xEi64, v212);
     if ( v213 < 0 )
     {
       v307 = "drive_turret_h";
@@ -1697,8 +1697,8 @@ LABEL_94:
     v216 = v321;
     *(v321 + 8) = *(v215 + 8);
     *v216 = *v215;
-    v217 = sub_1285C0("drive_turret_v", 0xEui64);
-    v218 = sub_128A70(v214 + 0xA0, "drive_turret_v", 0xEi64, v217);
+    v217 = data::get_name_id("drive_turret_v", 0xEui64);
+    v218 = data::get_name_id(v214 + 0xA0, "drive_turret_v", 0xEi64, v217);
     if ( v218 < 0 )
     {
       v307 = "drive_turret_v";
@@ -1714,8 +1714,8 @@ LABEL_94:
     }
     *(v148 + 2) = *(v220 + 8);
     *v148 = *v220;
-    v221 = sub_1285C0("steering", 8ui64);
-    v222 = sub_128A70(v219 + 0xA0, "steering", 8i64, v221);
+    v221 = data::get_name_id("steering", 8ui64);
+    v222 = data::get_name_id(v219 + 0xA0, "steering", 8i64, v221);
     if ( v222 < 0 )
     {
       v307 = "steering";
@@ -1732,8 +1732,8 @@ LABEL_94:
     v225 = v316;
     *(v316 + 8) = *(v224 + 8);
     *v225 = *v224;
-    v226 = sub_1285C0("bridge", 6ui64);
-    v227 = sub_128A70(v223 + 0xA0, "bridge", 6i64, v226);
+    v226 = data::get_name_id("bridge", 6ui64);
+    v227 = data::get_name_id(v223 + 0xA0, "bridge", 6i64, v226);
     if ( v227 < 0 )
     {
       v307 = "bridge";
@@ -1749,8 +1749,8 @@ LABEL_94:
     }
     *(v165 + 2) = *(v229 + 8);
     *v165 = *v229;
-    v230 = sub_1285C0("crew", 4ui64);
-    v231 = sub_128A70(v228 + 0xA0, "crew", 4i64, v230);
+    v230 = data::get_name_id("crew", 4ui64);
+    v231 = data::get_name_id(v228 + 0xA0, "crew", 4i64, v230);
     if ( v231 < 0 )
     {
       v307 = "crew";
@@ -1767,8 +1767,8 @@ LABEL_94:
     v234 = v314;
     *(v314 + 8) = *(v233 + 8);
     *v234 = *v233;
-    v235 = sub_1285C0("commander", 9ui64);
-    v236 = sub_128A70(v232 + 0xA0, "commander", 9i64, v235);
+    v235 = data::get_name_id("commander", 9ui64);
+    v236 = data::get_name_id(v232 + 0xA0, "commander", 9i64, v235);
     if ( v236 < 0 )
     {
       v307 = "commander";
@@ -1785,8 +1785,8 @@ LABEL_94:
     v239 = v323;
     *(v323 + 8) = *(v238 + 8);
     *v239 = *v238;
-    v240 = sub_1285C0("driver", 6ui64);
-    v241 = sub_128A70(v237 + 0xA0, "driver", 6i64, v240);
+    v240 = data::get_name_id("driver", 6ui64);
+    v241 = data::get_name_id(v237 + 0xA0, "driver", 6i64, v240);
     if ( v241 < 0 )
     {
       v307 = "driver";
@@ -1803,8 +1803,8 @@ LABEL_94:
     v244 = v324;
     *(v324 + 8) = *(v243 + 8);
     *v244 = *v243;
-    v245 = sub_1285C0("gunner", 6ui64);
-    v246 = sub_128A70(v242 + 0xA0, "gunner", 6i64, v245);
+    v245 = data::get_name_id("gunner", 6ui64);
+    v246 = data::get_name_id(v242 + 0xA0, "gunner", 6i64, v245);
     if ( v246 < 0 )
     {
       v307 = "gunner";
@@ -1821,8 +1821,8 @@ LABEL_94:
     v249 = v325;
     *(v325 + 8) = *(v248 + 8);
     *v249 = *v248;
-    v250 = sub_1285C0("loader", 6ui64);
-    v251 = sub_128A70(v247 + 0xA0, "loader", 6i64, v250);
+    v250 = data::get_name_id("loader", 6ui64);
+    v251 = data::get_name_id(v247 + 0xA0, "loader", 6i64, v250);
     if ( v251 < 0 )
     {
       v307 = "loader";
@@ -1839,8 +1839,8 @@ LABEL_94:
     v254 = v334;
     *(v334 + 8) = *(v253 + 8);
     *v254 = *v253;
-    v255 = sub_1285C0("machinegunner", 0xDui64);
-    v256 = sub_128A70(v252 + 0xA0, "machinegunner", 0xDi64, v255);
+    v255 = data::get_name_id("machinegunner", 0xDui64);
+    v256 = data::get_name_id(v252 + 0xA0, "machinegunner", 0xDi64, v255);
     if ( v256 < 0 )
     {
       v307 = "machinegunner";
@@ -1857,8 +1857,8 @@ LABEL_94:
     v259 = v312;
     *(v312 + 8) = *(v258 + 8);
     *v259 = *v258;
-    v260 = sub_1285C0(&qword_495B4C2, 0x12ui64);
-    v261 = sub_128A70(v257 + 0xA0, &qword_495B4C2, 0x12i64, v260);
+    v260 = data::get_name_id(&qword_495B4C2, 0x12ui64);
+    v261 = data::get_name_id(v257 + 0xA0, &qword_495B4C2, 0x12i64, v260);
     if ( v261 < 0 )
     {
       v307 = &qword_495B4C2;
@@ -1975,12 +1975,12 @@ LABEL_94:
   *(Unit + 0x1FB0) = 0xBF800000BF800000ui64;
   *(Unit + 0x2110) = *(Unit + 0x10B8) != 0i64;
   v306 = 0i64;
-  v262 = sub_1459B30(v145, "name", &v306);
+  v262 = data::get_str(v145, "name", &v306);
   if ( v262 )
   {
     v263 = v262;
     LODWORD(v306) = 1;
-    if ( sub_145A390(v145, "count", &v306) == 1 )
+    if ( data::set_int(v145, "count", &v306) == 1 )
       goto LABEL_207;
     v264 = qword_4AD09E8;
     v265 = *(qword_4AD09E8 + 0x428);
@@ -2038,7 +2038,7 @@ LABEL_207:
   else
     v277 = *(qword_4B50080 + a7);
   LOBYTE(v306) = 0;
-  if ( sub_145BBF0(v145, "isDelayed", &v306)
+  if ( data::get_bool(v145, "isDelayed", &v306)
     || v277
     && (dword_4B1C814 & 4) != 0
     && *(v277 + 0x264) == 0xFFFFFFFF
@@ -2082,7 +2082,7 @@ LABEL_224:
     }
   }
   LOBYTE(v306) = 1;
-  v282 = sub_145BBF0(v145, "shouldDrawSmallIndForMissTarget", &v306);
+  v282 = data::get_bool(v145, "shouldDrawSmallIndForMissTarget", &v306);
   v283 = *v278;
   if ( v282 )
   {
@@ -2104,10 +2104,10 @@ LABEL_234:
   }
 LABEL_235:
   v306 = 0i64;
-  v285 = sub_1459B30(v145, "uniqueName", &v306);
+  v285 = data::get_str(v145, "uniqueName", &v306);
   sub_326CF0(Unit, v285);
   v306 = 0i64;
-  v286 = sub_1459B30(v145, "attack_type", &v306);
+  v286 = data::get_str(v145, "attack_type", &v306);
   if ( v286 )
   {
     if ( *v286 )
@@ -2141,7 +2141,7 @@ LABEL_235:
     }
   }
   LOBYTE(v306) = 0;
-  *(Unit + 0x1F8A) = sub_145BBF0(v145, "use_search_radar", &v306);
+  *(Unit + 0x1F8A) = data::get_bool(v145, "use_search_radar", &v306);
   *(Unit + 0x1EFC) = 0i64;
   *(Unit + 0x1F04) = 0;
   v291 = *(Unit + 0x2420);
@@ -2242,17 +2242,17 @@ LABEL_255:
   if ( *(Unit + 0x10B0) == 5 )
     v297 = "expForAssistTimeShip";
   LODWORD(v306) = 0;
-  v298 = sub_145B6B0(qword_4AD09E8 + 0xD0, v297, &v306);
+  v298 = data::set_real(qword_4AD09E8 + 0xD0, v297, &v306);
   *(Unit + 0x25D8) = LODWORD(v298);
   v299 = "expForAssistDmg";
   if ( *(Unit + 0x10B0) == 5 )
     v299 = "expForAssistDmgShip";
   LODWORD(v306) = 0;
-  v300 = sub_145B6B0(v296, v299, &v306);
+  v300 = data::set_real(v296, v299, &v306);
   *(Unit + 0x25DC) = LODWORD(v300);
   *(Unit + 0x29E8) = Unit;
   LOBYTE(v306) = 0;
-  if ( sub_145BBF0(a6, "cannotMove", &v306) )
+  if ( data::get_bool(a6, "cannotMove", &v306) )
   {
     v301 = *(Unit + 0x1080);
     *(Unit + 0x1080) = v301 | 0x4000000;

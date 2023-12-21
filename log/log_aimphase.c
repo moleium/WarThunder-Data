@@ -75,14 +75,14 @@ LABEL_15:
   v26 = 1;
   v29 = *(&off_44A4ED0 + v13);
   v28 = 1;
-  sub_1546EF0(a2, 256i64, "\n%s(stage: %s, ", &v26, 2);
+  ctor_vprintf(a2, 256i64, "\n%s(stage: %s, ", &v26, 2);
   if ( *(a1 + 136) == 4 )
   {
     v27 = off_44A4F00[*(a1 + 140)];
     v26 = 1;
-    add_server_param(a2, 64i64, "aimPhase: %s, ", &v26, 1);
+    avprintf(a2, 64i64, "aimPhase: %s, ", &v26, 1);
   }
   log_combat(*(a1 + 56), *(a1 + 76), a2, v24);
-  add_server_param(a2, 1i64, ")", 0i64, 0);
+  avprintf(a2, 1i64, ")", 0i64, 0);
   return a2;
 }

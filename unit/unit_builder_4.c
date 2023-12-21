@@ -1113,18 +1113,18 @@ LABEL_50:
   if ( v50 == 5 )
     v52 = "expForShipHitTimeout";
   Src = 0;
-  v53 = sub_145B6B0(qword_4AD09E8 + 0xD0, v52, &Src);
+  v53 = data::set_real(qword_4AD09E8 + 0xD0, v52, &Src);
   *(Unit + 0x17A8) = LODWORD(v53);
   Src = 0;
-  v54 = sub_145B6B0(v51, "expForIneffectiveTankHitTimeout", &Src);
+  v54 = data::set_real(v51, "expForIneffectiveTankHitTimeout", &Src);
   *(Unit + 0x17AC) = LODWORD(v54);
   Src = 0xA;
-  *(Unit + 0x17B0) = sub_145A390(v51, "ineffectiveHitMinCount", &Src);
+  *(Unit + 0x17B0) = data::set_int(v51, "ineffectiveHitMinCount", &Src);
   Src = 0x3A83126F;
-  v55 = sub_145B6B0(v51, "ineffectiveHitMinPart", &Src);
+  v55 = data::set_real(v51, "ineffectiveHitMinPart", &Src);
   *(Unit + 0x17B4) = LODWORD(v55);
   LOBYTE(Src) = 0;
-  *(Unit + 0x17B8) = sub_145BBF0(v51, "effectiveHitEvenWithoutDamagingTank", &Src);
+  *(Unit + 0x17B8) = data::get_bool(v51, "effectiveHitEvenWithoutDamagingTank", &Src);
   v56 = game;
   *(Unit + 0x288) = *(*(game + 0x498) + 0x1F18i64);
   v57 = *(Unit + 0x10B0);

@@ -26,32 +26,32 @@ void __fastcall unknown_ter_control(__int64 a1, __int64 a2, unsigned int a3, _QW
 
   if ( !*(a1 + 0x30) )
     return;
-  add_server_param(a4, 0x10i64, "Accel control\n", 0i64, 0);
+  avprintf(a4, 0x10i64, "Accel control\n", 0i64, 0);
   if ( a3 <= 0 )
   {
 LABEL_15:
     v30 = *(a1 + 0x34);
     v29 = 3;
-    add_server_param(a4, 0x10i64, "P = %f\n", &v29, 1);
+    avprintf(a4, 0x10i64, "P = %f\n", &v29, 1);
     v30 = *(a1 + 0x38);
     v29 = 3;
-    add_server_param(a4, 0x10i64, "I = %f\n", &v29, 1);
+    avprintf(a4, 0x10i64, "I = %f\n", &v29, 1);
     v30 = *(a1 + 0x3C);
     v29 = 3;
-    add_server_param(a4, 0x10i64, "D = %f\n", &v29, 1);
+    avprintf(a4, 0x10i64, "D = %f\n", &v29, 1);
     v30 = *(a1 + 0x40);
     v29 = 3;
-    add_server_param(a4, 0x10i64, "Imax = %f\n", &v29, 1);
+    avprintf(a4, 0x10i64, "Imax = %f\n", &v29, 1);
     v30 = (fsqrt(*(a1 + 0x18)) * *&dword_44A46B0);
     v29 = 3;
-    add_server_param(a4, 0x10i64, "base IAS = %.0f km/h\n", &v29, 1);
+    avprintf(a4, 0x10i64, "base IAS = %.0f km/h\n", &v29, 1);
     v18 = *(a1 + 0xC) / *&dword_4A791FC;
 LABEL_16:
     v30 = v18;
     v29 = 3;
     v19 = "N.r.max = %.2fG\n";
 LABEL_39:
-    add_server_param(a4, 0x10i64, v19, &v29, 1);
+    avprintf(a4, 0x10i64, v19, &v29, 1);
     return;
   }
   v8 = *a2;
@@ -92,10 +92,10 @@ LABEL_39:
     }
     v30 = v20;
     v29 = 3;
-    add_server_param(a4, 0x10i64, "P = %f\n", &v29, 1);
+    avprintf(a4, 0x10i64, "P = %f\n", &v29, 1);
     v30 = *(a1 + 0x38);
     v29 = 3;
-    add_server_param(a4, 0x10i64, "I = %f\n", &v29, 1);
+    avprintf(a4, 0x10i64, "I = %f\n", &v29, 1);
     goto LABEL_23;
   }
   if ( !strcmp(v8, "p") )
@@ -193,5 +193,5 @@ LABEL_24:
   }
   v30 = (fsqrt(v28) * *&dword_44A46B0);
   v29 = 3;
-  add_server_param(a4, 0x20i64, "base IAS = %.0f km/h\n", &v29, 1);
+  avprintf(a4, 0x20i64, "base IAS = %.0f km/h\n", &v29, 1);
 }

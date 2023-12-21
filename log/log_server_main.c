@@ -225,18 +225,18 @@ __int64 __fastcall log_server_main(__int64 a1)
   v154 = (*(air_movement + 0xA64) * *&dword_44890B4);
   v152 = 3;
   air_movement_ = air_movement;
-  (add_server_param)(&server, 0x200i64, ",\n\"aileron, %%\": %.0f", v16);
+  (avprintf)(&server, 0x200i64, ",\n\"aileron, %%\": %.0f", v16);
   v154 = (*(air_movement + 0xA68) * v20);
   v152 = 3;
-  (add_server_param)(&server, 0x200i64, ",\n\"elevator, %%\": %.0f", v16);
+  (avprintf)(&server, 0x200i64, ",\n\"elevator, %%\": %.0f", v16);
   v154 = (*(air_movement + 0xA6C) * v20);
   v152 = 3;
-  (add_server_param)(&server, 0x200i64, ",\n\"rudder, %%\": %.0f", v16);
+  (avprintf)(&server, 0x200i64, ",\n\"rudder, %%\": %.0f", v16);
   if ( *(air_movement + 0x568E) )
   {
     v154 = (*(air_movement + 0x12EC) * *&dword_44890B4);
     v152 = 3;
-    (add_server_param)(&server, 0x200i64, ",\n\"flaps, %%\": %.0f", v16);
+    (avprintf)(&server, 0x200i64, ",\n\"flaps, %%\": %.0f", v16);
   }
   v21 = v15 * *&dword_44AD650;
   v22 = fsqrt(((v17 * v17) + (v18 * v18)) + (v19 * v19));
@@ -250,7 +250,7 @@ __int64 __fastcall log_server_main(__int64 a1)
       v24 = v23;
     v154 = (v24 * *&dword_44CB138);
     v152 = 3;
-    (add_server_param)(&server, 0x200i64, ",\n\"gear, %%\": %.0f", v16);
+    (avprintf)(&server, 0x200i64, ",\n\"gear, %%\": %.0f", v16);
   }
   v25 = v21;
   v26 = v22;
@@ -264,16 +264,16 @@ __int64 __fastcall log_server_main(__int64 a1)
       v28 = v27;
     v154 = (v28 * *&dword_44CB138);
     v152 = 3;
-    (add_server_param)(&server, 0x200i64, ",\n\"airbrake, %%\": %.0f", v16);
+    (avprintf)(&server, 0x200i64, ",\n\"airbrake, %%\": %.0f", v16);
   }
   v167 = a1;
   v154 = *(air_movement + 0x910);
   v152 = 3;
-  (add_server_param)(&server, 0x200i64, ",\n\"H, m\": %.0f", v16);
+  (avprintf)(&server, 0x200i64, ",\n\"H, m\": %.0f", v16);
   v29 = *&qword_44B14B8 * v26;
   v154 = *&qword_44B14B8 * v26;
   v152 = 3;
-  (add_server_param)(&server, 0x200i64, ",\n\"TAS, km/h\": %.0f", v16);
+  (avprintf)(&server, 0x200i64, ",\n\"TAS, km/h\": %.0f", v16);
   v30 = *(air_movement + 0x910);
   v31 = fminf(v30, *&dword_4A7920C);
   *&v32 = dword_44A0190;
@@ -282,10 +282,10 @@ __int64 __fastcall log_server_main(__int64 a1)
   v154 = fsqrt(((*&dword_4A7920C * *&globalTemperature) * *&v32) / (fmaxf(v30, *&dword_4A7920C) * *&dword_4A791F8))
        * v29;
   v152 = 3;
-  (add_server_param)(&server, 0x200i64, ",\n\"IAS, km/h\": %.0f", &v152, 1);
+  (avprintf)(&server, 0x200i64, ",\n\"IAS, km/h\": %.0f", &v152, 1);
   v154 = v26 / v25;
   v152 = 3;
-  (add_server_param)(&server, 0x200i64, ",\n\"M\": %.2f", v32);
+  (avprintf)(&server, 0x200i64, ",\n\"M\": %.2f", v32);
   if ( v22 > *&dword_44A0308 )
   {
     v33 = qword_4480160;
@@ -295,11 +295,11 @@ __int64 __fastcall log_server_main(__int64 a1)
     v37 = asin(fmin(fmax(v35, *&qword_4480198), qword_4480160));
     v154 = (v37 * *&dword_44A47B8);
     v152 = 3;
-    (add_server_param)(&server, 0x200i64, ",\n\"AoA, deg\": %.1f", v32);
+    (avprintf)(&server, 0x200i64, ",\n\"AoA, deg\": %.1f", v32);
     v38 = asin(fmin(fmax(v34 * *(air_movement + 0x9F8), v36), v33));
     v154 = (v38 * *&dword_44A02B0);
     v152 = 3;
-    (add_server_param)(&server, 0x200i64, ",\n\"AoS, deg\": %.1f", v32);
+    (avprintf)(&server, 0x200i64, ",\n\"AoS, deg\": %.1f", v32);
     v39 = v17 * (Y / v22);
     v40 = v18 * (Y / v22);
     v41 = (Y / v22) * v19;
@@ -316,16 +316,16 @@ __int64 __fastcall log_server_main(__int64 a1)
           / *&dword_4A791FC);
     v152 = 3;
     LODWORD(v142) = 1;
-    (add_server_param)(&server, 0x200i64, ",\n\"Ny\": %.2f", &v152, v142);
+    (avprintf)(&server, 0x200i64, ",\n\"Ny\": %.2f", &v152, v142);
   }
   v154 = *(air_movement + 0x988);
   v152 = 3;
-  (add_server_param)(&server, 0x200i64, ",\n\"Vy, m/s\": %.1f", v32);
+  (avprintf)(&server, 0x200i64, ",\n\"Vy, m/s\": %.1f", v32);
   velocity = *(air_movement_ + 0x9B0);
   v154 = (velocity * *&dword_44A02B0);
   v152 = 3;
   _air_movement_ = air_movement_;
-  (add_server_param)(&server, 0x200i64, ",\n\"Wx, deg/s\": %.0f", v32);
+  (avprintf)(&server, 0x200i64, ",\n\"Wx, deg/s\": %.0f", v32);
   if ( *(_air_movement_ + 0x38CC) > 0 )
   {
     v48 = (_air_movement_ + 0x3654);
@@ -341,7 +341,7 @@ __int64 __fastcall log_server_main(__int64 a1)
       v152 = 2;
       v164 = off_4B678C8;
       LODWORD(v142) = 1;
-      (sub_1546EF0)(&v163, v47, v50, &v152, v142);
+      (ctor_vprintf)(&v163, v47, v50, &v152, v142);
       v51 = v163;
       v52 = v163;
       if ( !v165 )
@@ -351,13 +351,13 @@ __int64 __fastcall log_server_main(__int64 a1)
       *&v156 = v48[0xFFFFFFFE];
       v155[0] = 3;
       LODWORD(v143) = 2;
-      (add_server_param)(&server, 0x200i64, ",\n\"Mfuel%s, kg\": %.0f", &v152, v143);
+      (avprintf)(&server, 0x200i64, ",\n\"Mfuel%s, kg\": %.0f", &v152, v143);
       v154 = *&v52;
       v152 = 1;
       *&v156 = *v48;
       v155[0] = 3;
       LODWORD(v144) = 2;
-      (add_server_param)(&server, 0x200i64, ",\n\"Mfuel0%s, kg\": %.0f", &v152, v144);
+      (avprintf)(&server, 0x200i64, ",\n\"Mfuel0%s, kg\": %.0f", &v152, v144);
       if ( v51 )
         (*(*v164 + 0x40i64))(v164, v51);
       ++*&v49;
@@ -392,7 +392,7 @@ __int64 __fastcall log_server_main(__int64 a1)
         *&v156 = (v66 * v20);
         v155[0] = 3;
         LODWORD(v142) = 2;
-        (add_server_param)(v57, 0x200i64, ",\n\"throttle %d, %%\": %.0f", &v152, v142);
+        (avprintf)(v57, 0x200i64, ",\n\"throttle %d, %%\": %.0f", &v152, v142);
         v67 = *(_air_movement_ + 0x3AC8);
         v68 = *(v67 + 8 * v56 + 0xA534);
         if ( v68 >= 0 )
@@ -534,7 +534,7 @@ __int64 __fastcall log_server_main(__int64 a1)
               *&v156 = ((v90 * v20) / v70);
               v155[0] = 3;
               LODWORD(v145) = 2;
-              (add_server_param)(v57, 0x200i64, ",\n\"RPM throttle %d, %%\": %.0f", &v152, *&v145);
+              (avprintf)(v57, 0x200i64, ",\n\"RPM throttle %d, %%\": %.0f", &v152, *&v145);
               _air_movement_ = air_movement_;
             }
           }
@@ -548,7 +548,7 @@ __int64 __fastcall log_server_main(__int64 a1)
           *&v156 = (v95 * v20);
           v155[0] = 3;
           LODWORD(v145) = 2;
-          (add_server_param)(v57, 0x200i64, ",\n\"mixture %d, %%\": %.0f", &v152, *&v145);
+          (avprintf)(v57, 0x200i64, ",\n\"mixture %d, %%\": %.0f", &v152, *&v145);
           v94 = *v63;
         }
         if ( v94[0x223] )
@@ -559,7 +559,7 @@ __int64 __fastcall log_server_main(__int64 a1)
           *&v156 = (v96 * v20);
           v155[0] = 3;
           LODWORD(v145) = 2;
-          (add_server_param)(v57, 0x200i64, ",\n\"radiator %d, %%\": %.0f", &v152, *&v145);
+          (avprintf)(v57, 0x200i64, ",\n\"radiator %d, %%\": %.0f", &v152, *&v145);
           v94 = *v63;
         }
         if ( v94[0x228] )
@@ -570,7 +570,7 @@ __int64 __fastcall log_server_main(__int64 a1)
           v156 = v97;
           v155[0] = 2;
           LODWORD(v145) = 2;
-          (add_server_param)(v57, 0x200i64, ",\n\"compressor stage %d\": %d", &v152, v145);
+          (avprintf)(v57, 0x200i64, ",\n\"compressor stage %d\": %d", &v152, v145);
           v94 = *v63;
         }
         if ( v94[0x227] )
@@ -581,7 +581,7 @@ __int64 __fastcall log_server_main(__int64 a1)
           v156 = v98;
           v155[0] = 2;
           LODWORD(v145) = 2;
-          (add_server_param)(v57, 0x200i64, ",\n\"magneto %d\": %s", &v152, v145);
+          (avprintf)(v57, 0x200i64, ",\n\"magneto %d\": %s", &v152, v145);
         }
         v99 = *(_air_movement_ + 0x3AC8);
         v100 = *(v99 + 8 * v56 + 0xA534);
@@ -652,7 +652,7 @@ __int64 __fastcall log_server_main(__int64 a1)
               v156 = 1i64;
               v155[0] = 2;
               LODWORD(v145) = 2;
-              (add_server_param)(v57, 0x200i64, ",\n\"feathered %d\": %d", &v152, v145);
+              (avprintf)(v57, 0x200i64, ",\n\"feathered %d\": %d", &v152, v145);
             }
           }
         }
@@ -662,21 +662,21 @@ __int64 __fastcall log_server_main(__int64 a1)
         *&v156 = (v113 * v58);
         v155[0] = 3;
         LODWORD(v145) = 2;
-        (add_server_param)(v57, 0x200i64, ",\n\"power %d, hp\": %.1f", &v152, *&v145);
+        (avprintf)(v57, 0x200i64, ",\n\"power %d, hp\": %.1f", &v152, *&v145);
         v114 = v63[0x10];
         *&v154 = v56 + 1;
         v152 = 2;
         *&v156 = (v114 * v59);
         v155[0] = 3;
         LODWORD(v146) = 2;
-        (add_server_param)(v57, 0x200i64, ",\n\"RPM %d\": %.0f", &v152, v146);
+        (avprintf)(v57, 0x200i64, ",\n\"RPM %d\": %.0f", &v152, v146);
         v115 = v63[0x51];
         *&v154 = v56 + 1;
         v152 = 2;
         *&v156 = v115;
         v155[0] = 3;
         LODWORD(v147) = 2;
-        (add_server_param)(v57, 0x200i64, ",\n\"manifold pressure %d, atm\": %.2f", &v152, v147);
+        (avprintf)(v57, 0x200i64, ",\n\"manifold pressure %d, atm\": %.2f", &v152, v147);
         if ( *(*v63 + 0x214i64) )
         {
           v116 = v63[0xB2];
@@ -685,7 +685,7 @@ __int64 __fastcall log_server_main(__int64 a1)
           *&v156 = (v116 + v60);
           v155[0] = 3;
           LODWORD(v148) = 2;
-          (add_server_param)(v57, 0x200i64, ",\n\"water temp %d, C\": %.0f", &v152, v148);
+          (avprintf)(v57, 0x200i64, ",\n\"water temp %d, C\": %.0f", &v152, v148);
         }
         v117 = v63[0xB3];
         *&v154 = v56 + 1;
@@ -694,7 +694,7 @@ __int64 __fastcall log_server_main(__int64 a1)
         v155[0] = 3;
         LODWORD(v148) = 2;
         v118 = v57;
-        (add_server_param)(v57, 0x200i64, ",\n\"oil temp %d, C\": %.0f", &v152, v148);
+        (avprintf)(v57, 0x200i64, ",\n\"oil temp %d, C\": %.0f", &v152, v148);
         v122 = *(_air_movement_ + 0x3AC8);
         v123 = *(v122 + 0xA534);
         if ( v123 >= 0 && (v124 = *(v122 + 8 * v123 + 0xA4B0), v125 = *(v124 + 0x38), *(v124 + 0x38)) )
@@ -752,7 +752,7 @@ __int64 __fastcall log_server_main(__int64 a1)
           LODWORD(v165) = 3;
           LODWORD(v149) = 2;
           v127 = v118;
-          (add_server_param)(v118, 0x200i64, ",\n\"pitch %d, deg\": %.1f", &v163, v149);
+          (avprintf)(v118, 0x200i64, ",\n\"pitch %d, deg\": %.1f", &v163, v149);
           v122 = *(_air_movement_ + 0x3AC8);
         }
         else
@@ -771,7 +771,7 @@ __int64 __fastcall log_server_main(__int64 a1)
         v166 = (v137 * v55);
         LODWORD(v165) = 3;
         LODWORD(v150) = 2;
-        (add_server_param)(v127, 0x200i64, ",\n\"thrust %d, kgs\": %.0f", &v163, v150);
+        (avprintf)(v127, 0x200i64, ",\n\"thrust %d, kgs\": %.0f", &v163, v150);
         *&v136 = sqrt(
                    *(_air_movement_ + 0x990) * *(_air_movement_ + 0x990)
                  + *(_air_movement_ + 0x988) * *(_air_movement_ + 0x988)
@@ -786,7 +786,7 @@ __int64 __fastcall log_server_main(__int64 a1)
         v166 = v138;
         LODWORD(v165) = 3;
         LODWORD(v151) = 2;
-        (add_server_param)(v127, 0x200i64, ",\n\"efficiency %d, %%\": %.0f", &v163, v151);
+        (avprintf)(v127, 0x200i64, ",\n\"efficiency %d, %%\": %.0f", &v163, v151);
         v53 = *(_air_movement_ + 0x3AC8);
         v54 = *v53;
       }

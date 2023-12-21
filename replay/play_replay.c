@@ -38,7 +38,7 @@ __int64 __fastcall play_replay(_QWORD *a1)
   v383 = v11;
   v384 = 0i64;
   sub_4DC330(&v382);
-  add_server_param(&v382, 0x40i64, "/replays.wdb", 0i64, 0);
+  avprintf(&v382, 0x40i64, "/replays.wdb", 0i64, 0);
   if ( v384 )
     v12 = v382;
   else
@@ -245,9 +245,9 @@ LABEL_73:
       }
 LABEL_74:
       *&SystemInfo.dwOemId = &szFile;
-      v46 = sub_1459B30(v45, "fileName", &SystemInfo);
+      v46 = data::get_str(v45, "fileName", &SystemInfo);
       SystemInfo.dwOemId = 0;
-      v47 = sub_145A390(v45, "fileSize", &SystemInfo);
+      v47 = data::set_int(v45, "fileSize", &SystemInfo);
       if ( v47 && *v46 && v47 == v400 && !strcmp(v46, Str2) )
       {
         v374[v43] = 1;
@@ -395,7 +395,7 @@ LABEL_120:
   SystemInfo.lpMinimumApplicationAddress = v66;
   SystemInfo.lpMaximumApplicationAddress = 0i64;
   sub_4DC330(&SystemInfo);
-  add_server_param(&SystemInfo, 0x40i64, "/replays.wdb", 0i64, 0);
+  avprintf(&SystemInfo, 0x40i64, "/replays.wdb", 0i64, 0);
   if ( LODWORD(SystemInfo.lpMaximumApplicationAddress) )
     v67 = *&SystemInfo.dwOemId;
   else
@@ -458,10 +458,10 @@ LABEL_120:
       v79 = 0i64;
 LABEL_155:
       *&SystemInfo.dwOemId = &szFile;
-      v81 = sub_1459B30(v79, "fileName", p_SystemInfo);
+      v81 = data::get_str(v79, "fileName", p_SystemInfo);
       SystemInfo.dwOemId = 0;
       v385 = v79;
-      v82 = sub_145A390(v79, "ver", p_SystemInfo);
+      v82 = data::set_int(v79, "ver", p_SystemInfo);
       v376 = 0i64;
       v377 = off_4B678C0;
       v378 = 0i64;
@@ -533,7 +533,7 @@ LABEL_155:
           LODWORD(SystemInfo.lpMaximumApplicationAddress) = 3;
           v397 = off_4B678C8;
           p_SystemInfo = &SystemInfo;
-          sub_1546EF0(&v396, v95, "(FPS: %0.1f %0.1f)", &SystemInfo, 2);
+          ctor_vprintf(&v396, v95, "(FPS: %0.1f %0.1f)", &SystemInfo, 2);
           v96 = v396;
           v375 = v397;
           v370 = v398[0];
@@ -812,17 +812,17 @@ LABEL_267:
           }
           memset(&SystemInfo, 0, 0x24);
           LODWORD(v382) = 0x7D0;
-          HIDWORD(SystemInfo.lpMaximumApplicationAddress) = sub_145A390(v184, &unk_48E4CBC, &v382) - 0x76C;
+          HIDWORD(SystemInfo.lpMaximumApplicationAddress) = data::set_int(v184, &unk_48E4CBC, &v382) - 0x76C;
           LODWORD(v382) = 1;
-          LODWORD(SystemInfo.lpMaximumApplicationAddress) = sub_145A390(v184, &unk_491E3F3, &v382) - 1;
+          LODWORD(SystemInfo.lpMaximumApplicationAddress) = data::set_int(v184, &unk_491E3F3, &v382) - 1;
           LODWORD(v382) = 1;
-          HIDWORD(SystemInfo.lpMinimumApplicationAddress) = sub_145A390(v184, "dt_day", &v382);
+          HIDWORD(SystemInfo.lpMinimumApplicationAddress) = data::set_int(v184, "dt_day", &v382);
           LODWORD(v382) = 0;
-          LODWORD(SystemInfo.lpMinimumApplicationAddress) = sub_145A390(v184, "dt_hour", &v382);
+          LODWORD(SystemInfo.lpMinimumApplicationAddress) = data::set_int(v184, "dt_hour", &v382);
           LODWORD(v382) = 0;
-          SystemInfo.dwPageSize = sub_145A390(v184, "dt_min", &v382);
+          SystemInfo.dwPageSize = data::set_int(v184, "dt_min", &v382);
           LODWORD(v382) = 0;
-          SystemInfo.dwOemId = sub_145A390(v184, "dt_sec", &v382);
+          SystemInfo.dwOemId = data::set_int(v184, "dt_sec", &v382);
           v185 = mktime64(p_SystemInfo);
           sub_C5C360(&v382, v386, v185);
           v186 = v396[1](&v396);
@@ -937,7 +937,7 @@ LABEL_321:
             sub_28B55C0(v383[0x28] + 0x38i64, &v384);
 LABEL_343:
           SystemInfo.dwOemId = 0;
-          v248 = sub_145A390(v244, "startTime", p_SystemInfo);
+          v248 = data::set_int(v244, "startTime", p_SystemInfo);
           v249 = v396[1](&v396);
           v250 = *v249;
           v251 = *(v249 + 4);
@@ -1552,7 +1552,7 @@ LABEL_289:
         SystemInfo.dwActiveProcessorMask = 0x18B47i64;
         LODWORD(SystemInfo.lpMaximumApplicationAddress) = 2;
         v383 = off_4B678C8;
-        sub_1546EF0(&v382, v205, "header.version (%u) != CURRENT_VERSION (%u)", p_SystemInfo, 2);
+        ctor_vprintf(&v382, v205, "header.version (%u) != CURRENT_VERSION (%u)", p_SystemInfo, 2);
         v208 = v382;
         v209 = v382;
         if ( !v384 )

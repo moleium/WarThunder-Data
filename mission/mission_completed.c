@@ -23,19 +23,19 @@ char __fastcall mission_completed(__int64 a1, __int64 *a2)
       else
       {
         LOBYTE(v8) = 0;
-        v5 = sub_145BBF0(a2, "startReplayCamera", &v8);
+        v5 = data::get_bool(a2, "startReplayCamera", &v8);
         LOBYTE(v8) = 1;
         v6 = v5 ^ 1;
-        byte_4B1D300 = (v5 ^ 1) & sub_145BBF0(a2, "timer", &v8);
+        byte_4B1D300 = (v5 ^ 1) & data::get_bool(a2, "timer", &v8);
         LOBYTE(v8) = 1;
-        sub_145BBF0(a2, "showCompleteMessage", &v8);
+        data::get_bool(a2, "showCompleteMessage", &v8);
         LOBYTE(v8) = 1;
-        sub_145BBF0(a2, "playCompleteMusic", &v8);
+        data::get_bool(a2, "playCompleteMusic", &v8);
         v8 = 0i64;
-        qword_4B1D2F8 = sub_1459B30(a2, "afterComplete", &v8);
+        qword_4B1D2F8 = data::get_str(a2, "afterComplete", &v8);
         v7 = *(game + 0x420);
         LODWORD(v8) = 6;
-        sub_145A390(a2, "debriefingTimer", &v8);
+        data::set_int(a2, "debriefingTimer", &v8);
         sub_C7AC60(v7, 2i64);
         if ( !v6 )
           sub_4765B0(*(game + 0x440));

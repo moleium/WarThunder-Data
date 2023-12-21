@@ -135,8 +135,8 @@ char *__fastcall log_autopilot(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
     v9 = "SEPARATE";
   v104 = *&v9;
   v103[0] = 1;
-  add_server_param(&String, 0x20i64, "AUTOPILOT: %s\n\n", v103, 1);
-  add_server_param(&String, 0x10i64, "Ailerons\n", 0i64, 0);
+  avprintf(&String, 0x20i64, "AUTOPILOT: %s\n\n", v103, 1);
+  avprintf(&String, 0x10i64, "Ailerons\n", 0i64, 0);
   if ( *(a1 + 0x488) )
   {
     v10 = *(a1 + 0x5D8) * *&dword_44A02B0;
@@ -174,7 +174,7 @@ char *__fastcall log_autopilot(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
     v123 = 3;
     v126 = v10;
     v125 = 3;
-    add_server_param(
+    avprintf(
       &String,
       0x100i64,
       "rate: %6.2f - %6.2f', R=%6.2f', I=%6.2f', angle: %6.2f - %6.2f', R=%6.2f', I=%6.2f', drift: R=%6.2f', I=%6.2f', ro"
@@ -194,7 +194,7 @@ char *__fastcall log_autopilot(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
     v98 = 2;
     v23 = "auto rate R=%6.2f', I=%6.2f'";
 LABEL_9:
-    add_server_param(&String, 0x40i64, v23, v103, v98);
+    avprintf(&String, 0x40i64, v23, v103, v98);
     goto LABEL_10;
   }
   if ( v21 > 0 )
@@ -211,7 +211,7 @@ LABEL_9:
     v107 = 3;
     v110 = (v45 * *&dword_44A02B0);
     v109 = 3;
-    add_server_param(&String, 0x40i64, "rate: %6.2f - %6.2f', R=%6.2f', I=%6.2f'", v103, 4);
+    avprintf(&String, 0x40i64, "rate: %6.2f - %6.2f', R=%6.2f', I=%6.2f'", v103, 4);
     if ( *(a1 + 0x48C) >= 2 )
     {
       v48 = *(a1 + 0x4B4);
@@ -225,7 +225,7 @@ LABEL_9:
       v107 = 3;
       v110 = (v48 * v44);
       v109 = 3;
-      add_server_param(&String, 0x40i64, ",  angle: %6.2f - %6.2f', R=%6.2f', I=%6.2f'", v103, 4);
+      avprintf(&String, 0x40i64, ",  angle: %6.2f - %6.2f', R=%6.2f', I=%6.2f'", v103, 4);
       if ( *(a1 + 0x48C) >= 3 )
       {
         v51 = *(a2 + 0x928);
@@ -254,7 +254,7 @@ LABEL_9:
         v107 = 3;
         v110 = *(a1 + 0x4C0);
         v109 = 3;
-        add_server_param(&String, 0x40i64, ",  vel : %6.2f - %6.2f m/s, R=%6.2fm/s, I=%6.2fm/s", v103, 4);
+        avprintf(&String, 0x40i64, ",  vel : %6.2f - %6.2f m/s, R=%6.2fm/s, I=%6.2fm/s", v103, 4);
         if ( *(a1 + 0x48C) >= 4 )
         {
           v104 = *(a1 + 0x618);
@@ -273,8 +273,8 @@ LABEL_9:
     }
   }
 LABEL_10:
-  add_server_param(&String, 4i64, &word_4A30321[1], 0i64, 0);
-  add_server_param(&String, 0x10i64, "Elevator\n", 0i64, 0);
+  avprintf(&String, 4i64, &word_4A30321[1], 0i64, 0);
+  avprintf(&String, 0x10i64, "Elevator\n", 0i64, 0);
   if ( *(a1 + 0x488) )
   {
     v24 = *(a1 + 0x5DC);
@@ -304,7 +304,7 @@ LABEL_10:
     v31 = "rate: %6.2f - %6.2f', R=%6.2f', I=%6.2f', angle: %6.2f - %6.2f', R=%6.2f', I=%6.2f'";
     v32 = 0x100i64;
 LABEL_12:
-    add_server_param(&String, v32, v31, v103, v99);
+    avprintf(&String, v32, v31, v103, v99);
     goto LABEL_13;
   }
   v40 = *(a1 + 0x490);
@@ -340,7 +340,7 @@ LABEL_12:
         v119 = 3;
         v122 = v70;
         v121 = 3;
-        add_server_param(
+        avprintf(
           &String,
           0x40i64,
           "Rate + Limiters                     Rate_Req,byG,Out,Wz//kAoA,kG= %6.2f' / %6.2f / %6.2f / %6.2f' // %6.2f / %"
@@ -358,7 +358,7 @@ LABEL_12:
         v107 = 3;
         v110 = v70;
         v109 = 3;
-        add_server_param(&String, 0x40i64, "rate: %6.2f - %6.2f', R=%6.2f', I=%6.2f'", v103, 4);
+        avprintf(&String, 0x40i64, "rate: %6.2f - %6.2f', R=%6.2f', I=%6.2f'", v103, 4);
       }
       if ( *(a1 + 0x490) >= 2 )
       {
@@ -373,7 +373,7 @@ LABEL_12:
         v107 = 3;
         v110 = (v83 * v69);
         v109 = 3;
-        add_server_param(&String, 0x40i64, ",  angle: %6.2f - %6.2f', R=%6.2f', I=%6.2f'", v103, 4);
+        avprintf(&String, 0x40i64, ",  angle: %6.2f - %6.2f', R=%6.2f', I=%6.2f'", v103, 4);
         if ( *(a1 + 0x490) >= 3 )
         {
           v86 = *(a2 + 0x928);
@@ -398,7 +398,7 @@ LABEL_12:
           v107 = 3;
           v110 = *(a1 + 0x508);
           v109 = 3;
-          add_server_param(&String, 0x40i64, ",  vel : %6.2f - %6.2f m/s, R=%6.2fm/s, I=%6.2fm/s", v103, 4);
+          avprintf(&String, 0x40i64, ",  vel : %6.2f - %6.2f m/s, R=%6.2fm/s, I=%6.2fm/s", v103, 4);
           if ( *(a1 + 0x490) >= 4 )
           {
             v104 = *(a1 + 0x644);
@@ -424,7 +424,7 @@ LABEL_12:
     v103[0] = 3;
     v106 = v41;
     v105 = 3;
-    add_server_param(&String, 0x40i64, "AoA R=%6.2f', I=%6.2f'", v103, 2);
+    avprintf(&String, 0x40i64, "AoA R=%6.2f', I=%6.2f'", v103, 2);
     if ( *(a1 + 0x490) >= 6 )
     {
       v104 = *(a1 + 0x534);
@@ -439,8 +439,8 @@ LABEL_29:
     }
   }
 LABEL_13:
-  add_server_param(&String, 4i64, &word_4A30321[1], 0i64, 0);
-  add_server_param(&String, 0x10i64, "Rudders\n", 0i64, 0);
+  avprintf(&String, 4i64, &word_4A30321[1], 0i64, 0);
+  avprintf(&String, 0x10i64, "Rudders\n", 0i64, 0);
   if ( *(a1 + 0x488) )
   {
     v33 = *(a1 + 0x600) * *&dword_44A02B0;
@@ -454,7 +454,7 @@ LABEL_13:
     v107 = 3;
     v110 = v33;
     v109 = 3;
-    add_server_param(&String, 0x40i64, "rate: %6.2f - %6.2f', R=%6.2f', I=%6.2f'", v103, 4);
+    avprintf(&String, 0x40i64, "rate: %6.2f - %6.2f', R=%6.2f', I=%6.2f'", v103, 4);
   }
   else
   {
@@ -475,7 +475,7 @@ LABEL_13:
         v107 = 3;
         v110 = (v76 * *&dword_44A02B0);
         v109 = 3;
-        add_server_param(&String, 0x40i64, "rate: %6.2f - %6.2f', R=%6.2f', I=%6.2f'", v103, 4);
+        avprintf(&String, 0x40i64, "rate: %6.2f - %6.2f', R=%6.2f', I=%6.2f'", v103, 4);
         if ( *(a1 + 0x494) >= 3 )
         {
           v79 = *(a1 + 0x55C) * v75;
@@ -494,7 +494,7 @@ LABEL_13:
           v111 = 3;
           v114 = *(a1 + 0x560);
           v113 = 3;
-          add_server_param(
+          avprintf(
             &String,
             0x40i64,
             ", angle: %6.2f - %6.2f', R=%6.2f', I=%6.2f', hdg=%6.2f', t=%4.1fs",
@@ -510,19 +510,19 @@ LABEL_13:
       v103[0] = 3;
       v106 = v43;
       v105 = 3;
-      add_server_param(&String, 0x40i64, "AoS R=%6.2f', I=%6.2f'", v103, 2);
+      avprintf(&String, 0x40i64, "AoS R=%6.2f', I=%6.2f'", v103, 2);
       if ( *(a1 + 0x494) >= 5 )
       {
         v104 = *(a1 + 0x578);
         v103[0] = 3;
         v106 = *(a1 + 0x570);
         v105 = 3;
-        add_server_param(&String, 0x40i64, ", Nz  R=%6.2fG, I=%6.2fG", v103, 2);
+        avprintf(&String, 0x40i64, ", Nz  R=%6.2fG, I=%6.2fG", v103, 2);
       }
     }
   }
-  add_server_param(&String, 4i64, &word_4A30321[1], 0i64, 0);
-  add_server_param(&String, 0x10i64, "Throttle\n", 0i64, 0);
+  avprintf(&String, 4i64, &word_4A30321[1], 0i64, 0);
+  avprintf(&String, 0x10i64, "Throttle\n", 0i64, 0);
   if ( *(a1 + 0x498) >= 2 )
   {
     v104 = *(a1 + 0x680);
@@ -533,7 +533,7 @@ LABEL_13:
     v107 = 3;
     v110 = *(a1 + 0x588);
     v109 = 3;
-    add_server_param(&String, 0x40i64, "Vy:  %6.2f - %6.2fm, R=%6.2fm, I=%6.2fm", v103, 4);
+    avprintf(&String, 0x40i64, "Vy:  %6.2f - %6.2fm, R=%6.2fm, I=%6.2fm", v103, 4);
     if ( *(a1 + 0x498) >= 3 )
     {
       v104 = *(a1 + 0x684);
@@ -548,10 +548,10 @@ LABEL_13:
       v111 = 3;
       v114 = *(a1 + 0x598);
       v113 = 3;
-      add_server_param(&String, 0x40i64, ", H:   %6.2f - %6.2fm, R=%6.2fm', I=%6.2fm', H=%6.1fm, t=%4.1fs", v103, 6);
+      avprintf(&String, 0x40i64, ", H:   %6.2f - %6.2fm, R=%6.2fm', I=%6.2fm', H=%6.1fm, t=%4.1fs", v103, 6);
     }
   }
-  add_server_param(&String, 4i64, &word_4A30321[1], 0i64, 0);
+  avprintf(&String, 4i64, &word_4A30321[1], 0i64, 0);
   v36 = String;
   v37 = &szFile;
   if ( v102 )

@@ -448,7 +448,7 @@ LABEL_94:
   v76 = a2;
   PerformanceCount.LowPart = 1;
   v80 = off_4B678C8;
-  sub_1546EF0(&Str, v32, "gameData/units/%s.blk", &PerformanceCount, 1);
+  ctor_vprintf(&Str, v32, "gameData/units/%s.blk", &PerformanceCount, 1);
   if ( v81 )
   {
     v33 = Str;
@@ -527,12 +527,12 @@ LABEL_93:
     goto LABEL_38;
 LABEL_23:
   v34 = strlen(v33);
-  v35 = sub_1285C0(v33, v34);
-  v36 = sub_128A70(&qword_4B136C8, v33, v34, v35);
+  v35 = data::get_name_id(v33, v34);
+  v36 = data::get_name_id(&qword_4B136C8, v33, v34, v35);
   if ( v36 < 0 )
   {
     v45 = strlen(v33);
-    v46 = sub_1285C0(v33, v45);
+    v46 = data::get_name_id(v33, v45);
     v37 = sub_127A00(&qword_4B136C8, v33, v45, v46);
     goto LABEL_40;
   }

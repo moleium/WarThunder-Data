@@ -196,7 +196,7 @@ LABEL_21:
     {
       v37 = *(game + 0x430) + 0x4F8i64;
       LODWORD(v83) = 0;
-      v38 = sub_145A390(v37, "timesShownExplosionDeathHint", &v83);
+      v38 = data::set_int(v37, "timesShownExplosionDeathHint", &v83);
       v39 = *(*(game + 0x498) + 0x2180i64);
       if ( v38 <= v39 )
       {
@@ -262,7 +262,7 @@ LABEL_73:
             {
               *&v84 = *(v48 + 0x4618);
               LODWORD(v83) = 3;
-              add_server_param(&v91, 0x100i64, " %.2f", &v83, 1);
+              avprintf(&v91, 0x100i64, " %.2f", &v83, 1);
             }
             else if ( v49 == 4 )
             {
@@ -272,7 +272,7 @@ LABEL_73:
               LODWORD(v83) = 2;
               v86 = v51;
               LODWORD(v85) = 1;
-              add_server_param(&v91, 0x100i64, " %d %s", &v83, 2);
+              avprintf(&v91, 0x100i64, " %d %s", &v83, 2);
             }
           }
         }

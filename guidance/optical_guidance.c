@@ -2,7 +2,7 @@ int __fastcall optical_guidance(__int64 a1, const char **a2, int a3, _QWORD *a4)
 {
   int result; // eax
 
-  result = add_server_param(a4, 0x20i64, "Guidance: Optical\n", 0i64, 0);
+  result = avprintf(a4, 0x20i64, "Guidance: Optical\n", 0i64, 0);
   if ( a3 > 0 )
   {
     result = strcmp(*a2, "autopilot");

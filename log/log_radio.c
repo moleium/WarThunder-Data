@@ -50,7 +50,7 @@ void __fastcall log_radio(int a1, unsigned int a2, unsigned int a3, int a4)
           append_string(&qword_4B3FBF8, *(&off_44D1C20 + a3), v13);
           v21 = (v10 + 1);
           v20 = 2;
-          add_server_param(&qword_4B3FBF8, 0x20i64, "_v%d_", &v20, 1);
+          avprintf(&qword_4B3FBF8, 0x20i64, "_v%d_", &v20, 1);
           v14 = strlen(off_44D1AE0[a2]);
           append_string(&qword_4B3FBF8, off_44D1AE0[a2], v14);
           LOBYTE(v20) = 0x5F;

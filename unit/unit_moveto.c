@@ -451,7 +451,7 @@ LABEL_5:
   v14 = 0xFFFFFFFF;
   if ( !*v5 )
     goto LABEL_15;
-  v15 = sub_1285C0("object", 6ui64);
+  v15 = data::get_name_id("object", 6ui64);
   v16 = *(v13 + 0x50);
   if ( v16 )
   {
@@ -465,7 +465,7 @@ LABEL_5:
     if ( !*(v13 + 0x20) )
       goto LABEL_12;
   }
-  v18 = sub_128A70(v13, "object", 6ui64, v15);
+  v18 = data::get_name_id(v13, "object", 6ui64, v15);
   if ( v18 >= 0 )
   {
     v19 = v17 + v18;
@@ -474,7 +474,7 @@ LABEL_5:
 LABEL_12:
   if ( !v17 )
     goto LABEL_15;
-  v19 = sub_128A70(*(v13 + 0x50), "object", 6ui64, v15);
+  v19 = data::get_name_id(*(v13 + 0x50), "object", 6ui64, v15);
 LABEL_14:
   v14 = v19;
 LABEL_15:
@@ -509,7 +509,7 @@ LABEL_15:
   }
   sub_CD4300(&v379, a1, v5, "object");
   LOBYTE(v358) = 0;
-  if ( sub_145BBF0(v5, "useForTriggerFiltered", &v358) )
+  if ( data::get_bool(v5, "useForTriggerFiltered", &v358) )
   {
     v23 = v381;
     if ( v381 )
@@ -549,7 +549,7 @@ LABEL_39:
   if ( sub_D2B9A0(a1, v5, &v379, "object", unit_moveto) || !v381 )
     goto LABEL_553;
   v358 = "isAlive";
-  v29 = sub_1459B30(v5, "target_type", &v358);
+  v29 = data::get_str(v5, "target_type", &v358);
   if ( v29 )
   {
     v30 = v29;
@@ -573,7 +573,7 @@ LABEL_47:
   v35 = 0xFFFFFFFF;
   if ( *v5 )
   {
-    v36 = sub_1285C0("target", 6ui64);
+    v36 = data::get_name_id("target", 6ui64);
     v37 = *(v34 + 0x50);
     if ( v37 )
     {
@@ -587,7 +587,7 @@ LABEL_47:
       if ( !*(v34 + 0x20) )
         goto LABEL_57;
     }
-    v43 = sub_128A70(v34, "target", 6ui64, v36);
+    v43 = data::get_name_id(v34, "target", 6ui64, v36);
     if ( v43 >= 0 )
     {
       v44 = v38 + v43;
@@ -598,7 +598,7 @@ LABEL_59:
 LABEL_57:
     if ( !v38 )
       goto LABEL_60;
-    v44 = sub_128A70(*(v34 + 0x50), "target", 6ui64, v36);
+    v44 = data::get_name_id(*(v34 + 0x50), "target", 6ui64, v36);
     goto LABEL_59;
   }
 LABEL_60:
@@ -632,7 +632,7 @@ LABEL_60:
   v48 = 0xFFFFFFFF;
   if ( !*v5 )
     goto LABEL_78;
-  v49 = sub_1285C0("lookat", 6ui64);
+  v49 = data::get_name_id("lookat", 6ui64);
   v50 = *(v47 + 0x50);
   if ( v50 )
   {
@@ -646,7 +646,7 @@ LABEL_60:
     if ( !*(v47 + 0x20) )
       goto LABEL_75;
   }
-  v52 = sub_128A70(v47, "lookat", 6ui64, v49);
+  v52 = data::get_name_id(v47, "lookat", 6ui64, v49);
   if ( v52 >= 0 )
   {
     v53 = v51 + v52;
@@ -657,7 +657,7 @@ LABEL_77:
 LABEL_75:
   if ( v51 )
   {
-    v53 = sub_128A70(*(v47 + 0x50), "lookat", 6ui64, v49);
+    v53 = data::get_name_id(*(v47 + 0x50), "lookat", 6ui64, v49);
     goto LABEL_77;
   }
 LABEL_78:
@@ -679,18 +679,18 @@ LABEL_78:
     }
   }
   LODWORD(v358) = 0x41200000;
-  v383 = sub_145B6B0(v5, "waypointReachedDist", &v358);
+  v383 = data::set_real(v5, "waypointReachedDist", &v358);
   LODWORD(v358) = 0xBF800000;
-  v398 = sub_145B6B0(v5, "trackingTime", &v358);
+  v398 = data::set_real(v5, "trackingTime", &v358);
   LOBYTE(v358) = 0;
-  v56 = sub_145BBF0(v5, "follow_target", &v358);
+  v56 = data::get_bool(v5, "follow_target", &v358);
   sub_145C630(v5, &v392, "teleportOffset", &xmmword_4514A60);
   v367 = v5;
   v356 = v56;
   if ( !v386 )
   {
     v358 = &szFile;
-    v59 = sub_1459B30(v5, "target", &v358);
+    v59 = data::get_str(v5, "target", &v358);
     if ( !v59 )
       goto LABEL_552;
     v4 = v59;
@@ -757,7 +757,7 @@ LABEL_543:
         }
 LABEL_552:
         v358 = &szFile;
-        v359 = sub_1459B30(v5, "target", &v358);
+        v359 = data::get_str(v5, "target", &v358);
         LODWORD(v358) = 1;
         v361 = "unitMoveTo";
         v360 = 1;
@@ -788,9 +788,9 @@ LABEL_540:
   if ( v56 )
   {
     LODWORD(v358) = 0xBF800000;
-    v368 = sub_145B6B0(v5, "follow_radius", &v358);
+    v368 = data::set_real(v5, "follow_radius", &v358);
     LOBYTE(v358) = 0;
-    LOBYTE(v57) = sub_145BBF0(v5, "getToLOS", &v358);
+    LOBYTE(v57) = data::get_bool(v5, "getToLOS", &v358);
     v366 = v57;
     v374 = 0i64;
     v375 = 0.0;
@@ -836,7 +836,7 @@ LABEL_102:
   v364 = 0;
 LABEL_103:
   v358 = 0i64;
-  v69 = sub_1459B30(v5, "lookat", &v358);
+  v69 = data::get_str(v5, "lookat", &v358);
   if ( !v69 )
     goto LABEL_126;
   v70 = v69;
@@ -934,9 +934,9 @@ LABEL_127:
     }
   }
   LODWORD(v358) = 0x42200000;
-  v86 = sub_145B6B0(v5, "speed", &v358);
+  v86 = data::set_real(v5, "speed", &v358);
   v358 = 0i64;
-  v87 = sub_1459B30(v5, "move_type", &v358);
+  v87 = data::get_str(v5, "move_type", &v358);
   v387 = v87;
   if ( v87 )
   {
@@ -952,15 +952,15 @@ LABEL_127:
     v389 = 0;
   }
   LOBYTE(v358) = 1;
-  v357 = sub_145BBF0(v5, "horizontalDirectionForTeleport", &v358);
+  v357 = data::get_bool(v5, "horizontalDirectionForTeleport", &v358);
   LODWORD(v358) = 0;
-  v58.m128_f32[0] = sub_145B6B0(v5, "zzAmp", &v358);
+  v58.m128_f32[0] = data::set_real(v5, "zzAmp", &v358);
   v412 = v58;
   LODWORD(v358) = 0;
-  v58.m128_f32[0] = sub_145B6B0(v5, "zzPeriod", &v358);
+  v58.m128_f32[0] = data::set_real(v5, "zzPeriod", &v358);
   v411 = v58;
   v358 = "absolute";
-  v90 = sub_1459B30(v5, "teleportHeightType", &v358);
+  v90 = data::get_str(v5, "teleportHeightType", &v358);
   v91 = &off_44CFB00;
   if ( v90 )
   {
@@ -981,15 +981,15 @@ LABEL_127:
   }
   v399 = *(v91 + 2);
   LOBYTE(v358) = 1;
-  v353 = sub_145BBF0(v5, "useUnitHeightForTele", &v358);
+  v353 = data::get_bool(v5, "useUnitHeightForTele", &v358);
   LODWORD(v358) = 0x447A0000;
-  v390 = sub_145B6B0(v5, "teleportHeightValue", &v358);
+  v390 = data::set_real(v5, "teleportHeightValue", &v358);
   LOBYTE(v358) = 0;
-  v352 = sub_145BBF0(v5, "shouldKeepFormation", &v358);
+  v352 = data::get_bool(v5, "shouldKeepFormation", &v358);
   LODWORD(v358) = 0xBF800000;
-  v395 = sub_145B6B0(v5, "recalculatePathDist", &v358);
+  v395 = data::set_real(v5, "recalculatePathDist", &v358);
   LOBYTE(v358) = 0;
-  v373 = sub_145BBF0(v5, "useFormationCenter", &v358);
+  v373 = data::get_bool(v5, "useFormationCenter", &v358);
   v93 = &xmmword_4514A60;
   if ( v381 )
     v93 = (*v379 + 0x9C0i64);
@@ -1080,7 +1080,7 @@ LABEL_127:
       v406 = v128;
       *&v358 = v101;
       v5 = v367;
-      v128.m128_f32[0] = sub_145B6B0(v367, "distributionRadius", &v358);
+      v128.m128_f32[0] = data::set_real(v367, "distributionRadius", &v358);
       if ( v101 > *&dword_449F1A8 || (v129 = 0i64, v101 < *&dword_449F1AC) )
       {
         v128.m128_f32[0] = v128.m128_f32[0] / v101;
@@ -1209,7 +1209,7 @@ LABEL_194:
                   if ( v143 )
                   {
                     LODWORD(v358) = 0xBF800000;
-                    v173 = sub_145B6B0(v367, "shipTurnRadius", &v358);
+                    v173 = data::set_real(v367, "shipTurnRadius", &v358);
                     if ( v173 > *&dword_44878D0 )
                       *(*(Unit_ + 0x32B8) + 0x678i64) = v173;
                     if ( v395 > *&dword_44878D0 )
@@ -1550,20 +1550,20 @@ LABEL_397:
             *(v219 + 0x650) = v261;
             LOBYTE(v358) = 0;
             v262 = v367;
-            *(v219 + 0x420) = sub_145BBF0(v367, "fastClimb", &v358);
+            *(v219 + 0x420) = data::get_bool(v367, "fastClimb", &v358);
             LOBYTE(v358) = 0;
-            *(v219 + 0x421) = sub_145BBF0(v262, "destTimeMode", &v358);
+            *(v219 + 0x421) = data::get_bool(v262, "destTimeMode", &v358);
             v263 = *v262;
             v264 = 0xFFFFFFFF;
             if ( *v262 )
             {
-              v265 = sub_1285C0("speed", 5ui64);
+              v265 = data::get_name_id("speed", 5ui64);
               v266 = *(v263 + 0x50);
               if ( v266 )
                 v267 = *(v266 + 0x20);
               else
                 v267 = 0;
-              if ( *(v263 + 0x20) && (v269 = sub_128A70(v263, "speed", 5ui64, v265), v269 >= 0) )
+              if ( *(v263 + 0x20) && (v269 = data::get_name_id(v263, "speed", 5ui64, v265), v269 >= 0) )
               {
                 v264 = v267 + v269;
                 v96 = v387;
@@ -1573,7 +1573,7 @@ LABEL_397:
                 v185 = v267 == 0;
                 v96 = v387;
                 if ( !v185 )
-                  v264 = sub_128A70(*(v263 + 0x50), "speed", 5ui64, v265);
+                  v264 = data::get_name_id(*(v263 + 0x50), "speed", 5ui64, v265);
               }
             }
             v270 = *(v367 + 5);
@@ -1621,11 +1621,11 @@ LABEL_427:
             *(v219 + 0x109) = v273;
             LOBYTE(v358) = 0;
             v279 = v367;
-            *(v219 + 0x668) = sub_145BBF0(v367, "tas", &v358);
+            *(v219 + 0x668) = data::get_bool(v367, "tas", &v358);
             LOBYTE(v358) = 0;
-            *(v219 + 0x669) = sub_145BBF0(v279, "afterburner", &v358);
+            *(v219 + 0x669) = data::get_bool(v279, "afterburner", &v358);
             LODWORD(v358) = 0xBF800000;
-            *(v219 + 0x10A) = sub_145B6B0(v279, "destTimeOnTarget", &v358);
+            *(v219 + 0x10A) = data::set_real(v279, "destTimeOnTarget", &v358);
             v83 = v376;
             goto LABEL_376;
           }
@@ -2364,7 +2364,7 @@ LABEL_170:
         v188 = 0xFFFFFFFF;
         if ( !*v367 )
           goto LABEL_330;
-        v189 = sub_1285C0("velocity", 8ui64);
+        v189 = data::get_name_id("velocity", 8ui64);
         v190 = *(v187 + 0x50);
         if ( v190 )
         {
@@ -2374,7 +2374,7 @@ LABEL_170:
 LABEL_327:
             if ( v191 )
             {
-              v227 = sub_128A70(*(v187 + 0x50), "velocity", 8ui64, v189);
+              v227 = data::get_name_id(*(v187 + 0x50), "velocity", 8ui64, v189);
               goto LABEL_329;
             }
             goto LABEL_330;
@@ -2386,7 +2386,7 @@ LABEL_327:
           if ( !*(v187 + 0x20) )
             goto LABEL_327;
         }
-        v226 = sub_128A70(v187, "velocity", 8ui64, v189);
+        v226 = data::get_name_id(v187, "velocity", 8ui64, v189);
         if ( v226 < 0 )
           goto LABEL_327;
         v227 = v191 + v226;

@@ -95,7 +95,7 @@ __int64 __fastcall unit_drop_ammo(__int64 a1, __int64 *a2, __int64 a3, __int64 a
   v9 = 0xFFFFFFFF;
   if ( *a2 )
   {
-    v10 = sub_1285C0("object", 6ui64);
+    v10 = data::get_name_id("object", 6ui64);
     v11 = *(Unit + 0x50);
     if ( v11 )
     {
@@ -109,7 +109,7 @@ __int64 __fastcall unit_drop_ammo(__int64 a1, __int64 *a2, __int64 a3, __int64 a
       if ( !*(Unit + 0x20) )
         goto LABEL_10;
     }
-    v13 = sub_128A70(Unit, "object", 6ui64, v10);
+    v13 = data::get_name_id(Unit, "object", 6ui64, v10);
     if ( v13 >= 0 )
     {
       v14 = v12 + v13;
@@ -120,13 +120,13 @@ LABEL_12:
 LABEL_10:
     if ( !v12 )
       goto LABEL_13;
-    v14 = sub_128A70(*(Unit + 0x50), "object", 6ui64, v10);
+    v14 = data::get_name_id(*(Unit + 0x50), "object", 6ui64, v10);
     goto LABEL_12;
   }
 LABEL_13:
   sub_CD2950(&UnitList_, a2, v9, a1, 0i64, 0i64);
   LOBYTE(v87) = 0;
-  v15 = sub_145BBF0(a2, "useForTriggerFiltered", &v87);
+  v15 = data::get_bool(a2, "useForTriggerFiltered", &v87);
   v16 = v86;
   if ( v15 )
   {
@@ -167,7 +167,7 @@ LABEL_24:
   {
 LABEL_30:
     v87 = 0i64;
-    v22 = sub_1459B30(a2, "triggerGroup", &v87);
+    v22 = data::get_str(a2, "triggerGroup", &v87);
     v24 = 0xFFFFFFFF;
     if ( v22 && *v22 )
       v24 = sub_17AF860(v22);

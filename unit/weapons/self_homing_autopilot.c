@@ -27,7 +27,7 @@ void __fastcall homing_autopilot(float *a1, __int64 a2, unsigned int a3, _QWORD 
   int v32; // [rsp+40h] [rbp-58h]
   double v33; // [rsp+48h] [rbp-50h]
 
-  add_server_param(a4, 0x20i64, "Self homing autopilot\n", 0i64, 0);
+  avprintf(a4, 0x20i64, "Self homing autopilot\n", 0i64, 0);
   if ( a3 <= 0 )
     return;
   v8 = *a2;
@@ -156,7 +156,7 @@ void __fastcall homing_autopilot(float *a1, __int64 a2, unsigned int a3, _QWORD 
     v30 = 3;
     v12 = "loftAngleToAccelMult = %f\n";
 LABEL_47:
-    add_server_param(a4, 0x10i64, v12, &v30, 1);
+    avprintf(a4, 0x10i64, v12, &v30, 1);
     return;
   }
   if ( !strcmp(v8, "timeToGain") )
@@ -171,7 +171,7 @@ LABEL_47:
       unknown_libname_78(*(a2 + 8));
       sub_260E60(a1);
     }
-    add_server_param(a4, 0x10i64, "timeToGain: [", 0i64, 0);
+    avprintf(a4, 0x10i64, "timeToGain: [", 0i64, 0);
     if ( *(a1 + 2) )
     {
       v24 = 8i64;
@@ -183,7 +183,7 @@ LABEL_47:
         v30 = 3;
         v33 = *(v26 + v24);
         v32 = 3;
-        add_server_param(a4, 0x10i64, " %f = %f", &v30, 2);
+        avprintf(a4, 0x10i64, " %f = %f", &v30, 2);
         ++v25;
         v24 += 0xCi64;
       }
@@ -203,7 +203,7 @@ LABEL_47:
       unknown_libname_78(*(a2 + 8));
       sub_260E60(a1 + 4);
     }
-    add_server_param(a4, 0x10i64, "timeToHitToGain: [", 0i64, 0);
+    avprintf(a4, 0x10i64, "timeToHitToGain: [", 0i64, 0);
     if ( *(a1 + 6) )
     {
       v27 = 8i64;
@@ -215,13 +215,13 @@ LABEL_47:
         v30 = 3;
         v33 = *(v29 + v27);
         v32 = 3;
-        add_server_param(a4, 0x10i64, " %f = %f", &v30, 2);
+        avprintf(a4, 0x10i64, " %f = %f", &v30, 2);
         ++v28;
         v27 += 0xCi64;
       }
       while ( v28 < *(a1 + 6) );
     }
 LABEL_58:
-    add_server_param(a4, 2i64, " ]\n", 0i64, 0);
+    avprintf(a4, 2i64, " ]\n", 0i64, 0);
   }
 }

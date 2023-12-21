@@ -297,7 +297,7 @@ LABEL_92:
   if ( !v53 )
     v53 = &szFile;
   v1336 = &szFile;
-  v55 = sub_1459B30(v52, v53, &v1336);
+  v55 = data::get_str(v52, v53, &v1336);
   v56 = v55;
   if ( *(cursor_visuals + 0x4B08) )
     v54 = *(cursor_visuals + 0x4AF8);
@@ -371,8 +371,8 @@ LABEL_106:
   if ( v66 != v82 )
   {
     v84 = strlen(Str);
-    v85 = sub_1285C0(Str, v84);
-    LODWORD(v86) = sub_128A70((v83 + 3), Str, v84, v85);
+    v85 = data::get_name_id(Str, v84);
+    LODWORD(v86) = data::get_name_id((v83 + 3), Str, v84, v85);
     if ( v86 != 0xFFFFFFFF )
     {
       v86 = v86;

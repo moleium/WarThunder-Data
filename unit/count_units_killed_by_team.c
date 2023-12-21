@@ -8,7 +8,7 @@ char __fastcall count_units_killed_by_team(__int64 a1, __int64 a2)
   __int64 v10[5]; // [rsp+20h] [rbp-28h] BYREF
 
   v10[0] = &szFile;
-  team_name = sub_1459B30(a2, "team", v10);
+  team_name = data::get_str(a2, "team", v10);
   if ( !team_name )
     goto LABEL_5;
   team_name_ = team_name;
@@ -30,7 +30,7 @@ LABEL_5:
   }
 LABEL_6:
   v10[0] = &szFile;
-  v7 = sub_1459B30(a2, "var", v10);
+  v7 = data::get_str(a2, "var", v10);
   v8 = sub_D43DD0(a1, v7, 2i64, "countUnitsKilledByTeam");
   if ( v8 )
     *(v8 + 8) = *(*(*(game + 0x420) + 0xD0i64) + 4 * team_id);

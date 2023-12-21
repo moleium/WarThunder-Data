@@ -37,7 +37,7 @@ __int64 __fastcall log_combat(__int64 a1, __int64 a2, _QWORD *a3, __int64 a4)
   v9 = *(a1 + 1556);
   if ( (v9 & 0x1F) != 0 )
   {
-    add_server_param(&v18, 4i64, "all", 0i64, 0);
+    avprintf(&v18, 4i64, "all", 0i64, 0);
     goto LABEL_37;
   }
   if ( (v9 & 1) != 0 )
@@ -46,7 +46,7 @@ __int64 __fastcall log_combat(__int64 a1, __int64 a2, _QWORD *a3, __int64 a4)
     v21 = 1;
     v24 = "MACHINE_GUNS";
     v23 = 1;
-    add_server_param(&v18, 32i64, "%s%s", &v21, 2);
+    avprintf(&v18, 32i64, "%s%s", &v21, 2);
     v9 = *(a1 + 1556);
     if ( (v9 & 2) == 0 )
     {
@@ -68,7 +68,7 @@ LABEL_7:
   v21 = 1;
   v24 = "CANNONS";
   v23 = 1;
-  add_server_param(&v18, 32i64, "%s%s", &v21, 2);
+  avprintf(&v18, 32i64, "%s%s", &v21, 2);
   v9 = *(a1 + 1556);
   if ( (v9 & 4) == 0 )
   {
@@ -86,7 +86,7 @@ LABEL_22:
   v21 = 1;
   v24 = "ROCKETS";
   v23 = 1;
-  add_server_param(&v18, 32i64, "%s%s", &v21, 2);
+  avprintf(&v18, 32i64, "%s%s", &v21, 2);
   v9 = *(a1 + 1556);
   if ( (v9 & 8) == 0 )
   {
@@ -102,7 +102,7 @@ LABEL_32:
     v21 = 1;
     v24 = "TORPEDOES";
     v23 = 1;
-    add_server_param(&v18, 32i64, "%s%s", &v21, 2);
+    avprintf(&v18, 32i64, "%s%s", &v21, 2);
 LABEL_37:
     if ( v5 )
       goto LABEL_11;
@@ -117,7 +117,7 @@ LABEL_27:
   v21 = 1;
   v24 = "BOMBS";
   v23 = 1;
-  add_server_param(&v18, 32i64, "%s%s", &v21, 2);
+  avprintf(&v18, 32i64, "%s%s", &v21, 2);
   if ( (*(a1 + 1556) & 0x10) != 0 )
     goto LABEL_32;
 LABEL_10:
@@ -141,7 +141,7 @@ LABEL_11:
   v27 = 1;
   v30 = off_44A5040[v10];
   v29 = 1;
-  result = add_server_param(
+  result = avprintf(
              a3,
              256i64,
              "attackNum: %d, attackNumMax: %d, attackTimeMax: %.0f, weaponTypes: %s, fireMode: %s",

@@ -146,7 +146,7 @@ __int64 __fastcall unit_restore(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
   v120 = v8;
   v121 = 0i64;
   v126 = word_486D2A0;
-  v9 = sub_1459B30(a2, "target_type", &v126);
+  v9 = data::get_str(a2, "target_type", &v126);
   if ( v9 )
   {
     v10 = v9;
@@ -170,7 +170,7 @@ LABEL_7:
   v15 = 0xFFFFFFFF;
   if ( *a2 )
   {
-    v16 = sub_1285C0("target", 6ui64);
+    v16 = data::get_name_id("target", 6ui64);
     v17 = *(v14 + 0x50);
     if ( v17 )
     {
@@ -184,7 +184,7 @@ LABEL_7:
       if ( !*(v14 + 0x20) )
         goto LABEL_15;
     }
-    v19 = sub_128A70(v14, "target", 6ui64, v16);
+    v19 = data::get_name_id(v14, "target", 6ui64, v16);
     if ( v19 >= 0 )
     {
       v20 = v18 + v19;
@@ -195,7 +195,7 @@ LABEL_17:
 LABEL_15:
     if ( !v18 )
       goto LABEL_18;
-    v20 = sub_128A70(*(v14 + 0x50), "target", 6ui64, v16);
+    v20 = data::get_name_id(*(v14 + 0x50), "target", 6ui64, v16);
     goto LABEL_17;
   }
 LABEL_18:
@@ -227,7 +227,7 @@ LABEL_18:
   }
   sub_CD4300(&v119, a1, a2, "target");
   LOBYTE(v126) = 0;
-  if ( sub_145BBF0(a2, "useForTriggerFiltered", &v126) )
+  if ( data::get_bool(a2, "useForTriggerFiltered", &v126) )
   {
     v23 = v121;
     if ( v121 )
@@ -266,7 +266,7 @@ LABEL_37:
     }
   }
   LODWORD(v126) = 0xFFFFFFFF;
-  v29 = sub_145A390(a2, "randomTargetsCount", &v126);
+  v29 = data::set_int(a2, "randomTargetsCount", &v126);
   if ( v29 >= 0 )
   {
     v30 = v29;
@@ -283,7 +283,7 @@ LABEL_37:
     {
 LABEL_45:
       LODWORD(v126) = 0x18894;
-      v31 = sub_145A390(a2, "_seed", &v126);
+      v31 = data::set_int(a2, "_seed", &v126);
     }
     else
     {
@@ -340,17 +340,17 @@ LABEL_46:
     }
 LABEL_61:
     LOBYTE(v126) = 0;
-    v116 = sub_145BBF0(a2, "processingDelayed", &v126);
+    v116 = data::get_bool(a2, "processingDelayed", &v126);
     LOBYTE(v126) = 0;
-    v117 = sub_145BBF0(a2, "ressurectIfDead", &v126);
+    v117 = data::get_bool(a2, "ressurectIfDead", &v126);
     LOBYTE(v126) = 1;
-    v114 = sub_145BBF0(a2, "fullRestore", &v126);
+    v114 = data::get_bool(a2, "fullRestore", &v126);
     LOBYTE(v126) = 1;
-    v115 = sub_145BBF0(a2, "ammoRestore", &v126);
+    v115 = data::get_bool(a2, "ammoRestore", &v126);
     LOBYTE(v126) = 0;
-    v113 = sub_145BBF0(a2, "partRestore", &v126);
+    v113 = data::get_bool(a2, "partRestore", &v126);
     LODWORD(v126) = 0x3F800000;
-    v39 = sub_145B6B0(a2, "power", &v126);
+    v39 = data::set_real(a2, "power", &v126);
     v4 = *a2;
     v118 = 0xFFFFFFFF;
     if ( !*a2 )
@@ -358,7 +358,7 @@ LABEL_61:
       v43 = 0xFFFFFFFF;
       goto LABEL_83;
     }
-    v40 = sub_1285C0("planePart", 9ui64);
+    v40 = data::get_name_id("planePart", 9ui64);
     v41 = *(v4 + 0x50);
     if ( v41 )
     {
@@ -372,7 +372,7 @@ LABEL_61:
       if ( !*(v4 + 0x20) )
         goto LABEL_70;
     }
-    v44 = sub_128A70(v4, "planePart", 9ui64, v40);
+    v44 = data::get_name_id(v4, "planePart", 9ui64, v40);
     if ( v44 >= 0 )
     {
       v43 = v42 + v44;
@@ -380,14 +380,14 @@ LABEL_61:
     }
 LABEL_70:
     if ( v42 )
-      v43 = sub_128A70(*(v4 + 0x50), "planePart", 9ui64, v40);
+      v43 = data::get_name_id(*(v4 + 0x50), "planePart", 9ui64, v40);
     else
       v43 = 0xFFFFFFFF;
 LABEL_73:
     v4 = *a2;
     if ( !*a2 )
       goto LABEL_83;
-    v45 = sub_1285C0("tankPart", 8ui64);
+    v45 = data::get_name_id("tankPart", 8ui64);
     v46 = *(v4 + 0x50);
     if ( v46 )
     {
@@ -401,7 +401,7 @@ LABEL_73:
       if ( !*(v4 + 0x20) )
         goto LABEL_80;
     }
-    v48 = sub_128A70(v4, "tankPart", 8ui64, v45);
+    v48 = data::get_name_id(v4, "tankPart", 8ui64, v45);
     if ( v48 >= 0 )
     {
       v49 = v47 + v48;
@@ -410,14 +410,14 @@ LABEL_73:
 LABEL_80:
     if ( !v47 )
       goto LABEL_83;
-    v49 = sub_128A70(*(v4 + 0x50), "tankPart", 8ui64, v45);
+    v49 = data::get_name_id(*(v4 + 0x50), "tankPart", 8ui64, v45);
 LABEL_82:
     v118 = v49;
 LABEL_83:
     v126 = 0i64;
-    Str2 = sub_1459B30(a2, "modificationRestore", &v126);
+    Str2 = data::get_str(a2, "modificationRestore", &v126);
     LODWORD(v126) = 0;
-    v143 = sub_145A390(a2, "modificationQuantityToRestore", &v126);
+    v143 = data::set_int(a2, "modificationQuantityToRestore", &v126);
     v53 = NtCurrentTeb()->ThreadLocalStoragePointer;
     if ( !*(v53[TlsIndex] + 1i64) )
       _dyn_tls_on_demand_init(v53, v50, v51, v52);

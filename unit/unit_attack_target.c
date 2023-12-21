@@ -342,7 +342,7 @@ char __fastcall unit_attack_target(__int64 a1, __int64 *a2)
   v11 = 0xFFFFFFFF;
   if ( *a2 )
   {
-    v12 = sub_1285C0("object", 6ui64);
+    v12 = data::get_name_id("object", 6ui64);
     v13 = *(v10 + 0x50);
     if ( v13 )
     {
@@ -356,7 +356,7 @@ char __fastcall unit_attack_target(__int64 a1, __int64 *a2)
       if ( !*(v10 + 0x20) )
         goto LABEL_10;
     }
-    v15 = sub_128A70(v10, "object", 6ui64, v12);
+    v15 = data::get_name_id(v10, "object", 6ui64, v12);
     if ( v15 >= 0 )
     {
       v16 = v14 + v15;
@@ -367,7 +367,7 @@ LABEL_12:
 LABEL_10:
     if ( !v14 )
       goto LABEL_13;
-    v16 = sub_128A70(*(v10 + 0x50), "object", 6ui64, v12);
+    v16 = data::get_name_id(*(v10 + 0x50), "object", 6ui64, v12);
     goto LABEL_12;
   }
 LABEL_13:
@@ -403,9 +403,9 @@ LABEL_13:
   v20 = v273;
   sub_CD4300(&UnitList, v4, v273, "object");
   LODWORD(v281) = 0xBF800000;
-  v21 = sub_145B6B0(v273, "trackingTime", &v281);
+  v21 = data::set_real(v273, "trackingTime", &v281);
   v281 = "object";
-  v22 = sub_1459B30(v273, "filterWhom", &v281);
+  v22 = data::get_str(v273, "filterWhom", &v281);
   v23 = strcmp(v22, "object");
   if ( v23 )
   {
@@ -414,7 +414,7 @@ LABEL_13:
   else
   {
     LOBYTE(v281) = 0;
-    if ( sub_145BBF0(v273, "useForTriggerFiltered", &v281) )
+    if ( data::get_bool(v273, "useForTriggerFiltered", &v281) )
     {
       v25 = v292;
       if ( v292 )
@@ -457,7 +457,7 @@ LABEL_39:
   if ( v24 )
     goto LABEL_517;
   LOBYTE(v281) = 0;
-  HIBYTE(v272) = sub_145BBF0(v20, "keepDeadUnitsInTargetList", &v281);
+  HIBYTE(v272) = data::get_bool(v20, "keepDeadUnitsInTargetList", &v281);
   v34 = NtCurrentTeb()->ThreadLocalStoragePointer;
   v35 = *(v34[TlsIndex] + 1i64) == 0;
   LODWORD(v288) = v23;
@@ -705,11 +705,11 @@ LABEL_120:
   v60 = 0;
   if ( !*v273 )
     goto LABEL_142;
-  v61 = sub_1285C0("target", 6ui64);
+  v61 = data::get_name_id("target", 6ui64);
   v62 = *(v59 + 0x50);
   if ( v62 )
     v60 = *(v62 + 0x20);
-  if ( *(v59 + 0x20) && (v63 = sub_128A70(v59, "target", 6ui64, v61), v63 >= 0) )
+  if ( *(v59 + 0x20) && (v63 = data::get_name_id(v59, "target", 6ui64, v61), v63 >= 0) )
   {
     v64 = v60 + v63;
     if ( v64 < 0 )
@@ -723,7 +723,7 @@ LABEL_142:
   {
     if ( !v60 )
       goto LABEL_142;
-    v64 = sub_128A70(*(v59 + 0x50), "target", 6ui64, v61);
+    v64 = data::get_name_id(*(v59 + 0x50), "target", 6ui64, v61);
     if ( v64 < 0 )
       goto LABEL_142;
   }
@@ -759,23 +759,23 @@ LABEL_142:
   Srcc = 1;
 LABEL_144:
   v281 = "attack_target";
-  v68 = sub_1459B30(v273, "attack_type", &v281);
+  v68 = data::get_str(v273, "attack_type", &v281);
   LODWORD(v293) = sub_CD5220(v68);
   v321 = sub_109370(v273, "targetTypeName");
   LODWORD(v281) = 0;
-  v69 = sub_145B6B0(v273, "targetDistMax", &v281);
+  v69 = data::set_real(v273, "targetDistMax", &v281);
   LODWORD(v281) = 0;
-  v320 = sub_145A390(v273, "attackMissionId", &v281);
+  v320 = data::set_int(v273, "attackMissionId", &v281);
   LODWORD(v281) = 0;
-  v70 = sub_145A390(v273, "maxNumAttackersPerTarget", &v281);
+  v70 = data::set_int(v273, "maxNumAttackersPerTarget", &v281);
   LOBYTE(v281) = 0;
-  v71 = sub_145BBF0(v273, "playerAttracted", &v281);
+  v71 = data::get_bool(v273, "playerAttracted", &v281);
   LODWORD(v281) = v292;
-  v72 = sub_145A390(v273, "playerAttractedCount", &v281);
+  v72 = data::set_int(v273, "playerAttractedCount", &v281);
   LODWORD(v281) = 0x3F800000;
-  v73 = sub_145B6B0(v273, "playerAttractedEffRate", &v281);
+  v73 = data::set_real(v273, "playerAttractedEffRate", &v281);
   LOBYTE(v281) = 1;
-  v279 = sub_145BBF0(v273, "resetObjectToFollow", &v281);
+  v279 = data::get_bool(v273, "resetObjectToFollow", &v281);
   v280 = v71;
   if ( v71 )
     *(*(game + 0x638) + 0x94i64) = v72;
@@ -823,7 +823,7 @@ LABEL_144:
   v87 = 0xFFFFFFFF;
   if ( *v273 )
   {
-    v88 = sub_1285C0("anchorTarget", 0xCui64);
+    v88 = data::get_name_id("anchorTarget", 0xCui64);
     v89 = *(v86 + 0x50);
     if ( v89 )
     {
@@ -837,7 +837,7 @@ LABEL_144:
       if ( !*(v86 + 0x20) )
         goto LABEL_166;
     }
-    v91 = sub_128A70(v86, "anchorTarget", 0xCui64, v88);
+    v91 = data::get_name_id(v86, "anchorTarget", 0xCui64, v88);
     if ( v91 >= 0 )
     {
       v92 = v90 + v91;
@@ -872,7 +872,7 @@ LABEL_176:
       v96 = *v273;
       if ( !*v273 )
         goto LABEL_186;
-      v97 = sub_1285C0("anchorArea", 0xAui64);
+      v97 = data::get_name_id("anchorArea", 0xAui64);
       v98 = *(v96 + 0x50);
       if ( v98 )
       {
@@ -886,7 +886,7 @@ LABEL_176:
         if ( !*(v96 + 0x20) )
           goto LABEL_183;
       }
-      v100 = sub_128A70(v96, "anchorArea", 0xAui64, v97);
+      v100 = data::get_name_id(v96, "anchorArea", 0xAui64, v97);
       if ( v100 >= 0 )
       {
         v101 = v99 + v100;
@@ -897,13 +897,13 @@ LABEL_185:
 LABEL_183:
       if ( !v99 )
         goto LABEL_186;
-      v101 = sub_128A70(*(v96 + 0x50), "anchorArea", 0xAui64, v97);
+      v101 = data::get_name_id(*(v96 + 0x50), "anchorArea", 0xAui64, v97);
       goto LABEL_185;
     }
 LABEL_166:
     if ( !v90 )
       goto LABEL_176;
-    v92 = sub_128A70(*(v86 + 0x50), "anchorTarget", 0xCui64, v88);
+    v92 = data::get_name_id(*(v86 + 0x50), "anchorTarget", 0xCui64, v88);
     if ( v92 < 0 )
       goto LABEL_176;
     goto LABEL_168;
@@ -1041,7 +1041,7 @@ LABEL_196:
   if ( v288 )
   {
     LOBYTE(v281) = 0;
-    if ( sub_145BBF0(v273, "useForTriggerFiltered", &v281) )
+    if ( data::get_bool(v273, "useForTriggerFiltered", &v281) )
     {
       v126 = *(v82 + 4);
       if ( v126 )
@@ -1078,7 +1078,7 @@ LABEL_246:
     }
   }
   LODWORD(v281) = 0xFFFFFFFF;
-  LODWORD(v133) = sub_145A390(v273, "randomObjectsCount", &v281);
+  LODWORD(v133) = data::set_int(v273, "randomObjectsCount", &v281);
   if ( v133 > 0 )
   {
     v135 = v133;
@@ -1096,7 +1096,7 @@ LABEL_246:
     {
 LABEL_254:
       LODWORD(v281) = 0x18894;
-      LODWORD(v133) = sub_145A390(v273, "_seed", &v281);
+      LODWORD(v133) = data::set_int(v273, "_seed", &v281);
       v136 = v133;
     }
     else
@@ -1211,7 +1211,7 @@ LABEL_537:
       if ( v287 )
       {
         LODWORD(v281) = 1;
-        v307 = sub_145A390(v273, "numShots", &v281);
+        v307 = data::set_int(v273, "numShots", &v281);
         LODWORD(v296) = 0;
         goto LABEL_268;
       }
@@ -1294,7 +1294,7 @@ LABEL_273:
       }
       *(Unit_ + 0x1F54) = v295;
       LOBYTE(v281) = 0;
-      *(Unit_ + 0x1F58) = sub_145BBF0(v273, "fireRandom", &v281);
+      *(Unit_ + 0x1F58) = data::get_bool(v273, "fireRandom", &v281);
       LOBYTE(v159) = 1;
       v160 = 0;
       _Unit = Unit_;
@@ -1306,7 +1306,7 @@ LABEL_291:
         {
           v288 = v159;
           v281 = &szFile;
-          v162 = sub_1459B30(v273, "fireZone", &v281);
+          v162 = data::get_str(v273, "fireZone", &v281);
           v163 = 0xFFFFFFFF;
           if ( v162 )
           {
@@ -1353,9 +1353,9 @@ LABEL_291:
 LABEL_303:
           *(_Unit + 0x1FA4) = v163;
           LODWORD(v281) = 0x3F800000;
-          *(_Unit + 0x1F90) = sub_145B6B0(v273, "effShootingRateInZone", &v281);
+          *(_Unit + 0x1F90) = data::set_real(v273, "effShootingRateInZone", &v281);
           LODWORD(v281) = 0x3FC00000;
-          *(_Unit + 0x1F94) = sub_145B6B0(v273, "accuracyInZone", &v281);
+          *(_Unit + 0x1F94) = data::set_real(v273, "accuracyInZone", &v281);
           LOBYTE(v159) = v288;
         }
         goto LABEL_330;
@@ -1368,7 +1368,7 @@ LABEL_306:
         v174 = v173;
       *(v174 + 0x10) = 0;
       LOBYTE(v281) = 0;
-      if ( sub_145BBF0(v150, "forceTarget", &v281) )
+      if ( data::get_bool(v150, "forceTarget", &v281) )
       {
         v281 = 0x1000CE78B3B28i64;
         *v282 = 0xFFFFFFFF;
@@ -1502,7 +1502,7 @@ LABEL_335:
     if ( (*(Unit_ + 0x1058) & 0x2000010) != 0 )
       goto LABEL_273;
     LOBYTE(v281) = 0;
-    v189 = sub_145BBF0(v273, "fireRandom", &v281);
+    v189 = data::get_bool(v273, "fireRandom", &v281);
     v190 = *(Unit_ + 0x33D0);
     if ( !*(v190 + 0x548)
       || *(*(v190 + 0x548) + 0x10A8i64) > 1u
@@ -1588,7 +1588,7 @@ LABEL_352:
     v201 = 0xFFFFFFFF;
     if ( !*v273 )
       goto LABEL_380;
-    v202 = sub_1285C0("fightInArea", 0xBui64);
+    v202 = data::get_name_id("fightInArea", 0xBui64);
     v203 = *(v200 + 0x50);
     if ( v203 )
     {
@@ -1598,7 +1598,7 @@ LABEL_352:
 LABEL_377:
         if ( v204 )
         {
-          v207 = sub_128A70(*(v200 + 0x50), "fightInArea", 0xBui64, v202);
+          v207 = data::get_name_id(*(v200 + 0x50), "fightInArea", 0xBui64, v202);
           goto LABEL_379;
         }
         goto LABEL_380;
@@ -1612,7 +1612,7 @@ LABEL_377:
     }
     LODWORD(v294) = v204;
     v205 = v202;
-    v206 = sub_128A70(v200, "fightInArea", 0xBui64, v202);
+    v206 = data::get_name_id(v200, "fightInArea", 0xBui64, v202);
     v204 = v294;
     v202 = v205;
     if ( v206 < 0 )
@@ -1623,9 +1623,9 @@ LABEL_379:
 LABEL_380:
     sub_CD2950(v190 + 0x5E8, v273, v201, v297, 0i64, 0i64);
     LODWORD(v281) = 0x44FA0000;
-    v208 = sub_145B6B0(v273, "fightAreaRadius", &v281);
+    v208 = data::set_real(v273, "fightAreaRadius", &v281);
     *&v281 = v208 * v144;
-    v209 = sub_145B6B0(v273, "fightAreaOuterRadius", &v281);
+    v209 = data::set_real(v273, "fightAreaOuterRadius", &v281);
     v210 = &xmmword_4514A60;
     if ( *(v190 + 0x5F8) )
     {
@@ -1639,7 +1639,7 @@ LABEL_381:
     else
     {
       v281 = &szFile;
-      v219 = sub_1459B30(v273, "fightInArea", &v281);
+      v219 = data::get_str(v273, "fightInArea", &v281);
       if ( v219 )
       {
         v220 = v219;
@@ -1689,22 +1689,22 @@ LABEL_381:
 LABEL_382:
     *(v190 + 0x614) = sub_109880(v273, "weaponType");
     LOBYTE(v281) = 0;
-    v35 = sub_145BBF0(v273, "singleAttack", &v281) == 0;
+    v35 = data::get_bool(v273, "singleAttack", &v281) == 0;
     v211 = 0x3B9ACA00;
     if ( !v35 )
       v211 = 1;
     LODWORD(v281) = v211;
-    v212 = sub_145A390(v273, "attackNumMax", &v281);
+    v212 = data::set_int(v273, "attackNumMax", &v281);
     if ( v212 <= 0 )
       v212 = 0x3B9ACA00;
     *(v190 + 0x624) = v212;
     LODWORD(v281) = 0x4E6E6B28;
-    v2.m128_f32[0] = sub_145B6B0(v273, "attackTimeMax", &v281);
+    v2.m128_f32[0] = data::set_real(v273, "attackTimeMax", &v281);
     v213 = _mm_cmplt_ss(0i64, v2);
     v2 = _mm_and_ps(v2, v213);
     *(v190 + 0x628) = _mm_andnot_ps(v213, v145).m128_u32[0] | v2.m128_i32[0];
     v281 = &szFile;
-    v214 = sub_1459B30(v273, "fireMode", &v281);
+    v214 = data::get_str(v273, "fireMode", &v281);
     v215 = 0;
     v216 = 0;
     if ( v214 )
@@ -1728,7 +1728,7 @@ LABEL_382:
     }
     *(v190 + 0x618) = v216;
     v281 = "single";
-    v229 = sub_1459B30(v273, "groupAttackMode", &v281);
+    v229 = data::get_str(v273, "groupAttackMode", &v281);
     if ( v229 )
     {
       v230 = v229;

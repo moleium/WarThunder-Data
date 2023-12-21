@@ -6,7 +6,7 @@ char __fastcall mission_custom_artillery(__int64 a1, __int64 *a2)
   char v6[9]; // [rsp+2Fh] [rbp-9h] BYREF
 
   v6[0] = 0;
-  v2 = sub_145BBF0(a2, "enabled", v6);
+  v2 = data::get_bool(a2, "enabled", v6);
   v3 = *(game + 0x420);
   v5 = v2;
   if ( *(v3 + 0x3B0) != v2 )

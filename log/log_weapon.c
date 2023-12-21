@@ -166,8 +166,8 @@ LABEL_43:
   v42 = 1;
   v45 = v19;
   v44 = 1;
-  sub_1546EF0(a2, 0x100i64, "\n%s(stage: %s, currWeapon: %s, ", &v40, 3);
+  ctor_vprintf(a2, 0x100i64, "\n%s(stage: %s, currWeapon: %s, ", &v40, 3);
   log_combat(*(a1 + 0x38), *(a1 + 0x44), a2, v39);
-  add_server_param(a2, 1i64, ")", 0i64, 0);
+  avprintf(a2, 1i64, ")", 0i64, 0);
   return a2;
 }

@@ -80,12 +80,12 @@ LABEL_17:
   v30 = v13;
   v29 = 1;
   v26 = 2;
-  sub_1546EF0(a2, 128i64, "\n%s(takeoffIsGranted: %s, ", &v27, v26);
+  ctor_vprintf(a2, 128i64, "\n%s(takeoffIsGranted: %s, ", &v27, v26);
   if ( !*(*(a1 + 56) + 1603i64) )
     v12 = "FALSE";
   v28 = v12;
   v27 = 1;
-  add_server_param(a2, 16i64, "takeoffPermission: %s", &v27, 1);
-  add_server_param(a2, 1i64, ")", 0i64, 0);
+  avprintf(a2, 16i64, "takeoffPermission: %s", &v27, 1);
+  avprintf(a2, 1i64, ")", 0i64, 0);
   return a2;
 }

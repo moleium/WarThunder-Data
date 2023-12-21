@@ -1096,7 +1096,7 @@ LABEL_25:
   v40 = 0xFFFFFFFF;
   if ( v991 )
   {
-    v41 = sub_1285C0("overrideFM", 0xAui64);
+    v41 = data::get_name_id("overrideFM", 0xAui64);
     v42 = *(v39 + 0x50);
     if ( v42 )
     {
@@ -1110,7 +1110,7 @@ LABEL_25:
       if ( !*(v39 + 0x20) )
         goto LABEL_44;
     }
-    v44 = sub_128A70(v39, "overrideFM", 0xAui64, v41);
+    v44 = data::get_name_id(v39, "overrideFM", 0xAui64, v41);
     if ( v44 >= 0 )
     {
       v45 = v43 + v44;
@@ -1121,7 +1121,7 @@ LABEL_46:
 LABEL_44:
     if ( !v43 )
       goto LABEL_47;
-    v45 = sub_128A70(*(v39 + 0x50), "overrideFM", 0xAui64, v41);
+    v45 = data::get_name_id(*(v39 + 0x50), "overrideFM", 0xAui64, v41);
     goto LABEL_46;
   }
 LABEL_47:
@@ -1286,11 +1286,11 @@ LABEL_82:
     sub_145C170(v959, v983, "instructorCritMult", &xmmword_4A79740);
     *(Unit.QuadPart + 0x30AC) = *&v983[0];
     LOBYTE(v983[0]) = 1;
-    *(Unit.QuadPart + 0x30B4) = sub_145BBF0(v959, "limitOverload", v983);
+    *(Unit.QuadPart + 0x30B4) = data::get_bool(v959, "limitOverload", v983);
     sub_145CA50(v959, v983, "instructorOverloadMult", &xmmword_4A79740 + 0xC, v957, a6);
     *(Unit.QuadPart + 0x30B8) = v983[0];
     LODWORD(v983[0]) = HIDWORD(xmmword_4A79750);
-    *(Unit.QuadPart + 0x30C8) = sub_145B6B0(v959, "overloadTimeRate", v983);
+    *(Unit.QuadPart + 0x30C8) = data::set_real(v959, "overloadTimeRate", v983);
     *(Unit.QuadPart + 0x30CC) = xmmword_4A79760;
     sub_14673C0(Unit.QuadPart + 0x3000, v959, v988);
     v79 = sub_145DB90(v988, "Instructor");
@@ -1385,7 +1385,7 @@ LABEL_127:
   v108 = 0xFFFFFFFF;
   if ( *v95 )
   {
-    v109 = sub_1285C0("Shop", 4ui64);
+    v109 = data::get_name_id("Shop", 4ui64);
     v110 = *(v107 + 0x50);
     if ( v110 )
     {
@@ -1399,7 +1399,7 @@ LABEL_127:
       if ( !*(v107 + 0x20) )
         goto LABEL_136;
     }
-    v112 = sub_128A70(v107, "Shop", 4ui64, v109);
+    v112 = data::get_name_id(v107, "Shop", 4ui64, v109);
     if ( v112 >= 0 )
     {
       v113 = v111 + v112;
@@ -1410,7 +1410,7 @@ LABEL_138:
 LABEL_136:
     if ( !v111 )
       goto LABEL_139;
-    v113 = sub_128A70(*(v107 + 0x50), "Shop", 4ui64, v109);
+    v113 = data::get_name_id(*(v107 + 0x50), "Shop", 4ui64, v109);
     goto LABEL_138;
   }
 LABEL_139:
@@ -1465,7 +1465,7 @@ LABEL_157:
     goto LABEL_157;
 LABEL_154:
   v988[0] = 0xBF800000;
-  v127 = sub_145B6B0(v126, "maxSpeed", v988);
+  v127 = data::set_real(v126, "maxSpeed", v988);
   *(UnitWeaponInfo + 0x566C) = v127;
   *(UnitWeaponInfo + 0x5674) = fminf(fmaxf(v127 + *&dword_44A4248, *&dword_44A43FC * v127), *(UnitWeaponInfo + 0x5674));
   v128 = v959;
@@ -1476,14 +1476,14 @@ LABEL_154:
     v134 = v963;
     goto LABEL_1003;
   }
-  v131 = sub_1285C0("tags", 4ui64);
+  v131 = data::get_name_id("tags", 4ui64);
   v132 = *(v129 + 0x50);
   if ( v132 )
     v133 = *(v132 + 0x20);
   else
     v133 = 0;
   v134 = v963;
-  if ( *(v129 + 0x20) && (v717 = sub_128A70(v129, "tags", 4ui64, v131), v717 >= 0) )
+  if ( *(v129 + 0x20) && (v717 = data::get_name_id(v129, "tags", 4ui64, v131), v717 >= 0) )
   {
     v718 = v133 + v717;
   }
@@ -1491,7 +1491,7 @@ LABEL_154:
   {
     if ( !v133 )
       goto LABEL_1003;
-    v718 = sub_128A70(*(v129 + 0x50), "tags", 4ui64, v131);
+    v718 = data::get_name_id(*(v129 + 0x50), "tags", 4ui64, v131);
   }
   v130 = v718;
 LABEL_1003:
@@ -1542,9 +1542,9 @@ LABEL_1003:
         v731 = (v724 + v722);
 LABEL_1019:
         LOBYTE(v988[0]) = 0;
-        sub_145BBF0(v731, "piston_engine", v988);
+        data::get_bool(v731, "piston_engine", v988);
         LOBYTE(v988[0]) = 0;
-        sub_145BBF0(v731, "jet_engine", v988);
+        data::get_bool(v731, "jet_engine", v988);
       }
     }
   }
@@ -1674,14 +1674,14 @@ LABEL_176:
   v166 = &v991;
   sub_14584E0(&v991, *(*(NtCurrentTeb()->ThreadLocalStoragePointer + TlsIndex) + 0x160i64));
   PerformanceCount[0].QuadPart = 0i64;
-  v167 = sub_1459B30(v128, "damagePartsToFmPartsMapBlk", PerformanceCount);
+  v167 = data::get_str(v128, "damagePartsToFmPartsMapBlk", PerformanceCount);
   if ( v167 && sub_1606B70(&v991, v167, 0i64) )
     goto LABEL_202;
   v171 = *v128;
   v172 = 0xFFFFFFFF;
   if ( !*v128 )
     goto LABEL_213;
-  v173 = sub_1285C0("damagePartsToFmPartsMap", 0x17ui64);
+  v173 = data::get_name_id("damagePartsToFmPartsMap", 0x17ui64);
   v174 = *(v171 + 0x50);
   if ( v174 )
   {
@@ -1695,7 +1695,7 @@ LABEL_176:
     if ( !*(v171 + 0x20) )
       goto LABEL_210;
   }
-  v176 = sub_128A70(v171, "damagePartsToFmPartsMap", 0x17ui64, v173);
+  v176 = data::get_name_id(v171, "damagePartsToFmPartsMap", 0x17ui64, v173);
   if ( v176 >= 0 )
   {
     v177 = v175 + v176;
@@ -1704,7 +1704,7 @@ LABEL_176:
 LABEL_210:
   if ( !v175 )
     goto LABEL_213;
-  v177 = sub_128A70(*(v171 + 0x50), "damagePartsToFmPartsMap", 0x17ui64, v173);
+  v177 = data::get_name_id(*(v171 + 0x50), "damagePartsToFmPartsMap", 0x17ui64, v173);
 LABEL_212:
   v172 = v177;
 LABEL_213:
@@ -1768,14 +1768,14 @@ LABEL_228:
   v189 = v988;
   sub_14584E0(v988, *(*(NtCurrentTeb()->ThreadLocalStoragePointer + TlsIndex) + 0x160i64));
   PerformanceCount[0].QuadPart = 0i64;
-  v190 = sub_1459B30(v128, "damagePartsToCollisionPointsMapBlk", PerformanceCount);
+  v190 = data::get_str(v128, "damagePartsToCollisionPointsMapBlk", PerformanceCount);
   if ( v190 && sub_1606B70(v988, v190, 0i64) )
     goto LABEL_232;
   v194 = *v128;
   v195 = 0xFFFFFFFF;
   if ( *v128 )
   {
-    v196 = sub_1285C0("damagePartsToCollisionPointsMap", 0x1Fui64);
+    v196 = data::get_name_id("damagePartsToCollisionPointsMap", 0x1Fui64);
     v197 = *(v194 + 0x50);
     if ( v197 )
     {
@@ -1789,7 +1789,7 @@ LABEL_228:
       if ( !*(v194 + 0x20) )
         goto LABEL_240;
     }
-    v199 = sub_128A70(v194, "damagePartsToCollisionPointsMap", 0x1Fui64, v196);
+    v199 = data::get_name_id(v194, "damagePartsToCollisionPointsMap", 0x1Fui64, v196);
     if ( v199 >= 0 )
     {
       v200 = v198 + v199;
@@ -1800,7 +1800,7 @@ LABEL_242:
 LABEL_240:
     if ( !v198 )
       goto LABEL_243;
-    v200 = sub_128A70(*(v194 + 0x50), "damagePartsToCollisionPointsMap", 0x1Fui64, v196);
+    v200 = data::get_name_id(*(v194 + 0x50), "damagePartsToCollisionPointsMap", 0x1Fui64, v196);
     goto LABEL_242;
   }
 LABEL_243:
@@ -1894,7 +1894,7 @@ LABEL_269:
     "DelayedAction @\n\t..\\..\\skyquake\\prog\\main\\flightModelWrap.cpp(11485):");
 LABEL_270:
   LOBYTE(PerformanceCount[0].LowPart) = 0;
-  v215 = sub_145BBF0(v128, "haveAirRadar", PerformanceCount);
+  v215 = data::get_bool(v128, "haveAirRadar", PerformanceCount);
   v216 = (v134.QuadPart + 0x1080);
   v217 = *(v134.QuadPart + 0x1080);
   if ( v215 )
@@ -1906,7 +1906,7 @@ LABEL_270:
   if ( v217 != v218 )
     (sub_158CE00)(v134.QuadPart + 0x1060, v134.QuadPart, v134.QuadPart + 0x1080);
   LOBYTE(PerformanceCount[0].LowPart) = 0;
-  v220 = sub_145BBF0(v128, "haveGroundRadar", PerformanceCount);
+  v220 = data::get_bool(v128, "haveGroundRadar", PerformanceCount);
   v222 = *v216;
   if ( v220 )
     v223 = v222 | 4;
@@ -1956,13 +1956,13 @@ LABEL_270:
     sub_14584E0(PerformanceCount, off_4B678B0);
     v233 = *(v134.QuadPart + 0x11A8);
     LOBYTE(v983[0]) = 0;
-    v234 = sub_145BBF0(v233, "upgradedVisual", v983);
+    v234 = data::get_bool(v233, "upgradedVisual", v983);
     v235 = 1;
     if ( !v234 )
       v235 = *(*(v134.QuadPart + 0x6F0) + 0x1A2i64);
     *(v134.QuadPart + 0x1BD0) = v235;
     LODWORD(v983[0]) = 0x3F800000;
-    *(*(v134.QuadPart + 0x2E68) + 0x5548i64) = sub_145B6B0(v233, "damageAreaInflMult", v983);
+    *(*(v134.QuadPart + 0x2E68) + 0x5548i64) = data::set_real(v233, "damageAreaInflMult", v983);
     sub_157F570(*(v134.QuadPart + 0x2E68), v233);
     sub_1458FF0(PerformanceCount);
     if ( v981 < 0 )
@@ -2029,13 +2029,13 @@ LABEL_270:
   v252 = 0xFFFFFFFF;
   if ( *v128 )
   {
-    v253 = sub_1285C0("Sound", 5ui64);
+    v253 = data::get_name_id("Sound", 5ui64);
     v254 = *(v251 + 0x50);
     if ( v254 )
       v250 = *(v254 + 0x20);
     if ( *(v251 + 0x20) )
     {
-      v255 = sub_128A70(v251, "Sound", 5ui64, v253);
+      v255 = data::get_name_id(v251, "Sound", 5ui64, v253);
       if ( v255 >= 0 )
       {
         v256 = v250 + v255;
@@ -2044,7 +2044,7 @@ LABEL_270:
     }
     if ( v250 )
     {
-      v256 = sub_128A70(*(v251 + 0x50), "Sound", 5ui64, v253);
+      v256 = data::get_name_id(*(v251 + 0x50), "Sound", 5ui64, v253);
 LABEL_323:
       v252 = v256;
     }
@@ -2103,7 +2103,7 @@ LABEL_341:
   if ( !*(game + 0xCD) && (*(v134.QuadPart + 0x1058) & 0x100) != 0 )
   {
     LOBYTE(PerformanceCount[0].LowPart) = 1;
-    if ( sub_145BBF0(v259, "enableRadio", PerformanceCount) )
+    if ( data::get_bool(v259, "enableRadio", PerformanceCount) )
       sub_F254A0(*(v134.QuadPart + 0x2D64));
   }
   *(v134.QuadPart + 0x14D4) = 0;
@@ -2111,7 +2111,7 @@ LABEL_341:
   v272 = 0xFFFFFFFF;
   if ( !v271 )
     goto LABEL_357;
-  v273 = sub_1285C0(&unk_48DCEA0, 0xCui64);
+  v273 = data::get_name_id(&unk_48DCEA0, 0xCui64);
   v274 = *(v271 + 0x50);
   if ( v274 )
   {
@@ -2121,7 +2121,7 @@ LABEL_341:
 LABEL_354:
       if ( v275 )
       {
-        v277 = sub_128A70(*(v271 + 0x50), &unk_48DCEA0, 0xCui64, v273);
+        v277 = data::get_name_id(*(v271 + 0x50), &unk_48DCEA0, 0xCui64, v273);
         goto LABEL_356;
       }
       goto LABEL_357;
@@ -2133,7 +2133,7 @@ LABEL_354:
     if ( !*(v271 + 0x20) )
       goto LABEL_354;
   }
-  v276 = sub_128A70(v271, &unk_48DCEA0, 0xCui64, v273);
+  v276 = data::get_name_id(v271, &unk_48DCEA0, 0xCui64, v273);
   if ( v276 < 0 )
     goto LABEL_354;
   v277 = v275 + v276;
@@ -2148,7 +2148,7 @@ LABEL_357:
   v281 = 0xFFFFFFFF;
   if ( !v280 )
     goto LABEL_368;
-  v282 = sub_1285C0("type_bomber", 0xBui64);
+  v282 = data::get_name_id("type_bomber", 0xBui64);
   v283 = *(v280 + 0x50);
   if ( v283 )
   {
@@ -2158,7 +2158,7 @@ LABEL_357:
 LABEL_365:
       if ( v284 )
       {
-        v286 = sub_128A70(*(v280 + 0x50), "type_bomber", 0xBui64, v282);
+        v286 = data::get_name_id(*(v280 + 0x50), "type_bomber", 0xBui64, v282);
         goto LABEL_367;
       }
       goto LABEL_368;
@@ -2170,7 +2170,7 @@ LABEL_365:
     if ( !*(v280 + 0x20) )
       goto LABEL_365;
   }
-  v285 = sub_128A70(v280, "type_bomber", 0xBui64, v282);
+  v285 = data::get_name_id(v280, "type_bomber", 0xBui64, v282);
   if ( v285 < 0 )
     goto LABEL_365;
   v286 = v284 + v285;
@@ -2185,7 +2185,7 @@ LABEL_368:
   v289 = 0xFFFFFFFF;
   if ( !v288 )
     goto LABEL_379;
-  v290 = sub_1285C0("type_assault", 0xCui64);
+  v290 = data::get_name_id("type_assault", 0xCui64);
   v291 = *(v288 + 0x50);
   if ( v291 )
   {
@@ -2195,7 +2195,7 @@ LABEL_368:
 LABEL_376:
       if ( v292 )
       {
-        v294 = sub_128A70(*(v288 + 0x50), "type_assault", 0xCui64, v290);
+        v294 = data::get_name_id(*(v288 + 0x50), "type_assault", 0xCui64, v290);
         goto LABEL_378;
       }
       goto LABEL_379;
@@ -2207,7 +2207,7 @@ LABEL_376:
     if ( !*(v288 + 0x20) )
       goto LABEL_376;
   }
-  v293 = sub_128A70(v288, "type_assault", 0xCui64, v290);
+  v293 = data::get_name_id(v288, "type_assault", 0xCui64, v290);
   if ( v293 < 0 )
     goto LABEL_376;
   v294 = v292 + v293;
@@ -2220,16 +2220,16 @@ LABEL_379:
 LABEL_380:
     *(v134.QuadPart + 0x14D4) = v279;
   PerformanceCount[0].LowPart = 0x3DCCCCCD;
-  *(v134.QuadPart + 0x52A0) = sub_145B6B0(v128, "coningUp", PerformanceCount);
+  *(v134.QuadPart + 0x52A0) = data::set_real(v128, "coningUp", PerformanceCount);
   PerformanceCount[0].LowPart = 0x3C23D70A;
-  *(v134.QuadPart + 0x52A4) = sub_145B6B0(v128, "coningDown", PerformanceCount);
+  *(v134.QuadPart + 0x52A4) = data::set_real(v128, "coningDown", PerformanceCount);
   LOBYTE(PerformanceCount[0].LowPart) = 1;
-  if ( sub_145BBF0(*v973, "loadSound", PerformanceCount) )
+  if ( data::get_bool(*v973, "loadSound", PerformanceCount) )
     sub_3F6210(v134.LowPart, v128, v972 & ((byte_4A7061C != 0) | a5), v972, 0);
   sub_EE8DB0("path");
   v974 = sub_EE8DB0("pathCommon");
   PerformanceCount[0].QuadPart = "none";
-  v296 = sub_1459B30(v259, "voiceWarningSystem", PerformanceCount);
+  v296 = data::get_str(v259, "voiceWarningSystem", PerformanceCount);
   *v973 = v259;
   if ( v296 )
   {
@@ -2250,7 +2250,7 @@ LABEL_380:
     v301 = 0xFFFFFFFF;
     if ( !*v259 )
       goto LABEL_399;
-    v302 = sub_1285C0("voiceWarningSystemOverride", 0x1Aui64);
+    v302 = data::get_name_id("voiceWarningSystemOverride", 0x1Aui64);
     v303 = *(v300 + 0x50);
     if ( v303 )
     {
@@ -2260,7 +2260,7 @@ LABEL_380:
 LABEL_396:
         if ( v304 )
         {
-          v306 = sub_128A70(*(v300 + 0x50), "voiceWarningSystemOverride", 0x1Aui64, v302);
+          v306 = data::get_name_id(*(v300 + 0x50), "voiceWarningSystemOverride", 0x1Aui64, v302);
           goto LABEL_398;
         }
         goto LABEL_399;
@@ -2272,7 +2272,7 @@ LABEL_396:
       if ( !*(v300 + 0x20) )
         goto LABEL_396;
     }
-    v305 = sub_128A70(v300, "voiceWarningSystemOverride", 0x1Aui64, v302);
+    v305 = data::get_name_id(v300, "voiceWarningSystemOverride", 0x1Aui64, v302);
     if ( v305 < 0 )
       goto LABEL_396;
     v306 = v304 + v305;
@@ -2343,7 +2343,7 @@ LABEL_386:
     *(v134.QuadPart + 0x3390) = 0xFFFFFFFF;
   }
   LOBYTE(PerformanceCount[0].LowPart) = 0;
-  v322 = sub_145BBF0(v259, "useDiveSiren", PerformanceCount);
+  v322 = data::get_bool(v259, "useDiveSiren", PerformanceCount);
   v323 = *(v134.QuadPart + 0x3258);
   if ( v322 )
   {
@@ -2363,7 +2363,7 @@ LABEL_386:
       *(v134.QuadPart + 0x3258) = v325;
     }
     PerformanceCount[0].LowPart = 0x42C80000;
-    *(v134.QuadPart + 0x3268) = sub_145B6B0(v259, "sirenSpeedTreshold", PerformanceCount);
+    *(v134.QuadPart + 0x3268) = data::set_real(v259, "sirenSpeedTreshold", PerformanceCount);
   }
   else if ( v323 )
   {
@@ -2389,7 +2389,7 @@ LABEL_386:
     *(v134.QuadPart + 0x3218) = 0i64;
   }
   PerformanceCount[0].QuadPart = &szFile;
-  if ( *sub_1459B30(v259, "eventWreck", PerformanceCount) )
+  if ( *data::get_str(v259, "eventWreck", PerformanceCount) )
   {
     EnterCriticalSection(&stru_4B776C8);
     v328 = (*(*off_4B73580 + 8i64))(off_4B73580);
@@ -2432,12 +2432,12 @@ LABEL_386:
   }
   (sub_EF9E20)(v134.QuadPart);
   PerformanceCount[0].LowPart = 0x3FC00000;
-  *(v134.QuadPart + 0x2A20) = fminf(fmaxf(0.0, sub_145B6B0(v128, "wepIgnitionTime", PerformanceCount)), *&dword_4487F04);
+  *(v134.QuadPart + 0x2A20) = fminf(fmaxf(0.0, data::set_real(v128, "wepIgnitionTime", PerformanceCount)), *&dword_4487F04);
   v333 = *v128;
   v334 = 0xFFFFFFFF;
   if ( !*v128 )
     goto LABEL_456;
-  v335 = sub_1285C0("propellers", 0xAui64);
+  v335 = data::get_name_id("propellers", 0xAui64);
   v336 = *(v333 + 0x50);
   if ( v336 )
   {
@@ -2447,7 +2447,7 @@ LABEL_386:
 LABEL_453:
       if ( v337 )
       {
-        v339 = sub_128A70(*(v333 + 0x50), "propellers", 0xAui64, v335);
+        v339 = data::get_name_id(*(v333 + 0x50), "propellers", 0xAui64, v335);
         goto LABEL_455;
       }
       goto LABEL_456;
@@ -2459,7 +2459,7 @@ LABEL_453:
     if ( !*(v333 + 0x20) )
       goto LABEL_453;
   }
-  v338 = sub_128A70(v333, "propellers", 0xAui64, v335);
+  v338 = data::get_name_id(v333, "propellers", 0xAui64, v335);
   if ( v338 < 0 )
     goto LABEL_453;
   v339 = v337 + v338;
@@ -2544,12 +2544,12 @@ LABEL_473:
     sub_17A810(v998, 0x10, "prop%dEngine");
     v999 = 0;
     PerformanceCount[0].LowPart = v355;
-    PerformanceCount[0].LowPart = sub_145A390(v342, v998, PerformanceCount);
-    *(v354 + 0xFFFFFFFA) = sub_145A390(v342, v989, PerformanceCount);
+    PerformanceCount[0].LowPart = data::set_int(v342, v998, PerformanceCount);
+    *(v354 + 0xFFFFFFFA) = data::set_int(v342, v989, PerformanceCount);
     sub_17A810(v989, 0x10, "engine%d");
     v990 = 0;
     PerformanceCount[0].LowPart = 0xFFFFFFFF;
-    *(v354 + 0xFFFFFFFB) = sub_145A390(v342, v989, PerformanceCount);
+    *(v354 + 0xFFFFFFFB) = data::set_int(v342, v989, PerformanceCount);
     sub_17A810(v989, 0x10, "angles%d");
     v990 = 0;
     Block = 0i64;
@@ -2563,11 +2563,11 @@ LABEL_473:
     sub_17A810(v989, 0x10, "cyclic%d");
     v990 = 0;
     LOBYTE(PerformanceCount[0].LowPart) = 0;
-    *(v354 + 0xFFFFFFFC) = sub_145BBF0(v342, v989, PerformanceCount);
+    *(v354 + 0xFFFFFFFC) = data::get_bool(v342, v989, PerformanceCount);
     sub_17A810(v989, 0x10, "phaseShift%d");
     v990 = 0;
     PerformanceCount[0].LowPart = 0;
-    *v354 = sub_145B6B0(v342, v989, PerformanceCount) * v356;
+    *v354 = data::set_real(v342, v989, PerformanceCount) * v356;
     ++v355;
     v354 += 0xA;
   }
@@ -2931,12 +2931,12 @@ LABEL_561:
   *(v963.QuadPart + 0x53C8) = v444;
   (sub_977A00)(v444, v959, v963.QuadPart);
   PerformanceCount[0].LowPart = 0x41F00000;
-  *(v963.QuadPart + 0x3B64) = sub_145B6B0(v959, "timeOfFullRefuel", PerformanceCount);
+  *(v963.QuadPart + 0x3B64) = data::set_real(v959, "timeOfFullRefuel", PerformanceCount);
   (sub_364D50)(v963.QuadPart, v959);
   PerformanceCount[0].LowPart = 0;
-  *(v963.QuadPart + 0x4168) = sub_145B6B0(v959, "smokeScreenPlaneMinAlt", PerformanceCount);
+  *(v963.QuadPart + 0x4168) = data::set_real(v959, "smokeScreenPlaneMinAlt", PerformanceCount);
   PerformanceCount[0].LowPart = 0x7F7FFFFF;
-  *(v963.QuadPart + 0x416C) = sub_145B6B0(v959, "smokeScreenPlaneMaxAlt", PerformanceCount);
+  *(v963.QuadPart + 0x416C) = data::set_real(v959, "smokeScreenPlaneMaxAlt", PerformanceCount);
   v449 = *(v963.QuadPart + 0x53C0);
   if ( v449 )
   {
@@ -2956,20 +2956,20 @@ LABEL_561:
   *(&v983[0] + 1) = "exhaustEffects";
   LODWORD(v983[0]) = 1;
   PerformanceCount[1].QuadPart = off_4B678C8;
-  sub_1546EF0(PerformanceCount, v452, "%sBlk", v983, 1);
+  ctor_vprintf(PerformanceCount, v452, "%sBlk", v983, 1);
   v453 = PerformanceCount[0];
   QuadPart = PerformanceCount[0].QuadPart;
   if ( !v965 )
     QuadPart = &szFile;
   *&v983[0] = 0i64;
-  v455 = sub_1459B30(v959, QuadPart, v983);
+  v455 = data::get_str(v959, QuadPart, v983);
   if ( !v455 || !sub_1606B70(&Block, v455, 0i64) )
   {
     v459 = *v959;
     v460 = 0xFFFFFFFF;
     if ( !*v959 )
       goto LABEL_579;
-    v461 = sub_1285C0("exhaustEffects", 0xEui64);
+    v461 = data::get_name_id("exhaustEffects", 0xEui64);
     v462 = *(v459 + 0x50);
     if ( v462 )
     {
@@ -2979,7 +2979,7 @@ LABEL_561:
 LABEL_576:
         if ( v463 )
         {
-          v465 = sub_128A70(*(v459 + 0x50), "exhaustEffects", 0xEui64, v461);
+          v465 = data::get_name_id(*(v459 + 0x50), "exhaustEffects", 0xEui64, v461);
           goto LABEL_578;
         }
         goto LABEL_579;
@@ -2991,7 +2991,7 @@ LABEL_576:
       if ( !*(v459 + 0x20) )
         goto LABEL_576;
     }
-    v464 = sub_128A70(v459, "exhaustEffects", 0xEui64, v461);
+    v464 = data::get_name_id(v459, "exhaustEffects", 0xEui64, v461);
     if ( v464 < 0 )
       goto LABEL_576;
     v465 = v463 + v464;
@@ -3114,7 +3114,7 @@ LABEL_608:
   v487 = v983;
   sub_14584E0(v983, *(*(NtCurrentTeb()->ThreadLocalStoragePointer + TlsIndex) + 0x160i64));
   PerformanceCount[0].QuadPart = 0i64;
-  v488 = sub_1459B30(v959, "damagePartsToWeaponsMapBlk", PerformanceCount);
+  v488 = data::get_str(v959, "damagePartsToWeaponsMapBlk", PerformanceCount);
   if ( v488 && sub_1606B70(v983, v488, 0i64) )
   {
 LABEL_623:
@@ -3125,7 +3125,7 @@ LABEL_623:
   v490 = 0xFFFFFFFF;
   if ( !*v959 )
     goto LABEL_634;
-  v491 = sub_1285C0("damagePartsToWeaponsMap", 0x17ui64);
+  v491 = data::get_name_id("damagePartsToWeaponsMap", 0x17ui64);
   v492 = *(v489 + 0x50);
   if ( v492 )
   {
@@ -3135,7 +3135,7 @@ LABEL_623:
 LABEL_631:
       if ( v493 )
       {
-        v495 = sub_128A70(*(v489 + 0x50), "damagePartsToWeaponsMap", 0x17ui64, v491);
+        v495 = data::get_name_id(*(v489 + 0x50), "damagePartsToWeaponsMap", 0x17ui64, v491);
         goto LABEL_633;
       }
       goto LABEL_634;
@@ -3147,7 +3147,7 @@ LABEL_631:
     if ( !*(v489 + 0x20) )
       goto LABEL_631;
   }
-  v494 = sub_128A70(v489, "damagePartsToWeaponsMap", 0x17ui64, v491);
+  v494 = data::get_name_id(v489, "damagePartsToWeaponsMap", 0x17ui64, v491);
   if ( v494 < 0 )
     goto LABEL_631;
   v495 = v493 + v494;
@@ -3207,7 +3207,7 @@ LABEL_649:
   if ( *(*(game + 0x498) + 0x1E58i64) )
   {
     PerformanceCount[0].QuadPart = "default";
-    v508 = sub_1459B30(v959, "paratrooper", PerformanceCount);
+    v508 = data::get_str(v959, "paratrooper", PerformanceCount);
     v509 = sub_4A88C0(v508);
     *(v963.QuadPart + 0x2AFC) = v509;
     if ( v509 < 0 )
@@ -3221,7 +3221,7 @@ LABEL_649:
     v512 = 0xFFFFFFFF;
     if ( !*v959 )
       goto LABEL_663;
-    v513 = sub_1285C0("bailout", 7ui64);
+    v513 = data::get_name_id("bailout", 7ui64);
     v514 = *(v511 + 0x50);
     if ( v514 )
     {
@@ -3231,7 +3231,7 @@ LABEL_649:
 LABEL_660:
         if ( v515 )
         {
-          v517 = sub_128A70(*(v511 + 0x50), "bailout", 7ui64, v513);
+          v517 = data::get_name_id(*(v511 + 0x50), "bailout", 7ui64, v513);
           goto LABEL_662;
         }
         goto LABEL_663;
@@ -3243,7 +3243,7 @@ LABEL_660:
       if ( !*(v511 + 0x20) )
         goto LABEL_660;
     }
-    v516 = sub_128A70(v511, "bailout", 7ui64, v513);
+    v516 = data::get_name_id(v511, "bailout", 7ui64, v513);
     if ( v516 < 0 )
       goto LABEL_660;
     v517 = v515 + v516;
@@ -3310,17 +3310,17 @@ LABEL_676:
     *(v963.QuadPart + 0x2AFC) = 0xFFFFFFFF;
   }
   PerformanceCount[0].LowPart = 0x3F800000;
-  *(v963.QuadPart + 0x2FB0) = sub_145B6B0(v959, "simplifiedJoyAileronMult", PerformanceCount);
+  *(v963.QuadPart + 0x2FB0) = data::set_real(v959, "simplifiedJoyAileronMult", PerformanceCount);
   PerformanceCount[0].LowPart = 0x3F800000;
-  *(v963.QuadPart + 0x2FB4) = sub_145B6B0(v959, "simplifiedJoyElevatorMult", PerformanceCount);
+  *(v963.QuadPart + 0x2FB4) = data::set_real(v959, "simplifiedJoyElevatorMult", PerformanceCount);
   PerformanceCount[0].QuadPart = "No";
-  v532 = sub_1459B30(v959, "autopilotImpl", PerformanceCount);
+  v532 = data::get_str(v959, "autopilotImpl", PerformanceCount);
   if ( !v532 || (v533 = v532, !strcmp("No", v532)) )
   {
 LABEL_684:
     *(v963.QuadPart + 0x2E78) = 0;
     LOBYTE(PerformanceCount[0].LowPart) = 0;
-    if ( sub_145BBF0(v959, "enableAutopilot", PerformanceCount) )
+    if ( data::get_bool(v959, "enableAutopilot", PerformanceCount) )
       *(v963.QuadPart + 0x2E78) = 2;
   }
   else
@@ -3350,7 +3350,7 @@ LABEL_684:
   v537 = 0xFFFFFFFF;
   if ( !*v959 )
     goto LABEL_699;
-  v538 = sub_1285C0("turbulence", 0xAui64);
+  v538 = data::get_name_id("turbulence", 0xAui64);
   v539 = *(v536 + 0x50);
   if ( v539 )
   {
@@ -3360,7 +3360,7 @@ LABEL_684:
 LABEL_696:
       if ( v540 )
       {
-        v542 = sub_128A70(*(v536 + 0x50), "turbulence", 0xAui64, v538);
+        v542 = data::get_name_id(*(v536 + 0x50), "turbulence", 0xAui64, v538);
         goto LABEL_698;
       }
       goto LABEL_699;
@@ -3372,7 +3372,7 @@ LABEL_696:
     if ( !*(v536 + 0x20) )
       goto LABEL_696;
   }
-  v541 = sub_128A70(v536, "turbulence", 0xAui64, v538);
+  v541 = data::get_name_id(v536, "turbulence", 0xAui64, v538);
   if ( v541 < 0 )
     goto LABEL_696;
   v542 = v540 + v541;
@@ -3442,23 +3442,23 @@ LABEL_718:
   *(v963.QuadPart + 0x27CC) = 0xBF800000;
   *(v963.QuadPart + 0x27E8) = 0xBF800000;
   PerformanceCount[0].LowPart = 0x42C80000;
-  *(v963.QuadPart + 0x27F0) = sub_145B6B0(v476, "segmentLength", PerformanceCount);
+  *(v963.QuadPart + 0x27F0) = data::set_real(v476, "segmentLength", PerformanceCount);
   PerformanceCount[0].LowPart = 0x41DE38E4;
-  *(v963.QuadPart + 0x27F4) = sub_145B6B0(v476, "startSpeed", PerformanceCount);
+  *(v963.QuadPart + 0x27F4) = data::set_real(v476, "startSpeed", PerformanceCount);
   PerformanceCount[0].LowPart = 0x430AE38E;
-  *(v963.QuadPart + 0x27F8) = sub_145B6B0(v476, "maxSpeed", PerformanceCount);
+  *(v963.QuadPart + 0x27F8) = data::set_real(v476, "maxSpeed", PerformanceCount);
   PerformanceCount[0].LowPart = 0x40800000;
-  *(v963.QuadPart + 0x27FC) = sub_145B6B0(v476, "maxPower", PerformanceCount);
+  *(v963.QuadPart + 0x27FC) = data::set_real(v476, "maxPower", PerformanceCount);
   PerformanceCount[0].LowPart = 0x41400000;
-  *(v963.QuadPart + 0x2800) = sub_145B6B0(v476, "initialRadius", PerformanceCount);
+  *(v963.QuadPart + 0x2800) = data::set_real(v476, "initialRadius", PerformanceCount);
   PerformanceCount[0].LowPart = 0x40000000;
-  *(v963.QuadPart + 0x2804) = sub_145B6B0(v476, "radiusSpeed", PerformanceCount);
+  *(v963.QuadPart + 0x2804) = data::set_real(v476, "radiusSpeed", PerformanceCount);
   LOBYTE(PerformanceCount[0].LowPart) = 0;
-  *(v963.QuadPart + 0x1F1B) = sub_145BBF0(v959, "flapsIsAirbrakes", PerformanceCount);
+  *(v963.QuadPart + 0x1F1B) = data::get_bool(v959, "flapsIsAirbrakes", PerformanceCount);
   LOBYTE(PerformanceCount[0].LowPart) = 0;
-  *(v963.QuadPart + 0x1F1C) = sub_145BBF0(v959, "bayDoorTextureCtrl", PerformanceCount);
+  *(v963.QuadPart + 0x1F1C) = data::get_bool(v959, "bayDoorTextureCtrl", PerformanceCount);
   LOBYTE(PerformanceCount[0].LowPart) = 0;
-  *(v963.QuadPart + 0x2AEC) = sub_145BBF0(v959, "jetEnginePowerFullScale", PerformanceCount);
+  *(v963.QuadPart + 0x2AEC) = data::get_bool(v959, "jetEnginePowerFullScale", PerformanceCount);
   *(v963.QuadPart + 0x523C) = 0;
   v557 = *(v963.QuadPart + 0x32E8);
   if ( v557 )
@@ -3548,11 +3548,11 @@ LABEL_718:
       v566 = &byte_4B73348;
     LeaveCriticalSection(&stru_4B776C8);
     PerformanceCount[0].QuadPart = "cockpit";
-    sub_1459B30(v486, "cockpitOpen", PerformanceCount);
+    data::get_str(v486, "cockpitOpen", PerformanceCount);
     sub_1665C80(v566, 1);
     *(v963.QuadPart + 0x3300) = v566;
     PerformanceCount[0].QuadPart = 0i64;
-    v568 = sub_1459B30(v486, "cockpitClose", PerformanceCount);
+    v568 = data::get_str(v486, "cockpitClose", PerformanceCount);
     if ( v568 && *v568 )
     {
       EnterCriticalSection(&stru_4B776C8);
@@ -3577,9 +3577,9 @@ LABEL_718:
     *(v963.QuadPart + 0x3310) = 0i64;
   }
   PerformanceCount[0].QuadPart = 0i64;
-  v571 = sub_1459B30(v486, "turretTurnSfxName", PerformanceCount);
+  v571 = data::get_str(v486, "turretTurnSfxName", PerformanceCount);
   PerformanceCount[0].QuadPart = 0i64;
-  if ( sub_1459B30(v486, "turretTurnSfxPathStudio", PerformanceCount) && v571 && *(v963.QuadPart + 0x10B8) )
+  if ( data::get_str(v486, "turretTurnSfxPathStudio", PerformanceCount) && v571 && *(v963.QuadPart + 0x10B8) )
   {
     EnterCriticalSection(&stru_4B776C8);
     v572 = (*(*off_4B73580 + 8i64))(off_4B73580);
@@ -3594,7 +3594,7 @@ LABEL_718:
     *(v963.QuadPart + 0x3368) = sub_1667980(*(v963.QuadPart + 0x3310), "velV", 0i64);
   }
   PerformanceCount[0].QuadPart = 0i64;
-  v574 = sub_1459B30(v486, "eventAOAAlarm", PerformanceCount);
+  v574 = data::get_str(v486, "eventAOAAlarm", PerformanceCount);
   v575 = *(v963.QuadPart + 0x3320);
   if ( v575 )
   {
@@ -3623,7 +3623,7 @@ LABEL_718:
     *(v963.QuadPart + 0x3348) = sub_1667980(*(v963.QuadPart + 0x3320), "overload", 0i64);
   }
   PerformanceCount[0].QuadPart = 0i64;
-  v578 = sub_1459B30(v486, "eventStallAlarm", PerformanceCount);
+  v578 = data::get_str(v486, "eventStallAlarm", PerformanceCount);
   v579 = *(v963.QuadPart + 0x3350);
   if ( v579 )
   {
@@ -3662,7 +3662,7 @@ LABEL_718:
     *(v963.QuadPart + 0x3328) = 0i64;
   }
   PerformanceCount[0].QuadPart = 0i64;
-  if ( sub_1459B30(v486, "eventThrustReverse", PerformanceCount) && (*(v963.QuadPart + 0x1058) & 0x100) != 0 )
+  if ( data::get_str(v486, "eventThrustReverse", PerformanceCount) && (*(v963.QuadPart + 0x1058) & 0x100) != 0 )
   {
     EnterCriticalSection(&stru_4B776C8);
     v583 = (*(*off_4B73580 + 8i64))(off_4B73580);
@@ -3686,7 +3686,7 @@ LABEL_718:
     *(v963.QuadPart + 0x3330) = 0i64;
   }
   PerformanceCount[0].QuadPart = 0i64;
-  if ( sub_1459B30(v486, "nozzleMoveSfx", PerformanceCount) && (*(v963.QuadPart + 0x1058) & 0x100) != 0 )
+  if ( data::get_str(v486, "nozzleMoveSfx", PerformanceCount) && (*(v963.QuadPart + 0x1058) & 0x100) != 0 )
   {
     EnterCriticalSection(&stru_4B776C8);
     v586 = (*(*off_4B73580 + 8i64))(off_4B73580);
@@ -3698,7 +3698,7 @@ LABEL_718:
     *(v963.QuadPart + 0x3330) = v587;
     *(v963.QuadPart + 0x335C) = sub_1667980(v587, "intensity", 0i64);
     PerformanceCount[0].LowPart = 0x3F000000;
-    *(v963.QuadPart + 0x3360) = sub_145B6B0(v486, "nozzleAngleThreshold", PerformanceCount);
+    *(v963.QuadPart + 0x3360) = data::set_real(v486, "nozzleAngleThreshold", PerformanceCount);
   }
   v588 = *(v963.QuadPart + 0x3338);
   if ( v588 )
@@ -3713,7 +3713,7 @@ LABEL_718:
     *(v963.QuadPart + 0x3338) = 0i64;
   }
   PerformanceCount[0].QuadPart = 0i64;
-  if ( sub_1459B30(v486, "eventNozzleTurn", PerformanceCount) && (*(v963.QuadPart + 0x1058) & 0x100) != 0 )
+  if ( data::get_str(v486, "eventNozzleTurn", PerformanceCount) && (*(v963.QuadPart + 0x1058) & 0x100) != 0 )
   {
     EnterCriticalSection(&stru_4B776C8);
     v592 = (*(*off_4B73580 + 8i64))(off_4B73580);
@@ -3732,7 +3732,7 @@ LABEL_718:
   v596 = 0xFFFFFFFF;
   if ( *v959 )
   {
-    v597 = sub_1285C0("engineExhaustFx", 0xFui64);
+    v597 = data::get_name_id("engineExhaustFx", 0xFui64);
     v598 = *(v594 + 0x50);
     if ( v598 )
     {
@@ -3740,7 +3740,7 @@ LABEL_718:
       if ( !*(v594 + 0x20) )
         goto LABEL_818;
 LABEL_816:
-      v600 = sub_128A70(v594, "engineExhaustFx", 0xFui64, v597);
+      v600 = data::get_name_id(v594, "engineExhaustFx", 0xFui64, v597);
       if ( v600 >= 0 )
       {
         v596 = v599 + v600;
@@ -3756,7 +3756,7 @@ LABEL_816:
 LABEL_818:
     v596 = 0xFFFFFFFF;
     if ( v599 )
-      v596 = sub_128A70(*(v594 + 0x50), "engineExhaustFx", 0xFui64, v597);
+      v596 = data::get_name_id(*(v594 + 0x50), "engineExhaustFx", 0xFui64, v597);
   }
 LABEL_820:
   v601 = (v963.QuadPart + 0x26C4);
@@ -3843,7 +3843,7 @@ LABEL_838:
         *(v608 + 4 * v613) = 0i64;
         PerformanceCount[0].QuadPart = 0i64;
         v614 = v972;
-        v615 = sub_1459B30(v972, "standard", PerformanceCount);
+        v615 = data::get_str(v972, "standard", PerformanceCount);
         v616 = 0xFFFFFFFF;
         v617 = 0xFFFFFFFF;
         if ( v615 )
@@ -3854,12 +3854,12 @@ LABEL_838:
         }
         *(v608 + v613) = v617;
         PerformanceCount[0].QuadPart = 0i64;
-        v618 = sub_1459B30(v614, "afterburner", PerformanceCount);
+        v618 = data::get_str(v614, "afterburner", PerformanceCount);
         if ( v618 && *v618 )
           v616 = sub_93E610(v618);
         *(v608 + v613 + 1) = v616;
         PerformanceCount[0].QuadPart = 0i64;
-        v619 = sub_1459B30(v614, "start", PerformanceCount);
+        v619 = data::get_str(v614, "start", PerformanceCount);
         v620 = 0xFFFFFFFF;
         if ( v619 )
         {
@@ -3896,7 +3896,7 @@ LABEL_858:
         if ( v638 <= 6 && (v639 = 0x64, _bittest(&v639, v638)) )
         {
           PerformanceCount[0].QuadPart = 0i64;
-          v640 = sub_1459B30(v959, "standardExhaustFxType", PerformanceCount);
+          v640 = data::get_str(v959, "standardExhaustFxType", PerformanceCount);
           v641 = 0xFFFFFFFF;
           if ( v640 && *v640 )
             v641 = sub_93E610(v640);
@@ -3906,14 +3906,14 @@ LABEL_858:
         else
         {
           PerformanceCount[0].QuadPart = 0i64;
-          v657 = sub_1459B30(v959, "standardExhaustFxType", PerformanceCount);
+          v657 = data::get_str(v959, "standardExhaustFxType", PerformanceCount);
           v658 = 0xFFFFFFFF;
           if ( v657 && *v657 )
             v658 = sub_93E610(v657);
           *v601 = v658;
           PerformanceCount[0].QuadPart = "motor_exhaust";
         }
-        v659 = sub_1459B30(v959, "afterburnerExhaustFxType", PerformanceCount);
+        v659 = data::get_str(v959, "afterburnerExhaustFxType", PerformanceCount);
         v660 = 0xFFFFFFFF;
         v661 = 0xFFFFFFFF;
         if ( v659 )
@@ -3924,7 +3924,7 @@ LABEL_858:
         }
         *(v359.QuadPart + 0x26C8) = v661;
         PerformanceCount[0].QuadPart = 0i64;
-        v662 = sub_1459B30(v959, "startExhaustFxType", PerformanceCount);
+        v662 = data::get_str(v959, "startExhaustFxType", PerformanceCount);
         if ( v662 && *v662 )
           v660 = sub_93E610(v662);
         *(v359.QuadPart + 0x26CC) = v660;
@@ -3947,20 +3947,20 @@ LABEL_858:
     *&v965 = 0i64;
     v976 = v622;
     LODWORD(v975) = 2;
-    sub_1546EF0(PerformanceCount, 0x20i64, "engineExhaustFxMap%d", &v975, 1);
+    ctor_vprintf(PerformanceCount, 0x20i64, "engineExhaustFxMap%d", &v975, 1);
     v626 = PerformanceCount[0];
     v627 = PerformanceCount[0].QuadPart;
     if ( !v965 )
       v627 = &szFile;
     LODWORD(v975) = 0;
-    *(v359.QuadPart + 4 * v622 + 0x26D0) = sub_145A390(v959, v627, &v975);
+    *(v359.QuadPart + 4 * v622 + 0x26D0) = data::set_int(v959, v627, &v975);
     if ( v626.QuadPart )
       (*(*PerformanceCount[1].QuadPart + 0x40i64))(PerformanceCount[1], v626);
     ++v622;
   }
   while ( v622 != 0x10 );
   LOBYTE(PerformanceCount[0].LowPart) = 0;
-  *(v359.QuadPart + 0x271C) = sub_145BBF0(v959, "disableExhaustFxIfContrailIsActive", PerformanceCount);
+  *(v359.QuadPart + 0x271C) = data::get_bool(v959, "disableExhaustFxIfContrailIsActive", PerformanceCount);
   v628 = sub_EE8DB0("eventAirBrake");
   if ( *(v359.QuadPart + 0x10B8) && *(*(v359.QuadPart + 0x2E68) + 0x5695i64) && !*(v359.QuadPart + 0x32E0) && *v628 )
   {
@@ -3977,7 +3977,7 @@ LABEL_858:
   v632 = 0xFFFFFFFF;
   if ( !*v959 )
     goto LABEL_895;
-  v633 = sub_1285C0("gearSinkRangeLR", 0xFui64);
+  v633 = data::get_name_id("gearSinkRangeLR", 0xFui64);
   v634 = *(v631 + 0x50);
   if ( v634 )
   {
@@ -3987,7 +3987,7 @@ LABEL_858:
 LABEL_892:
       if ( v635 )
       {
-        v643 = sub_128A70(*(v631 + 0x50), "gearSinkRangeLR", 0xFui64, v633);
+        v643 = data::get_name_id(*(v631 + 0x50), "gearSinkRangeLR", 0xFui64, v633);
         goto LABEL_894;
       }
       goto LABEL_895;
@@ -3999,7 +3999,7 @@ LABEL_892:
     if ( !*(v631 + 0x20) )
       goto LABEL_892;
   }
-  v642 = sub_128A70(v631, "gearSinkRangeLR", 0xFui64, v633);
+  v642 = data::get_name_id(v631, "gearSinkRangeLR", 0xFui64, v633);
   if ( v642 < 0 )
     goto LABEL_892;
   v643 = v635 + v642;
@@ -4050,7 +4050,7 @@ LABEL_939:
     v653 = 0xFFFFFFFF;
     if ( *v959 )
     {
-      v654 = sub_1285C0("gearSinkRangeC", 0xEui64);
+      v654 = data::get_name_id("gearSinkRangeC", 0xEui64);
       v655 = *(v652 + 0x50);
       if ( v655 )
         v656 = *(v655 + 0x20);
@@ -4058,7 +4058,7 @@ LABEL_939:
         v656 = 0;
       if ( *(v652 + 0x20) )
       {
-        v663 = sub_128A70(v652, "gearSinkRangeC", 0xEui64, v654);
+        v663 = data::get_name_id(v652, "gearSinkRangeC", 0xEui64, v654);
         if ( v663 >= 0 )
         {
           v664 = v656 + v663;
@@ -4067,7 +4067,7 @@ LABEL_939:
       }
       if ( v656 )
       {
-        v664 = sub_128A70(*(v652 + 0x50), "gearSinkRangeC", 0xEui64, v654);
+        v664 = data::get_name_id(*(v652 + 0x50), "gearSinkRangeC", 0xEui64, v654);
 LABEL_928:
         v653 = v664;
       }
@@ -4109,20 +4109,20 @@ LABEL_928:
     if ( !v716 )
     {
       PerformanceCount[0].LowPart = 0;
-      *(v359.QuadPart + 0x2DFC) = sub_145B6B0(v959, "gearSinkRangeLR", PerformanceCount);
+      *(v359.QuadPart + 0x2DFC) = data::set_real(v959, "gearSinkRangeLR", PerformanceCount);
       PerformanceCount[0].LowPart = 0;
-      *(v359.QuadPart + 0x2E00) = sub_145B6B0(v959, "gearSinkRangeC", PerformanceCount);
+      *(v359.QuadPart + 0x2E00) = data::set_real(v959, "gearSinkRangeC", PerformanceCount);
     }
   }
   PerformanceCount[0].LowPart = 0x43480000;
-  *(v359.QuadPart + 0x2D10) = sub_145B6B0(v959, "speedToRetractTurretsKMH", PerformanceCount);
+  *(v359.QuadPart + 0x2D10) = data::set_real(v959, "speedToRetractTurretsKMH", PerformanceCount);
   LOBYTE(PerformanceCount[0].LowPart) = 0;
-  *(v359.QuadPart + 0x2B14) = sub_145BBF0(v959, "canTakeoffWithoutGear", PerformanceCount);
+  *(v359.QuadPart + 0x2B14) = data::get_bool(v959, "canTakeoffWithoutGear", PerformanceCount);
   LOBYTE(PerformanceCount[0].LowPart) = (*(v359.QuadPart + 0x1080) & 0x8000000) != 0;
-  *(v359.QuadPart + 0xFF8) = sub_145BBF0(v959, "forceDisableGunners", PerformanceCount);
+  *(v359.QuadPart + 0xFF8) = data::get_bool(v959, "forceDisableGunners", PerformanceCount);
   PerformanceCount[0].LowPart = 1;
-  PerformanceCount[0].LowPart = sub_145A390(v959, "numJetFlamesToEngine", PerformanceCount);
-  *(v359.QuadPart + 0x2AB8) = sub_145A390(v959, "numJetFlamesPerNozzle", PerformanceCount);
+  PerformanceCount[0].LowPart = data::set_int(v959, "numJetFlamesToEngine", PerformanceCount);
+  *(v359.QuadPart + 0x2AB8) = data::set_int(v959, "numJetFlamesPerNozzle", PerformanceCount);
   v673 = *(v359.QuadPart + 0x3AC0);
   v674 = *(v359.QuadPart + 0x3AC8);
   *(v359.QuadPart + 0x3AC0) = 0i64;
@@ -4197,7 +4197,7 @@ LABEL_928:
   v690 = 0xFFFFFFFF;
   if ( !*v959 )
     goto LABEL_970;
-  v691 = sub_1285C0("parachutes", 0xAui64);
+  v691 = data::get_name_id("parachutes", 0xAui64);
   v692 = *(v689 + 0x50);
   if ( v692 )
   {
@@ -4207,7 +4207,7 @@ LABEL_928:
 LABEL_967:
       if ( v693 )
       {
-        v695 = sub_128A70(*(v689 + 0x50), "parachutes", 0xAui64, v691);
+        v695 = data::get_name_id(*(v689 + 0x50), "parachutes", 0xAui64, v691);
         goto LABEL_969;
       }
       goto LABEL_970;
@@ -4219,7 +4219,7 @@ LABEL_967:
     if ( !*(v689 + 0x20) )
       goto LABEL_967;
   }
-  v694 = sub_128A70(v689, "parachutes", 0xAui64, v691);
+  v694 = data::get_name_id(v689, "parachutes", 0xAui64, v691);
   if ( v694 < 0 )
     goto LABEL_967;
   v695 = v693 + v694;
@@ -4336,11 +4336,11 @@ LABEL_985:
     v743 = 0i64;
     memset(*(v359.QuadPart + 0x3AC0), 0, (0x48 * v742));
     PerformanceCount[0].QuadPart = 0i64;
-    v744 = sub_1459B30(v708, "chuteModel", PerformanceCount);
+    v744 = data::get_str(v708, "chuteModel", PerformanceCount);
     if ( v744 )
       v743 = sub_16D6220(v744);
     PerformanceCount[0].QuadPart = 0i64;
-    v745 = sub_1459B30(v708, "chuteFlapVarName", PerformanceCount);
+    v745 = data::get_str(v708, "chuteFlapVarName", PerformanceCount);
     if ( v745 )
     {
       v747 = v745;
@@ -4382,11 +4382,11 @@ LABEL_985:
       v752 = sub_14606A0(v708, "emitterName", v746);
     *v973 = v752;
     PerformanceCount[0].QuadPart = 0i64;
-    v974 = sub_1459B30(v708, "chuteAnimVarName", PerformanceCount);
+    v974 = data::get_str(v708, "chuteAnimVarName", PerformanceCount);
     PerformanceCount[0].QuadPart = 0i64;
-    v996 = sub_1459B30(v708, "chuteTimeScaleParam", PerformanceCount);
+    v996 = data::get_str(v708, "chuteTimeScaleParam", PerformanceCount);
     PerformanceCount[0].LowPart = 0x3DCCCCCD;
-    *(v359.QuadPart + 0x3B0C) = sub_145B6B0(v708, "chuteFallSpeed", PerformanceCount);
+    *(v359.QuadPart + 0x3B0C) = data::set_real(v708, "chuteFallSpeed", PerformanceCount);
     v753 = v709 < 0;
     v754 = v977;
     if ( v753 )
@@ -4717,7 +4717,7 @@ LABEL_1313:
   }
 LABEL_1115:
   PerformanceCount[0].QuadPart = 0i64;
-  v813 = sub_1459B30(v959, "weaponRetractVar", PerformanceCount);
+  v813 = data::get_str(v959, "weaponRetractVar", PerformanceCount);
   if ( v813 )
   {
     v815 = v813;
@@ -4754,7 +4754,7 @@ LABEL_1115:
   v821 = 0xFFFFFFFF;
   if ( !*v959 )
     goto LABEL_1134;
-  v822 = sub_1285C0("nightVision", 0xBui64);
+  v822 = data::get_name_id("nightVision", 0xBui64);
   v823 = *(v820 + 0x50);
   if ( v823 )
   {
@@ -4764,7 +4764,7 @@ LABEL_1115:
 LABEL_1131:
       if ( v824 )
       {
-        v826 = sub_128A70(*(v820 + 0x50), "nightVision", 0xBui64, v822);
+        v826 = data::get_name_id(*(v820 + 0x50), "nightVision", 0xBui64, v822);
         goto LABEL_1133;
       }
       goto LABEL_1134;
@@ -4776,7 +4776,7 @@ LABEL_1131:
     if ( !*(v820 + 0x20) )
       goto LABEL_1131;
   }
-  v825 = sub_128A70(v820, "nightVision", 0xBui64, v822);
+  v825 = data::get_name_id(v820, "nightVision", 0xBui64, v822);
   if ( v825 < 0 )
     goto LABEL_1131;
   v826 = v824 + v825;
@@ -4839,7 +4839,7 @@ LABEL_1151:
   v843 = 0xFFFFFFFF;
   if ( !*v841 )
     goto LABEL_1162;
-  v844 = sub_1285C0("nightVision", 0xBui64);
+  v844 = data::get_name_id("nightVision", 0xBui64);
   v845 = *(v842 + 0x50);
   if ( v845 )
   {
@@ -4849,7 +4849,7 @@ LABEL_1151:
 LABEL_1159:
       if ( v846 )
       {
-        v848 = sub_128A70(*(v842 + 0x50), "nightVision", 0xBui64, v844);
+        v848 = data::get_name_id(*(v842 + 0x50), "nightVision", 0xBui64, v844);
         goto LABEL_1161;
       }
       goto LABEL_1162;
@@ -4861,7 +4861,7 @@ LABEL_1159:
     if ( !*(v842 + 0x20) )
       goto LABEL_1159;
   }
-  v847 = sub_128A70(v842, "nightVision", 0xBui64, v844);
+  v847 = data::get_name_id(v842, "nightVision", 0xBui64, v844);
   if ( v847 < 0 )
     goto LABEL_1159;
   v848 = v846 + v847;
@@ -5083,7 +5083,7 @@ LABEL_1218:
     }
     v897 = v997;
     LOBYTE(PerformanceCount[0].LowPart) = (*v997 & 0x8000000) != 0;
-    if ( sub_145BBF0(v959, "needTpsNightVision", PerformanceCount) )
+    if ( data::get_bool(v959, "needTpsNightVision", PerformanceCount) )
     {
       if ( (((*(v897 + 3) & 8) == 0) & ~v962) == 0 )
       {
@@ -5097,7 +5097,7 @@ LABEL_1218:
             v901 = 0xFFFFFFFF;
             if ( *v898 )
             {
-              v902 = sub_1285C0("tpsNightVision", 0xEui64);
+              v902 = data::get_name_id("tpsNightVision", 0xEui64);
               v903 = *(v900 + 0x50);
               if ( v903 )
                 v904 = *(v903 + 0x20);
@@ -5105,7 +5105,7 @@ LABEL_1218:
                 v904 = 0;
               if ( *(v900 + 0x20) )
               {
-                v917 = sub_128A70(v900, "tpsNightVision", 0xEui64, v902);
+                v917 = data::get_name_id(v900, "tpsNightVision", 0xEui64, v902);
                 if ( v917 >= 0 )
                 {
                   v918 = v904 + v917;
@@ -5114,7 +5114,7 @@ LABEL_1218:
               }
               if ( v904 )
               {
-                v918 = sub_128A70(*(v900 + 0x50), "tpsNightVision", 0xEui64, v902);
+                v918 = data::get_name_id(*(v900 + 0x50), "tpsNightVision", 0xEui64, v902);
 LABEL_1263:
                 v901 = v918;
               }
@@ -5160,7 +5160,7 @@ LABEL_1279:
               v933 = 0xFFFFFFFF;
               if ( *v899 )
               {
-                v934 = sub_1285C0("tpsNightVision", 0xEui64);
+                v934 = data::get_name_id("tpsNightVision", 0xEui64);
                 v935 = *(v932 + 0x50);
                 if ( v935 )
                   v936 = *(v935 + 0x20);
@@ -5168,7 +5168,7 @@ LABEL_1279:
                   v936 = 0;
                 if ( *(v932 + 0x20) )
                 {
-                  v937 = sub_128A70(v932, "tpsNightVision", 0xEui64, v934);
+                  v937 = data::get_name_id(v932, "tpsNightVision", 0xEui64, v934);
                   if ( v937 >= 0 )
                   {
                     v938 = v936 + v937;
@@ -5177,7 +5177,7 @@ LABEL_1279:
                 }
                 if ( v936 )
                 {
-                  v938 = sub_128A70(*(v932 + 0x50), "tpsNightVision", 0xEui64, v934);
+                  v938 = data::get_name_id(*(v932 + 0x50), "tpsNightVision", 0xEui64, v934);
 LABEL_1289:
                   v933 = v938;
                 }
@@ -5332,7 +5332,7 @@ LABEL_1248:
   }
 LABEL_1305:
   PerformanceCount[0].LowPart = 0x461C4000;
-  *(v359.QuadPart + 0x1484) = sub_145B6B0(v959, "detectAllyMaxDist", PerformanceCount);
+  *(v359.QuadPart + 0x1484) = data::set_real(v959, "detectAllyMaxDist", PerformanceCount);
   *(v359.QuadPart + 0x1028) = *(*(v359.QuadPart + 0x11D0) + 0x267i64);
   v953 = *(*(v359.QuadPart + 0x2E68) + 0x4590i64);
   v954 = fminf(fmaxf((*&dword_44A47A0 * v953) + *&dword_449F198, *&dword_44A0258), dword_4487F30)
