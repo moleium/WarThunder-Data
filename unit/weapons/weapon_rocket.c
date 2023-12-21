@@ -218,8 +218,8 @@ LABEL_64:
         if ( v39 )
           v38 = v39;
         LeaveCriticalSection(&stru_4B776C8);
-        sub_EE8DB0("eventRocketFly");
-        sub_EE8DB0("pathGuns");
+        get_misc_str("eventRocketFly");
+        get_misc_str("pathGuns");
         sub_1665C80(v38, 1);
         goto LABEL_67;
       }

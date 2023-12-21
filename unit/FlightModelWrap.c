@@ -2226,8 +2226,8 @@ LABEL_380:
   LOBYTE(PerformanceCount[0].LowPart) = 1;
   if ( data::get_bool(*v973, "loadSound", PerformanceCount) )
     sub_3F6210(v134.LowPart, v128, v972 & ((byte_4A7061C != 0) | a5), v972, 0);
-  sub_EE8DB0("path");
-  v974 = sub_EE8DB0("pathCommon");
+  get_misc_str("path");
+  v974 = get_misc_str("pathCommon");
   PerformanceCount[0].QuadPart = "none";
   v296 = data::get_str(v259, "voiceWarningSystem", PerformanceCount);
   *v973 = v259;
@@ -2358,7 +2358,7 @@ LABEL_386:
       v326 = "eventStukaSiren";
       if ( (*(v134.QuadPart + 0x1058) & 0x100) == 0 )
         v326 = "eventStukaSirenAi";
-      sub_EE8DB0(v326);
+      get_misc_str(v326);
       sub_1665C80(v325, 1);
       *(v134.QuadPart + 0x3258) = v325;
     }
@@ -2421,7 +2421,7 @@ LABEL_386:
     if ( v331 )
       v332 = v331;
     LeaveCriticalSection(&stru_4B776C8);
-    sub_EE8DB0("eventHydroplane");
+    get_misc_str("eventHydroplane");
     sub_1665C80(v332, 1);
     *(v134.QuadPart + 0x32A0) = v332;
     EnterCriticalSection(&stru_4B776C8);
@@ -3497,7 +3497,7 @@ LABEL_718:
       if ( v560 )
         v561 = v560;
       LeaveCriticalSection(&stru_4B776C8);
-      sub_EE8DB0("eventBombHatch");
+      get_misc_str("eventBombHatch");
       sub_1665C80(v561, 1);
       *(v963.QuadPart + 0x32E8) = v561;
       *(v963.QuadPart + 0x524C) = *(*(v963.QuadPart + 0x2E68) + 0x5ADCi64);
@@ -3510,7 +3510,7 @@ LABEL_718:
       if ( v562 )
         v563 = v562;
       LeaveCriticalSection(&stru_4B776C8);
-      sub_EE8DB0("eventBombDrop");
+      get_misc_str("eventBombDrop");
       sub_1665C80(v563, 1);
       *(v963.QuadPart + 0x32F0) = v563;
     }
@@ -3615,7 +3615,7 @@ LABEL_718:
     if ( v576 )
       v577 = v576;
     LeaveCriticalSection(&stru_4B776C8);
-    sub_EE8DB0("pathGui");
+    get_misc_str("pathGui");
     sub_1665C80(v577, 1);
     *(v963.QuadPart + 0x3320) = v577;
     *(v963.QuadPart + 0x3340) = sub_1667980(v577, "intense", 0i64);
@@ -3644,7 +3644,7 @@ LABEL_718:
     if ( v580 )
       v581 = v580;
     LeaveCriticalSection(&stru_4B776C8);
-    sub_EE8DB0("pathGui");
+    get_misc_str("pathGui");
     sub_1665C80(v581, 1);
     *(v963.QuadPart + 0x3350) = v581;
     *(v963.QuadPart + 0x3358) = sub_1667980(v581, "intense", 0i64);
@@ -3961,7 +3961,7 @@ LABEL_858:
   while ( v622 != 0x10 );
   LOBYTE(PerformanceCount[0].LowPart) = 0;
   *(v359.QuadPart + 0x271C) = data::get_bool(v959, "disableExhaustFxIfContrailIsActive", PerformanceCount);
-  v628 = sub_EE8DB0("eventAirBrake");
+  v628 = get_misc_str("eventAirBrake");
   if ( *(v359.QuadPart + 0x10B8) && *(*(v359.QuadPart + 0x2E68) + 0x5695i64) && !*(v359.QuadPart + 0x32E0) && *v628 )
   {
     EnterCriticalSection(&stru_4B776C8);
