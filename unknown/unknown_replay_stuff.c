@@ -176,7 +176,7 @@ __int64 (__fastcall **__fastcall unknown_replay_stuff(__int64 a1))(void *Block)
     (*(*v13 + 8i64))(v13);
 LABEL_16:
   v20 = v111;
-  v21 = sq_throwerror(*(v111[0x28] + 0x30i64), "get_time_speeds_list", 0xFFFFFFFFFFFFFFFFui64);
+  v21 = sq_pushstring(*(v111[0x28] + 0x30i64), "get_time_speeds_list", 0xFFFFFFFFFFFFFFFFui64);
   ++v21[1];
   v22 = v20[6];
   v23 = v20[0xA];
@@ -265,7 +265,7 @@ LABEL_20:
     (*(*v32 + 8i64))(v32);
 LABEL_35:
   v39 = v111;
-  v40 = sq_throwerror(*(v111[0x28] + 0x30i64), "get_replays_list", 0xFFFFFFFFFFFFFFFFui64);
+  v40 = sq_pushstring(*(v111[0x28] + 0x30i64), "get_replays_list", 0xFFFFFFFFFFFFFFFFui64);
   ++v40[1];
   v41 = v39[6];
   v42 = v39[0xA];
@@ -349,7 +349,7 @@ LABEL_39:
     (*(*v51 + 8i64))(v51);
 LABEL_54:
   v58 = v111;
-  v59 = sq_throwerror(*(v111[0x28] + 0x30i64), "get_replay_info", 0xFFFFFFFFFFFFFFFFui64);
+  v59 = sq_pushstring(*(v111[0x28] + 0x30i64), "get_replay_info", 0xFFFFFFFFFFFFFFFFui64);
   ++v59[1];
   v60 = v58[6];
   v61 = v58[0xA];
@@ -446,7 +446,7 @@ LABEL_64:
     (*(*v74 + 8i64))(v74);
 LABEL_80:
   v81 = v111;
-  v82 = sq_throwerror(*(v111[0x28] + 0x30i64), "get_replay_props", 0xFFFFFFFFFFFFFFFFui64);
+  v82 = sq_pushstring(*(v111[0x28] + 0x30i64), "get_replay_props", 0xFFFFFFFFFFFFFFFFui64);
   ++v82[1];
   v83 = v81[6];
   v84 = v81[0xA];
@@ -527,7 +527,7 @@ LABEL_84:
     (*(*v93 + 8i64))(v93);
 LABEL_99:
   v100 = v111;
-  v101 = sq_throwerror(*(v111[0x28] + 0x30i64), "get_replay_anchors", 0xFFFFFFFFFFFFFFFFui64);
+  v101 = sq_pushstring(*(v111[0x28] + 0x30i64), "get_replay_anchors", 0xFFFFFFFFFFFFFFFFui64);
   ++v101[1];
   v102 = v100[6];
   v103 = v100[0xA];

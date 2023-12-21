@@ -579,7 +579,7 @@ __int64 __fastcall parse_replay(__int64 a1)
       (*(*v21 + 8i64))(v21);
   }
   v28 = v474;
-  v29 = sq_throwerror(*(v474[0x28] + 0x30i64), "corrupted", 0xFFFFFFFFFFFFFFFFui64);
+  v29 = sq_pushstring(*(v474[0x28] + 0x30i64), "corrupted", 0xFFFFFFFFFFFFFFFFui64);
   ++v29[1];
   v30 = v28[6];
   v31 = v28[0xA];
@@ -670,7 +670,7 @@ LABEL_25:
       (*(*v43 + 8i64))(v43);
   }
   v50 = v474;
-  v51 = sq_throwerror(*(v474[0x28] + 0x30i64), "isVersionMismatch", 0xFFFFFFFFFFFFFFFFui64);
+  v51 = sq_pushstring(*(v474[0x28] + 0x30i64), "isVersionMismatch", 0xFFFFFFFFFFFFFFFFui64);
   ++v51[1];
   v52 = v50[6];
   v53 = v50[0xA];
@@ -836,7 +836,7 @@ LABEL_54:
     }
     v94 = v83 & 3;
     v95 = v474;
-    v96 = sq_throwerror(*(v474[0x28] + 0x30i64), "difficulty", 0xFFFFFFFFFFFFFFFFui64);
+    v96 = sq_pushstring(*(v474[0x28] + 0x30i64), "difficulty", 0xFFFFFFFFFFFFFFFFui64);
     ++v96[1];
     v97 = v95[6];
     v98 = v95[0xA];
@@ -923,7 +923,7 @@ LABEL_91:
             (*(*v110 + 8i64))(v110);
         }
         v117 = v474;
-        v118 = sq_throwerror(*(v474[0x28] + 0x30i64), "environment", 0xFFFFFFFFFFFFFFFFui64);
+        v118 = sq_pushstring(*(v474[0x28] + 0x30i64), "environment", 0xFFFFFFFFFFFFFFFFui64);
         ++v118[1];
         v119 = v117[6];
         v120 = v117[0xA];
@@ -945,7 +945,7 @@ LABEL_91:
         if ( v7 )
           (*(*v118 + 8i64))(v118);
         v123 = v474;
-        v124 = sq_throwerror(*(v474[0x28] + 0x30i64), v16 + 0x83, 0xFFFFFFFFFFFFFFFFui64);
+        v124 = sq_pushstring(*(v474[0x28] + 0x30i64), v16 + 0x83, 0xFFFFFFFFFFFFFFFFui64);
         ++v124[1];
         v125 = v123[6];
         v126 = v123[0xA];
@@ -1017,7 +1017,7 @@ LABEL_116:
                 (*(*v135 + 8i64))(v135);
             }
             v142 = v474;
-            v143 = sq_throwerror(*(v474[0x28] + 0x30i64), "isLimitedAmmo", 0xFFFFFFFFFFFFFFFFui64);
+            v143 = sq_pushstring(*(v474[0x28] + 0x30i64), "isLimitedAmmo", 0xFFFFFFFFFFFFFFFFui64);
             ++v143[1];
             v144 = v142[6];
             v145 = v142[0xA];
@@ -1105,7 +1105,7 @@ LABEL_133:
                     (*(*v158 + 8i64))(v158);
                 }
                 v165 = v474;
-                v166 = sq_throwerror(*(v474[0x28] + 0x30i64), "isLimitedFuel", 0xFFFFFFFFFFFFFFFFui64);
+                v166 = sq_pushstring(*(v474[0x28] + 0x30i64), "isLimitedFuel", 0xFFFFFFFFFFFFFFFFui64);
                 ++v166[1];
                 v167 = v165[6];
                 v168 = v165[0xA];
@@ -1193,7 +1193,7 @@ LABEL_153:
                         (*(*v181 + 8i64))(v181);
                     }
                     v188 = v474;
-                    v189 = sq_throwerror(*(v474[0x28] + 0x30i64), "isWorldWar", 0xFFFFFFFFFFFFFFFFui64);
+                    v189 = sq_pushstring(*(v474[0x28] + 0x30i64), "isWorldWar", 0xFFFFFFFFFFFFFFFFui64);
                     ++v189[1];
                     v190 = v188[6];
                     v191 = v188[0xA];
@@ -1281,7 +1281,7 @@ LABEL_173:
                             (*(*v204 + 8i64))(v204);
                         }
                         v211 = v474;
-                        v212 = sq_throwerror(*(v474[0x28] + 0x30i64), "maxRespawns", 0xFFFFFFFFFFFFFFFFui64);
+                        v212 = sq_pushstring(*(v474[0x28] + 0x30i64), "maxRespawns", 0xFFFFFFFFFFFFFFFFui64);
                         ++v212[1];
                         v213 = v211[6];
                         v214 = v211[0xA];
@@ -1369,7 +1369,7 @@ LABEL_193:
                                 (*(*v227 + 8i64))(v227);
                             }
                             v234 = v474;
-                            v235 = sq_throwerror(*(v474[0x28] + 0x30i64), "weather", 0xFFFFFFFFFFFFFFFFui64);
+                            v235 = sq_pushstring(*(v474[0x28] + 0x30i64), "weather", 0xFFFFFFFFFFFFFFFFui64);
                             ++v235[1];
                             v236 = v234[6];
                             v237 = v234[0xA];
@@ -1391,7 +1391,7 @@ LABEL_193:
                             if ( v7 )
                               (*(*v235 + 8i64))(v235);
                             v240 = v474;
-                            v241 = sq_throwerror(*(v474[0x28] + 0x30i64), v16 + 0xA3, 0xFFFFFFFFFFFFFFFFui64);
+                            v241 = sq_pushstring(*(v474[0x28] + 0x30i64), v16 + 0xA3, 0xFFFFFFFFFFFFFFFFui64);
                             ++v241[1];
                             v242 = v240[6];
                             v243 = v240[0xA];
@@ -1463,7 +1463,7 @@ LABEL_218:
                                     (*(*v252 + 8i64))(v252);
                                 }
                                 v259 = v474;
-                                v260 = sq_throwerror(*(v474[0x28] + 0x30i64), "missionName", 0xFFFFFFFFFFFFFFFFui64);
+                                v260 = sq_pushstring(*(v474[0x28] + 0x30i64), "missionName", 0xFFFFFFFFFFFFFFFFui64);
                                 ++v260[1];
                                 v261 = v259[6];
                                 v262 = v259[0xA];
@@ -1485,7 +1485,7 @@ LABEL_218:
                                 if ( v7 )
                                   (*(*v260 + 8i64))(v260);
                                 v265 = v474;
-                                v266 = sq_throwerror(*(v474[0x28] + 0x30i64), v16 + 0x63, 0xFFFFFFFFFFFFFFFFui64);
+                                v266 = sq_pushstring(*(v474[0x28] + 0x30i64), v16 + 0x63, 0xFFFFFFFFFFFFFFFFui64);
                                 ++v266[1];
                                 v267 = v265[6];
                                 v268 = v265[0xA];
@@ -1557,7 +1557,7 @@ LABEL_240:
                                         (*(*v277 + 8i64))(v277);
                                     }
                                     v284 = v474;
-                                    v285 = sq_throwerror(
+                                    v285 = sq_pushstring(
                                              *(v474[0x28] + 0x30i64),
                                              "multiplayerGame",
                                              0xFFFFFFFFFFFFFFFFui64);
@@ -1648,7 +1648,7 @@ LABEL_257:
                                             (*(*v300 + 8i64))(v300);
                                         }
                                         v307 = v474;
-                                        v308 = sq_throwerror(
+                                        v308 = sq_pushstring(
                                                  *(v474[0x28] + 0x30i64),
                                                  "gameMode",
                                                  0xFFFFFFFFFFFFFFFFui64);
@@ -1739,7 +1739,7 @@ LABEL_277:
                                                 (*(*v323 + 8i64))(v323);
                                             }
                                             v330 = v474;
-                                            v331 = sq_throwerror(
+                                            v331 = sq_pushstring(
                                                      *(v474[0x28] + 0x30i64),
                                                      "gameType",
                                                      0xFFFFFFFFFFFFFFFFui64);
@@ -1831,7 +1831,7 @@ LABEL_297:
                                                     (*(*v346 + 8i64))(v346);
                                                 }
                                                 v353 = v474;
-                                                v354 = sq_throwerror(
+                                                v354 = sq_pushstring(
                                                          *(v474[0x28] + 0x30i64),
                                                          "dateTime",
                                                          0xFFFFFFFFFFFFFFFFui64);
@@ -1935,7 +1935,7 @@ LABEL_317:
                                                         (*(*v375 + 8i64))(v375);
                                                     }
                                                     v382 = v474;
-                                                    v383 = sq_throwerror(
+                                                    v383 = sq_pushstring(
                                                              *(v474[0x28] + 0x30i64),
                                                              "startTime",
                                                              0xFFFFFFFFFFFFFFFFui64);
@@ -2026,7 +2026,7 @@ LABEL_346:
                                                             (*(*v397 + 8i64))(v397);
                                                         }
                                                         v404 = v474;
-                                                        v405 = sq_throwerror(
+                                                        v405 = sq_pushstring(
                                                                  *(v474[0x28] + 0x30i64),
                                                                  "locName",
                                                                  0xFFFFFFFFFFFFFFFFui64);
@@ -2051,7 +2051,7 @@ LABEL_346:
                                                         if ( v7 )
                                                           (*(*v405 + 8i64))(v405);
                                                         v410 = v474;
-                                                        v411 = sq_throwerror(
+                                                        v411 = sq_pushstring(
                                                                  *(v474[0x28] + 0x30i64),
                                                                  v16 + 0xC2,
                                                                  0xFFFFFFFFFFFFFFFFui64);
@@ -2129,7 +2129,7 @@ LABEL_371:
                                                                 (*(*v422 + 8i64))(v422);
                                                             }
                                                             v429 = v474;
-                                                            v430 = sq_throwerror(
+                                                            v430 = sq_pushstring(
                                                                      *(v474[0x28] + 0x30i64),
                                                                      "sessionId",
                                                                      0xFFFFFFFFFFFFFFFFui64);
@@ -2153,7 +2153,7 @@ LABEL_371:
                                                               {
 LABEL_388:
                                                                 v435 = v474;
-                                                                v436 = sq_throwerror(
+                                                                v436 = sq_pushstring(
                                                                          *(v474[0x28] + 0x30i64),
                                                                          v484,
                                                                          0xFFFFFFFFFFFFFFFFui64);
@@ -2227,7 +2227,7 @@ LABEL_388:
                                                                       (*(*v448 + 8i64))(v448);
                                                                   }
                                                                   v455 = v474;
-                                                                  v456 = sq_throwerror(
+                                                                  v456 = sq_pushstring(
                                                                            *(v474[0x28] + 0x30i64),
                                                                            "comments",
                                                                            0xFFFFFFFFFFFFFFFFui64);

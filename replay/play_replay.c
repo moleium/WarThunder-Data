@@ -664,7 +664,7 @@ LABEL_205:
               (*(*v116 + 8i64))(v116);
           }
           v128 = v397;
-          v129 = sq_throwerror(*(*(v397 + 0x140) + 0x30i64), "corrupted", 0xFFFFFFFFFFFFFFFFui64);
+          v129 = sq_pushstring(*(*(v397 + 0x140) + 0x30i64), "corrupted", 0xFFFFFFFFFFFFFFFFui64);
           ++v129[1];
           v130 = *(v128 + 0x30);
           v131 = *(v128 + 0x50);
@@ -753,7 +753,7 @@ LABEL_239:
               (*(*v143 + 8i64))(v143);
           }
           v172 = v397;
-          v173 = sq_throwerror(*(*(v397 + 0x140) + 0x30i64), "isVersionMismatch", 0xFFFFFFFFFFFFFFFFui64);
+          v173 = sq_pushstring(*(*(v397 + 0x140) + 0x30i64), "isVersionMismatch", 0xFFFFFFFFFFFFFFFFui64);
           ++v173[1];
           v174 = *(v172 + 0x30);
           v175 = *(v172 + 0x50);
@@ -858,7 +858,7 @@ LABEL_281:
               (*(*v189 + 8i64))(v189);
           }
           v220 = v397;
-          v221 = sq_throwerror(*(*(v397 + 0x140) + 0x30i64), "dateTime", 0xFFFFFFFFFFFFFFFFui64);
+          v221 = sq_pushstring(*(*(v397 + 0x140) + 0x30i64), "dateTime", 0xFFFFFFFFFFFFFFFFui64);
           ++v221[1];
           v222 = *(v220 + 0x30);
           v223 = *(v220 + 0x50);
@@ -971,7 +971,7 @@ LABEL_350:
               (*(*v252 + 8i64))(v252);
           }
           v259 = v397;
-          v260 = sq_throwerror(*(*(v397 + 0x140) + 0x30i64), "startTime", 0xFFFFFFFFFFFFFFFFui64);
+          v260 = sq_pushstring(*(*(v397 + 0x140) + 0x30i64), "startTime", 0xFFFFFFFFFFFFFFFFui64);
           ++v260[1];
           v261 = *(v259 + 0x30);
           v262 = *(v259 + 0x50);
@@ -1060,7 +1060,7 @@ LABEL_370:
               (*(*v274 + 8i64))(v274);
           }
           v281 = v397;
-          v282 = sq_throwerror(*(*(v397 + 0x140) + 0x30i64), "name", 0xFFFFFFFFFFFFFFFFui64);
+          v282 = sq_pushstring(*(*(v397 + 0x140) + 0x30i64), "name", 0xFFFFFFFFFFFFFFFFui64);
           ++v282[1];
           v283 = *(v281 + 0x30);
           v284 = *(v281 + 0x50);
@@ -1087,7 +1087,7 @@ LABEL_378:
               goto LABEL_378;
           }
           v287 = v397;
-          v288 = sq_throwerror(*(*(v397 + 0x140) + 0x30i64), v391, 0xFFFFFFFFFFFFFFFFui64);
+          v288 = sq_pushstring(*(*(v397 + 0x140) + 0x30i64), v391, 0xFFFFFFFFFFFFFFFFui64);
           ++v288[1];
           v289 = *(v287 + 0x30);
           v290 = *(v287 + 0x50);
@@ -1164,7 +1164,7 @@ LABEL_395:
               (*(*v300 + 8i64))(v300);
           }
           v307 = v397;
-          v308 = sq_throwerror(*(*(v397 + 0x140) + 0x30i64), "path", 0xFFFFFFFFFFFFFFFFui64);
+          v308 = sq_pushstring(*(*(v397 + 0x140) + 0x30i64), "path", 0xFFFFFFFFFFFFFFFFui64);
           ++v308[1];
           v309 = *(v307 + 0x30);
           v310 = *(v307 + 0x50);
@@ -1237,7 +1237,7 @@ LABEL_419:
               (*(*v320 + 8i64))(v320);
           }
           v327 = v397;
-          v328 = sq_throwerror(*(*(v397 + 0x140) + 0x30i64), "text", 0xFFFFFFFFFFFFFFFFui64);
+          v328 = sq_pushstring(*(*(v397 + 0x140) + 0x30i64), "text", 0xFFFFFFFFFFFFFFFFui64);
           ++v328[1];
           v329 = *(v327 + 0x30);
           v330 = *(v327 + 0x50);
@@ -1400,7 +1400,7 @@ LABEL_219:
             (*(*v116 + 8i64))(v116);
         }
         v150 = v397;
-        v151 = sq_throwerror(*(*(v397 + 0x140) + 0x30i64), "corrupted", 0xFFFFFFFFFFFFFFFFui64);
+        v151 = sq_pushstring(*(*(v397 + 0x140) + 0x30i64), "corrupted", 0xFFFFFFFFFFFFFFFFui64);
         ++v151[1];
         v152 = *(v150 + 0x30);
         v153 = *(v150 + 0x50);
@@ -1489,7 +1489,7 @@ LABEL_259:
             (*(*v165 + 8i64))(v165);
         }
         v196 = v397;
-        v197 = sq_throwerror(*(*(v397 + 0x140) + 0x30i64), "isVersionMismatch", 0xFFFFFFFFFFFFFFFFui64);
+        v197 = sq_pushstring(*(*(v397 + 0x140) + 0x30i64), "isVersionMismatch", 0xFFFFFFFFFFFFFFFFui64);
         ++v197[1];
         v198 = *(v196 + 0x30);
         v199 = *(v196 + 0x50);
@@ -1590,7 +1590,7 @@ LABEL_305:
             (*(*v213 + 8i64))(v213);
         }
         v235 = v397;
-        v236 = sq_throwerror(*(*(v397 + 0x140) + 0x30i64), "error", 0xFFFFFFFFFFFFFFFFui64);
+        v236 = sq_pushstring(*(*(v397 + 0x140) + 0x30i64), "error", 0xFFFFFFFFFFFFFFFFui64);
         ++v236[1];
         v237 = *(v235 + 0x30);
         v238 = *(v235 + 0x50);
