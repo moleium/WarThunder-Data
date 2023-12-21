@@ -223,7 +223,7 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   v83 = *(mission + 0x1CC);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145B870(a2, "multiRespawnNoRepairDmg", &v83);
+  data::set_real(a2, "multiRespawnNoRepairDmg", &v83);
   LOBYTE(v83) = *(mission + 0x18C);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -343,24 +343,24 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   v83 = *(mission + 0x248);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145B870(a2, "respawnTimeMultiplier", &v83);
+  data::set_real(a2, "respawnTimeMultiplier", &v83);
   v83 = *(mission + 0x260);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145B870(a2, "missionCostMul", &v83);
+  data::set_real(a2, "missionCostMul", &v83);
   if ( *(mission + 0x26C) > 0.0 )
   {
     v83 = *(mission + 0x26C);
     if ( *(a2 + 0x14) != 0xFFFFFFFF )
       sub_145E9A0(a2);
-    sub_145B870(a2, "tankInvisibleForAirplaneDistance", &v83);
+    data::set_real(a2, "tankInvisibleForAirplaneDistance", &v83);
   }
   if ( *(mission + 0x270) > 0.0 )
   {
     v83 = *(mission + 0x270);
     if ( *(a2 + 0x14) != 0xFFFFFFFF )
       sub_145E9A0(a2);
-    sub_145B870(a2, "shipInvisibleForAirplaneDistance", &v83);
+    data::set_real(a2, "shipInvisibleForAirplaneDistance", &v83);
   }
   if ( *(mission + 0x274) >= 0 )
   {
@@ -372,15 +372,15 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   v83 = *(mission + 0x24C);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145B870(a2, "deathPenaltyMul", &v83);
+  data::set_real(a2, "deathPenaltyMul", &v83);
   v83 = *(mission + 0x250);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145B870(a2, "ctaCaptureZoneEqualPenaltyMul", &v83);
+  data::set_real(a2, "ctaCaptureZoneEqualPenaltyMul", &v83);
   v83 = *(mission + 0x254);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145B870(a2, "ctaCaptureZoneDiffPenaltyExp", &v83);
+  data::set_real(a2, "ctaCaptureZoneDiffPenaltyExp", &v83);
   v83 = *(mission + 0x258);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -392,11 +392,11 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   v83 = *(mission + 0x264);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145B870(a2, "spawnScoreMul", &v83);
+  data::set_real(a2, "spawnScoreMul", &v83);
   v83 = *(mission + 0x268);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145B870(a2, "spawnScoreForTeamMul", &v83);
+  data::set_real(a2, "spawnScoreForTeamMul", &v83);
   LOBYTE(v83) = *(mission + 0x180);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -483,7 +483,7 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   v83 = *(mission + 0x284);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145B870(a2, "delaySpawnMRankPow", &v83);
+  data::set_real(a2, "delaySpawnMRankPow", &v83);
   v83 = *(mission + 0x288);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -495,23 +495,23 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   v83 = *(mission + 0x290);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145B870(a2, "gameModeCustomDmg", &v83);
+  data::set_real(a2, "gameModeCustomDmg", &v83);
   v83 = *(mission + 0x294);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145B870(a2, "roguelikeLandingAwardPart_exp", &v83);
+  data::set_real(a2, "roguelikeLandingAwardPart_exp", &v83);
   v83 = *(mission + 0x298);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145B870(a2, "roguelikeLandingAwardPart_wp", &v83);
+  data::set_real(a2, "roguelikeLandingAwardPart_wp", &v83);
   v83 = *(mission + 0x29C);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145B870(a2, "botSurviveAmmoLostPercent", &v83);
+  data::set_real(a2, "botSurviveAmmoLostPercent", &v83);
   v83 = *(mission + 0x2A0);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145B870(a2, "botSurviveWeaponLostPercent", &v83);
+  data::set_real(a2, "botSurviveWeaponLostPercent", &v83);
   v25 = *(mission + 0x2A8);
   if ( !v25 )
     v25 = &szFile;
@@ -519,7 +519,7 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   v83 = *(mission + 0x2B0);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145B870(a2, "maxTimeLagCompensation", &v83);
+  data::set_real(a2, "maxTimeLagCompensation", &v83);
   v83 = *(mission + 0x30C);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -539,23 +539,23 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   v83 = *(mission + 0x318);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145B870(a2, "footballScoreGoal", &v83);
+  data::set_real(a2, "footballScoreGoal", &v83);
   v83 = *(mission + 0x31C);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145B870(a2, "footballScoreAssist", &v83);
+  data::set_real(a2, "footballScoreAssist", &v83);
   v83 = *(mission + 0x320);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145B870(a2, "footballScoreSave", &v83);
+  data::set_real(a2, "footballScoreSave", &v83);
   v83 = *(mission + 0x324);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145B870(a2, "footballSaveTraceTime", &v83);
+  data::set_real(a2, "footballSaveTraceTime", &v83);
   v83 = *(mission + 0x328);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145B870(a2, "footballSaveTraceCooldown", &v83);
+  data::set_real(a2, "footballSaveTraceCooldown", &v83);
   LOBYTE(v83) = *(mission + 0x32C);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
@@ -696,7 +696,7 @@ __int64 __fastcall parse_mission_desc(__int64 mission, __int64 a2)
   v83 = *(mission + 0x3A4);
   if ( *(a2 + 0x14) != 0xFFFFFFFF )
     sub_145E9A0(a2);
-  sub_145B870(a2, "tformPhysicsError", &v83);
+  data::set_real(a2, "tformPhysicsError", &v83);
   v28 = sub_145DB90(a2, "tags");
   sub_145FAA0(v28, word_492B3CE);
   if ( *(mission + 0x210) )
