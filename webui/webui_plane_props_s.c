@@ -389,7 +389,7 @@ const char *__fastcall webui_plane_props_s(__int64 http_req, __int64 a2, double 
           v27 = 0i64;
         if ( parse_command_data(v26, v27, v25, Str1, 0x20i64) )
           sub_1EC440(Str1, "%f");
-        *(v14 + 0x14) = *(v14 + 0x14) / *&qword_4A791F0;
+        *(v14 + 0x14) = *(v14 + 0x14) / *&gamephys::std_temp;
         *&Str1[8] = v15;
         *Str1 = 1;
         ctor_vprintf(&v204, 0x20i64, "%s.omega", Str1, 1);
@@ -717,9 +717,9 @@ LABEL_192:
                     if ( v107 < v114 )
                       v114 = v107;
                     *(*&v109 + v114) = 0;
-                    v213 = (*&qword_4A791F0 * *(&v220.st_ctime + 1));
+                    v213 = (*&gamephys::std_temp * *(&v220.st_ctime + 1));
                     v212 = 3;
-                    v215 = (*&v220.st_ctime * *&qword_4A791F0);
+                    v215 = (*&v220.st_ctime * *&gamephys::std_temp);
                     v214 = 3;
                     v115 = v208 + sub_16E07A0(LODWORD(v205) + v208, 2);
                     v208 = v115;
@@ -1060,9 +1060,9 @@ LABEL_204:
                     if ( v177 < v184 )
                       v184 = v177;
                     *(*&v179 + v184) = 0;
-                    v213 = (*&qword_4A791F0 * *(&v220.st_ctime + 1));
+                    v213 = (*&gamephys::std_temp * *(&v220.st_ctime + 1));
                     v212 = 3;
-                    v215 = (*&v220.st_ctime * *&qword_4A791F0);
+                    v215 = (*&v220.st_ctime * *&gamephys::std_temp);
                     v214 = 3;
                     v185 = v208 + sub_16E07A0(LODWORD(v205) + v208, 2);
                     v208 = v185;

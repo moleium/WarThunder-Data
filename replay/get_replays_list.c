@@ -1,7 +1,5 @@
 __int64 __fastcall get_replays_list(_QWORD *a1)
 {
-  // [COLLAPSED LOCAL DECLARATIONS. PRESS KEYPAD CTRL-"+" TO EXPAND]
-
   v1 = a1;
   v388 = a1;
   v387 = &off_44A93B0;

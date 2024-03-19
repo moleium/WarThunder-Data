@@ -1,173 +1,5 @@
 __int64 __fastcall log_server_main(__int64 a1)
 {
-  float *Unit; // rdi
-  _QWORD *v3; // rdi
-  _BYTE *v4; // rsi
-  unsigned __int64 v5; // rbx
-  unsigned __int64 v6; // rax
-  void (*v7)(void); // rax
-  __int64 v8; // rax
-  _QWORD *v9; // rcx
-  char *v10; // rdx
-  __int64 result; // rax
-  __int64 air_movement; // rsi
-  float v13; // xmm0_4
-  float v14; // xmm0_4
-  float v15; // xmm6_4
-  double v16; // xmm3_8
-  float v17; // xmm10_4
-  float v18; // xmm8_4
-  float v19; // xmm9_4
-  float v20; // xmm15_4
-  float v21; // xmm6_4
-  float v22; // xmm11_4
-  int v23; // ecx
-  unsigned __int8 v24; // al
-  double v25; // xmm12_8
-  double v26; // xmm7_8
-  int v27; // ecx
-  unsigned __int8 v28; // al
-  double v29; // xmm6_8
-  float v30; // xmm0_4
-  float v31; // xmm2_4
-  double v32; // xmm3_8
-  double v33; // xmm12_8
-  double v34; // xmm6_8
-  double v35; // xmm0_8
-  double v36; // xmm7_8
-  float v37; // xmm0_4
-  float v38; // xmm0_4
-  float v39; // xmm10_4
-  float v40; // xmm8_4
-  float v41; // xmm0_4
-  float v42; // xmm2_4
-  float v43; // xmm1_4
-  float v44; // xmm4_4
-  float velocity; // xmm0_4
-  __int64 _air_movement_; // rsi
-  __int64 v47; // rdx
-  float *v48; // r14
-  double v49; // r12
-  const char *v50; // r8
-  __int64 v51; // r13
-  CHAR *v52; // rsi
-  int *v53; // rax
-  int v54; // ecx
-  float v55; // xmm6_4
-  __int64 v56; // r15
-  char **v57; // r13
-  float v58; // xmm9_4
-  float v59; // xmm10_4
-  float v60; // xmm11_4
-  float v61; // xmm12_4
-  __m128i si128; // xmm13
-  float *v63; // r14
-  __int64 v64; // r12
-  float v65; // xmm14_4
-  float v66; // xmm0_4
-  __int64 v67; // rax
-  __int64 v68; // rcx
-  __int64 v69; // r8
-  __int64 v70; // rdx
-  __int64 v71; // rcx
-  __int64 v72; // rbp
-  int *v73; // rbx
-  __int64 v74; // rbp
-  __m128i v75; // xmm0
-  __m128i v76; // xmm1
-  __m128i inserted; // xmm3
-  int *v78; // rbp
-  __int64 v79; // rcx
-  char v80; // bl
-  bool v81; // zf
-  __int64 v82; // rcx
-  __int64 v83; // rbp
-  int *v84; // rbx
-  __int64 v85; // rbp
-  __m128i v86; // xmm0
-  __m128i v87; // xmm1
-  __m128i v88; // xmm3
-  int *v89; // rbp
-  float v90; // xmm0_4
-  __int64 v91; // rbx
-  int *v92; // rbp
-  __int64 v93; // rbx
-  _BYTE *v94; // rax
-  float v95; // xmm0_4
-  float v96; // xmm0_4
-  __int64 v97; // rax
-  __int64 v98; // rax
-  __int64 v99; // rax
-  __int64 v100; // rcx
-  __int64 v101; // r8
-  __int64 v102; // rbx
-  __int64 v103; // rcx
-  __int64 v104; // rdx
-  int *v105; // rdx
-  __int64 v106; // rbp
-  __m128i v107; // xmm0
-  __m128i v108; // xmm1
-  __m128i v109; // xmm3
-  int *v110; // rdx
-  __int64 v111; // rcx
-  char v112; // dl
-  float v113; // xmm14_4
-  float v114; // xmm0_4
-  float v115; // xmm0_4
-  float v116; // xmm0_4
-  float v117; // xmm0_4
-  char **v118; // rdi
-  int v119; // edx
-  int v120; // r8d
-  int v121; // r9d
-  __int64 v122; // r13
-  __int64 v123; // rax
-  __int64 v124; // rcx
-  __int64 v125; // rax
-  __int64 v126; // rdx
-  char **v127; // rbx
-  __int64 v128; // rbp
-  int *v129; // rbx
-  __int64 v130; // rbp
-  __m128i v131; // xmm0
-  __m128i v132; // xmm1
-  __m128i v133; // xmm3
-  int *v134; // rcx
-  float v135; // xmm0_4
-  __int64 v136; // xmm0_8
-  float v137; // xmm7_4
-  float v138; // xmm1_4
-  float v139; // xmm0_4
-  int v140; // eax
-  CHAR *v141; // rdx
-  double v142; // [rsp+20h] [rbp-198h]
-  double v143; // [rsp+20h] [rbp-198h]
-  double v144; // [rsp+20h] [rbp-198h]
-  const char *v145; // [rsp+20h] [rbp-198h]
-  double v146; // [rsp+20h] [rbp-198h]
-  double v147; // [rsp+20h] [rbp-198h]
-  double v148; // [rsp+20h] [rbp-198h]
-  double v149; // [rsp+20h] [rbp-198h]
-  double v150; // [rsp+20h] [rbp-198h]
-  double v151; // [rsp+20h] [rbp-198h]
-  int v152; // [rsp+30h] [rbp-188h] BYREF
-  unsigned int v153; // [rsp+34h] [rbp-184h] BYREF
-  double v154; // [rsp+38h] [rbp-180h]
-  _DWORD v155[2]; // [rsp+40h] [rbp-178h]
-  __int64 v156; // [rsp+48h] [rbp-170h]
-  int v157; // [rsp+50h] [rbp-168h]
-  const char *v158; // [rsp+58h] [rbp-160h]
-  __int64 air_movement_; // [rsp+80h] [rbp-138h]
-  char *server; // [rsp+88h] [rbp-130h] BYREF
-  _QWORD *v161; // [rsp+90h] [rbp-128h]
-  __int64 v162; // [rsp+98h] [rbp-120h]
-  CHAR *v163; // [rsp+A0h] [rbp-118h] BYREF
-  void *v164; // [rsp+A8h] [rbp-110h]
-  __int64 v165; // [rsp+B0h] [rbp-108h]
-  double v166; // [rsp+B8h] [rbp-100h]
-  __int64 v167; // [rsp+C0h] [rbp-F8h]
-  __int64 v168; // [rsp+C8h] [rbp-F0h]
-
   Unit = LocalUnit;
   if ( !LocalUnit
     || *(LocalUnit + 0x10B0)
@@ -210,7 +42,7 @@ __int64 __fastcall log_server_main(__int64 a1)
   v161 = off_4B678C8;
   server = (*(*off_4B678C8 + 0x18i64))(off_4B678C8, 0x10i64);
   v162 = 0x100000000Fi64;
-  strcpy(server, "{\"valid\\": true");
+  strcpy(server, "{\"valid\": true");
   v13 = *(air_movement + 0x910);
   v14 = fminf(v13, *&dword_4A7920C);
   v15 = fsqrt(
@@ -279,7 +111,7 @@ __int64 __fastcall log_server_main(__int64 a1)
   *&v32 = dword_44A0190;
   *&v32 = (((((((*&dword_44A0190 * v31) + *&dword_44A0194) * v31) + *&dword_44A0198) * v31) + *&dword_44A019C) * v31)
         + Y;
-  v154 = fsqrt(((*&dword_4A7920C * *&globalTemperature) * *&v32) / (fmaxf(v30, *&dword_4A7920C) * *&dword_4A791F8))
+  v154 = fsqrt(((*&dword_4A7920C * *&gamephys::density) * *&v32) / (fmaxf(v30, *&dword_4A7920C) * *&dword_4A791F8))
        * v29;
   v152 = 3;
   (avprintf)(&server, 0x200i64, ",\n\"IAS, km/h\": %.0f", &v152, 1);
@@ -307,13 +139,13 @@ __int64 __fastcall log_server_main(__int64 a1)
     v43 = (Unit[0x26A] * v39) - (Unit[0x26C] * v41);
     *&v34 = *(air_movement + 0x9A8);
     HIDWORD(v32) = 0;
-    *&v32 = *&dword_4A791FC + *(air_movement + 0x9A0);
+    *&v32 = *&gamephys::gravity + *(air_movement + 0x9A0);
     v44 = *(air_movement + 0x998);
     *&v32 = *&v32 * ((v41 * v42) - (((Unit[0x26C] * v40) - (Unit[0x26B] * v39)) * v39));
     v154 = ((((v44 * ((v43 * v39) - (v42 * v40)))
             + (*&v34 * ((((Unit[0x26C] * v40) - (Unit[0x26B] * v39)) * v40) - (v43 * v41))))
            + *&v32)
-          / *&dword_4A791FC);
+          / *&gamephys::gravity);
     v152 = 3;
     LODWORD(v142) = 1;
     (avprintf)(&server, 0x200i64, ",\n\"Ny\": %.2f", &v152, v142);
@@ -370,7 +202,7 @@ __int64 __fastcall log_server_main(__int64 a1)
   v54 = *v53;
   if ( *v53 > 0 )
   {
-    v55 = Y / *&dword_4A791FC;
+    v55 = Y / *&gamephys::gravity;
     v168 = _air_movement_ + 0x13B4;
     v56 = 0i64;
     v57 = &server;

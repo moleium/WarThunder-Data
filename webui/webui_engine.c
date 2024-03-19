@@ -409,7 +409,7 @@ const char *__fastcall webui_engine(__int64 http_req, __int64 a2, double a3)
           v27 = 0i64;
         if ( parse_command_data(v26, v27, v25, Str1, 0x20i64) )
           sub_1EC440(Str1, "%f");
-        *(v14 + 0x14) = *(v14 + 0x14) / *&qword_4A791F0;
+        *(v14 + 0x14) = *(v14 + 0x14) / *&gamephys::std_temp;
         *&Str1[8] = v15;
         *Str1 = 1;
         ctor_vprintf(&v224, 0x20i64, "%s.omega", Str1, 1);
@@ -744,9 +744,9 @@ LABEL_192:
                     if ( v112 < v120 )
                       v120 = v112;
                     *(*&v114 + v120) = 0;
-                    v233 = (*&qword_4A791F0 * *(&v240.st_ctime + 1));
+                    v233 = (*&gamephys::std_temp * *(&v240.st_ctime + 1));
                     v232 = 3;
-                    v235 = (*&v240.st_ctime * *&qword_4A791F0);
+                    v235 = (*&v240.st_ctime * *&gamephys::std_temp);
                     v234 = 3;
                     v121 = sub_16E07A0((*&v225 + v228), v227 - v228, ", %.1f, %.1f", &v232, 2);
                     v122 = v228 + v121;
@@ -1138,9 +1138,9 @@ LABEL_295:
                     if ( v193 < v201 )
                       v201 = v193;
                     *(*&v195 + v201) = 0;
-                    v233 = (*&qword_4A791F0 * *(&v240.st_ctime + 1));
+                    v233 = (*&gamephys::std_temp * *(&v240.st_ctime + 1));
                     v232 = 3;
-                    v235 = (*&v240.st_ctime * *&qword_4A791F0);
+                    v235 = (*&v240.st_ctime * *&gamephys::std_temp);
                     v234 = 3;
                     v202 = sub_16E07A0((*&v225 + v228), v227 - v228, ", %.1f, %.1f", &v232, 2);
                     v203 = v228 + v202;

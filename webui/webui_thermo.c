@@ -183,7 +183,7 @@ const char *__fastcall webui_thermo(__int64 http_req)
       sub_B17480(http_req, &v97 + 4);
       sub_B0A5E0(http_req, "throttle");
       sub_B0A5E0(http_req, "manifoldPressure");
-      *(&v97 + 3) = *(&v97 + 3) / *&qword_4A791F0;
+      *(&v97 + 3) = *(&v97 + 3) / *&gamephys::std_temp;
       sub_B0A5E0(http_req, "omega");
       sub_B0BDF0(http_req, "restrictedMode", &v98 + 4);
       sub_B0A5E0(http_req, "liquidLevel");
