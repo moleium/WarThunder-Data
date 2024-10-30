@@ -32,7 +32,7 @@ LABEL_11:
       dagmem_alloc_ = 0i64;
       v3[0] = &dagmem_alloc_;
       v3[1] = 1i64;
-      statsd::counter("ac.load_fail", v3, 1i64);
+      statsd::counter("ac.load_fail", v3);
     }
     else
     {
