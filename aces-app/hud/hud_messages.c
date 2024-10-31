@@ -59,11 +59,11 @@ LABEL_23:
   ThreadLocalStoragePointer = NtCurrentTeb()->ThreadLocalStoragePointer;
   if ( !*(ThreadLocalStoragePointer[TlsIndex] + 1i64) )
     _dyn_tls_on_demand_init(ThreadLocalStoragePointer, v7, v8, v9);
-  v15 = qword_4B173B8 + 0x230;
+  v15 = gui_script_strings + 0x230;
   if ( *(*(NtCurrentTeb()->ThreadLocalStoragePointer + TlsIndex) + 0x158i64) )
   {
     sub_B36480(v15, type_name, v8, v9);
-    sub_B36480(qword_4B173B8 + 0x5A90, v13, v16, v17);
+    sub_B36480(gui_script_strings + 0x5A90, v13, v16, v17);
   }
   else
   {
@@ -71,7 +71,7 @@ LABEL_23:
     v18 = (*(*v15 + 8i64))(v15);
     v19 = *v18;
     v20 = *(v18 + 8);
-    v21 = (*(*(qword_4B173B8 + 0xB52) + 8i64))(qword_4B173B8 + 0x5A90);
+    v21 = (*(*(gui_script_strings + 0xB52) + 8i64))(gui_script_strings + 0x5A90);
     v22 = *v21;
     v23 = *(v21 + 8);
     v24 = j__malloc_base(0x68ui64);

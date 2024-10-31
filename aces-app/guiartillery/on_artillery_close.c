@@ -3,8 +3,8 @@ void on_artillery_close()
   if ( is_in_artillery_map )
   {
     is_in_artillery_map = 0;
-    if ( qword_4B173B8 )
-      gui_call_interop(qword_4B173B8 + 0x380);
+    if ( gui_script_strings )
+      gui_call_interop(gui_script_strings + 0x380);
     if ( curTacticalMap )
     {
       *(curTacticalMap + 0x3B78) = 0;
