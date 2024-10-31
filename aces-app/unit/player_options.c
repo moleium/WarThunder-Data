@@ -608,10 +608,10 @@ LABEL_120:
         goto LABEL_134;
     }
   }
-  if ( ((v82 - v80) & 0x400000000i64) == 0 && qword_4B44C68 )
+  if ( ((v82 - v80) & 0x400000000i64) == 0 && cur_hud_crosshair )
   {
     LOBYTE(v176) = 0;
-    *(qword_4B44C68 + 0x4A38) = data::get_bool(a2, "allowAutoTargeting", &v176);
+    *(cur_hud_crosshair + 0x4A38) = data::get_bool(a2, "allowAutoTargeting", &v176);
   }
 LABEL_134:
   v83 = *a2;

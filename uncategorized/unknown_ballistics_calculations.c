@@ -140,7 +140,7 @@ LABEL_31:
       *&v175 = *&qword_4AD1030 * v102;
       *(&v175 + 1) = *(&qword_4AD1030 + 1) * v102;
       *&v176 = *&dword_4AD1038 * v102;
-      sub_1015EA0(qword_4B44C68, &v184, &qword_4AD100C, &v175, &v138, v181);
+      sub_1015EA0(cur_hud_crosshair, &v184, &qword_4AD100C, &v175, &v138, v181);
       v103 = LOBYTE(v138);
       *v24 = LOBYTE(v138);
       if ( v103 )

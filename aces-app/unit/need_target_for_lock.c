@@ -91,7 +91,7 @@ LABEL_37:
     unknown_lock_target(*(game + 0x440), Unit, v13, v14);
     if ( v22 )
       *(*(game + 0x440) + 0x630i64) = *(v22 + 0x40);
-    ballistics = qword_4B44C68;
+    ballistics = cur_hud_crosshair;
     if ( (*(HudInfo + 0x35) || *(*(game + 0x430) + 0x3C9i64)) && v19 && *(v8 + 0x10B0) == 5 )
     {
       v20 = *(*(game + 0x440) + 0x620i64);
@@ -99,7 +99,7 @@ LABEL_37:
       {
         if ( v20 == v7 )
         {
-          *(qword_4B44C68 + 0x3DF8) = 1;
+          *(cur_hud_crosshair + 0x3DF8) = 1;
           *(ballistics + 0x3E0C) = 0x3F800000;
           *(ballistics + 0x3DFA) = 1;
         }

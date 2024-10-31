@@ -637,9 +637,9 @@ LABEL_197:
   }
   *(a1 + 0x686) = 1;
   if ( (*(*(*(a1 + 8) + 0x50i64) + 0x18i64))(*(a1 + 8) + 0x50i64)
-    && qword_4B44C68
+    && cur_hud_crosshair
     && LocalUnit
-    && *(qword_4B44C68 + 0x4A84) != 0.0
+    && *(cur_hud_crosshair + 0x4A84) != 0.0
     && *(LocalUnit + 0x10B0) == 3 )
   {
     sub_11177A0(*(game + 0x440) + 0x910i64, v100, 0i64);

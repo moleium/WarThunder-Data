@@ -1356,7 +1356,7 @@ LABEL_308:
   v187 = *(*(v183 + 0x440) + 0x2A50i64);
   v974 = 0i64;
   v188 = *(v181 + 0x268);
-  v6 = sub_FE7160(qword_4B44C68);
+  v6 = sub_FE7160(cur_hud_crosshair);
   if ( (*(mUnit__ + 0x1083) & 8) == 0 )
   {
     v192 = fminf(v6.m128_f32[0], Y);
@@ -1521,8 +1521,8 @@ LABEL_358:
       }
       else
       {
-        *Str = *(qword_4B44C68 + 0x5FC);
-        *&Str[8] = *(qword_4B44C68 + 0x604);
+        *Str = *(cur_hud_crosshair + 0x5FC);
+        *&Str[8] = *(cur_hud_crosshair + 0x604);
       }
       v35 = LODWORD(v988);
     }
@@ -4070,12 +4070,12 @@ LABEL_1116:
       sub_B8E230(7i64);
       sub_B8E230(8i64);
       sub_B8E230(9i64);
-      if ( (*(qword_4B44C68 + 0x4A70) - 1) <= 1 )
+      if ( (*(cur_hud_crosshair + 0x4A70) - 1) <= 1 )
       {
         v880 = *(mUnit__ + 0x11D0);
         if ( *(v880 + 0x1A0) )
         {
-          v881 = (qword_4B44C68 + 0x162D);
+          v881 = (cur_hud_crosshair + 0x162D);
           v882 = 0xC0i64;
           v883 = 0i64;
           v884 = Y;
@@ -4389,7 +4389,7 @@ LABEL_1239:
   v952 = HudInfo;
   if ( *(HudInfo + 0x415) )
   {
-    v953 = *(qword_4B44C68 + 0x670);
+    v953 = *(cur_hud_crosshair + 0x670);
     v6.m128_u64[0] = *(HudInfo + 0x108) ^ xmmword_44801F0;
     if ( v6.m128_f32[0] < v953 )
     {
@@ -4417,9 +4417,9 @@ LABEL_1256:
               *v956 = v957;
               if ( v952[0x415] )
               {
-                v955 = qword_4B44C68;
+                v955 = cur_hud_crosshair;
                 v6.m128_u64[0] = *(v952 + 0x108) ^ xmmword_44801F0;
-                if ( v6.m128_f32[0] < *(qword_4B44C68 + 0x670) )
+                if ( v6.m128_f32[0] < *(cur_hud_crosshair + 0x670) )
                   v6.m128_u64[0] = *(v952 + 0x107);
               }
               sub_B82CC0(v951 + 0x45C8, v955, v177, v178);
@@ -4450,8 +4450,8 @@ LABEL_1256:
   if ( v6.m128_f32[0] != *&dword_44801E8 )
     goto LABEL_1256;
 LABEL_1260:
-  v959 = qword_4B44C68;
-  v960 = *(qword_4B44C68 + 0x678);
+  v959 = cur_hud_crosshair;
+  v960 = *(cur_hud_crosshair + 0x678);
   if ( v951[0x118C] != 5 || *(v951 + 0x4628) != v960 )
   {
     v951[0x118C] = 5;

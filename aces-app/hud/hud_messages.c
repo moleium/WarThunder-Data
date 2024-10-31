@@ -1,7 +1,7 @@
 __int64 __fastcall hud_messages(__int64 a1, char a2, __int64 a3, __int64 a4)
 {
-  if ( qword_4B44C68 )
-    sub_FE4450(qword_4B44C68);
+  if ( cur_hud_crosshair )
+    sub_FE4450(cur_hud_crosshair);
   fire_event(a1 + 0x5A8, "HudMessageHide", &qword_4B67850, a4);
   fire_event(a1 + 0x5A8, "WatchedHeroChanged", &qword_4B67850, v6);
   sub_C414B0(0i64, 0i64, 0i64);
