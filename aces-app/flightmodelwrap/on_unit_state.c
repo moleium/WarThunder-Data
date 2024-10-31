@@ -6,10 +6,10 @@ void __fastcall on_unit_state(__int64 Unit, __int64 a2, __int64 a3)
     LOBYTE(a2) = 1;
     LOBYTE(a3) = 1;
     sub_3A64E0(Unit, a2, a3);
-    if ( !*(qword_4AD09E8 + 0x518) )
+    if ( !*(world_instance + 0x518) )
       return;
-    v6 = *(qword_4AD09E8 + 0x508);
-    v7 = 0x30i64 * *(qword_4AD09E8 + 0x518);
+    v6 = *(world_instance + 0x508);
+    v7 = 0x30i64 * *(world_instance + 0x518);
     v8 = 0i64;
     do
     {
@@ -303,7 +303,7 @@ LABEL_90:
       {
         if ( (v192 & 0x80000000) == 0 )
         {
-          v70 = *(qword_4AD09E8 + 0x330);
+          v70 = *(world_instance + 0x330);
           v56 = 0i64;
           if ( v70 )
           {
@@ -324,7 +324,7 @@ LABEL_90:
               v72 = *(*(v70 + 0x18) + 4i64 * (v192 - v56));
               v73 = *(v70 + 0x4A);
               v74 = v72 >> v73;
-              v71 = *(qword_4AD09E8 + 0x330);
+              v71 = *(world_instance + 0x330);
             }
             v75 = (*(v71 + 0x38) + 0x10i64 * v74);
             if ( v74 == *(v71 + 0x40) )

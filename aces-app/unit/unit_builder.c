@@ -1982,8 +1982,8 @@ LABEL_94:
     LODWORD(v306) = 1;
     if ( data::set_int(v145, "count", &v306) == 1 )
       goto LABEL_207;
-    v264 = qword_4AD09E8;
-    v265 = *(qword_4AD09E8 + 0x428);
+    v264 = world_instance;
+    v265 = *(world_instance + 0x428);
     v266 = *v263;
     if ( *v263 )
     {
@@ -2000,9 +2000,9 @@ LABEL_94:
     {
       v268 = 0x811C9DC5;
     }
-    v312 = *(qword_4AD09E8 + 0x428);
+    v312 = *(world_instance + 0x428);
     v270 = v268 & v265;
-    v271 = *(qword_4AD09E8 + 0x420);
+    v271 = *(world_instance + 0x420);
     if ( *(v271 + 0x18 * v270) < 0 )
     {
 LABEL_203:
@@ -2237,12 +2237,12 @@ LABEL_255:
   sub_834D20(Unit);
   sub_31BF00(Unit);
   *(Unit + 0x2928) = 0i64;
-  v296 = qword_4AD09E8 + 0xD0;
+  v296 = world_instance + 0xD0;
   v297 = "expForAssistTime";
   if ( *(Unit + 0x10B0) == 5 )
     v297 = "expForAssistTimeShip";
   LODWORD(v306) = 0;
-  v298 = data::set_real(qword_4AD09E8 + 0xD0, v297, &v306);
+  v298 = data::set_real(world_instance + 0xD0, v297, &v306);
   *(Unit + 0x25D8) = LODWORD(v298);
   v299 = "expForAssistDmg";
   if ( *(Unit + 0x10B0) == 5 )

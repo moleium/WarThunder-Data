@@ -1186,9 +1186,9 @@ LABEL_339:
   *(_UnitInfo + 0x340) = v363;
   LODWORD(v363) = 0x40800000;
   *(_UnitInfo + 0x348) = data::set_real(v227, "hookMass", &v363);
-  v241 = qword_4AD09E8;
-  v242 = qword_4AD09E8 + 0x330;
-  v243 = sub_145DD00((qword_4AD09E8 + 0x330), v220);
+  v241 = world_instance;
+  v242 = world_instance + 0x330;
+  v243 = sub_145DD00((world_instance + 0x330), v220);
   v244 = *(v241 + 0x340);
   if ( v244 == 0xFFFFFFFF )
   {

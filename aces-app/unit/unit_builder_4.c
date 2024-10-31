@@ -1108,12 +1108,12 @@ LABEL_50:
   }
   v50 = *(Unit + 0x10B0);
   *(Unit + 0x129C) = v50 == 7 || v50 == 4;
-  v51 = (qword_4AD09E8 + 0xD0);
+  v51 = (world_instance + 0xD0);
   v52 = "expForHitTimeout";
   if ( v50 == 5 )
     v52 = "expForShipHitTimeout";
   Src = 0;
-  v53 = data::set_real(qword_4AD09E8 + 0xD0, v52, &Src);
+  v53 = data::set_real(world_instance + 0xD0, v52, &Src);
   *(Unit + 0x17A8) = LODWORD(v53);
   Src = 0;
   v54 = data::set_real(v51, "expForIneffectiveTankHitTimeout", &Src);

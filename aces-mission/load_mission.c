@@ -2066,11 +2066,11 @@ LABEL_638:
     if ( v475 <= 0 )
     {
       LODWORD(v1162) = 1;
-      *(a1 + 0x1D4) = data::set_int(qword_4AD09E8 + 0x130, "numBotRespawnsInMultiSlot", &v1162);
+      *(a1 + 0x1D4) = data::set_int(world_instance + 0x130, "numBotRespawnsInMultiSlot", &v1162);
       LODWORD(v1162) = 3;
-      *(a1 + 0x1D8) = data::set_int(qword_4AD09E8 + 0x130, "numTankBotRespawnsInMultiSlot", &v1162);
+      *(a1 + 0x1D8) = data::set_int(world_instance + 0x130, "numTankBotRespawnsInMultiSlot", &v1162);
       LODWORD(v1162) = 3;
-      *(a1 + 0x1DC) = data::set_int(qword_4AD09E8 + 0x130, "numShipBotRespawnsInMultiSlot", &v1162);
+      *(a1 + 0x1DC) = data::set_int(world_instance + 0x130, "numShipBotRespawnsInMultiSlot", &v1162);
       v475 = *(a1 + 0x1D4);
     }
     else
@@ -2087,7 +2087,7 @@ LABEL_638:
   LODWORD(v1162) = *(a1 + 0x1DC);
   *(a1 + 0x1DC) = data::set_int(v308, "numShipBotRespawns", &v1162);
   LODWORD(v1162) = 0;
-  LODWORD(v1162) = data::set_int(qword_4AD09E8 + 0x130, "addWaitBetweenBotRespawns", &v1162);
+  LODWORD(v1162) = data::set_int(world_instance + 0x130, "addWaitBetweenBotRespawns", &v1162);
   *(a1 + 0x1E0) = data::set_int(v308, "addWaitBetweenBotRespawns", &v1162);
   LODWORD(v1162) = (*(a1 + 0x67C) & 4) == 0 ? 0xFFFFFFFF : 0x3C;
   *(a1 + 0x27C) = data::set_int(v308, "timeToKickAfk", &v1162);
