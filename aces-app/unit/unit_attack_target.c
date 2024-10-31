@@ -1090,7 +1090,7 @@ LABEL_246:
     dword_4A79158 = 0x41C64E6D * dword_4A79158 + 0x3039;
     LODWORD(v281) = HIWORD(dword_4A79158) & 0x7FFF;
     if ( *(v273 + 0x14) != 0xFFFFFFFF )
-      sub_145E9A0(v273);
+      data::convert_to_owned(v273);
     v133 = sub_145A790(v273, "_seed", &v281);
     if ( g_net )
     {

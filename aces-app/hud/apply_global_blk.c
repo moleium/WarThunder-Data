@@ -495,35 +495,35 @@ void __fastcall apply_global_blk(__int64 hud, __int64 a2)
   }
   LODWORD(v209) = *(hud + 0x39434);
   if ( *(v12 + 5) != 0xFFFFFFFF )
-    sub_145E9A0(v12);
+    data::convert_to_owned(v12);
   sub_145A790(v12, "scoutTargetSuccess", &v209);
   LODWORD(v209) = *(hud + 0x39438);
   if ( *(v12 + 5) != 0xFFFFFFFF )
-    sub_145E9A0(v12);
+    data::convert_to_owned(v12);
   sub_145A790(v12, "scoutBinocularSuccess", &v209);
   LODWORD(v209) = *(hud + 0x3943C);
   if ( *(v12 + 5) != 0xFFFFFFFF )
-    sub_145E9A0(v12);
+    data::convert_to_owned(v12);
   sub_145A790(v12, "footballTargetLockShown", &v209);
   LOBYTE(v209) = *(hud + 0x39440);
   if ( *(v12 + 5) != 0xFFFFFFFF )
-    sub_145E9A0(v12);
+    data::convert_to_owned(v12);
   data::set_bool(v12, "automaticExtinguisher", &v209);
   LOBYTE(v209) = *(hud + 0x39442);
   if ( *(v12 + 5) != 0xFFFFFFFF )
-    sub_145E9A0(v12);
+    data::convert_to_owned(v12);
   data::set_bool(v12, "automaticRepair", &v209);
   LOBYTE(v209) = *(hud + 0x39441);
   if ( *(v12 + 5) != 0xFFFFFFFF )
-    sub_145E9A0(v12);
+    data::convert_to_owned(v12);
   data::set_bool(v12, "automaticPump", &v209);
   LODWORD(v209) = *(hud + 0x39498);
   if ( *(v12 + 5) != 0xFFFFFFFF )
-    sub_145E9A0(v12);
+    data::convert_to_owned(v12);
   sub_145A790(v12, "globalSaveVersion", &v209);
   LODWORD(v209) = 2;
   if ( *(v12 + 5) != 0xFFFFFFFF )
-    sub_145E9A0(v12);
+    data::convert_to_owned(v12);
   sub_145A790(v12, "saveVersion", &v209);
   v97 = sub_145DB90(v12, &unk_48A9039);
   LODWORD(v98) = *(hud + 0x39118);
