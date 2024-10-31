@@ -98,7 +98,7 @@ LABEL_11:
   }
 LABEL_28:
   if ( !v14 )
-    v14 = &qword_4B67850;
+    v14 = &data::get_block_by_name;
   v26 = *a2;
   v27 = 0xFFFFFFFF;
   if ( *a2 )
@@ -359,7 +359,7 @@ LABEL_98:
   }
 LABEL_115:
   if ( !v78 )
-    v78 = &qword_4B67850;
+    v78 = &data::get_block_by_name;
   sub_288B9B0(v47 + 0xBC, v78);
   v90 = *a2;
   v91 = 0xFFFFFFFF;
@@ -610,7 +610,7 @@ LABEL_180:
     }
   }
 LABEL_197:
-  v154 = &qword_4B67850;
+  v154 = &data::get_block_by_name;
   if ( v99 )
     v154 = v99;
   if ( v120 )

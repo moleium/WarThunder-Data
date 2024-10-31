@@ -140,7 +140,7 @@ LABEL_13:
     }
   }
 LABEL_30:
-  v27 = &qword_4B67850;
+  v27 = &data::get_block_by_name;
   if ( v15 )
     v27 = v15;
   return sub_1B3F020(shell_info_18 + 0x30, v27);

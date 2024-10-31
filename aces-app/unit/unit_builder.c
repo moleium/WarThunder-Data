@@ -427,7 +427,7 @@ LABEL_25:
   v22 = a7;
 LABEL_26:
   if ( !v25 )
-    v25 = &qword_4B67850;
+    v25 = &data::get_block_by_name;
   LODWORD(v308) = 1;
   v38 = data::set_int(v25, "army", &v308);
   sub_317E20(Unit, v37, a8, 0, v38, v22, v13, v12);
@@ -1309,7 +1309,7 @@ LABEL_81:
   {
     v88 = *(a6 + 0xE);
     v82 = 0i64;
-    v83 = &qword_4B67850;
+    v83 = &data::get_block_by_name;
     if ( !*(a6 + 0xE) )
       goto LABEL_94;
     v89 = v75 + 1;
@@ -1335,7 +1335,7 @@ LABEL_81:
   {
     v73 = *(a6 + 0xE);
     v82 = 0i64;
-    v83 = &qword_4B67850;
+    v83 = &data::get_block_by_name;
     if ( v81 < v81 + v73 )
     {
       v84 = v75 + 1;

@@ -953,7 +953,7 @@ LABEL_348:
         goto LABEL_353;
       LOBYTE(v132) = 1;
       v210 = sub_145DA90(v2, v146, 0xFFFFFFFFi64, v132);
-      v211 = &qword_4B67850;
+      v211 = &data::get_block_by_name;
       if ( v210 )
         v211 = v210;
       if ( !sub_145BD50(v211, "none_can_spawn") )
@@ -2542,7 +2542,7 @@ LABEL_486:
   }
 LABEL_503:
   v298 = v258 + 0x90;
-  v299 = &qword_4B67850;
+  v299 = &data::get_block_by_name;
   if ( v287 )
     v299 = v287;
   LOWORD(v300) = *(v299 + 6);

@@ -76,7 +76,7 @@ LABEL_11:
         }
         if ( ballistics_A68_qword && (byte_4B1993D & 1) != 0 )
         {
-          fire_event(ballistics_A68_qword + 0x5A8, "hint:died_from_ammo_explosion:hide", &qword_4B67850, v18);
+          fire_event(ballistics_A68_qword + 0x5A8, "hint:died_from_ammo_explosion:hide", &data::get_block_by_name, v18);
           byte_4B1993D = 0;
         }
 LABEL_21:
@@ -107,7 +107,7 @@ LABEL_21:
       }
       if ( v38 <= v39 && ballistics_A68_qword && (byte_4B1993D & 1) == 0 )
       {
-        fire_event(ballistics_A68_qword + 0x5A8, "hint:died_from_ammo_explosion:show", &qword_4B67850, v18);
+        fire_event(ballistics_A68_qword + 0x5A8, "hint:died_from_ammo_explosion:show", &data::get_block_by_name, v18);
         byte_4B1993D = 1;
       }
     }
@@ -399,7 +399,7 @@ LABEL_25:
 LABEL_39:
     if ( ballistics_A68_qword && (byte_4B1993E & 1) != 0 )
     {
-      fire_event(ballistics_A68_qword + 0x5A8, "hint:press_a_continue:hide", &qword_4B67850, v18);
+      fire_event(ballistics_A68_qword + 0x5A8, "hint:press_a_continue:hide", &data::get_block_by_name, v18);
       byte_4B1993E = 0;
     }
   }

@@ -2419,7 +2419,7 @@ LABEL_363:
         v109 = v1210;
       }
       if ( !((*(cursor_visuals + 0xAD6) != 0) | v333 ^ 1) )
-        fire_event(ballistics_A68_qword + 0x5A8, "hint:gun_overheat_warning", &qword_4B67850, v346);
+        fire_event(ballistics_A68_qword + 0x5A8, "hint:gun_overheat_warning", &data::get_block_by_name, v346);
       *(cursor_visuals + 0xAD5) = v366;
       *(cursor_visuals + 0xAD6) = v333;
       v368 = HudInfo;

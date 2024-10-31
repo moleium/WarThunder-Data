@@ -42,7 +42,7 @@ double __fastcall FlightModelWrap(LARGE_INTEGER Unit, LARGE_INTEGER *a2, __int64
   if ( !v22 || !*v22 )
   {
     v22 = "unknown";
-    if ( a2 == &qword_4B67850 )
+    if ( a2 == &data::get_block_by_name )
       v22 = "empty";
     if ( !*v22 )
       goto LABEL_25;
@@ -389,7 +389,7 @@ LABEL_82:
   }
 LABEL_127:
   if ( !v95 )
-    v95 = &qword_4B67850;
+    v95 = &data::get_block_by_name;
   v107 = *v95;
   v108 = 0xFFFFFFFF;
   if ( *v95 )
@@ -1108,7 +1108,7 @@ LABEL_323:
   }
 LABEL_341:
   if ( !v259 )
-    v259 = &qword_4B67850;
+    v259 = &data::get_block_by_name;
   if ( !*(game + 0xCD) && (*(v134.QuadPart + 0x1058) & 0x100) != 0 )
   {
     LOBYTE(PerformanceCount[0].LowPart) = 1;
@@ -1341,7 +1341,7 @@ LABEL_412:
     }
     v321 = (v299 >> 8) & 1;
     if ( !v309 )
-      v309 = &qword_4B67850;
+      v309 = &data::get_block_by_name;
     *(v134.QuadPart + 0x3398) = sub_F2D5E0(v309, v321);
     if ( (*(v134.QuadPart + 0x1058) & 0x100) != 0 )
       (sub_F2DD50)(v134.QuadPart);
@@ -1526,7 +1526,7 @@ LABEL_456:
 LABEL_473:
   v982 = (v134.QuadPart + 0x5E8);
   if ( !v342 )
-    v342 = &qword_4B67850;
+    v342 = &data::get_block_by_name;
   sub_927B10(*(v134.QuadPart + 0x46E0), v342);
   sub_927B10(*(v134.QuadPart + 0x4708), v342);
   sub_927B10(*(v134.QuadPart + 0x4730), v342);
@@ -2061,7 +2061,7 @@ LABEL_579:
 LABEL_599:
   if ( v453.QuadPart )
     (*(*PerformanceCount[1].QuadPart + 0x40i64))(PerformanceCount[1], v453);
-  v476 = &qword_4B67850;
+  v476 = &data::get_block_by_name;
   if ( !p_Block )
     goto LABEL_608;
   v477 = j__malloc_base(0x1C0ui64);
@@ -2278,7 +2278,7 @@ LABEL_663:
         if ( v525 == v530 )
           goto LABEL_676;
       }
-      v476 = &qword_4B67850;
+      v476 = &data::get_block_by_name;
       if ( v530 >= v525 )
         v520 = 0i64;
       else
@@ -2307,10 +2307,10 @@ LABEL_663:
           v520 = v531;
       }
 LABEL_676:
-      v476 = &qword_4B67850;
+      v476 = &data::get_block_by_name;
     }
     if ( !v520 )
-      v520 = &qword_4B67850;
+      v520 = &data::get_block_by_name;
     sub_483F40(v510, v520);
     v486 = *v973;
   }

@@ -79,7 +79,7 @@ LABEL_31:
     if ( !v7 && !ballistics && ballistics_A68_qword )
     {
       if ( !*(v8 + 0x10B0) )
-        fire_event(ballistics_A68_qword + 0x5A8, "hint:need_target_for_lock", &qword_4B67850, v14);
+        fire_event(ballistics_A68_qword + 0x5A8, "hint:need_target_for_lock", &data::get_block_by_name, v14);
       v19 = 0;
     }
     goto LABEL_37;

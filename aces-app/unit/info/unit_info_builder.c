@@ -349,7 +349,7 @@ LABEL_102:
     }
   }
   if ( !v56 )
-    v56 = &qword_4B67850;
+    v56 = &data::get_block_by_name;
   v363 = "water_explosion_medium";
   v68 = data::get_str(v56, "waterExplosionEffect", &v363);
   v69 = 0xFFFFFFFF;
@@ -513,7 +513,7 @@ LABEL_155:
     v95 = *(v103 + v104);
 LABEL_156:
   if ( !v95 )
-    v95 = &qword_4B67850;
+    v95 = &data::get_block_by_name;
   v371 = 0x3F8000003F800000i64;
   LODWORD(v372) = 0x3F800000;
   sub_145C630(v95, &v363, "rotorBladeAnglesCoeffs", &v371);
@@ -610,7 +610,7 @@ LABEL_180:
     }
   }
   if ( !v116 )
-    v116 = &qword_4B67850;
+    v116 = &data::get_block_by_name;
   LODWORD(v363) = 0x3F800000;
   *(v107 + 0x360) = data::set_real(v116, "wingStrainCoeff", &v363);
   LODWORD(v363) = 0x3F800000;
@@ -707,7 +707,7 @@ LABEL_206:
     v139 = 0i64;
 LABEL_207:
   if ( !v139 )
-    v139 = &qword_4B67850;
+    v139 = &data::get_block_by_name;
   LODWORD(v363) = 0x3DCCCCCD;
   v151[0xC5] = data::set_real(v139, "levelIncreaseSpeed", &v363);
   LODWORD(v363) = 0x3F000000;
@@ -809,7 +809,7 @@ LABEL_232:
     v161 = *(v169 + v170);
 LABEL_233:
   if ( !v161 )
-    v161 = &qword_4B67850;
+    v161 = &data::get_block_by_name;
   LODWORD(v363) = 0x453B8000;
   *(UnitInfo + 0x3D4) = data::set_real(v161, "approachHeight", &v363);
   LODWORD(v363) = 0x44BB8000;
@@ -1088,13 +1088,13 @@ LABEL_286:
   if ( !*a3 )
   {
     v220 = v374;
-    v221 = &qword_4B67850;
+    v221 = &data::get_block_by_name;
     goto LABEL_326;
   }
   v218 = data::get_name_id("hook", 4ui64);
   v219 = *(v216 + 0x50);
   v220 = v374;
-  v221 = &qword_4B67850;
+  v221 = &data::get_block_by_name;
   if ( v219 )
   {
     v222 = *(v219 + 0x20);
@@ -1173,7 +1173,7 @@ LABEL_339:
     _UnitInfo = UnitInfo_;
   }
   if ( !v227 )
-    v227 = &qword_4B67850;
+    v227 = &data::get_block_by_name;
   LODWORD(v363) = 0x3CF5C28F;
   *(_UnitInfo + 0x334) = data::set_real(v227, "coeffHookJ", &v363);
   v371 = 0x428C0000C2200000i64;
@@ -1241,7 +1241,7 @@ LABEL_362:
     }
   }
   if ( !v246 )
-    v246 = &qword_4B67850;
+    v246 = &data::get_block_by_name;
   v258 = *v246;
   v259 = 0xFFFFFFFF;
   if ( *v246 )

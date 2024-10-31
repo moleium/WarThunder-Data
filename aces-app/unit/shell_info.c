@@ -503,7 +503,7 @@ LABEL_85:
   }
 LABEL_102:
   if ( !v65 )
-    v65 = &qword_4B67850;
+    v65 = &data::get_block_by_name;
   v190[0] = 0x42C80000i64;
   sub_145C170(v65, &v185, "range_percent_of_ammo", v190);
   *(shell_info + 0x110) = v185;
@@ -750,7 +750,7 @@ LABEL_164:
     }
   }
 LABEL_181:
-  v132 = &qword_4B67850;
+  v132 = &data::get_block_by_name;
   if ( v120 )
     v132 = v120;
   sub_244590(shell_info + 0x15C, v132, v6);

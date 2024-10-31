@@ -342,7 +342,7 @@ LABEL_155:
 LABEL_166:
       if ( ballistics_A68_qword && (byte_4B1AB40 & 1) != 0 )
       {
-        fire_event(ballistics_A68_qword + 0x5A8, "hint:mission_complete:hide", &qword_4B67850);
+        fire_event(ballistics_A68_qword + 0x5A8, "hint:mission_complete:hide", &data::get_block_by_name);
         byte_4B1AB40 = 0;
       }
       if ( !v34 )
@@ -582,7 +582,7 @@ LABEL_137:
       v98 = sub_BC2D50(0x1C2i64);
       sub_C01740(a1, a2, v98, &v125, v97);
       if ( !*(a1 + 0x164) )
-        fire_event(ballistics_A68_qword + 0x5A8, "hint:pilot_lose_control:show", &qword_4B67850);
+        fire_event(ballistics_A68_qword + 0x5A8, "hint:pilot_lose_control:show", &data::get_block_by_name);
       *(a1 + 0x164) = 1;
       v34 = 1;
     }

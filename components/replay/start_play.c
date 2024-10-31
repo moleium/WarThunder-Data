@@ -84,7 +84,7 @@ LABEL_11:
     }
   }
 LABEL_28:
-  v28 = &qword_4B67850;
+  v28 = &data::get_block_by_name;
   if ( v16 )
     v28 = v16;
   LOBYTE(v110) = 0;
