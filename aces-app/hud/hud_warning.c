@@ -422,7 +422,7 @@ LABEL_173:
   }
   v63 = fsqrt(((v19 * v19) + (v26 * v26)) + (v25 * v25));
   v64 = 0.0;
-  if ( v63 > *&dword_449F1A8 )
+  if ( v63 > *&epsilon_unk )
     v64 = Y / v63;
   v65 = acosf(fminf(fmaxf((((v19 * v17) + (v26 * v16)) + (v25 * v15)) * v64, *&dword_44801E8), Y));
   if ( *a1 && (dword_4B19A88 & *(a1 + 4)) != 0 )

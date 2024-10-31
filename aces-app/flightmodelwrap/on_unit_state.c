@@ -710,7 +710,7 @@ LABEL_238:
             v161 = *(v158 + 0x2B4);
             if ( v160 <= v161 && v161 > *&dword_44A05D0 && v161 < v159 )
             {
-              if ( v161 > *&dword_449F1A8 || (v162 = 0.0, v161 < *&dword_449F1AC) )
+              if ( v161 > *&epsilon_unk || (v162 = 0.0, v161 < *&dword_449F1AC) )
                 v162 = Y / v161;
               *(v158 + 0x2A8) = LODWORD(v162) ^ xmmword_44801F0;
               *(v158 + 0x2A0) = 0xFF000000;

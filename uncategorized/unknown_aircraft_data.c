@@ -1936,13 +1936,13 @@ LABEL_383:
     sub_B09B80(&v669, "%f,\n", v605);
     sub_B0BD50(&v669, "%f,\n", *v295.m128i_i64);
     v301 = *(air_movement + 0x9F0);
-    v302 = *&dword_449F1A8;
+    v302 = *&epsilon_unk;
     v303 = *&dword_44801E8;
     LODWORD(Block[0]) = COERCE_UNSIGNED_INT(
                           asinf(
                             fminf(
                               fmaxf(
-                                COERCE_FLOAT(_mm_cmplt_ss(dword_449F1A8, air_velocity_magnitude).m128_u32[0] & COERCE_UNSIGNED_INT(v301 * (v273 / air_velocity_magnitude.m128_f32[0]))),
+                                COERCE_FLOAT(_mm_cmplt_ss(epsilon_unk, air_velocity_magnitude).m128_u32[0] & COERCE_UNSIGNED_INT(v301 * (v273 / air_velocity_magnitude.m128_f32[0]))),
                                 *&dword_44801E8),
                               v273))) ^ xmmword_44801F0;
     sub_B09B80(&v669, "%f,\n", *v295.m128i_i64);
@@ -2145,7 +2145,7 @@ LABEL_438:
     if ( v314 <= 5u && (v341 = 0x23, _bittest(&v341, v314)) )
     {
       v342 = 0.0;
-      if ( v318 > *&dword_449F1A8 )
+      if ( v318 > *&epsilon_unk )
       {
         v343 = *(air_movement + 0x3AC8);
         v295.m128i_i64[0] = *(v343 + 0xA698);
@@ -2757,7 +2757,7 @@ LABEL_709:
                 v542 = (v527 - v526) / *&v669.st_dev;
                 if ( v527 > v518 )
                 {
-                  if ( v541 > *&dword_449F1A8 || (v543 = 0.0, v541 < *&dword_449F1AC) )
+                  if ( v541 > *&epsilon_unk || (v543 = 0.0, v541 < *&dword_449F1AC) )
                     v543 = (v518 - v526) / v541;
                   v544 = v520++;
                   v544 *= 3i64;
@@ -2873,7 +2873,7 @@ LABEL_752:
                 v578 = (v565 - v563) / *v605;
                 if ( v565 > v556 )
                 {
-                  if ( v577 > *&dword_449F1A8 || (v579 = 0.0, v577 < *&dword_449F1AC) )
+                  if ( v577 > *&epsilon_unk || (v579 = 0.0, v577 < *&dword_449F1AC) )
                     v579 = (v556 - v563) / v577;
                   v580 = v557++;
                   v580 *= 3i64;

@@ -134,7 +134,7 @@ LABEL_27:
                       ((delta_z_position * delta_z_position) + (delta_y_position * delta_y_position))
                     + (delta_x_position * delta_x_position));
   scalling_factor = 0.0;
-  if ( target_distance > *&dword_449F1A8 )
+  if ( target_distance > *&epsilon_unk )
     scalling_factor = Y / target_distance;
   *adjusted_position = delta_x_position * scalling_factor;
   *&adjusted_position[1] = delta_y_position * scalling_factor;

@@ -870,7 +870,7 @@ LABEL_204:
             v144 = *&dword_448790C;
             v145 = *&dword_44A02C0;
             v146 = *&dword_44CAB2C;
-            v147 = *&dword_449F1A8;
+            v147 = *&epsilon_unk;
             v148 = *&dword_449F1AC;
             do
             {

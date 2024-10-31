@@ -615,7 +615,7 @@ LABEL_158:
     {
       sub_389670(v139, v147, v139 + 0x2338);
       v148 = *(v139 + 0x233C) + *&dword_44801E8;
-      if ( v148 <= *&dword_449F1A8 )
+      if ( v148 <= *&epsilon_unk )
       {
         v149 = 0.0;
         if ( v148 >= *&dword_449F1AC )
@@ -629,16 +629,16 @@ LABEL_158:
     v149 = Y / v148;
 LABEL_176:
     v150 = *(v139 + 0x2338) + *&dword_44801E8;
-    if ( v150 > *&dword_449F1A8 || (v151 = 0.0, v150 < *&dword_449F1AC) )
+    if ( v150 > *&epsilon_unk || (v151 = 0.0, v150 < *&dword_449F1AC) )
       v151 = Y / v150;
     *(v139 + 0x2350) = v151;
     *(v139 + 0x2354) = v149;
     v152 = *(v139 + 0x2344);
-    v153 = *&dword_449F1A8;
-    if ( *&dword_449F1A8 < v152 || (v154 = 0.0, v152 < *&dword_449F1AC) )
+    v153 = *&epsilon_unk;
+    if ( *&epsilon_unk < v152 || (v154 = 0.0, v152 < *&dword_449F1AC) )
       v154 = Y / v152;
     v155 = *(v139 + 0x2340);
-    if ( *&dword_449F1A8 < v155 || (v156 = 0.0, v155 < *&dword_449F1AC) )
+    if ( *&epsilon_unk < v155 || (v156 = 0.0, v155 < *&dword_449F1AC) )
       v156 = Y / v155;
     v157 = v143 >> 0x3F;
     v158 = v143 >> 7;
@@ -1891,7 +1891,7 @@ LABEL_525:
     v439 = v438 - v435;
     v440 = *(v963.QuadPart + 0x1BC);
     v440.m128_f32[0] = (v436 - v435) * (v437 - v433);
-    if ( v439 > *&dword_449F1A8 || (v441 = 0i64, v439 < *&dword_449F1AC) )
+    if ( v439 > *&epsilon_unk || (v441 = 0i64, v439 < *&dword_449F1AC) )
     {
       v440.m128_f32[0] = v440.m128_f32[0] / v439;
       v441 = v440;

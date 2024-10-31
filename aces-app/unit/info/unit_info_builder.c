@@ -950,7 +950,7 @@ LABEL_282:
   *(UnitInfo + 0x3FC) = data::get_bool(a3, "hasHelmetDesignator", &v363);
   v188 = *(UnitInfo + 0x400);
   *(UnitInfo + 0x408) = v188;
-  v189 = *&dword_449F1A8;
+  v189 = *&epsilon_unk;
   v190 = v188;
   while ( 1 )
   {

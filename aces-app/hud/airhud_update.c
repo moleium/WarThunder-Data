@@ -584,13 +584,13 @@ LABEL_159:
     v96 = fsqrt((v95 * v95) + ((v94 * v94) + (v93 * v93)));
     v97 = 0.0;
     v98 = 0.0;
-    if ( v96 > *&dword_449F1A8 )
+    if ( v96 > *&epsilon_unk )
       v98 = Y / v96;
     v99 = v95 * v98;
     v100 = v94 * v98;
     v101 = v93 * v98;
     v102 = fsqrt((v92 * v92) + ((v91 * v91) + (v90 * v90)));
-    if ( v102 > *&dword_449F1A8 )
+    if ( v102 > *&epsilon_unk )
       v97 = Y / v102;
     v103 = v97 * v92;
     v104 = v97 * v91;
@@ -605,7 +605,7 @@ LABEL_159:
       v119 = (v101 * v104) - (v100 * v105);
       v120 = fsqrt((v106 + v106) + dword_44801E0);
       v121 = 0.0;
-      if ( v120 > *&dword_449F1A8 )
+      if ( v120 > *&epsilon_unk )
         v121 = Y / v120;
       v122 = v120 * *&screenScaleFactor;
       v110 = v118 * v121;
@@ -619,7 +619,7 @@ LABEL_159:
         v124 = fsqrt((v100 * v100) + (v101 * v101));
         v111 = 0.0;
         v125 = 0.0;
-        if ( v124 > *&dword_449F1A8 )
+        if ( v124 > *&epsilon_unk )
           v125 = Y / v124;
         v108 = COERCE_FLOAT(LODWORD(v100) ^ xmmword_44801F0) * v125;
         v110 = v101 * v125;
@@ -629,7 +629,7 @@ LABEL_159:
         v107 = fsqrt((v99 * v99) + (v100 * v100));
         v108 = 0.0;
         v109 = 0.0;
-        if ( v107 > *&dword_449F1A8 )
+        if ( v107 > *&epsilon_unk )
           v109 = Y / v107;
         v110 = COERCE_FLOAT(LODWORD(v99) ^ xmmword_44801F0) * v109;
         v111 = v100 * v109;
@@ -648,7 +648,7 @@ LABEL_159:
     v135 = (((v127 + v126) * v92) + ((v133 - v130) * v91)) + ((((v108 * v108) + (v108 * v108)) + v131) * v90);
     v136 = fsqrt((v132 * v132) + ((v134 * v134) + (v135 * v135)));
     v137 = 0.0;
-    if ( v136 > *&dword_449F1A8 )
+    if ( v136 > *&epsilon_unk )
       v137 = Y / v136;
     v32 = v968;
     v114 = LODWORD(v1001);
@@ -1379,13 +1379,13 @@ LABEL_308:
     v200 = 0.0;
     v201 = 0.0;
     v202 = LOBYTE(v993);
-    if ( v199 > *&dword_449F1A8 )
+    if ( v199 > *&epsilon_unk )
       v201 = Y / v199;
     v203 = v198 * v201;
     v204 = v197 * v201;
     v205 = v196 * v201;
     v206 = fsqrt((v31 * v31) + ((v30 * v30) + (v977 * v977)));
-    if ( v206 > *&dword_449F1A8 )
+    if ( v206 > *&epsilon_unk )
       v200 = Y / v206;
     v207 = v200 * v31;
     v208 = v200 * v30;
@@ -1401,7 +1401,7 @@ LABEL_308:
       v227 = (v205 * v208) - (v204 * v209);
       v228 = fsqrt((v210 + v210) + dword_44801E0);
       v229 = 0.0;
-      if ( v228 > *&dword_449F1A8 )
+      if ( v228 > *&epsilon_unk )
         v229 = Y / v228;
       v230 = v228 * *&screenScaleFactor;
       v215 = v226 * v229;
@@ -1416,7 +1416,7 @@ LABEL_308:
         v232 = fsqrt((v204 * v204) + (v205 * v205));
         v216 = 0.0;
         v233 = 0.0;
-        if ( v232 > *&dword_449F1A8 )
+        if ( v232 > *&epsilon_unk )
           v233 = Y / v232;
         v213 = COERCE_FLOAT(LODWORD(v204) ^ xmmword_44801F0) * v233;
         v215 = v205 * v233;
@@ -1426,7 +1426,7 @@ LABEL_308:
         v212 = fsqrt((v203 * v203) + (v204 * v204));
         v213 = 0.0;
         v214 = 0.0;
-        if ( v212 > *&dword_449F1A8 )
+        if ( v212 > *&epsilon_unk )
           v214 = Y / v212;
         v215 = COERCE_FLOAT(LODWORD(v203) ^ xmmword_44801F0) * v214;
         v216 = v204 * v214;
@@ -1460,7 +1460,7 @@ LABEL_308:
     v35 = LODWORD(v988);
     v253 = v247 * v988;
     v254 = 0.0;
-    if ( v244 > *&dword_449F1A8 )
+    if ( v244 > *&epsilon_unk )
       v254 = *&dword_44A9F9C / v244;
     *Str = (((v246 + v969) + v968) + v248) + (v243 * v254);
     *&Str[4] = (((v249 + *&v1013) + v251) + v252) + (v242 * v254);
@@ -1775,7 +1775,7 @@ LABEL_443:
   v321 = fsqrt(((v318 * v318) + (v320 * v320)) + (v319 * v319));
   v322 = 0.0;
   v323 = 0.0;
-  if ( v321 > *&dword_449F1A8 )
+  if ( v321 > *&epsilon_unk )
     v323 = Y / v321;
   v324 = v318 * v323;
   v325 = v319 * v323;
@@ -1784,7 +1784,7 @@ LABEL_443:
   v328 = (v326 * v967) - (v324 * v964);
   v329 = (v324 * v966) - (v325 * v967);
   v330 = fsqrt((v327 * v327) + ((v328 * v328) + (v329 * v329)));
-  if ( v330 > *&dword_449F1A8 )
+  if ( v330 > *&epsilon_unk )
     v322 = Y / v330;
   if ( *(HudInfo + 0x3D) )
   {
@@ -1900,7 +1900,7 @@ LABEL_493:
   v990 = *(*(game + 0x498) + 0x283Ci64);
   v354 = fsqrt((v967 * v967) + ((v966 * v966) + (v964 * v964)));
   v994 = 0.0;
-  if ( v354 > *&dword_449F1A8 )
+  if ( v354 > *&epsilon_unk )
     v994 = Y / v354;
   v355 = v327 * v322;
   v356 = v328 * v322;
@@ -4398,7 +4398,7 @@ LABEL_1239:
       {
         v6.m128_i32[1] = 0;
         v6.m128_f32[0] = v954 - v953;
-        if ( v954 <= *&dword_449F1A8 )
+        if ( v954 <= *&epsilon_unk )
         {
           v958 = 0.0;
           if ( v954 < *&dword_449F1AC )
@@ -4407,7 +4407,7 @@ LABEL_1239:
             goto LABEL_1260;
           v955 = gui_script_strings + 0x45F8;
           v956 = (gui_script_strings + 0x45F0);
-          if ( v954 <= *&dword_449F1A8 )
+          if ( v954 <= *&epsilon_unk )
           {
             v957 = 0;
             if ( v954 >= *&dword_449F1AC )

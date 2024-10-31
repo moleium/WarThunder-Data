@@ -62,7 +62,7 @@ LABEL_50:
     v17 = scout_cooldown_ - scout_start_time;
     v18 = v3;
     v18.m128_f32[0] = (v3.m128_f32[0] - scout_start_time) * (v15 - v14);
-    if ( v17 > *&dword_449F1A8 || (v19 = 0i64, v17 < *&dword_449F1AC) )
+    if ( v17 > *&epsilon_unk || (v19 = 0i64, v17 < *&dword_449F1AC) )
     {
       v18.m128_f32[0] = v18.m128_f32[0] / v17;
       v19 = v18;
@@ -356,7 +356,7 @@ LABEL_40:
   }
   v99 = fsqrt(((*&v142 * *&v142) + (*&v54 * *&v54)) + (v60 * v60));
   v100 = 0.0;
-  if ( v99 > *&dword_449F1A8 )
+  if ( v99 > *&epsilon_unk )
     v100 = Y / v99;
   if ( *(a1 + 0x1B) )
   {

@@ -1493,7 +1493,7 @@ LABEL_113:
       v86 = (v85 * v85) + (v84 * v84);
       v87 = fsqrt(v86);
       v88 = 0.0;
-      if ( v87 > *&dword_449F1A8 )
+      if ( v87 > *&epsilon_unk )
         v88 = Y / v87;
       v89 = *(v64 + 0x18);
       sub_5E8D60(v61, Str2);

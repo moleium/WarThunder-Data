@@ -135,7 +135,7 @@ LABEL_31:
                (*&dword_4AD1038 * *&dword_4AD1038)
              + ((*(&qword_4AD1030 + 1) * *(&qword_4AD1030 + 1)) + (*&qword_4AD1030 * *&qword_4AD1030)));
       v102 = 0.0;
-      if ( v101 > *&dword_449F1A8 )
+      if ( v101 > *&epsilon_unk )
         v102 = Y / v101;
       *&v175 = *&qword_4AD1030 * v102;
       *(&v175 + 1) = *(&qword_4AD1030 + 1) * v102;
@@ -405,7 +405,7 @@ LABEL_67:
       if ( v120 )
       {
         v121 = *(*(game + 0x440) + 0x480i64);
-        if ( *&dword_449F1A8 < v121 || (v122 = 0.0, v121 < *&dword_449F1AC) )
+        if ( *&epsilon_unk < v121 || (v122 = 0.0, v121 < *&dword_449F1AC) )
           v122 = (((v120[1] - *v120) * v120[2]) + *v120) / v121;
         v123 = v122 * *(v24 + 0xC);
         *(v24 + 0xC) = v123;

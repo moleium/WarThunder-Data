@@ -160,7 +160,7 @@ LABEL_35:
           *(v45 - 0x40) = 0;
           *(v45 - 0x48) = 0i64;
           v50 = *(ballistic_computer_1e18 + 0x54);
-          if ( *&dword_449F1A8 < v50 || (v51 = 0.0, v50 < *&dword_449F1AC) )
+          if ( *&epsilon_unk < v50 || (v51 = 0.0, v50 < *&dword_449F1AC) )
             v51 = ((*(ballistic_computer_1e18 + 0x58) * *(ballistic_computer_1e18 + 0x58)) * *&dword_44A9E70) / v50;
           *(v45 - 0x40) = (*(ballistic_computer_1e18 + 0x5C) * v49) * v51;
           *(ballistic_computer_1e18 + 0x3E4) = v12;
@@ -551,7 +551,7 @@ LABEL_130:
         else
           v156 = *(ballistic_computer_1e18 + 8);
         game_params = *(game + 0x498);
-        if ( v156 > *&dword_449F1A8 || (v158 = 0.0, v156 < *&dword_449F1AC) )
+        if ( v156 > *&epsilon_unk || (v158 = 0.0, v156 < *&dword_449F1AC) )
           v158 = (*(ballistic_computer_1e18 + 0x48) * *(game_params + 0x276C)) / v156;
         v159 = fminf(v158, Y);
         v160 = *(ballistic_computer_1e18 + 0x3F0) * v159;
@@ -1258,7 +1258,7 @@ LABEL_224:
 LABEL_214:
   LocalUnit = *(LocalUnit + 0x2772);
   v329 = fsqrt((((v328 - v327) * (v328 - v327)) + ((v325 - v323) * (v325 - v323))) + ((v324 - v317) * (v324 - v317)));
-  if ( v302 > *&dword_449F1A8 || (v330 = 0.0, v302 < *&dword_449F1AC) )
+  if ( v302 > *&epsilon_unk || (v330 = 0.0, v302 < *&dword_449F1AC) )
     v330 = v329 / v302;
   v331 = (v321 * v330) + v328;
   v332 = (v322 * v330) + v325;

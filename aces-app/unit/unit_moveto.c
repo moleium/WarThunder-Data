@@ -1071,7 +1071,7 @@ LABEL_127:
       v97 = v103;
       v125 = fsqrt(v123);
       v126 = 0.0;
-      if ( v125 > *&dword_449F1A8 )
+      if ( v125 > *&epsilon_unk )
         v126 = Y / v125;
       v127 = Y / v381;
       v124.m128_f32[0] = v121.m128_f32[0] * v126;
@@ -1081,7 +1081,7 @@ LABEL_127:
       *&v358 = v101;
       v5 = v367;
       v128.m128_f32[0] = data::set_real(v367, "distributionRadius", &v358);
-      if ( v101 > *&dword_449F1A8 || (v129 = 0i64, v101 < *&dword_449F1AC) )
+      if ( v101 > *&epsilon_unk || (v129 = 0i64, v101 < *&dword_449F1AC) )
       {
         v128.m128_f32[0] = v128.m128_f32[0] / v101;
         v129 = v128;

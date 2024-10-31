@@ -354,7 +354,7 @@ LABEL_98:
       v78 = v77 - v74;
       v79 = LODWORD(a9);
       v79.m128_f32[0] = (a9 - v74) * (v76 - v75);
-      if ( v78 > *&dword_449F1A8 || (v80 = 0i64, v78 < *&dword_449F1AC) )
+      if ( v78 > *&epsilon_unk || (v80 = 0i64, v78 < *&dword_449F1AC) )
       {
         v79.m128_f32[0] = v79.m128_f32[0] / v78;
         v80 = v79;
@@ -1125,7 +1125,7 @@ LABEL_237:
       v143 = v132 - v129;
       v144 = LODWORD(a9);
       v144.m128_f32[0] = (a9 - v129) * (v131 - v130);
-      if ( v143 > *&dword_449F1A8 || (v145 = 0i64, v143 < *&dword_449F1AC) )
+      if ( v143 > *&epsilon_unk || (v145 = 0i64, v143 < *&dword_449F1AC) )
       {
         v144.m128_f32[0] = v144.m128_f32[0] / v143;
         v145 = v144;

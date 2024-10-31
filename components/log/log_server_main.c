@@ -209,7 +209,7 @@ __int64 __fastcall log_server_main(__int64 a1)
     v58 = *&dword_44CAB20;
     v59 = *&dword_44AD4C4;
     v60 = *&dword_44AD5C0;
-    v61 = *&dword_449F1A8;
+    v61 = *&epsilon_unk;
     si128 = _mm_load_si128(&xmmword_44AD4F0);
     do
     {
