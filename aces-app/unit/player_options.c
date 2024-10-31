@@ -683,7 +683,7 @@ LABEL_144:
     {
       LODWORD(v176) = 4;
       *(*(game + 0x440) + 0x168i64) = data::set_int(a2, "tankVRCameraGunnerId", &v176);
-      sub_145C630(a2, &v176, "tankVRCameraOffset", &xmmword_4514A60);
+      sub_145C630(a2, &v176, "tankVRCameraOffset", &MATH_FLOAT_ZERO);
       v97 = *(game + 0x440);
       *(v97 + 0x174) = v177;
       *(v97 + 0x16C) = v176;

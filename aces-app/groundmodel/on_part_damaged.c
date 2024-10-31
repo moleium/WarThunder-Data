@@ -85,7 +85,7 @@ void __fastcall on_part_damaged(__int64 Unit_, unsigned __int8 a2, int a3, float
       v21 = *(Unit + 0x1EA0);
       v22 = (v21 + 0x54);
       v23 = v21 == 0;
-      v24 = &xmmword_4514A60;
+      v24 = &MATH_FLOAT_ZERO;
       if ( !v23 )
         v24 = v22;
       if ( *(Unit + 0x58) == 1 )

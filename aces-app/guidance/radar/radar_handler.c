@@ -40,7 +40,7 @@ void __fastcall radar_handler(__int64 ballistic_computer, __int64 LocalUnit, flo
             ground_movement = *(LocalUnit + 0x1EA0);
             ground_velocity = (ground_movement + 0x54);
             is_ground_vel = ground_movement == 0;
-            ground_velocity_ = &xmmword_4514A60;
+            ground_velocity_ = &MATH_FLOAT_ZERO;
             if ( !is_ground_vel )
               ground_velocity_ = ground_velocity;
             if ( *(LocalUnit + 0x58) == 1 )
@@ -95,7 +95,7 @@ LABEL_17:
         target_ground_movement = *(SelectedTarget + 0x1EA0);
         target_ground_velocity = (target_ground_movement + 0x54);
         is_ground_vel = target_ground_movement == 0;
-        v34 = &xmmword_4514A60;
+        v34 = &MATH_FLOAT_ZERO;
         if ( !is_ground_vel )
           v34 = target_ground_velocity;
         if ( *(SelectedTarget + 0x58) == 1 )

@@ -368,9 +368,9 @@ LABEL_57:
         {
           *v161 = v49;
           v4 = v54;
-          sub_145C170(v60, &v146, "radiusOffset", &xmmword_4514A60);
-          sub_145C630(v60, v127, "offset", &xmmword_4514A60);
-          sub_145C170(v60, v122, "delay", &xmmword_4514A60);
+          sub_145C170(v60, &v146, "radiusOffset", &MATH_FLOAT_ZERO);
+          sub_145C630(v60, v127, "offset", &MATH_FLOAT_ZERO);
+          sub_145C170(v60, v122, "delay", &MATH_FLOAT_ZERO);
           v116 = 1;
           v64 = data::set_int(v60, "countEffects", &v116);
           LOBYTE(v116) = 0;

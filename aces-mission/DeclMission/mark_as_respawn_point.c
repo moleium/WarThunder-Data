@@ -2658,10 +2658,10 @@ LABEL_749:
             }
           }
           *(v258 + 0x18C) = v442;
-          sub_145C630(v321, Str2, "offset", &xmmword_4514A60);
+          sub_145C630(v321, Str2, "offset", &MATH_FLOAT_ZERO);
           *(v258 + 0x1DC) = *&Str2[8];
           *(v258 + 0x1D4) = *Str2;
-          sub_145C630(v321, Str2, "offsetEnemyUnits", &xmmword_4514A60);
+          sub_145C630(v321, Str2, "offsetEnemyUnits", &MATH_FLOAT_ZERO);
           *(v258 + 0x1E8) = *&Str2[8];
           *(v258 + 0x1E0) = *Str2;
           *Str2 = 0x42480000;

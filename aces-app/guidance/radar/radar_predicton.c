@@ -110,7 +110,7 @@ LABEL_21:
         v41 = *(v38 + 0x1EA0);
         v42 = (v41 + 0x54);
         v43 = v41 == 0;
-        v44 = &xmmword_4514A60;
+        v44 = &MATH_FLOAT_ZERO;
         if ( !v43 )
           v44 = v42;
         if ( *(v38 + 0x58) == 1 )
@@ -262,7 +262,7 @@ LABEL_44:
           v95 = *(LocalUnit + 0x1EA0);
           v96 = (v95 + 0x54);
           v43 = v95 == 0;
-          v97 = &xmmword_4514A60;
+          v97 = &MATH_FLOAT_ZERO;
           if ( !v43 )
             v97 = v96;
           if ( *(LocalUnit + 0x58) == 1 )
@@ -305,7 +305,7 @@ LABEL_44:
       v86 = *(LocalUnit + 0x1EA0);
       v87 = (v86 + 0x54);
       v43 = v86 == 0;
-      v88 = &xmmword_4514A60;
+      v88 = &MATH_FLOAT_ZERO;
       if ( !v43 )
         v88 = v87;
       if ( *(LocalUnit + 0x58) == 1 )
@@ -428,7 +428,7 @@ LABEL_70:
                   &v378,
                   &v376,
                   &v384,
-                  &xmmword_4514A60,
+                  &MATH_FLOAT_ZERO,
                   LODWORD(v82),
                   0x42C80000,
                   v117 ^ 1u,
@@ -497,7 +497,7 @@ LABEL_109:
           v145 = *(_Unit_ + 0x1EA0);
           v146 = (v145 + 0x54);
           v43 = v145 == 0;
-          v147 = &xmmword_4514A60;
+          v147 = &MATH_FLOAT_ZERO;
           if ( !v43 )
             v147 = v146;
           if ( *(_Unit_ + 0x58) == 1 )
@@ -538,7 +538,7 @@ LABEL_123:
         v153 = *(Unit + 0x1EA0);
         v154 = (v153 + 0x54);
         v43 = v153 == 0;
-        v155 = &xmmword_4514A60;
+        v155 = &MATH_FLOAT_ZERO;
         if ( !v43 )
           v155 = v154;
         if ( *(Unit + 0x58) == 1 )
@@ -1167,7 +1167,7 @@ LABEL_140:
     v293 = *(v289 + 0x1EA0);
     v294 = (v293 + 0x54);
     v43 = v293 == 0;
-    v295 = &xmmword_4514A60;
+    v295 = &MATH_FLOAT_ZERO;
     if ( !v43 )
       v295 = v294;
     if ( *(v289 + 0x58) == 1 )

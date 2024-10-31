@@ -2414,7 +2414,7 @@ LABEL_363:
           v367 = 0;
         EnterCriticalSection(&stru_4B776C8);
         if ( *(*&mUnit + 0x10A8i64) <= 1u && (*(*&mUnit + 0x1058i64) & 0x7000014) == 0 )
-          sub_EE9410(v367 ^ 7u, &xmmword_4514A60);
+          sub_EE9410(v367 ^ 7u, &MATH_FLOAT_ZERO);
         LeaveCriticalSection(&stru_4B776C8);
         v109 = v1210;
       }
@@ -2800,7 +2800,7 @@ LABEL_866:
                     v1035 = *(v370 + 0x1EA0);
                     v1036 = (v1035 + 0x54);
                     v76 = v1035 == 0;
-                    v1037 = &xmmword_4514A60;
+                    v1037 = &MATH_FLOAT_ZERO;
                     if ( !v76 )
                       v1037 = v1036;
                     if ( *(v370 + 0x58) == 1 )
@@ -3043,7 +3043,7 @@ LABEL_1101:
                           if ( sub_1642DB0(
                                  v1307,
                                  &v1310,
-                                 &xmmword_4514A60,
+                                 &MATH_FLOAT_ZERO,
                                  &v1333,
                                  v1319,
                                  &v1303,
@@ -3186,7 +3186,7 @@ LABEL_1059:
                             if ( sub_1642DB0(
                                    v1307,
                                    &v1317,
-                                   &xmmword_4514A60,
+                                   &MATH_FLOAT_ZERO,
                                    &v1336,
                                    v1319,
                                    &v1303,

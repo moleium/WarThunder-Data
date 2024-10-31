@@ -1035,8 +1035,8 @@ LABEL_196:
     }
     while ( v104 < v103 );
   }
-  sub_145C170(v58, &v327, "targetToAnchorDist", &xmmword_4514A60);
-  sub_145C170(v58, &v326, "targetToAnchorMeetDist", &xmmword_4514A60);
+  sub_145C170(v58, &v327, "targetToAnchorDist", &MATH_FLOAT_ZERO);
+  sub_145C170(v58, &v326, "targetToAnchorMeetDist", &MATH_FLOAT_ZERO);
   v125 = v297;
   if ( v288 )
   {
@@ -1626,7 +1626,7 @@ LABEL_380:
     v208 = data::set_real(v273, "fightAreaRadius", &v281);
     *&v281 = v208 * v144;
     v209 = data::set_real(v273, "fightAreaOuterRadius", &v281);
-    v210 = &xmmword_4514A60;
+    v210 = &MATH_FLOAT_ZERO;
     if ( *(v190 + 0x5F8) )
     {
 LABEL_381:

@@ -684,7 +684,7 @@ LABEL_78:
   v398 = data::set_real(v5, "trackingTime", &v358);
   LOBYTE(v358) = 0;
   v56 = data::get_bool(v5, "follow_target", &v358);
-  sub_145C630(v5, &v392, "teleportOffset", &xmmword_4514A60);
+  sub_145C630(v5, &v392, "teleportOffset", &MATH_FLOAT_ZERO);
   v367 = v5;
   v356 = v56;
   if ( !v386 )
@@ -990,7 +990,7 @@ LABEL_127:
   v395 = data::set_real(v5, "recalculatePathDist", &v358);
   LOBYTE(v358) = 0;
   v373 = data::get_bool(v5, "useFormationCenter", &v358);
-  v93 = &xmmword_4514A60;
+  v93 = &MATH_FLOAT_ZERO;
   if ( v381 )
     v93 = (*v379 + 0x9C0i64);
   v94 = *v93;
@@ -1255,7 +1255,7 @@ LABEL_194:
               {
                 v178 = (v171 + 0x424);
                 if ( !v352 )
-                  v178 = &xmmword_4514A60;
+                  v178 = &MATH_FLOAT_ZERO;
                 v179 = *v178;
                 v180 = v178[2];
                 *(v171 + 0x422) = v352;
