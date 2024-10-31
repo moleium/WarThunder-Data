@@ -740,9 +740,9 @@ LABEL_543:
               v368 = *&dword_44801E8;
               v382 = 0;
               v376 = (v346 + 0xE0);
-              if ( !v347 || !qword_4B12198 )
+              if ( !v347 || !override_assertion_handler )
                 goto LABEL_102;
-              v68 = qword_4B12198(
+              v68 = override_assertion_handler(
                       0i64,
                       "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                       0x98Ci64,
@@ -814,9 +814,9 @@ LABEL_540:
   v368 = *&dword_44801E8;
   v382 = 0;
   v376 = v64 + 0x270;
-  if ( v67 && qword_4B12198 )
+  if ( v67 && override_assertion_handler )
   {
-    v68 = qword_4B12198(
+    v68 = override_assertion_handler(
             0i64,
             "..\\..\\skyquake\\prog\\mission\\actions.cpp",
             0x97Ei64,
@@ -917,11 +917,11 @@ LABEL_127:
   v408 = v85;
   if ( !v83 && !v386 )
   {
-    if ( qword_4B12198 )
+    if ( override_assertion_handler )
     {
       v58 = 0i64;
       LODWORD(v350) = 0;
-      if ( qword_4B12198(
+      if ( override_assertion_handler(
              0i64,
              "..\\..\\skyquake\\prog\\mission\\actions.cpp",
              0x991i64,
@@ -1462,7 +1462,7 @@ LABEL_376:
                 "r ask programmers to remove this check or ask game designers to fix misison.",
                 &v358,
                 3);
-              if ( qword_4B12198 )
+              if ( override_assertion_handler )
               {
                 v218 = *(Unit_ + 8);
                 v359 = 0xAC3i64;
@@ -1472,7 +1472,7 @@ LABEL_376:
                 v363 = v218;
                 v362 = 2;
                 LODWORD(v350) = 3;
-                if ( qword_4B12198(
+                if ( override_assertion_handler(
                        0i64,
                        "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                        0x162i64,
@@ -1635,9 +1635,9 @@ LABEL_427:
         v166 = 1;
         if ( !sub_117620() && !sub_117620() )
           v166 = sub_117620();
-        if ( v166 && qword_4B12198 )
+        if ( v166 && override_assertion_handler )
         {
-          v167 = qword_4B12198(
+          v167 = override_assertion_handler(
                    0i64,
                    "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                    0x9DBi64,
@@ -1686,9 +1686,9 @@ LABEL_427:
           v140 = 0i64;
           v141 = v151;
           v97 = v150;
-          if ( v192 && qword_4B12198 )
+          if ( v192 && override_assertion_handler )
           {
-            v167 = qword_4B12198(
+            v167 = override_assertion_handler(
                      0i64,
                      "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                      0x9E9i64,
@@ -1724,9 +1724,9 @@ LABEL_251:
           v140 = 0i64;
           v141 = v151;
           v97 = v150;
-          if ( v162 && qword_4B12198 )
+          if ( v162 && override_assertion_handler )
           {
-            v167 = qword_4B12198(
+            v167 = override_assertion_handler(
                      0i64,
                      "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                      0x9E4i64,
@@ -1767,10 +1767,10 @@ LABEL_251:
             v200 = sub_117620();
           if ( v200 )
           {
-            if ( qword_4B12198 )
+            if ( override_assertion_handler )
             {
               LODWORD(v350) = 0;
-              if ( qword_4B12198(
+              if ( override_assertion_handler(
                      0i64,
                      "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                      0x9F1i64,
@@ -1810,7 +1810,7 @@ LABEL_251:
               "ask programmers to remove this check or ask game designers to fix misison.",
               &v358,
               3);
-            if ( qword_4B12198 )
+            if ( override_assertion_handler )
             {
               v204 = *(_Unit + 8);
               v359 = 0x9F5i64;
@@ -1820,7 +1820,7 @@ LABEL_251:
               v363 = v204;
               v362 = 2;
               LODWORD(v350) = 3;
-              if ( qword_4B12198(
+              if ( override_assertion_handler(
                      0i64,
                      "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                      0x162i64,
@@ -1943,7 +1943,7 @@ LABEL_251:
                                 &v358,
                                 3);
                               v280 = v407;
-                              if ( qword_4B12198 )
+                              if ( override_assertion_handler )
                               {
                                 v283 = *(_Unit_ + 8);
                                 v359 = 0xA0Fi64;
@@ -1953,7 +1953,7 @@ LABEL_251:
                                 v363 = v283;
                                 v362 = 2;
                                 LODWORD(v350) = 3;
-                                v284 = qword_4B12198(
+                                v284 = override_assertion_handler(
                                          0i64,
                                          "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                                          0x162i64,
@@ -2023,10 +2023,10 @@ LABEL_383:
                             v258 = sub_117620();
                           if ( v258 )
                           {
-                            if ( qword_4B12198 )
+                            if ( override_assertion_handler )
                             {
                               LODWORD(v350) = 0;
-                              if ( qword_4B12198(
+                              if ( override_assertion_handler(
                                      0i64,
                                      "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                                      0xA22i64,
@@ -2108,10 +2108,10 @@ LABEL_457:
       v304 = *&v303;
       if ( sub_117620() )
       {
-        if ( qword_4B12198 )
+        if ( override_assertion_handler )
         {
           LODWORD(v350) = 0;
-          if ( qword_4B12198(
+          if ( override_assertion_handler(
                  0i64,
                  "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                  0xA3Ai64,
@@ -2155,9 +2155,9 @@ LABEL_457:
             if ( v353 )
               v309 = *(Unit_ + 0x9C4) - *&v308;
             v310 = v309 + v304;
-            if ( sub_117620() && qword_4B12198 )
+            if ( sub_117620() && override_assertion_handler )
             {
-              v311 = qword_4B12198(
+              v311 = override_assertion_handler(
                        0i64,
                        "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                        0xA41i64,
@@ -2176,9 +2176,9 @@ LABEL_486:
             v310 = *(Unit_ + 0x9C4);
           else
             v310 = v149 + v390;
-          if ( !sub_117620() || !qword_4B12198 )
+          if ( !sub_117620() || !override_assertion_handler )
             goto LABEL_486;
-          v311 = qword_4B12198(
+          v311 = override_assertion_handler(
                    0i64,
                    "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                    0xA4Bi64,
@@ -2193,9 +2193,9 @@ LABEL_486:
           v310 = v390;
           if ( v353 )
             v310 = *(Unit_ + 0x9C4);
-          if ( !sub_117620() || !qword_4B12198 )
+          if ( !sub_117620() || !override_assertion_handler )
             goto LABEL_486;
-          v311 = qword_4B12198(
+          v311 = override_assertion_handler(
                    0i64,
                    "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                    0xA46i64,

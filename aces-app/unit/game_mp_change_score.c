@@ -218,8 +218,8 @@ LABEL_40:
     else
     {
 LABEL_69:
-      if ( qword_4B12198
-        && qword_4B12198(
+      if ( override_assertion_handler
+        && override_assertion_handler(
              0i64,
              "..\\..\\skyquake\\prog\\mission\\actions.cpp",
              0x1515i64,
@@ -247,10 +247,10 @@ LABEL_69:
     else
     {
 LABEL_76:
-      if ( qword_4B12198 )
+      if ( override_assertion_handler )
       {
         LODWORD(v97) = 0;
-        if ( qword_4B12198(
+        if ( override_assertion_handler(
                0i64,
                "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                0x1516i64,

@@ -4663,7 +4663,7 @@ LABEL_1489:
   v1079 = 0i64;
   if ( *(a1 + 0x190) )
     v1079 = sub_72C570;
-  qword_4B12198 = v1079;
+  override_assertion_handler = v1079;
   sub_1458EA0(a1 + 0x590);
   set_mission_blk(a1, a1 + 0x590);
   v1080 = a1 + 0x5B0;

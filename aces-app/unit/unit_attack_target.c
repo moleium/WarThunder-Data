@@ -1475,7 +1475,7 @@ LABEL_335:
         "ogrammers to remove this check or ask game designers to fix misison.",
         &v281,
         3);
-      if ( qword_4B12198 )
+      if ( override_assertion_handler )
       {
         v187 = *(Unit_ + 8);
         *v282 = 0x82Ci64;
@@ -1485,7 +1485,7 @@ LABEL_335:
         v286 = v187;
         v285 = 2;
         LODWORD(v271) = 3;
-        if ( qword_4B12198(
+        if ( override_assertion_handler(
                0i64,
                "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                0x162i64,

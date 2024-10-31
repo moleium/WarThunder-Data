@@ -32,11 +32,11 @@ char __fastcall mission_mark_as_respawn_point(__int64 a1, __int64 *a2)
   v6 = data::get_str(v2, "respawnAirBackup", Str2);
   if ( v3 && v4 )
   {
-    if ( qword_4B12198 )
+    if ( override_assertion_handler )
     {
       *&Str2[8] = &missionMarkAsReSpawnPoint;
       *Str2 = 1;
-      if ( qword_4B12198(
+      if ( override_assertion_handler(
              0i64,
              "..\\..\\skyquake\\prog\\mission\\actions.cpp",
              0x1149i64,
@@ -284,11 +284,11 @@ LABEL_66:
   {
     if ( (v559 | v557) == 1 )
     {
-      if ( qword_4B12198 )
+      if ( override_assertion_handler )
       {
         *&Str2[8] = &missionMarkAsReSpawnPoint;
         *Str2 = 1;
-        if ( qword_4B12198(
+        if ( override_assertion_handler(
                0i64,
                "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                0x11DDi64,
@@ -437,11 +437,11 @@ LABEL_926:
         }
         if ( !v535 )
         {
-          if ( qword_4B12198 )
+          if ( override_assertion_handler )
           {
             *&Str2[8] = &missionMarkAsReSpawnPoint;
             *Str2 = 1;
-            if ( qword_4B12198(
+            if ( override_assertion_handler(
                    0i64,
                    "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                    0x11E9i64,
@@ -471,11 +471,11 @@ LABEL_926:
     }
 LABEL_839:
     v486 = 0.0;
-    if ( qword_4B12198 )
+    if ( override_assertion_handler )
     {
       *&Str2[8] = &missionMarkAsReSpawnPoint;
       *Str2 = 1;
-      if ( qword_4B12198(
+      if ( override_assertion_handler(
              0i64,
              "..\\..\\skyquake\\prog\\mission\\actions.cpp",
              0x11EDi64,
@@ -497,11 +497,11 @@ LABEL_843:
       {
         v490 = 0;
       }
-      else if ( qword_4B12198 )
+      else if ( override_assertion_handler )
       {
         *&Str2[8] = v489;
         *Str2 = 1;
-        if ( qword_4B12198(
+        if ( override_assertion_handler(
                0i64,
                "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                0x11F6i64,
@@ -549,13 +549,13 @@ LABEL_843:
     {
 LABEL_868:
       v173 = 1;
-      if ( qword_4B12198 )
+      if ( override_assertion_handler )
       {
         *&Str2[8] = &missionMarkAsReSpawnPoint;
         *Str2 = 1;
         *(&v593 + 1) = v350;
         LODWORD(v593) = 1;
-        if ( qword_4B12198(
+        if ( override_assertion_handler(
                0i64,
                "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                0x11FCi64,
@@ -964,11 +964,11 @@ LABEL_353:
         *(&v593 + 1) = v572;
         LODWORD(v593) = 1;
         logmessage_fmt(0x47495254u, "%s can't find any units for unit zone %s (isUnit == true)", Str2, 2);
-        if ( !qword_4B12198 )
+        if ( !override_assertion_handler )
           goto LABEL_659;
         *&Str2[8] = &missionMarkAsReSpawnPoint;
         *Str2 = 1;
-        v144 = qword_4B12198(
+        v144 = override_assertion_handler(
                  0i64,
                  "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                  0x11AAi64,
@@ -1012,11 +1012,11 @@ LABEL_301:
             *&Str2[8] = &missionMarkAsReSpawnPoint;
             *Str2 = 1;
             logmessage_fmt(0x47495254u, "%s can't find backup zone for unit zone (isUnit = true)", Str2, 1);
-            if ( !qword_4B12198 )
+            if ( !override_assertion_handler )
               goto LABEL_659;
             *&Str2[8] = &missionMarkAsReSpawnPoint;
             *Str2 = 1;
-            v144 = qword_4B12198(
+            v144 = override_assertion_handler(
                      0i64,
                      "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                      0x11C2i64,
@@ -1289,11 +1289,11 @@ LABEL_241:
         *&Str2[8] = &missionMarkAsReSpawnPoint;
         *Str2 = 1;
         logmessage_fmt(0x47495254u, "%s can't find any areas for respawn with areas", Str2, 1);
-        if ( !qword_4B12198 )
+        if ( !override_assertion_handler )
           goto LABEL_659;
         *&Str2[8] = &missionMarkAsReSpawnPoint;
         *Str2 = 1;
-        v144 = qword_4B12198(
+        v144 = override_assertion_handler(
                  0i64,
                  "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                  0x11D6i64,
@@ -1560,11 +1560,11 @@ LABEL_100:
 LABEL_166:
   if ( !v591 )
   {
-    if ( qword_4B12198 )
+    if ( override_assertion_handler )
     {
       *&Str2[8] = &missionMarkAsReSpawnPoint;
       *Str2 = 1;
-      if ( qword_4B12198(
+      if ( override_assertion_handler(
              0i64,
              "..\\..\\skyquake\\prog\\mission\\actions.cpp",
              0x1199i64,
@@ -2294,7 +2294,7 @@ LABEL_708:
     }
   }
 LABEL_426:
-  if ( !qword_4B12198 )
+  if ( !override_assertion_handler )
   {
 LABEL_429:
     v192 = 0;
@@ -2306,7 +2306,7 @@ LABEL_429:
   LODWORD(v593) = 1;
   LODWORD(v556) = 2;
   v192 = 0;
-  if ( qword_4B12198(
+  if ( override_assertion_handler(
          0i64,
          "..\\..\\skyquake\\prog\\mission\\actions.cpp",
          0x1135i64,
@@ -2329,10 +2329,10 @@ LABEL_431:
   *(v258 + 0x52) |= (v557 + 4 * v559) | (v566 << 0xA) | (v562 << 8) | (v558 << 0xB) | v183;
   if ( *(v258 + 0x50) >= 3u )
   {
-    if ( qword_4B12198 )
+    if ( override_assertion_handler )
     {
       LODWORD(v556) = 0;
-      if ( qword_4B12198(
+      if ( override_assertion_handler(
              0i64,
              "..\\..\\skyquake\\prog\\mission\\actions.cpp",
              0x124Ai64,
@@ -3079,11 +3079,11 @@ LABEL_890:
         v578 = "initSpawnDirection";
         LODWORD(v577) = 1;
         logmessage_fmt(0x47495254u, "%s can't find spawnArrangeTo direction for unit zone (isUnit = true)", &v577, 1);
-        if ( qword_4B12198 )
+        if ( override_assertion_handler )
         {
           v578 = "initSpawnDirection";
           LODWORD(v577) = 1;
-          if ( qword_4B12198(
+          if ( override_assertion_handler(
                  0i64,
                  "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                  0x35Di64,
@@ -3159,10 +3159,10 @@ LABEL_800:
 LABEL_801:
   if ( !*(v258 + 0x70) )
   {
-    if ( qword_4B12198 )
+    if ( override_assertion_handler )
     {
       LODWORD(v556) = 0;
-      if ( qword_4B12198(
+      if ( override_assertion_handler(
              0i64,
              "..\\..\\skyquake\\prog\\mission\\actions.cpp",
              0x1281i64,
@@ -3183,10 +3183,10 @@ LABEL_801:
     {
       if ( *(v258 + 0x88) != 1 )
       {
-        if ( qword_4B12198 )
+        if ( override_assertion_handler )
         {
           LODWORD(v556) = 0;
-          if ( qword_4B12198(
+          if ( override_assertion_handler(
                  0i64,
                  "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                  0x1286i64,

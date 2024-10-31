@@ -31,11 +31,11 @@ LABEL_9:
   if ( !*(v9 + 4) )
   {
 LABEL_17:
-    if ( qword_4B12198 )
+    if ( override_assertion_handler )
     {
       *(&v46[0] + 1) = v5;
       LODWORD(v46[0]) = 1;
-      if ( qword_4B12198(
+      if ( override_assertion_handler(
              0i64,
              "..\\..\\skyquake\\prog\\mission\\actions.cpp",
              0x1BC6i64,
@@ -158,10 +158,10 @@ LABEL_34:
         }
         else if ( !HIBYTE(v50) )
         {
-          if ( qword_4B12198 )
+          if ( override_assertion_handler )
           {
             LODWORD(v40) = 0;
-            if ( qword_4B12198(
+            if ( override_assertion_handler(
                    0i64,
                    "..\\..\\skyquake\\prog\\mission\\actions.cpp",
                    0x1BD9i64,

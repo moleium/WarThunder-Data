@@ -78,11 +78,11 @@ LABEL_16:
             {
               if ( *(game + 0x360) >= 0x5DDu )
               {
-                if ( qword_4B12198 )
+                if ( override_assertion_handler )
                 {
                   out_of_order_unit = 0x5DCi64;
                   v32 = 2;
-                  if ( qword_4B12198(
+                  if ( override_assertion_handler(
                          0i64,
                          "..\\..\\skyquake\\prog\\main\\app.cpp",
                          0x1045i64,
