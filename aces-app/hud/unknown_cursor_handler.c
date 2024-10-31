@@ -1,7 +1,5 @@
 __int64 __fastcall unknown_cursor_handler(__int64 cursor_visuals, float *a2, float a3)
 {
-  // [COLLAPSED LOCAL DECLARATIONS. PRESS KEYPAD CTRL-"+" TO EXPAND]
-
   result = *&mUnit;
   if ( !*&mUnit )
     return result;

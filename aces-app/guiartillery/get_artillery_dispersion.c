@@ -1,7 +1,5 @@
 void __fastcall get_artillery_dispersion(float a1, float a2)
 {
-  // [COLLAPSED LOCAL DECLARATIONS. PRESS KEYPAD CTRL-"+" TO EXPAND]
-
   LocalUnit_ = LocalUnit;
   if ( LocalUnit )
   {

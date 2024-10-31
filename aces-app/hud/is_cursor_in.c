@@ -5,63 +5,6 @@ float __fastcall is_cursor_in(
         __int64 a4,
         __int64 a5)
 {
-  float result; // xmm0_4
-  __int64 game_1; // rcx
-  __int64 v10; // rax
-  unsigned int v11; // edx
-  int v12; // ebp
-  __int64 v13; // rax
-  __int64 v14; // rax
-  int v15; // ecx
-  int v16; // edx
-  __int64 UnitWeaponsInfo; // r9
-  __int64 v18; // r11
-  __int64 weapon_array; // r10
-  float v20; // xmm3_4
-  float v21; // xmm13_4
-  float v22; // xmm14_4
-  __int64 ballistics_A68_600_3E24; // r8
-  __int64 idx; // rdi
-  __m128i si128; // xmm5
-  __int64 curr_weapon_info; // rdx
-  __int64 v27; // rax
-  __int64 v28; // rcx
-  bool v29; // si
-  __m128i v30; // xmm7
-  __int64 curr_shell; // rbx
-  __m128i v32; // xmm2
-  __m128i v33; // xmm0
-  __m128i v34; // xmm0
-  __m128i v35; // xmm1
-  __m128i v36; // xmm1
-  __int64 v37; // rax
-  _DWORD *v38; // rcx
-  __int64 v39; // rax
-  unsigned int ballistics_; // edx
-  int v41; // ebp
-  unsigned __int16 v43; // ax
-  int v44; // ecx
-  __int64 ballistics; // rax
-  __int64 cursor_visuals_; // rax
-  float v47; // xmm6_4
-  __int64 game_; // rax
-  char *v49; // rcx
-  float *v50; // rcx
-  float v51; // xmm3_4
-  unsigned __int16 v52; // ax
-  int v53; // ecx
-  __int64 cursor_visuals; // rax
-  unsigned __int64 aim_crosshairX; // [rsp+30h] [rbp-108h] BYREF
-  float cursor_posY; // [rsp+38h] [rbp-100h]
-  float v57; // [rsp+40h] [rbp-F8h] BYREF
-  float v58; // [rsp+44h] [rbp-F4h]
-  float v59; // [rsp+48h] [rbp-F0h]
-  float v60; // [rsp+4Ch] [rbp-ECh]
-  float v61; // [rsp+50h] [rbp-E8h] BYREF
-  float v62; // [rsp+54h] [rbp-E4h]
-  int v63[2]; // [rsp+60h] [rbp-D8h] BYREF
-  __int64 v64; // [rsp+68h] [rbp-D0h] BYREF
-
   if ( a4 > 0x30 )
     return result;
   sub_B37800(ballistics_A68, &v57, a2, a4, 0, a5);

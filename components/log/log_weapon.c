@@ -1,44 +1,5 @@
 _QWORD *__fastcall log_weapon(__int64 a1, _QWORD *a2, char a3, unsigned int a4)
 {
-  __int64 game_; // rbx
-  __int64 v8; // rdi
-  struct _RTL_CRITICAL_SECTION *v9; // rsi
-  __int64 currUnit; // rbx
-  __int64 v11; // rax
-  __int64 v12; // rcx
-  __int64 v13; // rdx
-  __int64 v15; // rdx
-  __int64 v16; // r8
-  __int64 v17; // r9
-  __int64 v18; // rdi
-  const char *v19; // r12
-  __int64 v20; // rax
-  __int64 v21; // rbx
-  __int64 v22; // rsi
-  int v23; // ebp
-  __int64 v24; // rcx
-  _QWORD *ThreadLocalStoragePointer; // rcx
-  __int64 v26; // rax
-  __int64 v27; // rcx
-  __int64 v28; // r8
-  unsigned int v29; // ebp
-  char v30; // cl
-  unsigned int v31; // edx
-  char *v32; // rbx
-  char *v33; // rdi
-  __int64 *v34; // rsi
-  __int64 v35; // rcx
-  _QWORD *v36; // rax
-  CHAR *v37; // rdx
-  CHAR *v38; // rax
-  __int64 v39; // r9
-  int v40; // [rsp+30h] [rbp-68h] BYREF
-  CHAR *v41; // [rsp+38h] [rbp-60h]
-  int v42; // [rsp+40h] [rbp-58h]
-  __int64 v43; // [rsp+48h] [rbp-50h]
-  int v44; // [rsp+50h] [rbp-48h]
-  const char *v45; // [rsp+58h] [rbp-40h]
-
   if ( !a3 )
     goto LABEL_19;
   game_ = game;

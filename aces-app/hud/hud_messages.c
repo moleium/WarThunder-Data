@@ -1,53 +1,5 @@
 __int64 __fastcall hud_messages(__int64 a1, char a2, __int64 a3, __int64 a4)
 {
-  __int64 v6; // r9
-  __int64 v7; // rdx
-  __int64 v8; // r8
-  __int64 v9; // r9
-  __int64 Unit; // rsi
-  int UnitType; // eax
-  const char *type_name; // r13
-  const char *v13; // r12
-  _QWORD *ThreadLocalStoragePointer; // rcx
-  char *v15; // rcx
-  __int64 v16; // r8
-  __int64 v17; // r9
-  __int64 v18; // rax
-  int v19; // r15d
-  __int64 v20; // rbp
-  __int64 v21; // rax
-  int v22; // esi
-  __int64 v23; // rdi
-  _QWORD *v24; // rbx
-  int v25; // r8d
-  _QWORD *v26; // rax
-  const char *v27; // rdi
-  const char *v28; // rbp
-  void *v29; // rdi
-  const char *v30; // r15
-  int v31; // eax
-  unsigned int v32; // r12d
-  void *v33; // rcx
-  __int64 v34; // rsi
-  int v35; // eax
-  unsigned int v36; // ebp
-  void *v37; // rcx
-  __int64 v38; // rsi
-  int v39; // eax
-  unsigned int v40; // ebp
-  void *v41; // rcx
-  __int64 v42; // rsi
-  int v43; // eax
-  unsigned int v44; // ebp
-  void *v45; // rcx
-  __int64 v46; // rsi
-  __int64 result; // rax
-  int v48; // [rsp+3Ch] [rbp-6Ch]
-  const char *Src; // [rsp+40h] [rbp-68h]
-  __int64 Unit_; // [rsp+48h] [rbp-60h]
-  int v51; // [rsp+50h] [rbp-58h] BYREF
-  __int64 v52; // [rsp+58h] [rbp-50h]
-
   if ( qword_4B44C68 )
     sub_FE4450(qword_4B44C68);
   fire_event(a1 + 0x5A8, "HudMessageHide", &qword_4B67850, a4);

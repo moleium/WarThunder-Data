@@ -1,7 +1,5 @@
 __int64 __fastcall unitinfo_builder(__int64 _UnitInfo_, char *a2, __int64 a3)
 {
-  // [COLLAPSED LOCAL DECLARATIONS. PRESS KEYPAD CTRL-"+" TO EXPAND]
-
   UnitInfo_4 = _UnitInfo_;
   sub_34ED10(_UnitInfo_, a2, a3);
   LOBYTE(v363) = 0;

@@ -1,7 +1,5 @@
 __int64 __fastcall scout_unit(__int64 a1, __int64 DetectorUnit, __int64 _Unit_)
 {
-  // [COLLAPSED LOCAL DECLARATIONS. PRESS KEYPAD CTRL-"+" TO EXPAND]
-
   Unit_ = DetectorUnit;
   if ( !*(a1 + 0x18) )
   {
