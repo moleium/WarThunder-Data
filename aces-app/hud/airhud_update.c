@@ -770,7 +770,7 @@ LABEL_217:
     {
       *(gui_script_strings + 0xB26) = 3;
       *(v151 + 0xB24) = v152;
-      sub_B82CC0(v151 + 0x2C68, v149, v56, v57);
+      gui_call_interop_(v151 + 0x2C68, v149, v56, v57);
       v151 = gui_script_strings;
     }
     v153 = DWORD1(v981);
@@ -778,14 +778,14 @@ LABEL_217:
     {
       *(v151 + 0xB34) = 3;
       *(v151 + 0xB32) = v153;
-      sub_B82CC0(v151 + 0x2CA0, v149, v56, v57);
+      gui_call_interop_(v151 + 0x2CA0, v149, v56, v57);
       v151 = gui_script_strings;
     }
     if ( *(v151 + 0xB5E) != 3 || v151[0xB5C] != v116 )
     {
       *(v151 + 0xB5E) = 3;
       v151[0xB5C] = v116;
-      sub_B82CC0(v151 + 0x2D48, v149, v56, v57);
+      gui_call_interop_(v151 + 0x2D48, v149, v56, v57);
       v151 = gui_script_strings;
     }
     v154 = *(game + 0x498);
@@ -794,7 +794,7 @@ LABEL_217:
     {
       *(v151 + 0xBDC) = 3;
       v151[0xBDA] = v155;
-      sub_B82CC0(v151 + 0x2F40, v154, v56, v57);
+      gui_call_interop_(v151 + 0x2F40, v154, v56, v57);
       v151 = gui_script_strings;
       v154 = *(game + 0x498);
     }
@@ -803,7 +803,7 @@ LABEL_217:
     {
       *(v151 + 0xC14) = 3;
       v151[0xC12] = v156;
-      sub_B82CC0(v151 + 0x3020, v154, v56, v57);
+      gui_call_interop_(v151 + 0x3020, v154, v56, v57);
       v151 = gui_script_strings;
       v154 = *(game + 0x498);
     }
@@ -812,7 +812,7 @@ LABEL_217:
     {
       *(v151 + 0xC4C) = 3;
       v151[0xC4A] = v157;
-      sub_B82CC0(v151 + 0x3100, v154, v56, v57);
+      gui_call_interop_(v151 + 0x3100, v154, v56, v57);
       v151 = gui_script_strings;
       v154 = *(game + 0x498);
     }
@@ -821,7 +821,7 @@ LABEL_217:
     {
       *(v151 + 0xC84) = 3;
       v151[0xC82] = v158;
-      sub_B82CC0(v151 + 0x31E0, v154, v56, v57);
+      gui_call_interop_(v151 + 0x31E0, v154, v56, v57);
     }
   }
   v33 = v114;
@@ -857,7 +857,7 @@ LABEL_252:
         {
           *(gui_script_strings + 0x1D32) = 3;
           *(v165 + 0x1D30) = v166;
-          sub_B82CC0(v165 + 0x7498, v161, v162, v163);
+          gui_call_interop_(v165 + 0x7498, v161, v162, v163);
           v165 = gui_script_strings;
         }
         v167 = *(&v974 + 1);
@@ -866,7 +866,7 @@ LABEL_292:
         {
           *(v165 + 0x1D40) = 3;
           v165[0x1D3E] = v167;
-          sub_B82CC0(v165 + 0x74D0, v161, v162, v163);
+          gui_call_interop_(v165 + 0x74D0, v161, v162, v163);
         }
         goto LABEL_295;
       }
@@ -944,7 +944,7 @@ LABEL_280:
     {
       *(gui_script_strings + 0x1D32) = 3;
       *(v165 + 0x1D30) = v176;
-      sub_B82CC0(v165 + 0x7498, v161, v162, v163);
+      gui_call_interop_(v165 + 0x7498, v161, v162, v163);
       v165 = gui_script_strings;
     }
     v167 = *(&v981 + 1);
@@ -1269,7 +1269,7 @@ LABEL_973:
     {
       *(gui_script_strings + 0xE8A) = 3;
       v769[0xE88] = v768;
-      sub_B82CC0(v769 + 0x39F8, v764, v765, v766);
+      gui_call_interop_(v769 + 0x39F8, v764, v765, v766);
       v769 = gui_script_strings;
       v767 = *(v78 + 0x1D);
     }
@@ -1279,7 +1279,7 @@ LABEL_973:
     {
       *(v769 + 0xE98) = 3;
       v769[0xE96] = v767;
-      sub_B82CC0(v769 + 0x3A30, v764, v765, v766);
+      gui_call_interop_(v769 + 0x3A30, v764, v765, v766);
       v769 = gui_script_strings;
     }
     v33 = v759;
@@ -1293,7 +1293,7 @@ LABEL_973:
     {
       *(v769 + 0xC68) = 3;
       v769[0xC66] = v771;
-      sub_B82CC0(v769 + 0x3170, v770, v765, v766);
+      gui_call_interop_(v769 + 0x3170, v770, v765, v766);
       v769 = gui_script_strings;
       v770 = *(game + 0x498);
     }
@@ -1303,7 +1303,7 @@ LABEL_973:
     {
       *(v769 + 0xBEA) = 3;
       v769[0xBE8] = v6.m128_f32[0];
-      sub_B82CC0(v769 + 0x2F78, v770, v765, v766);
+      gui_call_interop_(v769 + 0x2F78, v770, v765, v766);
     }
     v772 = sub_3E49A0(mUnit__);
     if ( v772 )
@@ -1365,7 +1365,7 @@ LABEL_308:
     {
       *(gui_script_strings + 0x94A) = 3;
       v193[0x948] = v192;
-      sub_B82CC0(v193 + 0x24F8, v189, v190, v191);
+      gui_call_interop_(v193 + 0x24F8, v189, v190, v191);
     }
   }
   v194 = v991;
@@ -1558,7 +1558,7 @@ LABEL_358:
     {
       *(gui_script_strings + 0x912) = 3;
       *(v262 + 0x910) = v263;
-      sub_B82CC0(v262 + 0x2418, v182, v177, v178);
+      gui_call_interop_(v262 + 0x2418, v182, v177, v178);
       v262 = gui_script_strings;
     }
     v264 = HIDWORD(v974);
@@ -1566,7 +1566,7 @@ LABEL_358:
     {
       *(v262 + 0x920) = 3;
       *(v262 + 0x91E) = v264;
-      sub_B82CC0(v262 + 0x2450, v182, v177, v178);
+      gui_call_interop_(v262 + 0x2450, v182, v177, v178);
       v262 = gui_script_strings;
     }
     v182 = *(game + 0x498);
@@ -1575,7 +1575,7 @@ LABEL_358:
     {
       *(v262 + 0xBCE) = 3;
       v262[0xBCC] = v265;
-      sub_B82CC0(v262 + 0x2F08, v182, v177, v178);
+      gui_call_interop_(v262 + 0x2F08, v182, v177, v178);
       v262 = gui_script_strings;
       v182 = *(game + 0x498);
     }
@@ -1584,7 +1584,7 @@ LABEL_358:
     {
       *(v262 + 0xC06) = 3;
       v262[0xC04] = v266;
-      sub_B82CC0(v262 + 0x2FE8, v182, v177, v178);
+      gui_call_interop_(v262 + 0x2FE8, v182, v177, v178);
       v262 = gui_script_strings;
       v182 = *(game + 0x498);
     }
@@ -1593,7 +1593,7 @@ LABEL_358:
     {
       *(v262 + 0xC3E) = 3;
       v262[0xC3C] = v267;
-      sub_B82CC0(v262 + 0x30C8, v182, v177, v178);
+      gui_call_interop_(v262 + 0x30C8, v182, v177, v178);
       v262 = gui_script_strings;
       v182 = *(game + 0x498);
     }
@@ -1603,7 +1603,7 @@ LABEL_358:
     {
       *(v262 + 0xC76) = 3;
       v262[0xC74] = v6.m128_f32[0];
-      sub_B82CC0(v262 + 0x31A8, v182, v177, v178);
+      gui_call_interop_(v262 + 0x31A8, v182, v177, v178);
 LABEL_390:
       v185 = v991;
     }
@@ -2750,7 +2750,7 @@ LABEL_493:
   {
     *(v576 + 0xB96) = 3;
     *(v576 + 0xB94) = v579;
-    sub_B82CC0(v576 + 0x2E28, v573, v574, v575);
+    gui_call_interop_(v576 + 0x2E28, v573, v574, v575);
     v576 = gui_script_strings;
   }
   v580 = HIDWORD(v987);
@@ -2758,7 +2758,7 @@ LABEL_493:
   {
     *(v576 + 0xBA4) = 3;
     *(v576 + 0xBA2) = v580;
-    sub_B82CC0(v576 + 0x2E60, v573, v574, v575);
+    gui_call_interop_(v576 + 0x2E60, v573, v574, v575);
     v576 = gui_script_strings;
   }
   v581 = *(game + 0x498);
@@ -2767,7 +2767,7 @@ LABEL_493:
   {
     *(v576 + 0xBB2) = 3;
     *(v576 + 0xBB0) = v582;
-    sub_B82CC0(v576 + 0x2E98, v581, v574, v575);
+    gui_call_interop_(v576 + 0x2E98, v581, v574, v575);
     v576 = gui_script_strings;
   }
   v583 = qword_4480160 - v578;
@@ -2784,7 +2784,7 @@ LABEL_493:
   {
     *(v576 + 0xC30) = 3;
     *(v576 + 0xC2E) = v585;
-    sub_B82CC0(v576 + 0x3090, v584, v574, v575);
+    gui_call_interop_(v576 + 0x3090, v584, v574, v575);
     v576 = gui_script_strings;
     v584 = *(game + 0x498);
   }
@@ -2793,7 +2793,7 @@ LABEL_493:
   {
     *(v576 + 0xC5A) = 3;
     *(v576 + 0xC58) = v586;
-    sub_B82CC0(v576 + 0x3138, v584, v574, v575);
+    gui_call_interop_(v576 + 0x3138, v584, v574, v575);
     v576 = gui_script_strings;
     v584 = *(game + 0x498);
   }
@@ -2802,7 +2802,7 @@ LABEL_493:
   {
     *(v576 + 0xC92) = 3;
     *(v576 + 0xC90) = v6.m128_i32[0];
-    sub_B82CC0(v576 + 0x3218, v584, v574, v575);
+    gui_call_interop_(v576 + 0x3218, v584, v574, v575);
   }
   *v6.m128_u64 = sub_B8BF80(&v974);
 LABEL_696:
@@ -3003,7 +3003,7 @@ LABEL_765:
       {
         *(v624 + 0x1D16) = 3;
         *(v624 + 0x1D14) = v626;
-        sub_B82CC0(v624 + 0x7428, v625, v177, v178);
+        gui_call_interop_(v624 + 0x7428, v625, v177, v178);
         v624 = gui_script_strings;
       }
       v627 = *(v77 + 0x10);
@@ -3011,7 +3011,7 @@ LABEL_765:
       {
         *(v624 + 0x1D24) = 3;
         *(v624 + 0x1D22) = v627;
-        sub_B82CC0(v624 + 0x7460, v625, v177, v178);
+        gui_call_interop_(v624 + 0x7460, v625, v177, v178);
         v624 = gui_script_strings;
       }
       air_movement_2 = air_movement_;
@@ -3073,7 +3073,7 @@ LABEL_765:
       {
         *(gui_script_strings + 0x840) = 3;
         *(v640 + 0x83E) = v644;
-        sub_B82CC0(v640 + 0x20D0, v636, v637, v638);
+        gui_call_interop_(v640 + 0x20D0, v636, v637, v638);
         v640 = gui_script_strings;
       }
       if ( *(v640 + 0x8F6) != 5 || v640[0x23D0] != v639 )
@@ -3130,7 +3130,7 @@ LABEL_812:
       {
         *(v654 + 0x85C) = 3;
         v654[0x85A] = v656;
-        sub_B82CC0(v654 + 0x2140, v651, v652, v653);
+        gui_call_interop_(v654 + 0x2140, v651, v652, v653);
         v654 = gui_script_strings;
       }
       v657 = v979;
@@ -3183,7 +3183,7 @@ LABEL_812:
       {
         *(v662 + 0xB0A) = 3;
         v662[0xB08] = v663;
-        sub_B82CC0(v662 + 0x2BF8, v661, v652, v653);
+        gui_call_interop_(v662 + 0x2BF8, v661, v652, v653);
         v662 = gui_script_strings;
       }
       v664 = 0i64;
@@ -4219,7 +4219,7 @@ LABEL_1116:
       {
         *(v914 + 0xBF8) = 3;
         v914[0xBF6] = v923;
-        sub_B82CC0(v914 + 0x2FB0, v922, v878, v879);
+        gui_call_interop_(v914 + 0x2FB0, v922, v878, v879);
         v914 = gui_script_strings;
         v922 = *(game + 0x498);
       }
@@ -4228,7 +4228,7 @@ LABEL_1116:
       {
         *(v914 + 0xC22) = 3;
         v914[0xC20] = v924;
-        sub_B82CC0(v914 + 0x3058, v922, v878, v879);
+        gui_call_interop_(v914 + 0x3058, v922, v878, v879);
         v914 = gui_script_strings;
         v922 = *(game + 0x498);
       }
@@ -4237,7 +4237,7 @@ LABEL_1116:
       {
         *(v914 + 0xCA0) = 3;
         v914[0xC9E] = v925;
-        sub_B82CC0(v914 + 0x3250, v922, v878, v879);
+        gui_call_interop_(v914 + 0x3250, v922, v878, v879);
       }
       v926 = byte_4B19A94;
       if ( byte_4B19A94 )
@@ -4361,7 +4361,7 @@ LABEL_1229:
       {
         *(gui_script_strings + 0xED0) = 3;
         v944[0xECE] = v943;
-        sub_B82CC0(v944 + 0x3B10, v942, v177, v178);
+        gui_call_interop_(v944 + 0x3B10, v942, v177, v178);
       }
       v945 = *(mUnit__ + 0x11D0);
       v946 = *(v945 + 0x300);
@@ -4422,7 +4422,7 @@ LABEL_1256:
                 if ( v6.m128_f32[0] < *(cur_hud_crosshair + 0x670) )
                   v6.m128_u64[0] = *(v952 + 0x107);
               }
-              sub_B82CC0(v951 + 0x45C8, v955, v177, v178);
+              gui_call_interop_(v951 + 0x45C8, v955, v177, v178);
               v951 = gui_script_strings;
               goto LABEL_1260;
             }
