@@ -44,8 +44,8 @@ __m128 getArtilleryRange()
     v7 = *(HudInfo + 0xCE);
   }
   lastScreenSize_ = *&lastScreenSize;
-  *v10 = *&dword_44801CC * *&lastScreenSize;
-  *&v10[1] = *(&lastScreenSize + 1) * *&dword_44801CC;
+  *v10 = *&screenScaleFactor * *&lastScreenSize;
+  *&v10[1] = *(&lastScreenSize + 1) * *&screenScaleFactor;
   convWorldSize(curTacticalMap, v10, &v11, v12);
   *&v7 = (*&v7 * lastScreenSize_) / (*&lastScreenSize * v11);
   return v7;

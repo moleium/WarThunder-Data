@@ -851,7 +851,7 @@ LABEL_61:
                v336,
                &v331,
                1,
-               ((v158 * *&dword_44A9474) + *&dword_44801CC),
+               ((v158 * *&dword_44A9474) + *&screenScaleFactor),
                0i64,
                0x45610000,
                0,
@@ -965,7 +965,7 @@ LABEL_61:
         v283 = *(a2 + 0xC8);
         v283.m128d_f64[0] = *v283.m128d_f64 / v282;
         *v283.m128d_f64 = _mm_round_sd(v283, v283, 9).m128d_f64[0] * v282;
-        (*(**(Unit + 0x9D8) + 0x110i64))(*(Unit + 0x9D8), ((*v283.m128d_f64 / v282) + *&dword_44801CC));
+        (*(**(Unit + 0x9D8) + 0x110i64))(*(Unit + 0x9D8), ((*v283.m128d_f64 / v282) + *&screenScaleFactor));
         (*(**(Unit + 0x9D8) + 0x118i64))(*(Unit + 0x9D8));
         if ( v161 )
         {
@@ -1117,7 +1117,7 @@ LABEL_61:
             *(Unit + 0x250) = *v333.m256_f32;
             *(Unit + 0x258) = v333.m256_f32[2];
             sub_34E580(Unit, &v333, Unit + 0x244);
-            *(Unit + 0x26C) = fminf(fmaxf(*&dword_44801CC, v261), *&dword_4487F04);
+            *(Unit + 0x26C) = fminf(fmaxf(*&screenScaleFactor, v261), *&dword_4487F04);
             *(Unit + 0x28E) = v35;
             v309 = v331;
             *(Unit + 0x290) = v331;
@@ -1341,7 +1341,7 @@ LABEL_543:
           *(Unit + 0x238) = v62;
           *(Unit + 0x23C) = v61;
           *(Unit + 0x240) = v60;
-          *(Unit + 0x26C) = fminf(fmaxf(*(a2 + 0xDC), *&dword_44801CC), *&dword_4487F04);
+          *(Unit + 0x26C) = fminf(fmaxf(*(a2 + 0xDC), *&screenScaleFactor), *&dword_4487F04);
           v281 = *(a2 + 0xC8);
           *(Unit + 0x278) = v281;
           if ( v281 )

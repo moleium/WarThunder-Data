@@ -607,7 +607,7 @@ LABEL_159:
       v121 = 0.0;
       if ( v120 > *&dword_449F1A8 )
         v121 = Y / v120;
-      v122 = v120 * *&dword_44801CC;
+      v122 = v120 * *&screenScaleFactor;
       v110 = v118 * v121;
       v108 = v117 * v121;
       v111 = v119 * v121;
@@ -1403,7 +1403,7 @@ LABEL_308:
       v229 = 0.0;
       if ( v228 > *&dword_449F1A8 )
         v229 = Y / v228;
-      v230 = v228 * *&dword_44801CC;
+      v230 = v228 * *&screenScaleFactor;
       v215 = v226 * v229;
       v213 = v225 * v229;
       v216 = v227 * v229;
@@ -1651,14 +1651,14 @@ LABEL_391:
     *&v273 = sub_6D4510(v278 + 0x11A8 + v279 + 0x50, v278 + 0x11A8 + v279 + 0x3C, v275, v276, v996);
     if ( *&v273 <= 0.0 )
     {
-      v289 = dword_44801CC;
+      v289 = screenScaleFactor;
     }
     else
     {
       v289 = LODWORD(Y);
       if ( *&v273 < Y )
       {
-        *&v273 = (*&v273 * *&dword_44801CC) + *&dword_44801CC;
+        *&v273 = (*&v273 * *&screenScaleFactor) + *&screenScaleFactor;
         v289 = v273;
       }
     }
@@ -3165,7 +3165,7 @@ LABEL_812:
       {
         v660 = (((*(*(game + 0x418) + 0x1F8i64) + *(mUnit__ + 0x9C4))
                * *(qword_4AD8F98 + 0x28i64 * *(*(game + 0x430) + 0x94i64)))
-              + *&dword_44801CC);
+              + *&screenScaleFactor);
         v661 = 0i64;
         if ( v660 > 0 )
           v661 = v660;
@@ -3401,12 +3401,12 @@ LABEL_812:
           if ( COERCE_FLOAT(COERCE_UNSIGNED_INT(*(air_movement_ + 0x12F0) - v664.m128_f32[0]) & xmmword_449AF40) >= *&dword_44A49C0 )
           {
             if ( ((*(game + 0x2D8) * *&qword_44819B0) & 1) != 0 )
-              v684 |= 0x20 * (v664.m128_f32[0] <= *&dword_44801CC) + 0x20;
+              v684 |= 0x20 * (v664.m128_f32[0] <= *&screenScaleFactor) + 0x20;
             v664.m128_u64[1] = v33.m128_u64[1];
           }
           else
           {
-            v684 |= 8 * (v664.m128_f32[0] <= *&dword_44801CC) + 8;
+            v684 |= 8 * (v664.m128_f32[0] <= *&screenScaleFactor) + 8;
           }
         }
         sub_B8CEC0(v1040, DWORD2(v1040), v684, v1041, v1042, Str, v686, SBYTE8(v1040), SBYTE12(v1040));
@@ -3571,12 +3571,12 @@ LABEL_812:
                 v743 = *(air_movement_ + 0x5ADC);
                 if ( COERCE_FLOAT(COERCE_UNSIGNED_INT(*(air_movement_ + 0x12F0) - v743) & xmmword_449AF40) < *&dword_44A49C0 )
                 {
-                  v744 = 8 * (v743 <= *&dword_44801CC) + 8;
+                  v744 = 8 * (v743 <= *&screenScaleFactor) + 8;
                   goto LABEL_1004;
                 }
                 if ( ((*(game + 0x2D8) * *&qword_44819B0) & 1) != 0 )
                 {
-                  v744 = 0x20 * (v743 <= *&dword_44801CC) + 0x20;
+                  v744 = 0x20 * (v743 <= *&screenScaleFactor) + 0x20;
 LABEL_1004:
                   v737 |= v744;
                 }
@@ -3672,12 +3672,12 @@ LABEL_1004:
                 v800 = *(air_movement_ + 0x5ADC);
                 if ( COERCE_FLOAT(COERCE_UNSIGNED_INT(*(air_movement_ + 0x12F0) - v800) & xmmword_449AF40) < *&dword_44A49C0 )
                 {
-                  v801 = 8 * (v800 <= *&dword_44801CC) + 8;
+                  v801 = 8 * (v800 <= *&screenScaleFactor) + 8;
                   goto LABEL_1033;
                 }
                 if ( ((*(game + 0x2D8) * *&qword_44819B0) & 1) != 0 )
                 {
-                  v801 = 0x20 * (v800 <= *&dword_44801CC) + 0x20;
+                  v801 = 0x20 * (v800 <= *&screenScaleFactor) + 0x20;
 LABEL_1033:
                   v794 |= v801;
                 }
@@ -3772,11 +3772,11 @@ LABEL_1033:
               v35 = v33.m128_u64[0];
               v33.m128_i32[0] = v961;
               if ( ((*(game + 0x2D8) * *&qword_44819B0) & 1) != 0 )
-                v818 = 0x20 * (v822 <= *&dword_44801CC) + 0x20;
+                v818 = 0x20 * (v822 <= *&screenScaleFactor) + 0x20;
             }
             else
             {
-              v818 = 8 * (v822 <= *&dword_44801CC) + 8;
+              v818 = 8 * (v822 <= *&screenScaleFactor) + 8;
 LABEL_1056:
               v823 = v820;
               v34 = v821;
@@ -4081,7 +4081,7 @@ LABEL_1116:
           v884 = Y;
           v885 = *&dword_44A0308;
           v886 = xmmword_449AF40;
-          v887 = *&dword_44801CC;
+          v887 = *&screenScaleFactor;
           do
           {
             v888 = *(v880 + 0x190);

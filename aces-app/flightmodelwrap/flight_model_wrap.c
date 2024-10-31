@@ -258,7 +258,7 @@ LABEL_82:
     sub_159BF40(v988, UnitWeaponInfo, 0i64, 0i64);
     v71.m128_i32[0] = v988[1];
     v72 = _mm_cmple_ss(v65, v71);
-    v73 = _mm_andnot_ps(_mm_cmplt_ss(dword_44801CC, v65), LODWORD(Y));
+    v73 = _mm_andnot_ps(_mm_cmplt_ss(screenScaleFactor, v65), LODWORD(Y));
     v74 = _mm_cmple_ss(v988[0], v65);
     LODWORD(v75) = (_mm_andnot_ps(v72, v73).m128_u32[0] | v65.m128_i32[0] & v72.m128_i32[0]) & v74.m128_i32[0] | _mm_andnot_ps(v74, v73).m128_u32[0];
   }
@@ -1824,7 +1824,7 @@ LABEL_525:
         v423 = &unk_4B81820;
         v424 = 0i64;
         v425 = dword_4487F30;
-        v426 = *&dword_44801CC;
+        v426 = *&screenScaleFactor;
         v427 = xmmword_44801F0;
         do
         {

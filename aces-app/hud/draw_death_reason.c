@@ -168,7 +168,7 @@ LABEL_73:
             }
             else if ( v49 == 4 )
             {
-              v50 = ((*(qword_4AD8F98 + 0x28i64 * *(*(game + 0x430) + 0x90i64)) * *(v48 + 0x4614)) + *&dword_44801CC);
+              v50 = ((*(qword_4AD8F98 + 0x28i64 * *(*(game + 0x430) + 0x90i64)) * *(v48 + 0x4614)) + *&screenScaleFactor);
               v51 = sub_BC2D50(*(qword_4AD8F98 + 0x28i64 * *(*(game + 0x430) + 0x90i64) + 0x20));
               v84 = v50;
               LODWORD(v83) = 2;

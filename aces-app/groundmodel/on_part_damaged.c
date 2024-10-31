@@ -270,9 +270,9 @@ LABEL_97:
         v65 = *(Unit + 0x9BC);
         v64 = v46;
         v63 = Rotation;
-        *&Rotation = (v44[0x15] + v44[0x12]) * *&dword_44801CC;
-        v47 = (v44[0x14] + v44[0x11]) * *&dword_44801CC;
-        *&v46 = (v44[0x13] + v44[0x10]) * *&dword_44801CC;
+        *&Rotation = (v44[0x15] + v44[0x12]) * *&screenScaleFactor;
+        v47 = (v44[0x14] + v44[0x11]) * *&screenScaleFactor;
+        *&v46 = (v44[0x13] + v44[0x10]) * *&screenScaleFactor;
         *(&v65 + 1) = ((*(&v64 + 2) * *&Rotation) + (*(&v63 + 3) * v47)) + ((*&v63 * *&v46) + *(&v65 + 1));
         *(&v65 + 2) = ((*(&v64 + 3) * *&Rotation) + (*&v64 * v47)) + ((*(&v63 + 1) * *&v46) + *(&v65 + 2));
         *(&v65 + 3) = ((*&Rotation * *&v65) + (v47 * *(&v64 + 1))) + ((*&v46 * *(&v63 + 2)) + *(&v65 + 3));

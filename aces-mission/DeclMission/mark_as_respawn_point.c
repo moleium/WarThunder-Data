@@ -1497,7 +1497,7 @@ LABEL_113:
         v88 = Y / v87;
       v89 = *(v64 + 0x18);
       sub_5E8D60(v61, Str2);
-      v90 = ((*&v593 + *&Str2[4]) * *&dword_44801CC) + *&dword_44A44B0;
+      v90 = ((*&v593 + *&Str2[4]) * *&screenScaleFactor) + *&dword_44A44B0;
       v91 = Block[0];
       if ( Block[0] )
       {
@@ -1507,8 +1507,8 @@ LABEL_113:
       }
       v92 = (COERCE_FLOAT(LODWORD(v89) ^ xmmword_44801F0) * v85) * v88;
       v93 = (v89 * v84) * v88;
-      v94 = (v84 * *&dword_44801CC) + v82;
-      v95 = (v85 * *&dword_44801CC) + v81;
+      v94 = (v84 * *&screenScaleFactor) + v82;
+      v95 = (v85 * *&screenScaleFactor) + v81;
       *(v66 + 0x3B) = fsqrt(fmaxf(fmaxf(v86 + (v83 * v83), *&dword_44A4620), (v92 * v92) + (v93 * v93)));
       *(v66 + 0x3C) = 0;
       *(v66 + 0x2F) = v85;
@@ -3044,9 +3044,9 @@ LABEL_881:
               }
               else
               {
-                v515 = (*(v514 + 0xD0) * *&dword_44801CC) + *(v514 + 0xE8);
-                v516 = (*(v514 + 0xCC) * *&dword_44801CC) + *(v514 + 0xE4);
-                v517 = (*&dword_44801CC * *(v514 + 0xC8)) + *(v514 + 0xE0);
+                v515 = (*(v514 + 0xD0) * *&screenScaleFactor) + *(v514 + 0xE8);
+                v516 = (*(v514 + 0xCC) * *&screenScaleFactor) + *(v514 + 0xE4);
+                v517 = (*&screenScaleFactor * *(v514 + 0xC8)) + *(v514 + 0xE0);
               }
               v466 = j__malloc_base(0x20ui64);
               v321 = v560;

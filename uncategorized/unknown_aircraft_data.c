@@ -1668,11 +1668,11 @@ LABEL_339:
       v669.st_atime = LODWORD(v41) | 0x8000000000000000ui64;
       LODWORD(v669.st_mtime) = xmmword_44801F0 ^ LODWORD(v43);
       *(&v669.st_mtime + 1) = (*&dword_4489714 * *&v669.st_gid)
-                            + ((*&dword_44CB284 * v43) + ((*(&Str1[1] + 1) + *Str1) * *&dword_44801CC));
+                            + ((*&dword_44CB284 * v43) + ((*(&Str1[1] + 1) + *Str1) * *&screenScaleFactor));
       *&v669.st_ctime = (*&v669.st_rdev * *&dword_4489714)
-                      + ((v42 * *&dword_44CB284) + ((*&Str1[2] + *(Str1 + 1)) * *&dword_44801CC));
+                      + ((v42 * *&dword_44CB284) + ((*&Str1[2] + *(Str1 + 1)) * *&screenScaleFactor));
       *(&v669.st_ctime + 1) = (*&v669.st_size * *&dword_4489714)
-                            + ((v41 * *&dword_44CB284) + ((*(&Str1[2] + 1) + *&Str1[1]) * *&dword_44801CC));
+                            + ((v41 * *&dword_44CB284) + ((*(&Str1[2] + 1) + *&Str1[1]) * *&screenScaleFactor));
       LOBYTE(v36) = 1;
       sub_3C8B60(Unit, 0, &v669.st_mtime + 4, v36, 1);
       *&v647[0x14] = 0i64;

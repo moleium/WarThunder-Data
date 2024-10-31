@@ -55,10 +55,10 @@ void __fastcall call_artillery(float a1, float a2)
         v11 = a2 * *(&qword_4A70DA8 + 1);
         v12 = *&qword_4A70DA8;
         v13 = a1 * *&qword_4A70DA8;
-        v14 = *(&qword_4A70DA8 + 1) * *&dword_44801CC;
-        v15 = *&dword_44801CC * *&qword_4A70DA8;
-        v23 = *&dword_44801CC * *&qword_4A70DA8;
-        v24 = *(&qword_4A70DA8 + 1) * *&dword_44801CC;
+        v14 = *(&qword_4A70DA8 + 1) * *&screenScaleFactor;
+        v15 = *&screenScaleFactor * *&qword_4A70DA8;
+        v23 = *&screenScaleFactor * *&qword_4A70DA8;
+        v24 = *(&qword_4A70DA8 + 1) * *&screenScaleFactor;
         sub_C1E3C0(qword_4B1BC60, &v23, v29, &v26);
         v16 = (((v13 - v15) * *v29) / v12) + v26;
         v17 = (((v14 - v11) * *&v29[1]) / v10) + v27;

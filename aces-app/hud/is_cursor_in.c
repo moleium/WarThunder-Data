@@ -90,7 +90,7 @@ float __fastcall is_cursor_in(
         game_1 = game;
         v10 = 0x178i64;
       }
-      v47 = (*(a2 + 0x24) * *&dword_44801CC) * *(*(game_1 + 0x430) + v10);
+      v47 = (*(a2 + 0x24) * *&screenScaleFactor) * *(*(game_1 + 0x430) + v10);
       sub_515740(&v61, 0i64);
       if ( LocalUnit && (*(LocalUnit + 0x1083) & 8) != 0 )
       {
@@ -103,13 +103,13 @@ float __fastcall is_cursor_in(
         v49 = ".text";
       }
       v50 = &v49[*(game_ + 0x430)];
-      result = *&dword_44801CC;
-      v51 = fminf(fmaxf(((*(a2 + 0x20) * *&dword_44801CC) + *&dword_44A02D4) + (v61 * v47), 0.0), *(a2 + 0x20));
+      result = *&screenScaleFactor;
+      v51 = fminf(fmaxf(((*(a2 + 0x20) * *&screenScaleFactor) + *&dword_44A02D4) + (v61 * v47), 0.0), *(a2 + 0x20));
       if ( v51 >= v57 && v51 <= v59 )
         return fminf(
                  fmaxf(
-                   (((*&dword_44801CC * *(a2 + 0x24)) + *&dword_44A02D4) + (v47 * v62))
-                 + ((*(a2 + 0x24) - (v47 + (*&dword_44801CC * *(a2 + 0x24)))) * *v50),
+                   (((*&screenScaleFactor * *(a2 + 0x24)) + *&dword_44A02D4) + (v47 * v62))
+                 + ((*(a2 + 0x24) - (v47 + (*&screenScaleFactor * *(a2 + 0x24)))) * *v50),
                    0.0),
                  *(a2 + 0x24));
       return result;

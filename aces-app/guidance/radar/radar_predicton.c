@@ -605,7 +605,7 @@ LABEL_140:
             v173 = (Y + v165) - (v169 + v166);
             v174 = 0.0;
             if ( v173 > 0.0 )
-              v174 = fsqrt(v173) * *&dword_44801CC;
+              v174 = fsqrt(v173) * *&screenScaleFactor;
             v175 = _mm_xor_ps(v167, xmmword_44801F0);
             v176 = _mm_cmplt_ss(v172, v171);
             *&v403 = v174;
@@ -615,7 +615,7 @@ LABEL_140:
             if ( v177 > 0.0 )
             {
               v178 = 0i64;
-              v178.m128_f32[0] = fsqrt(v177) * *&dword_44801CC;
+              v178.m128_f32[0] = fsqrt(v177) * *&screenScaleFactor;
             }
             v179 = _mm_and_ps(v175, v176);
             v381 = _mm_andnot_ps(v176, v167);
@@ -625,7 +625,7 @@ LABEL_140:
             if ( v180 > 0.0 )
             {
               v181 = 0i64;
-              v181.m128_f32[0] = fsqrt(v180) * *&dword_44801CC;
+              v181.m128_f32[0] = fsqrt(v180) * *&screenScaleFactor;
             }
             v381 = _mm_or_ps(v381, v179);
             v390 = v181;
@@ -636,7 +636,7 @@ LABEL_140:
             if ( v182 > 0.0 )
             {
               v184 = 0i64;
-              v184.m128_f32[0] = fsqrt(v182) * *&dword_44801CC;
+              v184.m128_f32[0] = fsqrt(v182) * *&screenScaleFactor;
             }
             v185 = _mm_xor_ps(xmmword_44801F0, v184);
             v186 = v184;
@@ -875,7 +875,7 @@ LABEL_140:
             v239 = (Y + v228) - (v235 + v232);
             v240 = 0.0;
             if ( v239 > 0.0 )
-              v240 = fsqrt(v239) * *&dword_44801CC;
+              v240 = fsqrt(v239) * *&screenScaleFactor;
             v241 = _mm_xor_ps(xmmword_44801F0, v233);
             v242 = _mm_cmplt_ss(v237, v223);
             *&v378 = v240;
@@ -885,7 +885,7 @@ LABEL_140:
             if ( v243 > 0.0 )
             {
               v244 = 0i64;
-              v244.m128_f32[0] = fsqrt(v243) * *&dword_44801CC;
+              v244.m128_f32[0] = fsqrt(v243) * *&screenScaleFactor;
             }
             v245 = _mm_and_ps(v241, v242);
             v381 = _mm_andnot_ps(v242, v233);
@@ -896,7 +896,7 @@ LABEL_140:
             if ( v246 > 0.0 )
             {
               v247 = 0i64;
-              v247.m128_f32[0] = fsqrt(v246) * *&dword_44801CC;
+              v247.m128_f32[0] = fsqrt(v246) * *&screenScaleFactor;
             }
             v381 = _mm_or_ps(v381, v245);
             v401 = _mm_xor_ps(xmmword_44801F0, v247);
@@ -906,7 +906,7 @@ LABEL_140:
             if ( v249 > 0.0 )
             {
               v251 = 0i64;
-              v251.m128_f32[0] = fsqrt(v249) * *&dword_44801CC;
+              v251.m128_f32[0] = fsqrt(v249) * *&screenScaleFactor;
             }
             v252 = _mm_xor_ps(xmmword_44801F0, v251);
             v253 = v251;
@@ -1266,7 +1266,7 @@ LABEL_214:
   if ( LocalUnit )
   {
     v334 = fminf(v330, *&dword_4487E1C);
-    v332 = v332 + (((v334 * v334) * *&dword_44801CC) * *&gamephys::gravity);
+    v332 = v332 + (((v334 * v334) * *&screenScaleFactor) * *&gamephys::gravity);
   }
   *(ballistic_computer_1e18 + 0x3F4) = 1;
   v335 = v331 - v327;

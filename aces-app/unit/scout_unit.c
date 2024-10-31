@@ -293,9 +293,9 @@ LABEL_40:
 
   // Unit Rotation calculation for bounding box
   UnitBBoxMaxY = *(Unit + 0x204);
-  v38 = (UnitBBoxMaxY + UnitBBoxMinY) * *&dword_44801CC;
-  v39 = (*(Unit + 0x200) + *(Unit + 0x1F4)) * *&dword_44801CC;
-  v40 = (UnitBBoxMaxX + UnitBBoxMinX) * *&dword_44801CC;
+  v38 = (UnitBBoxMaxY + UnitBBoxMinY) * *&screenScaleFactor;
+  v39 = (*(Unit + 0x200) + *(Unit + 0x1F4)) * *&screenScaleFactor;
+  v40 = (UnitBBoxMaxX + UnitBBoxMinX) * *&screenScaleFactor;
   v41 = ((*(Unit + 0x99C) * v40) + _UnitPositionX) + ((*(Unit + 0x9B4) * v38) + (*(Unit + 0x9A8) * v39));
   DetectorPositionX = v41;
   v42 = ((*(Unit + 0x9A0) * v40) + _UnitPositionY) + ((*(Unit + 0x9B8) * v38) + (*(Unit + 0x9AC) * v39));
@@ -327,7 +327,7 @@ LABEL_40:
   if ( v89 )
   {
     DetectorPositionY_ = 0.0;
-    v51 = v51 + (sinf(*(DetectorUnit + 0x26C) * *&dword_44801CC) * v45);
+    v51 = v51 + (sinf(*(DetectorUnit + 0x26C) * *&screenScaleFactor) * v45);
     v42 = 0.0;
     v60 = 0.0;
     v58 = 0.0;

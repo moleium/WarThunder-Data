@@ -34,10 +34,10 @@ void __fastcall get_artillery_dispersion(float a1, float a2)
                         v11 = a2 * *(&lastScreenSize + 1);
                         v12 = *&lastScreenSize;
                         v13 = a1 * *&lastScreenSize;
-                        v14 = *(&lastScreenSize + 1) * *&dword_44801CC;
-                        v15 = *&dword_44801CC * *&lastScreenSize;
-                        v21 = *&dword_44801CC * *&lastScreenSize;
-                        v22 = *(&lastScreenSize + 1) * *&dword_44801CC;
+                        v14 = *(&lastScreenSize + 1) * *&screenScaleFactor;
+                        v15 = *&screenScaleFactor * *&lastScreenSize;
+                        v21 = *&screenScaleFactor * *&lastScreenSize;
+                        v22 = *(&lastScreenSize + 1) * *&screenScaleFactor;
                         convWorldSize(curTacticalMap, &v21, v27, &v24);
                         v16 = (((v13 - v15) * *v27) / v12) + v24;
                         v17 = (((v14 - v11) * *&v27[1]) / v10) + v25;

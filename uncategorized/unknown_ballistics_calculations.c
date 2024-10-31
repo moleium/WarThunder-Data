@@ -58,7 +58,7 @@ void __fastcall unknown_ballistics_calculations(__int64 a1, __int64 a2, __int64 
     }
     *a4 = 1;
     v134 = 1 << *(v23 + 0x90);
-    v133 = (*(v23 + 0x20) + *(v23 + 0xC)) * *&dword_44801CC;
+    v133 = (*(v23 + 0x20) + *(v23 + 0xC)) * *&screenScaleFactor;
   }
   else
   {
@@ -112,7 +112,7 @@ LABEL_18:
         v148 = dword_4AD1014;
         v29 = v187;
         *(v24 + 4) = v187;
-        *(v24 + 8) = (v29 * *&dword_44801CC) * fmaxf(v188 - (v133 + v133), v189 - (v133 + v133));
+        *(v24 + 8) = (v29 * *&screenScaleFactor) * fmaxf(v188 - (v133 + v133), v189 - (v133 + v133));
         *(v24 + 0x10) = v191;
         goto LABEL_67;
       }
@@ -237,10 +237,10 @@ LABEL_37:
                 v136 = *(v185 + 0xEC);
                 v70 = *(v185 + 0xF8);
                 v71 = *(v185 + 0xF4);
-                v72 = (v69 + v137) * *&dword_44801CC;
-                v73 = (v70 + v136) * *&dword_44801CC;
+                v72 = (v69 + v137) * *&screenScaleFactor;
+                v73 = (v70 + v136) * *&screenScaleFactor;
                 v74 = *(v185 + 0x89C);
-                v75 = (v71 + v135) * *&dword_44801CC;
+                v75 = (v71 + v135) * *&screenScaleFactor;
                 v167 = ((((v72 * v68) + *(v185 + 0x8C0)) + (v73 * v67)) - *&v148) + (v75 * v74);
                 v76 = *(v185 + 0x8A4);
                 v77 = *(v185 + 0x8B0);
@@ -281,7 +281,7 @@ LABEL_37:
                                         ((v143 * (((v79 * v80) - (v77 * v151)) * v85)) + ((v142 * v90) + (v141 * v87)))
                                       * v136) & xmmword_449AF40)
                        + COERCE_FLOAT(COERCE_UNSIGNED_INT(((v143 * v92) + ((v142 * v89) + (v141 * v86))) * v135) & xmmword_449AF40)))
-                    * *&dword_44801CC;
+                    * *&screenScaleFactor;
                 v95 = ((v167 * v163) + (v166 * v161)) + (v165 * v162);
                 if ( (v95 * v95) > ((v168 - ((((v93 * v160) + v94) * v94) + v159)) * v150) )
                 {

@@ -2176,8 +2176,8 @@ LABEL_320:
                 v299 = v252 * (Y / v254);
                 v300 = (Y / v254) * v253;
               }
-              v305 = (*&dword_44801CC - (v300 * *&dword_44801CC)) * *(a2 + 9);
-              *(cursor_visuals + 0xA54) = ((v299 * *&dword_44801CC) + *&dword_44801CC) * *(a2 + 8);
+              v305 = (*&screenScaleFactor - (v300 * *&screenScaleFactor)) * *(a2 + 9);
+              *(cursor_visuals + 0xA54) = ((v299 * *&screenScaleFactor) + *&screenScaleFactor) * *(a2 + 8);
               *(cursor_visuals + 0xA58) = v305;
               v248 = 1;
             }
@@ -2301,8 +2301,8 @@ LABEL_436:
                 v423 = v317 * (Y / v320);
                 v421 = (Y / v320) * v318;
               }
-              v426 = (*&dword_44801CC - (v421 * *&dword_44801CC)) * *(a2 + 9);
-              *(cursor_visuals + 0xA5C) = ((v423 * *&dword_44801CC) + *&dword_44801CC) * *(a2 + 8);
+              v426 = (*&screenScaleFactor - (v421 * *&screenScaleFactor)) * *(a2 + 9);
+              *(cursor_visuals + 0xA5C) = ((v423 * *&screenScaleFactor) + *&screenScaleFactor) * *(a2 + 8);
               *(cursor_visuals + 0xA60) = v426;
               v410 = 1;
               v316 = Strd;
@@ -2329,24 +2329,24 @@ LABEL_345:
       v335 = v1292;
       if ( v316 < v334 )
       {
-        v336 = (*&dword_44801CC
+        v336 = (*&screenScaleFactor
               - ((((v245 * v1281) + v1229) + ((v1214 * v1293.m128_f32[0]) + (*&v1307 * v1314.m128_f32[0])))
-               * (*&dword_44801CC / v334)))
+               * (*&screenScaleFactor / v334)))
              * *(a2 + 9);
-        *(cursor_visuals + 0xAA8) = (((*&dword_44801CC / v334)
+        *(cursor_visuals + 0xAA8) = (((*&screenScaleFactor / v334)
                                     * (((v311 * v1281) + v1347.m128_f32[0])
                                      + ((v1207 * v1293.m128_f32[0]) + (*&v1309 * v1314.m128_f32[0]))))
-                                   + *&dword_44801CC)
+                                   + *&screenScaleFactor)
                                   * *(a2 + 8);
         *(cursor_visuals + 0xAAC) = v336;
         v332 = 1;
       }
     }
     *(cursor_visuals + 0xABF) = v332;
-    v337 = dword_44801CC;
-    v338 = ((*(cursor_visuals + 0xA54) / (*(a2 + 8) * *&dword_44801CC)) + *&dword_44801E8) / a2[0xBB];
+    v337 = screenScaleFactor;
+    v338 = ((*(cursor_visuals + 0xA54) / (*(a2 + 8) * *&screenScaleFactor)) + *&dword_44801E8) / a2[0xBB];
     v339 = LODWORD(Y);
-    v340 = (Y - (*(cursor_visuals + 0xA58) / (*(a2 + 9) * *&dword_44801CC))) / a2[0xBC];
+    v340 = (Y - (*(cursor_visuals + 0xA58) / (*(a2 + 9) * *&screenScaleFactor))) / a2[0xBC];
     v341 = a2[0xBD];
     v342 = a2[0xBE];
     *(cursor_visuals + 0xA90) = *(&v1321 + 4);
@@ -3907,9 +3907,9 @@ LABEL_643:
                   v586 = _mm_cvtsi32_si128(HIDWORD(qword_4B44BA8));
                 }
                 v587 = qword_4B83710;
-                *&qword_4B44BA8 = *&qword_4B83710 * *&dword_44801CC;
+                *&qword_4B44BA8 = *&qword_4B83710 * *&screenScaleFactor;
                 *v586.m128i_i32 = *v586.m128i_i32 + *v501.m128i_i32;
-                *v587.m128i_i32 = (*&qword_4B83710 * *&dword_44801CC) + *v501.m128i_i32;
+                *v587.m128i_i32 = (*&qword_4B83710 * *&screenScaleFactor) + *v501.m128i_i32;
                 v588 = (_mm_cvtsi128_si32(v587) - 0x4B400000);
                 v589 = game;
                 v590 = *(game + 0x440);
@@ -4141,7 +4141,7 @@ LABEL_549:
                 *&dword_4B44B70 = *&v337 - v310;
                 goto LABEL_565;
               }
-              if ( *&dword_4B44B70 < *&dword_44801CC )
+              if ( *&dword_4B44B70 < *&screenScaleFactor )
               {
                 v456 = *&dword_4B44B70 + *&dword_4B44B70;
                 goto LABEL_549;

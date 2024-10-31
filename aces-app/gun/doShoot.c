@@ -752,7 +752,7 @@ LABEL_361:
         {
           v336 = 0.0;
           if ( *(v350 + 0x1F4) )
-            v336 = *&dword_44801CC;
+            v336 = *&screenScaleFactor;
         }
         if ( v417 )
           v351 = 0i64;
@@ -907,7 +907,7 @@ LABEL_439:
               if ( v388 )
               {
                 v389 = *(v100 + 0x124);
-                if ( v389 == 0xFFFFFFFFi64 || *&dword_44801CC > *(*(v388 + 0x181148) + 0x28 * v389 + 0x1C) )
+                if ( v389 == 0xFFFFFFFFi64 || *&screenScaleFactor > *(*(v388 + 0x181148) + 0x28 * v389 + 0x1C) )
                   v387 = v387 * *&dword_44894DC;
               }
               if ( v387 > *&dword_449F1A8 || (v390 = 0i64, v387 < *&dword_449F1AC) )

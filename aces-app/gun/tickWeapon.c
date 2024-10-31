@@ -364,7 +364,7 @@ LABEL_98:
     }
   }
   v59 = 1;
-  if ( v75 <= *&dword_44801CC )
+  if ( v75 <= *&screenScaleFactor )
   {
 LABEL_462:
     if ( !v64 && v73 > a9 )

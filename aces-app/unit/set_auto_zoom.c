@@ -29,7 +29,7 @@ LABEL_8:
         if ( a1 )
           goto LABEL_5;
       }
-      v4 = dword_44801CC;
+      v4 = screenScaleFactor;
       goto LABEL_8;
     }
   }

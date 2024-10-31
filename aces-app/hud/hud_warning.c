@@ -64,8 +64,8 @@ void __fastcall hud_warning(__int64 a1, int a2)
   }
   v124 = *(a1 + 0x10);
   LOBYTE(v13) = 0;
-  v14 = dword_44801CC;
-  if ( *&dword_44801CC > *(a1 + 0x7C) )
+  v14 = screenScaleFactor;
+  if ( *&screenScaleFactor > *(a1 + 0x7C) )
     LOBYTE(v13) = HIBYTE(*(a1 + 0x10));
   v15 = *(Unit + 0x99C);
   v16 = *(Unit + 0x9A0);
@@ -212,7 +212,7 @@ LABEL_28:
           goto LABEL_70;
 LABEL_68:
         v51 = sub_BC2D50(0x19Ci64);
-        v52 = (v49 + *&dword_44801CC);
+        v52 = (v49 + *&screenScaleFactor);
         v53 = v51;
         v131 = sub_BC2D50(0x12 - (*(Unit + 0x28C) == 0));
         LODWORD(v130) = 1;
@@ -526,7 +526,7 @@ LABEL_173:
     v87 = _mm_cmplt_ss(v81, 0i64);
     v88 = (COERCE_FLOAT(dword_44A02D4 & v87.m128_i32[0] | _mm_andnot_ps(
                                                             v87,
-                                                            _mm_and_ps(dword_44801CC, _mm_cmplt_ss(0i64, v81))).m128_u32[0])
+                                                            _mm_and_ps(screenScaleFactor, _mm_cmplt_ss(0i64, v81))).m128_u32[0])
          + v81.m128_f32[0]);
     v89 = *(a1 + 0x6C);
     if ( v89 == v88 )

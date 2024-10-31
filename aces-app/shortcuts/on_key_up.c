@@ -152,7 +152,7 @@ void __fastcall on_key_up(__int64 ballistics, int a2, float a3)
                 break;
               if ( qword_4B198C0
                 && !*(game + 0x102)
-                && ((sub_17E44A0(game, v5, v6) - dword_4A6C5A4) * *&dword_44A01A0) >= *&dword_44801CC
+                && ((sub_17E44A0(game, v5, v6) - dword_4A6C5A4) * *&dword_44A01A0) >= *&screenScaleFactor
                 && (g_net && byte_4B17281 && *(qword_4B198C0 + 0x31) && (dword_4A6C5A0 & 0x10) != 0
                  || *(game + 0x100) && *(game + 0x101)) )
               {
