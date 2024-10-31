@@ -1505,7 +1505,7 @@ LABEL_113:
         _InterlockedDecrement(&dword_4B67890);
         free(v91);
       }
-      v92 = (COERCE_FLOAT(LODWORD(v89) ^ xmmword_44801F0) * v85) * v88;
+      v92 = (COERCE_FLOAT(LODWORD(v89) ^ SIGN_BIT_MASK) * v85) * v88;
       v93 = (v89 * v84) * v88;
       v94 = (v84 * *&screenScaleFactor) + v82;
       v95 = (v85 * *&screenScaleFactor) + v81;

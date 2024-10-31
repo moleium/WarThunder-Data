@@ -598,18 +598,18 @@ LABEL_140:
             v172 = v170;
             if ( v170.m128_f32[0] < 0.0 )
             {
-              LODWORD(v169) ^= xmmword_44801F0;
-              v168 = _mm_xor_ps(v168, xmmword_44801F0);
+              LODWORD(v169) ^= SIGN_BIT_MASK;
+              v168 = _mm_xor_ps(v168, SIGN_BIT_MASK);
             }
             v382.m128_i32[0] = *(ballistic_computer_1e18 + 0x1C);
             v173 = (Y + v165) - (v169 + v166);
             v174 = 0.0;
             if ( v173 > 0.0 )
               v174 = fsqrt(v173) * *&screenScaleFactor;
-            v175 = _mm_xor_ps(v167, xmmword_44801F0);
+            v175 = _mm_xor_ps(v167, SIGN_BIT_MASK);
             v176 = _mm_cmplt_ss(v172, v171);
             *&v403 = v174;
-            HIDWORD(v403) = LODWORD(v174) ^ xmmword_44801F0;
+            HIDWORD(v403) = LODWORD(v174) ^ SIGN_BIT_MASK;
             v177 = (Y + v166) - (v165 + v169);
             v178 = 0i64;
             if ( v177 > 0.0 )
@@ -619,7 +619,7 @@ LABEL_140:
             }
             v179 = _mm_and_ps(v175, v176);
             v381 = _mm_andnot_ps(v176, v167);
-            v389 = _mm_xor_ps(xmmword_44801F0, v178);
+            v389 = _mm_xor_ps(SIGN_BIT_MASK, v178);
             v180 = (Y - (v165 + v166)) + v169;
             v181 = 0i64;
             if ( v180 > 0.0 )
@@ -629,7 +629,7 @@ LABEL_140:
             }
             v381 = _mm_or_ps(v381, v179);
             v390 = v181;
-            v388 = _mm_xor_ps(xmmword_44801F0, v181);
+            v388 = _mm_xor_ps(SIGN_BIT_MASK, v181);
             v182 = (v169 + v166) + (Y + v165);
             v183 = 0.0;
             v184 = 0i64;
@@ -638,7 +638,7 @@ LABEL_140:
               v184 = 0i64;
               v184.m128_f32[0] = fsqrt(v182) * *&screenScaleFactor;
             }
-            v185 = _mm_xor_ps(xmmword_44801F0, v184);
+            v185 = _mm_xor_ps(SIGN_BIT_MASK, v184);
             v186 = v184;
             v187 = *&v390;
             *&v186 = v184.m128_f32[0] * *&v390;
@@ -867,8 +867,8 @@ LABEL_140:
             v237 = v236;
             if ( v236.m128_f32[0] < 0.0 )
             {
-              LODWORD(v235) ^= xmmword_44801F0;
-              v234 = _mm_xor_ps(v234, xmmword_44801F0);
+              LODWORD(v235) ^= SIGN_BIT_MASK;
+              v234 = _mm_xor_ps(v234, SIGN_BIT_MASK);
             }
             v382 = v234;
             v238 = v235 + v232;
@@ -876,10 +876,10 @@ LABEL_140:
             v240 = 0.0;
             if ( v239 > 0.0 )
               v240 = fsqrt(v239) * *&screenScaleFactor;
-            v241 = _mm_xor_ps(xmmword_44801F0, v233);
+            v241 = _mm_xor_ps(SIGN_BIT_MASK, v233);
             v242 = _mm_cmplt_ss(v237, v223);
             *&v378 = v240;
-            HIDWORD(v378) = LODWORD(v240) ^ xmmword_44801F0;
+            HIDWORD(v378) = LODWORD(v240) ^ SIGN_BIT_MASK;
             v243 = (Y + v232) - (v228 + v235);
             v244 = 0i64;
             if ( v243 > 0.0 )
@@ -889,7 +889,7 @@ LABEL_140:
             }
             v245 = _mm_and_ps(v241, v242);
             v381 = _mm_andnot_ps(v242, v233);
-            v387 = _mm_xor_ps(xmmword_44801F0, v244);
+            v387 = _mm_xor_ps(SIGN_BIT_MASK, v244);
             v246 = (Y - (v228 + v232)) + v235;
             v247 = 0i64;
             v248 = v244;
@@ -899,7 +899,7 @@ LABEL_140:
               v247.m128_f32[0] = fsqrt(v246) * *&screenScaleFactor;
             }
             v381 = _mm_or_ps(v381, v245);
-            v401 = _mm_xor_ps(xmmword_44801F0, v247);
+            v401 = _mm_xor_ps(SIGN_BIT_MASK, v247);
             v249 = v238 + (Y + v228);
             v250 = 0.0;
             v251 = 0i64;
@@ -908,7 +908,7 @@ LABEL_140:
               v251 = 0i64;
               v251.m128_f32[0] = fsqrt(v249) * *&screenScaleFactor;
             }
-            v252 = _mm_xor_ps(xmmword_44801F0, v251);
+            v252 = _mm_xor_ps(SIGN_BIT_MASK, v251);
             v253 = v251;
             *&v253 = v251.m128_f32[0] * v247.m128_f32[0];
             v428 = v253;

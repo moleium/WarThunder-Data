@@ -156,7 +156,7 @@ LABEL_10:
   {
     v24 = *(a1 + 0x5DC);
     v25 = *(a1 + 0x5E4);
-    LODWORD(v26) = *(a2 + 0x934) ^ xmmword_44801F0;
+    LODWORD(v26) = *(a2 + 0x934) ^ SIGN_BIT_MASK;
     v27 = *(a1 + 0x63C) * *&dword_44A02B0;
     v28 = *(a1 + 0x5E8) * *&dword_44A02B0;
     v29 = *(a1 + 0x5F0) * *&dword_44A02B0;
@@ -241,7 +241,7 @@ LABEL_12:
       {
         v83 = *(a1 + 0x4FC);
         v84 = *(a1 + 0x504) * v69;
-        LODWORD(v85) = *(a2 + 0x934) ^ xmmword_44801F0;
+        LODWORD(v85) = *(a2 + 0x934) ^ SIGN_BIT_MASK;
         v104 = (v69 * *(a1 + 0x63C));
         v103[0] = 3;
         v106 = v85;
@@ -267,7 +267,7 @@ LABEL_12:
           v95 = *(a2 + 0x990);
           v96 = *(a2 + 0x988);
           v97 = *(a2 + 0x980);
-          v104 = COERCE_FLOAT(*(a1 + 0x640) ^ xmmword_44801F0);
+          v104 = COERCE_FLOAT(*(a1 + 0x640) ^ SIGN_BIT_MASK);
           v103[0] = 3;
           v106 = ((((v90 * v95) + (v91 * v96)) + (v92 * v97)) * v94);
           v105 = 3;
@@ -358,7 +358,7 @@ LABEL_13:
           v79 = *(a1 + 0x55C) * v75;
           v80 = *(a1 + 0x564) * v75;
           v81 = *(a1 + 0x56C) * v75;
-          v82 = fmodf(COERCE_FLOAT(*(a2 + 0x930) ^ xmmword_44801F0), dword_44A02E8);
+          v82 = fmodf(COERCE_FLOAT(*(a2 + 0x930) ^ SIGN_BIT_MASK), dword_44A02E8);
           v104 = (v75 * *(a1 + 0x674));
           v103[0] = 3;
           v106 = v82;

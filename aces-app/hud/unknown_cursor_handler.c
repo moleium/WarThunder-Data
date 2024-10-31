@@ -467,7 +467,7 @@ LABEL_157:
 LABEL_160:
   v89 = *(cursor_visuals + 0x670);
   v10 = v1314.m128_u64[0];
-  if ( COERCE_FLOAT(*(HudInfo + 0x108) ^ xmmword_44801F0) < v89 )
+  if ( COERCE_FLOAT(*(HudInfo + 0x108) ^ SIGN_BIT_MASK) < v89 )
     *(cursor_visuals + 0x670) = v89 - a3;
   v90 = *(cursor_visuals + 0x674);
   if ( v90 > 0.0 )
@@ -555,7 +555,7 @@ LABEL_166:
       v896 = v892 * v894;
       v897 = atan2f(v891 * v894, fsqrt((v895 * v895) + (v896 * v896)));
       atan2f(v895, v896);
-      v1320.m256i_i32[0] = LODWORD(v895) ^ xmmword_44801F0;
+      v1320.m256i_i32[0] = LODWORD(v895) ^ SIGN_BIT_MASK;
       *&v1320.m256i_i32[1] = v897;
     }
     if ( *(v8 + 0x4E8) )
@@ -575,7 +575,7 @@ LABEL_166:
     {
       v926 = _mm_blend_ps(0i64, v925, 1);
       v925.m128_f32[0] = v925.m128_f32[0] * *&dword_44A4134;
-      v927 = _mm_cvttps_epi32(_mm_add_ps(_mm_or_ps(_mm_and_ps(v926, xmmword_44801F0), xmmword_44A4140), _mm_blend_ps(v925, 0i64, 0xE)));
+      v927 = _mm_cvttps_epi32(_mm_add_ps(_mm_or_ps(_mm_and_ps(v926, SIGN_BIT_MASK), xmmword_44A4140), _mm_blend_ps(v925, 0i64, 0xE)));
       v928 = _mm_sub_ps(v926, _mm_mul_ps(_mm_cvtepi32_ps(v927), xmmword_44AA530));
       v929 = _mm_mul_ps(v928, v928);
       v930 = _mm_add_ps(
@@ -595,12 +595,12 @@ LABEL_166:
                xmmword_44A01E0);
       v933 = _mm_blendv_ps(v932, v930, _mm_cmpeq_epi32(_mm_and_si128(v931, xmmword_4487E30), 0i64));
       si128 = _mm_load_si128(&xmmword_4487F40);
-      v935 = _mm_blendv_ps(_mm_xor_ps(v933, xmmword_44801F0), v933, _mm_cmpeq_epi32(_mm_and_si128(v931, si128), 0i64)).m128_f32[0];
-      v936 = _mm_blend_epi16(_mm_xor_si128(v924, xmmword_44801F0), 0i64, 0xFC);
+      v935 = _mm_blendv_ps(_mm_xor_ps(v933, SIGN_BIT_MASK), v933, _mm_cmpeq_epi32(_mm_and_si128(v931, si128), 0i64)).m128_f32[0];
+      v936 = _mm_blend_epi16(_mm_xor_si128(v924, SIGN_BIT_MASK), 0i64, 0xFC);
       *v924.m128i_i32 = *v924.m128i_i32 * *&dword_44A9648;
       v937 = _mm_cvttps_epi32(
                _mm_add_ps(
-                 _mm_or_si128(_mm_and_si128(v936, xmmword_44801F0), xmmword_44A4140),
+                 _mm_or_si128(_mm_and_si128(v936, SIGN_BIT_MASK), xmmword_44A4140),
                  _mm_blend_ps(v924, 0i64, 0xE)));
       v938 = _mm_sub_epi32(_mm_and_ps(xmmword_4487E40, v937), 0xFFFFFFFFFFFFFFFFui64);
       v939 = _mm_sub_ps(v936, _mm_mul_ps(_mm_cvtepi32_ps(v937), xmmword_44AA530));
@@ -623,11 +623,11 @@ LABEL_166:
       v944 = _mm_blendv_ps(v943, v941, _mm_cmpeq_epi32(_mm_and_si128(v938, v942), 0i64));
       v945 = _mm_blendv_ps(v943, v941, _mm_cmpeq_epi32(_mm_and_ps(v937, v942), 0i64));
       v946 = _mm_blendv_ps(v932, v930, _mm_cmpeq_epi32(_mm_and_ps(v927, v942), 0i64));
-      v947 = _mm_blendv_ps(_mm_xor_ps(v944, xmmword_44801F0), v944, _mm_cmpeq_epi32(_mm_and_si128(v938, si128), 0i64)).m128_f32[0]
+      v947 = _mm_blendv_ps(_mm_xor_ps(v944, SIGN_BIT_MASK), v944, _mm_cmpeq_epi32(_mm_and_si128(v938, si128), 0i64)).m128_f32[0]
            * v935;
-      v948 = _mm_blendv_ps(_mm_xor_ps(v945, xmmword_44801F0), v945, _mm_cmpeq_epi32(_mm_and_ps(v937, si128), 0i64)).m128_f32[0]
+      v948 = _mm_blendv_ps(_mm_xor_ps(v945, SIGN_BIT_MASK), v945, _mm_cmpeq_epi32(_mm_and_ps(v937, si128), 0i64)).m128_f32[0]
            * v935;
-      v949 = _mm_blendv_ps(_mm_xor_ps(xmmword_44801F0, v946), v946, _mm_cmpeq_epi32(_mm_and_ps(si128, v927), 0i64)).m128_f32[0];
+      v949 = _mm_blendv_ps(_mm_xor_ps(SIGN_BIT_MASK, v946), v946, _mm_cmpeq_epi32(_mm_and_ps(si128, v927), 0i64)).m128_f32[0];
       v950 = fsqrt((v948 * v948) + ((v949 * v949) + (v947 * v947)));
       v951 = 0.0;
       if ( v950 > *&epsilon_unk )
@@ -656,8 +656,8 @@ LABEL_166:
       dword_4AD1038 = LODWORD(v961);
       v925.m128_i32[0] = atan2f(*(&qword_4AD1030 + 1), fsqrt((v961 * v961) + (v962 * v962)));
       atan2f(v961, v962);
-      v924.m128i_i32[0] = LODWORD(v961) ^ xmmword_44801F0;
-      v1320.m256i_i32[0] = LODWORD(v961) ^ xmmword_44801F0;
+      v924.m128i_i32[0] = LODWORD(v961) ^ SIGN_BIT_MASK;
+      v1320.m256i_i32[0] = LODWORD(v961) ^ SIGN_BIT_MASK;
       v4 = a3;
     }
     else
@@ -684,12 +684,12 @@ LABEL_166:
             *v1320.m256i_i32 = *v924.m128i_i32 - v966;
             v967 = *(v1332 + 0x3208);
             *&v1320.m256i_i32[1] = v965 - v967;
-            v968 = LODWORD(v967) ^ xmmword_44801F0;
-            *(cursor_visuals + 0x4A88) = LODWORD(v966) ^ xmmword_44801F0;
+            v968 = LODWORD(v967) ^ SIGN_BIT_MASK;
+            *(cursor_visuals + 0x4A88) = LODWORD(v966) ^ SIGN_BIT_MASK;
             *(cursor_visuals + 0x4A8C) = v968;
           }
           v969 = _mm_cvtsi32_si128(v1320.m256i_u32[0]);
-          v970 = _mm_load_si128(&xmmword_44801F0);
+          v970 = _mm_load_si128(&SIGN_BIT_MASK);
           v971 = _mm_blend_epi16(_mm_xor_si128(v969, v970), 0i64, 0xFC);
           *v969.m128i_i32 = *v969.m128i_i32 * *&dword_44A9648;
           v972 = _mm_cvttps_epi32(_mm_add_ps(_mm_or_si128(_mm_and_si128(v971, v970), xmmword_44A4140), _mm_blend_ps(v969, 0i64, 0xE)));
@@ -812,7 +812,7 @@ LABEL_166:
         cosf(*(cursor_visuals + 0x4A98));
         v1007 = v1005;
         v1009 = sinf(v1005);
-        LODWORD(v1008) = LODWORD(v1005) ^ xmmword_44801F0;
+        LODWORD(v1008) = LODWORD(v1005) ^ SIGN_BIT_MASK;
       }
       v1015 = (v1008 * *&dword_4AD1038) + (*&qword_4AD1030 * v1007);
       v1016 = (*&dword_4AD1038 * v1007) + (v1009 * *&qword_4AD1030);
@@ -1055,7 +1055,7 @@ LABEL_212:
         v387 = *&v388;
         v389 = v388;
         *&v389 = sinf(*&v388);
-        LODWORD(v390) = v388 ^ xmmword_44801F0;
+        LODWORD(v390) = v388 ^ SIGN_BIT_MASK;
       }
     }
     else
@@ -1359,7 +1359,7 @@ LABEL_291:
         || (v720 = 0.0, COERCE_FLOAT(FABSF_MASK & LODWORD(v717)) >= *&dword_44AD510) )
       {
         atan2f(*v281, v719);
-        LODWORD(v720) = LODWORD(v717) ^ xmmword_44801F0;
+        LODWORD(v720) = LODWORD(v717) ^ SIGN_BIT_MASK;
       }
       turret_aim_angles = v720;
       *(&turret_aim_angles + 1) = atan2f(v718, fsqrt((v717 * v717) + (v719 * v719)));
@@ -1386,7 +1386,7 @@ LABEL_291:
   }
 LABEL_784:
   v727 = _mm_cvtsi32_si128(LODWORD(turret_aim_angles));
-  v728 = _mm_load_si128(&xmmword_44801F0);
+  v728 = _mm_load_si128(&SIGN_BIT_MASK);
   v729 = _mm_blend_epi16(_mm_xor_si128(v727, v728), 0i64, 0xFC);
   *v727.m128i_i32 = *v727.m128i_i32 * *&dword_44A9648;
   v730 = _mm_cvttps_epi32(_mm_add_ps(_mm_or_si128(_mm_and_si128(v729, v728), xmmword_44A4140), _mm_blend_ps(v727, 0i64, 0xE)));
@@ -1663,7 +1663,7 @@ LABEL_812:
     v831 = _mm_mul_ps(xmmword_44A4140, inserted);
     v832 = _mm_cvttps_epi32(
              _mm_add_ps(
-               _mm_or_ps(_mm_and_ps(xmmword_44801F0, v831), xmmword_44A4140),
+               _mm_or_ps(_mm_and_ps(SIGN_BIT_MASK, v831), xmmword_44A4140),
                _mm_mul_ps(inserted, xmmword_44A9FF0)));
     v833 = _mm_sub_epi32(_mm_and_ps(xmmword_4487E40, v832), 0xFFFFFFFFFFFFFFFFui64);
     v834 = _mm_add_ps(_mm_mul_ps(_mm_cvtepi32_ps(v832), xmmword_44A4150), v831);
@@ -1685,11 +1685,11 @@ LABEL_812:
     v838 = _mm_blendv_ps(v836, v837, _mm_cmpeq_epi32(_mm_and_ps(v832, xmmword_4487E30), 0i64));
     v839 = _mm_blendv_ps(v836, v837, _mm_cmpeq_epi32(_mm_and_ps(xmmword_4487E30, v833), 0i64));
     v840 = _mm_blendv_ps(
-             _mm_xor_ps(v838, xmmword_44801F0),
+             _mm_xor_ps(v838, SIGN_BIT_MASK),
              v838,
              _mm_cmpeq_epi32(_mm_and_ps(v832, xmmword_4487F40), 0i64));
     v841 = _mm_blendv_ps(
-             _mm_xor_ps(xmmword_44801F0, v839),
+             _mm_xor_ps(SIGN_BIT_MASK, v839),
              v839,
              _mm_cmpeq_epi32(_mm_and_ps(v833, xmmword_4487F40), 0i64));
     v842 = _mm_shuffle_ps(v840, v841, 0x55);
@@ -1788,11 +1788,11 @@ LABEL_214:
         else
         {
           v144 = LODWORD(turret_aim_angles);
-          v145 = _mm_blend_ps(_mm_xor_ps(LODWORD(turret_aim_angles), xmmword_44801F0), 0i64, 0xE);
+          v145 = _mm_blend_ps(_mm_xor_ps(LODWORD(turret_aim_angles), SIGN_BIT_MASK), 0i64, 0xE);
           v144.m128_f32[0] = turret_aim_angles * *&dword_44A9648;
           v146 = _mm_cvttps_epi32(
                    _mm_add_ps(
-                     _mm_or_ps(_mm_and_ps(v145, xmmword_44801F0), xmmword_44A4140),
+                     _mm_or_ps(_mm_and_ps(v145, SIGN_BIT_MASK), xmmword_44A4140),
                      _mm_blend_ps(v144, 0i64, 0xE)));
           v147 = _mm_sub_ps(v145, _mm_mul_ps(_mm_cvtepi32_ps(v146), xmmword_44AA530));
           v148 = _mm_mul_ps(v147, v147);
@@ -1814,11 +1814,11 @@ LABEL_214:
           v152 = _mm_sub_epi32(_mm_and_ps(v146, xmmword_4487E40), 0xFFFFFFFFFFFFFFFFui64);
           v153 = _mm_blendv_ps(v149, v150, _mm_cmpeq_epi32(_mm_and_si128(v152, xmmword_4487E30), 0i64));
           v150.m128_f32[0] = _mm_blendv_ps(
-                               _mm_xor_ps(v151, xmmword_44801F0),
+                               _mm_xor_ps(v151, SIGN_BIT_MASK),
                                v151,
                                _mm_cmpeq_epi32(_mm_and_ps(v146, xmmword_4487F40), 0i64)).m128_f32[0];
           *v146.m128i_i32 = _mm_blendv_ps(
-                              _mm_xor_ps(v153, xmmword_44801F0),
+                              _mm_xor_ps(v153, SIGN_BIT_MASK),
                               v153,
                               _mm_cmpeq_epi32(_mm_and_si128(v152, xmmword_4487F40), 0i64)).m128_f32[0];
           v154 = _mm_cvtsi32_si128(*(&turret_aim_angles + 1));
@@ -1826,7 +1826,7 @@ LABEL_214:
           *v154.m128i_i32 = *v154.m128i_i32 * *&dword_44A4134;
           v156 = _mm_cvttps_epi32(
                    _mm_add_ps(
-                     _mm_or_si128(_mm_and_si128(v155, xmmword_44801F0), xmmword_44A4140),
+                     _mm_or_si128(_mm_and_si128(v155, SIGN_BIT_MASK), xmmword_44A4140),
                      _mm_blend_ps(v154, 0i64, 0xE)));
           v157 = _mm_sub_epi32(_mm_and_ps(xmmword_4487E40, v156), 0xFFFFFFFFFFFFFFFFui64);
           v158 = _mm_sub_ps(v155, _mm_mul_ps(_mm_cvtepi32_ps(v156), xmmword_44AA530));
@@ -1848,12 +1848,12 @@ LABEL_214:
           v162 = _mm_blendv_ps(v160, v161, _mm_cmpeq_epi32(_mm_and_ps(v156, xmmword_4487E30), 0i64));
           v163 = _mm_blendv_ps(v160, v161, _mm_cmpeq_epi32(_mm_and_si128(xmmword_4487E30, v157), 0i64));
           LODWORD(v142) = _mm_blendv_ps(
-                            _mm_xor_ps(v162, xmmword_44801F0),
+                            _mm_xor_ps(v162, SIGN_BIT_MASK),
                             v162,
                             _mm_cmpeq_epi32(_mm_and_ps(v156, xmmword_4487F40), 0i64)).m128_u32[0];
           v113 = Y;
           v164 = _mm_blendv_ps(
-                   _mm_xor_ps(xmmword_44801F0, v163),
+                   _mm_xor_ps(SIGN_BIT_MASK, v163),
                    v163,
                    _mm_cmpeq_epi32(_mm_and_si128(v157, xmmword_4487F40), 0i64)).m128_f32[0];
           v143 = v150.m128_f32[0] * v164;
@@ -1895,7 +1895,7 @@ LABEL_214:
       v176 = a2[0xBC];
       v177 = v113 / (v173 - v174.m128_f32[0]);
       v178 = (a2[0xBD] * v173) * v177;
-      v183 = _mm_xor_ps(v174, xmmword_44801F0);
+      v183 = _mm_xor_ps(v174, SIGN_BIT_MASK);
       v183.m128_f32[0] = v183.m128_f32[0] * v177;
       v179 = a2[0xC6] * v175;
       v1245 = a2[0xC7] * v176;
@@ -1972,7 +1972,7 @@ LABEL_214:
     v1255 = *v1320.m256i_i32;
     v1280 = *&v1320.m256i_i32[6];
     v192 = Y
-         / (((COERCE_FLOAT(xmmword_44801F0 ^ COERCE_UNSIGNED_INT(*&v1320.m256i_i32[1] * *&v1321)) * *&v1320.m256i_i32[3])
+         / (((COERCE_FLOAT(SIGN_BIT_MASK ^ COERCE_UNSIGNED_INT(*&v1320.m256i_i32[1] * *&v1321)) * *&v1320.m256i_i32[3])
            - (((*&v1320.m256i_i32[6] * *&v1320.m256i_i32[4]) * *&v1320.m256i_i32[2])
             + ((*&v1320.m256i_i32[5] * *v1320.m256i_i32) * *&v1320.m256i_i32[7])))
           + (((*&v1320.m256i_i32[7] * *&v1320.m256i_i32[3]) * *&v1320.m256i_i32[2])
@@ -2025,7 +2025,7 @@ LABEL_214:
       v198 = v208;
       v201 = v1349;
       v203 = v1312;
-      LODWORD(v205) = LODWORD(v184) ^ xmmword_44801F0;
+      LODWORD(v205) = LODWORD(v184) ^ SIGN_BIT_MASK;
     }
     v209 = (v205 * v200) + (v206 * v199);
     v210 = (v206 * v200) + (v207 * v199);
@@ -2789,7 +2789,7 @@ LABEL_866:
                   v1031 = *(HudInfo + 0x2D);
                 else
                   v1031 = LODWORD(Y);
-                v1032 = _mm_xor_ps(v1031, xmmword_44801F0);
+                v1032 = _mm_xor_ps(v1031, SIGN_BIT_MASK);
                 v1032.m128_f32[0] = v1032.m128_f32[0] * *&gamephys::gravity;
                 v1033 = *(v370 + 0x10B0);
                 if ( v1033 <= 0xF )
@@ -2812,7 +2812,7 @@ LABEL_1011:
                     v1039 = game;
                     if ( *(game + 0x330) )
                     {
-                      v1347 = _mm_xor_ps(xmmword_44801F0, v1032);
+                      v1347 = _mm_xor_ps(SIGN_BIT_MASK, v1032);
                       v1254 = 0.0;
                       if ( !v1314.m128_i8[0] )
                         v1254 = Y;
@@ -3075,7 +3075,7 @@ LABEL_1101:
                           v1161 = 0.0;
                           if ( v1160 > *&epsilon_unk )
                             v1161 = Y / v1160;
-                          v1162 = _mm_xor_ps(v1348, xmmword_44801F0);
+                          v1162 = _mm_xor_ps(v1348, SIGN_BIT_MASK);
                           v1162.m128_f32[0] = (((v1162.m128_f32[0] * v1161) * *(v370 + 0x9A0))
                                              - ((v1161 * v1258) * *(v370 + 0x99C)))
                                             - ((v1161 * v1357.m128_f32[0]) * *(v370 + 0x9A4));
@@ -3330,7 +3330,7 @@ LABEL_1016:
                     {
                       v1043 = 0i64;
                       v1044 = Y;
-                      v1045 = xmmword_44801F0;
+                      v1045 = SIGN_BIT_MASK;
                       do
                       {
                         v1046 = *(*(v1039 + 0x338) + 8 * v1043);
@@ -4067,7 +4067,7 @@ LABEL_556:
               v484 = dword_44AA4F0;
               LODWORD(v473) = COERCE_UNSIGNED_INT(
                                 COERCE_FLOAT(v483.m128_i32[0] & dword_44AA4F0 | _mm_andnot_ps(v483, v481).m128_u32[0])
-                              + v478) ^ xmmword_44801F0;
+                              + v478) ^ SIGN_BIT_MASK;
               v485 = fmodf(v476 - *(v474 + v475 + 0x5C), v477.m128_f32[0]);
               v486.m128_f32[0] = v479 + v485;
               v487.m128_f32[0] = v482 + v485;
@@ -4088,12 +4088,12 @@ LABEL_556:
           v497 = fminf(
                    fmaxf(
                      v495 * *&dword_4489690,
-                     COERCE_FLOAT(COERCE_UNSIGNED_INT(*(a2 + 9) * *&dword_44A4984) ^ xmmword_44801F0)),
+                     COERCE_FLOAT(COERCE_UNSIGNED_INT(*(a2 + 9) * *&dword_44A4984) ^ SIGN_BIT_MASK)),
                    *(a2 + 9) * *&dword_44A4984);
           LODWORD(qword_4B44B80) = fminf(
                                      fmaxf(
                                        *&dword_4489690 * v496,
-                                       COERCE_FLOAT(xmmword_44801F0 ^ COERCE_UNSIGNED_INT(*(a2 + 8) * *&dword_44A4984))),
+                                       COERCE_FLOAT(SIGN_BIT_MASK ^ COERCE_UNSIGNED_INT(*(a2 + 8) * *&dword_44A4984))),
                                      *(a2 + 8) * *&dword_44A4984);
           *(&qword_4B44B80 + 1) = v497;
           *&qword_4B44B88 = v496;
@@ -4222,11 +4222,11 @@ LABEL_565:
       if ( !byte_4B44B44 )
       {
         v531 = LODWORD(turret_aim_angles);
-        v532 = _mm_blend_ps(_mm_xor_ps(LODWORD(turret_aim_angles), xmmword_44801F0), 0i64, 0xE);
+        v532 = _mm_blend_ps(_mm_xor_ps(LODWORD(turret_aim_angles), SIGN_BIT_MASK), 0i64, 0xE);
         v531.m128_f32[0] = turret_aim_angles * *&dword_44A9648;
         v533 = _mm_cvttps_epi32(
                  _mm_add_ps(
-                   _mm_or_ps(_mm_and_ps(v532, xmmword_44801F0), xmmword_44A4140),
+                   _mm_or_ps(_mm_and_ps(v532, SIGN_BIT_MASK), xmmword_44A4140),
                    _mm_blend_ps(v531, 0i64, 0xE)));
         v534 = _mm_sub_ps(v532, _mm_mul_ps(_mm_cvtepi32_ps(v533), xmmword_44AA530));
         v535 = _mm_mul_ps(v534, v534);
@@ -4248,11 +4248,11 @@ LABEL_565:
         v539 = _mm_sub_epi32(_mm_and_ps(v533, xmmword_4487E40), 0xFFFFFFFFFFFFFFFFui64);
         v540 = _mm_blendv_ps(v536, v537, _mm_cmpeq_epi32(_mm_and_si128(v539, xmmword_4487E30), 0i64));
         v537.m128_f32[0] = _mm_blendv_ps(
-                             _mm_xor_ps(v538, xmmword_44801F0),
+                             _mm_xor_ps(v538, SIGN_BIT_MASK),
                              v538,
                              _mm_cmpeq_epi32(_mm_and_ps(v533, xmmword_4487F40), 0i64)).m128_f32[0];
         v538.m128_f32[0] = _mm_blendv_ps(
-                             _mm_xor_ps(v540, xmmword_44801F0),
+                             _mm_xor_ps(v540, SIGN_BIT_MASK),
                              v540,
                              _mm_cmpeq_epi32(_mm_and_si128(v539, xmmword_4487F40), 0i64)).m128_f32[0];
         v541 = _mm_cvtsi32_si128(*(&turret_aim_angles + 1));
@@ -4260,7 +4260,7 @@ LABEL_565:
         *v541.m128i_i32 = *v541.m128i_i32 * *&dword_44A4134;
         v543 = _mm_cvttps_epi32(
                  _mm_add_ps(
-                   _mm_or_si128(_mm_and_si128(v542, xmmword_44801F0), xmmword_44A4140),
+                   _mm_or_si128(_mm_and_si128(v542, SIGN_BIT_MASK), xmmword_44A4140),
                    _mm_blend_ps(v541, 0i64, 0xE)));
         v544 = _mm_sub_epi32(_mm_and_ps(xmmword_4487E40, v543), xmmword_4480100);
         v545 = _mm_sub_ps(v542, _mm_mul_ps(_mm_cvtepi32_ps(v543), xmmword_44AA530));
@@ -4282,21 +4282,21 @@ LABEL_565:
         v549 = _mm_blendv_ps(v547, v548, _mm_cmpeq_epi32(_mm_and_ps(v543, xmmword_4487E30), 0i64));
         v550 = _mm_blendv_ps(v547, v548, _mm_cmpeq_epi32(_mm_and_si128(xmmword_4487E30, v544), 0i64));
         v551 = _mm_blendv_ps(
-                 _mm_xor_ps(xmmword_44801F0, v550),
+                 _mm_xor_ps(SIGN_BIT_MASK, v550),
                  v550,
                  _mm_cmpeq_epi32(_mm_and_si128(v544, xmmword_4487F40), 0i64)).m128_f32[0];
         *&dword_4B44B48 = v551 * v538.m128_f32[0];
         dword_4B44B4C = _mm_blendv_ps(
-                          _mm_xor_ps(v549, xmmword_44801F0),
+                          _mm_xor_ps(v549, SIGN_BIT_MASK),
                           v549,
                           _mm_cmpeq_epi32(_mm_and_ps(v543, xmmword_4487F40), 0i64)).m128_u32[0];
         *&dword_4B44B50 = v537.m128_f32[0] * v551;
         byte_4B44B44 = 1;
       }
       v552 = LODWORD(turret_aim_angles);
-      v553 = _mm_blend_ps(_mm_xor_ps(LODWORD(turret_aim_angles), xmmword_44801F0), 0i64, 0xE);
+      v553 = _mm_blend_ps(_mm_xor_ps(LODWORD(turret_aim_angles), SIGN_BIT_MASK), 0i64, 0xE);
       v552.m128_f32[0] = turret_aim_angles * *&dword_44A9648;
-      v554 = _mm_cvttps_epi32(_mm_add_ps(_mm_or_ps(_mm_and_ps(v553, xmmword_44801F0), xmmword_44A4140), _mm_blend_ps(v552, 0i64, 0xE)));
+      v554 = _mm_cvttps_epi32(_mm_add_ps(_mm_or_ps(_mm_and_ps(v553, SIGN_BIT_MASK), xmmword_44A4140), _mm_blend_ps(v552, 0i64, 0xE)));
       v555 = _mm_sub_ps(v553, _mm_mul_ps(_mm_cvtepi32_ps(v554), xmmword_44AA530));
       v556 = _mm_mul_ps(v555, v555);
       v557 = _mm_add_ps(
@@ -4317,11 +4317,11 @@ LABEL_565:
       v560 = _mm_sub_epi32(_mm_and_ps(v554, xmmword_4487E40), 0xFFFFFFFFFFFFFFFFui64);
       v561 = _mm_blendv_ps(v557, v558, _mm_cmpeq_epi32(_mm_and_si128(v560, xmmword_4487E30), 0i64));
       v558.m128_f32[0] = _mm_blendv_ps(
-                           _mm_xor_ps(v559, xmmword_44801F0),
+                           _mm_xor_ps(v559, SIGN_BIT_MASK),
                            v559,
                            _mm_cmpeq_epi32(_mm_and_ps(v554, xmmword_4487F40), 0i64)).m128_f32[0];
       v559.m128_f32[0] = _mm_blendv_ps(
-                           _mm_xor_ps(v561, xmmword_44801F0),
+                           _mm_xor_ps(v561, SIGN_BIT_MASK),
                            v561,
                            _mm_cmpeq_epi32(_mm_and_si128(v560, xmmword_4487F40), 0i64)).m128_f32[0];
       v562 = _mm_cvtsi32_si128(*(&turret_aim_angles + 1));
@@ -4329,7 +4329,7 @@ LABEL_565:
       *v562.m128i_i32 = *v562.m128i_i32 * *&dword_44A4134;
       v564 = _mm_cvttps_epi32(
                _mm_add_ps(
-                 _mm_or_si128(_mm_and_si128(v563, xmmword_44801F0), xmmword_44A4140),
+                 _mm_or_si128(_mm_and_si128(v563, SIGN_BIT_MASK), xmmword_44A4140),
                  _mm_blend_ps(v562, 0i64, 0xE)));
       v565 = _mm_sub_epi32(_mm_and_ps(xmmword_4487E40, v564), xmmword_4480100);
       v566 = _mm_sub_ps(v563, _mm_mul_ps(_mm_cvtepi32_ps(v564), xmmword_44AA530));
@@ -4351,13 +4351,13 @@ LABEL_565:
       v570 = _mm_blendv_ps(v568, v569, _mm_cmpeq_epi32(_mm_and_ps(v564, xmmword_4487E30), 0i64));
       v571 = _mm_blendv_ps(v568, v569, _mm_cmpeq_epi32(_mm_and_si128(xmmword_4487E30, v565), 0i64));
       v572 = _mm_blendv_ps(
-               _mm_xor_ps(xmmword_44801F0, v571),
+               _mm_xor_ps(SIGN_BIT_MASK, v571),
                v571,
                _mm_cmpeq_epi32(_mm_and_si128(v565, xmmword_4487F40), 0i64)).m128_f32[0];
       v558.m128_f32[0] = v558.m128_f32[0] * v572;
       *&v573 = v572 * v559.m128_f32[0];
       *v565.m128i_i32 = _mm_blendv_ps(
-                          _mm_xor_ps(v570, xmmword_44801F0),
+                          _mm_xor_ps(v570, SIGN_BIT_MASK),
                           v570,
                           _mm_cmpeq_epi32(_mm_and_ps(v564, xmmword_4487F40), 0i64)).m128_f32[0];
       v574 = fsqrt(
@@ -4661,7 +4661,7 @@ LABEL_1166:
               v1199 = (((v1198 >> 0xF) & 0xFFFE) - 0x8000) * (v1197 * *&dword_44A0140);
               *(cursor_visuals + 0x3E14) = v1199;
               dword_4A79158 = 0x41C64E6D * v1198 + 0x3039;
-              v1200 = COERCE_FLOAT(LODWORD(v1199) ^ xmmword_44801F0) / v1196;
+              v1200 = COERCE_FLOAT(LODWORD(v1199) ^ SIGN_BIT_MASK) / v1196;
               a2 = v1263;
               v310 = a3;
               v923 = v1293.m128_i8[0];

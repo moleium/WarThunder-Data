@@ -220,7 +220,7 @@ LABEL_77:
         if ( !parse_command_data(command_data, v19, "value", Buffer, 0x20i64) || sub_1EC440(Buffer, "%f") != 1 )
           goto LABEL_77;
         fuelMassRatio = air_movement + 0x3630;
-        v41 = fmaxf(COERCE_FLOAT(xmmword_44801F0 ^ *(air_movement + 0x364C)), *v54 - *(air_movement + 0x3634));
+        v41 = fmaxf(COERCE_FLOAT(SIGN_BIT_MASK ^ *(air_movement + 0x364C)), *v54 - *(air_movement + 0x3634));
         LOBYTE(command_data) = 1;
         LOBYTE(v39) = 1;
         LOBYTE(v40) = 1;

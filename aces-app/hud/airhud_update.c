@@ -621,7 +621,7 @@ LABEL_159:
         v125 = 0.0;
         if ( v124 > *&epsilon_unk )
           v125 = Y / v124;
-        v108 = COERCE_FLOAT(LODWORD(v100) ^ xmmword_44801F0) * v125;
+        v108 = COERCE_FLOAT(LODWORD(v100) ^ SIGN_BIT_MASK) * v125;
         v110 = v101 * v125;
       }
       else
@@ -631,7 +631,7 @@ LABEL_159:
         v109 = 0.0;
         if ( v107 > *&epsilon_unk )
           v109 = Y / v107;
-        v110 = COERCE_FLOAT(LODWORD(v99) ^ xmmword_44801F0) * v109;
+        v110 = COERCE_FLOAT(LODWORD(v99) ^ SIGN_BIT_MASK) * v109;
         v111 = v100 * v109;
       }
       v122 = 0.0;
@@ -1313,7 +1313,7 @@ LABEL_973:
       {
         v82 += 0x128;
         v6.m128_f32[0] = sub_1707580(v82, v773) * *&dword_4487F04;
-        v774 = _mm_or_ps(_mm_and_ps(xmmword_44801F0, v6), xmmword_44C0110);
+        v774 = _mm_or_ps(_mm_and_ps(SIGN_BIT_MASK, v6), xmmword_44C0110);
         v774.m128_f32[0] = v774.m128_f32[0] + v6.m128_f32[0];
         v6 = _mm_round_ss(0i64, v774, 0xB);
         v775 = v6.m128_f32[0];
@@ -1418,7 +1418,7 @@ LABEL_308:
         v233 = 0.0;
         if ( v232 > *&epsilon_unk )
           v233 = Y / v232;
-        v213 = COERCE_FLOAT(LODWORD(v204) ^ xmmword_44801F0) * v233;
+        v213 = COERCE_FLOAT(LODWORD(v204) ^ SIGN_BIT_MASK) * v233;
         v215 = v205 * v233;
       }
       else
@@ -1428,7 +1428,7 @@ LABEL_308:
         v214 = 0.0;
         if ( v212 > *&epsilon_unk )
           v214 = Y / v212;
-        v215 = COERCE_FLOAT(LODWORD(v203) ^ xmmword_44801F0) * v214;
+        v215 = COERCE_FLOAT(LODWORD(v203) ^ SIGN_BIT_MASK) * v214;
         v216 = v204 * v214;
       }
       v230 = 0.0;
@@ -3066,7 +3066,7 @@ LABEL_765:
       v641 = *&v981;
       v642 = dword_44890B4;
       v642.m128_f32[0] = *&dword_44890B4 * *&v981;
-      v643 = _mm_or_ps(_mm_and_ps(xmmword_44801F0, v642), xmmword_44C0110);
+      v643 = _mm_or_ps(_mm_and_ps(SIGN_BIT_MASK, v642), xmmword_44C0110);
       v643.m128_f32[0] = v643.m128_f32[0] + (*&dword_44890B4 * *&v981);
       LODWORD(v644) = _mm_round_ss(v643, v643, 0xB).m128_u32[0];
       if ( *(gui_script_strings + 0x840) != 3 || *(gui_script_strings + 0x83E) != v644 )
@@ -4390,7 +4390,7 @@ LABEL_1239:
   if ( *(HudInfo + 0x415) )
   {
     v953 = *(cur_hud_crosshair + 0x670);
-    v6.m128_u64[0] = *(HudInfo + 0x108) ^ xmmword_44801F0;
+    v6.m128_u64[0] = *(HudInfo + 0x108) ^ SIGN_BIT_MASK;
     if ( v6.m128_f32[0] < v953 )
     {
       v954 = *(HudInfo + 0x107);
@@ -4418,7 +4418,7 @@ LABEL_1256:
               if ( v952[0x415] )
               {
                 v955 = cur_hud_crosshair;
-                v6.m128_u64[0] = *(v952 + 0x108) ^ xmmword_44801F0;
+                v6.m128_u64[0] = *(v952 + 0x108) ^ SIGN_BIT_MASK;
                 if ( v6.m128_f32[0] < *(cur_hud_crosshair + 0x670) )
                   v6.m128_u64[0] = *(v952 + 0x107);
               }

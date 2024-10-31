@@ -151,9 +151,9 @@ LABEL_6:
     v175 = fsqrt((v171 * v171) + ((v173 * v173) + (v174 * v174)));
     if ( v175 > *&epsilon_unk )
       v164 = Y / v175;
-    v176 = COERCE_FLOAT(LODWORD(v168) ^ xmmword_44801F0) * v164;
-    v177 = COERCE_FLOAT(LODWORD(v173) ^ xmmword_44801F0) * v164;
-    v178 = COERCE_FLOAT(LODWORD(v174) ^ xmmword_44801F0) * v164;
+    v176 = COERCE_FLOAT(LODWORD(v168) ^ SIGN_BIT_MASK) * v164;
+    v177 = COERCE_FLOAT(LODWORD(v173) ^ SIGN_BIT_MASK) * v164;
+    v178 = COERCE_FLOAT(LODWORD(v174) ^ SIGN_BIT_MASK) * v164;
     *(a1 + 0x660) = v178;
     *(a1 + 0x664) = v177;
     *(a1 + 0x668) = v176;

@@ -618,7 +618,7 @@ LABEL_180:
   LODWORD(v363) = 0x3F800000;
   *(v107 + 0x368) = data::set_real(v116, "wingStaticRadius", &v363);
   LODWORD(v363) = 0x3F800000;
-  *(v107 + 0x36C) = COERCE_UNSIGNED_INT(data::set_real(v116, "wingStrainLimitDown", &v363)) ^ xmmword_44801F0;
+  *(v107 + 0x36C) = COERCE_UNSIGNED_INT(data::set_real(v116, "wingStrainLimitDown", &v363)) ^ SIGN_BIT_MASK;
   *(v107 + 0x370) = 0x3F800000;
   v129 = off_4A78F98(v128);
   v130 = *v129;

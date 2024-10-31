@@ -1582,7 +1582,7 @@ LABEL_473:
   }
   while ( v355 != 0x10 );
   v359 = v963;
-  *(v963.QuadPart + 0x5278) = *(*(v963.QuadPart + 0x2E68) + 0x5DE0i64) ^ xmmword_44801F0;
+  *(v963.QuadPart + 0x5278) = *(*(v963.QuadPart + 0x2E68) + 0x5DE0i64) ^ SIGN_BIT_MASK;
   if ( (*(v963.QuadPart + 0x1058) & 0x100) != 0 && byte_4B822D8 )
   {
     v360 = *(v963.QuadPart + 0x11A0);
@@ -1825,7 +1825,7 @@ LABEL_525:
         v424 = 0i64;
         v425 = dword_4487F30;
         v426 = *&screenScaleFactor;
-        v427 = xmmword_44801F0;
+        v427 = SIGN_BIT_MASK;
         do
         {
           v428 = *(v422 + 8 * v424 + 0x70A0);
@@ -3421,7 +3421,7 @@ LABEL_1109:
       goto LABEL_1115;
     }
     LOBYTE(v972) = v984 != 0 && v974 != 0i64;
-    v755 = xmmword_44801F0;
+    v755 = SIGN_BIT_MASK;
     v756 = xmmword_44A01E0;
     v757 = LODWORD(Y);
     v758 = xmmword_44A0AE0;

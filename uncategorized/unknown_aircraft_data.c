@@ -1623,7 +1623,7 @@ LABEL_339:
     v624 = 0;
     v625 = v114;
     v626 = 0;
-    v627 = xmmword_44801F0 ^ LODWORD(v115);
+    v627 = SIGN_BIT_MASK ^ LODWORD(v115);
     v628 = *v112;
     v629 = *(v112 + 8);
     sub_1573320(air_movement, v622);
@@ -1662,11 +1662,11 @@ LABEL_339:
       *&v669.st_dev = v43;
       *&v669.st_ino = v42;
       *&v669.st_nlink = v41;
-      *&v669.st_gid = COERCE_FLOAT(xmmword_44801F0 ^ LODWORD(v43)) * v42;
+      *&v669.st_gid = COERCE_FLOAT(SIGN_BIT_MASK ^ LODWORD(v43)) * v42;
       *&v669.st_rdev = (v41 * v41) + (v43 * v43);
-      *&v669.st_size = COERCE_FLOAT(LODWORD(v42) ^ xmmword_44801F0) * v41;
+      *&v669.st_size = COERCE_FLOAT(LODWORD(v42) ^ SIGN_BIT_MASK) * v41;
       v669.st_atime = LODWORD(v41) | 0x8000000000000000ui64;
-      LODWORD(v669.st_mtime) = xmmword_44801F0 ^ LODWORD(v43);
+      LODWORD(v669.st_mtime) = SIGN_BIT_MASK ^ LODWORD(v43);
       *(&v669.st_mtime + 1) = (*&dword_4489714 * *&v669.st_gid)
                             + ((*&dword_44CB284 * v43) + ((*(&Str1[1] + 1) + *Str1) * *&screenScaleFactor));
       *&v669.st_ctime = (*&v669.st_rdev * *&dword_4489714)
@@ -1944,7 +1944,7 @@ LABEL_383:
                               fmaxf(
                                 COERCE_FLOAT(_mm_cmplt_ss(epsilon_unk, air_velocity_magnitude).m128_u32[0] & COERCE_UNSIGNED_INT(v301 * (v273 / air_velocity_magnitude.m128_f32[0]))),
                                 *&dword_44801E8),
-                              v273))) ^ xmmword_44801F0;
+                              v273))) ^ SIGN_BIT_MASK;
     sub_B09B80(&v669, "%f,\n", *v295.m128i_i64);
     if ( air_velocity_magnitude.m128_f32[0] > v302 )
     {

@@ -99,7 +99,7 @@ LABEL_18:
         if ( v28 > *&qword_44A0760 )
         {
           v15 = (Y / v28) * v10;
-          v13 = (Y / v28) * COERCE_FLOAT(xmmword_44801F0 ^ LODWORD(v12));
+          v13 = (Y / v28) * COERCE_FLOAT(SIGN_BIT_MASK ^ LODWORD(v12));
           v14 = 0.0;
         }
         v144 = v13;
@@ -162,7 +162,7 @@ LABEL_37:
         if ( v33 > *&qword_44A0760 )
         {
           v15 = (Y / v33) * v10;
-          v13 = (Y / v33) * COERCE_FLOAT(xmmword_44801F0 ^ LODWORD(v12));
+          v13 = (Y / v33) * COERCE_FLOAT(SIGN_BIT_MASK ^ LODWORD(v12));
           v14 = 0.0;
         }
         v144 = v13;
@@ -394,7 +394,7 @@ LABEL_67:
         v118.m128_f32[0] = fsqrt(
                              ((*(v173 + 1) - *(v181 + 1)) * (*(v173 + 1) - *(v181 + 1)))
                            + ((*v173 - *v181) * (*v173 - *v181)));
-        v119 = _mm_or_ps(_mm_and_ps(xmmword_44801F0, v118), xmmword_44C0110);
+        v119 = _mm_or_ps(_mm_and_ps(SIGN_BIT_MASK, v118), xmmword_44C0110);
         v119.m128_f32[0] = v119.m128_f32[0] + v118.m128_f32[0];
         *(v24 + 0xC) = _mm_round_ss(0i64, v119, 0xB).m128_u32[0];
       }

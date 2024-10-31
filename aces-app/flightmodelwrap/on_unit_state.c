@@ -712,7 +712,7 @@ LABEL_238:
             {
               if ( v161 > *&epsilon_unk || (v162 = 0.0, v161 < *&dword_449F1AC) )
                 v162 = Y / v161;
-              *(v158 + 0x2A8) = LODWORD(v162) ^ xmmword_44801F0;
+              *(v158 + 0x2A8) = LODWORD(v162) ^ SIGN_BIT_MASK;
               *(v158 + 0x2A0) = 0xFF000000;
             }
           }

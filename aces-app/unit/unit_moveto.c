@@ -1076,7 +1076,7 @@ LABEL_127:
       v127 = Y / v381;
       v124.m128_f32[0] = v121.m128_f32[0] * v126;
       v405 = v124;
-      v128 = _mm_xor_ps(xmmword_44801F0, v124);
+      v128 = _mm_xor_ps(SIGN_BIT_MASK, v124);
       v406 = v128;
       *&v358 = v101;
       v5 = v367;
@@ -2077,7 +2077,7 @@ LABEL_445:
                   v295 = (v141.m128_f32[0] / v293) * v292;
                   v294 = v291 * (v141.m128_f32[0] / v293);
                 }
-                LODWORD(v296) = LODWORD(v294) ^ xmmword_44801F0;
+                LODWORD(v296) = LODWORD(v294) ^ SIGN_BIT_MASK;
               }
               else
               {
