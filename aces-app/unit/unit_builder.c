@@ -1413,7 +1413,7 @@ LABEL_94:
   v325 = Unit + 0x1E3C;
   v101 = Unit + 0x1E60;
   v312 = Unit + 0x1E54;
-  if ( qword_4B12868 )
+  if ( damage_model_parts )
   {
     v326 = Unit + 0x1D4C;
     v327 = Unit + 0x1D58;
@@ -1425,7 +1425,7 @@ LABEL_94:
     v333 = Unit + 0x1DAC;
     v334 = Unit + 0x1E48;
     v315 = Unit + 0x1E60;
-    v102 = qword_4B12868 + 0xA0;
+    v102 = damage_model_parts + 0xA0;
     v103 = data::get_name_id("body", 4ui64);
     v104 = data::get_name_id(v102, "body", 4i64, v103);
     if ( v104 < 0 )
@@ -1433,13 +1433,13 @@ LABEL_94:
       v307 = "body";
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v105 = qword_4B12868;
-      v106 = *(qword_4B12868 + 0x1E);
+      v105 = damage_model_parts;
+      v106 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v105 = qword_4B12868;
-      v106 = *(qword_4B12868 + 0x1E) + 0xCi64 * v104;
+      v105 = damage_model_parts;
+      v106 = *(damage_model_parts + 0x1E) + 0xCi64 * v104;
     }
     *(Unit + 0x1D48) = *(v106 + 8);
     *v99 = *v106;
@@ -1452,13 +1452,13 @@ LABEL_94:
       v307 = "engine";
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v150 = qword_4B12868;
-      v151 = *(qword_4B12868 + 0x1E);
+      v150 = damage_model_parts;
+      v151 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v150 = qword_4B12868;
-      v151 = *(qword_4B12868 + 0x1E) + 0xCi64 * v147;
+      v150 = damage_model_parts;
+      v151 = *(damage_model_parts + 0x1E) + 0xCi64 * v147;
     }
     *(v149 + 8) = *(v151 + 8);
     *v149 = *v151;
@@ -1469,13 +1469,13 @@ LABEL_94:
       v307 = "fuel";
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v154 = qword_4B12868;
-      v155 = *(qword_4B12868 + 0x1E);
+      v154 = damage_model_parts;
+      v155 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v154 = qword_4B12868;
-      v155 = *(qword_4B12868 + 0x1E) + 0xCi64 * v153;
+      v154 = damage_model_parts;
+      v155 = *(damage_model_parts + 0x1E) + 0xCi64 * v153;
     }
     v145 = v311;
     v156 = v327;
@@ -1488,13 +1488,13 @@ LABEL_94:
       v307 = "transmission";
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v159 = qword_4B12868;
-      v160 = *(qword_4B12868 + 0x1E);
+      v159 = damage_model_parts;
+      v160 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v159 = qword_4B12868;
-      v160 = *(qword_4B12868 + 0x1E) + 0xCi64 * v158;
+      v159 = damage_model_parts;
+      v160 = *(damage_model_parts + 0x1E) + 0xCi64 * v158;
     }
     *(Unit + 0x1D6C) = *(v160 + 8);
     *v100 = *v160;
@@ -1505,13 +1505,13 @@ LABEL_94:
       v307 = "shaft";
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v163 = qword_4B12868;
-      v164 = *(qword_4B12868 + 0x1E);
+      v163 = damage_model_parts;
+      v164 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v163 = qword_4B12868;
-      v164 = *(qword_4B12868 + 0x1E) + 0xCi64 * v162;
+      v163 = damage_model_parts;
+      v164 = *(damage_model_parts + 0x1E) + 0xCi64 * v162;
     }
     v165 = v313;
     v166 = v328;
@@ -1524,13 +1524,13 @@ LABEL_94:
       v307 = "radiator";
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v169 = qword_4B12868;
-      v170 = *(qword_4B12868 + 0x1E);
+      v169 = damage_model_parts;
+      v170 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v169 = qword_4B12868;
-      v170 = *(qword_4B12868 + 0x1E) + 0xCi64 * v168;
+      v169 = damage_model_parts;
+      v170 = *(damage_model_parts + 0x1E) + 0xCi64 * v168;
     }
     v171 = v329;
     *(v329 + 8) = *(v170 + 8);
@@ -1542,13 +1542,13 @@ LABEL_94:
       v307 = "gun";
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v174 = qword_4B12868;
-      v175 = *(qword_4B12868 + 0x1E);
+      v174 = damage_model_parts;
+      v175 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v174 = qword_4B12868;
-      v175 = *(qword_4B12868 + 0x1E) + 0xCi64 * v173;
+      v174 = damage_model_parts;
+      v175 = *(damage_model_parts + 0x1E) + 0xCi64 * v173;
     }
     v176 = v330;
     *(v330 + 8) = *(v175 + 8);
@@ -1560,13 +1560,13 @@ LABEL_94:
       v307 = "gun_barrel";
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v179 = qword_4B12868;
-      v180 = *(qword_4B12868 + 0x1E);
+      v179 = damage_model_parts;
+      v180 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v179 = qword_4B12868;
-      v180 = *(qword_4B12868 + 0x1E) + 0xCi64 * v178;
+      v179 = damage_model_parts;
+      v180 = *(damage_model_parts + 0x1E) + 0xCi64 * v178;
     }
     v181 = v331;
     *(v331 + 8) = *(v180 + 8);
@@ -1578,13 +1578,13 @@ LABEL_94:
       v307 = "torpedo_tube";
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v184 = qword_4B12868;
-      v185 = *(qword_4B12868 + 0x1E);
+      v184 = damage_model_parts;
+      v185 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v184 = qword_4B12868;
-      v185 = *(qword_4B12868 + 0x1E) + 0xCi64 * v183;
+      v184 = damage_model_parts;
+      v185 = *(damage_model_parts + 0x1E) + 0xCi64 * v183;
     }
     v186 = v332;
     *(v332 + 8) = *(v185 + 8);
@@ -1596,13 +1596,13 @@ LABEL_94:
       v307 = "suspension";
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v189 = qword_4B12868;
-      v190 = *(qword_4B12868 + 0x1E);
+      v189 = damage_model_parts;
+      v190 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v189 = qword_4B12868;
-      v190 = *(qword_4B12868 + 0x1E) + 0xCi64 * v188;
+      v189 = damage_model_parts;
+      v190 = *(damage_model_parts + 0x1E) + 0xCi64 * v188;
     }
     v191 = v333;
     *(v333 + 8) = *(v190 + 8);
@@ -1614,13 +1614,13 @@ LABEL_94:
       v307 = "wheel";
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v194 = qword_4B12868;
-      v195 = *(qword_4B12868 + 0x1E);
+      v194 = damage_model_parts;
+      v195 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v194 = qword_4B12868;
-      v195 = *(qword_4B12868 + 0x1E) + 0xCi64 * v193;
+      v194 = damage_model_parts;
+      v195 = *(damage_model_parts + 0x1E) + 0xCi64 * v193;
     }
     v196 = v317;
     *(v317 + 8) = *(v195 + 8);
@@ -1632,13 +1632,13 @@ LABEL_94:
       v307 = "track";
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v199 = qword_4B12868;
-      v200 = *(qword_4B12868 + 0x1E);
+      v199 = damage_model_parts;
+      v200 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v199 = qword_4B12868;
-      v200 = *(qword_4B12868 + 0x1E) + 0xCi64 * v198;
+      v199 = damage_model_parts;
+      v200 = *(damage_model_parts + 0x1E) + 0xCi64 * v198;
     }
     v201 = v318;
     *(v318 + 8) = *(v200 + 8);
@@ -1650,13 +1650,13 @@ LABEL_94:
       v307 = "track_left";
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v204 = qword_4B12868;
-      v205 = *(qword_4B12868 + 0x1E);
+      v204 = damage_model_parts;
+      v205 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v204 = qword_4B12868;
-      v205 = *(qword_4B12868 + 0x1E) + 0xCi64 * v203;
+      v204 = damage_model_parts;
+      v205 = *(damage_model_parts + 0x1E) + 0xCi64 * v203;
     }
     v206 = v319;
     *(v319 + 8) = *(v205 + 8);
@@ -1668,13 +1668,13 @@ LABEL_94:
       v307 = "track_right";
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v209 = qword_4B12868;
-      v210 = *(qword_4B12868 + 0x1E);
+      v209 = damage_model_parts;
+      v210 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v209 = qword_4B12868;
-      v210 = *(qword_4B12868 + 0x1E) + 0xCi64 * v208;
+      v209 = damage_model_parts;
+      v210 = *(damage_model_parts + 0x1E) + 0xCi64 * v208;
     }
     v211 = v320;
     *(v320 + 8) = *(v210 + 8);
@@ -1686,13 +1686,13 @@ LABEL_94:
       v307 = "drive_turret_h";
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v214 = qword_4B12868;
-      v215 = *(qword_4B12868 + 0x1E);
+      v214 = damage_model_parts;
+      v215 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v214 = qword_4B12868;
-      v215 = *(qword_4B12868 + 0x1E) + 0xCi64 * v213;
+      v214 = damage_model_parts;
+      v215 = *(damage_model_parts + 0x1E) + 0xCi64 * v213;
     }
     v216 = v321;
     *(v321 + 8) = *(v215 + 8);
@@ -1704,13 +1704,13 @@ LABEL_94:
       v307 = "drive_turret_v";
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v219 = qword_4B12868;
-      v220 = *(qword_4B12868 + 0x1E);
+      v219 = damage_model_parts;
+      v220 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v219 = qword_4B12868;
-      v220 = *(qword_4B12868 + 0x1E) + 0xCi64 * v218;
+      v219 = damage_model_parts;
+      v220 = *(damage_model_parts + 0x1E) + 0xCi64 * v218;
     }
     *(v148 + 2) = *(v220 + 8);
     *v148 = *v220;
@@ -1721,13 +1721,13 @@ LABEL_94:
       v307 = "steering";
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v223 = qword_4B12868;
-      v224 = *(qword_4B12868 + 0x1E);
+      v223 = damage_model_parts;
+      v224 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v223 = qword_4B12868;
-      v224 = *(qword_4B12868 + 0x1E) + 0xCi64 * v222;
+      v223 = damage_model_parts;
+      v224 = *(damage_model_parts + 0x1E) + 0xCi64 * v222;
     }
     v225 = v316;
     *(v316 + 8) = *(v224 + 8);
@@ -1739,13 +1739,13 @@ LABEL_94:
       v307 = "bridge";
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v228 = qword_4B12868;
-      v229 = *(qword_4B12868 + 0x1E);
+      v228 = damage_model_parts;
+      v229 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v228 = qword_4B12868;
-      v229 = *(qword_4B12868 + 0x1E) + 0xCi64 * v227;
+      v228 = damage_model_parts;
+      v229 = *(damage_model_parts + 0x1E) + 0xCi64 * v227;
     }
     *(v165 + 2) = *(v229 + 8);
     *v165 = *v229;
@@ -1756,13 +1756,13 @@ LABEL_94:
       v307 = "crew";
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v232 = qword_4B12868;
-      v233 = *(qword_4B12868 + 0x1E);
+      v232 = damage_model_parts;
+      v233 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v232 = qword_4B12868;
-      v233 = *(qword_4B12868 + 0x1E) + 0xCi64 * v231;
+      v232 = damage_model_parts;
+      v233 = *(damage_model_parts + 0x1E) + 0xCi64 * v231;
     }
     v234 = v314;
     *(v314 + 8) = *(v233 + 8);
@@ -1774,13 +1774,13 @@ LABEL_94:
       v307 = "commander";
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v237 = qword_4B12868;
-      v238 = *(qword_4B12868 + 0x1E);
+      v237 = damage_model_parts;
+      v238 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v237 = qword_4B12868;
-      v238 = *(qword_4B12868 + 0x1E) + 0xCi64 * v236;
+      v237 = damage_model_parts;
+      v238 = *(damage_model_parts + 0x1E) + 0xCi64 * v236;
     }
     v239 = v323;
     *(v323 + 8) = *(v238 + 8);
@@ -1792,13 +1792,13 @@ LABEL_94:
       v307 = "driver";
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v242 = qword_4B12868;
-      v243 = *(qword_4B12868 + 0x1E);
+      v242 = damage_model_parts;
+      v243 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v242 = qword_4B12868;
-      v243 = *(qword_4B12868 + 0x1E) + 0xCi64 * v241;
+      v242 = damage_model_parts;
+      v243 = *(damage_model_parts + 0x1E) + 0xCi64 * v241;
     }
     v244 = v324;
     *(v324 + 8) = *(v243 + 8);
@@ -1810,13 +1810,13 @@ LABEL_94:
       v307 = "gunner";
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v247 = qword_4B12868;
-      v248 = *(qword_4B12868 + 0x1E);
+      v247 = damage_model_parts;
+      v248 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v247 = qword_4B12868;
-      v248 = *(qword_4B12868 + 0x1E) + 0xCi64 * v246;
+      v247 = damage_model_parts;
+      v248 = *(damage_model_parts + 0x1E) + 0xCi64 * v246;
     }
     v249 = v325;
     *(v325 + 8) = *(v248 + 8);
@@ -1828,13 +1828,13 @@ LABEL_94:
       v307 = "loader";
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v252 = qword_4B12868;
-      v253 = *(qword_4B12868 + 0x1E);
+      v252 = damage_model_parts;
+      v253 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v252 = qword_4B12868;
-      v253 = *(qword_4B12868 + 0x1E) + 0xCi64 * v251;
+      v252 = damage_model_parts;
+      v253 = *(damage_model_parts + 0x1E) + 0xCi64 * v251;
     }
     v254 = v334;
     *(v334 + 8) = *(v253 + 8);
@@ -1846,13 +1846,13 @@ LABEL_94:
       v307 = "machinegunner";
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v257 = qword_4B12868;
-      v258 = *(qword_4B12868 + 0x1E);
+      v257 = damage_model_parts;
+      v258 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v257 = qword_4B12868;
-      v258 = *(qword_4B12868 + 0x1E) + 0xCi64 * v256;
+      v257 = damage_model_parts;
+      v258 = *(damage_model_parts + 0x1E) + 0xCi64 * v256;
     }
     v259 = v312;
     *(v312 + 8) = *(v258 + 8);
@@ -1864,11 +1864,11 @@ LABEL_94:
       v307 = &qword_495B4C2;
       LODWORD(v306) = 1;
       logmessage_fmt(1u, "global damage part list: unknown kind of part %s", &v306, 1);
-      v144 = *(qword_4B12868 + 0x1E);
+      v144 = *(damage_model_parts + 0x1E);
     }
     else
     {
-      v144 = *(qword_4B12868 + 0x1E) + 0xCi64 * v261;
+      v144 = *(damage_model_parts + 0x1E) + 0xCi64 * v261;
     }
     v101 = v315;
   }

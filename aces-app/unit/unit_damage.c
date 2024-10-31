@@ -216,7 +216,7 @@ LABEL_37:
           if ( v38 )
           {
             if ( !*v38
-              || (v55 = qword_4B12868 + 0x50,
+              || (v55 = damage_model_parts + 0x50,
                   v56 = strlen(v38),
                   v57 = data::get_name_id(v38, v56),
                   v54 = data::get_name_id(v55, v38, v56, v57),

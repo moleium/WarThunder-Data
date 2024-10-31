@@ -115,17 +115,17 @@ LABEL_31:
   }
   if ( !*(*(UnitWeaponsInfo + 0x90) + 8i64) || !a2 )
     goto LABEL_68;
-  if ( *(qword_4B12868 + 8) <= a3 )
+  if ( *(damage_model_parts + 8) <= a3 )
   {
     v27 = 0i64;
   }
   else
   {
-    v25 = *(qword_4B12868 + 0x4A);
-    v26 = (*(qword_4B12868 + 7) + 0x10 * (*(*(qword_4B12868 + 3) + 4i64 * a3) >> v25));
-    if ( *(*(qword_4B12868 + 3) + 4i64 * a3) >> v25 == *(qword_4B12868 + 0x10) )
-      v26 = qword_4B12868 + 0x28;
-    v27 = *v26 + (*(*(qword_4B12868 + 3) + 4i64 * a3) & ~(0xFFFFFFFF << v25));
+    v25 = *(damage_model_parts + 0x4A);
+    v26 = (*(damage_model_parts + 7) + 0x10 * (*(*(damage_model_parts + 3) + 4i64 * a3) >> v25));
+    if ( *(*(damage_model_parts + 3) + 4i64 * a3) >> v25 == *(damage_model_parts + 0x10) )
+      v26 = damage_model_parts + 0x28;
+    v27 = *v26 + (*(*(damage_model_parts + 3) + 4i64 * a3) & ~(0xFFFFFFFF << v25));
   }
   if ( sub_6926A0(UnitWeaponsInfo, v27, 0i64) <= 0.0 )
   {

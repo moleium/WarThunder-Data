@@ -611,7 +611,7 @@ LABEL_136:
               if ( WeaponsInfo )
               {
                 v85 = v71;
-                if ( *(qword_4B12868 + 8) > v76 )
+                if ( *(damage_model_parts + 8) > v76 )
                 {
                   v85 = v71;
                   if ( *(WeaponsInfo + 0x2A8) > v76 )
@@ -679,7 +679,7 @@ LABEL_141:
           logmessage_fmt(3u, "can't run function '%s' for unit '%s', type %u", &v126, 3);
           goto LABEL_154;
         }
-        LODWORD(v94) = *(qword_4B12868 + 8);
+        LODWORD(v94) = *(damage_model_parts + 8);
         if ( v94 )
           break;
       }
@@ -830,7 +830,7 @@ LABEL_178:
       }
 LABEL_166:
       ++v4;
-      v94 = *(qword_4B12868 + 8);
+      v94 = *(damage_model_parts + 8);
       if ( v4 == v94 )
         goto LABEL_188;
     }

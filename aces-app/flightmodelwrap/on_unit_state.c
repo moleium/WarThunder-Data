@@ -217,21 +217,21 @@ LABEL_70:
       else
         *(Unit + 0x33C8) = 1;
       v50 = *(Unit + 0x51F4);
-      if ( v50 >= *(qword_4B12868 + 8) )
+      if ( v50 >= *(damage_model_parts + 8) )
       {
         v54 = &word_4998F5C;
       }
-      else if ( v50 < 0 || *(qword_4B12868 + 0x1C) <= v50 )
+      else if ( v50 < 0 || *(damage_model_parts + 0x1C) <= v50 )
       {
         v54 = 0i64;
       }
       else
       {
-        v51 = *(*(qword_4B12868 + 0xD) + 4 * v50);
-        v52 = *(qword_4B12868 + 0x9A);
-        v53 = (*(qword_4B12868 + 0x11) + 0x10 * (v51 >> v52));
-        if ( (v51 >> v52) == *(qword_4B12868 + 0x24) )
-          v53 = qword_4B12868 + 0x78;
+        v51 = *(*(damage_model_parts + 0xD) + 4 * v50);
+        v52 = *(damage_model_parts + 0x9A);
+        v53 = (*(damage_model_parts + 0x11) + 0x10 * (v51 >> v52));
+        if ( (v51 >> v52) == *(damage_model_parts + 0x24) )
+          v53 = damage_model_parts + 0x78;
         v54 = (*v53 + (v51 & ~(0xFFFFFFFF << v52)));
       }
       v55 = *(*(Unit + 0x4160) + 0x40i64);
@@ -358,8 +358,8 @@ LABEL_119:
       {
         if ( **(*(Unit + 0x11A0) + 0x90i64) )
         {
-          v87 = qword_4B12868;
-          if ( *(qword_4B12868 + 8) )
+          v87 = damage_model_parts;
+          if ( *(damage_model_parts + 8) )
           {
             v88 = 0i64;
             v89 = *&dword_44A50C0;
@@ -444,7 +444,7 @@ LABEL_119:
                         *(&v176 + 1) = v130;
                         LODWORD(v176) = 1;
                         logmessage_fmt(0x20574D46u, "%g / %g   %s", &v173, 3);
-                        v87 = qword_4B12868;
+                        v87 = damage_model_parts;
                       }
                     }
                   }
