@@ -299,7 +299,7 @@ LABEL_54:
       {
         LOBYTE(v82) = 1;
         v476 = v82;
-        sub_1458A90(v76, (v81 + 0x638), 0i64);
+        data::set_from(v76, (v81 + 0x638), 0i64);
       }
       else
       {

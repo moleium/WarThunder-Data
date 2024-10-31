@@ -81,7 +81,7 @@ __int64 __fastcall get_replays_list(_QWORD *a1)
       }
       if ( HIDWORD(SystemInfo.lpMaximumApplicationAddress) == Src && !LOBYTE(SystemInfo.dwActiveProcessorMask) )
       {
-        sub_1458A90(&qword_4B1BF08, &qword_4B1BF28, 0i64);
+        data::set_from(&qword_4B1BF08, &qword_4B1BF28, 0i64);
         goto LABEL_27;
       }
     }

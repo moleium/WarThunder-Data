@@ -682,28 +682,28 @@ __int64 __fastcall set_mission_blk(__int64 mission, __int64 a2)
     && *(mission + 0x5FE) + *(mission + 0x5FC) )
   {
     v39 = sub_145DB90(a2, "weatherPreset");
-    sub_1458A90(v39, (mission + 0x610), 0i64);
+    data::set_from(v39, (mission + 0x610), 0i64);
     v40 = sub_145DB90(a2, "weatherType");
-    sub_1458A90(v40, (mission + 0x630), 0i64);
+    data::set_from(v40, (mission + 0x630), 0i64);
     v41 = sub_145DB90(a2, "environmentGlobal");
-    sub_1458A90(v41, (mission + 0x5F0), 0i64);
+    data::set_from(v41, (mission + 0x5F0), 0i64);
   }
   v42 = sub_145DB90(a2, "customWeather");
-  sub_1458A90(v42, (mission + 0x650), 0i64);
+  data::set_from(v42, (mission + 0x650), 0i64);
   v43 = sub_145DB90(a2, "limits");
-  sub_1458A90(v43, (mission + 0x430), 0i64);
+  data::set_from(v43, (mission + 0x430), 0i64);
   v44 = sub_145DB90(a2, "spawnTypes");
-  sub_1458A90(v44, (mission + 0x450), 0i64);
+  data::set_from(v44, (mission + 0x450), 0i64);
   v45 = sub_145DB90(a2, "customSpawnScore");
-  sub_1458A90(v45, (mission + 0x470), 0i64);
+  data::set_from(v45, (mission + 0x470), 0i64);
   v46 = sub_145DB90(a2, "roguelikeModeAircrafts");
-  sub_1458A90(v46, (mission + 0x490), 0i64);
+  data::set_from(v46, (mission + 0x490), 0i64);
   v47 = sub_145DB90(a2, "roguelikeModeActions");
-  sub_1458A90(v47, (mission + 0x4B0), 0i64);
+  data::set_from(v47, (mission + 0x4B0), 0i64);
   v48 = sub_145DB90(a2, "customRules");
-  sub_1458A90(v48, (mission + 0x530), 0i64);
+  data::set_from(v48, (mission + 0x530), 0i64);
   v49 = sub_145DB90(a2, "unitsParamsList");
-  sub_1458A90(v49, (mission + 0x550), 0i64);
+  data::set_from(v49, (mission + 0x550), 0i64);
   if ( !*(mission + 0x190) )
   {
     if ( !(*(mission + 0x4DE) + *(mission + 0x4DC)) )
@@ -718,17 +718,17 @@ __int64 __fastcall set_mission_blk(__int64 mission, __int64 a2)
     {
 LABEL_415:
       if ( !(*(mission + 0x4FE) + *(mission + 0x4FC))
-        || (v80 = sub_145DB90(a2, "editSlotbar"), sub_1458A90(v80, (mission + 0x4F0), 0i64), !*(mission + 0x190)) )
+        || (v80 = sub_145DB90(a2, "editSlotbar"), data::set_from(v80, (mission + 0x4F0), 0i64), !*(mission + 0x190)) )
       {
         if ( !(*(mission + 0x5DE) + *(mission + 0x5DC))
           || (v81 = sub_145DB90(a2, "aiCasualtiesMapping"),
-              sub_1458A90(v81, (mission + 0x5D0), 0i64),
+              data::set_from(v81, (mission + 0x5D0), 0i64),
               !*(mission + 0x190)) )
         {
           if ( *(mission + 0x57E) + *(mission + 0x57C) )
           {
             v82 = sub_145DB90(a2, "unitGroups");
-            sub_1458A90(v82, (mission + 0x570), 0i64);
+            data::set_from(v82, (mission + 0x570), 0i64);
           }
         }
       }

@@ -190,9 +190,9 @@ LABEL_47:
         v55 = (v49 + v47);
 LABEL_62:
         v38 = PerformanceCount;
-        sub_1458A90(PerformanceCount, v54, 0i64);
+        data::set_from(PerformanceCount, v54, 0i64);
         v56 = sub_145DB90(PerformanceCount, "overrideFM");
-        sub_1458A90(v56, v55, 0i64);
+        data::set_from(v56, v55, 0i64);
       }
     }
   }

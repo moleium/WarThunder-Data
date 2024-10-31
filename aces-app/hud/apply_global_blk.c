@@ -437,20 +437,20 @@ void __fastcall apply_global_blk(__int64 hud, __int64 a2)
     sub_145A110(v44, &unk_498BCB5, off_44B5F70[*(hud + 0x350)]);
     sub_145A110(v44, "hudHardcore", off_44B5F70[*(hud + 0x354)]);
     v84 = sub_145DB90(v44, "customSettings");
-    sub_1458A90(v84, (hud + 0x4F8), 0i64);
+    data::set_from(v84, (hud + 0x4F8), 0i64);
     v85 = sub_145DB90(v44, "internetRadioSettings");
-    sub_1458A90(v85, (hud + 0x518), 0i64);
+    data::set_from(v85, (hud + 0x518), 0i64);
     v86 = sub_145DB90(v44, "unitsSettings");
-    sub_1458A90(v86, (hud + 0x538), 0i64);
+    data::set_from(v86, (hud + 0x538), 0i64);
     v87 = sub_145DB90(v44, "userSkins");
-    sub_1458A90(v87, (hud + 0x558), 0i64);
+    data::set_from(v87, (hud + 0x558), 0i64);
     assign_char_property(v44, "showDestroyedParts", *(hud + 0x3B4));
     assign_char_property(v44, "activateGroundRadarOnSpawn", *(hud + 0x3B5));
     assign_char_property(v44, "groundRadarTargetCycling", *(hud + 0x3B6));
     assign_char_property(v44, "activateGroundActiveCounterMeasuresOnSpawn", *(hud + 0x3B7));
     assign_char_property(v44, "tankGunnerCameraFromSight", *(hud + 0x3CC));
     v88 = sub_145DB90(v44, "tankAltCrosshair");
-    sub_1458A90(v88, (hud + 0x3D0), 0i64);
+    data::set_from(v88, (hud + 0x3D0), 0i64);
     data::add_int(v44, "saveZoomCameraSetting", *(hud + 0x3F0));
     assign_char_property(v44, "playInactiveWindowSound", *(hud + 0x3BB));
     v89 = sub_145DB90(v44, "forbid_visual_tags");
@@ -914,7 +914,7 @@ LABEL_257:
               goto LABEL_275;
             v208 = (v201 + v199);
           }
-          sub_1458A90(&v209, v208, 0i64);
+          data::set_from(&v209, v208, 0i64);
 LABEL_275:
           sub_145E230(v181);
           if ( HIWORD(v210) + WORD2(v210) )
