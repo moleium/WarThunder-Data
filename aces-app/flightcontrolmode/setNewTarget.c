@@ -55,7 +55,7 @@ void __fastcall setNewTarget(__int64 ballistics, __int64 _Unit, __int64 a3, __in
     v10[1] = ballistics;
     v10[2] = Unit;
     add_delayed_callback(
-      &qword_4B71860,
+      &controller_do_reset_input,
       v10,
       0i64,
       0i64,

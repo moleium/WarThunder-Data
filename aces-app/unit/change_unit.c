@@ -68,7 +68,7 @@ LABEL_24:
   v191 = (a1 + 0x18);
   *(a1 + 0x40) = 0;
   add_delayed_callback(
-    &qword_4B71860,
+    &controller_do_reset_input,
     0,
     sub_490B70,
     a1,
@@ -301,7 +301,7 @@ LABEL_24:
         v227 = (a1 + 0x4C);
         *(a1 + 0x4C) = 0;
         add_delayed_callback(
-          &qword_4B71860,
+          &controller_do_reset_input,
           0,
           sub_490D50,
           &v224,
@@ -343,7 +343,7 @@ LABEL_24:
           v256[2] = a1 + 0x50;
           *(a1 + 0x50) = 0;
           add_delayed_callback(
-            &qword_4B71860,
+            &controller_do_reset_input,
             0,
             sub_491140,
             v256,
@@ -383,7 +383,7 @@ LABEL_24:
           }
           *v72 = 0;
           add_delayed_callback(
-            &qword_4B71860,
+            &controller_do_reset_input,
             0,
             sub_4914B0,
             v256,
@@ -607,7 +607,7 @@ LABEL_24:
         v223 = a1 + 0x4C;
         *(a1 + 0x4C) = 0;
         add_delayed_callback(
-          &qword_4B71860,
+          &controller_do_reset_input,
           0,
           sub_491B70,
           &v219,
@@ -636,7 +636,7 @@ LABEL_24:
         *&v194 = a1 + 0x50;
         *(a1 + 0x50) = 0;
         add_delayed_callback(
-          &qword_4B71860,
+          &controller_do_reset_input,
           0,
           sub_491140,
           Block,
@@ -649,7 +649,7 @@ LABEL_24:
         }
         *v123 = 0;
         add_delayed_callback(
-          &qword_4B71860,
+          &controller_do_reset_input,
           0,
           sub_4914B0,
           Block,
@@ -674,7 +674,7 @@ LABEL_24:
       v125 = (*(*(v124 + 0xA) + 0x60i64))(v124 + 0x50);
       *v109 = 0;
       add_delayed_callback(
-        &qword_4B71860,
+        &controller_do_reset_input,
         0,
         sub_491E70,
         v211,
@@ -867,7 +867,7 @@ LABEL_254:
         LOBYTE(v156) = 1;
         v158 = sub_57B0C0(*(*v191 + 8i64) & 0x7FF, v58, v156);
         add_delayed_callback(
-          &qword_4B71860,
+          &controller_do_reset_input,
           v158,
           0,
           0,
@@ -1026,7 +1026,7 @@ LABEL_254:
             a1 + 0x7C,
             &v224);
           add_delayed_callback(
-            &qword_4B71860,
+            &controller_do_reset_input,
             v176,
             0,
             0,
@@ -1083,7 +1083,7 @@ LABEL_254:
       LOWORD(v265) = *(a1 + 0x186);
       *(a1 + 0x48) = 0;
       add_delayed_callback(
-        &qword_4B71860,
+        &controller_do_reset_input,
         0,
         sub_492870,
         &v260,

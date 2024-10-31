@@ -8,7 +8,7 @@ void __fastcall push_to_unitslist(__int64 game, __int64 Unit, __int64 a3, __int6
   if ( !*(*(NtCurrentTeb()->ThreadLocalStoragePointer + TlsIndex) + 0x158i64) )
   {
     add_delayed_callback(
-      &qword_4B71860,
+      &controller_do_reset_input,
       0i64,
       sub_56CCE0,
       Unit,

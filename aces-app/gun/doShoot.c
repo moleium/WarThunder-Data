@@ -1246,7 +1246,7 @@ LABEL_95:
         *v90 = &off_44A9350;
         v90[1] = v88;
         v74 = 0;
-        add_delayed_callback(&qword_4B71860, v90, 0i64, 0i64, "DelayedAction @\n\t..\\..\\skyquake\\prog\\weapon\\gun.cpp(457):");
+        add_delayed_callback(&controller_do_reset_input, v90, 0i64, 0i64, "DelayedAction @\n\t..\\..\\skyquake\\prog\\weapon\\gun.cpp(457):");
         v40 = v89;
       }
       else

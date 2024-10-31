@@ -76,7 +76,7 @@ void __fastcall tickWeapon(
           v242[1] = a1;
           *(v242 + 4) = v30;
           add_delayed_callback(
-            &qword_4B71860,
+            &controller_do_reset_input,
             v242,
             0i64,
             0i64,
@@ -629,7 +629,7 @@ LABEL_197:
     *v109 = &off_44A9350;
     v109[1] = v108;
     add_delayed_callback(
-      &qword_4B71860,
+      &controller_do_reset_input,
       v109,
       0i64,
       0i64,
