@@ -4,7 +4,7 @@ void on_artillery_close()
   {
     is_in_artillery_map = 0;
     if ( qword_4B173B8 )
-      sub_224C10(qword_4B173B8 + 0x380);
+      gui_call_interop(qword_4B173B8 + 0x380);
     if ( curTacticalMap )
     {
       *(curTacticalMap + 0x3B78) = 0;
