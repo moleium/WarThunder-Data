@@ -2311,7 +2311,7 @@ LABEL_449:
     if ( *v354 > 0 )
     {
       v356 = 0i64;
-      v357 = xmmword_449AF40;
+      v357 = FABSF_MASK;
       do
       {
         v358 = *&v354[2 * v356 + 2];

@@ -6,7 +6,7 @@ float get_time_speed()
   // game + 0x1AC is game speed
   if ( !*(game + 0x450) )
     return Y;
-  v0 = _mm_and_ps(*(game + 0x1AC), xmmword_449AF40);
+  v0 = _mm_and_ps(*(game + 0x1AC), FABSF_MASK);
   v1 = dword_44A0308;
   v1.m128_f32[0] = *&dword_44A0308 * v0.m128_f32[0];
   return *(game

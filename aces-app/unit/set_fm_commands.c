@@ -167,7 +167,7 @@ __int64 __fastcall set_fm_commands(
                 *Buffer = 1.0;
                 if ( sub_B0A5E0(command_data, "value", Buffer) )
                 {
-                  v9 = _mm_and_ps(*(game + 0x1AC), xmmword_449AF40);
+                  v9 = _mm_and_ps(*(game + 0x1AC), FABSF_MASK);
                   v10 = dword_44A0308;
                   v10.m128_f32[0] = *&dword_44A0308 * v9.m128_f32[0];
                   *(game

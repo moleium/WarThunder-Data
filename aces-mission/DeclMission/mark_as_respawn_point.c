@@ -2191,7 +2191,7 @@ LABEL_425:
           {
             v425 = v253 + 8;
             v426 = 8i64;
-            v427 = xmmword_449AF40;
+            v427 = FABSF_MASK;
             do
             {
               v429 = *v425;
@@ -2228,7 +2228,7 @@ LABEL_716:
         {
           v418 = 1i64;
           v419 = 8i64;
-          v420 = xmmword_449AF40;
+          v420 = FABSF_MASK;
           do
           {
             v422 = *&v253[8 * v418];

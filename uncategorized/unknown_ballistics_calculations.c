@@ -270,17 +270,17 @@ LABEL_37:
                 v93 = fsqrt(v168);
                 v94 = fmaxf(
                         COERCE_FLOAT(COERCE_UNSIGNED_INT(((((v83 - (v164 * v80)) * v85) * v146)
-                                                        + ((v91 * v145) + (v88 * v144))) * v137) & xmmword_449AF40)
+                                                        + ((v91 * v145) + (v88 * v144))) * v137) & FABSF_MASK)
                       + (COERCE_FLOAT(COERCE_UNSIGNED_INT(
                                         (((((v79 * v80) - (v77 * v151)) * v85) * v146) + ((v90 * v145) + (v87 * v144)))
-                                      * v136) & xmmword_449AF40)
-                       + COERCE_FLOAT(COERCE_UNSIGNED_INT(((v92 * v146) + ((v89 * v145) + (v86 * v144))) * v135) & xmmword_449AF40)),
+                                      * v136) & FABSF_MASK)
+                       + COERCE_FLOAT(COERCE_UNSIGNED_INT(((v92 * v146) + ((v89 * v145) + (v86 * v144))) * v135) & FABSF_MASK)),
                         COERCE_FLOAT(COERCE_UNSIGNED_INT(((v143 * ((v83 - (v164 * v80)) * v85))
-                                                        + ((v142 * v91) + (v141 * v88))) * v137) & xmmword_449AF40)
+                                                        + ((v142 * v91) + (v141 * v88))) * v137) & FABSF_MASK)
                       + (COERCE_FLOAT(COERCE_UNSIGNED_INT(
                                         ((v143 * (((v79 * v80) - (v77 * v151)) * v85)) + ((v142 * v90) + (v141 * v87)))
-                                      * v136) & xmmword_449AF40)
-                       + COERCE_FLOAT(COERCE_UNSIGNED_INT(((v143 * v92) + ((v142 * v89) + (v141 * v86))) * v135) & xmmword_449AF40)))
+                                      * v136) & FABSF_MASK)
+                       + COERCE_FLOAT(COERCE_UNSIGNED_INT(((v143 * v92) + ((v142 * v89) + (v141 * v86))) * v135) & FABSF_MASK)))
                     * *&screenScaleFactor;
                 v95 = ((v167 * v163) + (v166 * v161)) + (v165 * v162);
                 if ( (v95 * v95) > ((v168 - ((((v93 * v160) + v94) * v94) + v159)) * v150) )

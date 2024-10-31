@@ -665,7 +665,7 @@ LABEL_152:
   if ( !v109 )
   {
     LODWORD(v185) = 0;
-    v110 = COERCE_FLOAT(COERCE_UNSIGNED_INT(data::set_real(v6, "proximityFuseRange", &v185)) & xmmword_449AF40) >= *&dword_44A0308;
+    v110 = COERCE_FLOAT(COERCE_UNSIGNED_INT(data::set_real(v6, "proximityFuseRange", &v185)) & FABSF_MASK) >= *&dword_44A0308;
   }
   *(shell_info + 0x159) = v110;
   v111 = *v6;

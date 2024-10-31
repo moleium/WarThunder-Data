@@ -71,7 +71,7 @@ LABEL_50:
     v14 = v14 + _mm_andnot_ps(_mm_cmple_ss(0i64, v20), v19).m128_f32[0];
   }
 LABEL_27:
-  if ( COERCE_FLOAT(LODWORD(v14) & xmmword_449AF40) >= *&dword_44A0308 )
+  if ( COERCE_FLOAT(LODWORD(v14) & FABSF_MASK) >= *&dword_44A0308 )
   {
     response = "scouting: failed, timer not ready";
     goto LABEL_50;
@@ -348,7 +348,7 @@ LABEL_40:
     }
     v58 = (v56 + v57) + (v55 + *(&v134 + 1));
     v59 = *(a1 + 0x4C);
-    if ( COERCE_FLOAT(xmmword_449AF40 & LODWORD(v59)) >= *&dword_44A0308 )
+    if ( COERCE_FLOAT(FABSF_MASK & LODWORD(v59)) >= *&dword_44A0308 )
       v51 = v51 + (v59 * v145);
     v44 = *&v134;
     v54 = v141;

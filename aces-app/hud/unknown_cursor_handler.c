@@ -889,9 +889,9 @@ LABEL_189:
   }
   if ( (*(LocalUnit + 0x1058) & 0x7000014) != 0
     || (v110 = *(cursor_visuals + 0x69C),
-        LODWORD(v111) = COERCE_UNSIGNED_INT(*&dword_44801E8 + v110) & xmmword_449AF40,
+        LODWORD(v111) = COERCE_UNSIGNED_INT(*&dword_44801E8 + v110) & FABSF_MASK,
         v111 <= *&dword_44A05D0)
-    || v111 <= (fmaxf(COERCE_FLOAT(xmmword_449AF40 & LODWORD(v110)), Y) * *&dword_44A0308)
+    || v111 <= (fmaxf(COERCE_FLOAT(FABSF_MASK & LODWORD(v110)), Y) * *&dword_44A0308)
     || (v112 = *(LocalUnit + 0xFA0), v110 >= v112.m128_f32[0]) )
   {
     v106 = 0i64;
@@ -1355,8 +1355,8 @@ LABEL_291:
       v717 = *v281;
       v718 = *v280;
       v719 = *v279;
-      if ( COERCE_FLOAT(*v279 & xmmword_449AF40) >= *&dword_44AD510
-        || (v720 = 0.0, COERCE_FLOAT(xmmword_449AF40 & LODWORD(v717)) >= *&dword_44AD510) )
+      if ( COERCE_FLOAT(*v279 & FABSF_MASK) >= *&dword_44AD510
+        || (v720 = 0.0, COERCE_FLOAT(FABSF_MASK & LODWORD(v717)) >= *&dword_44AD510) )
       {
         atan2f(*v281, v719);
         LODWORD(v720) = LODWORD(v717) ^ xmmword_44801F0;
@@ -2161,7 +2161,7 @@ LABEL_320:
                 *(cursor_visuals + 0xA64) = v299;
                 *(cursor_visuals + 0xA68) = v300;
                 *(cursor_visuals + 0xA6C) = v301;
-                v303 = COERCE_FLOAT(xmmword_449AF40 & LODWORD(v302)) <= *&dword_44A0308;
+                v303 = COERCE_FLOAT(FABSF_MASK & LODWORD(v302)) <= *&dword_44A0308;
                 *(cursor_visuals + 0xA70) = v302;
                 if ( !v303 )
                 {
@@ -2289,7 +2289,7 @@ LABEL_436:
                 *(cursor_visuals + 0xA78) = v421;
                 *(cursor_visuals + 0xA7C) = v422;
                 *(cursor_visuals + 0xA80) = v424;
-                if ( COERCE_FLOAT(xmmword_449AF40 & LODWORD(v424)) > *&dword_44A0308 )
+                if ( COERCE_FLOAT(FABSF_MASK & LODWORD(v424)) > *&dword_44A0308 )
                 {
                   v425 = v413 / v424;
                   v423 = v423 * v425;
@@ -2587,7 +2587,7 @@ LABEL_742:
                   v671 = v1283;
                 }
               }
-              if ( COERCE_FLOAT(LODWORD(v685) & xmmword_449AF40) < *&dword_44A0308 )
+              if ( COERCE_FLOAT(LODWORD(v685) & FABSF_MASK) < *&dword_44A0308 )
               {
 LABEL_1201:
                 v675 = 2;
@@ -3092,7 +3092,7 @@ LABEL_1101:
                           v1164 = fsqrt((v1305 * v1305) + ((v1304 * v1304) + (v1303 * v1303)));
                           v1166 = sub_325030(v370);
                           v1167 = fminf(v1164, v1166);
-                          LODWORD(v1168) = COERCE_UNSIGNED_INT(v1164 - v1166) & xmmword_449AF40;
+                          LODWORD(v1168) = COERCE_UNSIGNED_INT(v1164 - v1166) & FABSF_MASK;
                           v1169 = (v1167 - v1168) * *&v337;
                           v1170 = fsqrt(((v1305 * v1305) + (v1304 * v1304)) + (v1303 * v1303));
                           LODWORD(v1306) = 0;

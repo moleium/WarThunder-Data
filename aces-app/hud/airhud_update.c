@@ -614,7 +614,7 @@ LABEL_159:
     }
     else
     {
-      if ( COERCE_FLOAT(xmmword_449AF40 & LODWORD(v99)) <= *&qword_44A4A70 )
+      if ( COERCE_FLOAT(FABSF_MASK & LODWORD(v99)) <= *&qword_44A4A70 )
       {
         v124 = fsqrt((v100 * v100) + (v101 * v101));
         v111 = 0.0;
@@ -1411,7 +1411,7 @@ LABEL_308:
     else
     {
       v211 = v31;
-      if ( COERCE_FLOAT(xmmword_449AF40 & LODWORD(v203)) <= *&qword_44A4A70 )
+      if ( COERCE_FLOAT(FABSF_MASK & LODWORD(v203)) <= *&qword_44A4A70 )
       {
         v232 = fsqrt((v204 * v204) + (v205 * v205));
         v216 = 0.0;
@@ -1685,7 +1685,7 @@ LABEL_391:
     else
     {
       if ( *(v284 + v279 + 0x68) >= v277 && *(v284 + v279 + 0x6C) <= v286 && *(v284 + v279 + 0x70) >= v286 )
-        v281 = COERCE_FLOAT(v285 & xmmword_449AF40) <= *(v284 + v279 + 0x74);
+        v281 = COERCE_FLOAT(v285 & FABSF_MASK) <= *(v284 + v279 + 0x74);
       v280 = v289;
       if ( (*(mUnit__ + 0x58) & 6) != 0 )
       {
@@ -1711,7 +1711,7 @@ LABEL_438:
   v308 = v278 + v279 + 0x11A8;
   v309 = 0;
   if ( v277 >= *v308 && *(v308 + 4) >= v277 )
-    v309 = (COERCE_FLOAT(v996 & xmmword_449AF40) <= *(v308 + 0x10)) & _mm_cvtsi128_si32(_mm_and_ps(
+    v309 = (COERCE_FLOAT(v996 & FABSF_MASK) <= *(v308 + 0x10)) & _mm_cvtsi128_si32(_mm_and_ps(
                                                                                           _mm_cmple_ps(
                                                                                             v998,
                                                                                             *(v308 + 0xC)),
@@ -1719,7 +1719,7 @@ LABEL_438:
                                                                                             *(v308 + 8),
                                                                                             v998)));
 LABEL_443:
-  v310 = COERCE_FLOAT(xmmword_449AF40 & v280) >= *&dword_44A0308 && v281 && v271;
+  v310 = COERCE_FLOAT(FABSF_MASK & v280) >= *&dword_44A0308 && v281 && v271;
   LODWORD(v82) = sub_3DF3F0(mUnit__);
   LOBYTE(v82) = v310 & v309 & (v82 + sub_425520(mUnit__) != 0);
   v311 = *(game + 0x440);
@@ -3398,7 +3398,7 @@ LABEL_812:
         if ( !*(HudInfo + 0x450) && *(air_movement_ + 0x568F) && sub_287F50(*(mUnit__ + 0x11D0), 3i64) )
         {
           v664 = *(air_movement_ + 0x5ADC);
-          if ( COERCE_FLOAT(COERCE_UNSIGNED_INT(*(air_movement_ + 0x12F0) - v664.m128_f32[0]) & xmmword_449AF40) >= *&dword_44A49C0 )
+          if ( COERCE_FLOAT(COERCE_UNSIGNED_INT(*(air_movement_ + 0x12F0) - v664.m128_f32[0]) & FABSF_MASK) >= *&dword_44A49C0 )
           {
             if ( ((*(game + 0x2D8) * *&qword_44819B0) & 1) != 0 )
               v684 |= 0x20 * (v664.m128_f32[0] <= *&screenScaleFactor) + 0x20;
@@ -3569,7 +3569,7 @@ LABEL_812:
               if ( sub_287F50(*(mUnit__ + 0x11D0), 9i64) )
               {
                 v743 = *(air_movement_ + 0x5ADC);
-                if ( COERCE_FLOAT(COERCE_UNSIGNED_INT(*(air_movement_ + 0x12F0) - v743) & xmmword_449AF40) < *&dword_44A49C0 )
+                if ( COERCE_FLOAT(COERCE_UNSIGNED_INT(*(air_movement_ + 0x12F0) - v743) & FABSF_MASK) < *&dword_44A49C0 )
                 {
                   v744 = 8 * (v743 <= *&screenScaleFactor) + 8;
                   goto LABEL_1004;
@@ -3670,7 +3670,7 @@ LABEL_1004:
               if ( sub_287F50(*(mUnit__ + 0x11D0), 4i64) )
               {
                 v800 = *(air_movement_ + 0x5ADC);
-                if ( COERCE_FLOAT(COERCE_UNSIGNED_INT(*(air_movement_ + 0x12F0) - v800) & xmmword_449AF40) < *&dword_44A49C0 )
+                if ( COERCE_FLOAT(COERCE_UNSIGNED_INT(*(air_movement_ + 0x12F0) - v800) & FABSF_MASK) < *&dword_44A49C0 )
                 {
                   v801 = 8 * (v800 <= *&screenScaleFactor) + 8;
                   goto LABEL_1033;
@@ -3765,7 +3765,7 @@ LABEL_1033:
             if ( !sub_287F50(*(mUnit__ + 0x11D0), 6i64) )
               goto LABEL_1056;
             v822 = *(air_movement_ + 0x5ADC);
-            if ( COERCE_FLOAT(COERCE_UNSIGNED_INT(*(air_movement_ + 0x12F0) - v822) & xmmword_449AF40) >= *&dword_44A49C0 )
+            if ( COERCE_FLOAT(COERCE_UNSIGNED_INT(*(air_movement_ + 0x12F0) - v822) & FABSF_MASK) >= *&dword_44A49C0 )
             {
               v961 = v820;
               v34 = v821;
@@ -4080,7 +4080,7 @@ LABEL_1116:
           v883 = 0i64;
           v884 = Y;
           v885 = *&dword_44A0308;
-          v886 = xmmword_449AF40;
+          v886 = FABSF_MASK;
           v887 = *&screenScaleFactor;
           do
           {

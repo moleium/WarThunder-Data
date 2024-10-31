@@ -230,7 +230,7 @@ LABEL_75:
   v982 = v57;
   v65 = *(Unit.QuadPart + 0x5238);
   UnitWeaponInfo = *(Unit.QuadPart + 0x9D0);
-  if ( COERCE_FLOAT(COERCE_UNSIGNED_INT(Y + v65.m128_f32[0]) & xmmword_449AF40) < *&dword_44A0308 )
+  if ( COERCE_FLOAT(COERCE_UNSIGNED_INT(Y + v65.m128_f32[0]) & FABSF_MASK) < *&dword_44A0308 )
     v65 = *(UnitWeaponInfo + 0x5A98);
   if ( (*(*(Unit.QuadPart + 0x50) + 0x18i64))(Unit.QuadPart + 0x50) )
   {

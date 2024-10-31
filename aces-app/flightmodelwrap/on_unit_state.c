@@ -364,7 +364,7 @@ LABEL_119:
             v88 = 0i64;
             v89 = *&dword_44A50C0;
             v90 = Y;
-            v91 = xmmword_449AF40;
+            v91 = FABSF_MASK;
             v92 = *&dword_44A05D0;
             v93 = *&dword_44A0308;
             do

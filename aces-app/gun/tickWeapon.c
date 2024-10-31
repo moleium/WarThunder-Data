@@ -322,8 +322,8 @@ LABEL_98:
   if ( !*(v72 + 0xA5) )
     goto LABEL_462;
   if ( (_mm_cvtsi128_si32(_mm_and_ps(
-                            _mm_cmplt_ps(_mm_and_ps(*(v72 + 0x38), xmmword_449AF40), dword_44A01A0),
-                            _mm_cmplt_ps(_mm_and_ps(*(v72 + 0x3C), xmmword_449AF40), dword_44A01A0))) & 1) != 0 )
+                            _mm_cmplt_ps(_mm_and_ps(*(v72 + 0x38), FABSF_MASK), dword_44A01A0),
+                            _mm_cmplt_ps(_mm_and_ps(*(v72 + 0x3C), FABSF_MASK), dword_44A01A0))) & 1) != 0 )
     goto LABEL_462;
   if ( ((v12 ^ 1) & 1) != 0 )
     goto LABEL_462;
