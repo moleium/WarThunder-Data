@@ -35,7 +35,7 @@ LABEL_23:
       && *(game_ + 0xCA)
       && (*(game_ + 0xCB) & 1) != 0
       && *&mUnit
-      && !*(qword_4B176E8 + 0x1E)
+      && !*(animated_loading_job + 0x1E)
       && (v36 = __ROR2__(*(*&mUnit + 0x10B0i64) - 3, 1), v36 <= 6u)
       && (v37 = 0x53, _bittest(&v37, v36)) )
     {
@@ -268,7 +268,7 @@ LABEL_45:
   v1263 = a2;
   if ( v50 > 0x16 || (LODWORD(v30) = 0x410189, !_bittest(&v30, v50)) )
   {
-    if ( !*(game + 0xCD) && *(game + 0xCA) && (*(game + 0xCB) & 1) != 0 && *&mUnit && !*(qword_4B176E8 + 0x1E) )
+    if ( !*(game + 0xCD) && *(game + 0xCA) && (*(game + 0xCB) & 1) != 0 && *&mUnit && !*(animated_loading_job + 0x1E) )
     {
       v51 = *(*&mUnit + 0x10B0i64);
       switch ( *(*&mUnit + 0x10B0i64) )
@@ -490,8 +490,8 @@ LABEL_164:
     goto LABEL_166;
   if ( !*&mUnit )
     goto LABEL_166;
-  v91 = qword_4B176E8;
-  if ( *(qword_4B176E8 + 0x1E) )
+  v91 = animated_loading_job;
+  if ( *(animated_loading_job + 0x1E) )
     goto LABEL_166;
   v269 = __ROR2__(*(*&mUnit + 0x10B0i64) - 3, 1);
   if ( v269 > 6u )
@@ -984,7 +984,7 @@ LABEL_190:
           {
             if ( *&mUnit )
             {
-              if ( !*(qword_4B176E8 + 0x1E) )
+              if ( !*(animated_loading_job + 0x1E) )
               {
                 LOWORD(v271) = __ROR2__(*(*&mUnit + 0x10B0i64) - 3, 1);
                 if ( v271 <= 6u )
@@ -1315,7 +1315,7 @@ LABEL_772:
     goto LABEL_209;
   if ( !*&mUnit )
     goto LABEL_209;
-  if ( *(qword_4B176E8 + 0x1E) )
+  if ( *(animated_loading_job + 0x1E) )
     goto LABEL_209;
   LOWORD(v271) = __ROR2__(*(*&mUnit + 0x10B0i64) - 3, 1);
   if ( v271 > 6u )
@@ -1763,7 +1763,7 @@ LABEL_214:
     || !*(game + 0xCA)
     || (*(game + 0xCB) & 1) == 0
     || !*&mUnit
-    || *(qword_4B176E8 + 0x1E)
+    || *(animated_loading_job + 0x1E)
     || (v282 = __ROR2__(*(*&mUnit + 0x10B0i64) - 3, 1), v282 > 6u)
     || (v283 = 0x53, !_bittest(&v283, v282)) )
   {
@@ -2133,7 +2133,7 @@ LABEL_214:
       v248 = 0;
       if ( *&mUnit )
       {
-        if ( !*(qword_4B176E8 + 0x1E) )
+        if ( !*(animated_loading_job + 0x1E) )
         {
           v291 = __ROR2__(*(*&mUnit + 0x10B0i64) - 3, 1);
           v248 = 0;
@@ -2259,7 +2259,7 @@ LABEL_329:
       v410 = 0;
       if ( *&mUnit )
       {
-        if ( !*(qword_4B176E8 + 0x1E) )
+        if ( !*(animated_loading_job + 0x1E) )
         {
           v411 = __ROR2__(*(*&mUnit + 0x10B0i64) - 3, 1);
           v410 = 0;
@@ -2459,7 +2459,7 @@ LABEL_363:
         && *(game + 0xCA)
         && (*(game + 0xCB) & 1) != 0
         && *&mUnit
-        && !*(qword_4B176E8 + 0x1E)
+        && !*(animated_loading_job + 0x1E)
         && (v378 = __ROR2__(*(*&mUnit + 0x10B0i64) - 3, 1), v378 <= 6u)
         && (v379 = 0x53, _bittest(&v379, v378)) )
       {
@@ -2509,7 +2509,7 @@ LABEL_363:
              && *(game + 0xCA)
              && (*(game + 0xCB) & 1) != 0
              && *&mUnit
-             && !*(qword_4B176E8 + 0x1E)
+             && !*(animated_loading_job + 0x1E)
              && (v917 = __ROR2__(*(*&mUnit + 0x10B0i64) - 3, 1), v917 <= 6u)
              && (v918 = 0x53, _bittest(&v918, v917)))
             && *(*(game + 0x430) + 0x310i64) )
@@ -2521,7 +2521,7 @@ LABEL_363:
               && *(game + 0xCA)
               && (*(game + 0xCB) & 1) != 0
               && *&mUnit
-              && !*(qword_4B176E8 + 0x1E)
+              && !*(animated_loading_job + 0x1E)
               && (v884 = __ROR2__(*(*&mUnit + 0x10B0i64) - 3, 1), v884 <= 6u)
               && (v885 = 0x53, _bittest(&v885, v884)) )
             {
@@ -3640,7 +3640,7 @@ LABEL_490:
         || !*(game + 0xCA)
         || (*(game + 0xCB) & 1) == 0
         || !*&mUnit
-        || *(qword_4B176E8 + 0x1E)
+        || *(animated_loading_job + 0x1E)
         || (v520 = __ROR2__(*(*&mUnit + 0x10B0i64) - 3, 1), v520 > 6u)
         || (v521 = 0x53, !_bittest(&v521, v520)) )
       {

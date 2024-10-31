@@ -22,7 +22,7 @@ float __fastcall is_cursor_in(
       && *(game + 0xCA)
       && (*(game + 0xCB) & 1) != 0
       && *&mUnit
-      && !*(qword_4B176E8 + 0x1E)
+      && !*(animated_loading_job + 0x1E)
       && (v43 = __ROR2__(*(*&mUnit + 0x10B0i64) - 3, 1), v43 <= 6u)
       && (v44 = 0x53, _bittest(&v44, v43)) )
     {
@@ -48,7 +48,7 @@ float __fastcall is_cursor_in(
         && *(game + 0xCA)
         && (*(game + 0xCB) & 1) != 0
         && *&mUnit
-        && !*(qword_4B176E8 + 0x1E)
+        && !*(animated_loading_job + 0x1E)
         && (v52 = __ROR2__(*(*&mUnit + 0x10B0i64) - 3, 1), v52 <= 6u)
         && (v53 = 0x53, _bittest(&v53, v52)) )
       {

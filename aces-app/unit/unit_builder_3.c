@@ -500,7 +500,7 @@ LABEL_36:
       _dyn_tls_on_demand_init(ThreadLocalStoragePointer, v34, v35, v36);
     v38 = &v58;
     sub_14584E0(&v58, *(*(NtCurrentTeb()->ThreadLocalStoragePointer + TlsIndex) + 0x160i64));
-    if ( !sub_A60A60(qword_4B176E8) )
+    if ( !sub_A60A60(animated_loading_job) )
     {
       if ( v62 )
         v39 = v60;
@@ -508,7 +508,7 @@ LABEL_36:
         v39 = &szFile;
       sub_1606B70(&v58, v39, 0i64);
     }
-    if ( sub_A60A60(qword_4B176E8) )
+    if ( sub_A60A60(animated_loading_job) )
     {
       if ( v62 )
         v46 = v60;

@@ -1528,9 +1528,9 @@ LABEL_497:
     _dyn_tls_on_demand_init(v369, v366, v367, v368);
   v370 = v1190;
   sub_14584E0(v1190, *(*(NtCurrentTeb()->ThreadLocalStoragePointer + TlsIndex) + 0x160i64));
-  if ( !sub_A60A60(qword_4B176E8) )
+  if ( !sub_A60A60(animated_loading_job) )
     sub_1606B70(v1190, "config/gameplay.blk", 0i64);
-  if ( sub_A60A60(qword_4B176E8) )
+  if ( sub_A60A60(animated_loading_job) )
     v370 = sub_564630(game, "config/gameplay.blk", 0i64);
   v1162 = &szFile;
   v371 = data::get_str(v308, "nameKillStreaks", &v1162);

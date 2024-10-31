@@ -21,7 +21,7 @@ char __fastcall show_killstreak_wheel(__int64 a1, char a2, __int64 a3, __int64 a
     || !*(game + 0xCA)
     || (*(game + 0xCB) & 1) == 0
     || !*&mUnit
-    || *(qword_4B176E8 + 0x1E)
+    || *(animated_loading_job + 0x1E)
     || (v12 = __ROR2__(*(*&mUnit + 0x10B0i64) - 3, 1), v12 > 6u)
     || (v13 = 0x53, !_bittest(&v13, v12)) )
   {

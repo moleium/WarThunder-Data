@@ -496,9 +496,9 @@ LABEL_93:
     if ( !*(ThreadLocalStoragePointer[TlsIndex] + 1i64) )
       _dyn_tls_on_demand_init(ThreadLocalStoragePointer, v49, v50, v51);
     sub_14584E0(&PerformanceCount, *(*(NtCurrentTeb()->ThreadLocalStoragePointer + TlsIndex) + 0x160i64));
-    if ( !sub_A60A60(qword_4B176E8) )
+    if ( !sub_A60A60(animated_loading_job) )
       sub_1606B70(&PerformanceCount, v33, 0i64);
-    if ( sub_A60A60(qword_4B176E8) )
+    if ( sub_A60A60(animated_loading_job) )
       sub_564630(game, v33, 0i64);
     sub_8AFE60(v47, a2);
     v53 = qword_4B13728;
@@ -566,9 +566,9 @@ LABEL_23:
   if ( !*(v44[TlsIndex] + 1i64) )
     _dyn_tls_on_demand_init(v44, v41, v42, v43);
   sub_14584E0(&PerformanceCount, *(*(NtCurrentTeb()->ThreadLocalStoragePointer + TlsIndex) + 0x160i64));
-  if ( !sub_A60A60(qword_4B176E8) )
+  if ( !sub_A60A60(animated_loading_job) )
     sub_1606B70(&PerformanceCount, v33, 0i64);
-  if ( sub_A60A60(qword_4B176E8) )
+  if ( sub_A60A60(animated_loading_job) )
     sub_564630(game, v33, 0i64);
   sub_8AFE60(v38, a2);
   *(qword_4B13718 + v37) = v38;
@@ -612,7 +612,7 @@ LABEL_54:
       _dyn_tls_on_demand_init(v62, v55, v56, v57);
     p_PerformanceCount = &PerformanceCount;
     sub_14584E0(&PerformanceCount, *(*(NtCurrentTeb()->ThreadLocalStoragePointer + TlsIndex) + 0x160i64));
-    if ( !sub_A60A60(qword_4B176E8) )
+    if ( !sub_A60A60(animated_loading_job) )
     {
       if ( v81 )
         v64 = Str;
@@ -620,7 +620,7 @@ LABEL_54:
         v64 = &szFile;
       sub_1606B70(&PerformanceCount, v64, 0i64);
     }
-    if ( sub_A60A60(qword_4B176E8) )
+    if ( sub_A60A60(animated_loading_job) )
     {
       if ( v81 )
         v65 = Str;

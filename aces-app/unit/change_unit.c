@@ -322,13 +322,13 @@ LABEL_24:
             _dyn_tls_on_demand_init(v69, v66, v67, v68);
           v70 = v211;
           sub_14584E0(v211, *(*(NtCurrentTeb()->ThreadLocalStoragePointer + TlsIndex) + 0x160i64));
-          if ( !sub_A60A60(qword_4B176E8) )
+          if ( !sub_A60A60(animated_loading_job) )
           {
             if ( v221 )
               v65 = v219;
             sub_1606B70(v211, v65, 0i64);
           }
-          if ( sub_A60A60(qword_4B176E8) )
+          if ( sub_A60A60(animated_loading_job) )
           {
             if ( v221 )
               v71 = v219;
@@ -567,7 +567,7 @@ LABEL_24:
           _dyn_tls_on_demand_init(v114, v111, v112, v113);
         v115 = v256;
         sub_14584E0(v256, *(*(NtCurrentTeb()->ThreadLocalStoragePointer + TlsIndex) + 0x160i64));
-        if ( !sub_A60A60(qword_4B176E8) )
+        if ( !sub_A60A60(animated_loading_job) )
         {
           if ( v252 )
             v116 = v250;
@@ -575,7 +575,7 @@ LABEL_24:
             v116 = &szFile;
           sub_1606B70(v256, v116, 0i64);
         }
-        if ( sub_A60A60(qword_4B176E8) )
+        if ( sub_A60A60(animated_loading_job) )
         {
           if ( v252 )
             v117 = v250;
