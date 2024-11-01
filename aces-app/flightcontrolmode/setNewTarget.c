@@ -289,10 +289,10 @@ LABEL_76:
                             dword_4AD972C = dword_4AD9720;
                             if ( xmmword_4B1F170 )
                             {
-                              EnterCriticalSection(&stru_4B776C8);
+                              EnterCriticalSection(&sound_cs);
                               *v80.m256i_i8 = 0i64;
                               sub_1667750(xmmword_4B1F170, &v80, 0, 0, 0i64);
-                              LeaveCriticalSection(&stru_4B776C8);
+                              LeaveCriticalSection(&sound_cs);
                               v47 = Unit_;
                             }
                             if ( !v47 )

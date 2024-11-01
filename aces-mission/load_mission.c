@@ -2364,18 +2364,18 @@ LABEL_638:
           v553 = *(a1 + 0x2D0);
           if ( v553 )
           {
-            EnterCriticalSection(&stru_4B776C8);
+            EnterCriticalSection(&sound_cs);
             *(v553 + 0x118) = 0x7FFFFFFF;
             sub_1665AB0(v553);
             (*(*off_4B678C0 + 0x40i64))(off_4B678C0, v553);
-            LeaveCriticalSection(&stru_4B776C8);
+            LeaveCriticalSection(&sound_cs);
           }
-          EnterCriticalSection(&stru_4B776C8);
+          EnterCriticalSection(&sound_cs);
           v554 = (*(*off_4B678C0 + 0x18i64))(off_4B678C0, 0x200i64);
           memset(v554, 0, 0x200ui64);
           sub_1665C80(v554, 1);
           v554[0x46] = 0xFFFFFFFF;
-          LeaveCriticalSection(&stru_4B776C8);
+          LeaveCriticalSection(&sound_cs);
           *(a1 + 0x2D0) = v554;
         }
       }

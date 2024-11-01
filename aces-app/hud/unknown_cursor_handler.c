@@ -2412,10 +2412,10 @@ LABEL_363:
           v367 = *(v108 + 0x13F8) != 0;
         else
           v367 = 0;
-        EnterCriticalSection(&stru_4B776C8);
+        EnterCriticalSection(&sound_cs);
         if ( *(*&mUnit + 0x10A8i64) <= 1u && (*(*&mUnit + 0x1058i64) & 0x7000014) == 0 )
           sub_EE9410(v367 ^ 7u, &MATH_FLOAT_ZERO);
-        LeaveCriticalSection(&stru_4B776C8);
+        LeaveCriticalSection(&sound_cs);
         v109 = v1210;
       }
       if ( !((*(cursor_visuals + 0xAD6) != 0) | v333 ^ 1) )

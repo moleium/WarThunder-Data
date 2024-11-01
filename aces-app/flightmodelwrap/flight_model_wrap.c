@@ -1358,12 +1358,12 @@ LABEL_386:
   {
     if ( !v323 )
     {
-      EnterCriticalSection(&stru_4B776C8);
+      EnterCriticalSection(&sound_cs);
       v324 = (*(*off_4B73580 + 8i64))(off_4B73580);
       v325 = &byte_4B73348;
       if ( v324 )
         v325 = v324;
-      LeaveCriticalSection(&stru_4B776C8);
+      LeaveCriticalSection(&sound_cs);
       v326 = "eventStukaSiren";
       if ( (*(v134.QuadPart + 0x1058) & 0x100) == 0 )
         v326 = "eventStukaSirenAi";
@@ -1379,9 +1379,9 @@ LABEL_386:
     sub_1665AB0(*(v134.QuadPart + 0x3258));
     if ( v323 != &byte_4B73348 )
     {
-      EnterCriticalSection(&stru_4B776C8);
+      EnterCriticalSection(&sound_cs);
       (*(*off_4B73580 + 0x10i64))(off_4B73580, v323);
-      LeaveCriticalSection(&stru_4B776C8);
+      LeaveCriticalSection(&sound_cs);
     }
     *(v134.QuadPart + 0x3258) = 0i64;
   }
@@ -1391,21 +1391,21 @@ LABEL_386:
     sub_1665AB0(*(v134.QuadPart + 0x3218));
     if ( v327 != &byte_4B73348 )
     {
-      EnterCriticalSection(&stru_4B776C8);
+      EnterCriticalSection(&sound_cs);
       (*(*off_4B73580 + 0x10i64))(off_4B73580, v327);
-      LeaveCriticalSection(&stru_4B776C8);
+      LeaveCriticalSection(&sound_cs);
     }
     *(v134.QuadPart + 0x3218) = 0i64;
   }
   PerformanceCount[0].QuadPart = &szFile;
   if ( *data::get_str(v259, "eventWreck", PerformanceCount) )
   {
-    EnterCriticalSection(&stru_4B776C8);
+    EnterCriticalSection(&sound_cs);
     v328 = (*(*off_4B73580 + 8i64))(off_4B73580);
     v329 = &byte_4B73348;
     if ( v328 )
       v329 = v328;
-    LeaveCriticalSection(&stru_4B776C8);
+    LeaveCriticalSection(&sound_cs);
     sub_1665C80(v329, 1);
     *(v134.QuadPart + 0x3218) = v329;
   }
@@ -1415,29 +1415,29 @@ LABEL_386:
     sub_1665AB0(*(v134.QuadPart + 0x32A0));
     if ( v330 != &byte_4B73348 )
     {
-      EnterCriticalSection(&stru_4B776C8);
+      EnterCriticalSection(&sound_cs);
       (*(*off_4B73580 + 0x10i64))(off_4B73580, v330);
-      LeaveCriticalSection(&stru_4B776C8);
+      LeaveCriticalSection(&sound_cs);
     }
     *(v134.QuadPart + 0x32A0) = 0i64;
   }
   *(v134.QuadPart + 0x32A8) = 0xFFFFFFFFFFFFFFFFui64;
   if ( *(*(*(v134.QuadPart + 0x2E68) + 0x4568i64) + 0x200i64) && (byte_4B9DFD1 & 1) != 0 )
   {
-    EnterCriticalSection(&stru_4B776C8);
+    EnterCriticalSection(&sound_cs);
     v331 = (*(*off_4B73580 + 8i64))(off_4B73580);
     v332 = &byte_4B73348;
     if ( v331 )
       v332 = v331;
-    LeaveCriticalSection(&stru_4B776C8);
+    LeaveCriticalSection(&sound_cs);
     get_misc_str("eventHydroplane");
     sub_1665C80(v332, 1);
     *(v134.QuadPart + 0x32A0) = v332;
-    EnterCriticalSection(&stru_4B776C8);
+    EnterCriticalSection(&sound_cs);
     *(v134.QuadPart + 0x32A8) = get_param_idx(*(v134.QuadPart + 0x32A0), "engine", 0i64);
     *(v134.QuadPart + 0x32AC) = get_param_idx(*(v134.QuadPart + 0x32A0), "distance", 0i64);
     sub_1666E50(*(v134.QuadPart + 0x32A0));
-    LeaveCriticalSection(&stru_4B776C8);
+    LeaveCriticalSection(&sound_cs);
   }
   (sub_EF9E20)(v134.QuadPart);
   PerformanceCount[0].LowPart = 0x3FC00000;
@@ -2475,9 +2475,9 @@ LABEL_718:
     sub_1665AB0(*(v963.QuadPart + 0x32E8));
     if ( v557 != &byte_4B73348 )
     {
-      EnterCriticalSection(&stru_4B776C8);
+      EnterCriticalSection(&sound_cs);
       (*(*off_4B73580 + 0x10i64))(off_4B73580, v557);
-      LeaveCriticalSection(&stru_4B776C8);
+      LeaveCriticalSection(&sound_cs);
     }
     *(v963.QuadPart + 0x32E8) = 0i64;
   }
@@ -2488,9 +2488,9 @@ LABEL_718:
     sub_1665AB0(*(v963.QuadPart + 0x32F0));
     if ( v558 != &byte_4B73348 )
     {
-      EnterCriticalSection(&stru_4B776C8);
+      EnterCriticalSection(&sound_cs);
       (*(*off_4B73580 + 0x10i64))(off_4B73580, v558);
-      LeaveCriticalSection(&stru_4B776C8);
+      LeaveCriticalSection(&sound_cs);
     }
     *(v963.QuadPart + 0x32F0) = 0i64;
   }
@@ -2500,12 +2500,12 @@ LABEL_718:
     if ( *(*(v963.QuadPart + 0x2E68) + 0x568Fi64) )
     {
       *(v963.QuadPart + 0x523C) = 1;
-      EnterCriticalSection(&stru_4B776C8);
+      EnterCriticalSection(&sound_cs);
       v560 = (*(*off_4B73580 + 8i64))(off_4B73580);
       v561 = &byte_4B73348;
       if ( v560 )
         v561 = v560;
-      LeaveCriticalSection(&stru_4B776C8);
+      LeaveCriticalSection(&sound_cs);
       get_misc_str("eventBombHatch");
       sub_1665C80(v561, 1);
       *(v963.QuadPart + 0x32E8) = v561;
@@ -2513,12 +2513,12 @@ LABEL_718:
     }
     if ( !*(v963.QuadPart + 0x523C) )
     {
-      EnterCriticalSection(&stru_4B776C8);
+      EnterCriticalSection(&sound_cs);
       v562 = (*(*off_4B73580 + 8i64))(off_4B73580);
       v563 = &byte_4B73348;
       if ( v562 )
         v563 = v562;
-      LeaveCriticalSection(&stru_4B776C8);
+      LeaveCriticalSection(&sound_cs);
       get_misc_str("eventBombDrop");
       sub_1665C80(v563, 1);
       *(v963.QuadPart + 0x32F0) = v563;
@@ -2530,9 +2530,9 @@ LABEL_718:
     sub_1665AB0(*(v963.QuadPart + 0x3300));
     if ( v564 != &byte_4B73348 )
     {
-      EnterCriticalSection(&stru_4B776C8);
+      EnterCriticalSection(&sound_cs);
       (*(*off_4B73580 + 0x10i64))(off_4B73580, v564);
-      LeaveCriticalSection(&stru_4B776C8);
+      LeaveCriticalSection(&sound_cs);
     }
     *(v963.QuadPart + 0x3300) = 0i64;
   }
@@ -2542,20 +2542,20 @@ LABEL_718:
     sub_1665AB0(*(v963.QuadPart + 0x3308));
     if ( v565 != &byte_4B73348 )
     {
-      EnterCriticalSection(&stru_4B776C8);
+      EnterCriticalSection(&sound_cs);
       (*(*off_4B73580 + 0x10i64))(off_4B73580, v565);
-      LeaveCriticalSection(&stru_4B776C8);
+      LeaveCriticalSection(&sound_cs);
     }
     *(v963.QuadPart + 0x3308) = 0i64;
   }
   if ( *(v963.QuadPart + 0x10B8) && *(*(v963.QuadPart + 0x2E68) + 0x568Ci64) && !byte_4B140AC )
   {
-    EnterCriticalSection(&stru_4B776C8);
+    EnterCriticalSection(&sound_cs);
     v566 = (*(*off_4B73580 + 8i64))(off_4B73580);
     v567 = &byte_4B73348;
     if ( !v566 )
       v566 = &byte_4B73348;
-    LeaveCriticalSection(&stru_4B776C8);
+    LeaveCriticalSection(&sound_cs);
     PerformanceCount[0].QuadPart = "cockpit";
     data::get_str(v486, "cockpitOpen", PerformanceCount);
     sub_1665C80(v566, 1);
@@ -2564,11 +2564,11 @@ LABEL_718:
     v568 = data::get_str(v486, "cockpitClose", PerformanceCount);
     if ( v568 && *v568 )
     {
-      EnterCriticalSection(&stru_4B776C8);
+      EnterCriticalSection(&sound_cs);
       v569 = (*(*off_4B73580 + 8i64))(off_4B73580);
       if ( v569 )
         v567 = v569;
-      LeaveCriticalSection(&stru_4B776C8);
+      LeaveCriticalSection(&sound_cs);
       sub_1665C80(v567, 1);
       *(v963.QuadPart + 0x3308) = v567;
     }
@@ -2579,9 +2579,9 @@ LABEL_718:
     sub_1665AB0(*(v963.QuadPart + 0x3310));
     if ( v570 != &byte_4B73348 )
     {
-      EnterCriticalSection(&stru_4B776C8);
+      EnterCriticalSection(&sound_cs);
       (*(*off_4B73580 + 0x10i64))(off_4B73580, v570);
-      LeaveCriticalSection(&stru_4B776C8);
+      LeaveCriticalSection(&sound_cs);
     }
     *(v963.QuadPart + 0x3310) = 0i64;
   }
@@ -2590,12 +2590,12 @@ LABEL_718:
   PerformanceCount[0].QuadPart = 0i64;
   if ( data::get_str(v486, "turretTurnSfxPathStudio", PerformanceCount) && v571 && *(v963.QuadPart + 0x10B8) )
   {
-    EnterCriticalSection(&stru_4B776C8);
+    EnterCriticalSection(&sound_cs);
     v572 = (*(*off_4B73580 + 8i64))(off_4B73580);
     v573 = &byte_4B73348;
     if ( v572 )
       v573 = v572;
-    LeaveCriticalSection(&stru_4B776C8);
+    LeaveCriticalSection(&sound_cs);
     sub_1665C80(v573, 1);
     *(v963.QuadPart + 0x3310) = v573;
     sub_1666E50(v573);
@@ -2610,20 +2610,20 @@ LABEL_718:
     sub_1665AB0(*(v963.QuadPart + 0x3320));
     if ( v575 != &byte_4B73348 )
     {
-      EnterCriticalSection(&stru_4B776C8);
+      EnterCriticalSection(&sound_cs);
       (*(*off_4B73580 + 0x10i64))(off_4B73580, v575);
-      LeaveCriticalSection(&stru_4B776C8);
+      LeaveCriticalSection(&sound_cs);
     }
     *(v963.QuadPart + 0x3320) = 0i64;
   }
   if ( v574 )
   {
-    EnterCriticalSection(&stru_4B776C8);
+    EnterCriticalSection(&sound_cs);
     v576 = (*(*off_4B73580 + 8i64))(off_4B73580);
     v577 = &byte_4B73348;
     if ( v576 )
       v577 = v576;
-    LeaveCriticalSection(&stru_4B776C8);
+    LeaveCriticalSection(&sound_cs);
     get_misc_str("pathGui");
     sub_1665C80(v577, 1);
     *(v963.QuadPart + 0x3320) = v577;
@@ -2639,20 +2639,20 @@ LABEL_718:
     sub_1665AB0(*(v963.QuadPart + 0x3350));
     if ( v579 != &byte_4B73348 )
     {
-      EnterCriticalSection(&stru_4B776C8);
+      EnterCriticalSection(&sound_cs);
       (*(*off_4B73580 + 0x10i64))(off_4B73580, v579);
-      LeaveCriticalSection(&stru_4B776C8);
+      LeaveCriticalSection(&sound_cs);
     }
     *(v963.QuadPart + 0x3350) = 0i64;
   }
   if ( v578 )
   {
-    EnterCriticalSection(&stru_4B776C8);
+    EnterCriticalSection(&sound_cs);
     v580 = (*(*off_4B73580 + 8i64))(off_4B73580);
     v581 = &byte_4B73348;
     if ( v580 )
       v581 = v580;
-    LeaveCriticalSection(&stru_4B776C8);
+    LeaveCriticalSection(&sound_cs);
     get_misc_str("pathGui");
     sub_1665C80(v581, 1);
     *(v963.QuadPart + 0x3350) = v581;
@@ -2664,21 +2664,21 @@ LABEL_718:
     sub_1665AB0(*(v963.QuadPart + 0x3328));
     if ( v582 != &byte_4B73348 )
     {
-      EnterCriticalSection(&stru_4B776C8);
+      EnterCriticalSection(&sound_cs);
       (*(*off_4B73580 + 0x10i64))(off_4B73580, v582);
-      LeaveCriticalSection(&stru_4B776C8);
+      LeaveCriticalSection(&sound_cs);
     }
     *(v963.QuadPart + 0x3328) = 0i64;
   }
   PerformanceCount[0].QuadPart = 0i64;
   if ( data::get_str(v486, "eventThrustReverse", PerformanceCount) && (*(v963.QuadPart + 0x1058) & 0x100) != 0 )
   {
-    EnterCriticalSection(&stru_4B776C8);
+    EnterCriticalSection(&sound_cs);
     v583 = (*(*off_4B73580 + 8i64))(off_4B73580);
     v584 = &byte_4B73348;
     if ( v583 )
       v584 = v583;
-    LeaveCriticalSection(&stru_4B776C8);
+    LeaveCriticalSection(&sound_cs);
     sub_1665C80(v584, 1);
     *(v963.QuadPart + 0x3328) = v584;
   }
@@ -2688,21 +2688,21 @@ LABEL_718:
     sub_1665AB0(*(v963.QuadPart + 0x3330));
     if ( v585 != &byte_4B73348 )
     {
-      EnterCriticalSection(&stru_4B776C8);
+      EnterCriticalSection(&sound_cs);
       (*(*off_4B73580 + 0x10i64))(off_4B73580, v585);
-      LeaveCriticalSection(&stru_4B776C8);
+      LeaveCriticalSection(&sound_cs);
     }
     *(v963.QuadPart + 0x3330) = 0i64;
   }
   PerformanceCount[0].QuadPart = 0i64;
   if ( data::get_str(v486, "nozzleMoveSfx", PerformanceCount) && (*(v963.QuadPart + 0x1058) & 0x100) != 0 )
   {
-    EnterCriticalSection(&stru_4B776C8);
+    EnterCriticalSection(&sound_cs);
     v586 = (*(*off_4B73580 + 8i64))(off_4B73580);
     v587 = &byte_4B73348;
     if ( v586 )
       v587 = v586;
-    LeaveCriticalSection(&stru_4B776C8);
+    LeaveCriticalSection(&sound_cs);
     sub_1665C80(v587, 1);
     *(v963.QuadPart + 0x3330) = v587;
     *(v963.QuadPart + 0x335C) = get_param_idx(v587, "intensity", 0i64);
@@ -2715,21 +2715,21 @@ LABEL_718:
     sub_1665AB0(*(v963.QuadPart + 0x3338));
     if ( v588 != &byte_4B73348 )
     {
-      EnterCriticalSection(&stru_4B776C8);
+      EnterCriticalSection(&sound_cs);
       (*(*off_4B73580 + 0x10i64))(off_4B73580, v588);
-      LeaveCriticalSection(&stru_4B776C8);
+      LeaveCriticalSection(&sound_cs);
     }
     *(v963.QuadPart + 0x3338) = 0i64;
   }
   PerformanceCount[0].QuadPart = 0i64;
   if ( data::get_str(v486, "eventNozzleTurn", PerformanceCount) && (*(v963.QuadPart + 0x1058) & 0x100) != 0 )
   {
-    EnterCriticalSection(&stru_4B776C8);
+    EnterCriticalSection(&sound_cs);
     v592 = (*(*off_4B73580 + 8i64))(off_4B73580);
     v593 = &byte_4B73348;
     if ( v592 )
       v593 = v592;
-    LeaveCriticalSection(&stru_4B776C8);
+    LeaveCriticalSection(&sound_cs);
     sub_1665C80(v593, 1);
     *(v963.QuadPart + 0x3338) = v593;
   }
@@ -2973,12 +2973,12 @@ LABEL_858:
   v628 = get_misc_str("eventAirBrake");
   if ( *(v359.QuadPart + 0x10B8) && *(*(v359.QuadPart + 0x2E68) + 0x5695i64) && !*(v359.QuadPart + 0x32E0) && *v628 )
   {
-    EnterCriticalSection(&stru_4B776C8);
+    EnterCriticalSection(&sound_cs);
     v629 = (*(*off_4B73580 + 8i64))(off_4B73580);
     v630 = &byte_4B73348;
     if ( v629 )
       v630 = v629;
-    LeaveCriticalSection(&stru_4B776C8);
+    LeaveCriticalSection(&sound_cs);
     sub_1665C80(v630, 1);
     *(v359.QuadPart + 0x32E0) = v630;
   }
