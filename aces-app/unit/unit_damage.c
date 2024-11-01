@@ -132,8 +132,8 @@ LABEL_37:
     v29 = data::set_int(a2, "randomTargetsCount", v127);
     if ( v29 >= 0 )
     {
-      v30 = 0x41C64E6D * dword_4A79158 + 0x3039;
-      dword_4A79158 = v30;
+      v30 = 0x41C64E6D * g_rnd_seed + 0x3039;
+      g_rnd_seed = v30;
       v31 = v120;
       v32 = v120 - v29;
       if ( v120 > v29 && v32 > 0 )
@@ -149,8 +149,8 @@ LABEL_37:
           }
           else
           {
-            v35 = 0x41C64E6D * dword_4A79158 + 0x3039;
-            dword_4A79158 = v35;
+            v35 = 0x41C64E6D * g_rnd_seed + 0x3039;
+            g_rnd_seed = v35;
           }
           v36 = (HIWORD(v35) & 0x7FFFui64) % v31;
           v37 = v31 - 1;
@@ -210,8 +210,8 @@ LABEL_37:
           *&v127[8] = v50;
           *v127 = 1;
           logmessage_fmt(0x47495254u, "unitDamage action for unit %s", v127, 1);
-          v4 = 0x41C64E6D * dword_4A79158 + 0x3039;
-          dword_4A79158 = v4;
+          v4 = 0x41C64E6D * g_rnd_seed + 0x3039;
+          g_rnd_seed = v4;
           v54 = v39;
           if ( v38 )
           {
@@ -421,7 +421,7 @@ LABEL_126:
               sub_7A5AD0(v127, v49, 0, 0xFFFFFFFF, 0i64);
               *v122 = 0i64;
               v123 = 0.0;
-              v126 = dword_4A79158;
+              v126 = g_rnd_seed;
               LOWORD(Src) = 0xFFFF;
               LOWORD(v114) = 0xFFFF;
               sub_8DAD60(v49, &v116, 0xFFFFFFFFi64, v127, v114, Src, 2, v122, &v126, 0xFFFFFFFF);
@@ -553,8 +553,8 @@ LABEL_126:
             goto LABEL_126;
           }
         }
-        v80 = 0x41C64E6D * dword_4A79158 + 0x3039;
-        dword_4A79158 = v80;
+        v80 = 0x41C64E6D * g_rnd_seed + 0x3039;
+        g_rnd_seed = v80;
         v127[0] = 0xA;
         v145 = 0i64;
         memset(&v127[4], 0xFF, 0x14);

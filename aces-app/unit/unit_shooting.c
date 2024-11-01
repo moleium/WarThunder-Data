@@ -1422,8 +1422,8 @@ LABEL_543:
             on_reflection_var_changed(v71 + 0x1D18, v71, &v337);
             *(v71 + 0x1D38) = v337.m256i_i8[0];
 LABEL_122:
-            v79 = 0x41C64E6D * dword_4A79158 + 0x3039;
-            dword_4A79158 = v79;
+            v79 = 0x41C64E6D * g_rnd_seed + 0x3039;
+            g_rnd_seed = v79;
             sub_348400(Unit, v68, a2 + 0xC8);
             v80 = *(Unit + 0x11B0);
             if ( v80 && *(v80 + 0xDB4) == 1 )
@@ -1454,8 +1454,8 @@ LABEL_122:
             else
               v322 = 0xFFFFFFFFFFFFFFFFui64;
             sub_5655B0(game);
-            dword_4A79158 = 0x41C64E6D * dword_4A79158 + 0x3039;
-            sub_37A820(v68, &v337, HIWORD(dword_4A79158) & 0x7FFF, v323, v322);
+            g_rnd_seed = 0x41C64E6D * g_rnd_seed + 0x3039;
+            sub_37A820(v68, &v337, HIWORD(g_rnd_seed) & 0x7FFF, v323, v322);
             if ( (*(Unit + 0x58) & 4) != 0 && v67 && *(Unit + 0x13DC) )
             {
               v324 = sub_1205530(v67);
@@ -1528,8 +1528,8 @@ LABEL_375:
       {
         v225 = *(Unit + 0x2280);
         v226 = (*(v225 + 0x3D8) * *(v225 + 0x3E4)) + *(v225 + 0x3FC);
-        v227 = 0x41C64E6D * dword_4A79158 + 0x3039;
-        dword_4A79158 = v227;
+        v227 = 0x41C64E6D * g_rnd_seed + 0x3039;
+        g_rnd_seed = v227;
         if ( *(v225 + 0x3F8) > 0 )
         {
           v228 = HIWORD(v227) & 0x7FFF;

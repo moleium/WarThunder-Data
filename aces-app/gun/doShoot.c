@@ -1361,9 +1361,9 @@ LABEL_147:
   }
   if ( v16 && (*(v16 + 0x1058) & 0x100) != 0 && v17 )
   {
-    v126 = 0x41C64E6D * dword_4A79158 + 0x3039;
+    v126 = 0x41C64E6D * g_rnd_seed + 0x3039;
     v127 = game;
-    dword_4A79158 = v126;
+    g_rnd_seed = v126;
     v128 = ballistics_A68_qword;
     if ( ballistics_A68_qword )
     {
@@ -1378,7 +1378,7 @@ LABEL_147:
           {
             (*(*v131 + 0xB8i64))(v131, 0x400i64);
             v127 = game;
-            v126 = dword_4A79158;
+            v126 = g_rnd_seed;
             v128 = ballistics_A68_qword;
           }
         }
@@ -1388,7 +1388,7 @@ LABEL_147:
     {
       v128 = 0i64;
     }
-    dword_4A79158 = 0x41C64E6D * v126 + 0x3039;
+    g_rnd_seed = 0x41C64E6D * v126 + 0x3039;
     if ( v128 )
     {
       v132 = *(v127 + 0x440);

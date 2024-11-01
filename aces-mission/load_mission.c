@@ -1495,8 +1495,8 @@ LABEL_497:
   LOBYTE(v1162) = 0;
   if ( data::get_bool(v308, "randomSpawnTeams", &v1162) && !*(a1 + 0x194) )
   {
-    v364 = 0x41C64E6D * dword_4A79158 + 0x3039;
-    dword_4A79158 = v364;
+    v364 = 0x41C64E6D * g_rnd_seed + 0x3039;
+    g_rnd_seed = v364;
     *(a1 + 0x193) = BYTE2(v364) & 1;
     *(a1 + 0x194) = 1;
     v365 = 1;
@@ -1587,7 +1587,7 @@ LABEL_522:
     if ( !*(v1170 + 7) )
     {
 LABEL_636:
-      dword_4A79158 = 0x41C64E6D * dword_4A79158 + 0x3039;
+      g_rnd_seed = 0x41C64E6D * g_rnd_seed + 0x3039;
       goto LABEL_637;
     }
     v386 = v374 + 1;
@@ -1872,8 +1872,8 @@ LABEL_583:
     v397 += 8;
   }
   while ( v398 < v382 );
-  v422 = 0x41C64E6D * dword_4A79158 + 0x3039;
-  dword_4A79158 = v422;
+  v422 = 0x41C64E6D * g_rnd_seed + 0x3039;
+  g_rnd_seed = v422;
   v308 = v1169;
   if ( !v1173 )
   {

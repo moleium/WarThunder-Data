@@ -1031,9 +1031,9 @@ LABEL_270:
     v241 = sub_F25210(v245);
     *(v134.QuadPart + 0x2D64) = v241;
   }
-  dword_4A79158 = 0x41C64E6D * dword_4A79158 + 0x3039;
+  g_rnd_seed = 0x41C64E6D * g_rnd_seed + 0x3039;
   v250 = 0;
-  *(v134.QuadPart + 0x2D60) = (HIWORD(dword_4A79158) & 0x7FFFi64) % dword_44AE130[v241];
+  *(v134.QuadPart + 0x2D60) = (HIWORD(g_rnd_seed) & 0x7FFFi64) % dword_44AE130[v241];
   v251 = *v128;
   v252 = 0xFFFFFFFF;
   if ( *v128 )

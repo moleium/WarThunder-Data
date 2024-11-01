@@ -469,8 +469,8 @@ LABEL_10:
   *(Unit + 0x948) = sub_36E440;
   *(Unit + 0x958) = 1;
   *(Unit + 0x960) = 0xBF800000;
-  dword_4A79158 = 0x41C64E6D * dword_4A79158 + 0x3039;
-  *(Unit + 0x968) = (HIWORD(dword_4A79158) & 0x7FFF) * *&dword_44A0140;
+  g_rnd_seed = 0x41C64E6D * g_rnd_seed + 0x3039;
+  *(Unit + 0x968) = (HIWORD(g_rnd_seed) & 0x7FFF) * *&dword_44A0140;
   *(Unit + 0x96C) = 0i64;
   *(Unit + 0x978) = 0i64;
   *(Unit + 0x988) = 0xBF800000;

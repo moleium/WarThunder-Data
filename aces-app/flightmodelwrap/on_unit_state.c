@@ -182,14 +182,14 @@ LABEL_70:
         *(v29 + 0x3620) = 0i64;
         v29 = *(Unit + 0x2E68);
       }
-      v33 = 0x41C64E6D * dword_4A79158 + 0x3039;
+      v33 = 0x41C64E6D * g_rnd_seed + 0x3039;
       v34 = *&dword_44A0140;
       v35 = (HIWORD(v33) & 0x7FFF) * *&dword_44A0140;
-      dword_4A79158 = 0x41C64E6D * v33 + 0x3039;
-      v36 = 0x41C64E6D * dword_4A79158;
+      g_rnd_seed = 0x41C64E6D * v33 + 0x3039;
+      v36 = 0x41C64E6D * g_rnd_seed;
       v37 = fsqrt(v35);
       v38 = *&dword_44A0284;
-      v3.m128_f32[0] = (((dword_4A79158 >> 0xF) & 0xFFFE) - 0x8000) * *&dword_44A0140;
+      v3.m128_f32[0] = (((g_rnd_seed >> 0xF) & 0xFFFE) - 0x8000) * *&dword_44A0140;
       v39.m128_i32[0] = 0;
       v40 = LODWORD(Y);
       v41 = _mm_and_ps(_mm_cmplt_ss(0i64, v3), LODWORD(Y));
@@ -202,7 +202,7 @@ LABEL_70:
       v42.m128_f32[0] = (HIWORD(v36) & 0x7FFF);
       v45 = *(Unit + 0x2E68);
       v42.m128_f32[0] = fsqrt(v42.m128_f32[0] * v34);
-      dword_4A79158 = v44 + 0x3039;
+      g_rnd_seed = v44 + 0x3039;
       v46 = 0i64;
       v46.m128_f32[0] = ((((v44 + 0x3039) >> 0xF) & 0xFFFE) - 0x8000) * v34;
       v47 = _mm_and_ps(_mm_cmplt_ss(0i64, v46), v40);

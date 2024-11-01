@@ -1087,8 +1087,8 @@ LABEL_246:
       goto LABEL_255;
     if ( !*(g_net + 0x60) )
       goto LABEL_254;
-    dword_4A79158 = 0x41C64E6D * dword_4A79158 + 0x3039;
-    LODWORD(v281) = HIWORD(dword_4A79158) & 0x7FFF;
+    g_rnd_seed = 0x41C64E6D * g_rnd_seed + 0x3039;
+    LODWORD(v281) = HIWORD(g_rnd_seed) & 0x7FFF;
     if ( *(v273 + 0x14) != 0xFFFFFFFF )
       data::convert_to_owned(v273);
     v133 = sub_145A790(v273, "_seed", &v281);
@@ -1102,8 +1102,8 @@ LABEL_254:
     else
     {
 LABEL_255:
-      dword_4A79158 = 0x41C64E6D * dword_4A79158 + 0x3039;
-      v136 = HIWORD(dword_4A79158) & 0x7FFF;
+      g_rnd_seed = 0x41C64E6D * g_rnd_seed + 0x3039;
+      v136 = HIWORD(g_rnd_seed) & 0x7FFF;
     }
     v137 = v292;
     v138 = v292 - v135;
@@ -1119,8 +1119,8 @@ LABEL_255:
         }
         else
         {
-          v140 = 0x41C64E6D * dword_4A79158 + 0x3039;
-          dword_4A79158 = v140;
+          v140 = 0x41C64E6D * g_rnd_seed + 0x3039;
+          g_rnd_seed = v140;
         }
         v141 = (HIWORD(v140) & 0x7FFFui64) % v137;
         LODWORD(v133) = v137 - 1;
@@ -1524,8 +1524,8 @@ LABEL_335:
 LABEL_352:
       if ( v189 )
       {
-        dword_4A79158 = 0x41C64E6D * dword_4A79158 + 0x3039;
-        v184 = *(*v82 + 8 * ((HIWORD(dword_4A79158) & 0x7FFFui64) % *(v82 + 4)));
+        g_rnd_seed = 0x41C64E6D * g_rnd_seed + 0x3039;
+        v184 = *(*v82 + 8 * ((HIWORD(g_rnd_seed) & 0x7FFFui64) % *(v82 + 4)));
       }
       (*(*v190 + 0x28i64))(v190, v184);
       *(v190 + 0x6D8) = 0i64;

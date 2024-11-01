@@ -937,8 +937,8 @@ LABEL_40:
   *(Unit + 0x2941) = 0i64;
   *(Unit + 0x2952) = 1;
   *(Unit + 0x2954) = dword_44A0744;
-  dword_4A79158 = 0x41C64E6D * dword_4A79158 + 0x3039;
-  *(Unit + 0x2964) = (HIWORD(dword_4A79158) & 0x7FFF) * *&dword_44A5C78;
+  g_rnd_seed = 0x41C64E6D * g_rnd_seed + 0x3039;
+  *(Unit + 0x2964) = (HIWORD(g_rnd_seed) & 0x7FFF) * *&dword_44A5C78;
   *(Unit + 0x2970) = 0x3F8000003F800000i64;
   *(Unit + 0x2978) = 0xFFFFFC18;
   *(Unit + 0x297C) = 0;
@@ -1374,8 +1374,8 @@ LABEL_94:
   *(Unit + 0x2280) = v96;
   *(Unit + 0x1120) = v96;
   sub_327900(Unit);
-  dword_4A79158 = 0x41C64E6D * dword_4A79158 + 0x3039;
-  *(Unit + 0x2968) = (HIWORD(dword_4A79158) & 0x7FFF) * *&dword_44A0140;
+  g_rnd_seed = 0x41C64E6D * g_rnd_seed + 0x3039;
+  *(Unit + 0x2968) = (HIWORD(g_rnd_seed) & 0x7FFF) * *&dword_44A0140;
   v97 = *(Unit + 0x1E88);
   v98 = *(Unit + 0x1E98) == 0i64;
   v311 = v83;

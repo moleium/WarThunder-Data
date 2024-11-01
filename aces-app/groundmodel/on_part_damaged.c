@@ -168,9 +168,9 @@ LABEL_68:
                 ground_movement[1] = 0;
                 ground_movement[0x474] = 0;
                 *(*(Unit + 0x1EA0) + 0x49i64) = 1;
-                dword_4A79158 = 0x41C64E6D * dword_4A79158 + 0x3039;
+                g_rnd_seed = 0x41C64E6D * g_rnd_seed + 0x3039;
                 *(*(Unit + 0x1EA0) + 0x60i64) = ((*&dword_44A5C78 * *(*(Unit + 0x1EA0) + 0xCi64))
-                                               * (HIWORD(dword_4A79158) & 0x7FFF))
+                                               * (HIWORD(g_rnd_seed) & 0x7FFF))
                                               - *(*(Unit + 0x1EA0) + 0xCi64);
               }
             }

@@ -4657,10 +4657,10 @@ LABEL_1166:
               if ( v1196 <= 0 )
                 v1196 = *(*(game + 0x498) + 0x2474i64);
               v1197 = sub_8E1010(Strh);
-              v1198 = 0x41C64E6D * dword_4A79158 + 0x3039;
+              v1198 = 0x41C64E6D * g_rnd_seed + 0x3039;
               v1199 = (((v1198 >> 0xF) & 0xFFFE) - 0x8000) * (v1197 * *&dword_44A0140);
               *(cursor_visuals + 0x3E14) = v1199;
-              dword_4A79158 = 0x41C64E6D * v1198 + 0x3039;
+              g_rnd_seed = 0x41C64E6D * v1198 + 0x3039;
               v1200 = COERCE_FLOAT(LODWORD(v1199) ^ SIGN_BIT_MASK) / v1196;
               a2 = v1263;
               v310 = a3;
@@ -4683,7 +4683,7 @@ LABEL_1166:
             if ( v1201[0x35] || *(*(game + 0x430) + 0x3C9i64) )
             {
               sub_8E1010(v433);
-              dword_4A79158 = 0x41C64E6D * dword_4A79158 + 0x3039;
+              g_rnd_seed = 0x41C64E6D * g_rnd_seed + 0x3039;
               sub_8E1290(Strh);
               a2 = v1263;
               v310 = a3;

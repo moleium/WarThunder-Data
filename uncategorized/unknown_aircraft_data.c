@@ -2251,8 +2251,8 @@ LABEL_449:
     *v647 = 0xFFFFFFFF;
     if ( !sub_B0A980(http_req, "id", v647) )
       return sub_AF1600(http_req, "{\"result\": \"OK\"}", 0x10i64);
-    dword_4A79158 = 0x41C64E6D * dword_4A79158 + 0x3039;
-    sub_3E8390(Unit, *v647, HIWORD(dword_4A79158) & 0x7FFF, 0i64);
+    g_rnd_seed = 0x41C64E6D * g_rnd_seed + 0x3039;
+    sub_3E8390(Unit, *v647, HIWORD(g_rnd_seed) & 0x7FFF, 0i64);
     goto LABEL_449;
   }
   v252 = _mm_or_si128(
