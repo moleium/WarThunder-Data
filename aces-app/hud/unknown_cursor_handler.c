@@ -593,7 +593,7 @@ LABEL_166:
                    xmmword_44A41A0),
                  v929),
                xmmword_44A01E0);
-      v933 = _mm_blendv_ps(v932, v930, _mm_cmpeq_epi32(_mm_and_si128(v931, xmmword_4487E30), 0i64));
+      v933 = _mm_blendv_ps(v932, v930, _mm_cmpeq_epi32(_mm_and_si128(v931, FP_TEST_BIT28), 0i64));
       si128 = _mm_load_si128(&xmmword_4487F40);
       v935 = _mm_blendv_ps(_mm_xor_ps(v933, SIGN_BIT_MASK), v933, _mm_cmpeq_epi32(_mm_and_si128(v931, si128), 0i64)).m128_f32[0];
       v936 = _mm_blend_epi16(_mm_xor_si128(v924, SIGN_BIT_MASK), 0i64, 0xFC);
@@ -612,7 +612,7 @@ LABEL_166:
                    xmmword_44A41B0),
                  _mm_mul_ps(v940, v939)),
                v939);
-      v942 = _mm_load_si128(&xmmword_4487E30);
+      v942 = _mm_load_si128(&FP_TEST_BIT28);
       v943 = _mm_add_ps(
                _mm_mul_ps(
                  _mm_add_ps(
@@ -709,9 +709,9 @@ LABEL_166:
                        xmmword_44A41B0),
                      _mm_mul_ps(v974, v973)),
                    v973);
-          v977 = _mm_blendv_ps(v975, v976, _mm_cmpeq_epi32(_mm_and_ps(v972, xmmword_4487E30), 0i64));
+          v977 = _mm_blendv_ps(v975, v976, _mm_cmpeq_epi32(_mm_and_ps(v972, FP_TEST_BIT28), 0i64));
           v978 = _mm_sub_epi32(_mm_and_ps(v972, xmmword_4487E40), 0xFFFFFFFFFFFFFFFFui64);
-          v979 = _mm_blendv_ps(v975, v976, _mm_cmpeq_epi32(_mm_and_si128(v978, xmmword_4487E30), 0i64));
+          v979 = _mm_blendv_ps(v975, v976, _mm_cmpeq_epi32(_mm_and_si128(v978, FP_TEST_BIT28), 0i64));
           v980 = _mm_blendv_ps(_mm_xor_ps(v977, v970), v977, _mm_cmpeq_epi32(_mm_and_ps(v972, xmmword_4487F40), 0i64)).m128_f32[0];
           v981 = _mm_blendv_ps(
                    _mm_xor_ps(v979, v970),
@@ -738,8 +738,8 @@ LABEL_166:
                        xmmword_44A41B0),
                      _mm_mul_ps(v987, v986)),
                    v986);
-          v990 = _mm_blendv_ps(v988, v989, _mm_cmpeq_epi32(_mm_and_ps(v984, xmmword_4487E30), 0i64));
-          v991 = _mm_blendv_ps(v988, v989, _mm_cmpeq_epi32(_mm_and_si128(xmmword_4487E30, v985), 0i64));
+          v990 = _mm_blendv_ps(v988, v989, _mm_cmpeq_epi32(_mm_and_ps(v984, FP_TEST_BIT28), 0i64));
+          v991 = _mm_blendv_ps(v988, v989, _mm_cmpeq_epi32(_mm_and_si128(FP_TEST_BIT28, v985), 0i64));
           LODWORD(v992) = _mm_blendv_ps(
                             _mm_xor_ps(v990, v970),
                             v990,
@@ -1406,9 +1406,9 @@ LABEL_784:
                xmmword_44A41B0),
              _mm_mul_ps(v732, v731)),
            v731);
-  v735 = _mm_blendv_ps(v733, v734, _mm_cmpeq_epi32(_mm_and_ps(v730, xmmword_4487E30), 0i64));
+  v735 = _mm_blendv_ps(v733, v734, _mm_cmpeq_epi32(_mm_and_ps(v730, FP_TEST_BIT28), 0i64));
   v736 = _mm_sub_epi32(_mm_and_ps(v730, xmmword_4487E40), 0xFFFFFFFFFFFFFFFFui64);
-  v737 = _mm_blendv_ps(v733, v734, _mm_cmpeq_epi32(_mm_and_si128(v736, xmmword_4487E30), 0i64));
+  v737 = _mm_blendv_ps(v733, v734, _mm_cmpeq_epi32(_mm_and_si128(v736, FP_TEST_BIT28), 0i64));
   v749 = _mm_blendv_ps(_mm_xor_ps(v735, v728), v735, _mm_cmpeq_epi32(_mm_and_ps(v730, xmmword_4487F40), 0i64));
   *v730.m128i_i32 = _mm_blendv_ps(
                       _mm_xor_ps(v737, v728),
@@ -1435,8 +1435,8 @@ LABEL_784:
                xmmword_44A41B0),
              _mm_mul_ps(v743, v742)),
            v742);
-  v746 = _mm_blendv_ps(v744, v745, _mm_cmpeq_epi32(_mm_and_ps(v740, xmmword_4487E30), 0i64));
-  v747 = _mm_blendv_ps(v744, v745, _mm_cmpeq_epi32(_mm_and_si128(v741, xmmword_4487E30), 0i64));
+  v746 = _mm_blendv_ps(v744, v745, _mm_cmpeq_epi32(_mm_and_ps(v740, FP_TEST_BIT28), 0i64));
+  v747 = _mm_blendv_ps(v744, v745, _mm_cmpeq_epi32(_mm_and_si128(v741, FP_TEST_BIT28), 0i64));
   v748 = _mm_blendv_ps(_mm_xor_ps(v746, v728), v746, _mm_cmpeq_epi32(_mm_and_ps(v740, xmmword_4487F40), 0i64)).m128_f32[0];
   v750 = _mm_blendv_ps(_mm_xor_ps(v747, v728), v747, _mm_cmpeq_epi32(_mm_and_si128(v741, xmmword_4487F40), 0i64));
   v749.m128_f32[0] = v749.m128_f32[0] * v750.m128_f32[0];
@@ -1682,8 +1682,8 @@ LABEL_812:
                  xmmword_44A41B0),
                _mm_mul_ps(v835, v834)),
              v834);
-    v838 = _mm_blendv_ps(v836, v837, _mm_cmpeq_epi32(_mm_and_ps(v832, xmmword_4487E30), 0i64));
-    v839 = _mm_blendv_ps(v836, v837, _mm_cmpeq_epi32(_mm_and_ps(xmmword_4487E30, v833), 0i64));
+    v838 = _mm_blendv_ps(v836, v837, _mm_cmpeq_epi32(_mm_and_ps(v832, FP_TEST_BIT28), 0i64));
+    v839 = _mm_blendv_ps(v836, v837, _mm_cmpeq_epi32(_mm_and_ps(FP_TEST_BIT28, v833), 0i64));
     v840 = _mm_blendv_ps(
              _mm_xor_ps(v838, SIGN_BIT_MASK),
              v838,
@@ -1810,9 +1810,9 @@ LABEL_214:
                        xmmword_44A41B0),
                      _mm_mul_ps(v148, v147)),
                    v147);
-          v151 = _mm_blendv_ps(v149, v150, _mm_cmpeq_epi32(_mm_and_ps(v146, xmmword_4487E30), 0i64));
+          v151 = _mm_blendv_ps(v149, v150, _mm_cmpeq_epi32(_mm_and_ps(v146, FP_TEST_BIT28), 0i64));
           v152 = _mm_sub_epi32(_mm_and_ps(v146, xmmword_4487E40), 0xFFFFFFFFFFFFFFFFui64);
-          v153 = _mm_blendv_ps(v149, v150, _mm_cmpeq_epi32(_mm_and_si128(v152, xmmword_4487E30), 0i64));
+          v153 = _mm_blendv_ps(v149, v150, _mm_cmpeq_epi32(_mm_and_si128(v152, FP_TEST_BIT28), 0i64));
           v150.m128_f32[0] = _mm_blendv_ps(
                                _mm_xor_ps(v151, SIGN_BIT_MASK),
                                v151,
@@ -1845,8 +1845,8 @@ LABEL_214:
                        xmmword_44A41B0),
                      _mm_mul_ps(v159, v158)),
                    v158);
-          v162 = _mm_blendv_ps(v160, v161, _mm_cmpeq_epi32(_mm_and_ps(v156, xmmword_4487E30), 0i64));
-          v163 = _mm_blendv_ps(v160, v161, _mm_cmpeq_epi32(_mm_and_si128(xmmword_4487E30, v157), 0i64));
+          v162 = _mm_blendv_ps(v160, v161, _mm_cmpeq_epi32(_mm_and_ps(v156, FP_TEST_BIT28), 0i64));
+          v163 = _mm_blendv_ps(v160, v161, _mm_cmpeq_epi32(_mm_and_si128(FP_TEST_BIT28, v157), 0i64));
           LODWORD(v142) = _mm_blendv_ps(
                             _mm_xor_ps(v162, SIGN_BIT_MASK),
                             v162,
@@ -4244,9 +4244,9 @@ LABEL_565:
                      xmmword_44A41B0),
                    _mm_mul_ps(v535, v534)),
                  v534);
-        v538 = _mm_blendv_ps(v536, v537, _mm_cmpeq_epi32(_mm_and_ps(v533, xmmword_4487E30), 0i64));
+        v538 = _mm_blendv_ps(v536, v537, _mm_cmpeq_epi32(_mm_and_ps(v533, FP_TEST_BIT28), 0i64));
         v539 = _mm_sub_epi32(_mm_and_ps(v533, xmmword_4487E40), 0xFFFFFFFFFFFFFFFFui64);
-        v540 = _mm_blendv_ps(v536, v537, _mm_cmpeq_epi32(_mm_and_si128(v539, xmmword_4487E30), 0i64));
+        v540 = _mm_blendv_ps(v536, v537, _mm_cmpeq_epi32(_mm_and_si128(v539, FP_TEST_BIT28), 0i64));
         v537.m128_f32[0] = _mm_blendv_ps(
                              _mm_xor_ps(v538, SIGN_BIT_MASK),
                              v538,
@@ -4279,8 +4279,8 @@ LABEL_565:
                      xmmword_44A41B0),
                    _mm_mul_ps(v546, v545)),
                  v545);
-        v549 = _mm_blendv_ps(v547, v548, _mm_cmpeq_epi32(_mm_and_ps(v543, xmmword_4487E30), 0i64));
-        v550 = _mm_blendv_ps(v547, v548, _mm_cmpeq_epi32(_mm_and_si128(xmmword_4487E30, v544), 0i64));
+        v549 = _mm_blendv_ps(v547, v548, _mm_cmpeq_epi32(_mm_and_ps(v543, FP_TEST_BIT28), 0i64));
+        v550 = _mm_blendv_ps(v547, v548, _mm_cmpeq_epi32(_mm_and_si128(FP_TEST_BIT28, v544), 0i64));
         v551 = _mm_blendv_ps(
                  _mm_xor_ps(SIGN_BIT_MASK, v550),
                  v550,
@@ -4313,9 +4313,9 @@ LABEL_565:
                    xmmword_44A41B0),
                  _mm_mul_ps(v556, v555)),
                v555);
-      v559 = _mm_blendv_ps(v557, v558, _mm_cmpeq_epi32(_mm_and_ps(v554, xmmword_4487E30), 0i64));
+      v559 = _mm_blendv_ps(v557, v558, _mm_cmpeq_epi32(_mm_and_ps(v554, FP_TEST_BIT28), 0i64));
       v560 = _mm_sub_epi32(_mm_and_ps(v554, xmmword_4487E40), 0xFFFFFFFFFFFFFFFFui64);
-      v561 = _mm_blendv_ps(v557, v558, _mm_cmpeq_epi32(_mm_and_si128(v560, xmmword_4487E30), 0i64));
+      v561 = _mm_blendv_ps(v557, v558, _mm_cmpeq_epi32(_mm_and_si128(v560, FP_TEST_BIT28), 0i64));
       v558.m128_f32[0] = _mm_blendv_ps(
                            _mm_xor_ps(v559, SIGN_BIT_MASK),
                            v559,
@@ -4348,8 +4348,8 @@ LABEL_565:
                    xmmword_44A41B0),
                  _mm_mul_ps(v567, v566)),
                v566);
-      v570 = _mm_blendv_ps(v568, v569, _mm_cmpeq_epi32(_mm_and_ps(v564, xmmword_4487E30), 0i64));
-      v571 = _mm_blendv_ps(v568, v569, _mm_cmpeq_epi32(_mm_and_si128(xmmword_4487E30, v565), 0i64));
+      v570 = _mm_blendv_ps(v568, v569, _mm_cmpeq_epi32(_mm_and_ps(v564, FP_TEST_BIT28), 0i64));
+      v571 = _mm_blendv_ps(v568, v569, _mm_cmpeq_epi32(_mm_and_si128(FP_TEST_BIT28, v565), 0i64));
       v572 = _mm_blendv_ps(
                _mm_xor_ps(SIGN_BIT_MASK, v571),
                v571,
