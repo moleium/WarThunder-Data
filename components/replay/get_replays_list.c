@@ -149,9 +149,9 @@ LABEL_38:
       &SystemInfo,
       2i64);
   }
-  else if ( off_4B8D6D8 )
+  else if ( dag_on_file_close )
   {
-    off_4B8D6D8(file_ptr_);
+    dag_on_file_close(file_ptr_);
   }
 LABEL_45:
   v28 = v382;

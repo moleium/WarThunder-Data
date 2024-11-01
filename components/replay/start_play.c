@@ -174,9 +174,9 @@ LABEL_28:
                 &v110,
                 2);
             }
-            else if ( off_4B8D6D8 )
+            else if ( dag_on_file_close )
             {
-              off_4B8D6D8(v45);
+              dag_on_file_close(v45);
             }
           }
           ++v43;
