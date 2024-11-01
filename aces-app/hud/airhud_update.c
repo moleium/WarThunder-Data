@@ -679,7 +679,7 @@ LABEL_159:
     v123 = 2i64;
     *&XPosition = v969;
 LABEL_216:
-    sub_B831C0(v115 + 0x2D10, v123, v56, v57);
+    gui_call_interop_int(v115 + 0x2D10, v123, v56, v57);
     goto LABEL_217;
   }
   v112 = *(mUnit__ + 0x9C4);
@@ -1242,7 +1242,7 @@ LABEL_973:
   {
     *(v753 + 0xEC2) = 1;
     *(v753 + 0xEC0) = v754;
-    sub_B831C0(v753 + 0x3AD8, v754, v177, v178);
+    gui_call_interop_int(v753 + 0x3AD8, v754, v177, v178);
   }
   v18 = v303 == 0;
   v77 = v298;
@@ -1322,7 +1322,7 @@ LABEL_973:
         {
           *(gui_script_strings + 0xAD2) = 1;
           v776[0xAD0] = v775;
-          sub_B831C0(v776 + 0x2B18, v775, v177, v178);
+          gui_call_interop_int(v776 + 0x2B18, v775, v177, v178);
         }
       }
     }
@@ -1494,7 +1494,7 @@ LABEL_308:
         v223 = v222 + 0x24C0;
         v224 = 1i64;
 LABEL_358:
-        sub_B831C0(v223, v224, v190, v191);
+        gui_call_interop_int(v223, v224, v190, v191);
         v202 = LOBYTE(v993);
         v194 = v991;
       }
@@ -1506,7 +1506,7 @@ LABEL_358:
       {
         *(gui_script_strings + 0x93C) = 1;
         v231[0x93A] = 0;
-        sub_B831C0(v231 + 0x24C0, 0i64, v190, v191);
+        gui_call_interop_int(v231 + 0x24C0, 0i64, v190, v191);
         v202 = LOBYTE(v993);
         v194 = v991;
         v220 = mUnit__;
@@ -3122,7 +3122,7 @@ LABEL_812:
       {
         *(gui_script_strings + 0x84E) = 1;
         *(v654 + 0x84C) = v655;
-        sub_B831C0(v654 + 0x2108, v655, v652, v653);
+        gui_call_interop_int(v654 + 0x2108, v655, v652, v653);
         v654 = gui_script_strings;
       }
       v656 = v971;
@@ -3146,7 +3146,7 @@ LABEL_812:
       {
         *(v654 + 0x878) = 1;
         *(v654 + 0x876) = v658;
-        sub_B831C0(v654 + 0x21B0, v658, v652, v653);
+        gui_call_interop_int(v654 + 0x21B0, v658, v652, v653);
         v654 = gui_script_strings;
       }
       v659 = v978;
@@ -3175,7 +3175,7 @@ LABEL_812:
       {
         *(gui_script_strings + 0xAFC) = 1;
         *(v662 + 0xAFA) = v661;
-        sub_B831C0(v662 + 0x2BC0, v661, v652, v653);
+        gui_call_interop_int(v662 + 0x2BC0, v661, v652, v653);
         v662 = gui_script_strings;
       }
       v663 = *(air_movement_2 + 0x988);
@@ -3944,7 +3944,7 @@ LABEL_1098:
         {
           *(gui_script_strings + 0xAC4) = 1;
           v859[0xAC2] = v858;
-          sub_B831C0(v859 + 0x2AE0, v858, v652, v653);
+          gui_call_interop_int(v859 + 0x2AE0, v858, v652, v653);
         }
       }
       if ( (*(mUnit__ + 0x1083) & 8) != 0 && !byte_4B19A94 )
@@ -4009,7 +4009,7 @@ LABEL_1116:
             {
               *(gui_script_strings + 0xA00) = 1;
               v873[0x9FE] = v872;
-              sub_B831C0(v873 + 0x27D0, v872, v652, v653);
+              gui_call_interop_int(v873 + 0x27D0, v872, v652, v653);
               v873 = gui_script_strings;
             }
             v874 = (v871 * *&dword_44890B4);
@@ -4017,7 +4017,7 @@ LABEL_1116:
             {
               v873[0xA0E] = 1;
               v873[0xA0C] = v874;
-              sub_B831C0(v873 + 0x2808, v874, v652, v653);
+              gui_call_interop_int(v873 + 0x2808, v874, v652, v653);
             }
             v985 = 9.4039548e-38;
             *&v869 = 2.4074124e-35;
@@ -4043,7 +4043,7 @@ LABEL_1116:
             {
               *(gui_script_strings + 0x9E4) = 1;
               v876[0x9E2] = v875;
-              sub_B831C0(v876 + 0x2760, v875, v652, v653);
+              gui_call_interop_int(v876 + 0x2760, v875, v652, v653);
               v876 = gui_script_strings;
             }
             if ( v876[0x9F2] != 5 || *(v876 + 0x27C0) != v847 )
@@ -4162,7 +4162,7 @@ LABEL_1116:
       {
         *(gui_script_strings + 0x77C) = 1;
         *(v914 + 0x77A) = v915;
-        sub_B831C0(v914 + 0x1DC0, v915, v878, v879);
+        gui_call_interop_int(v914 + 0x1DC0, v915, v878, v879);
         v914 = gui_script_strings;
       }
       v916 = v1003;
@@ -4172,7 +4172,7 @@ LABEL_1116:
       {
         *(v914 + 0x78A) = 1;
         *(v914 + 0x788) = v918;
-        sub_B831C0(v914 + 0x1DF8, v918, v878, v879);
+        gui_call_interop_int(v914 + 0x1DF8, v918, v878, v879);
         v914 = gui_script_strings;
       }
       v919 = v1000;
@@ -4181,28 +4181,28 @@ LABEL_1116:
       {
         *(v914 + 0x798) = 1;
         *(v914 + 0x796) = v920;
-        sub_B831C0(v914 + 0x1E30, v920, v878, v879);
+        gui_call_interop_int(v914 + 0x1E30, v920, v878, v879);
         v914 = gui_script_strings;
       }
       if ( *(v914 + 0x7A6) != 1 || *(v914 + 0x7A4) != 0x103 )
       {
         *(v914 + 0x7A6) = 1;
         *(v914 + 0x7A4) = 0x103;
-        sub_B831C0(v914 + 0x1E68, 0x103i64, v878, v879);
+        gui_call_interop_int(v914 + 0x1E68, 0x103i64, v878, v879);
         v914 = gui_script_strings;
       }
       if ( *(v914 + 0x7B4) != 1 || *(v914 + 0x7B2) != LODWORD(v917) )
       {
         *(v914 + 0x7B4) = 1;
         v914[0x7B2] = v917;
-        sub_B831C0(v914 + 0x1EA0, LODWORD(v917), v878, v879);
+        gui_call_interop_int(v914 + 0x1EA0, LODWORD(v917), v878, v879);
         v914 = gui_script_strings;
       }
       if ( *(v914 + 0x7C2) != 1 || *(v914 + 0x7C0) != v877 )
       {
         *(v914 + 0x7C2) = 1;
         *(v914 + 0x7C0) = v877;
-        sub_B831C0(v914 + 0x1ED8, v877, v878, v879);
+        gui_call_interop_int(v914 + 0x1ED8, v877, v878, v879);
         v914 = gui_script_strings;
       }
       v921 = *(v919 + 8);
