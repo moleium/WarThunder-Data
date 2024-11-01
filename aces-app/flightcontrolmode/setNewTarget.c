@@ -275,7 +275,7 @@ LABEL_76:
                               v96 = v42;
                               sub_37B960(&v80);
                               LOBYTE(v46) = 0xFF;
-                              sub_159F500(&v80, v46);
+                              mpi::send_to(&v80, v46);
                               v80.m256i_i64[0] = &off_44A0560;
                               if ( v81 < 0 )
                                 (*(*v83 + 0x40i64))(v83, v82);

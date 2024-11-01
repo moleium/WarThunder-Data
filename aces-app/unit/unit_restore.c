@@ -552,7 +552,7 @@ LABEL_215:
         sub_37BC90(&v126);
 LABEL_136:
         LOBYTE(v76) = 0xFF;
-        sub_159F500(&v126, v76);
+        mpi::send_to(&v126, v76);
         v126 = &off_44A0560;
         if ( v130 < 0 )
           (*(*v132 + 0x40i64))(v132, v131);
@@ -720,7 +720,7 @@ LABEL_188:
         BYTE2(v129) = v106;
         v126 = &off_44A04C0;
         LOBYTE(v76) = 0xFF;
-        sub_159F500(&v126, v76);
+        mpi::send_to(&v126, v76);
         v126 = &off_44A0560;
         if ( v130 < 0 )
           (*(*v132 + 0x40i64))(v132, v131);

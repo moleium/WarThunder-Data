@@ -656,7 +656,7 @@ LABEL_119:
         BYTE2(v175) = v126;
         *&v173 = &off_44A04C0;
         LOBYTE(v77) = 0xFF;
-        sub_159F500(&v173, v77);
+        mpi::send_to(&v173, v77);
         *&v173 = &off_44A0560;
         if ( v176 < 0 )
           (*(**&v178 + 0x40i64))(COERCE_DOUBLE(*&v178), v177);
