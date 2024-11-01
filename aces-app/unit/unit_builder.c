@@ -1265,12 +1265,12 @@ LABEL_280:
     {
       v304 = 2i64;
     }
-    sub_FC0D0(&qword_4AD09D0, v304);
+    sub_FC0D0(&world_targets_list, v304);
     v72 = qword_4AD09E0;
   }
   v73 = v72 + 1;
   LODWORD(qword_4AD09E0) = v72 + 1;
-  *(qword_4AD09D0 + v72) = Unit;
+  *(world_targets_list + v72) = Unit;
   v74 = *a6;
   v75 = 0xFFFFFFFF;
   if ( !*a6 )
