@@ -120,8 +120,8 @@ LABEL_6:
   if ( Unit && !*(Unit + 0x10B0) )
     v154 = *(a1 + 8);
   if ( *(a1 + 0x420)
-    && COERCE_FLOAT(*(*(a1 + 0x2B0) + 0x24Ci64) & FABSF_MASK) < *&dword_44A0308
-    && COERCE_FLOAT(*(*(v154 + 0x4160) + 0x504i64) & FABSF_MASK) < *&dword_44A0308 )
+    && COERCE_FLOAT(*(*(a1 + 0x2B0) + 0x24Ci64) & FABSF_MASK) < *&FP32_EPSILON
+    && COERCE_FLOAT(*(*(v154 + 0x4160) + 0x504i64) & FABSF_MASK) < *&FP32_EPSILON )
   {
     v155 = *(a1 + 0x424);
     v156 = *(a1 + 0x428);
@@ -386,7 +386,7 @@ LABEL_286:
       v233 = 0x20i64;
       if ( v418 > *&dword_44A0788 || (v233 = 0x21i64, v418 < *&dword_449F198) )
       {
-        if ( COERCE_FLOAT(FABSF_MASK & v232) >= *&dword_44A0308 )
+        if ( COERCE_FLOAT(FABSF_MASK & v232) >= *&FP32_EPSILON )
           sub_5303A0(&stru_4AD5EE0, v233);
       }
     }
@@ -798,7 +798,7 @@ LABEL_361:
             v352 = v352 + _mm_andnot_ps(_mm_cmple_ss(0i64, v362), v361).m128_f32[0];
           }
         }
-        if ( COERCE_FLOAT(FABSF_MASK & LODWORD(v352)) >= *&dword_44A0308 )
+        if ( COERCE_FLOAT(FABSF_MASK & LODWORD(v352)) >= *&FP32_EPSILON )
           sub_5303A0(&stru_4AD5EE0, 0x25i64);
       }
     }

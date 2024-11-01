@@ -168,8 +168,8 @@ __int64 __fastcall set_fm_commands(
                 if ( sub_B0A5E0(command_data, "value", Buffer) )
                 {
                   v9 = _mm_and_ps(*(game + 0x1AC), FABSF_MASK);
-                  v10 = dword_44A0308;
-                  v10.m128_f32[0] = *&dword_44A0308 * v9.m128_f32[0];
+                  v10 = FP32_EPSILON;
+                  v10.m128_f32[0] = *&FP32_EPSILON * v9.m128_f32[0];
                   *(game
                   + 8i64 * (_mm_cvtsi128_si32(_mm_or_ps(_mm_cmple_ps(v9, v10), _mm_cmple_ps(v9, dword_44A0634))) & 1)
                   + 0x1AC) = *Buffer;

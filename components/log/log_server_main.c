@@ -118,7 +118,7 @@ __int64 __fastcall log_server_main(__int64 a1)
   v154 = v26 / v25;
   v152 = 3;
   (avprintf)(&server, 0x200i64, ",\n\"M\": %.2f", v32);
-  if ( v22 > *&dword_44A0308 )
+  if ( v22 > *&FP32_EPSILON )
   {
     v33 = qword_4480160;
     v34 = qword_4480160 / v26;

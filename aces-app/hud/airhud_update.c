@@ -1719,7 +1719,7 @@ LABEL_438:
                                                                                             *(v308 + 8),
                                                                                             v998)));
 LABEL_443:
-  v310 = COERCE_FLOAT(FABSF_MASK & v280) >= *&dword_44A0308 && v281 && v271;
+  v310 = COERCE_FLOAT(FABSF_MASK & v280) >= *&FP32_EPSILON && v281 && v271;
   LODWORD(v82) = sub_3DF3F0(mUnit__);
   LOBYTE(v82) = v310 & v309 & (v82 + sub_425520(mUnit__) != 0);
   v311 = *(game + 0x440);
@@ -4079,7 +4079,7 @@ LABEL_1116:
           v882 = 0xC0i64;
           v883 = 0i64;
           v884 = Y;
-          v885 = *&dword_44A0308;
+          v885 = *&FP32_EPSILON;
           v886 = FABSF_MASK;
           v887 = *&screenScaleFactor;
           do

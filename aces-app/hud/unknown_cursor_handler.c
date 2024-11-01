@@ -891,7 +891,7 @@ LABEL_189:
     || (v110 = *(cursor_visuals + 0x69C),
         LODWORD(v111) = COERCE_UNSIGNED_INT(*&dword_44801E8 + v110) & FABSF_MASK,
         v111 <= *&dword_44A05D0)
-    || v111 <= (fmaxf(COERCE_FLOAT(FABSF_MASK & LODWORD(v110)), Y) * *&dword_44A0308)
+    || v111 <= (fmaxf(COERCE_FLOAT(FABSF_MASK & LODWORD(v110)), Y) * *&FP32_EPSILON)
     || (v112 = *(LocalUnit + 0xFA0), v110 >= v112.m128_f32[0]) )
   {
     v106 = 0i64;
@@ -2161,7 +2161,7 @@ LABEL_320:
                 *(cursor_visuals + 0xA64) = v299;
                 *(cursor_visuals + 0xA68) = v300;
                 *(cursor_visuals + 0xA6C) = v301;
-                v303 = COERCE_FLOAT(FABSF_MASK & LODWORD(v302)) <= *&dword_44A0308;
+                v303 = COERCE_FLOAT(FABSF_MASK & LODWORD(v302)) <= *&FP32_EPSILON;
                 *(cursor_visuals + 0xA70) = v302;
                 if ( !v303 )
                 {
@@ -2289,7 +2289,7 @@ LABEL_436:
                 *(cursor_visuals + 0xA78) = v421;
                 *(cursor_visuals + 0xA7C) = v422;
                 *(cursor_visuals + 0xA80) = v424;
-                if ( COERCE_FLOAT(FABSF_MASK & LODWORD(v424)) > *&dword_44A0308 )
+                if ( COERCE_FLOAT(FABSF_MASK & LODWORD(v424)) > *&FP32_EPSILON )
                 {
                   v425 = v413 / v424;
                   v423 = v423 * v425;
@@ -2587,7 +2587,7 @@ LABEL_742:
                   v671 = v1283;
                 }
               }
-              if ( COERCE_FLOAT(LODWORD(v685) & FABSF_MASK) < *&dword_44A0308 )
+              if ( COERCE_FLOAT(LODWORD(v685) & FABSF_MASK) < *&FP32_EPSILON )
               {
 LABEL_1201:
                 v675 = 2;
@@ -4367,7 +4367,7 @@ LABEL_565:
       dword_4B44B48 = v573;
       dword_4B44B4C = v565.m128i_i32[0];
       dword_4B44B50 = v558.m128_i32[0];
-      if ( !v530 && !(v526 | (v574 < *&dword_44A0308)) )
+      if ( !v530 && !(v526 | (v574 < *&FP32_EPSILON)) )
       {
         if ( (v575 = v527[0x88], !byte_4AD168C)
           || (v576 = *(v575 + 0x3F0), v576 < *(v575 + 0x278)) && *(*(*(v575 + 0x268) + 8 * v576) + 0x28i64) == 1

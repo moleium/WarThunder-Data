@@ -1909,7 +1909,7 @@ LABEL_383:
            * air_velocity_magnitude.m128_f32[0];
     sub_B09B80(&v669, "%f,\n", v272);
     sub_B0BD50(&v669, "%f,\n", v272);
-    if ( air_velocity_magnitude.m128_f32[0] <= *&dword_44A0308 )
+    if ( air_velocity_magnitude.m128_f32[0] <= *&FP32_EPSILON )
     {
       v280 = *(Unit + 0x99C);
       v279 = *(Unit + 0x9A0);

@@ -30,7 +30,7 @@ __int64 __fastcall shell_info_alt(__int64 shell_info_18, __int64 a2)
   LODWORD(v29[0]) = 0;
   v4 = data::set_real(a2, "mass", v29);
   *(shell_info_18 + 4) = v4;
-  if ( v4 < *&dword_44A0308 )
+  if ( v4 < *&FP32_EPSILON )
   {
     v29[0] = "?";
     v29[1] = data::get_str(a2, "bulletName", v29);

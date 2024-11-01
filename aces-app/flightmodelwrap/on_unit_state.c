@@ -366,7 +366,7 @@ LABEL_119:
             v90 = Y;
             v91 = FABSF_MASK;
             v92 = *&dword_44A05D0;
-            v93 = *&dword_44A0308;
+            v93 = *&FP32_EPSILON;
             do
             {
               UnitWeapons = *(Unit + 0x11A0);

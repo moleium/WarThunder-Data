@@ -31,5 +31,5 @@ bool has_schraege_musik()
       v1 = v6 / v5;
     }
   }
-  return COERCE_FLOAT(LODWORD(v1) & FABSF_MASK) >= *&dword_44A0308;
+  return COERCE_FLOAT(LODWORD(v1) & FABSF_MASK) >= *&FP32_EPSILON;
 }

@@ -7,8 +7,8 @@ float get_time_speed()
   if ( !*(game + 0x450) )
     return Y;
   v0 = _mm_and_ps(*(game + 0x1AC), FABSF_MASK);
-  v1 = dword_44A0308;
-  v1.m128_f32[0] = *&dword_44A0308 * v0.m128_f32[0];
+  v1 = FP32_EPSILON;
+  v1.m128_f32[0] = *&FP32_EPSILON * v0.m128_f32[0];
   return *(game
          + 8i64 * (_mm_cvtsi128_si32(_mm_or_ps(_mm_cmple_ps(v0, v1), _mm_cmple_ps(v0, dword_44A0634))) & 1)
          + 0x1AC);
