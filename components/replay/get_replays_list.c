@@ -183,14 +183,14 @@ LABEL_45:
   v384 = 0i64;
   sub_4DC330(&v382);
   Src = 0i64;
-  v380 = off_4B678C0;
+  v380 = midmem;
   Size = 0i64;
   if ( v384 )
   {
     v35 = 0x10i64;
     if ( v384 >= 0x11 )
       v35 = v384;
-    v36 = (*(*off_4B678C0 + 0x18i64))(off_4B678C0, v35);
+    v36 = (*(*midmem + 0x18i64))(midmem, v35);
     memmove(v36, Src, Size);
     Src = v36;
     HIDWORD(Size) = v35;
@@ -262,7 +262,7 @@ LABEL_74:
     {
 LABEL_80:
       v376 = 0i64;
-      v377 = off_4B678C0;
+      v377 = midmem;
       v378 = 0i64;
       v48 = v384;
       v49 = 0;
@@ -270,7 +270,7 @@ LABEL_80:
       {
         if ( v384 < 0x11 )
           v48 = 0x10i64;
-        v50 = (*(*off_4B678C0 + 0x18i64))(off_4B678C0, v48);
+        v50 = (*(*midmem + 0x18i64))(midmem, v48);
         memmove(v50, v376, v378);
         if ( v376 )
           (*(*v377 + 0x40i64))(v377);
@@ -416,13 +416,13 @@ LABEL_120:
   v380 = v72;
   Size = 0i64;
   sub_4DC330(&Src);
-  v394 = off_4B678C0;
+  v394 = midmem;
   if ( Size )
   {
     v73 = 0x10i64;
     if ( Size >= 0x11 )
       v73 = Size;
-    v74 = (*(*off_4B678C0 + 0x18i64))(off_4B678C0, v73);
+    v74 = (*(*midmem + 0x18i64))(midmem, v73);
     v390 = v74;
     if ( Size )
       memmove(v74, Src, Size);
@@ -461,7 +461,7 @@ LABEL_155:
       v385 = v79;
       v82 = data::set_int(v79, "ver", p_SystemInfo);
       v376 = 0i64;
-      v377 = off_4B678C0;
+      v377 = midmem;
       v378 = 0i64;
       v83 = Size;
       v84 = 0;
@@ -470,7 +470,7 @@ LABEL_155:
       {
         if ( Size < 0x11 )
           v83 = 0x10i64;
-        v86 = (*(*off_4B678C0 + 0x18i64))(off_4B678C0, v83);
+        v86 = (*(*midmem + 0x18i64))(midmem, v83);
         memmove(v86, v376, v378);
         if ( v376 )
           (*(*v377 + 0x40i64))(v377);

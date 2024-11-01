@@ -1935,7 +1935,7 @@ LABEL_561:
   _InterlockedAdd(&dword_4B6788C, (j__msize(v444) + 0xF) >> 4);
   _InterlockedIncrement(&dword_4B67890);
   *v444 = 0i64;
-  v444[1] = off_4B678C0;
+  v444[1] = midmem;
   *(v444 + 1) = 0i64;
   *(v963.QuadPart + 0x53C8) = v444;
   (sub_977A00)(v444, v959, v963.QuadPart);
@@ -2734,7 +2734,7 @@ LABEL_718:
     *(v963.QuadPart + 0x3338) = v593;
   }
   if ( *(v963.QuadPart + 0x26C0) >= 2u )
-    (*(*off_4B678C0 + 0x40i64))(off_4B678C0, *(v963.QuadPart + 0x26C8));
+    (*(*midmem + 0x40i64))(midmem, *(v963.QuadPart + 0x26C8));
   *(v963.QuadPart + 0x26C0) = 0;
   v594 = *v959;
   LODWORD(v595) = 0xFFFFFFFF;
@@ -2826,7 +2826,7 @@ LABEL_838:
           v609 = v606 + 1;
           if ( v606 == 1 )
           {
-            v610 = (*(*off_4B678C0 + 0x18i64))(off_4B678C0, 0xCi64 * v609);
+            v610 = (*(*midmem + 0x18i64))(midmem, 0xCi64 * v609);
             memmove(v610, v608, 0xC * v606);
             *(v359.QuadPart + 0x26C8) = v610;
             *(v359.QuadPart + 0x26C4) = v609;
@@ -2841,7 +2841,7 @@ LABEL_838:
               if ( v612 <= v609 )
                 LODWORD(v612) = v606 + 1;
               *(v359.QuadPart + 0x26C4) = v612;
-              v608 = (*(*off_4B678C0 + 0x38i64))(off_4B678C0, v607, 0xCi64 * v612);
+              v608 = (*(*midmem + 0x38i64))(midmem, v607, 0xCi64 * v612);
               *(v359.QuadPart + 0x26C8) = v608;
             }
           }
@@ -3496,7 +3496,7 @@ LABEL_1071:
       *(v788 + 8 * v789 + 0x28) = v790;
       if ( !v972 || !*v974 )
         goto LABEL_1055;
-      v792 = (*(*off_4B678C0 + 0x18i64))(off_4B678C0, 0x260i64);
+      v792 = (*(*midmem + 0x18i64))(midmem, 0x260i64);
       *v792 = 0i64;
       *(v792 + 0x10) = 0i64;
       *(v792 + 0x20) = 0i64;
@@ -3508,7 +3508,7 @@ LABEL_1071:
       *(v792 + 0x74) = 0;
       *(v792 + 0x80) = 0i64;
       *(v792 + 0x90) = 0i64;
-      v793 = off_4B678C0;
+      v793 = midmem;
       *(v792 + 0xA0) = 0i64;
       *(v792 + 0xA8) = v793;
       *(v792 + 0xB0) = 0i64;

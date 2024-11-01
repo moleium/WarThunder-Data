@@ -2598,10 +2598,10 @@ LABEL_449:
         if ( sub_B0A980(http_req, "speedCount", &v597) )
         {
           *&Block[0] = 0i64;
-          *(&Block[0] + 1) = off_4B678C0;
+          *(&Block[0] + 1) = midmem;
           *&Block[1] = 0i64;
           *&v606 = 0i64;
-          *(&v606 + 1) = off_4B678C0;
+          *(&v606 + 1) = midmem;
           v607 = 0i64;
           v598 = 0.0;
           if ( v597 != 0.0 )
@@ -3552,7 +3552,7 @@ LABEL_616:
     return sub_AF1600(http_req, "{\"result\": \"OK\"}", 0x10i64);
   }
   *v647 = 0i64;
-  *&v647[8] = off_4B678C0;
+  *&v647[8] = midmem;
   *&v647[0x10] = 0i64;
   sub_B0C610(v647, &v602);
   v455 = sub_1464470(0x1D8ui64);

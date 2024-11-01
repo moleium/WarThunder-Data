@@ -370,7 +370,7 @@ LABEL_61:
           }
           v40[2] = 0xFFFFFFFF;
           Unit_ = 0i64;
-          v101 = off_4B678C0;
+          v101 = midmem;
           v102 = 0i64;
           if ( *(game + 0x360) )
           {

@@ -66,8 +66,8 @@ __int64 __fastcall AcesMission(__int64 a1, __int64 a2)
 LABEL_6:
   _InterlockedAdd(&dword_4B6788C, (j__msize(v4) + 0xF) >> 4);
   _InterlockedIncrement(&dword_4B67890);
-  v8 = off_4B678C0;
-  v4[3] = off_4B678C0;
+  v8 = midmem;
+  v4[3] = midmem;
   *v4 = 0i64;
   *(v4 + 2) = 0;
   v4[2] = 0i64;
@@ -202,8 +202,8 @@ LABEL_15:
   *v12 = 0;
   v12[2] = 0;
   *(v12 + 2) = 0i64;
-  v14 = off_4B678C0;
-  *(v12 + 3) = off_4B678C0;
+  v14 = midmem;
+  *(v12 + 3) = midmem;
   *(v12 + 2) = 0i64;
   *(v12 + 6) = v14;
   *(v12 + 7) = 0i64;
@@ -352,8 +352,8 @@ LABEL_15:
   *(a1 + 0x800) = 0;
   *(a1 + 0x804) = 0xFFFFFFFFi64;
   *(a1 + 0x810) = 0i64;
-  v17 = off_4B678C0;
-  *(a1 + 0x818) = off_4B678C0;
+  v17 = midmem;
+  *(a1 + 0x818) = midmem;
   *(a1 + 0x820) = 0i64;
   *(a1 + 0x830) = v17;
   *(a1 + 0x838) = 0i64;

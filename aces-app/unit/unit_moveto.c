@@ -1496,7 +1496,7 @@ LABEL_376:
               if ( dword_4ACF6E8 == 0xFFFFFFFF )
               {
                 qword_4ACF6D0 = 0i64;
-                off_4ACF6D8 = off_4B678C0;
+                off_4ACF6D8 = midmem;
                 qword_4ACF6E0 = 0i64;
                 atexit(sub_128750);
                 Init_thread_footer(&dword_4ACF6E8);

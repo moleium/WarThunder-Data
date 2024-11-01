@@ -313,8 +313,8 @@ LABEL_19:
   *(PlayerInfo + 0x510) = sub_158DEB0;
   *(PlayerInfo + 0x520) = 0xFFFFFFFF;
   *(PlayerInfo + 0x528) = 0i64;
-  v36 = off_4B678C0;
-  *(PlayerInfo + 0x530) = off_4B678C0;
+  v36 = midmem;
+  *(PlayerInfo + 0x530) = midmem;
   *(PlayerInfo + 0x538) = 0i64;
   *(PlayerInfo + 0x518) = PlayerInfo + 0x540;
   *(PlayerInfo + 0x540) = 0x1C;
@@ -549,7 +549,7 @@ LABEL_19:
   *(PlayerInfo + 0xC38) = sub_11FC780;
   *(PlayerInfo + 0xC64) = 0;
   *(PlayerInfo + 0xCF0) = 0i64;
-  v37 = off_4B678C0;
+  v37 = midmem;
   *(PlayerInfo + 0xCF8) = 0i64;
   *(PlayerInfo + 0xD00) = v37;
   *(PlayerInfo + 0xD08) = 0i64;

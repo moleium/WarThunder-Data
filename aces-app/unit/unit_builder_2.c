@@ -87,11 +87,11 @@ __int64 __fastcall unit_builder_2(
   unit_builder(Unit, 5, a2, a5, Unit + 0x33C0, a4, a6, a7, 0x7Fu);
   *Unit = &off_44C6130;
   *(Unit + 0x50) = off_44C6A00;
-  *(Unit + 0x3030) = (*(*off_4B678C0 + 0x18i64))(off_4B678C0, 0x4168i64);
+  *(Unit + 0x3030) = (*(*midmem + 0x18i64))(midmem, 0x4168i64);
   v12 = *(*(game + 0x440) + 0x9A8i64);
   *(Unit + 0x3038) = 0i64;
-  v13 = off_4B678C0;
-  *(Unit + 0x3040) = off_4B678C0;
+  v13 = midmem;
+  *(Unit + 0x3040) = midmem;
   *(Unit + 0x3050) = 0;
   *(Unit + 0x3048) = 0i64;
   *(Unit + 0x3051) = *v12;
@@ -112,7 +112,7 @@ __int64 __fastcall unit_builder_2(
       (*(**(Unit + 0x3040) + 0x40i64))(*(Unit + 0x3040));
     *(Unit + 0x3038) = v16;
     *(Unit + 0x304C) = v15;
-    v13 = off_4B678C0;
+    v13 = midmem;
   }
   *(Unit + 0x3048) = v14;
   *(Unit + 0x3068) = 4;
@@ -223,7 +223,7 @@ __int64 __fastcall unit_builder_2(
   *(Unit + 0x33B4) = 0xBF800000;
   *(Unit + 0x33B8) = 0i64;
   sub_8A07F0(Unit + 0x33C0, Unit);
-  v24 = off_4B678C0;
+  v24 = midmem;
   *(Unit + 0x38D8) = 0i64;
   *(Unit + 0x38E0) = v24;
   *(Unit + 0x38E8) = 0i64;
@@ -317,8 +317,8 @@ __int64 __fastcall unit_builder_2(
   *(Unit + 0x4272) = 0x200020;
   *(Unit + 0x4280) = sub_8E3160;
   *(Unit + 0x4298) = 0i64;
-  v28 = off_4B678C0;
-  *(Unit + 0x42A0) = off_4B678C0;
+  v28 = midmem;
+  *(Unit + 0x42A0) = midmem;
   *(Unit + 0x42A8) = 0i64;
   *(Unit + 0x42B8) = xmmword_44C6020;
   *(Unit + 0x42C8) = xmmword_44C6030;

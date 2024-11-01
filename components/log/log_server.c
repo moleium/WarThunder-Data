@@ -201,7 +201,7 @@ void __fastcall sub_F76B0(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a
         do
         {
           *v18 = 0i64;
-          *(v18 + 8) = off_4B678C0;
+          *(v18 + 8) = midmem;
           *(v18 + 16) = 0i64;
           v18 += 24i64;
           ++v21;
@@ -215,14 +215,14 @@ void __fastcall sub_F76B0(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a
         do
         {
           *v18 = 0i64;
-          *(v18 + 8) = off_4B678C0;
+          *(v18 + 8) = midmem;
           *(v18 + 16) = 0i64;
-          *(v18 + 32) = off_4B678C0;
+          *(v18 + 32) = midmem;
           *(v18 + 40) = 0i64;
-          *(v18 + 56) = off_4B678C0;
+          *(v18 + 56) = midmem;
           *(v18 + 64) = 0i64;
-          a2 = off_4B678C0;
-          *(v18 + 80) = off_4B678C0;
+          a2 = midmem;
+          *(v18 + 80) = midmem;
           *(v18 + 88) = 0i64;
           v18 += 96i64;
           v20 -= 4i64;
@@ -364,13 +364,13 @@ void __fastcall sub_F76B0(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a
           }
           while ( v34 != v17 );
           v61 = Size;
-          v62 = off_4B678C0;
+          v62 = midmem;
           v63 = 0;
           if ( Size )
           {
             if ( Size < 0x11 )
               v61 = 16i64;
-            v64 = (*(*off_4B678C0 + 24i64))(off_4B678C0, v61);
+            v64 = (*(*midmem + 24i64))(midmem, v61);
             v65 = v64;
             v33 = v296;
             if ( Size )
@@ -389,7 +389,7 @@ void __fastcall sub_F76B0(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a
         else
         {
           v65 = 0i64;
-          v62 = off_4B678C0;
+          v62 = midmem;
           LODWORD(v61) = 0;
           v63 = 0;
         }
@@ -494,13 +494,13 @@ LABEL_58:
       }
       v52 = 0;
       avprintf(&Src, 8i64, ")", 0i64, 0);
-      v53 = off_4B678C0;
+      v53 = midmem;
       v54 = Size;
       if ( Size )
       {
         if ( Size < 0x11 )
           v54 = 16i64;
-        v55 = (*(*off_4B678C0 + 24i64))(off_4B678C0, v54);
+        v55 = (*(*midmem + 24i64))(midmem, v54);
         v56 = v55;
         a3 = Size;
         v10 = a5;
@@ -636,14 +636,14 @@ LABEL_83:
     v287 = off_4B678C8;
     LODWORD(v282) = 2;
     ctor_vprintf(&v286, a2, "Number of propellers = %d is GREATER than number of engines = %d", &Src, v282);
-    v85 = off_4B678C0;
+    v85 = midmem;
     v86 = v288;
     if ( v288 )
     {
       v87 = 16i64;
       if ( v288 >= 0x11 )
         v87 = v288;
-      v88 = (*(*off_4B678C0 + 24i64))(off_4B678C0, v87);
+      v88 = (*(*midmem + 24i64))(midmem, v87);
       memmove(v88, v286, v86);
     }
     else

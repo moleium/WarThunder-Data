@@ -64,7 +64,7 @@ __int64 __fastcall unit_builder_3(
   unit_builder(Unit, 3, a2, a5, Unit + 0x3250, a4, a6, a7, 0x19u);
   *Unit = &off_44D55C0;
   *(Unit + 0x50) = off_44D5E90;
-  v13 = (*(*off_4B678C0 + 0x18i64))(off_4B678C0, 0x8370i64);
+  v13 = (*(*midmem + 0x18i64))(midmem, 0x8370i64);
   *(Unit + 0x3030) = v13;
   *(Unit + 0x3038) = 0x101;
   *(Unit + 0x303A) = 0i64;
@@ -75,8 +75,8 @@ __int64 __fastcall unit_builder_3(
   *(Unit + 0x3068) = v12;
   *(Unit + 0x3070) = v13;
   *(Unit + 0x3078) = 0i64;
-  v14 = off_4B678C0;
-  *(Unit + 0x3088) = off_4B678C0;
+  v14 = midmem;
+  *(Unit + 0x3088) = midmem;
   *(Unit + 0x3090) = 0i64;
   *(Unit + 0x30A0) = v14;
   *(Unit + 0x30A8) = 0i64;
@@ -134,8 +134,8 @@ __int64 __fastcall unit_builder_3(
   *(Unit + 0x377C) = 0i64;
   *(Unit + 0x3784) = xmmword_44B1400;
   *(Unit + 0x3798) = 0i64;
-  v16 = off_4B678C0;
-  *(Unit + 0x37A0) = off_4B678C0;
+  v16 = midmem;
+  *(Unit + 0x37A0) = midmem;
   *(Unit + 0x37A8) = 0i64;
   *(Unit + 0x37B0) = 0xFFFFFFFF;
   *(Unit + 0x37B8) = 0i64;
@@ -266,7 +266,7 @@ LABEL_98:
   *(Unit + 0x3AA0) = 0i64;
   *(Unit + 0x3A90) = 0i64;
   *(Unit + 0x3AF0) = 0i64;
-  *(Unit + 0x3AF8) = off_4B678C0;
+  *(Unit + 0x3AF8) = midmem;
   *(Unit + 0x3B00) = 0i64;
   *(Unit + 0x3B10) = 0i64;
   *(Unit + 0x3B20) = 0i64;

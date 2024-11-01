@@ -95,8 +95,8 @@ __int64 __fastcall unit_builder_4(
   *(Unit + 0x40) = 0i64;
   *(Unit + 0x48) = 0xA;
   *(Unit + 0x88) = 0i64;
-  v9 = off_4B678C0;
-  *(Unit + 0x90) = off_4B678C0;
+  v9 = midmem;
+  *(Unit + 0x90) = midmem;
   *(Unit + 0x98) = 0i64;
   *(Unit + 0xA8) = v9;
   *(Unit + 0xB0) = 0i64;
@@ -234,8 +234,8 @@ __int64 __fastcall unit_builder_4(
   *(Unit + 0x4A0) = 0xFFFFFFFF;
   *(Unit + 0x4C8) = 0i64;
   *(Unit + 0x4B8) = 0i64;
-  v12 = off_4B678C0;
-  *(Unit + 0x4D8) = off_4B678C0;
+  v12 = midmem;
+  *(Unit + 0x4D8) = midmem;
   *(Unit + 0x4F0) = 0i64;
   *(Unit + 0x500) = 0i64;
   *(Unit + 0x4E0) = 0i64;
@@ -618,8 +618,8 @@ LABEL_10:
   *(Unit + 0x11E8) = Unit + 0x1220;
   *(Unit + 0x1220) = a2 == 0;
   *(Unit + 0x1228) = 0i64;
-  v26 = off_4B678C0;
-  *(Unit + 0x1230) = off_4B678C0;
+  v26 = midmem;
+  *(Unit + 0x1230) = midmem;
   *(Unit + 0x1238) = xmmword_44A0AF0;
   *(Unit + 0x1248) = 0i64;
   *(Unit + 0x1258) = 0i64;
@@ -661,8 +661,8 @@ LABEL_10:
   *(Unit + 0x1328) = 0i64;
   sub_14584E0(Unit + 0x1330, off_4B678B0);
   *(Unit + 0x1350) = 0i64;
-  v27 = off_4B678C0;
-  *(Unit + 0x1358) = off_4B678C0;
+  v27 = midmem;
+  *(Unit + 0x1358) = midmem;
   *(Unit + 0x1360) = 0i64;
   *(Unit + 0x1370) = v27;
   *(Unit + 0x1378) = xmmword_44AB110;
@@ -739,7 +739,7 @@ LABEL_25:
   *(Unit + 0x14D8) = 0;
   *(Unit + 0x14E0) = 0xBF800000BF800000ui64;
   *(Unit + 0x14E8) = 0xBF800000;
-  v32 = off_4B678C0;
+  v32 = midmem;
   *(Unit + 0x14F0) = 0i64;
   *(Unit + 0x14F8) = v32;
   *(Unit + 0x1500) = 0i64;
@@ -890,7 +890,7 @@ LABEL_82:
   *(Unit + 0x1A58) = 0;
   *(Unit + 0x1A5C) = 0;
   *(Unit + 0x1A60) = 0x3F800000;
-  v36 = off_4B678C0;
+  v36 = midmem;
   *(Unit + 0x1A68) = 0i64;
   *(Unit + 0x1A70) = v36;
   *(Unit + 0x1A78) = 0i64;
@@ -1034,8 +1034,8 @@ LABEL_45:
   _InterlockedIncrement(&dword_4B67890);
   *v41 = 0;
   *(v41 + 1) = 0i64;
-  v43 = off_4B678C0;
-  *(v41 + 2) = off_4B678C0;
+  v43 = midmem;
+  *(v41 + 2) = midmem;
   *(v41 + 6) = 0i64;
   *(v41 + 5) = v43;
   *(v41 + 3) = 0i64;

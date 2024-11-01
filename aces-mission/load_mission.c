@@ -1730,7 +1730,7 @@ LABEL_543:
   if ( !v382 )
     goto LABEL_636;
 LABEL_544:
-  v1180 = off_4B678C0;
+  v1180 = midmem;
   v396 = 0.0;
   v397 = 0;
   v398 = 0;
@@ -2367,11 +2367,11 @@ LABEL_638:
             EnterCriticalSection(&sound_cs);
             *(v553 + 0x118) = 0x7FFFFFFF;
             sub_1665AB0(v553);
-            (*(*off_4B678C0 + 0x40i64))(off_4B678C0, v553);
+            (*(*midmem + 0x40i64))(midmem, v553);
             LeaveCriticalSection(&sound_cs);
           }
           EnterCriticalSection(&sound_cs);
-          v554 = (*(*off_4B678C0 + 0x18i64))(off_4B678C0, 0x200i64);
+          v554 = (*(*midmem + 0x18i64))(midmem, 0x200i64);
           memset(v554, 0, 0x200ui64);
           sub_1665C80(v554, 1);
           v554[0x46] = 0xFFFFFFFF;
