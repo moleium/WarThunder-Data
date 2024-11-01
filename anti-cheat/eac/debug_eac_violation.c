@@ -21,7 +21,7 @@ void __fastcall debug_eac_violation(int a1, __int64 a2, __int64 a3)
   localized_text = get_localized_text_id("eac/eac_violation", 0i64);
   if ( localized_text )
   {
-    if ( qword_4B77188 )
+    if ( localization_table )
     {
       if ( (localized_text & 3) != 0 )
         localized_text_ = (localized_text & 0xFFFFFFFFFFFFFFFCui64);

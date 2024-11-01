@@ -219,7 +219,7 @@ LABEL_35:
       v42 = sub_181B2F0(v40, 0i64);
       if ( v42 )
       {
-        if ( qword_4B77188 )
+        if ( localization_table )
           v43 = (v42 & 3) != 0 ? (v42 & 0xFFFFFFFFFFFFFFFCui64) : *v42;
         else
           v43 = &szFile;
