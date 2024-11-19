@@ -17,9 +17,9 @@ void __fastcall vac::on_server_to_client_msg(__int64 message)
     if ( messageClass == &vac::server_msgclass )
       vac_message = message;
     v5 = *(vac_message + 0x20);
-    if ( vac_dagmem )
+    if ( vac::receive_message )
     {
-      vac_dagmem(*(vac_message + 0x10), v5);
+      vac::receive_message(*(vac_message + 0x10), v5);
     }
     else if ( !byte_4B9DF78 )
     {

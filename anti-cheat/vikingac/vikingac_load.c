@@ -15,7 +15,7 @@ void vikingac::load()
       load_successful = vac_load_address(vac::vac_session_id, &dagmem_alloc_);
       if ( load_successful )
       {
-        vac_dagmem = *(&dagmem_alloc_ + 1);
+        vac::receive_message = *(&dagmem_alloc_ + 1);
 LABEL_11:
         DWORD2(vac_unk_var) = 0;
         return;
