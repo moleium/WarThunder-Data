@@ -1,4 +1,4 @@
-__int64 __fastcall vikingac::init(__int64 path_prefix, const char *override_dll_name)
+__int64 __fastcall vac::init(__int64 path_prefix, const char *override_dll_name)
 {
   const char *dll_name;
   const CHAR *final_path;

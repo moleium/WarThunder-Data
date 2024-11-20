@@ -1,4 +1,4 @@
-void vikingac::load()
+void vac::load()
 {
   char *message; // rdx
   __int128 dagmem_alloc_; // [rsp+20h] [rbp-28h] BYREF
