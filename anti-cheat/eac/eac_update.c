@@ -43,7 +43,7 @@ LABEL_5:
         if ( !eac::is_inited )
           return manager_invoker_1(unk_var, 0LL, 0LL);
 
-        // check_integrity_check_violation
+        // check_integrity_violation
         result = (*(**(&eac_module + 1) + 0x28LL))(*(&eac_module + 1), sub_1F49EC0, 0LL, unk_var);
         manager_invoker_1 = manager_invoker_2;
         if ( manager_invoker_2 )
