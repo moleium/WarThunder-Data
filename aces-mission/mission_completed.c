@@ -36,7 +36,7 @@ char __fastcall mission_completed(__int64 a1, __int64 *a2)
         current_mission = *(game + 0x420);
         LODWORD(v8) = 6;
         sub_145A390(a2, "debriefingTimer", &v8);
-        end_mission(current_mission, 2i64);
+        aces::end_mission(current_mission, 2i64);
         if ( !disable_replay_camera )
           set_replay_camera(*(game + 0x440));
       }
