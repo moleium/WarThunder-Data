@@ -10,7 +10,7 @@ __int64 eac::update()
   __int64 (__fastcall *v7)(void *, size_t, __int64, __int64); // [rsp+48h] [rbp-40h]
   int unk_var[4]; // [rsp+50h] [rbp-38h] BYREF
   LRESULT (__fastcall *manager_invoker_2)(int, WPARAM, LPARAM); // [rsp+60h] [rbp-28h]
-  void (__fastcall *debug_eac_violation_)(int, __int64, const CHAR *); // [rsp+68h] [rbp-20h]
+  void (__fastcall *eac_debug_violation)(int, __int64, const CHAR *); // [rsp+68h] [rbp-20h]
 
   update_eac_client_ = fn;
   update_eac_client = fn;
@@ -39,7 +39,7 @@ LABEL_5:
       {
         manager_invoker_1 = fn;
         manager_invoker_2 = fn;
-        debug_eac_violation_ = debug_eac_violation;
+        eac_debug_violation = eac::debug_violation;
         if ( !eac::is_inited )
           return manager_invoker_1(unk_var, 0LL, 0LL);
 
