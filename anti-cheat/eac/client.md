@@ -1,4 +1,5 @@
-# EAC Client
+# EAC Client (DEPRECATED)
+> **Warning**: This documentation is deprecated and will be replaced with newer, more accurate documentation.
 
 `(*(**(&module + 1) + offset))(...)`
 
