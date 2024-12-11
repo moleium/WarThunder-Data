@@ -12,8 +12,8 @@ void vac::load()
       *&dagmem_alloc_ = dagmem_alloc;
       *(&dagmem_alloc_ + 1) = 0i64;
       vac_on_debug_state_callback_ = vac_on_debug_state_callback;
-      load_successful = vac_load_address(vac::vac_session_id, &dagmem_alloc_);
-      if ( load_successful )
+      eac::load_successful = vac_load_address(vac::vac_session_id, &dagmem_alloc_);
+      if ( eac::load_successful )
       {
         vac::receive_message = *(&dagmem_alloc_ + 1);
 LABEL_11:
